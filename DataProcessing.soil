@@ -1,0 +1,150 @@
+reset
+!create color:Column
+!color.uri:=1
+!color.type:=ValueType::Categorical
+!color.id:=false
+!color.target:=false
+!create colors:Dataset
+!insert (colors, color) into DSCol
+!create oneHot:GetDummyVariables
+!oneHot.uri:='OneHot'
+!create azul:Data
+!create negro:Data
+!create blanco:Data
+!create blanco:Data
+!create azul1:Data
+!create negro1:Data
+!create blanco1:Data
+!insert (colors,azul) into DSData            
+!insert (colors,blanco) into DSData                                                                
+!insert (colors,negro) into DSData
+!insert (colors,azul1) into DSData            
+!insert (colors,blanco1) into DSData                                                                
+!insert (colors,negro1) into DSData
+!azul.value:='azul'                                                                                
+!negro.value:='negro'                                                                               
+!blanco.value:='blanco'
+!azul1.value:='azul'                                                                                
+!negro1.value:='negro'                                                                               
+!blanco1.value:='blanco'
+!color.name:='color'
+!create azulCol:Column
+!create blancoCol:Column
+!create negroCol:Column
+!azulCol.name:='azul'
+!blancoCol.name:='blanco'
+!negroCol.name:='negro'
+!create firstRow:Row
+!create secondRow:Row
+!create thirdRow:Row
+!firstRow.uri := 1
+!secondRow.uri := 2
+!thirdRow.uri := 3
+!insert (colors,firstRow) into DSRow
+!insert (colors,secondRow) into DSRow
+!insert (colors,thirdRow) into DSRow
+!insert (azul,firstRow) into DataRow
+!insert (blanco,secondRow) into DataRow
+!insert (negro,thirdRow) into DataRow
+!create firstSecond: Data
+!firstSecond.value:='1'
+!create secondSecond: Data
+!secondSecond.value:='0'
+!create thirdSecond: Data
+!thirdSecond.value:='0'
+!insert (colors,firstSecond) into DSData
+!insert (colors,secondSecond) into DSData
+!insert (colors,thirdSecond) into DSData
+!insert (azul,color) into DataCol
+!insert (blanco,color) into DataCol
+!insert (negro,color) into DataCol
+!insert (azul1,color) into DataCol
+!insert (blanco1,color) into DataCol
+!insert (negro1,color) into DataCol
+!insert (firstSecond, azulCol) into DataCol
+!insert (secondSecond, azulCol) into DataCol
+!insert (thirdSecond, azulCol) into DataCol
+!insert (firstSecond, firstRow) into DataRow
+!insert (secondSecond, secondRow) into DataRow
+!insert (thirdSecond, thirdRow) into DataRow
+!insert(colors, azulCol)into DSCol
+
+!create firstThird: Data
+!firstThird.value:='0'
+!create secondThird: Data
+!secondThird.value:='1'
+!create thirdThird: Data
+!thirdThird.value:='0'
+!insert(colors, blancoCol)into DSCol
+!insert(firstThird, blancoCol) into DataCol
+!insert(secondThird, blancoCol) into DataCol
+!insert(thirdThird, blancoCol) into DataCol
+!insert (firstThird, firstRow) into DataRow
+!insert (secondThird, secondRow) into DataRow
+!insert (thirdThird, thirdRow) into DataRow
+
+!create firstFourth: Data
+!firstFourth.value:='0'
+!create secondFourth: Data
+!secondFourth.value:='0'
+!create thirdFourth: Data
+!thirdFourth.value:='1'
+!insert(colors, negroCol)into DSCol
+!insert(firstFourth, negroCol) into DataCol
+!insert(secondFourth, negroCol) into DataCol
+!insert(thirdFourth, negroCol) into DataCol
+!insert (firstFourth, firstRow) into DataRow
+!insert (secondFourth, secondRow) into DataRow
+!insert (thirdFourth, thirdRow) into DataRow
+
+!insert(colors, firstThird) into DSData
+!insert(colors, secondThird) into DSData
+!insert(colors, thirdThird) into DSData
+
+!insert(colors, firstFourth) into DSData
+!insert(colors, secondFourth) into DSData
+!insert(colors, thirdFourth) into DSData
+
+!insert(oneHot, colors) into DopDset                                                                           
+!create cp1: ColumnParam                                                                                       
+!insert(oneHot, cp1) into DopParam                                                                             
+!insert (cp1, color) into ColumnParams
+!azulCol.type:=ValueType::Boolean
+!blancoCol.type:=ValueType::Boolean
+!negroCol.type:=ValueType::Boolean
+!azulCol.id:=false
+!blancoCol.id:=false
+!negroCol.id:=false
+!azulCol.target:=false
+!blancoCol.target:=false
+!negroCol.target:=false
+
+
+!create extraCol:Column
+!create removeCol:RemoveColumns
+!insert(removeCol, colors) into DopDset
+!create cp2:ColumnParam
+!insert(cp2, extraCol) into ColumnParams
+!insert(removeCol, cp2) into DopParam
+
+
+!create smote:Smote
+!insert(smote, colors) into DopDset
+!insert(smote, cp1) into DopParam
+
+!create split:Split
+!create size:Float
+!size.name:='size'
+!size.value:=0.3
+!insert (split, size) into DopParam
+!insert(split, colors) into DopDset
+                                                   
+
+!create stratified:Bool
+!stratified.value:=true
+!stratified.name:='stratified'
+!insert (split, stratified)	into DopParam
+
+
+											   
+
