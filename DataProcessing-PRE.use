@@ -1,0 +1,152 @@
+model DataProcessing
+enum ValueType{Categorical, Float, DateTime, Int, Boolean}
+
+class Dataset
+	operations
+	  removeColumn(c:Column)
+end
+
+class Job
+end
+
+abstract class Parameter
+  attributes
+    name:String
+end
+
+class ColumnParam < Parameter
+  attributes
+   exclude:Boolean
+end
+
+class Primitive < Parameter
+end
+
+class Bool < Primitive
+	attributes
+	 value:Boolean
+end
+
+class Float < Primitive
+	attributes
+	 value:Real
+end
+
+class Int < Primitive
+	attributes
+	 value:Integer
+end
+
+class Text < Primitive
+	attributes
+	 value:String
+end
+
+abstract class DataOperation
+   attributes
+     uri:String
+   operations
+	 make()
+end
+
+class GetDummyVariables < DataOperation
+end
+
+class RemoveColumns < DataOperation
+end
+
+class Smote < DataOperation
+end
+
+class Split < DataOperation
+end
+
+class Column
+   attributes
+     uri:Integer
+	 name:String
+	 type:ValueType
+	 id:Boolean
+	 target:Boolean
+end	 
+class Row
+   attributes
+      uri:Integer
+end
+
+class Data
+   attributes
+      value:String
+end
+	  
+association DataRow between
+	Data [0..1] role data
+	Row [1] role row
+end
+
+association DataCol between
+	Data [0..1] role data
+	Column [1] role col
+end
+
+aggregation DSCol between
+	Dataset [1]
+	Column [1..*] role cols
+end
+
+aggregation DSRow between
+	Dataset [1] 
+	Row [1..*] role rows
+end
+
+aggregation DSData between
+	Dataset [1] 
+	Data [1..*] role data
+end
+
+aggregation JobDop between
+	Job [1]
+	DataOperation [1..*]
+end
+
+association ColumnParams between
+    ColumnParam[1]
+	Column [1]
+end
+
+aggregation DopParam between
+	DataOperation [1]
+	Parameter [1..*]
+end
+
+association DopDset between
+	DataOperation [1]
+	Dataset [1]
+end
+
+constraints
+
+context GetDummyVariables
+	inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+	inv columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
+	inv columnId: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.id = false)
+	inv columnTarget: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.target = false)
+
+context RemoveColumns
+	inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+
+context Smote
+	inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+	inv columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
+	
+context Split
+	inv sizeParam: self.parameter->select(p|p.oclIsTypeOf(Float) and p.name = 'size').oclAsType(Float)->collect(value)->asSequence()->at(1)< 1
+	inv stratifiedCol:
+		if (self.parameter->select(p | p.oclIsTypeOf(Bool) and p.name='stratified').oclAsType(Bool)->collect(value)->asSequence()->at(1) = true)
+		then
+			self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->size()=1 and self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+		else
+			true
+		endif
+			
+			

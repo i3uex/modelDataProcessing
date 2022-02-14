@@ -1,0 +1,148 @@
+model DataProcessing
+enum ValueType{Categorical, Float, DateTime, Int, Boolean}
+
+class Dataset
+	operations
+	  removeColumn(c:Column)
+end
+
+class Job
+end
+
+abstract class Parameter
+  attributes
+    name:String
+end
+
+class ColumnParam < Parameter
+  attributes
+   exclude:Boolean
+end
+
+class Primitive < Parameter
+end
+
+class Bool < Primitive
+	attributes
+	 value:Boolean
+end
+
+class Float < Primitive
+	attributes
+	 value:Real
+end
+
+class Int < Primitive
+	attributes
+	 value:Integer
+end
+
+class Text < Primitive
+	attributes
+	 value:String
+end
+
+abstract class DataOperation
+   attributes
+     uri:String
+   operations
+	 make()
+end
+
+class GetDummyVariables < DataOperation
+end
+
+class RemoveColumns < DataOperation
+end
+
+class Smote < DataOperation
+end
+
+class Split < DataOperation
+end
+
+class Column
+   attributes
+     uri:Integer
+	 name:String
+	 type:ValueType
+	 id:Boolean
+	 target:Boolean
+end	 
+class Row
+   attributes
+      uri:Integer
+end
+
+class Data
+   attributes
+      value:String
+end
+	  
+association DataRow between
+	Data [0..1] role data
+	Row [1] role row
+end
+
+association DataCol between
+	Data [0..1] role data
+	Column [1] role col
+end
+
+aggregation DSCol between
+	Dataset [1]
+	Column [1..*] role cols
+end
+
+aggregation DSRow between
+	Dataset [1] 
+	Row [1..*] role rows
+end
+
+aggregation DSData between
+	Dataset [1] 
+	Data [1..*] role data
+end
+
+aggregation JobDop between
+	Job [1]
+	DataOperation [1..*]
+end
+
+association ColumnParams between
+    ColumnParam[1]
+	Column [1]
+end
+
+aggregation DopParam between
+	DataOperation [1]
+	Parameter [1..*]
+end
+
+association DopDset between
+	DataOperation [1]
+	Dataset [1]
+end
+
+constraints
+
+context GetDummyVariables
+	inv makeCorrectOneHotZero: self.dataset.data->select(d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) )->forAll(d | self.dataset.data->select(d2 | d2.col.name = d.value and d2.row.uri <> d.row.uri)->collect(value)->forAll(v|v='0'))
+	inv makeCorrectOneHotOne: self.dataset.data->select(d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) )->forAll(d | self.dataset.data->select(d2 | d2.col.name = d.value and d2.row.uri = d.row.uri)->collect(value)->asSequence()->at(1) = '1')
+	inv existsColumns: self.dataset.data->select(d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(d|self.dataset.cols->select(c|c.name=d.value)->size()=1)
+	inv colTypes: self.dataset.data->select(d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(d|self.dataset.cols->select(c|c.name=d.value)->collect(type)->asSequence->at(1)=ValueType::Boolean)
+	inv colId: self.dataset.data->select(d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(d|self.dataset.cols->select(c|c.name=d.value)->collect(id)->asSequence->at(1)=false)
+	inv colTarget: self.dataset.data->select(d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(d|self.dataset.cols->select(c|c.name=d.value)->collect(target)->asSequence->at(1)=false)
+
+context RemoveColumns
+	inv noColumnDset: self.dataset.cols->forAll(col|col.name<>self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.name)->asSequence()->at(1))
+
+context Smote
+	inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+	inv columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
+	inv makeCorrectSmote: self.dataset.data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->collect(value)->asSet()->
+		forAll(v | self.dataset.data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) and d.value = v)->size() = 
+		self.dataset.data->select(d|d.col.uri=1 and d.value=self.dataset.data->select(d|d.col.uri=1)->collect(value)->asSequence()->at(1))->size())
+
+
+

@@ -1,0 +1,60 @@
+Operations:
+
+- GetDummyVariables:
+	PRE:
+W		inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+W		inv columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
+W		inv columnId: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.id = false)
+W		inv columnTarget: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.target = false)
+
+	POST:
+W		inv existsColumns: self.dataset.data->select(d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(d|self.dataset.cols->select(c|c.name=d.value)->size()=1)
+W		inv colTypes: self.dataset.data->select(d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(d|self.dataset.cols->select(c|c.name=d.value)->collect(type)->asSequence->at(1)=ValueType::Boolean)
+W		inv colId: self.dataset.data->select(d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(d|self.dataset.cols->select(c|c.name=d.value)->collect(id)->asSequence->at(1)=false)
+W		inv colTarget: self.dataset.data->select(d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(d|self.dataset.cols->select(c|c.name=d.value)->collect(target)->asSequence->at(1)=false)
+		
+	INV:
+W		makeCorrectOneHotOne: self.dataset.data->select(d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) )->forAll(d | self.dataset.data->select(d2 | d2.col.name = d.value and d2.row.uri = d.row.uri)->collect(value)->asSequence()->at(1) = '1')
+W		inv makeCorrectOneHotZero: self.dataset.data->select(d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) )->forAll(d | self.dataset.data->select(d2 | d2.col.name = d.value and d2.row.uri <> d.row.uri)->collect(value)->forAll(v|v='0'))
+
+- RemoveColumns:
+	PRE:
+W		inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+	
+	POST
+W			inv noColumnDset: self.dataset.cols->forAll(col|col.name<>self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.name)->asSequence()->at(1))
+
+FUTURO		inv noColumnDset: self.parameter->select(p|p.oclIsTypeOf(Dataset)).oclAsType(Dataset)->collect(cols)->forAll(col|col.name<>self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.name)->asSequence()->at(1))
+
+- SMOTE:
+	PRE:
+w		inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam))->forAll(cp | cp.column.dataset = self.dataset)
+w		inv columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam))->forAll(cp | cp.column.type = ValueType::Categorical)
+
+	POST:
+w		inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam))->forAll(cp | cp.column.dataset = self.dataset)
+w		inv columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam))->forAll(cp | cp.column.type = ValueType::Categorical)
+		
+	INV:
+W		let size_category: self.dataset.data->select(d|d.col.uri=1 and d.value=self.dataset.data->select(d|d.col.uri=1)->collect(value)->asSequence()->at(1))->size()
+		makeCorrectSmote: self.dataset.data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->collect(value)->asSet()->
+		forAll(v | self.dataset.data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) and d.value = v).size() = 
+		self.dataset.data->select(d|d.col.uri=1 and d.value=self.dataset.data->select(d|d.col.uri=1)->collect(value)->asSequence()->at(1))->size())
+		
+- SPLIT
+	PRE:
+w	inv sizeParam: self.parameter->select(p|p.oclIsTypeOf(Float) and p.name = 'size').oclAsType(Float)->collect(value)->asSequence()->at(1)< 1
+w	inv stratifiedCol:
+		if (self.parameter->select(p | p.oclIsTypeOf(Bool) and p.name='stratified').oclAsType(Bool)->collect(value)->asSequence()->at(1) = true)
+		then
+			self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->size()=1 and self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+		else
+			true
+		endif
+	POST:
+		inv numberDset: ¿como compruebo que existen dos datasets? -> Es fácil, pero hay que permitir que haya mas de un dset y adaptar el código OCL que hay hasta ahora, sería suficiente con añadir ->asSequence()->at(1)?
+		A esto hay que darle una vuelta.
+		
+	INV:
+		PTE (no está planteado aún en código¨, si en pseudocódigo)
+		

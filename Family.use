@@ -1,0 +1,29 @@
+model Family
+enum Gender {female,male}
+
+class Family
+	attributes
+		surname : String
+end
+class Person
+	attributes
+		name : String
+		age : Integer
+		gender : Gender
+end
+	
+association ChildHood between
+	Family [0..1] role childFamily
+	Person [*] role child
+end
+
+association MotherFamily between
+	Family [*] role motherFamily
+	Person [0..1] role mother
+end
+
+association FatherFamily between
+	Family [*] role fatherFamily
+	Person [0..1] role father
+end
+	
