@@ -119,34 +119,69 @@ aggregation DopParam between
 	Parameter [1..*]
 end
 
-association DopDset between
-	DataOperation [1]
-	Dataset [1]
+association DopInputDset between
+	DataOperation [1] role opIn
+	Dataset [1..*] role dataIn
+end
+
+association DopOutputDset between
+	DataOperation [1] role opOut
+	Dataset [1..*] role dataOut
 end
 
 constraints
-
 context GetDummyVariables
-	inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
-	inv columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
-	inv columnId: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.id = false)
-	inv columnTarget: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.target = false)
+	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataIn->asSequence->at(1))
+	inv pre_columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
+	inv pre_columnId: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.id = false)
+	inv pre_columnTarget: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.target = false)
+	inv inv_makeCorrectOneHotZero: self.dataOut->asSequence->at(1).data->select(
+		d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) )->forAll(
+			d | self.dataOut->asSequence->at(1).data->select(
+				d2 | self.dataOut->asSequence->at(1).cols->select(c | (self.dataOut->asSequence->at(1).data->select(d|d.col.uri=0)->collect(value)->asSet())->includes(c.name))->includes(d2.col) 
+				and d2.row.uri= d.row.uri 
+				and d2.col.name <> d.value)->collect(value)->forAll(v|v='0'))
+	inv inv_makeCorrectOneHotOne: self.dataOut->asSequence->at(1).data->select(
+		d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) )->forAll(
+			d | self.dataOut->asSequence->at(1).data->select(d2 | d2.col.name = d.value and d2.row.uri = d.row.uri)->collect(value)->asSequence()->at(1) = '1')
+	inv post_existsColumns: self.dataOut->asSequence->at(1).data->select(
+		d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(
+			d|self.dataOut->asSequence->at(1).cols->select(c|c.name=d.value)->size()=1)
+	inv post_colTypes: self.dataOut->asSequence->at(1).data->select(
+		d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(
+			d|self.dataOut->asSequence->at(1).cols->select(c|c.name=d.value)->collect(type)->asSequence->at(1)=ValueType::Boolean)
+	inv post_colId: self.dataOut->asSequence->at(1).data->select(
+		d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(
+			d|self.dataOut->asSequence->at(1).cols->select(c|c.name=d.value)->collect(id)->asSequence->at(1)=false)
+	inv post_colTarget: self.dataOut->asSequence->at(1).data->select(
+		d|d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1))->forAll(
+			d|self.dataOut->asSequence->at(1).cols->select(c|c.name=d.value)->collect(target)->asSequence->at(1)=false)
 
 context RemoveColumns
-	inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataIn->asSequence->at(1))
+	inv post_noColumnDset: self.dataOut->asSequence->at(1).cols->forAll(col|col.name<>self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.name)->asSequence()->at(1))
 
 context Smote
-	inv columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
-	inv columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
-	
+	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataIn->asSequence->at(1))
+	inv pre_columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
+	inv post_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataOut->asSequence->at(1))
+	inv post_columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
+	inv inv_makeCorrectSmote: self.dataOut->asSequence->at(1).data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(
+		column.uri)->asSequence()->at(1))->collect(value)->asSet()->forAll(
+			v | self.dataOut->asSequence->at(1).data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(
+				column.uri)->asSequence()->at(1) and d.value = v)->size() = self.dataOut->asSequence->at(1).data->select(d|d.col.uri=1 and d.value=self.dataOut->asSequence->at(1).data->select(
+					d|d.col.uri=1)->collect(value)->asSequence()->at(1))->size())
+
 context Split
-	inv sizeParam: self.parameter->select(p|p.oclIsTypeOf(Float) and p.name = 'size').oclAsType(Float)->collect(value)->asSequence()->at(1)< 1
-	inv stratifiedCol:
+	inv pre_sizeParam: self.parameter->select(p|p.oclIsTypeOf(Float) and p.name = 'size').oclAsType(Float)->collect(value)->asSequence()->at(1) < 1
+	inv pre_stratifiedCol:
 		if (self.parameter->select(p | p.oclIsTypeOf(Bool) and p.name='stratified').oclAsType(Bool)->collect(value)->asSequence()->at(1) = true)
 		then
-			self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->size()=1 and self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataset)
+			self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->size()=1 and self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.dataIn->asSequence->at(1))
 		else
 			true
 		endif
+	inv inv_first_number_rows: self.dataOut->asSequence()->at(1).rows->size() = ((self.parameter->select(p | p.name = 'size' and p.oclIsTypeOf(Float)).oclAsType(Float)->collect(value)->asSequence()->at(1)) * self.dataIn.rows->size()).round()
+	
 			
 			
