@@ -1,0 +1,48 @@
+!create remove_col_output:Dataset
+!create COLOR1:Column
+!COLOR1.uri:=0
+!COLOR1.name:='COLOR'
+!COLOR1.type:=ValueType::Categorical
+!COLOR1.target:=false
+!COLOR1.id:=false
+!insert (remove_col_output,COLOR1) into DSCol
+!create AZUL2:Data
+!AZUL2.value:='AZUL'
+!insert (remove_col_output,AZUL2) into DSData
+!insert (AZUL2,COLOR1) into DataCol
+!create row5:Row
+!row5.uri:=0
+!insert (remove_col_output,row5) into DSRow
+!insert (AZUL2, row5) into DataRow
+!create BLANCO2:Data
+!BLANCO2.value:='BLANCO'
+!insert (remove_col_output,BLANCO2) into DSData
+!insert (BLANCO2,COLOR1) into DataCol
+!create row7:Row
+!row7.uri:=1
+!insert (remove_col_output,row7) into DSRow
+!insert (BLANCO2, row7) into DataRow
+!create NEGRO1:Data
+!NEGRO1.value:='NEGRO'
+!insert (remove_col_output,NEGRO1) into DSData
+!insert (NEGRO1,COLOR1) into DataCol
+!create row8:Row
+!row8.uri:=2
+!insert (remove_col_output,row8) into DSRow
+!insert (NEGRO1, row8) into DataRow
+!create AZUL3:Data
+!AZUL3.value:='AZUL'
+!insert (remove_col_output,AZUL3) into DSData
+!insert (AZUL3,COLOR1) into DataCol
+!create row9:Row
+!row9.uri:=3
+!insert (remove_col_output,row9) into DSRow
+!insert (AZUL3, row9) into DataRow
+!create BLANCO3:Data
+!BLANCO3.value:='BLANCO'
+!insert (remove_col_output,BLANCO3) into DSData
+!insert (BLANCO3,COLOR1) into DataCol
+!create row10:Row
+!row10.uri:=4
+!insert (remove_col_output,row10) into DSRow
+!insert (BLANCO3, row10) into DataRow

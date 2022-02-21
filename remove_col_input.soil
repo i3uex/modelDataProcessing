@@ -1,0 +1,80 @@
+!create remove_col_input:Dataset
+!create COLOR:Column
+!COLOR.uri:=0
+!COLOR.name:='COLOR'
+!COLOR.type:=ValueType::Categorical
+!COLOR.target:=false
+!COLOR.id:=false
+!insert (remove_col_input,COLOR) into DSCol
+!create AZUL:Data
+!AZUL.value:='AZUL'
+!insert (remove_col_input,AZUL) into DSData
+!insert (AZUL,COLOR) into DataCol
+!create row0:Row
+!row0.uri:=0
+!insert (remove_col_input,row0) into DSRow
+!insert (AZUL, row0) into DataRow
+!create BLANCO:Data
+!BLANCO.value:='BLANCO'
+!insert (remove_col_input,BLANCO) into DSData
+!insert (BLANCO,COLOR) into DataCol
+!create row1:Row
+!row1.uri:=1
+!insert (remove_col_input,row1) into DSRow
+!insert (BLANCO, row1) into DataRow
+!create NEGRO:Data
+!NEGRO.value:='NEGRO'
+!insert (remove_col_input,NEGRO) into DSData
+!insert (NEGRO,COLOR) into DataCol
+!create row2:Row
+!row2.uri:=2
+!insert (remove_col_input,row2) into DSRow
+!insert (NEGRO, row2) into DataRow
+!create AZUL1:Data
+!AZUL1.value:='AZUL'
+!insert (remove_col_input,AZUL1) into DSData
+!insert (AZUL1,COLOR) into DataCol
+!create row3:Row
+!row3.uri:=3
+!insert (remove_col_input,row3) into DSRow
+!insert (AZUL1, row3) into DataRow
+!create BLANCO1:Data
+!BLANCO1.value:='BLANCO'
+!insert (remove_col_input,BLANCO1) into DSData
+!insert (BLANCO1,COLOR) into DataCol
+!create row4:Row
+!row4.uri:=4
+!insert (remove_col_input,row4) into DSRow
+!insert (BLANCO1, row4) into DataRow
+!create TALLA:Column
+!TALLA.uri:=1
+!TALLA.name:='TALLA'
+!TALLA.type:=ValueType::Categorical
+!TALLA.target:=false
+!TALLA.id:=false
+!insert (remove_col_input,TALLA) into DSCol
+!create L:Data
+!L.value:='L'
+!insert (remove_col_input,L) into DSData
+!insert (L,TALLA) into DataCol
+!insert (L, row0) into DataRow
+!create M:Data
+!M.value:='M'
+!insert (remove_col_input,M) into DSData
+!insert (M,TALLA) into DataCol
+!insert (M, row1) into DataRow
+!create S:Data
+!S.value:='S'
+!insert (remove_col_input,S) into DSData
+!insert (S,TALLA) into DataCol
+!insert (S, row2) into DataRow
+!create M1:Data
+!M1.value:='M'
+!insert (remove_col_input,M1) into DSData
+!insert (M1,TALLA) into DataCol
+!insert (M1, row3) into DataRow
+!create XL:Data
+!XL.value:='XL'
+!insert (remove_col_input,XL) into DSData
+!insert (XL,TALLA) into DataCol
+!insert (XL, row4) into DataRow
