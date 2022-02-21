@@ -6,8 +6,7 @@ reset
 !color.target:=false
 !create colors:Dataset
 !insert (colors, color) into DSCol
-!create oneHot:GetDummyVariables
-!oneHot.uri:='OneHot'
+
 !create azul:Data
 !create negro:Data
 !create blanco:Data
@@ -15,6 +14,8 @@ reset
 !create azul1:Data
 !create negro1:Data
 !create blanco1:Data
+!create oneHot:GetDummyVariables
+!oneHot.uri:='OneHot'
 !insert (colors,azul) into DSData            
 !insert (colors,blanco) into DSData                                                                
 !insert (colors,negro) into DSData
@@ -105,7 +106,7 @@ reset
 !insert(colors, secondFourth) into DSData
 !insert(colors, thirdFourth) into DSData
 
-!insert(oneHot, colors) into DopDset                                                                           
+!insert(oneHot, colors) into DopInputDset                                                                           
 !create cp1: ColumnParam                                                                                       
 !insert(oneHot, cp1) into DopParam                                                                             
 !insert (cp1, color) into ColumnParams
@@ -122,14 +123,14 @@ reset
 
 !create extraCol:Column
 !create removeCol:RemoveColumns
-!insert(removeCol, colors) into DopDset
+!insert(removeCol, colors) into DopInputDset
 !create cp2:ColumnParam
 !insert(cp2, extraCol) into ColumnParams
 !insert(removeCol, cp2) into DopParam
 
 
 !create smote:Smote
-!insert(smote, colors) into DopDset
+!insert(smote, colors) into DopInputDset
 !insert(smote, cp1) into DopParam
 
 !create split:Split
@@ -137,7 +138,7 @@ reset
 !size.name:='size'
 !size.value:=0.3
 !insert (split, size) into DopParam
-!insert(split, colors) into DopDset
+!insert(split, colors) into DopInputDset
                                                    
 
 !create stratified:Bool
