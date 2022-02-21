@@ -1,0 +1,145 @@
+!create smote_input:Dataset
+!create AZUL:Column
+!AZUL.uri:=0
+!AZUL.name:='AZUL'
+!AZUL.type:=ValueType::Int
+!AZUL.target:=false
+!AZUL.id:=false
+!insert (smote_input,AZUL) into DSCol
+!create num1:Data
+!num1.value:='1'
+!insert (smote_input,num1) into DSData
+!insert (num1,AZUL) into DataCol
+!create row0:Row
+!row0.uri:=0
+!insert (smote_input,row0) into DSRow
+!insert (num1, row0) into DataRow
+!create num0:Data
+!num0.value:='0'
+!insert (smote_input,num0) into DSData
+!insert (num0,AZUL) into DataCol
+!create row1:Row
+!row1.uri:=1
+!insert (smote_input,row1) into DSRow
+!insert (num0, row1) into DataRow
+!create num01:Data
+!num01.value:='0'
+!insert (smote_input,num01) into DSData
+!insert (num01,AZUL) into DataCol
+!create row2:Row
+!row2.uri:=2
+!insert (smote_input,row2) into DSRow
+!insert (num01, row2) into DataRow
+!create num11:Data
+!num11.value:='1'
+!insert (smote_input,num11) into DSData
+!insert (num11,AZUL) into DataCol
+!create row3:Row
+!row3.uri:=3
+!insert (smote_input,row3) into DSRow
+!insert (num11, row3) into DataRow
+!create num02:Data
+!num02.value:='0'
+!insert (smote_input,num02) into DSData
+!insert (num02,AZUL) into DataCol
+!create row4:Row
+!row4.uri:=4
+!insert (smote_input,row4) into DSRow
+!insert (num02, row4) into DataRow
+!create BLANCO:Column
+!BLANCO.uri:=1
+!BLANCO.name:='BLANCO'
+!BLANCO.type:=ValueType::Int
+!BLANCO.target:=false
+!BLANCO.id:=false
+!insert (smote_input,BLANCO) into DSCol
+!create num03:Data
+!num03.value:='0'
+!insert (smote_input,num03) into DSData
+!insert (num03,BLANCO) into DataCol
+!insert (num03, row0) into DataRow
+!create num12:Data
+!num12.value:='1'
+!insert (smote_input,num12) into DSData
+!insert (num12,BLANCO) into DataCol
+!insert (num12, row1) into DataRow
+!create num04:Data
+!num04.value:='0'
+!insert (smote_input,num04) into DSData
+!insert (num04,BLANCO) into DataCol
+!insert (num04, row2) into DataRow
+!create num05:Data
+!num05.value:='0'
+!insert (smote_input,num05) into DSData
+!insert (num05,BLANCO) into DataCol
+!insert (num05, row3) into DataRow
+!create num13:Data
+!num13.value:='1'
+!insert (smote_input,num13) into DSData
+!insert (num13,BLANCO) into DataCol
+!insert (num13, row4) into DataRow
+!create NEGRO:Column
+!NEGRO.uri:=2
+!NEGRO.name:='NEGRO'
+!NEGRO.type:=ValueType::Int
+!NEGRO.target:=false
+!NEGRO.id:=false
+!insert (smote_input,NEGRO) into DSCol
+!create num06:Data
+!num06.value:='0'
+!insert (smote_input,num06) into DSData
+!insert (num06,NEGRO) into DataCol
+!insert (num06, row0) into DataRow
+!create num07:Data
+!num07.value:='0'
+!insert (smote_input,num07) into DSData
+!insert (num07,NEGRO) into DataCol
+!insert (num07, row1) into DataRow
+!create num14:Data
+!num14.value:='1'
+!insert (smote_input,num14) into DSData
+!insert (num14,NEGRO) into DataCol
+!insert (num14, row2) into DataRow
+!create num08:Data
+!num08.value:='0'
+!insert (smote_input,num08) into DSData
+!insert (num08,NEGRO) into DataCol
+!insert (num08, row3) into DataRow
+!create num09:Data
+!num09.value:='0'
+!insert (smote_input,num09) into DSData
+!insert (num09,NEGRO) into DataCol
+!insert (num09, row4) into DataRow
+!create TALLA:Column
+!TALLA.uri:=3
+!TALLA.name:='TALLA'
+!TALLA.type:=ValueType::Int
+!TALLA.target:=false
+!TALLA.id:=false
+!insert (smote_input,TALLA) into DSCol
+!create num15:Data
+!num15.value:='1'
+!insert (smote_input,num15) into DSData
+!insert (num15,TALLA) into DataCol
+!insert (num15, row0) into DataRow
+!create num16:Data
+!num16.value:='1'
+!insert (smote_input,num16) into DSData
+!insert (num16,TALLA) into DataCol
+!insert (num16, row1) into DataRow
+!create num17:Data
+!num17.value:='1'
+!insert (smote_input,num17) into DSData
+!insert (num17,TALLA) into DataCol
+!insert (num17, row2) into DataRow
+!create num010:Data
+!num010.value:='0'
+!insert (smote_input,num010) into DSData
+!insert (num010,TALLA) into DataCol
+!insert (num010, row3) into DataRow
+!create num011:Data
+!num011.value:='0'
+!insert (smote_input,num011) into DSData
+!insert (num011,TALLA) into DataCol
+!insert (num011, row4) into DataRow
+!TALLA.type:=ValueType::Categorical

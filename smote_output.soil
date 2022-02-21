@@ -1,0 +1,172 @@
+!create smote_output:Dataset
+!create AZUL1:Column
+!AZUL1.uri:=0
+!AZUL1.name:='AZUL'
+!AZUL1.type:=ValueType::Int
+!AZUL1.target:=false
+!AZUL1.id:=false
+!insert (smote_output,AZUL1) into DSCol
+!create num18:Data
+!num18.value:='1'
+!insert (smote_output,num18) into DSData
+!insert (num18,AZUL1) into DataCol
+!create row5:Row
+!row5.uri:=0
+!insert (smote_output,row5) into DSRow
+!insert (num18, row5) into DataRow
+!create num012:Data
+!num012.value:='0'
+!insert (smote_output,num012) into DSData
+!insert (num012,AZUL1) into DataCol
+!create row7:Row
+!row7.uri:=1
+!insert (smote_output,row7) into DSRow
+!insert (num012, row7) into DataRow
+!create num013:Data
+!num013.value:='0'
+!insert (smote_output,num013) into DSData
+!insert (num013,AZUL1) into DataCol
+!create row8:Row
+!row8.uri:=2
+!insert (smote_output,row8) into DSRow
+!insert (num013, row8) into DataRow
+!create num19:Data
+!num19.value:='1'
+!insert (smote_output,num19) into DSData
+!insert (num19,AZUL1) into DataCol
+!create row9:Row
+!row9.uri:=3
+!insert (smote_output,row9) into DSRow
+!insert (num19, row9) into DataRow
+!create num014:Data
+!num014.value:='0'
+!insert (smote_output,num014) into DSData
+!insert (num014,AZUL1) into DataCol
+!create row10:Row
+!row10.uri:=4
+!insert (smote_output,row10) into DSRow
+!insert (num014, row10) into DataRow
+!create num015:Data
+!num015.value:='0'
+!insert (smote_output,num015) into DSData
+!insert (num015,AZUL1) into DataCol
+!create row11:Row
+!row11.uri:=5
+!insert (smote_output,row11) into DSRow
+!insert (num015, row11) into DataRow
+!create BLANCO1:Column
+!BLANCO1.uri:=1
+!BLANCO1.name:='BLANCO'
+!BLANCO1.type:=ValueType::Int
+!BLANCO1.target:=false
+!BLANCO1.id:=false
+!insert (smote_output,BLANCO1) into DSCol
+!create num016:Data
+!num016.value:='0'
+!insert (smote_output,num016) into DSData
+!insert (num016,BLANCO1) into DataCol
+!create row6:Row
+!row6.uri:=0
+!insert (smote_output,row6) into DSRow
+!insert (num016, row6) into DataRow
+!create num110:Data
+!num110.value:='1'
+!insert (smote_output,num110) into DSData
+!insert (num110,BLANCO1) into DataCol
+!insert (num110, row7) into DataRow
+!create num017:Data
+!num017.value:='0'
+!insert (smote_output,num017) into DSData
+!insert (num017,BLANCO1) into DataCol
+!insert (num017, row8) into DataRow
+!create num018:Data
+!num018.value:='0'
+!insert (smote_output,num018) into DSData
+!insert (num018,BLANCO1) into DataCol
+!insert (num018, row9) into DataRow
+!create num111:Data
+!num111.value:='1'
+!insert (smote_output,num111) into DSData
+!insert (num111,BLANCO1) into DataCol
+!insert (num111, row10) into DataRow
+!create num50:Data
+!num50.value:='50'
+!insert (smote_output,num50) into DSData
+!insert (num50,BLANCO1) into DataCol
+!insert (num50, row11) into DataRow
+!create NEGRO1:Column
+!NEGRO1.uri:=2
+!NEGRO1.name:='NEGRO'
+!NEGRO1.type:=ValueType::Int
+!NEGRO1.target:=false
+!NEGRO1.id:=false
+!insert (smote_output,NEGRO1) into DSCol
+!create num019:Data
+!num019.value:='0'
+!insert (smote_output,num019) into DSData
+!insert (num019,NEGRO1) into DataCol
+!insert (num019, row6) into DataRow
+!create num020:Data
+!num020.value:='0'
+!insert (smote_output,num020) into DSData
+!insert (num020,NEGRO1) into DataCol
+!insert (num020, row7) into DataRow
+!create num112:Data
+!num112.value:='1'
+!insert (smote_output,num112) into DSData
+!insert (num112,NEGRO1) into DataCol
+!insert (num112, row8) into DataRow
+!create num021:Data
+!num021.value:='0'
+!insert (smote_output,num021) into DSData
+!insert (num021,NEGRO1) into DataCol
+!insert (num021, row9) into DataRow
+!create num022:Data
+!num022.value:='0'
+!insert (smote_output,num022) into DSData
+!insert (num022,NEGRO1) into DataCol
+!insert (num022, row10) into DataRow
+!create num023:Data
+!num023.value:='0'
+!insert (smote_output,num023) into DSData
+!insert (num023,NEGRO1) into DataCol
+!insert (num023, row11) into DataRow
+!create TALLA1:Column
+!TALLA1.uri:=3
+!TALLA1.name:='TALLA'
+!TALLA1.type:=ValueType::Int
+!TALLA1.target:=false
+!TALLA1.id:=false
+!insert (smote_output,TALLA1) into DSCol
+!create num113:Data
+!num113.value:='1'
+!insert (smote_output,num113) into DSData
+!insert (num113,TALLA1) into DataCol
+!insert (num113, row6) into DataRow
+!create num114:Data
+!num114.value:='1'
+!insert (smote_output,num114) into DSData
+!insert (num114,TALLA1) into DataCol
+!insert (num114, row7) into DataRow
+!create num115:Data
+!num115.value:='1'
+!insert (smote_output,num115) into DSData
+!insert (num115,TALLA1) into DataCol
+!insert (num115, row8) into DataRow
+!create num024:Data
+!num024.value:='0'
+!insert (smote_output,num024) into DSData
+!insert (num024,TALLA1) into DataCol
+!insert (num024, row9) into DataRow
+!create num025:Data
+!num025.value:='0'
+!insert (smote_output,num025) into DSData
+!insert (num025,TALLA1) into DataCol
+!insert (num025, row10) into DataRow
+!create num026:Data
+!num026.value:='0'
+!insert (smote_output,num026) into DSData
+!insert (num026,TALLA1) into DataCol
+!insert (num026, row11) into DataRow
+
+!TALLA1.type:=ValueType::Categorical
