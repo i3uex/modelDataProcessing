@@ -53,34 +53,34 @@
 !AZUL4.target:=false
 !AZUL4.id:=false
 !insert (onehot_output,AZUL4) into DSCol
-!create num0:Data
-!num0.value:='0'
-!insert (onehot_output,num0) into DSData
-!insert (num0,AZUL4) into DataCol
-!create row6:Row
-!row6.uri:=0
-!insert (onehot_output,row6) into DSRow
-!insert (num0, row6) into DataRow
-!create num01:Data
-!num01.value:='0'
-!insert (onehot_output,num01) into DSData
-!insert (num01,AZUL4) into DataCol
-!insert (num01, row7) into DataRow
-!create num02:Data
-!num02.value:='0'
-!insert (onehot_output,num02) into DSData
-!insert (num02,AZUL4) into DataCol
-!insert (num02, row8) into DataRow
 !create num1:Data
 !num1.value:='1'
 !insert (onehot_output,num1) into DSData
 !insert (num1,AZUL4) into DataCol
-!insert (num1, row9) into DataRow
-!create num03:Data
-!num03.value:='0'
-!insert (onehot_output,num03) into DSData
-!insert (num03,AZUL4) into DataCol
-!insert (num03, row10) into DataRow
+!create row6:Row
+!row6.uri:=0
+!insert (onehot_output,row6) into DSRow
+!insert (num1, row6) into DataRow
+!create num0:Data
+!num0.value:='0'
+!insert (onehot_output,num0) into DSData
+!insert (num0,AZUL4) into DataCol
+!insert (num0, row7) into DataRow
+!create num01:Data
+!num01.value:='0'
+!insert (onehot_output,num01) into DSData
+!insert (num01,AZUL4) into DataCol
+!insert (num01, row8) into DataRow
+!create num11:Data
+!num11.value:='1'
+!insert (onehot_output,num11) into DSData
+!insert (num11,AZUL4) into DataCol
+!insert (num11, row9) into DataRow
+!create num02:Data
+!num02.value:='0'
+!insert (onehot_output,num02) into DSData
+!insert (num02,AZUL4) into DataCol
+!insert (num02, row10) into DataRow
 !create BLANCO4:Column
 !BLANCO4.uri:=2
 !BLANCO4.name:='BLANCO'
@@ -88,31 +88,31 @@
 !BLANCO4.target:=false
 !BLANCO4.id:=false
 !insert (onehot_output,BLANCO4) into DSCol
-!create num04:Data
-!num04.value:='0'
-!insert (onehot_output,num04) into DSData
-!insert (num04,BLANCO4) into DataCol
-!insert (num04, row6) into DataRow
-!create num11:Data
-!num11.value:='1'
-!insert (onehot_output,num11) into DSData
-!insert (num11,BLANCO4) into DataCol
-!insert (num11, row7) into DataRow
-!create num05:Data
-!num05.value:='0'
-!insert (onehot_output,num05) into DSData
-!insert (num05,BLANCO4) into DataCol
-!insert (num05, row8) into DataRow
-!create num06:Data
-!num06.value:='0'
-!insert (onehot_output,num06) into DSData
-!insert (num06,BLANCO4) into DataCol
-!insert (num06, row9) into DataRow
+!create num03:Data
+!num03.value:='0'
+!insert (onehot_output,num03) into DSData
+!insert (num03,BLANCO4) into DataCol
+!insert (num03, row6) into DataRow
 !create num12:Data
 !num12.value:='1'
 !insert (onehot_output,num12) into DSData
 !insert (num12,BLANCO4) into DataCol
-!insert (num12, row10) into DataRow
+!insert (num12, row7) into DataRow
+!create num04:Data
+!num04.value:='0'
+!insert (onehot_output,num04) into DSData
+!insert (num04,BLANCO4) into DataCol
+!insert (num04, row8) into DataRow
+!create num05:Data
+!num05.value:='0'
+!insert (onehot_output,num05) into DSData
+!insert (num05,BLANCO4) into DataCol
+!insert (num05, row9) into DataRow
+!create num13:Data
+!num13.value:='1'
+!insert (onehot_output,num13) into DSData
+!insert (num13,BLANCO4) into DataCol
+!insert (num13, row10) into DataRow
 !create NEGRO2:Column
 !NEGRO2.uri:=3
 !NEGRO2.name:='NEGRO'
@@ -120,28 +120,28 @@
 !NEGRO2.target:=false
 !NEGRO2.id:=false
 !insert (onehot_output,NEGRO2) into DSCol
+!create num06:Data
+!num06.value:='0'
+!insert (onehot_output,num06) into DSData
+!insert (num06,NEGRO2) into DataCol
+!insert (num06, row6) into DataRow
 !create num07:Data
 !num07.value:='0'
 !insert (onehot_output,num07) into DSData
 !insert (num07,NEGRO2) into DataCol
-!insert (num07, row6) into DataRow
+!insert (num07, row7) into DataRow
+!create num14:Data
+!num14.value:='1'
+!insert (onehot_output,num14) into DSData
+!insert (num14,NEGRO2) into DataCol
+!insert (num14, row8) into DataRow
 !create num08:Data
 !num08.value:='0'
 !insert (onehot_output,num08) into DSData
 !insert (num08,NEGRO2) into DataCol
-!insert (num08, row7) into DataRow
-!create num13:Data
-!num13.value:='1'
-!insert (onehot_output,num13) into DSData
-!insert (num13,NEGRO2) into DataCol
-!insert (num13, row8) into DataRow
+!insert (num08, row9) into DataRow
 !create num09:Data
 !num09.value:='0'
 !insert (onehot_output,num09) into DSData
 !insert (num09,NEGRO2) into DataCol
-!insert (num09, row9) into DataRow
-!create num010:Data
-!num010.value:='0'
-!insert (onehot_output,num010) into DSData
-!insert (num010,NEGRO2) into DataCol
-!insert (num010, row10) into DataRow
+!insert (num09, row10) into DataRow
