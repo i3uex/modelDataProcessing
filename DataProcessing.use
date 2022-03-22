@@ -6,9 +6,6 @@ class Dataset
 	  removeColumn(c:Column)
 end
 
-class Job
-end
-
 abstract class Parameter
   attributes
     name:String
@@ -42,9 +39,15 @@ class Text < Primitive
 	 value:String
 end
 
-abstract class DataOperation
-   attributes
-     uri:String
+abstract class DataProcessingElement
+	attributes
+		uri:String
+end
+
+class Job < DataProcessingElement
+end
+
+abstract class DataOperation < DataProcessingElement
    operations
 	 make()
 end
@@ -109,6 +112,11 @@ aggregation JobDop between
 	DataOperation [1..*]
 end
 
+aggregation JobJob between
+	Job[1]
+	Job [0..*] role jobInput
+end
+
 association ColumnParams between
     ColumnParam[1]
 	Column [1]
@@ -163,15 +171,22 @@ context RemoveColumns
 
 context Smote
 	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.dataIn->asSequence->at(1)
-	inv pre_columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
+	inv pre_columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence()->at(1).column.type = ValueType::Categorical or 
+						self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence()->at(1).column.type = ValueType::Boolean
+
 	inv post_columnDset: self.dataOut->asSequence->at(1).cols.name->includes(self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.name)
 	inv post_columnType: self.dataOut->asSequence->at(1).cols->select(
-		c | c.name = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.name)->asSequence()->at(1).type = ValueType::Categorical
-	inv inv_makeCorrectSmote: self.dataOut->asSequence->at(1).data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(
-		column.uri)->asSequence()->at(1))->collect(value)->asSet()->forAll(
+		c | c.name = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(
+			ColumnParam)->asSequence->at(1).column.name)->asSequence()->at(1).type = ValueType::Categorical
+			or self.dataOut->asSequence->at(1).cols->select(
+		c | c.name = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(
+			ColumnParam)->asSequence->at(1).column.name)->asSequence()->at(1).type = ValueType::Boolean
+
+	inv inv_makeCorrectSmote: self.dataOut->asSequence->at(1).data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(
+		ColumnParam)->collect(column.uri)->asSequence()->at(1))->collect(value)->asSet()->forAll(
 			v | self.dataOut->asSequence->at(1).data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(
-				column.uri)->asSequence()->at(1) and d.value = v)->size() = self.dataOut->asSequence->at(1).data->select(d|d.col.uri=1 and d.value=self.dataOut->asSequence->at(1).data->select(
-					d|d.col.uri=1)->collect(value)->asSequence()->at(1))->size())
+				column.uri)->asSequence()->at(1) and d.value = v)->size() = self.dataOut->asSequence->at(1).data->select(d|d.col.uri=  self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(
+				column.uri)->asSequence()->at(1) and d.value <> v)->size())
 
 context Split
 	inv pre_sizeParam: self.parameter->select(p|p.oclIsTypeOf(Float) and p.name = 'size').oclAsType(Float)->collect(value)->asSequence()->at(1) < 1
@@ -183,7 +198,10 @@ context Split
 			true
 		endif
 	inv inv_first_number_rows: self.dataOut->asSequence()->at(1).rows->size() = ((self.parameter->select(p | p.name = 'size' and p.oclIsTypeOf(Float)).oclAsType(Float)->collect(value)->asSequence()->at(1)) * self.dataIn.rows->size()).round()
-	inv inv_second_number_rows: self.dataOut->asSequence()->at(2).rows->size() = (1 - (self.parameter->select(p | p.name = 'size' and p.oclIsTypeOf(Float)).oclAsType(Float)->collect(value)->asSequence()->at(1)) * self.dataIn.rows->size()).round()
+	inv inv_second_number_rows: self.dataOut->asSequence()->at(2).rows->size() = ( 
+		(1 - (self.parameter->select(p | p.name = 'size' and p.oclIsTypeOf(Float)).oclAsType(Float)->collect(value)->asSequence()->at(1))) * 
+		self.dataIn.rows->size()
+		).round()
 	inv post_two_datasets: self.dataOut->size() = 2
 		
 			

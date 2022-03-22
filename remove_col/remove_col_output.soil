@@ -18,31 +18,31 @@
 !BLANCO2.value:='BLANCO'
 !insert (remove_col_output,BLANCO2) into DSData
 !insert (BLANCO2,COLOR1) into DataCol
-!create row7:Row
-!row7.uri:=1
-!insert (remove_col_output,row7) into DSRow
-!insert (BLANCO2, row7) into DataRow
+!create row6:Row
+!row6.uri:=1
+!insert (remove_col_output,row6) into DSRow
+!insert (BLANCO2, row6) into DataRow
 !create NEGRO1:Data
 !NEGRO1.value:='NEGRO'
 !insert (remove_col_output,NEGRO1) into DSData
 !insert (NEGRO1,COLOR1) into DataCol
-!create row8:Row
-!row8.uri:=2
-!insert (remove_col_output,row8) into DSRow
-!insert (NEGRO1, row8) into DataRow
+!create row7:Row
+!row7.uri:=2
+!insert (remove_col_output,row7) into DSRow
+!insert (NEGRO1, row7) into DataRow
 !create AZUL3:Data
 !AZUL3.value:='AZUL'
 !insert (remove_col_output,AZUL3) into DSData
 !insert (AZUL3,COLOR1) into DataCol
-!create row9:Row
-!row9.uri:=3
-!insert (remove_col_output,row9) into DSRow
-!insert (AZUL3, row9) into DataRow
+!create row8:Row
+!row8.uri:=3
+!insert (remove_col_output,row8) into DSRow
+!insert (AZUL3, row8) into DataRow
 !create BLANCO3:Data
 !BLANCO3.value:='BLANCO'
 !insert (remove_col_output,BLANCO3) into DSData
 !insert (BLANCO3,COLOR1) into DataCol
-!create row10:Row
-!row10.uri:=4
-!insert (remove_col_output,row10) into DSRow
-!insert (BLANCO3, row10) into DataRow
+!create row9:Row
+!row9.uri:=4
+!insert (remove_col_output,row9) into DSRow
+!insert (BLANCO3, row9) into DataRow

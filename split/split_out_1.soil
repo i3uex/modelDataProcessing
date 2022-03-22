@@ -1,29 +1,28 @@
-!create colors_out_1:Dataset
+!create split_out_1:Dataset
 !create COLOR1:Column
 !COLOR1.uri:=0
 !COLOR1.name:='COLOR'
 !COLOR1.type:=ValueType::Categorical
 !COLOR1.target:=false
 !COLOR1.id:=false
-!insert (colors_out_1,COLOR1) into DSCol
+!insert (split_out_1,COLOR1) into DSCol
 !create BLANCO2:Data
 !BLANCO2.value:='BLANCO'
-!insert (colors_out_1,BLANCO2) into DSData
+!insert (split_out_1,BLANCO2) into DSData
 !insert (BLANCO2,COLOR1) into DataCol
+!create row5:Row
+!row5.uri:=0
+!insert (split_out_1,row5) into DSRow
+!insert (BLANCO2, row5) into DataRow
 !create TALLA1:Column
 !TALLA1.uri:=1
 !TALLA1.name:='TALLA'
 !TALLA1.type:=ValueType::Categorical
 !TALLA1.target:=false
 !TALLA1.id:=false
-!insert (colors_out_1,TALLA1) into DSCol
+!insert (split_out_1,TALLA1) into DSCol
 !create M2:Data
 !M2.value:='M'
-!insert (colors_out_1,M2) into DSData
+!insert (split_out_1,M2) into DSData
 !insert (M2,TALLA1) into DataCol
-
-!create row6:Row
-!row6.uri:=1
-!insert (colors_out_1,row6) into DSRow
-!insert (BLANCO2,row6) into DataRow
-!insert (M2,row6) into DataRow
+!insert (M2, row5) into DataRow

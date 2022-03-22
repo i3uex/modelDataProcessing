@@ -1,7 +1,7 @@
 !create split:Split
-!insert(split, colors) into DopInputDset
-!insert(split, colors_out_1) into DopOutputDset
-!insert(split, colors_out_2) into DopOutputDset
+!insert(split, split_input) into DopInputDset
+!insert(split, split_out_1) into DopOutputDset
+!insert(split, split_out_2) into DopOutputDset
 
 !create size:Float
 !size.value:=0.2

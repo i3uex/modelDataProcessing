@@ -142,4 +142,4 @@
 !insert (smote_input,num011) into DSData
 !insert (num011,TALLA) into DataCol
 !insert (num011, row4) into DataRow
-!TALLA.type:=ValueType::Categorical
+!TALLA.type:=ValueType::Boolean
