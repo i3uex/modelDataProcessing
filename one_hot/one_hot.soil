@@ -2,5 +2,5 @@
 !create cp1: ColumnParam                                                                                       
 !insert(oneHot, cp1) into DopParam                                                                             
 !insert (cp1, COLOR) into ColumnParams
-!insert(oneHot, onehot_input) into DopInputDset
-!insert(oneHot, onehot_output) into DopOutputDset
+!insert(oneHot, onehot_input) into  InputPort
+!insert(oneHot, onehot_output) into  OutputPort

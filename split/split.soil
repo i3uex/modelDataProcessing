@@ -1,7 +1,7 @@
 !create split:Split
-!insert(split, split_input) into DopInputDset
-!insert(split, split_out_1) into DopOutputDset
-!insert(split, split_out_2) into DopOutputDset
+!insert(split, split_input) into  InputPort
+!insert(split, split_out_1) into  OutputPort
+!insert(split, split_out_2) into  OutputPort
 
 !create size:Float
 !size.value:=0.2
