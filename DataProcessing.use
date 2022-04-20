@@ -23,6 +23,48 @@ class ModelMethod < Parameter
 	 method:ModelMethodType
 end
 
+abstract class Operator < Parameter
+end
+
+abstract class Binary < Operator
+end
+
+class Less < Binary
+end
+
+class LessEqual < Binary
+end
+
+class Greather < Binary
+end
+
+class GreatherEqual < Binary
+end
+
+class Equeal < Binary
+end
+
+abstract class Unary < Operator
+end
+
+class Missing < Unary
+end
+
+class Not < Unary
+end
+
+abstract class NoOperands < Operator 
+end
+
+class Then < NoOperands
+end
+
+class False < NoOperands
+end
+
+class True < NoOperands
+end
+
 class FilterType < Parameter
 end
 
