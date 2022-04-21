@@ -26,43 +26,31 @@ end
 abstract class Operator < Parameter
 end
 
-abstract class Binary < Operator
+abstract class BinaryOp < Operator
 end
 
-class Less < Binary
+class LessOp < BinaryOp
 end
 
-class LessEqual < Binary
+class LessEqualOp < BinaryOp
 end
 
-class Greather < Binary
+class GreatherOp < BinaryOp
 end
 
-class GreatherEqual < Binary
+class GreatherEqualOp < BinaryOp
 end
 
-class Equeal < Binary
+class EqualOp < BinaryOp
 end
 
-abstract class Unary < Operator
+abstract class UnaryOp < Operator
 end
 
-class Missing < Unary
+class MissingOp < UnaryOp
 end
 
-class Not < Unary
-end
-
-abstract class NoOperands < Operator 
-end
-
-class Then < NoOperands
-end
-
-class False < NoOperands
-end
-
-class True < NoOperands
+class NotOP < UnaryOp
 end
 
 class FilterType < Parameter
@@ -256,8 +244,8 @@ aggregation DSData between
 end
 
 aggregation JobDop between
-	Job [1]
-	DataOperation [1..*]
+	Job [1] role jobDop
+	DataOperation [1..*] role dopJob
 end
 
 aggregation JobJob between
@@ -275,6 +263,31 @@ aggregation  OutputPort between
 	PortType [1..*] role outputPort
 end
 
+aggregation LeftOperand between
+	BinaryOp [1] role binaryOpLeftOp
+	ColumnParam [1] role leftOperandBinary
+end
+
+aggregation RightOperand between
+	BinaryOp [1] role binaryOpRightOp
+	Primitive [1] role rightOperandBinary
+end
+
+
+aggregation BinaryPrimitive between
+	BinaryOp [1] role binaryOpResult
+	Primitive [1] role resultBinary
+end
+
+aggregation Operand between
+	UnaryOp [1] role unaryOpLeftOp
+	ColumnParam [1] role leftOperandUnary
+end
+
+aggregation UnaryPrimitive between
+	UnaryOp [1] role unaryOpResult
+	Primitive [1] role resultUnary
+end
 
 association ColumnParams between
     ColumnParam[1]
