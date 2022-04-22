@@ -5,6 +5,7 @@ enum ClassificationAlgorithmType{DecisionTree, SVM, LogisticRegression, RandomFo
 enum RegressionAlgorithmType{DecissionTreeRegresor, SVR, LinearRegression, RandomForestRegresor}
 enum ClusteringAlgorithmType{KMeans, KModes, HiererchicalClustering}
 enum SortType{ASC, DESC}
+enum PrimitiveType{BoolPr, IntPr, FloatPr, StringPr}
 
 abstract class Parameter
   attributes
@@ -17,6 +18,9 @@ class ColumnParam < Parameter
 end
 
 class Primitive < Parameter
+  attributes
+	value:String
+	type:PrimitiveType
 end
 
 class ModelMethod < Parameter
@@ -87,26 +91,6 @@ class RangeFloat < Range
 	attributes
 	 min:Real
 	 max:Real
-end
-
-class Bool < Primitive
-	attributes
-	 value:Boolean
-end
-
-class Float < Primitive
-	attributes
-	 value:Real
-end
-
-class Int < Primitive
-	attributes
-	 value:Integer
-end
-
-class Text < Primitive
-	attributes
-	 value:String
 end
 
 abstract class PortType
@@ -197,6 +181,9 @@ class Binarizer < DataOperation
 end
 
 class Sorter < DataOperation
+end
+
+class RuleBasedRowFilter < DataOperation
 end
 
 class Column
@@ -365,17 +352,18 @@ context ImbalancedLearn
 				column.uri)->asSequence()->at(1) and d.value <> v)->size())
 
 context Split
-	inv pre_sizeParam: self.parameter->select(p|p.oclIsTypeOf(Float) and p.name = 'size').oclAsType(Float)->collect(value)->asSequence()->at(1) < 1
+	inv pre_sizeParam: self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = 'size').oclAsType(Primitive)->select(p | p.type = PrimitiveType::FloatPr)->collect(value)->asSequence()->at(1).toReal() < 1
 	inv pre_stratifiedCol:
-		if (self.parameter->select(p | p.oclIsTypeOf(Bool) and p.name='stratified').oclAsType(Bool)->collect(value)->asSequence()->at(1) = true)
+		if (self.parameter->select(p | p.oclIsTypeOf(Primitive) and p.name='stratified').oclAsType(Primitive)->select(p | p.type = PrimitiveType::BoolPr)->collect(value)->asSequence()->at(1).toBoolean() = true)
 		then
 			self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->size()=1 and self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1))
 		else
 			true
 		endif
-	inv inv_first_number_rows: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->asSequence()->at(1).oclAsType(Dataset).rows->size() = ((self.parameter->select(p | p.name = 'size' and p.oclIsTypeOf(Float)).oclAsType(Float)->collect(value)->asSequence()->at(1)) * self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset).rows->size()).round()
+	inv inv_first_number_rows: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->asSequence()->at(1).oclAsType(Dataset).rows->size() = (
+		(self.parameter->select(p | p.name = 'size' and p.oclIsTypeOf(Primitive)).oclAsType(Primitive)->collect(value)->asSequence()->at(1).toReal()) * self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset).rows->size()).round()
 	inv inv_second_number_rows: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->asSequence()->at(2).oclAsType(Dataset).rows->size() = ( 
-		(1 - (self.parameter->select(p | p.name = 'size' and p.oclIsTypeOf(Float)).oclAsType(Float)->collect(value)->asSequence()->at(1))) * 
+		(1 - (self.parameter->select(p | p.name = 'size' and p.oclIsTypeOf(Primitive)).oclAsType(Primitive)->collect(value)->asSequence()->at(1).toReal)) * 
 		self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset).rows->size()
 		).round()
 	inv post_two_datasets: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->size() = 2
@@ -410,17 +398,17 @@ context Concatenate
 	
 
 context ConstantValueColumn
-	inv pre_noColumnDataset: self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select(c | c.name = self.parameter->select(p | p.oclIsTypeOf(Text) and p.name = 'name').oclAsType(Text)->asSequence()->at(1).value)->size() = 0
-	inv post_columnDataset: self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select(c | c.name = self.parameter->select(p | p.oclIsTypeOf(Text) and p.name = 'name').oclAsType(Text)->asSequence()->at(1).value)->size() = 1
-	inv inv_makeCorrectCreation: self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select(c | c.name = self.parameter->select(p | p.oclIsTypeOf(Text) and p.name = 'name').oclAsType(Text)->asSequence()->at(1).value).data->collect(
-		value)->forAll(v | v = (self.parameter->select(p | p.oclIsTypeOf(Text) and p.name = 'value').oclAsType(Text)->asSequence()->at(1).value))
+	inv pre_noColumnDataset: self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select(c | c.name = self.parameter->select(p | p.oclIsTypeOf(Primitive) and p.name = 'name').oclAsType(Primitive)->asSequence()->at(1).value)->size() = 0
+	inv post_columnDataset: self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select(c | c.name = self.parameter->select(p | p.oclIsTypeOf(Primitive) and p.name = 'name').oclAsType(Primitive)->asSequence()->at(1).value)->size() = 1
+	inv inv_makeCorrectCreation: self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select(c | c.name = self.parameter->select(p | p.oclIsTypeOf(Primitive) and p.name = 'name').oclAsType(Primitive)->asSequence()->at(1).value).data->collect(
+		value)->forAll(v | v = (self.parameter->select(p | p.oclIsTypeOf(Primitive) and p.name = 'value').oclAsType(Primitive)->asSequence()->at(1).value))
 
 context ColumnRename
 	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
-	inv post_newColumnDset: self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->collect(name)->includes(self.parameter->select(p | p.name = 'newName' and p.oclIsTypeOf(Text))->asSequence()->at(1).name)
+	inv post_newColumnDset: self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->collect(name)->includes(self.parameter->select(p | p.name = 'newName' and p.oclIsTypeOf(Primitive))->asSequence()->at(1).name)
 	inv post_noColumnDset: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->asSequence->at(1).oclAsType(Dataset).cols->forAll(col|col.name<>self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.name)->asSequence()->at(1))
 	inv inv_makeCorrectRename: self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select(c | c.uri = self.parameter->select(p | p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(
-		1).column.uri).data = self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select (c | c.name = self.parameter->select(p | p.name = 'newName' and p.oclIsTypeOf(Text))->asSequence()->at(1).name).data
+		1).column.uri).data = self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).cols->select (c | c.name = self.parameter->select(p | p.name = 'newName' and p.oclIsTypeOf(Primitive))->asSequence()->at(1).name).data
 
 context NumberToString
 	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
@@ -498,4 +486,9 @@ context Sorter
 			else
 				let sortDataSeq = sortData->asSequence()->reverse() in
 					sortData->iterate(elem; index : Integer = 1 | if elem = sortDataSeq->at(index) then index + 1 else index endif) = sortData->size()
-			endif				
+			endif
+
+context RuleBasedRowFilter
+	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
+	inv pre_define_operator: self.parameter->select(p | p.oclIsTypeOf(Operator))->size() > 1
+	
