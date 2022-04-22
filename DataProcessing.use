@@ -6,6 +6,8 @@ enum RegressionAlgorithmType{DecissionTreeRegresor, SVR, LinearRegression, Rando
 enum ClusteringAlgorithmType{KMeans, KModes, HiererchicalClustering}
 enum SortType{ASC, DESC}
 enum PrimitiveType{BoolPr, IntPr, FloatPr, StringPr}
+enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
+
 
 abstract class Parameter
   attributes
@@ -31,6 +33,14 @@ end
 class SortCriteria < Parameter
 	attributes
 	 sortType:SortType
+end
+
+class BinParam < Parameter
+	attributes
+		binValue:String
+		leftMargin:Real
+		rightMargin:Real
+		closure:ClosureType
 end
 
 abstract class Operator < Parameter
@@ -184,6 +194,9 @@ class Sorter < DataOperation
 end
 
 class RuleBasedRowFilter < DataOperation
+end
+
+class Discretize < DataOperation
 end
 
 class Column
@@ -500,4 +513,28 @@ context RuleBasedRowFilter
 			else
 				false
 			endif
+
+context Discretize
+	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
+	inv pre_derivedField: self.parameter->select(p | p.oclIsTypeOf(Primitive) and p.name = 'derivedField')->size() = 1
+	inv pre_makeCorrectBin: self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).data->select(
+		d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->forAll
+		(
+			d | let binName = self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).data->select( 
+				d2 | d2.col.name = self.parameter->select(p | p.oclIsTypeOf(Primitive) and p.name = 'derivedField').oclAsType(Primitive)->asSequence()->at(1).value
+				and d2.row.uri = d.row.uri)->asSequence()->at(1).value in
+				let bin = self.parameter->select(p | p.oclIsTypeOf(BinParam)).oclAsType(BinParam)->select(b | b.binValue = binName)->asSequence()->at(1) in
+					if bin.closure = ClosureType::closedClosed then
+						d.value.toReal() >= bin.leftMargin and d.value.toReal() <= bin.rightMargin
+						else if bin.closure = ClosureType::closedOpen then
+							d.value.toReal() >= bin.leftMargin and d.value.toReal() < bin.rightMargin
+							else if bin.closure = ClosureType::openClosed then
+								d.value.toReal() > bin.leftMargin and d.value.toReal() <= bin.rightMargin
+								else if bin.closure = ClosureType::openOpen then
+									d.value.toReal() > bin.leftMargin and d.value.toReal() < bin.rightMargin
+								else false endif
+							endif
+						endif
+					endif
+		)
 		
