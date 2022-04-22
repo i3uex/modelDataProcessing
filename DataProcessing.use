@@ -4,6 +4,7 @@ enum ModelMethodType{Train, Test}
 enum ClassificationAlgorithmType{DecisionTree, SVM, LogisticRegression, RandomForest}
 enum RegressionAlgorithmType{DecissionTreeRegresor, SVR, LinearRegression, RandomForestRegresor}
 enum ClusteringAlgorithmType{KMeans, KModes, HiererchicalClustering}
+enum SortType{ASC, DESC}
 
 abstract class Parameter
   attributes
@@ -21,6 +22,11 @@ end
 class ModelMethod < Parameter
 	attributes
 	 method:ModelMethodType
+end
+
+class SortCriteria < Parameter
+	attributes
+	 sortType:SortType
 end
 
 abstract class Operator < Parameter
@@ -188,6 +194,9 @@ class RowSplitter < DataOperation
 end
 
 class Binarizer < DataOperation
+end
+
+class Sorter < DataOperation
 end
 
 class Column
@@ -477,3 +486,16 @@ context RowSplitter
 				else false endif
 			else false endif
 		else false endif
+
+context Sorter
+	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
+	inv pre_define_sortType: self.parameter->select(p|p.oclIsTypeOf(SortCriteria))->size() = 1
+	inv post_makeCorrectSort:
+		let sortData = self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).data->select(d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->collect(value) in
+			if self.parameter->select(p | p.oclIsTypeOf(SortCriteria)).oclAsType(SortCriteria)->collect(sortType)->asSequence()->at(1) = SortType::ASC then
+				let sortDataSeq = sortData->asSequence() in
+					sortData->iterate(elem; index : Integer = 1 | if elem = sortDataSeq->at(index) then index + 1 else index endif) = sortData->size()
+			else
+				let sortDataSeq = sortData->asSequence()->reverse() in
+					sortData->iterate(elem; index : Integer = 1 | if elem = sortDataSeq->at(index) then index + 1 else index endif) = sortData->size()
+			endif				
