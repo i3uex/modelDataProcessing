@@ -74,7 +74,11 @@ end
 class EqualOp < BinaryOp
 end
 
+class MathFunction < Parameter
+end
 
+class Division < MathFunction
+end
 
 class FilterType < Parameter
 end
@@ -208,6 +212,9 @@ end
 class Normalizer < DataOperation
 end
 
+class MathFormula < DataOperation
+end
+
 class Column
    attributes
      uri:Integer
@@ -311,6 +318,15 @@ aggregation RuleOperator between
 	UnaryOp [1] role operator
 end
 
+aggregation MathFunctionColOp between
+	MathFunction [1]
+	ColumnParam [1]
+end
+
+aggregation MathFunctionPrimOp between
+	MathFunction [1]
+	Primitive [1]
+end
 
 
 constraints
@@ -581,3 +597,19 @@ context Normalizer
 	inv pre_columnsTypeNumerical: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence()->at(1).column.type = ValueType::Int or self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence()->at(1).column.type = ValueType::Float		
 	inv post_makeCorrectNormalizer: self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence()->at(1).data->select(
 		d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->collect(value)->forAll(v | v.toReal() >= 0 and v.toReal()<=1)
+
+context MathFormula
+	inv pre_defineFunction: self.parameter->select(p | p.oclIsKindOf(MathFunction))->size() = 1
+	inv pre_functionColumnDset: self.parameter->select(p | p.oclIsTypeOf(MathFunction)).oclAsType(MathFunction)->asSequence->at(1).columnParam.column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
+	inv inv_makeCorrectFormula:
+		if self.parameter->select(p | p.oclIsTypeOf(Division))->size = 1 then
+			let primitiveOperandValue = self.parameter->select(p | p.oclIsTypeOf(MathFunction)).oclAsType(MathFunction)->asSequence->at(1).primitive.value in
+			self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(
+					Dataset)->asSequence()->at(1).data->select(d | d.col.uri = self.parameter->select(
+						p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->forAll(d | 
+						self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(
+						Dataset)->asSequence()->at(1).data->select(d2 | d2.col.uri = self.parameter->select(
+						p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri and d2.row.uri = d.row.uri)->asSequence()->at(1).value = d.value.toReal() / primitiveOperandValue.toReal()
+
+						)
+		else false endif
