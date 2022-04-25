@@ -43,10 +43,20 @@ class BinParam < Parameter
 		closure:ClosureType
 end
 
-abstract class Operator < Parameter
+abstract class Rule < Parameter
 end
 
-abstract class BinaryOp < Operator
+
+abstract class UnaryOp
+end
+
+class MissingOp < UnaryOp
+end
+
+class NotOP < UnaryOp
+end
+
+abstract class BinaryOp < UnaryOp
 end
 
 class LessOp < BinaryOp
@@ -64,14 +74,7 @@ end
 class EqualOp < BinaryOp
 end
 
-abstract class UnaryOp < Operator
-end
 
-class MissingOp < UnaryOp
-end
-
-class NotOP < UnaryOp
-end
 
 class FilterType < Parameter
 end
@@ -278,30 +281,19 @@ aggregation  OutputPort between
 	PortType [1..*] role outputPort
 end
 
-aggregation LeftOperand between
-	BinaryOp [1] role binaryOpLeftOp
-	ColumnParam [1] role leftOperandBinary
+aggregation ColOperand between
+	UnaryOp [1] role unaryOp
+	ColumnParam [1] role colOperand
 end
 
-aggregation RightOperand between
-	BinaryOp [1] role binaryOpRightOp
-	Primitive [1] role rightOperandBinary
+aggregation ResultOperand between
+	UnaryOp [1] role unaryOp
+	Primitive [1] role resultOperand
 end
 
-
-aggregation BinaryPrimitive between
-	BinaryOp [1] role binaryOpResult
-	Primitive [1] role resultBinary
-end
-
-aggregation Operand between
-	UnaryOp [1] role unaryOpLeftOp
-	ColumnParam [1] role leftOperandUnary
-end
-
-aggregation UnaryPrimitive between
-	UnaryOp [1] role unaryOpResult
-	Primitive [1] role resultUnary
+aggregation CompareOperand between
+	BinaryOp [1]
+	Primitive [1] role compareOperand
 end
 
 association ColumnParams between
@@ -312,6 +304,11 @@ end
 aggregation DopParam between
 	DataOperation [1]
 	Parameter [1..*]
+end
+
+aggregation RuleOperator between
+	Rule[1]
+	UnaryOp [1] role operator
 end
 
 
@@ -510,17 +507,21 @@ context Sorter
 
 context RuleBasedRowFilter
 	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
-	inv pre_define_operator: self.parameter->select(p | p.oclIsTypeOf(Operator))->size() > 1
+	inv pre_defineRule: self.parameter->select(p | p.oclIsTypeOf(Rule))->size() > 1
 	inv post_makeCorrectFilter:
-		let filterValues = self.parameter->select(p | p.oclIsTypeOf(Primitive)).oclAsType(Primitive)->collect(value) in
-			if self.parameter->select(p | p.oclIsTypeOf(Operator))->asSequence()->at(1).oclIsTypeOf(EqualOp) then
-				self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(
-					Dataset)->asSequence()->at(1).data->select(d | d.col.uri = self.parameter->select(
-						p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->collect(value)->forAll(v | filterValues->includes(v))
-			else
-				false
-			endif
-		
+		if self.parameter->select(p | p.oclIsKindOf(Rule))->asSequence()->at(1).oclAsType(Rule).operator.oclIsTypeOf(BinaryOp) then
+			let filterValues = self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator.oclAsType(BinaryOp)->collect(compareOperand.value) in
+				if self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator.oclAsType(BinaryOp)->asSequence()->at(1).oclIsTypeOf(EqualOp) then
+					self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(
+						Dataset)->asSequence()->at(1).data->select(d | d.col.uri = self.parameter->select(
+							p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->collect(value)->forAll(v | filterValues->includes(v))
+				else
+					false
+				endif
+		else
+			false
+		endif
+			
 context Discretize
 	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
 	inv pre_derivedField: self.parameter->select(p | p.oclIsTypeOf(Primitive) and p.name = 'derivedField')->size() = 1
@@ -547,10 +548,10 @@ context Discretize
 
 context RuleEngine
 	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
-	inv pre_define_operator: self.parameter->select(p | p.oclIsTypeOf(Operator))->size() > 1
+	inv pre_defineRule: self.parameter->select(p | p.oclIsTypeOf(Rule))->size() > 1
 	inv post_makeCorrectEngine:
-		if self.parameter->select(p | p.oclIsTypeOf(Operator))->asSequence()->at(1).oclIsTypeOf(MissingOp) then
-			let imputeValue = self.parameter->select(p | p.oclIsTypeOf(Primitive)).oclAsType(Primitive)->asSequence()->at(1).value in
+		if self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator->asSequence()->at(1).oclIsTypeOf(MissingOp) then
+			let imputeValue = self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator->asSequence()->at(1).oclAsType(UnaryOp).resultOperand.value in
 				self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(
 					Dataset)->asSequence()->at(1).data->select(d | d.col.uri = self.parameter->select(
 						p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri and (d.value.isUndefined() or self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(
@@ -560,9 +561,9 @@ context RuleEngine
 							p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->select(d2 | d2.row.uri = uri)->asSequence()->at(1).value = imputeValue
 						)
 		else 
-			if self.parameter->select(p | p.oclIsTypeOf(Operator))->asSequence()->at(1).oclIsTypeOf(EqualOp) then
-				let rightOpValue = self.parameter->select(p | p.oclIsTypeOf(Operator))->asSequence()->at(1).oclAsType(BinaryOp).rightOperandBinary.value in
-					let binaryOpResult = self.parameter->select(p | p.oclIsTypeOf(Operator))->asSequence()->at(1).oclAsType(BinaryOp).resultBinary.value in
+			if self.parameter->select(p | p.oclIsTypeOf(Rule))->asSequence()->at(1).oclAsType(Rule).operator.oclIsTypeOf(EqualOp) then
+				let rightOpValue = self.parameter->select(p | p.oclIsTypeOf(Rule))->asSequence()->at(1).oclAsType(Rule).operator.oclAsType(BinaryOp).compareOperand.value in
+					let binaryOpResult = self.parameter->select(p | p.oclIsTypeOf(Rule))->asSequence()->at(1).oclAsType(Rule).operator.oclAsType(BinaryOp).resultOperand.value in
 						self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(
 						Dataset)->asSequence()->at(1).data->select(d | d.col.uri = self.parameter->select(
 						p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri and d.value = rightOpValue)->collect(row.uri)->forAll(
