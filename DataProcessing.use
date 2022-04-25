@@ -74,6 +74,12 @@ end
 class EqualOp < BinaryOp
 end
 
+class Label < Parameter
+	attributes
+		label:String
+		value:Integer
+end
+
 class MathFunction < Parameter
 end
 
@@ -158,7 +164,7 @@ abstract class DataOperation < DataProcessingElement
 	 make()
 end
 
-class GetDummyVariables < DataOperation
+class OneHot < DataOperation
 end
 
 class RemoveColumns < DataOperation
@@ -170,7 +176,7 @@ end
 class Split < DataOperation
 end
 
-class StringToNumerical < DataOperation
+class StringToNumber < DataOperation
 end
 
 class Binning < DataOperation
@@ -213,6 +219,9 @@ class Normalizer < DataOperation
 end
 
 class MathFormula < DataOperation
+end
+
+class LabelEncoder < DataOperation
 end
 
 class Column
@@ -331,7 +340,7 @@ end
 
 constraints
 
-context GetDummyVariables
+context OneHot
 	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1))
 	inv pre_columnType: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.type = ValueType::Categorical)
 	inv pre_columnId: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->forAll(cp | cp.column.id = false)
@@ -400,7 +409,7 @@ context Split
 		).round()
 	inv post_two_datasets: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->size() = 2
 
-context StringToNumerical
+context StringToNumber
 	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
 	inv pre_columnTypeString: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence()->at(1).column.type = ValueType::String
 	inv post_columnDset: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->asSequence->at(1).oclAsType(Dataset).cols.name->includes(self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.name)
@@ -613,3 +622,17 @@ context MathFormula
 
 						)
 		else false endif
+
+context LabelEncoder
+	inv pre_columnDset: self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.dataset = self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1)
+	inv post_labelEncode: self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(
+		Dataset)->asSequence()->at(1).data->select(d | d.col.uri = self.parameter->select(
+			p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->forAll(d | self.parameter->select(p | p.oclIsTypeOf(Label)).oclAsType(Label)->collect(value)->includes(d.value.toInteger()))
+	inv inv_makeCorrectEncoder: self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(
+		Dataset)->asSequence()->at(1).data->select(d | d.col.uri = self.parameter->select(
+			p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri)->forAll(
+				d |self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(
+				Dataset)->asSequence()->at(1).data->select(d2 | d2.col.uri = self.parameter->select(
+				p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(1).column.uri and d2.row.uri = d.row.uri)->asSequence()->at(1).value.toInteger() = 
+				self.parameter->select(p | p.oclIsTypeOf(Label)).oclAsType(Label)->select(l | l.label = d.value)->asSequence()->at(1).value
+			)
