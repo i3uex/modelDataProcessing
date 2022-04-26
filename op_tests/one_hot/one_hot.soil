@@ -4,3 +4,6 @@
 !insert (cp1, COLOR) into ColumnParams
 !insert(oneHot, onehot_input) into  InputPort
 !insert(oneHot, onehot_output) into  OutputPort
+!create ap: ColumnParam                                                                                       
+!insert(oneHot, ap) into DopParam                                                                             
+!insert (ap, COLOR) into ColumnParams
