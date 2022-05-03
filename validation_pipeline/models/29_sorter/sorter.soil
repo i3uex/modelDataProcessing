@@ -1,0 +1,13 @@
+!create sorter:Sorter
+!insert(sorter, sorter_input) into InputPort
+
+!create cp:ColumnParam
+!insert(cp, NumberOfTime6089DaysPastDueNotWorse) into ColumnParams
+
+!create sortCriteria:SortCriteria
+!sortCriteria.sortType:= SortType::DESC
+
+!insert(sorter, cp) into DopParam
+!insert(sorter, sortCriteria) into DopParam
+
+!insert(sorter, sorter_output) into OutputPort

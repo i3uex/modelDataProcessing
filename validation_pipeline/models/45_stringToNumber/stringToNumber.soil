@@ -1,0 +1,6 @@
+!create stringToNumber: StringToNumber
+!insert(stringToNumber, stringToNumber_input) into InputPort
+!create cp:ColumnParam
+!insert(cp, RevolvingUtilizationOfUnsecuredLines) into ColumnParams
+!insert(stringToNumber, cp) into DopParam
+!insert(stringToNumber, stringToNumber_output) into  OutputPort

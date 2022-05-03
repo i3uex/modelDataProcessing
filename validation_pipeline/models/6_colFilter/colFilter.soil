@@ -1,0 +1,6 @@
+!create removeCol:RemoveColumns
+!insert(removeCol, colFilter_input) into  InputPort
+!create cp:ColumnParam
+!insert (cp, MonthlyIncomeBinned) into ColumnParams
+!insert(removeCol, cp) into DopParam
+!insert(removeCol, colFilter_output) into  OutputPort

@@ -1,0 +1,6 @@
+!create numberToString: NumberToString
+!insert(numberToString, numberToString_input) into InputPort
+!create cp:ColumnParam
+!insert(cp, SeriousDlqin2yrs) into ColumnParams
+!insert(numberToString, cp) into DopParam
+!insert(numberToString, numberToString_output) into  OutputPort

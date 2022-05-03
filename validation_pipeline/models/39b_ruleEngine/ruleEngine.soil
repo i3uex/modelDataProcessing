@@ -1,0 +1,41 @@
+!create ruleEngine:RuleEngine
+!insert(ruleEngine, ruleEngine_input) into  InputPort
+
+!create cp:ColumnParam
+!insert(cp, NumberOfTimes90DaysLate) into ColumnParams
+
+!create rule:Rule
+!create equal:EqualOp
+!insert(equal, cp) into ColOperand
+
+!create valueCompare:Primitive
+!valueCompare.value:= '98'
+!valueCompare.type:=PrimitiveType::IntPr
+!create valueReplace:Primitive
+!valueReplace.value:=''
+!valueReplace.type:=PrimitiveType::StringPr
+
+!insert(equal, valueReplace) into ResultOperand
+!insert(equal, valueCompare) into CompareOperand
+
+!insert(rule, equal) into RuleOperator
+!insert(ruleEngine, rule) into DopParam
+
+!create rule1:Rule
+!create equal1:EqualOp
+!insert(equal1, cp) into ColOperand
+
+!create valueCompare1:Primitive
+!valueCompare1.value:= '96'
+!valueCompare1.type:=PrimitiveType::IntPr
+
+
+!insert(equal1, valueReplace) into ResultOperand
+!insert(equal1, valueCompare1) into CompareOperand
+
+!insert(rule1, equal1) into RuleOperator
+!insert(ruleEngine, rule1) into DopParam
+
+
+!insert(ruleEngine, ruleEngine_output) into OutputPort
+

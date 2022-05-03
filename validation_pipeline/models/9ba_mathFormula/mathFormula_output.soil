@@ -1,0 +1,948 @@
+!create mathFormula_output:Dataset
+!create SeriousDlqin2yrs1:Column
+!SeriousDlqin2yrs1.uri:=0
+!SeriousDlqin2yrs1.name:='SeriousDlqin2yrs'
+!SeriousDlqin2yrs1.type:=ValueType::Int
+!SeriousDlqin2yrs1.target:=true
+!SeriousDlqin2yrs1.id:=false
+!insert (mathFormula_output,SeriousDlqin2yrs1) into DSCol
+!create SeriousDlqin2yrs1_data:Data
+!SeriousDlqin2yrs1_data.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data) into DSData
+!insert (SeriousDlqin2yrs1_data,SeriousDlqin2yrs1) into DataCol
+!create row15:Row
+!row15.uri:=0
+!insert (mathFormula_output,row15) into DSRow
+!insert (SeriousDlqin2yrs1_data, row15) into DataRow
+!create SeriousDlqin2yrs1_data1:Data
+!SeriousDlqin2yrs1_data1.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data1) into DSData
+!insert (SeriousDlqin2yrs1_data1,SeriousDlqin2yrs1) into DataCol
+!create row16:Row
+!row16.uri:=1
+!insert (mathFormula_output,row16) into DSRow
+!insert (SeriousDlqin2yrs1_data1, row16) into DataRow
+!create SeriousDlqin2yrs1_data2:Data
+!SeriousDlqin2yrs1_data2.value:='1'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data2) into DSData
+!insert (SeriousDlqin2yrs1_data2,SeriousDlqin2yrs1) into DataCol
+!create row17:Row
+!row17.uri:=2
+!insert (mathFormula_output,row17) into DSRow
+!insert (SeriousDlqin2yrs1_data2, row17) into DataRow
+!create SeriousDlqin2yrs1_data3:Data
+!SeriousDlqin2yrs1_data3.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data3) into DSData
+!insert (SeriousDlqin2yrs1_data3,SeriousDlqin2yrs1) into DataCol
+!create row18:Row
+!row18.uri:=3
+!insert (mathFormula_output,row18) into DSRow
+!insert (SeriousDlqin2yrs1_data3, row18) into DataRow
+!create SeriousDlqin2yrs1_data4:Data
+!SeriousDlqin2yrs1_data4.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data4) into DSData
+!insert (SeriousDlqin2yrs1_data4,SeriousDlqin2yrs1) into DataCol
+!create row19:Row
+!row19.uri:=4
+!insert (mathFormula_output,row19) into DSRow
+!insert (SeriousDlqin2yrs1_data4, row19) into DataRow
+!create SeriousDlqin2yrs1_data5:Data
+!SeriousDlqin2yrs1_data5.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data5) into DSData
+!insert (SeriousDlqin2yrs1_data5,SeriousDlqin2yrs1) into DataCol
+!create row20:Row
+!row20.uri:=5
+!insert (mathFormula_output,row20) into DSRow
+!insert (SeriousDlqin2yrs1_data5, row20) into DataRow
+!create SeriousDlqin2yrs1_data6:Data
+!SeriousDlqin2yrs1_data6.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data6) into DSData
+!insert (SeriousDlqin2yrs1_data6,SeriousDlqin2yrs1) into DataCol
+!create row21:Row
+!row21.uri:=6
+!insert (mathFormula_output,row21) into DSRow
+!insert (SeriousDlqin2yrs1_data6, row21) into DataRow
+!create SeriousDlqin2yrs1_data7:Data
+!SeriousDlqin2yrs1_data7.value:='1'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data7) into DSData
+!insert (SeriousDlqin2yrs1_data7,SeriousDlqin2yrs1) into DataCol
+!create row22:Row
+!row22.uri:=7
+!insert (mathFormula_output,row22) into DSRow
+!insert (SeriousDlqin2yrs1_data7, row22) into DataRow
+!create SeriousDlqin2yrs1_data8:Data
+!SeriousDlqin2yrs1_data8.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data8) into DSData
+!insert (SeriousDlqin2yrs1_data8,SeriousDlqin2yrs1) into DataCol
+!create row23:Row
+!row23.uri:=8
+!insert (mathFormula_output,row23) into DSRow
+!insert (SeriousDlqin2yrs1_data8, row23) into DataRow
+!create SeriousDlqin2yrs1_data9:Data
+!SeriousDlqin2yrs1_data9.value:='1'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data9) into DSData
+!insert (SeriousDlqin2yrs1_data9,SeriousDlqin2yrs1) into DataCol
+!create row24:Row
+!row24.uri:=9
+!insert (mathFormula_output,row24) into DSRow
+!insert (SeriousDlqin2yrs1_data9, row24) into DataRow
+!create SeriousDlqin2yrs1_data10:Data
+!SeriousDlqin2yrs1_data10.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data10) into DSData
+!insert (SeriousDlqin2yrs1_data10,SeriousDlqin2yrs1) into DataCol
+!create row25:Row
+!row25.uri:=10
+!insert (mathFormula_output,row25) into DSRow
+!insert (SeriousDlqin2yrs1_data10, row25) into DataRow
+!create SeriousDlqin2yrs1_data11:Data
+!SeriousDlqin2yrs1_data11.value:='0'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data11) into DSData
+!insert (SeriousDlqin2yrs1_data11,SeriousDlqin2yrs1) into DataCol
+!create row26:Row
+!row26.uri:=11
+!insert (mathFormula_output,row26) into DSRow
+!insert (SeriousDlqin2yrs1_data11, row26) into DataRow
+!create SeriousDlqin2yrs1_data12:Data
+!SeriousDlqin2yrs1_data12.value:='1'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data12) into DSData
+!insert (SeriousDlqin2yrs1_data12,SeriousDlqin2yrs1) into DataCol
+!create row27:Row
+!row27.uri:=12
+!insert (mathFormula_output,row27) into DSRow
+!insert (SeriousDlqin2yrs1_data12, row27) into DataRow
+!create SeriousDlqin2yrs1_data13:Data
+!SeriousDlqin2yrs1_data13.value:='1'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data13) into DSData
+!insert (SeriousDlqin2yrs1_data13,SeriousDlqin2yrs1) into DataCol
+!create row28:Row
+!row28.uri:=13
+!insert (mathFormula_output,row28) into DSRow
+!insert (SeriousDlqin2yrs1_data13, row28) into DataRow
+!create SeriousDlqin2yrs1_data14:Data
+!SeriousDlqin2yrs1_data14.value:='1'
+!insert (mathFormula_output,SeriousDlqin2yrs1_data14) into DSData
+!insert (SeriousDlqin2yrs1_data14,SeriousDlqin2yrs1) into DataCol
+!create row29:Row
+!row29.uri:=14
+!insert (mathFormula_output,row29) into DSRow
+!insert (SeriousDlqin2yrs1_data14, row29) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1:Column
+!RevolvingUtilizationOfUnsecuredLines1.uri:=1
+!RevolvingUtilizationOfUnsecuredLines1.name:='RevolvingUtilizationOfUnsecuredLines'
+!RevolvingUtilizationOfUnsecuredLines1.type:=ValueType::Float
+!RevolvingUtilizationOfUnsecuredLines1.target:=false
+!RevolvingUtilizationOfUnsecuredLines1.id:=false
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1) into DSCol
+!create RevolvingUtilizationOfUnsecuredLines1_data:Data
+!RevolvingUtilizationOfUnsecuredLines1_data.value:='0.95'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data, row15) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data1:Data
+!RevolvingUtilizationOfUnsecuredLines1_data1.value:='0.88'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data1) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data1,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data1, row16) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data2:Data
+!RevolvingUtilizationOfUnsecuredLines1_data2.value:='0.7384615385'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data2) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data2,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data2, row17) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data3:Data
+!RevolvingUtilizationOfUnsecuredLines1_data3.value:='0.61'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data3) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data3,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data3, row18) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data4:Data
+!RevolvingUtilizationOfUnsecuredLines1_data4.value:='0.55'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data4) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data4,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data4, row19) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data5:Data
+!RevolvingUtilizationOfUnsecuredLines1_data5.value:='0.5'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data5) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data5,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data5, row20) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data6:Data
+!RevolvingUtilizationOfUnsecuredLines1_data6.value:='0.5'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data6) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data6,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data6, row21) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data7:Data
+!RevolvingUtilizationOfUnsecuredLines1_data7.value:='0.2978488372'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data7) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data7,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data7, row22) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data8:Data
+!RevolvingUtilizationOfUnsecuredLines1_data8.value:='0.18'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data8) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data8,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data8, row23) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data9:Data
+!RevolvingUtilizationOfUnsecuredLines1_data9.value:='0.1454091816'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data9) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data9,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data9, row24) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data10:Data
+!RevolvingUtilizationOfUnsecuredLines1_data10.value:='0.1412718204'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data10) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data10,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data10, row25) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data11:Data
+!RevolvingUtilizationOfUnsecuredLines1_data11.value:='0.14'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data11) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data11,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data11, row26) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data12:Data
+!RevolvingUtilizationOfUnsecuredLines1_data12.value:='0.1246274697'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data12) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data12,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data12, row27) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data13:Data
+!RevolvingUtilizationOfUnsecuredLines1_data13.value:='0.1203711635'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data13) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data13,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data13, row28) into DataRow
+!create RevolvingUtilizationOfUnsecuredLines1_data14:Data
+!RevolvingUtilizationOfUnsecuredLines1_data14.value:='0.1138522954'
+!insert (mathFormula_output,RevolvingUtilizationOfUnsecuredLines1_data14) into DSData
+!insert (RevolvingUtilizationOfUnsecuredLines1_data14,RevolvingUtilizationOfUnsecuredLines1) into DataCol
+!insert (RevolvingUtilizationOfUnsecuredLines1_data14, row29) into DataRow
+!create age1:Column
+!age1.uri:=2
+!age1.name:='age'
+!age1.type:=ValueType::Int
+!age1.target:=false
+!age1.id:=false
+!insert (mathFormula_output,age1) into DSCol
+!create age1_data:Data
+!age1_data.value:='55'
+!insert (mathFormula_output,age1_data) into DSData
+!insert (age1_data,age1) into DataCol
+!insert (age1_data, row15) into DataRow
+!create age1_data1:Data
+!age1_data1.value:='57'
+!insert (mathFormula_output,age1_data1) into DSData
+!insert (age1_data1,age1) into DataCol
+!insert (age1_data1, row16) into DataRow
+!create age1_data2:Data
+!age1_data2.value:='53'
+!insert (mathFormula_output,age1_data2) into DSData
+!insert (age1_data2,age1) into DataCol
+!insert (age1_data2, row17) into DataRow
+!create age1_data3:Data
+!age1_data3.value:='56'
+!insert (mathFormula_output,age1_data3) into DSData
+!insert (age1_data3,age1) into DataCol
+!insert (age1_data3, row18) into DataRow
+!create age1_data4:Data
+!age1_data4.value:='47'
+!insert (mathFormula_output,age1_data4) into DSData
+!insert (age1_data4,age1) into DataCol
+!insert (age1_data4, row19) into DataRow
+!create age1_data5:Data
+!age1_data5.value:='49'
+!insert (mathFormula_output,age1_data5) into DSData
+!insert (age1_data5,age1) into DataCol
+!insert (age1_data5, row20) into DataRow
+!create age1_data6:Data
+!age1_data6.value:='58'
+!insert (mathFormula_output,age1_data6) into DSData
+!insert (age1_data6,age1) into DataCol
+!insert (age1_data6, row21) into DataRow
+!create age1_data7:Data
+!age1_data7.value:='35'
+!insert (mathFormula_output,age1_data7) into DSData
+!insert (age1_data7,age1) into DataCol
+!insert (age1_data7, row22) into DataRow
+!create age1_data8:Data
+!age1_data8.value:='64'
+!insert (mathFormula_output,age1_data8) into DSData
+!insert (age1_data8,age1) into DataCol
+!insert (age1_data8, row23) into DataRow
+!create age1_data9:Data
+!age1_data9.value:='45'
+!insert (mathFormula_output,age1_data9) into DSData
+!insert (age1_data9,age1) into DataCol
+!insert (age1_data9, row24) into DataRow
+!create age1_data10:Data
+!age1_data10.value:='64'
+!insert (mathFormula_output,age1_data10) into DSData
+!insert (age1_data10,age1) into DataCol
+!insert (age1_data10, row25) into DataRow
+!create age1_data11:Data
+!age1_data11.value:='77'
+!insert (mathFormula_output,age1_data11) into DSData
+!insert (age1_data11,age1) into DataCol
+!insert (age1_data11, row26) into DataRow
+!create age1_data12:Data
+!age1_data12.value:='59'
+!insert (mathFormula_output,age1_data12) into DSData
+!insert (age1_data12,age1) into DataCol
+!insert (age1_data12, row27) into DataRow
+!create age1_data13:Data
+!age1_data13.value:='55'
+!insert (mathFormula_output,age1_data13) into DSData
+!insert (age1_data13,age1) into DataCol
+!insert (age1_data13, row28) into DataRow
+!create age1_data14:Data
+!age1_data14.value:='37'
+!insert (mathFormula_output,age1_data14) into DSData
+!insert (age1_data14,age1) into DataCol
+!insert (age1_data14, row29) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1:Column
+!NumberOfTime3059DaysPastDueNotWorse1.uri:=3
+!NumberOfTime3059DaysPastDueNotWorse1.name:='NumberOfTime30-59DaysPastDueNotWorse'
+!NumberOfTime3059DaysPastDueNotWorse1.type:=ValueType::Int
+!NumberOfTime3059DaysPastDueNotWorse1.target:=false
+!NumberOfTime3059DaysPastDueNotWorse1.id:=false
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1) into DSCol
+!create NumberOfTime3059DaysPastDueNotWorse1_data:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data, row15) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data1:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data1.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data1) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data1,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data1, row16) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data2:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data2.value:='2'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data2) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data2,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data2, row17) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data3:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data3.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data3) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data3,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data3, row18) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data4:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data4.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data4) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data4,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data4, row19) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data5:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data5.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data5) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data5,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data5, row20) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data6:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data6.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data6) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data6,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data6, row21) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data7:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data7.value:='2'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data7) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data7,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data7, row22) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data8:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data8.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data8) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data8,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data8, row23) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data9:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data9.value:='3'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data9) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data9,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data9, row24) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data10:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data10.value:='3'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data10) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data10,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data10, row25) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data11:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data11.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data11) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data11,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data11, row26) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data12:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data12.value:='3'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data12) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data12,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data12, row27) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data13:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data13.value:='3'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data13) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data13,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data13, row28) into DataRow
+!create NumberOfTime3059DaysPastDueNotWorse1_data14:Data
+!NumberOfTime3059DaysPastDueNotWorse1_data14.value:='0'
+!insert (mathFormula_output,NumberOfTime3059DaysPastDueNotWorse1_data14) into DSData
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data14,NumberOfTime3059DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime3059DaysPastDueNotWorse1_data14, row29) into DataRow
+!create DebtRatio1:Column
+!DebtRatio1.uri:=4
+!DebtRatio1.name:='DebtRatio'
+!DebtRatio1.type:=ValueType::Float
+!DebtRatio1.target:=false
+!DebtRatio1.id:=false
+!insert (mathFormula_output,DebtRatio1) into DSCol
+!create DebtRatio1_data:Data
+!DebtRatio1_data.value:='1195.0'
+!insert (mathFormula_output,DebtRatio1_data) into DSData
+!insert (DebtRatio1_data,DebtRatio1) into DataCol
+!insert (DebtRatio1_data, row15) into DataRow
+!create DebtRatio1_data1:Data
+!DebtRatio1_data1.value:='90.0'
+!insert (mathFormula_output,DebtRatio1_data1) into DSData
+!insert (DebtRatio1_data1,DebtRatio1) into DataCol
+!insert (DebtRatio1_data1, row16) into DataRow
+!create DebtRatio1_data2:Data
+!DebtRatio1_data2.value:='0.513355235'
+!insert (mathFormula_output,DebtRatio1_data2) into DSData
+!insert (DebtRatio1_data2,DebtRatio1) into DataCol
+!insert (DebtRatio1_data2, row17) into DataRow
+!create DebtRatio1_data3:Data
+!DebtRatio1_data3.value:='0.138816134'
+!insert (mathFormula_output,DebtRatio1_data3) into DSData
+!insert (DebtRatio1_data3,DebtRatio1) into DataCol
+!insert (DebtRatio1_data3, row18) into DataRow
+!create DebtRatio1_data4:Data
+!DebtRatio1_data4.value:='1.0'
+!insert (mathFormula_output,DebtRatio1_data4) into DSData
+!insert (DebtRatio1_data4,DebtRatio1) into DataCol
+!insert (DebtRatio1_data4, row19) into DataRow
+!create DebtRatio1_data5:Data
+!DebtRatio1_data5.value:='1.0'
+!insert (mathFormula_output,DebtRatio1_data5) into DSData
+!insert (DebtRatio1_data5,DebtRatio1) into DataCol
+!insert (DebtRatio1_data5, row20) into DataRow
+!create DebtRatio1_data6:Data
+!DebtRatio1_data6.value:='0.129222973'
+!insert (mathFormula_output,DebtRatio1_data6) into DSData
+!insert (DebtRatio1_data6,DebtRatio1) into DataCol
+!insert (DebtRatio1_data6, row21) into DataRow
+!create DebtRatio1_data7:Data
+!DebtRatio1_data7.value:='0.535538993'
+!insert (mathFormula_output,DebtRatio1_data7) into DSData
+!insert (DebtRatio1_data7,DebtRatio1) into DataCol
+!insert (DebtRatio1_data7, row22) into DataRow
+!create DebtRatio1_data8:Data
+!DebtRatio1_data8.value:='1428.0'
+!insert (mathFormula_output,DebtRatio1_data8) into DSData
+!insert (DebtRatio1_data8,DebtRatio1) into DataCol
+!insert (DebtRatio1_data8, row23) into DataRow
+!create DebtRatio1_data9:Data
+!DebtRatio1_data9.value:='1.151864771'
+!insert (mathFormula_output,DebtRatio1_data9) into DSData
+!insert (DebtRatio1_data9,DebtRatio1) into DataCol
+!insert (DebtRatio1_data9, row24) into DataRow
+!create DebtRatio1_data10:Data
+!DebtRatio1_data10.value:='0.380558428'
+!insert (mathFormula_output,DebtRatio1_data10) into DSData
+!insert (DebtRatio1_data10,DebtRatio1) into DataCol
+!insert (DebtRatio1_data10, row25) into DataRow
+!create DebtRatio1_data11:Data
+!DebtRatio1_data11.value:='282.0'
+!insert (mathFormula_output,DebtRatio1_data11) into DSData
+!insert (DebtRatio1_data11,DebtRatio1) into DataCol
+!insert (DebtRatio1_data11, row26) into DataRow
+!create DebtRatio1_data12:Data
+!DebtRatio1_data12.value:='0.714788732'
+!insert (mathFormula_output,DebtRatio1_data12) into DSData
+!insert (DebtRatio1_data12,DebtRatio1) into DataCol
+!insert (DebtRatio1_data12, row27) into DataRow
+!create DebtRatio1_data13:Data
+!DebtRatio1_data13.value:='0.796489669'
+!insert (mathFormula_output,DebtRatio1_data13) into DSData
+!insert (DebtRatio1_data13,DebtRatio1) into DataCol
+!insert (DebtRatio1_data13, row28) into DataRow
+!create DebtRatio1_data14:Data
+!DebtRatio1_data14.value:='0.821642824'
+!insert (mathFormula_output,DebtRatio1_data14) into DSData
+!insert (DebtRatio1_data14,DebtRatio1) into DataCol
+!insert (DebtRatio1_data14, row29) into DataRow
+!create MonthlyIncome1:Column
+!MonthlyIncome1.uri:=5
+!MonthlyIncome1.name:='MonthlyIncome'
+!MonthlyIncome1.type:=ValueType::Int
+!MonthlyIncome1.target:=false
+!MonthlyIncome1.id:=false
+!insert (mathFormula_output,MonthlyIncome1) into DSCol
+!create MonthlyIncome1_data:Data
+!MonthlyIncome1_data.value:='6908'
+!insert (mathFormula_output,MonthlyIncome1_data) into DSData
+!insert (MonthlyIncome1_data,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data, row15) into DataRow
+!create MonthlyIncome1_data1:Data
+!MonthlyIncome1_data1.value:='6908'
+!insert (mathFormula_output,MonthlyIncome1_data1) into DSData
+!insert (MonthlyIncome1_data1,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data1, row16) into DataRow
+!create MonthlyIncome1_data2:Data
+!MonthlyIncome1_data2.value:='7000'
+!insert (mathFormula_output,MonthlyIncome1_data2) into DSData
+!insert (MonthlyIncome1_data2,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data2, row17) into DataRow
+!create MonthlyIncome1_data3:Data
+!MonthlyIncome1_data3.value:='1908'
+!insert (mathFormula_output,MonthlyIncome1_data3) into DSData
+!insert (MonthlyIncome1_data3,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data3, row18) into DataRow
+!create MonthlyIncome1_data4:Data
+!MonthlyIncome1_data4.value:='6908'
+!insert (mathFormula_output,MonthlyIncome1_data4) into DSData
+!insert (MonthlyIncome1_data4,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data4, row19) into DataRow
+!create MonthlyIncome1_data5:Data
+!MonthlyIncome1_data5.value:='6908'
+!insert (mathFormula_output,MonthlyIncome1_data5) into DSData
+!insert (MonthlyIncome1_data5,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data5, row20) into DataRow
+!create MonthlyIncome1_data6:Data
+!MonthlyIncome1_data6.value:='2367'
+!insert (mathFormula_output,MonthlyIncome1_data6) into DSData
+!insert (MonthlyIncome1_data6,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data6, row21) into DataRow
+!create MonthlyIncome1_data7:Data
+!MonthlyIncome1_data7.value:='5500'
+!insert (mathFormula_output,MonthlyIncome1_data7) into DSData
+!insert (MonthlyIncome1_data7,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data7, row22) into DataRow
+!create MonthlyIncome1_data8:Data
+!MonthlyIncome1_data8.value:='6908'
+!insert (mathFormula_output,MonthlyIncome1_data8) into DSData
+!insert (MonthlyIncome1_data8,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data8, row23) into DataRow
+!create MonthlyIncome1_data9:Data
+!MonthlyIncome1_data9.value:='3726'
+!insert (mathFormula_output,MonthlyIncome1_data9) into DSData
+!insert (MonthlyIncome1_data9,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data9, row24) into DataRow
+!create MonthlyIncome1_data10:Data
+!MonthlyIncome1_data10.value:='2900'
+!insert (mathFormula_output,MonthlyIncome1_data10) into DSData
+!insert (MonthlyIncome1_data10,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data10, row25) into DataRow
+!create MonthlyIncome1_data11:Data
+!MonthlyIncome1_data11.value:='6908'
+!insert (mathFormula_output,MonthlyIncome1_data11) into DSData
+!insert (MonthlyIncome1_data11,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data11, row26) into DataRow
+!create MonthlyIncome1_data12:Data
+!MonthlyIncome1_data12.value:='7667'
+!insert (mathFormula_output,MonthlyIncome1_data12) into DSData
+!insert (MonthlyIncome1_data12,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data12, row27) into DataRow
+!create MonthlyIncome1_data13:Data
+!MonthlyIncome1_data13.value:='4500'
+!insert (mathFormula_output,MonthlyIncome1_data13) into DSData
+!insert (MonthlyIncome1_data13,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data13, row28) into DataRow
+!create MonthlyIncome1_data14:Data
+!MonthlyIncome1_data14.value:='4333'
+!insert (mathFormula_output,MonthlyIncome1_data14) into DSData
+!insert (MonthlyIncome1_data14,MonthlyIncome1) into DataCol
+!insert (MonthlyIncome1_data14, row29) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1:Column
+!NumberOfOpenCreditLinesAndLoans1.uri:=6
+!NumberOfOpenCreditLinesAndLoans1.name:='NumberOfOpenCreditLinesAndLoans'
+!NumberOfOpenCreditLinesAndLoans1.type:=ValueType::Int
+!NumberOfOpenCreditLinesAndLoans1.target:=false
+!NumberOfOpenCreditLinesAndLoans1.id:=false
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1) into DSCol
+!create NumberOfOpenCreditLinesAndLoans1_data:Data
+!NumberOfOpenCreditLinesAndLoans1_data.value:='4'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data, row15) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data1:Data
+!NumberOfOpenCreditLinesAndLoans1_data1.value:='3'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data1) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data1,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data1, row16) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data2:Data
+!NumberOfOpenCreditLinesAndLoans1_data2.value:='5'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data2) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data2,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data2, row17) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data3:Data
+!NumberOfOpenCreditLinesAndLoans1_data3.value:='11'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data3) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data3,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data3, row18) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data4:Data
+!NumberOfOpenCreditLinesAndLoans1_data4.value:='3'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data4) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data4,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data4, row19) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data5:Data
+!NumberOfOpenCreditLinesAndLoans1_data5.value:='2'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data5) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data5,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data5, row20) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data6:Data
+!NumberOfOpenCreditLinesAndLoans1_data6.value:='6'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data6) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data6,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data6, row21) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data7:Data
+!NumberOfOpenCreditLinesAndLoans1_data7.value:='10'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data7) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data7,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data7, row22) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data8:Data
+!NumberOfOpenCreditLinesAndLoans1_data8.value:='4'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data8) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data8,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data8, row23) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data9:Data
+!NumberOfOpenCreditLinesAndLoans1_data9.value:='11'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data9) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data9,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data9, row24) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data10:Data
+!NumberOfOpenCreditLinesAndLoans1_data10.value:='3'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data10) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data10,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data10, row25) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data11:Data
+!NumberOfOpenCreditLinesAndLoans1_data11.value:='7'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data11) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data11,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data11, row26) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data12:Data
+!NumberOfOpenCreditLinesAndLoans1_data12.value:='9'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data12) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data12,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data12, row27) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data13:Data
+!NumberOfOpenCreditLinesAndLoans1_data13.value:='17'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data13) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data13,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data13, row28) into DataRow
+!create NumberOfOpenCreditLinesAndLoans1_data14:Data
+!NumberOfOpenCreditLinesAndLoans1_data14.value:='9'
+!insert (mathFormula_output,NumberOfOpenCreditLinesAndLoans1_data14) into DSData
+!insert (NumberOfOpenCreditLinesAndLoans1_data14,NumberOfOpenCreditLinesAndLoans1) into DataCol
+!insert (NumberOfOpenCreditLinesAndLoans1_data14, row29) into DataRow
+!create NumberOfTimes90DaysLate1:Column
+!NumberOfTimes90DaysLate1.uri:=7
+!NumberOfTimes90DaysLate1.name:='NumberOfTimes90DaysLate'
+!NumberOfTimes90DaysLate1.type:=ValueType::Int
+!NumberOfTimes90DaysLate1.target:=false
+!NumberOfTimes90DaysLate1.id:=false
+!insert (mathFormula_output,NumberOfTimes90DaysLate1) into DSCol
+!create NumberOfTimes90DaysLate1_data:Data
+!NumberOfTimes90DaysLate1_data.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data) into DSData
+!insert (NumberOfTimes90DaysLate1_data,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data, row15) into DataRow
+!create NumberOfTimes90DaysLate1_data1:Data
+!NumberOfTimes90DaysLate1_data1.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data1) into DSData
+!insert (NumberOfTimes90DaysLate1_data1,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data1, row16) into DataRow
+!create NumberOfTimes90DaysLate1_data2:Data
+!NumberOfTimes90DaysLate1_data2.value:='8'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data2) into DSData
+!insert (NumberOfTimes90DaysLate1_data2,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data2, row17) into DataRow
+!create NumberOfTimes90DaysLate1_data3:Data
+!NumberOfTimes90DaysLate1_data3.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data3) into DSData
+!insert (NumberOfTimes90DaysLate1_data3,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data3, row18) into DataRow
+!create NumberOfTimes90DaysLate1_data4:Data
+!NumberOfTimes90DaysLate1_data4.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data4) into DSData
+!insert (NumberOfTimes90DaysLate1_data4,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data4, row19) into DataRow
+!create NumberOfTimes90DaysLate1_data5:Data
+!NumberOfTimes90DaysLate1_data5.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data5) into DSData
+!insert (NumberOfTimes90DaysLate1_data5,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data5, row20) into DataRow
+!create NumberOfTimes90DaysLate1_data6:Data
+!NumberOfTimes90DaysLate1_data6.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data6) into DSData
+!insert (NumberOfTimes90DaysLate1_data6,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data6, row21) into DataRow
+!create NumberOfTimes90DaysLate1_data7:Data
+!NumberOfTimes90DaysLate1_data7.value:='2'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data7) into DSData
+!insert (NumberOfTimes90DaysLate1_data7,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data7, row22) into DataRow
+!create NumberOfTimes90DaysLate1_data8:Data
+!NumberOfTimes90DaysLate1_data8.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data8) into DSData
+!insert (NumberOfTimes90DaysLate1_data8,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data8, row23) into DataRow
+!create NumberOfTimes90DaysLate1_data9:Data
+!NumberOfTimes90DaysLate1_data9.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data9) into DSData
+!insert (NumberOfTimes90DaysLate1_data9,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data9, row24) into DataRow
+!create NumberOfTimes90DaysLate1_data10:Data
+!NumberOfTimes90DaysLate1_data10.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data10) into DSData
+!insert (NumberOfTimes90DaysLate1_data10,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data10, row25) into DataRow
+!create NumberOfTimes90DaysLate1_data11:Data
+!NumberOfTimes90DaysLate1_data11.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data11) into DSData
+!insert (NumberOfTimes90DaysLate1_data11,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data11, row26) into DataRow
+!create NumberOfTimes90DaysLate1_data12:Data
+!NumberOfTimes90DaysLate1_data12.value:='1'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data12) into DSData
+!insert (NumberOfTimes90DaysLate1_data12,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data12, row27) into DataRow
+!create NumberOfTimes90DaysLate1_data13:Data
+!NumberOfTimes90DaysLate1_data13.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data13) into DSData
+!insert (NumberOfTimes90DaysLate1_data13,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data13, row28) into DataRow
+!create NumberOfTimes90DaysLate1_data14:Data
+!NumberOfTimes90DaysLate1_data14.value:='0'
+!insert (mathFormula_output,NumberOfTimes90DaysLate1_data14) into DSData
+!insert (NumberOfTimes90DaysLate1_data14,NumberOfTimes90DaysLate1) into DataCol
+!insert (NumberOfTimes90DaysLate1_data14, row29) into DataRow
+!create NumberRealEstateLoansOrLines1:Column
+!NumberRealEstateLoansOrLines1.uri:=8
+!NumberRealEstateLoansOrLines1.name:='NumberRealEstateLoansOrLines'
+!NumberRealEstateLoansOrLines1.type:=ValueType::Int
+!NumberRealEstateLoansOrLines1.target:=false
+!NumberRealEstateLoansOrLines1.id:=false
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1) into DSCol
+!create NumberRealEstateLoansOrLines1_data:Data
+!NumberRealEstateLoansOrLines1_data.value:='1'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data) into DSData
+!insert (NumberRealEstateLoansOrLines1_data,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data, row15) into DataRow
+!create NumberRealEstateLoansOrLines1_data1:Data
+!NumberRealEstateLoansOrLines1_data1.value:='0'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data1) into DSData
+!insert (NumberRealEstateLoansOrLines1_data1,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data1, row16) into DataRow
+!create NumberRealEstateLoansOrLines1_data2:Data
+!NumberRealEstateLoansOrLines1_data2.value:='2'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data2) into DSData
+!insert (NumberRealEstateLoansOrLines1_data2,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data2, row17) into DataRow
+!create NumberRealEstateLoansOrLines1_data3:Data
+!NumberRealEstateLoansOrLines1_data3.value:='0'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data3) into DSData
+!insert (NumberRealEstateLoansOrLines1_data3,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data3, row18) into DataRow
+!create NumberRealEstateLoansOrLines1_data4:Data
+!NumberRealEstateLoansOrLines1_data4.value:='0'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data4) into DSData
+!insert (NumberRealEstateLoansOrLines1_data4,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data4, row19) into DataRow
+!create NumberRealEstateLoansOrLines1_data5:Data
+!NumberRealEstateLoansOrLines1_data5.value:='0'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data5) into DSData
+!insert (NumberRealEstateLoansOrLines1_data5,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data5, row20) into DataRow
+!create NumberRealEstateLoansOrLines1_data6:Data
+!NumberRealEstateLoansOrLines1_data6.value:='0'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data6) into DSData
+!insert (NumberRealEstateLoansOrLines1_data6,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data6, row21) into DataRow
+!create NumberRealEstateLoansOrLines1_data7:Data
+!NumberRealEstateLoansOrLines1_data7.value:='0'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data7) into DSData
+!insert (NumberRealEstateLoansOrLines1_data7,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data7, row22) into DataRow
+!create NumberRealEstateLoansOrLines1_data8:Data
+!NumberRealEstateLoansOrLines1_data8.value:='1'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data8) into DSData
+!insert (NumberRealEstateLoansOrLines1_data8,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data8, row23) into DataRow
+!create NumberRealEstateLoansOrLines1_data9:Data
+!NumberRealEstateLoansOrLines1_data9.value:='2'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data9) into DSData
+!insert (NumberRealEstateLoansOrLines1_data9,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data9, row24) into DataRow
+!create NumberRealEstateLoansOrLines1_data10:Data
+!NumberRealEstateLoansOrLines1_data10.value:='1'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data10) into DSData
+!insert (NumberRealEstateLoansOrLines1_data10,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data10, row25) into DataRow
+!create NumberRealEstateLoansOrLines1_data11:Data
+!NumberRealEstateLoansOrLines1_data11.value:='0'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data11) into DSData
+!insert (NumberRealEstateLoansOrLines1_data11,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data11, row26) into DataRow
+!create NumberRealEstateLoansOrLines1_data12:Data
+!NumberRealEstateLoansOrLines1_data12.value:='1'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data12) into DSData
+!insert (NumberRealEstateLoansOrLines1_data12,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data12, row27) into DataRow
+!create NumberRealEstateLoansOrLines1_data13:Data
+!NumberRealEstateLoansOrLines1_data13.value:='2'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data13) into DSData
+!insert (NumberRealEstateLoansOrLines1_data13,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data13, row28) into DataRow
+!create NumberRealEstateLoansOrLines1_data14:Data
+!NumberRealEstateLoansOrLines1_data14.value:='3'
+!insert (mathFormula_output,NumberRealEstateLoansOrLines1_data14) into DSData
+!insert (NumberRealEstateLoansOrLines1_data14,NumberRealEstateLoansOrLines1) into DataCol
+!insert (NumberRealEstateLoansOrLines1_data14, row29) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1:Column
+!NumberOfTime6089DaysPastDueNotWorse1.uri:=9
+!NumberOfTime6089DaysPastDueNotWorse1.name:='NumberOfTime60-89DaysPastDueNotWorse'
+!NumberOfTime6089DaysPastDueNotWorse1.type:=ValueType::Int
+!NumberOfTime6089DaysPastDueNotWorse1.target:=false
+!NumberOfTime6089DaysPastDueNotWorse1.id:=false
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1) into DSCol
+!create NumberOfTime6089DaysPastDueNotWorse1_data:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data, row15) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data1:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data1.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data1) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data1,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data1, row16) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data2:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data2.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data2) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data2,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data2, row17) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data3:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data3.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data3) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data3,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data3, row18) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data4:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data4.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data4) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data4,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data4, row19) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data5:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data5.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data5) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data5,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data5, row20) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data6:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data6.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data6) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data6,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data6, row21) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data7:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data7.value:='4'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data7) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data7,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data7, row22) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data8:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data8.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data8) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data8,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data8, row23) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data9:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data9.value:='7'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data9) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data9,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data9, row24) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data10:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data10.value:='1'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data10) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data10,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data10, row25) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data11:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data11.value:='0'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data11) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data11,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data11, row26) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data12:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data12.value:='2'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data12) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data12,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data12, row27) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data13:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data13.value:='1'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data13) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data13,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data13, row28) into DataRow
+!create NumberOfTime6089DaysPastDueNotWorse1_data14:Data
+!NumberOfTime6089DaysPastDueNotWorse1_data14.value:='1'
+!insert (mathFormula_output,NumberOfTime6089DaysPastDueNotWorse1_data14) into DSData
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data14,NumberOfTime6089DaysPastDueNotWorse1) into DataCol
+!insert (NumberOfTime6089DaysPastDueNotWorse1_data14, row29) into DataRow
+!create NumberOfDependents1:Column
+!NumberOfDependents1.uri:=10
+!NumberOfDependents1.name:='NumberOfDependents'
+!NumberOfDependents1.type:=ValueType::Float
+!NumberOfDependents1.target:=false
+!NumberOfDependents1.id:=false
+!insert (mathFormula_output,NumberOfDependents1) into DSCol
+!create NumberOfDependents1_data:Data
+!NumberOfDependents1_data.value:='nan'
+!insert (mathFormula_output,NumberOfDependents1_data) into DSData
+!insert (NumberOfDependents1_data,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data, row15) into DataRow
+!create NumberOfDependents1_data1:Data
+!NumberOfDependents1_data1.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data1) into DSData
+!insert (NumberOfDependents1_data1,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data1, row16) into DataRow
+!create NumberOfDependents1_data2:Data
+!NumberOfDependents1_data2.value:='4.0'
+!insert (mathFormula_output,NumberOfDependents1_data2) into DSData
+!insert (NumberOfDependents1_data2,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data2, row17) into DataRow
+!create NumberOfDependents1_data3:Data
+!NumberOfDependents1_data3.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data3) into DSData
+!insert (NumberOfDependents1_data3,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data3, row18) into DataRow
+!create NumberOfDependents1_data4:Data
+!NumberOfDependents1_data4.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data4) into DSData
+!insert (NumberOfDependents1_data4,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data4, row19) into DataRow
+!create NumberOfDependents1_data5:Data
+!NumberOfDependents1_data5.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data5) into DSData
+!insert (NumberOfDependents1_data5,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data5, row20) into DataRow
+!create NumberOfDependents1_data6:Data
+!NumberOfDependents1_data6.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data6) into DSData
+!insert (NumberOfDependents1_data6,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data6, row21) into DataRow
+!create NumberOfDependents1_data7:Data
+!NumberOfDependents1_data7.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data7) into DSData
+!insert (NumberOfDependents1_data7,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data7, row22) into DataRow
+!create NumberOfDependents1_data8:Data
+!NumberOfDependents1_data8.value:='nan'
+!insert (mathFormula_output,NumberOfDependents1_data8) into DSData
+!insert (NumberOfDependents1_data8,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data8, row23) into DataRow
+!create NumberOfDependents1_data9:Data
+!NumberOfDependents1_data9.value:='3.0'
+!insert (mathFormula_output,NumberOfDependents1_data9) into DSData
+!insert (NumberOfDependents1_data9,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data9, row24) into DataRow
+!create NumberOfDependents1_data10:Data
+!NumberOfDependents1_data10.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data10) into DSData
+!insert (NumberOfDependents1_data10,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data10, row25) into DataRow
+!create NumberOfDependents1_data11:Data
+!NumberOfDependents1_data11.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data11) into DSData
+!insert (NumberOfDependents1_data11,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data11, row26) into DataRow
+!create NumberOfDependents1_data12:Data
+!NumberOfDependents1_data12.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data12) into DSData
+!insert (NumberOfDependents1_data12,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data12, row27) into DataRow
+!create NumberOfDependents1_data13:Data
+!NumberOfDependents1_data13.value:='1.0'
+!insert (mathFormula_output,NumberOfDependents1_data13) into DSData
+!insert (NumberOfDependents1_data13,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data13, row28) into DataRow
+!create NumberOfDependents1_data14:Data
+!NumberOfDependents1_data14.value:='0.0'
+!insert (mathFormula_output,NumberOfDependents1_data14) into DSData
+!insert (NumberOfDependents1_data14,NumberOfDependents1) into DataCol
+!insert (NumberOfDependents1_data14, row29) into DataRow

@@ -1,0 +1,25 @@
+!create ruleEngine:RuleEngine
+!insert(ruleEngine, ruleEngine_input) into  InputPort
+
+!create cp:ColumnParam
+!insert(cp, NumberOfTime3059DaysPastDueNotWorse) into ColumnParams
+!create rule:Rule
+
+!create equal:EqualOp
+!insert(equal, cp) into ColOperand
+
+!create valueCompare:Primitive
+!valueCompare.value:= ''
+!valueCompare.type:=PrimitiveType::IntPr
+!create valueReplace:Primitive
+!valueReplace.value:='nan'
+!valueReplace.type:=PrimitiveType::StringPr
+
+
+!insert(equal, valueReplace) into ResultOperand
+!insert(equal, valueCompare) into CompareOperand
+
+!insert(rule, equal) into RuleOperator
+!insert(ruleEngine, rule) into DopParam
+!insert(ruleEngine, ruleEngine_output) into OutputPort
+

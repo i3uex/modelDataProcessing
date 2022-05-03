@@ -1,0 +1,6 @@
+!create stringToNumber: StringToNumber
+!insert(stringToNumber, string_to_number_input) into InputPort
+!create cp:ColumnParam
+!insert(cp, MonthlyIncome) into ColumnParams
+!insert(stringToNumber, cp) into DopParam
+!insert(stringToNumber, string_to_number_output) into  OutputPort
