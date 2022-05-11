@@ -1097,80 +1097,166 @@ def main():
     # path = '../models/44_stringToNumber/stringToNumber_output.soil'
     # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
 
-    stringToNumber_input = pd.read_csv('../intermediate_datasets/44_credit_output_dataset_stringToNumber_nextNode.csv')
-    dset_name = 'stringToNumber_input'
+    # stringToNumber_input = pd.read_csv('../intermediate_datasets/44_credit_output_dataset_stringToNumber_nextNode.csv')
+    # dset_name = 'stringToNumber_input'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = stringToNumber_input
+    # used_ids = reset_vector()
+    # path = '../models/45_stringToNumber/stringToNumber_input.soil'
+    # DIFFERENCE = 0
+    # CURRENT_DSET = ''
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+    #
+    # stringToNumber_output = pd.read_csv('../intermediate_datasets/45_credit_output_dataset_stringToNumber_numberToString.csv')
+    # dset_name = 'stringToNumber_output'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = stringToNumber_output
+    # path = '../models/45_stringToNumber/stringToNumber_output.soil'
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+    #
+    # numberToString_input = pd.read_csv('../intermediate_datasets/45_credit_output_dataset_stringToNumber_numberToString.csv')
+    # dset_name = 'numberToString_input'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = numberToString_input
+    # used_ids = reset_vector()
+    # path = '../models/46_numberToString/numberToString_input.soil'
+    # DIFFERENCE = 0
+    # CURRENT_DSET = ''
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+    #
+    # numberToString_output = pd.read_csv('../intermediate_datasets/46_credit_output_dataset_numberToString_nextNode.csv')
+    # dset_name = 'numberToString_output'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = numberToString_output
+    # path = '../models/46_numberToString/numberToString_output.soil'
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+    #
+    # split_input = pd.read_csv('../intermediate_datasets/46_credit_output_dataset_numberToString_nextNode.csv')
+    # dset_name = 'split_input'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = split_input
+    # used_ids = reset_vector()
+    # path = '../models/47_split/split_input.soil'
+    # DIFFERENCE = 0
+    # CURRENT_DSET = ''
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+    #
+    # split_output_1 = pd.read_csv('../intermediate_datasets/47a_credit_output_dataset_partitioning_smote.csv')
+    # dset_name = 'split_output_1'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = split_output_1
+    # path = '../models/47_split/split_output_1.soil'
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+    #
+    # split_output_2 = pd.read_csv('../intermediate_datasets/47b_credit_output_dataset_partitioning_smote.csv')
+    # dset_name = 'split_output_2'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = split_output_2
+    # path = '../models/47_split/split_output_2.soil'
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    # smote_input = pd.read_csv('../intermediate_datasets/47a_credit_output_dataset_partitioning_smote.csv')
+    # dset_name = 'smote_input'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = smote_input
+    # used_ids = reset_vector()
+    # path = '../models/48_smote/smote_input.soil'
+    # DIFFERENCE = 0
+    # CURRENT_DSET = ''
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+    #                                                                     id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+    #
+    # smote_output = pd.read_csv('../intermediate_datasets/48a_credit_output_dataset_smote.csv')
+    # dset_name = 'smote_output'
+    # target_columns = ['SeriousDlqin2yrs']
+    # dset = smote_output
+    # path = '../models/48_smote/smote_output.soil'
+    # used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+    #                                                                     id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    ##Ilustrative Example:
+
+    remove_col_input = pd.read_csv('../illustrative_example/datasets/1_edrop_to_remove_col.csv')
+    dset_name = 'remove_col_input'
     target_columns = ['SeriousDlqin2yrs']
-    dset = stringToNumber_input
+    dset = remove_col_input
     used_ids = reset_vector()
-    path = '../models/45_stringToNumber/stringToNumber_input.soil'
-    DIFFERENCE = 0
-    CURRENT_DSET = ''
-    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
-
-    stringToNumber_output = pd.read_csv('../intermediate_datasets/45_credit_output_dataset_stringToNumber_numberToString.csv')
-    dset_name = 'stringToNumber_output'
-    target_columns = ['SeriousDlqin2yrs']
-    dset = stringToNumber_output
-    path = '../models/45_stringToNumber/stringToNumber_output.soil'
-    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
-
-    numberToString_input = pd.read_csv('../intermediate_datasets/45_credit_output_dataset_stringToNumber_numberToString.csv')
-    dset_name = 'numberToString_input'
-    target_columns = ['SeriousDlqin2yrs']
-    dset = numberToString_input
-    used_ids = reset_vector()
-    path = '../models/46_numberToString/numberToString_input.soil'
-    DIFFERENCE = 0
-    CURRENT_DSET = ''
-    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
-
-    numberToString_output = pd.read_csv('../intermediate_datasets/46_credit_output_dataset_numberToString_nextNode.csv')
-    dset_name = 'numberToString_output'
-    target_columns = ['SeriousDlqin2yrs']
-    dset = numberToString_output
-    path = '../models/46_numberToString/numberToString_output.soil'
-    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
-
-    split_input = pd.read_csv('../intermediate_datasets/46_credit_output_dataset_numberToString_nextNode.csv')
-    dset_name = 'split_input'
-    target_columns = ['SeriousDlqin2yrs']
-    dset = split_input
-    used_ids = reset_vector()
-    path = '../models/47_split/split_input.soil'
-    DIFFERENCE = 0
-    CURRENT_DSET = ''
-    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
-
-    split_output_1 = pd.read_csv('../intermediate_datasets/47a_credit_output_dataset_partitioning_smote.csv')
-    dset_name = 'split_output_1'
-    target_columns = ['SeriousDlqin2yrs']
-    dset = split_output_1
-    path = '../models/47_split/split_output_1.soil'
-    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
-
-    split_output_2 = pd.read_csv('../intermediate_datasets/47b_credit_output_dataset_partitioning_smote.csv')
-    dset_name = 'split_output_2'
-    target_columns = ['SeriousDlqin2yrs']
-    dset = split_output_2
-    path = '../models/47_split/split_output_2.soil'
-    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns, id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
-
-    smote_input = pd.read_csv('../intermediate_datasets/47a_credit_output_dataset_partitioning_smote.csv')
-    dset_name = 'smote_input'
-    target_columns = ['SeriousDlqin2yrs']
-    dset = smote_input
-    used_ids = reset_vector()
-    path = '../models/48_smote/smote_input.soil'
+    path = '../illustrative_example/1_edrop_remove_col_to_imb_learn/remove_col_input.soil'
     DIFFERENCE = 0
     CURRENT_DSET = ''
     used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
                                                                         id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
 
-    smote_output = pd.read_csv('../intermediate_datasets/48a_credit_output_dataset_smote.csv')
-    dset_name = 'smote_output'
+    remove_col_output = pd.read_csv('../illustrative_example/datasets/2_edrop_remove_col_to_imb_learn.csv')
+    dset_name = 'remove_col_output'
     target_columns = ['SeriousDlqin2yrs']
-    dset = smote_output
-    path = '../models/48_smote/smote_output.soil'
+    dset = remove_col_output
+    path = '../illustrative_example/1_edrop_remove_col_to_imb_learn/remove_col_output.soil'
+    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+                                                                        id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    imb_learn_input = pd.read_csv('../illustrative_example/datasets/2_edrop_remove_col_to_imb_learn.csv')
+    dset_name = 'imb_learn_input'
+    target_columns = ['SeriousDlqin2yrs']
+    dset = imb_learn_input
+    used_ids = reset_vector()
+    path = '../illustrative_example/2_edrop_imb_learn_to_one_hot/imb_learn_input'
+    DIFFERENCE = 0
+    CURRENT_DSET = ''
+    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+                                                                        id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    imb_learn_output = pd.read_csv('../illustrative_example/datasets/3_edrop_imb_learn_to_one_hot.csv')
+    dset_name = 'imb_learn_output'
+    target_columns = ['SeriousDlqin2yrs']
+    dset = imb_learn_output
+    path = '../illustrative_example/2_edrop_imb_learn_to_one_hot/imb_learn_output.soil'
+    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+                                                                        id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    one_hot_input = pd.read_csv('../illustrative_example/datasets/3_edrop_imb_learn_to_one_hot.csv')
+    dset_name = 'one_hot_input'
+    target_columns = ['SeriousDlqin2yrs']
+    dset = one_hot_input
+    used_ids = reset_vector()
+    path = '../illustrative_example/3_edrop_one_hot_to_split/one_hot_input'
+    DIFFERENCE = 0
+    CURRENT_DSET = ''
+    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+                                                                        id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    one_hot_output = pd.read_csv('../illustrative_example/datasets/4_edrop_one_hot_to_split.csv')
+    dset_name = 'one_hot_output'
+    target_columns = ['SeriousDlqin2yrs']
+    dset = one_hot_output
+    path = '../illustrative_example/3_edrop_one_hot_to_split/one_hot_output.soil'
+    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+                                                                        id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    split_input = pd.read_csv('../illustrative_example/datasets/4_edrop_one_hot_to_split.csv')
+    dset_name = 'split_input'
+    target_columns = ['SeriousDlqin2yrs']
+    dset = split_input
+    used_ids = reset_vector()
+    path = '../illustrative_example/4_edrop_split/split_input.soil'
+    DIFFERENCE = 0
+    CURRENT_DSET = ''
+    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+                                                                        id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    split_output_1 = pd.read_csv('../illustrative_example/datasets/4.1_edrop_split.csv')
+    dset_name = 'split_output_1'
+    target_columns = ['SeriousDlqin2yrs']
+    dset = split_output_1
+    path = '../illustrative_example/4_edrop_split/split_output_1.soil'
+    used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
+                                                                        id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
+
+    split_output_2 = pd.read_csv('../illustrative_example/datasets/4.2_edrop_split.csv')
+    dset_name = 'split_output_2'
+    target_columns = ['SeriousDlqin2yrs']
+    dset = split_output_2
+    path = '../illustrative_example/4_edrop_split/split_output_2.soil'
     used_ids,DIFFERENCE,CURRENT_DSET = generate_file_with_cols_and_data(path, dset, dset_name, target_columns,
                                                                         id_columns, used_ids,DIFFERENCE, CURRENT_DSET)
 

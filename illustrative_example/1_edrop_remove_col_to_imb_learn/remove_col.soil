@@ -1,0 +1,6 @@
+!create removeCol:RemoveColumns
+!insert(removeCol, remove_col_input) into  InputPort
+!create cp:ColumnParam
+!insert (cp, TALLA) into ColumnParams
+!insert(removeCol, cp) into DopParam
+!insert(removeCol, remove_col_output) into  OutputPort

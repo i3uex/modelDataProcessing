@@ -1,9 +1,0 @@
-!create split:Split
-!insert(split, split_input) into  InputPort
-!insert(split, split_out_1) into  OutputPort
-!insert(split, split_out_2) into  OutputPort
-
-!create size:Float
-!size.value:=0.2
-!size.name:='size'
-!insert(split, size) into DopParam
