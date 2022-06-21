@@ -12,6 +12,7 @@ enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
 abstract class Parameter
   attributes
     name:String
+	optional:Boolean
 end
 
 class ColumnParam < Parameter
@@ -209,7 +210,7 @@ end
 class Discretize < DataOperation
 end
 
-class RuleEngine < DataOperation
+class ConditionalFunction < DataOperation
 end
 
 class Normalizer < DataOperation
@@ -351,7 +352,7 @@ context OneHot
 					)->collect(value)->asSet())->includes(c.name))->includes(d2.col) 
 				and d2.row.uri= d.row.uri 
 				and d2.col.name <> d.value)->collect(value)->forAll(v|v='0'))
-	inv inv_makeCorrectOneHotOne: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->asSequence->at(1).oclAsType(Dataset).data->select(
+	inv inv_makeCorrectOneHotOne: self.inputPort->select(ip | ip.oclIsTypeOf(Dataset))->asSequence->at(1).oclAsType(Dataset).data->select(
 		d | d.col.uri = self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->collect(column.uri)->asSequence()->at(1) )->forAll(
 			d | self.outputPort->select(op | op.oclIsTypeOf(Dataset))->asSequence->at(1).oclAsType(Dataset).data->select(d2 | d2.col.name = d.value and d2.row.uri = d.row.uri)->collect(value)->asSequence()->at(1) = '1')
 	inv post_existsColumns: self.outputPort->select(op | op.oclIsTypeOf(Dataset))->asSequence->at(1).oclAsType(Dataset).data->select(
@@ -685,7 +686,7 @@ context Sorter
 					sortData->iterate(elem; index : Integer = 1 | if elem = sortDataSeq->at(index) then index + 1 else index endif) = sortData->size()
 			endif
 
-context RuleEngine
+context ConditionalFunction
 	inv pre_defineRule: self.parameter->select(p | p.oclIsTypeOf(Rule))->size() >= 1
 	inv inv_noAlterRestValues:
 	if self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator->asSequence()->at(1).oclIsTypeOf(MissingOp) then
@@ -704,7 +705,7 @@ context RuleEngine
 		else false endif
 	endif
 
-	inv inv_makeCorrectEngine:
+	inv inv_makeCorrectFunction:
 		if self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator->asSequence()->at(1).oclIsTypeOf(MissingOp) then
 			let imputeValue = self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator->asSequence()->at(1).oclAsType(UnaryOp).resultOperand.value in
 				self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(

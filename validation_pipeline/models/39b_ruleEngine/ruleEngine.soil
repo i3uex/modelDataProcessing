@@ -1,5 +1,5 @@
-!create ruleEngine:RuleEngine
-!insert(ruleEngine, ruleEngine_input) into  InputPort
+!create conditionalFunction:ConditionalFunction
+!insert(conditionalFunction, ruleEngine_input) into  InputPort
 
 !create cp:ColumnParam
 !insert(cp, NumberOfTimes90DaysLate) into ColumnParams
@@ -19,7 +19,7 @@
 !insert(equal, valueCompare) into CompareOperand
 
 !insert(rule, equal) into RuleOperator
-!insert(ruleEngine, rule) into DopParam
+!insert(conditionalFunction, rule) into DopParam
 
 !create rule1:Rule
 !create equal1:EqualOp
@@ -34,8 +34,8 @@
 !insert(equal1, valueCompare1) into CompareOperand
 
 !insert(rule1, equal1) into RuleOperator
-!insert(ruleEngine, rule1) into DopParam
+!insert(conditionalFunction, rule1) into DopParam
 
 
-!insert(ruleEngine, ruleEngine_output) into OutputPort
+!insert(conditionalFunction, ruleEngine_output) into OutputPort
 

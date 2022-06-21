@@ -12,7 +12,9 @@ enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
 abstract class Parameter
   attributes
     name:String
+	optional:Boolean
 end
+
 
 class ColumnParam < Parameter
   attributes

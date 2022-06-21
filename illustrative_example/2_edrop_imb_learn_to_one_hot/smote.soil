@@ -1,6 +1,0 @@
-!create smote:Smote
-!insert(smote, smote_input) into  InputPort
-!create cp:ColumnParam
-!insert (cp, TALLA) into ColumnParams
-!insert(smote, cp) into DopParam
-!insert(smote, smote_output) into  OutputPort

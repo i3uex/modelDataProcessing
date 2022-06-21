@@ -1,0 +1,6 @@
+!create imbalancedLearn:ImbalancedLearn
+!insert(imbalancedLearn, imbalancedLearn_input) into  InputPort
+!create cp:ColumnParam
+!insert (cp, TALLA) into ColumnParams
+!insert(imbalancedLearn, cp) into DopParam
+!insert(imbalancedLearn, imbalancedLearn_output) into  OutputPort
