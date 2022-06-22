@@ -133,8 +133,15 @@ class Dataset < PortType
 	  self.cols->select(c|c.name = name)->asSequence->at(1)
 	  existColumn(name : String) : Boolean =
 	  self.cols.name->includes(name)
-	  getDataByUri(uri: Integer) : Set(Data) =
+	  getDataOfColUri(uri: Integer) : Set(Data) =
 	  self.data->select(d | d.col.uri = uri)
+	  getDataOfColName(name: String) : Set(Data) =
+	  self.data->select(d | d.col.name = name)
+	  getDataByUri(colUri: Integer, rowUri: Integer) : Data =
+	  self.data->select(d | d.col.uri = colUri and d.row.uri = rowUri)->asSequence()->at(1)
+	  getDataByName(colName: String, rowUri: Integer) : Data =
+	  self.data->select(d | d.col.name = colName and d.row.uri = rowUri)->asSequence()->at(1)
+
 
 end
 
@@ -372,37 +379,30 @@ end
 constraints
 
 context OneHot
-	inv pre_columnDset: self.getColumnParams()->forAll(cp | cp.column.dataset = self.getInputDataset(1))
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv pre_columnTypeCategorical: self.getColumnParam(1).column.type = ValueType::Categorical or 
 						self.getColumnParam(1).column.type = ValueType::Boolean
 	inv pre_columnId: self.getColumnParams()->forAll(cp | cp.column.id = false)
 	inv pre_columnTarget: self.getColumnParams()->forAll(cp | cp.column.target = false)
-	inv inv_makeCorrectOneHotZero: self.getOutputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParams()->collect(column.uri)->asSequence()->at(1) )->forAll(
+	inv inv_makeCorrectOneHotZero: self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->forAll(
 			d | self.getOutputDataset(1).data->select(
 				d2 | self.getOutputDataset(1).cols->select(
-					c | (self.getOutputDataset(1).data->select(d|d.col.uri=(self.getColumnParams()->collect(column.uri)->asSequence()->at(1))
-					)->collect(value)->asSet())->includes(c.name))->includes(d2.col) 
-				and d2.row.uri= d.row.uri 
+					c | (self.getColumnParam(1).column.dataOfCol->collect(value)->asSet())->includes(c.name))->includes(d2.col) 
+				and d2.row.uri = d.row.uri 
 				and d2.col.name <> d.value)->collect(value)->forAll(v|v='0'))
-	inv inv_makeCorrectOneHotOne:self.getInputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParams()->collect(column.uri)->asSequence()->at(1) )->forAll(
-			d | self.getOutputDataset(1).data->select(d2 | d2.col.name = d.value and d2.row.uri = d.row.uri)->collect(value)->asSequence()->at(1) = '1')
-	inv post_existsColumns: self.getOutputDataset(1).data->select(
-		d|d.col.uri = self.getColumnParams()->collect(column.uri)->asSequence()->at(1))->forAll(
+	inv inv_makeCorrectOneHotOne:self.getColumnParam(1).column.dataOfCol->forAll(
+			d | self.getOutputDataset(1).getDataByName(d.value, d.row.uri).value = '1')
+	inv post_existsColumns: self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->forAll(
 			d|self.getOutputDataset(1).existColumn(d.value))
-	inv post_colTypes: self.getOutputDataset(1).data->select(
-		d|d.col.uri = self.getColumnParams()->collect(column.uri)->asSequence()->at(1))->forAll(
+	inv post_colTypes: self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->forAll(
 			d|self.getOutputDataset(1).getColumn(d.value).type=ValueType::Int)
-	inv post_colId: self.getOutputDataset(1).data->select(
-		d|d.col.uri = self.getColumnParams()->collect(column.uri)->asSequence()->at(1))->forAll(
+	inv post_colId: self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->forAll(
 			d|self.getOutputDataset(1).getColumn(d.value).id=false)
-	inv post_colTarget: self.getOutputDataset(1).data->select(
-		d|d.col.uri = self.getColumnParams()->collect(column.uri)->asSequence()->at(1))->forAll(
+	inv post_colTarget: self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->forAll(
 			d|self.getOutputDataset(1).getColumn(d.value).target=false)
 
 context ImbalancedLearn
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))	
 	inv pre_colType: self.getColumnParam(1).column.type = ValueType::Categorical or 
 						self.getColumnParam(1).column.type = ValueType::Boolean or 
 						self.getColumnParam(1).column.type = ValueType::String
@@ -415,10 +415,9 @@ context ImbalancedLearn
 			self.getOutputDataset(1).cols->select(
 		c | c.name = self.getColumnParam(1).column.name)->asSequence()->at(1).type = ValueType::String
 
-	inv inv_makeCorrectImbLearn: self.getOutputDataset(1).data->select(d|d.col.uri=  self.getColumnParam(1).column.uri)->collect(value)->asSet()->forAll(
-			v | self.getOutputDataset(1).data->select(d|d.col.uri=  self.getColumnParams()->collect(
-				column.uri)->asSequence()->at(1) and d.value = v)->size() = self.getOutputDataset(1).data->select(d|d.col.uri=  self.getColumnParams()->collect(
-				column.uri)->asSequence()->at(1) and d.value <> v)->size())
+	inv inv_makeCorrectImbLearn: self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)->asSet()->forAll(
+			v | self.getOutputDataset(1).data->select(d|d.col.uri=  self.getColumnParam(1).column.uri and d.value = v)->size() = 
+			self.getOutputDataset(1).data->select(d|d.col.uri=  self.getColumnParam(1).column.uri and d.value <> v)->size())
 
 context Split
 	inv pre_sizeParam: self.getPrimitiveParameter('size').value.toReal() < 1
@@ -441,33 +440,29 @@ context Split
 
 context RemoveColumns
 	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
-	inv post_noColumnDset: self.getOutputDataset(1).cols->forAll(col|col.name<>self.getColumnParams()->collect(column.name)->asSequence()->at(1))
+	inv post_noColumnDset: self.getOutputDataset(1).cols->forAll(col|col.name<>self.getColumnParam(1).column.name)
 
 context StringToNumber
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv pre_columnTypeString: self.getColumnParam(1).column.type = ValueType::String
 	inv post_columnDset: self.getOutputDataset(1).existColumn(self.getColumnParam(1).column.name)
 	inv post_columnTypeNumerical: self.getOutputDataset(1).cols->select(
 		c | c.name = self.getColumnParam(1).column.name)->asSequence()->at(1).type = ValueType::Int
 			or self.getOutputDataset(1).cols->select(
 		c | c.name = self.getColumnParam(1).column.name)->asSequence()->at(1).type = ValueType::Float
-	inv inv_makeCorrectStringToNumber:self.getInputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value) = self.getOutputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value)
+	inv inv_makeCorrectStringToNumber:self.getColumnParam(1).column.dataOfCol->collect(value) = 
+	self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)
 
 context Discretize
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv pre_columnTypeNumerical: self.getColumnParam(1).column.type = ValueType::Int or self.getColumnParam(1).column.type = ValueType::Float
 	inv post_columnsTypeString: self.getOutputDataset(1).cols->select(
 		c | c.name = self.getPrimitiveParameter('derivedField').value)->asSequence->at(1).type = ValueType::String or 
 		self.getOutputDataset(1).cols->select(
 		c | c.name = self.getPrimitiveParameter('derivedField').value)->asSequence->at(1).type = ValueType::Categorical
-	inv inv_makeCorrectBin: self.getInputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->forAll
+	inv inv_makeCorrectBin: self.getColumnParam(1).column.dataOfCol->forAll
 		(
-			d | let binName = self.getOutputDataset(1).data->select( 
-				d2 | d2.col.name = self.getPrimitiveParameter('derivedField').value
-				and d2.row.uri = d.row.uri)->asSequence()->at(1).value in
+			d | let binName = self.getOutputDataset(1).getDataByName(self.getPrimitiveParameter('derivedField').value,  d.row.uri).value in
 				let bin = self.parameter->select(p | p.oclIsTypeOf(BinParam)).oclAsType(BinParam)->select(b | b.binValue = binName)->asSequence()->at(1) in
 					if bin.closure = ClosureType::closedClosed then
 						d.value.toReal() >= bin.leftMargin and d.value.toReal() <= bin.rightMargin
@@ -489,8 +484,8 @@ context RuleBasedRowFilter
 		if self.parameter->select(p | p.oclIsKindOf(Rule))->asSequence()->at(1).oclAsType(Rule).operator.oclIsKindOf(BinaryOp) then
 			let filterValues = self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator.oclAsType(BinaryOp)->collect(compareOperand.value) in
 				if self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator.oclAsType(BinaryOp)->asSequence()->at(1).oclIsTypeOf(EqualOp) then
-					self.getOutputDataset(1).data->select(d | 
-						d.col.uri = self.parameter.oclAsType(Rule)->asSequence()->at(1).operator.colOperand.column.uri)->collect(value)->forAll(v | filterValues->includes(v))
+					self.getOutputDataset(1).getDataOfColUri(
+						self.parameter.oclAsType(Rule)->asSequence()->at(1).operator.colOperand.column.uri)->collect(value)->forAll(v | filterValues->includes(v))
 				else
 					false
 				endif
@@ -499,128 +494,129 @@ context RuleBasedRowFilter
 		endif
 	
 context RowFilter
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv inv_makeCorrectFilter:
-		if (self.parameter->select(p | p.oclIsKindOf(FilterType))->size() = 1) 	then
-			if (self.parameter->select(p | p.oclIsKindOf(MatchingType))->size() = 1) then
-				if(self.getPrimitiveParameter('include').value.toBoolean()) then
-					if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->size() =1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
-								v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
+		let colName = 
+		self.getColumnParam(1).column.name in
+			if (self.parameter->select(p | p.oclIsKindOf(FilterType))->size() = 1) 	then
+				if (self.parameter->select(p | p.oclIsKindOf(MatchingType))->size() = 1) then
+					if(self.getPrimitiveParameter('include').value.toBoolean()) then
+						if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->size() =1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
+									v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
 
-					else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
-								v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
+						else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
+									v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
 
-					else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(MissingValues)).oclAsType(MissingValues)->size() = 1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(v | v.isUndefined()
-						or self.getOutputDataset(1).null_values->includes(v))
+						else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(MissingValues)).oclAsType(MissingValues)->size() = 1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(v | v.isUndefined()
+							or self.getOutputDataset(1).null_values->includes(v))
 
-					else if (self.parameter->select(p | p.oclIsTypeOf(RowNumber)).oclAsType(RowNumber)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
-						self.getOutputDataset(1).rows->collect(uri)->asSequence()->forAll(
-							u | u >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and u <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
-					else false endif endif endif endif
-				else if not self.getPrimitiveParameter('include').value.toBoolean() then
-					if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->size() =1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
-								v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
-					else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or 
-								v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
-					else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(MissingValues)).oclAsType(MissingValues)->size() = 1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(v | v.isDefined()
-						and not self.getOutputDataset(1).null_values->includes(v))
-					else if (self.parameter->select(p | p.oclIsTypeOf(RowNumber)).oclAsType(RowNumber)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
-						self.getOutputDataset(1).data->collect(value) = 
-						self.getInputDataset(1).data->select(d | d.row.uri > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and
-						d.row.uri < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value)
-					else false endif endif endif endif
-				else false endif endif
+						else if (self.parameter->select(p | p.oclIsTypeOf(RowNumber)).oclAsType(RowNumber)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
+							self.getOutputDataset(1).rows->collect(uri)->asSequence()->forAll(
+								u | u >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and u <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
+						else false endif endif endif endif
+					else if not self.getPrimitiveParameter('include').value.toBoolean() then
+						if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->size() =1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
+									v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
+						else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or 
+									v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
+						else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(MissingValues)).oclAsType(MissingValues)->size() = 1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(v | v.isDefined()
+							and not self.getOutputDataset(1).null_values->includes(v))
+						else if (self.parameter->select(p | p.oclIsTypeOf(RowNumber)).oclAsType(RowNumber)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
+							self.getOutputDataset(1).data->collect(value) = 
+							self.getInputDataset(1).data->select(d | d.row.uri > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and
+							d.row.uri < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value)
+						else false endif endif endif endif
+					else false endif endif
+				else false endif
 			else false endif
-		else false endif
 
 
 context RowSplitter
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv inv_makeCorrectFilter:
-		if (self.parameter->select(p | p.oclIsKindOf(FilterType))->size() = 1) 	then
-			if (self.parameter->select(p | p.oclIsKindOf(MatchingType))->size() = 1) then
-				if(self.getPrimitiveParameter('include').value.toBoolean()) then
+		let colName = 
+		self.getColumnParam(1).column.name in
+			if (self.parameter->select(p | p.oclIsKindOf(FilterType))->size() = 1) 	then
+				if (self.parameter->select(p | p.oclIsKindOf(MatchingType))->size() = 1) then
+					if(self.getPrimitiveParameter('include').value.toBoolean()) then
 
-					if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->size() =1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
-								v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max) and (
-						self.getOutputDataset(2).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
-								v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max) )
-						
-					else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
-								v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max) and (
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or
-								v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max) )
+						if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->size() =1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
+									v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max) and (
+							self.getOutputDataset(2).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
+									v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max) )
+							
+						else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
+									v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max) and (
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or
+									v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max) )
 
-					else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(MissingValues)).oclAsType(MissingValues)->size() = 1) then
-						(self.getOutputDataset(1).data->select(
-							d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.isUndefined()
-							or self.getOutputDataset(1).null_values->includes(v))) and
-						self.getOutputDataset(2).data->select(
-							d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.isDefined()
-							and not self.getOutputDataset(2).null_values->includes(v))
+						else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(MissingValues)).oclAsType(MissingValues)->size() = 1) then
+							(self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.isUndefined()
+								or self.getOutputDataset(1).null_values->includes(v))) and
+							self.getOutputDataset(2).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.isDefined()
+								and not self.getOutputDataset(2).null_values->includes(v))
 
-					else if (self.parameter->select(p | p.oclIsTypeOf(RowNumber)).oclAsType(RowNumber)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
-						self.getOutputDataset(1).data->collect(value) = 
-						self.getInputDataset(1).data->select(d | d.row.uri >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and
-						d.row.uri <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value) and 
-						(self.getOutputDataset(2).data->collect(value) = 
-						self.getInputDataset(1).data->select(d | d.row.uri < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or
-						d.row.uri > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value))					
+						else if (self.parameter->select(p | p.oclIsTypeOf(RowNumber)).oclAsType(RowNumber)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
+							self.getOutputDataset(1).data->collect(value) = 
+							self.getInputDataset(1).data->select(d | d.row.uri >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and
+							d.row.uri <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value) and 
+							(self.getOutputDataset(2).data->collect(value) = 
+							self.getInputDataset(1).data->select(d | d.row.uri < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or
+							d.row.uri > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value))					
 
-					else false endif endif endif endif
-				else if(not self.getPrimitiveParameter('include').value.toBoolean()) then
-					if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->size() =1) then
-						(self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
-								v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)) and
-						self.getOutputDataset(2).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
-								v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
+						else false endif endif endif endif
+					else if(not self.getPrimitiveParameter('include').value.toBoolean()) then
+						if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->size() =1) then
+							(self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
+									v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)) and
+							self.getOutputDataset(2).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
+									v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
 
-					else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
-						(self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or 
-								v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)) and
-						self.getOutputDataset(2).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(
-								v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
-								v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)						
+						else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
+							(self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or 
+									v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)) and
+							self.getOutputDataset(2).getColumn(colName).dataOfCol->collect(value)->forAll(
+									v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
+									v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)						
 
-					else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(MissingValues)).oclAsType(MissingValues)->size() = 1) then
-						self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value)->forAll(v | v.isDefined()
-						and not self.getOutputDataset(1).null_values->includes(v)) and
-						(self.getOutputDataset(2).data->select(
-							d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.isUndefined()
-							or self.getOutputDataset(1).null_values->includes(v)))
+						else if (self.parameter->select(p | p.oclIsTypeOf(ColValue)).oclAsType(ColValue)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(MissingValues)).oclAsType(MissingValues)->size() = 1) then
+							self.getOutputDataset(1).getColumn(colName).dataOfCol->collect(value)->forAll(v | v.isDefined()
+							and not self.getOutputDataset(1).null_values->includes(v)) and
+							(self.getOutputDataset(2).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.isUndefined()
+								or self.getOutputDataset(1).null_values->includes(v)))
 
-					else if (self.parameter->select(p | p.oclIsTypeOf(RowNumber)).oclAsType(RowNumber)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
-						(self.getOutputDataset(1).data->collect(value) = 
-						self.getInputDataset(1).data->select(
-							d | d.row.uri < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or
-						d.row.uri > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value)) and
-						self.getOutputDataset(2).data->collect(value) = 
-						self.getInputDataset(1).data->select(d | d.row.uri >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and
-						d.row.uri <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value)
+						else if (self.parameter->select(p | p.oclIsTypeOf(RowNumber)).oclAsType(RowNumber)->size() = 1 and self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->size() = 1) then
+							(self.getOutputDataset(1).data->collect(value) = 
+							self.getInputDataset(1).data->select(
+								d | d.row.uri < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or
+							d.row.uri > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value)) and
+							self.getOutputDataset(2).data->collect(value) = 
+							self.getInputDataset(1).data->select(d | d.row.uri >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and
+							d.row.uri <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value)
 
-					else false endif endif endif endif
-				else false endif endif
+						else false endif endif endif endif
+					else false endif endif
+				else false endif
 			else false endif
-		else false endif
 	inv post_twoDatasets: self.getOutputDatasets()->size() = 2
 
 context Concatenate
@@ -634,12 +630,11 @@ context Concatenate
 context ConstantValueColumn
 	inv pre_noColumnDataset: not self.getInputDataset(1).existColumn(self.getPrimitiveParameter('name').value) 
 	inv post_columnDataset: self.getOutputDataset(1).existColumn(self.getPrimitiveParameter('name').value)
-	inv inv_makeCorrectCreation: self.getOutputDataset(1).data->select(
-		d | d.col.name = self.getPrimitiveParameter('name').value)->collect(value)->forAll(
+	inv inv_makeCorrectCreation: self.getOutputDataset(1).getDataOfColName(self.getPrimitiveParameter('name').value)->collect(value)->forAll(
 			v | v = self.getPrimitiveParameter('value').value)
 
 context ColumnRename
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv post_newColumnDset: self.getOutputDataset(1).cols->collect(name)->includes(self.getPrimitiveParameter('newName').value)
 	inv post_correctType: 
 		if self.existPrimitiveParameter('type') then
@@ -668,22 +663,18 @@ context ColumnRename
 				endif
 			endif						
 		else true endif
-	inv inv_makeCorrectRename:self.getInputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value) = self.getOutputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value)
+	inv inv_makeCorrectRename:self.getColumnParam(1).column.dataOfCol->collect(value) = self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)
 
 
 context NumberToString
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv post_columnDset: self.getOutputDataset(1).existColumn(self.getColumnParam(1).column.name)
 	inv post_columnTypeString: self.getOutputDataset(1).cols->select(
 		c | c.name = self.getColumnParam(1).column.name)->asSequence()->at(1).type = ValueType::String
-	inv inv_makeCorrectNumberToString:self.getInputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value) = self.getOutputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value)
+	inv inv_makeCorrectNumberToString:self.getColumnParam(1).column.dataOfCol->collect(value) = self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)
 
 context Sorter
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv pre_define_sortType: self.parameter->select(p|p.oclIsTypeOf(SortCriteria))->size() = 1
 	inv post_makeCorrectSort:
 		let sortData = self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->collect(value) in
@@ -700,12 +691,12 @@ context ConditionalFunction
 	inv inv_noAlterRestValues:
 	if self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator->asSequence()->at(1).oclIsTypeOf(MissingOp) then
 		self.getInputDataset(1).data->select(d | d.col.uri = self.parameter.oclAsType(Rule)->asSequence()->at(1).operator.colOperand.column.uri and 
-		not self.getInputDataset(1).null_values->includes(d.value))->forAll(d | self.getOutputDataset(1).data->select(d2 | d2.col.uri = d.col.uri and d2.row.uri = d.row.uri)->asSequence->at(1).value = d.value)
+		not self.getInputDataset(1).null_values->includes(d.value))->forAll(d | self.getOutputDataset(1).getDataByUri(d.col.uri, d.row.uri).value = d.value)
 	else
 		if self.parameter->select(p | p.oclIsTypeOf(Rule))->asSequence()->at(1).oclAsType(Rule).operator.oclIsTypeOf(EqualOp) then 
 			let rightOpValue = self.parameter->select(p | p.oclIsTypeOf(Rule)).oclAsType(Rule).operator.oclAsType(BinaryOp).compareOperand.value in
 							self.getInputDataset(1).data->select(d | d.col.uri = self.parameter.oclAsType(Rule)->asSequence()->at(1).operator.colOperand.column.uri and 
-							not rightOpValue->includes(d.value))->forAll(d | self.getOutputDataset(1).data->select(d2 | d2.col.uri = d.col.uri and d2.row.uri = d.row.uri)->asSequence->at(1).value = d.value)
+							not rightOpValue->includes(d.value))->forAll(d | self.getOutputDataset(1).getDataByUri(d.col.uri, d.row.uri).value = d.value)
 		else false endif
 	endif
 
@@ -723,8 +714,8 @@ context ConditionalFunction
 					let binaryOpResult = self.parameter->select(p | p.oclIsTypeOf(Rule))->asSequence()->at(1).oclAsType(Rule).operator.oclAsType(BinaryOp).resultOperand.value in
 						self.getInputDataset(1).data->select(d | d.col.uri = self.parameter.oclAsType(Rule)->asSequence()->at(1).operator.colOperand.column.uri
 						 and rightOpValue->includes(d.value))->collect(row.uri)->forAll(
-							uri | self.getOutputDataset(1).data->select(d2| d2.col.uri = self.parameter.oclAsType(Rule)->asSequence()->at(1).operator.colOperand.column.uri)->select(
-								d2 | d2.row.uri = uri)->asSequence()->at(1).value = binaryOpResult
+							uri | self.getOutputDataset(1).getDataByUri(
+								self.parameter.oclAsType(Rule)->asSequence()->at(1).operator.colOperand.column.uri, uri).value = binaryOpResult
 						)
 			else 
 				false
@@ -732,31 +723,28 @@ context ConditionalFunction
 		endif
 
 context Binarizer
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
-	inv post_transformValues: self.getOutputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.toInteger() = 0 or v.toInteger() = 1)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
+	inv post_transformValues: self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.toInteger() = 0 or v.toInteger() = 1)
 
 
 context Normalizer
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
 	inv pre_columnTypeNumerical: self.getColumnParam(1).column.type = ValueType::Int or self.getColumnParam(1).column.type = ValueType::Float
-	inv post_transformValues: self.getOutputDataset(1).data->select(
-		d | d.col.uri = self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.toReal() >= 0 and v.toReal()<=1)
+	inv post_transformValues: self.getOutputDataset(1).getDataOfColUri(self.getColumnParam(1).column.uri)->collect(value)->forAll(v | v.toReal() >= 0 and v.toReal()<=1)
 
 context MathFormula
 	inv inv_makeCorrectFormula:
 		if self.parameter->select(p | p.oclIsTypeOf(Division))->size = 1 then
 			let primitiveOperandValue = self.parameter->select(p | p.oclIsTypeOf(MathFunction)).oclAsType(MathFunction)->asSequence->at(1).primitive.value in
 			self.getInputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->forAll(d | 
-						self.getOutputDataset(1).data->select(d2 | d2.col.uri = self.getColumnParam(1).column.uri and d2.row.uri = d.row.uri)->asSequence()->at(1).value = d.value.toReal() / primitiveOperandValue.toReal()
-
-						)
+						self.getOutputDataset(1).getDataByUri( self.getColumnParam(1).column.uri, d.row.uri).value.toReal() = d.value.toReal() / primitiveOperandValue.toReal())
 		else false endif
 
 context LabelEncoder
-	inv pre_columnDset: self.getInputDataset(1).existColumn(self.getColumnParam(1).column.name)
-	inv post_labelEncode: self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->forAll(d | self.parameter->select(p | p.oclIsTypeOf(Label)).oclAsType(Label)->collect(value)->includes(d.value.toInteger()))
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
+	inv post_labelEncode: self.getOutputDataset(1).getColumn(self.getColumnParam(1).column.name).dataOfCol->forAll
+	(d | self.parameter->select(p | p.oclIsTypeOf(Label)).oclAsType(Label)->collect(value)->includes(d.value.toInteger()))
 	inv inv_makeCorrectEncoder: self.getColumnParam(1).column.dataOfCol->forAll(
-				d |self.getOutputDataset(1).data->select(d2 | d2.col.uri = self.getColumnParam(1).column.uri and d2.row.uri = d.row.uri)->asSequence()->at(1).value.toInteger() = 
+				d |self.getOutputDataset(1).getDataByUri(self.getColumnParam(1).column.uri, d.row.uri).value.toInteger() = 
 				self.parameter->select(p | p.oclIsTypeOf(Label)).oclAsType(Label)->select(l | l.label = d.value)->asSequence()->at(1).value
 			)
