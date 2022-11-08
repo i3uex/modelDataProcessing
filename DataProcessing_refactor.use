@@ -1,0 +1,361 @@
+model DataProcessing
+
+enum OpType{Ordinal, Categorical, Continuous}
+enum PrimitiveType{BoolPr, IntPr, FloatPr, StringPr}
+enum DataType{DateTime, String, Boolean, Time, Integer, Float, Double} 
+enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
+
+
+
+abstract class Parameter
+  attributes
+    name:String
+	optional:Boolean
+end
+
+class ColumnParam < Parameter
+  attributes
+   exclude:Boolean
+end
+
+class Primitive < Parameter
+  attributes
+	value:String
+	type:PrimitiveType
+end
+
+class BinParam < Parameter
+	attributes
+		binValue:String
+		leftMargin:Real
+		rightMargin:Real
+		closure:ClosureType
+end
+
+class FilterType < Parameter
+end
+
+class ColValue < FilterType
+end
+
+class RowNumber < FilterType
+end
+
+class MatchingType < Parameter
+end
+
+class MissingValues < MatchingType
+end
+
+class Range < MatchingType
+end
+
+class NominalValue < MatchingType
+	attributes
+	value:String
+end
+
+class RangeInt < Range
+	attributes
+	 min:Integer
+	 max:Integer
+end
+
+class RangeFloat < Range
+	attributes
+	 min:Real
+	 max:Real
+end
+
+abstract class PortType
+	attributes
+	 index:Integer
+	 name:String
+	 path:String
+end
+
+class Dataset < PortType
+	attributes
+	 sep:String
+	 null_values: Set(String)
+	operations
+	  getColumn(name : String) : Column = 
+	  self.cols->select(c|c.name = name)->asSequence->at(1)
+	  existColumn(name : String) : Boolean =
+	  self.cols.name->includes(name)
+	  getDataOfColindex(index: Integer) : Set(Data) =
+	  self.data->select(d | d.col.index = index)
+	  getDataOfColName(name: String) : Set(Data) =
+	  self.data->select(d | d.col.name = name)
+	  getDataByindex(colindex: Integer, rowindex: Integer) : Data =
+	  self.data->select(d | d.col.index = colindex and d.row.index = rowindex)->asSequence()->at(1)
+	  getDataByName(colName: String, rowindex: Integer) : Data =
+	  self.data->select(d | d.col.name = colName and d.row.index = rowindex)->asSequence()->at(1)
+
+
+end
+	 
+
+abstract class DataProcessingElement
+	attributes
+		index:String
+end
+
+class Job < DataProcessingElement
+end
+
+abstract class DataOperation < DataProcessingElement
+   operations
+	 getColumnParam(index: Integer) : ColumnParam =
+	 	self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)->asSequence->at(index)
+	 getColumnParams() : Bag(ColumnParam) =
+	    self.parameter->select(p|p.oclIsTypeOf(ColumnParam)).oclAsType(ColumnParam)
+	getInputDataset(index: Integer) : Dataset = 
+		self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence->at(index)
+	getInputDatasets() : Bag(Dataset) =
+		self.inputPort->select(ip | ip.oclIsTypeOf(Dataset)).oclAsType(Dataset)
+	getOutputDataset(index: Integer) : Dataset = 
+		self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)->asSequence->at(index)
+	getOutputDatasets() : Bag(Dataset) =
+		self.outputPort->select(op | op.oclIsTypeOf(Dataset)).oclAsType(Dataset)
+	getPrimitiveParameter(name: String) : Primitive =
+		self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name).oclAsType(Primitive)->asSequence()->at(1)
+	existPrimitiveParameter(name: String) : Boolean =
+	    self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name)->size() >= 1
+	checkOpTypeIn(type: OpType) : Boolean =
+		self.getOutputDataset(1).cols->select(c | c.index = self.getColumnParam(1).column.index)->asSequence()->at(1).opType = 
+		type
+	checkDataTypeIn(type: DataType) : Boolean =
+		self.getOutputDataset(1).cols->select(c | c.index = self.getColumnParam(1).column.index)->asSequence()->at(1).dataType = 
+		type
+	checkOpTypeOut(type: OpType) : Boolean =
+		self.getInputDataset(1).cols->select(c | c.index = self.getColumnParam(1).column.index)->asSequence()->at(1).opType = 
+		type
+	checkDataTypeOut(type: DataType) : Boolean =
+		self.getInputDataset(1).cols->select(c | c.index = self.getColumnParam(1).column.index)->asSequence()->at(1).dataType = 
+		type
+	existParameterTypeColValue() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(ColValue))->size() = 1
+	existParameterTypeRangeInt() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(RangeInt))->size() = 1
+	existParameterTypeRangeFloat() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(RangeFloat))->size() = 1
+	existParameterTypeMissingValues() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(MissingValues))->size() = 1
+	existParameterTypeRowNumber() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(RowNumber))->size() = 1
+	checkColRangeInt(colName: String, include:Boolean, dataset:Dataset) : Boolean =
+		if include then
+			dataset.getColumn(colName).dataOfCol->collect(value)->forAll(
+				v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
+				v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
+		else
+			dataset.getColumn(colName).dataOfCol->collect(value)->forAll(
+				v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or 
+				v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
+		endif
+	checkColRangeFloat(colName: String, include:Boolean, dataset:Dataset) : Boolean =
+		if include = true then
+			dataset.getColumn(colName).dataOfCol->collect(value)->forAll(
+				v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
+				v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
+		else
+			dataset.getColumn(colName).dataOfCol->collect(value)->forAll(
+				v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
+				v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
+		endif
+	checkColMissingValues(colName: String, include:Boolean, dataset:Dataset) : Boolean =
+		if include = true then
+			dataset.getColumn(colName).missing_values = dataset.rows->size()
+		else
+			dataset.getColumn(colName).missing_values = 0
+		endif
+	checkRowRange(colName: String, include:Boolean, dataset:Dataset) : Boolean = 
+		if include = true then
+			dataset.rows->collect(index)->asSequence()->forAll(
+				u | u >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and u <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
+		else
+			dataset.data->collect(value) = 
+			self.getInputDataset(1).data->select(d | d.row.index > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and
+			d.row.index < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)->collect(value)
+		endif
+	checkNominalValue(colName: String, include:Boolean, dataset:Dataset) : Boolean =
+	 	if include = true then
+			self.parameter->select(p | p.oclIsTypeOf(NominalValue)).oclAsType(NominalValue)->forAll(v | v.value = dataset.getColumn(colName).dataOfCol->collect(value))
+		else	
+			self.parameter->select(p | p.oclIsTypeOf(NominalValue)).oclAsType(NominalValue)->forAll(v | v.value <> dataset.getColumn(colName).dataOfCol->collect(value))
+		endif
+end
+
+class RowFilter < DataOperation
+end
+
+class RemoveColumns < DataOperation
+end
+
+class Discretize < DataOperation
+end
+
+
+
+class Column
+   attributes
+     index:Integer
+	 opType:OpType
+	 id:Boolean
+	 target:Boolean
+	 name:String
+	 missing_values:Integer
+	 dataType:DataType
+
+end	 
+class Row
+   attributes
+      index:Integer
+end
+
+class Data
+	attributes
+		value:String
+end
+	  
+association DataRow between
+	Data [1] role data
+	Row [1] role rowOfData
+end
+
+association RowData between
+	Row [1] role row
+	Data [1..*] role dataOfRow
+end
+
+association DataCol between
+	Data [1] role data
+	Column [1] role colOfData
+end
+
+association ColData between
+	Column [1] role col
+	Data [1..*] role dataOfCol
+end
+
+association ColValueMatchingType between
+	ColValue [1] 
+	MatchingType [1..*]
+end
+
+association RowNumberMatchingType between
+	RowNumber [1]
+	RangeInt [1]
+end
+
+aggregation DSCol between
+	Dataset [1]
+	Column [1..*] role cols
+end
+
+aggregation DSRow between
+	Dataset [1] 
+	Row [1..*] role rows
+end
+
+aggregation DSData between
+	Dataset [1] 
+	Data [1..*] role data
+end
+
+aggregation JobDop between
+	Job [1] role jobDop
+	DataOperation [1..*] role dopJob
+end
+
+aggregation JobJob between
+	Job[1]
+	Job [0..*] role jobInput
+end
+
+aggregation  InputPort between
+	DataProcessingElement [1] role dataProcessingInput
+	PortType [1..*] role inputPort
+end
+
+aggregation  OutputPort between
+	DataProcessingElement [1] role dataProcessingOutput
+	PortType [1..*] role outputPort
+end
+
+association ColumnParams between
+    ColumnParam[1]
+	Column [1]
+end
+
+aggregation DopParam between
+	DataOperation [1]
+	Parameter [1..*]
+end
+
+
+
+
+constraints
+
+context RemoveColumns
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
+	inv post_noColumnDset: self.getOutputDataset(1).cols->forAll(col|col.name<>self.getColumnParam(1).column.name)
+
+context Discretize
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
+	inv pre_columnTypeNumerical: self.checkOpTypeIn(OpType::Continuous)
+	inv post_columnsTypeString: self.checkOpTypeOut(OpType::Categorical)
+	inv inv_makeCorrectBin: self.getColumnParam(1).column.dataOfCol->forAll
+		(
+			d | let binName = self.getOutputDataset(1).getDataByName(self.getPrimitiveParameter('derivedField').value,  d.row.index).value in
+				let bin = self.parameter->select(p | p.oclIsTypeOf(BinParam)).oclAsType(BinParam)->select(b | b.binValue = binName)->asSequence()->at(1) in
+					if bin.closure = ClosureType::closedClosed then
+						d.value.toReal() >= bin.leftMargin and d.value.toReal() <= bin.rightMargin
+						else if bin.closure = ClosureType::closedOpen then
+							d.value.toReal() >= bin.leftMargin and d.value.toReal() < bin.rightMargin
+							else if bin.closure = ClosureType::openClosed then
+								d.value.toReal() > bin.leftMargin and d.value.toReal() <= bin.rightMargin
+								else if bin.closure = ClosureType::openOpen then
+									d.value.toReal() > bin.leftMargin and d.value.toReal() < bin.rightMargin
+								else false endif
+							endif
+						endif
+					endif
+		)
+	
+context RowFilter
+	inv pre_columnDset: self.getColumnParams()->forAll(cp | self.getInputDataset(1).existColumn(cp.column.name))
+	inv inv_makeCorrectFilter:
+		let colName = 
+		self.getColumnParam(1).column.name in
+		if (self.parameter->select(p | p.oclIsKindOf(FilterType))->size() = 1) 	then
+			if (self.parameter->select(p | p.oclIsKindOf(MatchingType))->size() = 1) then
+				if self.getPrimitiveParameter('include').value.toBoolean() = true then
+					if (self.existParameterTypeColValue() and self.existParameterTypeRangeFloat()) then
+						self.checkColRangeFloat(colName, true, self.getOutputDataset(1))
+					else if (self.existParameterTypeColValue() and self.existParameterTypeRangeInt()) then
+						self.checkColRangeInt(colName, true, self.getOutputDataset(1))
+
+					else if (self.existParameterTypeColValue() and self.existParameterTypeMissingValues()) then
+						self.checkColMissingValues(colName, true, self.getOutputDataset(1))
+
+					else if (self.existParameterTypeRowNumber() and self.existParameterTypeRangeInt()) then
+						self.checkRowRange(colName, true, self.getOutputDataset(1))
+					else false endif endif endif endif
+				else if self.getPrimitiveParameter('include').value.toBoolean() = false then
+					if (self.existParameterTypeColValue() and self.existParameterTypeRangeFloat()) then
+						self.checkColRangeFloat(colName, false, self.getOutputDataset(1))
+					else if (self.existParameterTypeColValue() and self.existParameterTypeRangeInt()) then
+						self.checkColRangeInt(colName, false, self.getOutputDataset(1))
+					else if (self.existParameterTypeColValue() and self.existParameterTypeMissingValues()) then
+						self.checkColMissingValues(colName, false, self.getOutputDataset(1))
+					else if (self.existParameterTypeRowNumber() and self.existParameterTypeRangeInt()) then
+						self.checkRowRange(colName, false, self.getOutputDataset(1))
+				else false endif endif endif endif
+				else false endif endif
+			else false endif
+		else false endif
+
+
