@@ -2,7 +2,6 @@ model DataProcessingPMML
 enum OpType{Ordinal, Categorical, Continuous}
 enum DataType{String, Time, Integer, DateTime, Boolean, Double, Float}
 enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
-enum Property{Valid, Invalid, Missing}
 enum SpecialType{MissingTo, DefaultValue}
 
 abstract class DataProcessingElement
@@ -50,7 +49,6 @@ class ValueField
 	attributes
 		value:String
 		count:Integer
-		property:Property
 end
 
 class Categorical < DataField
@@ -85,10 +83,10 @@ abstract class Transformation < DataProcessingElement
 		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)
 	getOutputDataField() : DataField =
 		self.getOutputDataDictionary(1).getDataField(self.field.dataField.name)
-	getConstantParameter(name: String) : Constant =
-		self.parameter->select(p|p.oclIsTypeOf(Constant) and p.name = name).oclAsType(Constant)->asSequence()->at(1)
-	existConstantParameter(name: String) : Boolean =
-	    self.parameter->select(p|p.oclIsTypeOf(Constant) and p.name = name)->size() >= 1
+	getPrimitiveParameter(name: String) : Primitive =
+		self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name).oclAsType(Primitive)->asSequence()->at(1)
+	existPrimitiveParameter(name: String) : Boolean =
+	    self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name)->size() >= 1
 	checkOpTypeCategoricalIn() : Boolean =
 		self.field.dataField.oclIsKindOf(Categorical)
 	checkOpTypeCategoricalOut() : Boolean =
@@ -127,6 +125,8 @@ abstract class Transformation < DataProcessingElement
 		self.parameter->select(p | p.oclIsTypeOf(MissingValues))->size() = 1
 	existParameterTypeRowNumber() : Boolean =
 		self.parameter->select(p | p.oclIsTypeOf(RowNumber))->size() = 1
+	existParameterTypeDiscretizeBin() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(DiscretizeBin))->size() >= 1
 	checkFieldRangeInt(fieldName:String, include:Boolean, dataDictionary:DataDictionary) : Boolean =
 		if include then
 			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
@@ -181,9 +181,9 @@ abstract class Parameter
 	required:Boolean
 end
 
-class Constant < Parameter
+class Primitive < MatchingType
   attributes
-	type:DataType
+	value:String
 end
 
 class MatchingType < Parameter
@@ -195,11 +195,6 @@ end
 class DiscretizeBin < Parameter
 	attributes
 		binValue:String
-end
-
-class Value < MatchingType
-	attributes
-		value:String
 end
 
 class MissingValues < MatchingType
@@ -253,11 +248,6 @@ aggregation DataDictDataField between
 	DataField [1..*] role dataFields
 end
 
-association DataFieldValue between
-	DataField [1]
-	Value[0..*]
-end
-
 association DataFieldData between
 	DataField [1]
 	Data [1..*] 
@@ -282,11 +272,6 @@ aggregation TransfParam between
 	Transformation [1]
 	Parameter [0..*]
 end 
-
-aggregation ConstantValue between
-	Constant [1]
-	Value [1..1]
-end
 
 association FieldValueMatchingType between
 	FieldValue [1] 
@@ -318,6 +303,25 @@ association DiscretizeinInterval between
 	Interval [1]
 end
 
+association ContinuousInterval between
+	Continuous [1]
+	Interval [0..*] role intervals
+end
+
+association ValidValues between
+	DataField [1] role dataField
+	ValueField [0..*] role validValues
+end
+
+association InvalidValues between
+	DataField [1] role dataField1
+	ValueField [0..*] role invalidValues
+end
+
+association MissingVals between
+	DataField [1] role dataField2
+	ValueField [0..*] role missingValues
+end
 
 constraints
 
@@ -327,6 +331,14 @@ context RemoveDataFields
 
 context Discretize
 	inv pre_columnTypeNumerical: self.checkOpTypeContinuousIn()
+	inv pre_wellDefinedIntervals: 
+		let intervals_in = self.field.dataField.oclAsType(Continuous).intervals in
+			if self.existParameterTypeDiscretizeBin() then 		
+				self.parameter->select(p | p.oclIsTypeOf(DiscretizeBin)).oclAsType(DiscretizeBin)->forAll(
+					dB | intervals_in->select(int | int.rightMargin = dB.interval.rightMargin and int.leftMargin = dB.interval.leftMargin and int.closure = dB.interval.closure)->size()=1)
+			else
+				false
+			endif
 	inv post_columnsTypeCategorical: self.checkOpTypeCategoricalOut()
 	inv inv_makeCorrectBin: self.field.dataField.data->forAll
 		(
@@ -345,7 +357,9 @@ context Discretize
 							endif
 						endif
 					endif
-		)
+		) 
+
+
 
 context RowFilter
     inv inv_makeCorrectFilter:
@@ -353,7 +367,7 @@ context RowFilter
 		self.field.dataField.name in
 		if (self.existParameterFilterType()) then
 			if (self.existParameterMatchingType()) then
-				if self.getConstantParameter('include').value.value.toBoolean() = true then
+				if self.getPrimitiveParameter('include').value.toBoolean() = true then
 					if (self.existParameterTypeFieldValue() and self.existParameterTypeRangeFloat()) then
 						self.checkFieldRangeFloat(colName, true, self.getOutputDataDictionary(1))
 					else if (self.existParameterTypeFieldValue() and self.existParameterTypeRangeInt()) then
@@ -362,7 +376,7 @@ context RowFilter
 					else if (self.existParameterTypeFieldValue() and self.existParameterTypeMissingValues()) then
 						self.checkFieldMissingValues(colName, true, self.getInputDataDictionary(1), self.getOutputDataDictionary(1))
 					else false endif endif endif 
-				else if self.getConstantParameter('include').value.value.toBoolean() = false then
+				else if self.getPrimitiveParameter('include').value.toBoolean() = false then
 					if (self.existParameterTypeFieldValue() and self.existParameterTypeRangeFloat()) then
 						self.checkFieldRangeFloat(colName, false, self.getOutputDataDictionary(1))
 					else if (self.existParameterTypeFieldValue() and self.existParameterTypeRangeInt()) then
