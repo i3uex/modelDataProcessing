@@ -1,6 +1,0 @@
-!create smote:ImbalancedLearn
-!insert(smote, smote_input) into  InputPort
-!create cp:ColumnParam
-!insert (cp, SeriousDlqin2yrs) into ColumnParams
-!insert(smote, cp) into DopParam
-!insert(smote, smote_output) into  OutputPort

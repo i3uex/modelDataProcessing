@@ -1,4 +1,0 @@
-!create concatenate:Concatenate
-!insert(concatenate, concatenate_input_1) into  InputPort
-!insert(concatenate, concatenate_input_2) into  InputPort
-!insert(concatenate, concatenate_output) into  OutputPort
