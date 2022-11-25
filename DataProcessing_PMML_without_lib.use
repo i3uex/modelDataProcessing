@@ -1,0 +1,315 @@
+model DataProcessingPMML
+enum OpType{Ordinal, Categorical, Continuous}
+enum DataType{String, Time, Integer, DateTime, Boolean, Double, Float}
+enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
+enum SpecialType{MissingTo, Default}
+
+abstract class DataProcessingElement
+	attributes
+		name:String
+end
+
+abstract class PortType
+	attributes
+	 index:Integer
+end
+
+class DataDictionary < PortType
+	attributes
+	 rows:Integer
+	 name:String
+	operations
+	  getDataField(name : String) : DataField = 
+	  self.dataFields->select(dF|dF.name = name)->asSequence->at(1)
+	  existDataField(name : String) : Boolean =
+	  self.dataFields.name->includes(name)
+	  getDataOfDataFieldName(name: String) : Set(Data) =
+	  self.getDataField(name).data
+end
+
+class DataField
+   attributes
+	 id:Boolean
+	 target:Boolean
+	 name:String
+	 dataType:DataType
+	 displayName:String
+	 validValues:Integer
+	 invalidValues:Integer
+	 missingValues:Integer
+end
+
+class Data
+	attributes
+		value:String
+		index:Integer
+end
+
+class ValueField
+	attributes
+		value:String
+		count:Integer
+end
+
+class Categorical < DataField
+	attributes
+		ordinal:Boolean
+end
+
+class Continuous < DataField
+end
+
+class Interval
+	attributes
+		leftMargin:Real
+		rightMargin:Real
+		closure:ClosureType
+		count:Integer
+end
+
+class Job < DataProcessingElement
+end
+
+class Transformation < DataProcessingElement
+   operations
+	getInputDataDictionary(index: Integer) : DataDictionary = 
+		self.inputPort->select(ip | ip.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
+	getOutputDataDictionary(index: Integer) : DataDictionary = 
+		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
+	getInputDataDictionarys() : Bag(DataDictionary) =
+		self.inputPort->select(ip | ip.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)
+
+	getOutputDataDictionarys() : Bag(DataDictionary) =
+		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)
+	getOutputDataField() : DataField =
+		self.getOutputDataDictionary(1).getDataField(self.field.dataField.name)
+	getPrimitiveParameter(name: String) : Primitive =
+		self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name).oclAsType(Primitive)->asSequence()->at(1)
+	existPrimitiveParameter(name: String) : Boolean =
+	    self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name)->size() >= 1
+	checkOpTypeCategoricalIn() : Boolean =
+		self.field.dataField.oclIsKindOf(Categorical)
+	checkOpTypeCategoricalOut() : Boolean =
+		self.getOutputDataField().oclIsKindOf(Categorical)
+	checkOpTypeOrdinalIn() : Boolean =
+		if self.checkOpTypeCategoricalIn() = true then
+			self.field.dataField.oclAsType(Categorical).ordinal
+		else
+			false
+		endif
+	checkOpTypeOrdinalOut() : Boolean =
+		if self.checkOpTypeCategoricalOut() = true then
+			self.getOutputDataField().oclAsType(Categorical).ordinal
+		else
+			false
+		endif
+	checkOpTypeContinuousIn() : Boolean =
+		self.field.dataField.oclIsKindOf(Continuous)
+	checkOpTypeContinuousOut() : Boolean =
+		self.getOutputDataField().oclIsKindOf(Continuous)
+	checkDataTypeIn(type: DataType) : Boolean =
+		self.field.dataField.dataType = type
+	checkDataTypeOut(type: DataType) : Boolean =
+		self.getOutputDataField().dataType = type
+	existParameterFilterType() : Boolean =
+		self.parameter->select(p | p.oclIsKindOf(FilterType))->size() = 1
+	existParameterMatchingType() : Boolean =
+		self.parameter->select(p | p.oclIsKindOf(MatchingType))->size() >= 1
+	existParameterTypeFieldValue() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(FieldValue))->size() >= 1
+	existParameterTypeRangeInt() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(RangeInt))->size() >= 1
+	existParameterTypeRangeFloat() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(RangeFloat))->size() >= 1
+	existParameterTypeMissingValues() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(MissingValues))->size() = 1
+	existParameterTypeRowNumber() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(RowNumber))->size() = 1
+	existParameterTypeDiscretizeBin() : Boolean =
+		self.parameter->select(p | p.oclIsTypeOf(DiscretizeBin))->size() >= 1
+	checkFieldRangeInt(fieldName:String, include:Boolean, dataDictionary:DataDictionary) : Boolean =
+		if include then
+			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
+				v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
+				v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
+		else
+			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
+				v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or 
+				v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
+		endif
+	checkFieldRangeFloat(fieldName: String, include:Boolean, dataDictionary:DataDictionary) : Boolean =
+		if include = true then
+			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
+				v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
+				v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
+		else
+			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
+				v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
+				v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
+		endif
+	checkFieldMissingValues(fieldName: String, include:Boolean, in_dataDictionary:DataDictionary, out_dataDictionary:DataDictionary) : Boolean =
+		if include = true then
+			in_dataDictionary.getDataField(fieldName).missingValues = out_dataDictionary.rows
+		else
+			in_dataDictionary.getDataField(fieldName).missingValues = 0
+		endif	
+
+end
+
+
+class MapSpecialValues
+	attributes
+		value:String
+		type:SpecialType
+end
+
+class DerivedField
+	attributes
+		derived_name:String
+		derived_dataType:DataType
+		derived_opType:OpType
+end
+
+class Field 
+  attributes
+   exclude:Boolean
+end
+
+abstract class Parameter
+  attributes
+    name:String
+	required:Boolean
+end
+
+class Primitive < MatchingType
+  attributes
+	value:String
+end
+
+class MatchingType < Parameter
+end
+
+class FilterType < Parameter
+end
+
+class DiscretizeBin < Parameter
+	attributes
+		binValue:String
+end
+
+class MissingValues < MatchingType
+end
+
+class Range < MatchingType
+end
+
+
+class FieldValue < FilterType
+end
+
+class RowNumber < FilterType
+end
+
+
+class RangeInt < Range
+	attributes
+	 min:Integer
+	 max:Integer
+end
+
+class RangeFloat < Range
+	attributes
+	 min:Real
+	 max:Real
+end
+
+aggregation  InputPort between
+	DataProcessingElement [1] role dataProcessingInput
+	PortType [1..*] role inputPort
+end
+
+aggregation  OutputPort between
+	DataProcessingElement [1] role dataProcessingOutput
+	PortType [1..*] role outputPort
+end
+
+aggregation DataDictDataField between
+	DataDictionary [1]
+	DataField [1..*] role dataFields
+end
+
+association DataFieldData between
+	DataField [1]
+	Data [1..*] 
+end
+
+association MappingSpecialValues between
+	Transformation [1]
+	MapSpecialValues [0..2]
+end
+
+association DerivedFields between
+	Transformation [1]
+	DerivedField [0..1]
+end
+
+association ParameterField between
+	Transformation [1]
+	Field [1..1] role field
+end
+
+aggregation TransfParam between
+	Transformation [1]
+	Parameter [0..*]
+end 
+
+association FieldValueMatchingType between
+	FieldValue [1] 
+	MatchingType [1..*]
+end
+
+association RowNumberMatchingType between
+	RowNumber [1]
+	RangeInt [1]
+end
+
+aggregation JobDop between
+	Job [1] role jobDop
+	Transformation [1..*] role dopJob
+end
+
+aggregation JobJob between
+	Job[1]
+	Job [0..*] role jobInput
+end
+
+association FieldDataField between
+    Field[1]
+	DataField [1..1]
+end
+
+association DiscretizeInterval between
+	DiscretizeBin [1]
+	Interval [1]
+end
+
+association ContinuousInterval between
+	Continuous [1]
+	Interval [0..*] role intervals
+end
+
+association ValidValues between
+	DataField [1] role dataField
+	ValueField [0..*] role validValues
+end
+
+association InvalidValues between
+	DataField [1] role dataField1
+	ValueField [0..*] role invalidValues
+end
+
+association MissingVals between
+	DataField [1] role dataField2
+	ValueField [0..*] role missingValues
+end
+
