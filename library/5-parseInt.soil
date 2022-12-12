@@ -1,0 +1,29 @@
+!create parseInt:Transformation
+!create derivedField:DerivedField
+!create map_default_values:MapSpecialValues
+!create map_missing_values:MapSpecialValues
+!create input:DataDictionary
+!create output:DataDictionary
+!create inputdataField:Categorical
+!create field:Field
+
+
+!parseInt.name:='parseInt'
+!input.name:='inputDataDictionary'
+!output.name:='outputDataDictionary'
+!inputdataField.name:='inputDataField'
+!inputdataField.dataType:=DataType::String
+!derivedField.derived_dataType:=DataType::Integer
+!derivedField.derived_opType:=OpType::Continuous
+!map_default_values.type:=SpecialType::Default
+!map_missing_values.type:=SpecialType::MissingTo
+
+!insert(parseInt, derivedField) into DerivedFields
+!insert(parseInt, map_default_values) into MappingSpecialValues
+!insert(parseInt, map_missing_values) into MappingSpecialValues
+
+!insert(parseInt, input) into InputPort
+!insert(parseInt, output) into OutputPort
+!insert(input, inputdataField) into DataDictDataField
+!insert(parseInt, field) into ParameterField
+!insert(field, inputdataField) into FieldDataField

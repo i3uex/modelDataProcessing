@@ -1,0 +1,31 @@
+!create mapping:Transformation
+!create derivedField:DerivedField
+!create map_default_values:MapSpecialValues
+!create map_missing_values:MapSpecialValues
+!create input:DataDictionary
+!create output:DataDictionary
+!create inputdataFieldCont:Continuous
+!create inputdataFieldCat:Categorical
+!create field:Field
+!create map:Map
+
+!inputdataFieldCont.name:='inputDataFieldCont'
+!inputdataFieldCat.name:='inputdataFieldCat'
+!mapping.name:='mapping'
+!input.name:='inputDataDictionary'
+!output.name:='outputDataDictionary'
+!map_default_values.type:=SpecialType::Default
+!map_missing_values.type:=SpecialType::MissingTo
+
+!insert(mapping, derivedField) into DerivedFields
+!insert(mapping, map_default_values) into MappingSpecialValues
+!insert(mapping, map_missing_values) into MappingSpecialValues
+!insert(mapping, map) into TransfParam
+
+!insert(mapping, input) into InputPort
+!insert(mapping, output) into OutputPort
+!insert(input, inputdataFieldCont) into DataDictDataField
+!insert(input, inputdataFieldCat) into DataDictDataField
+
+!insert(mapping, field) into ParameterField
+

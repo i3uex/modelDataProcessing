@@ -3,6 +3,9 @@ enum OpType{Ordinal, Categorical, Continuous}
 enum DataType{String, Time, Integer, DateTime, Boolean, Double, Float}
 enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
 enum SpecialType{MissingTo, Default}
+enum ValueImpute{Missing, Invalid, Outlier}
+enum DerivedType{MostFrequent, Previous, Next}
+enum Operation{Interpolation, Mean, Median, Closest}
 
 abstract class DataProcessingElement
 	attributes
@@ -27,7 +30,7 @@ class DataDictionary < PortType
 	  self.getDataField(name).data
 end
 
-class DataField
+abstract class DataField
    attributes
 	 id:Boolean
 	 target:Boolean
@@ -71,88 +74,6 @@ class Job < DataProcessingElement
 end
 
 class Transformation < DataProcessingElement
-   operations
-	getInputDataDictionary(index: Integer) : DataDictionary = 
-		self.inputPort->select(ip | ip.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
-	getOutputDataDictionary(index: Integer) : DataDictionary = 
-		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
-	getInputDataDictionarys() : Bag(DataDictionary) =
-		self.inputPort->select(ip | ip.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)
-
-	getOutputDataDictionarys() : Bag(DataDictionary) =
-		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)
-	getOutputDataField() : DataField =
-		self.getOutputDataDictionary(1).getDataField(self.field.dataField.name)
-	getPrimitiveParameter(name: String) : Primitive =
-		self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name).oclAsType(Primitive)->asSequence()->at(1)
-	existPrimitiveParameter(name: String) : Boolean =
-	    self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name)->size() >= 1
-	checkOpTypeCategoricalIn() : Boolean =
-		self.field.dataField.oclIsKindOf(Categorical)
-	checkOpTypeCategoricalOut() : Boolean =
-		self.getOutputDataField().oclIsKindOf(Categorical)
-	checkOpTypeOrdinalIn() : Boolean =
-		if self.checkOpTypeCategoricalIn() = true then
-			self.field.dataField.oclAsType(Categorical).ordinal
-		else
-			false
-		endif
-	checkOpTypeOrdinalOut() : Boolean =
-		if self.checkOpTypeCategoricalOut() = true then
-			self.getOutputDataField().oclAsType(Categorical).ordinal
-		else
-			false
-		endif
-	checkOpTypeContinuousIn() : Boolean =
-		self.field.dataField.oclIsKindOf(Continuous)
-	checkOpTypeContinuousOut() : Boolean =
-		self.getOutputDataField().oclIsKindOf(Continuous)
-	checkDataTypeIn(type: DataType) : Boolean =
-		self.field.dataField.dataType = type
-	checkDataTypeOut(type: DataType) : Boolean =
-		self.getOutputDataField().dataType = type
-	existParameterFilterType() : Boolean =
-		self.parameter->select(p | p.oclIsKindOf(FilterType))->size() = 1
-	existParameterMatchingType() : Boolean =
-		self.parameter->select(p | p.oclIsKindOf(MatchingType))->size() >= 1
-	existParameterTypeFieldValue() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(FieldValue))->size() >= 1
-	existParameterTypeRangeInt() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(RangeInt))->size() >= 1
-	existParameterTypeRangeFloat() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(RangeFloat))->size() >= 1
-	existParameterTypeMissingValues() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(MissingValues))->size() = 1
-	existParameterTypeRowNumber() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(RowNumber))->size() = 1
-	existParameterTypeDiscretizeBin() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(DiscretizeBin))->size() >= 1
-	checkFieldRangeInt(fieldName:String, include:Boolean, dataDictionary:DataDictionary) : Boolean =
-		if include then
-			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
-				v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
-				v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
-		else
-			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
-				v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or 
-				v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
-		endif
-	checkFieldRangeFloat(fieldName: String, include:Boolean, dataDictionary:DataDictionary) : Boolean =
-		if include = true then
-			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
-				v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
-				v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
-		else
-			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
-				v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
-				v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
-		endif
-	checkFieldMissingValues(fieldName: String, include:Boolean, in_dataDictionary:DataDictionary, out_dataDictionary:DataDictionary) : Boolean =
-		if include = true then
-			in_dataDictionary.getDataField(fieldName).missingValues = out_dataDictionary.rows
-		else
-			in_dataDictionary.getDataField(fieldName).missingValues = 0
-		endif	
 
 end
 
@@ -179,14 +100,21 @@ abstract class Parameter
   attributes
     name:String
 	required:Boolean
+	dataType:DataType
 end
 
-class Primitive < MatchingType
+class Map < Parameter
+	attributes
+	 inValue:String
+	 outValue:String
+end
+
+class PrimitiveValue < Parameter
   attributes
 	value:String
 end
 
-class MatchingType < Parameter
+class MatchingValue < Parameter
 end
 
 class FilterType < Parameter
@@ -197,10 +125,13 @@ class DiscretizeBin < Parameter
 		binValue:String
 end
 
-class MissingValues < MatchingType
+class MissingValues < MatchingValue
 end
 
-class Range < MatchingType
+class Range < MatchingValue
+	attributes
+	 min:String
+	 max:String
 end
 
 
@@ -210,18 +141,21 @@ end
 class RowNumber < FilterType
 end
 
-
-class RangeInt < Range
+abstract class ImputeType < Parameter
 	attributes
-	 min:Integer
-	 max:Integer
+		imputeValue: ValueImpute
 end
 
-class RangeFloat < Range
+class DerivedValue < ImputeType
 	attributes
-	 min:Real
-	 max:Real
+		value:DerivedType
 end
+
+class NumOperation < ImputeType
+	attributes
+		operation:Operation
+end
+
 
 aggregation  InputPort between
 	DataProcessingElement [1] role dataProcessingInput
@@ -263,14 +197,14 @@ aggregation TransfParam between
 	Parameter [0..*]
 end 
 
-association FieldValueMatchingType between
+association FieldValueMatchingValue between
 	FieldValue [1] 
-	MatchingType [1..*]
+	MatchingValue [1..*]
 end
 
-association RowNumberMatchingType between
+association RowNumberMatchingValue between
 	RowNumber [1]
-	RangeInt [1]
+	Range [1]
 end
 
 aggregation JobDop between

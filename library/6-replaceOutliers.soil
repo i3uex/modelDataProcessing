@@ -1,0 +1,34 @@
+!create replaceOutliers:Transformation
+!create derivedField:DerivedField
+!create input:DataDictionary
+!create output:DataDictionary
+!create inputdataField:Continuous
+!create field:Field
+
+!create operation:NumOperation
+!create q1:PrimitiveValue
+!create q3:PrimitiveValue
+!create iqr:PrimitiveValue
+!create multIqr:PrimitiveValue
+
+!replaceOutliers.name:='replaceOutliers'
+!input.name:='inputDataDictionary'
+!output.name:='outputDataDictionary'
+!inputdataField.name:='inputDataField'
+!derivedField.derived_opType:=OpType::Continuous
+
+
+!insert(replaceOutliers, derivedField) into DerivedFields
+
+!insert(replaceOutliers, input) into InputPort
+!insert(replaceOutliers, output) into OutputPort
+!insert(input, inputdataField) into DataDictDataField
+!insert(replaceOutliers, field) into ParameterField
+!insert(field, inputdataField) into FieldDataField
+
+!insert(replaceOutliers, operation) into TransfParam
+!insert(replaceOutliers, q1) into TransfParam
+!insert(replaceOutliers, q3) into TransfParam
+!insert(replaceOutliers, iqr) into TransfParam
+!insert(replaceOutliers, multIqr) into TransfParam
+

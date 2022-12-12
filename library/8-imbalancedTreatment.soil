@@ -1,0 +1,22 @@
+!create imbalancedTreatment:Transformation
+!create derivedField:DerivedField
+!create input:DataDictionary
+!create output:DataDictionary
+!create inputdataField:Categorical
+!create field:Field
+
+!imbalancedTreatment.name:='imbalancedTreatment'
+!input.name:='inputDataDictionary'
+!output.name:='outputDataDictionary'
+!inputdataField.name:='inputDataField'
+!derivedField.derived_dataType:=DataType::String
+!derivedField.derived_opType:=OpType::Categorical
+
+
+!insert(imbalancedTreatment, derivedField) into DerivedFields
+
+!insert(imbalancedTreatment, input) into InputPort
+!insert(imbalancedTreatment, output) into OutputPort
+!insert(input, inputdataField) into DataDictDataField
+!insert(imbalancedTreatment, field) into ParameterField
+!insert(field, inputdataField) into FieldDataField

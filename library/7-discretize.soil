@@ -1,0 +1,30 @@
+!create discretize:Transformation
+!create derivedField:DerivedField
+!create map_default_values:MapSpecialValues
+!create map_missing_values:MapSpecialValues
+!create bin:DiscretizeBin
+!create interval:Interval
+!create input:DataDictionary
+!create output:DataDictionary
+!create inputdataField:Continuous
+!create field:Field
+!derivedField.derived_dataType:=DataType::String
+!derivedField.derived_opType:=OpType::Categorical
+!bin.name:='bin'
+!bin.required:=true
+!discretize.name:='discretize'
+!input.name:='inputDataDictionary'
+!output.name:='outputDataDictionary'
+!inputdataField.name:='inputDataField'
+!map_default_values.type:=SpecialType::Default
+!map_missing_values.type:=SpecialType::MissingTo
+!insert(discretize, derivedField) into DerivedFields
+!insert(discretize, map_default_values) into MappingSpecialValues
+!insert(discretize, map_missing_values) into MappingSpecialValues
+!insert(discretize, bin ) into TransfParam
+!insert(bin, interval) into DiscretizeInterval
+!insert(discretize, input) into InputPort
+!insert(discretize, output) into OutputPort
+!insert(input, inputdataField) into DataDictDataField
+!insert(discretize, field) into ParameterField
+!insert(field, inputdataField) into FieldDataField

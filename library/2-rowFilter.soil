@@ -1,0 +1,49 @@
+!create rowFilter:Transformation
+!create derivedField:DerivedField
+!create map_default_values:MapSpecialValues
+!create map_missing_values:MapSpecialValues
+!create input:DataDictionary
+!create output:DataDictionary
+!create inputdataFieldCont:Continuous
+!create inputdataFieldCat:Categorical
+!create field:Field
+!create fieldValue:FieldValue
+!create rowNumber:RowNumber
+!create missingValues:MissingValues
+!create rangeInt:Range
+!create rangeFloat:Range
+
+
+!rowFilter.name:='rowFilter'
+!input.name:='inputDataDictionary'
+!output.name:='outputDataDictionary'
+!inputdataFieldCont.name:='inputDataFieldCont'
+!inputdataFieldCat.name:='inputdataFieldCat'
+
+!map_default_values.type:=SpecialType::Default
+!map_missing_values.type:=SpecialType::MissingTo
+!rangeInt.dataType:=DataType::Integer
+!rangeFloat.dataType:=DataType::Float
+
+!insert(rowFilter, derivedField) into DerivedFields
+!insert(rowFilter, map_default_values) into MappingSpecialValues
+!insert(rowFilter, map_missing_values) into MappingSpecialValues
+
+!insert(rowFilter, fieldValue ) into TransfParam
+!insert(rowFilter, rowNumber ) into TransfParam
+
+!insert(rowFilter, rangeInt ) into TransfParam
+!insert(rowNumber, rangeInt) into RowNumberMatchingValue
+
+!insert(rowFilter, missingValues ) into TransfParam
+!insert(rowFilter, rangeFloat) into TransfParam
+!insert(fieldValue, missingValues) into FieldValueMatchingValue
+!insert(fieldValue, rangeFloat) into FieldValueMatchingValue
+
+
+!insert(rowFilter, input) into InputPort
+!insert(rowFilter, output) into OutputPort
+!insert(input, inputdataFieldCont) into DataDictDataField
+!insert(input, inputdataFieldCat) into DataDictDataField
+
+!insert(rowFilter, field) into ParameterField

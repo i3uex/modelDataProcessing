@@ -1,0 +1,22 @@
+!create impute:Transformation
+!create derivedField:DerivedField
+!create input:DataDictionary
+!create output:DataDictionary
+!create inputdataFieldCont:Continuous
+!create inputdataFieldCat:Categorical
+!create field:Field
+!create derivedValue:DerivedValue
+!create numOperation:NumOperation
+!impute.name:='impute'
+!input.name:='inputDataDictionary'
+!output.name:='outputDataDictionary'
+!inputdataFieldCont.name:='inputDataFieldCont'
+!inputdataFieldCat.name:='inputdataFieldCat'
+!insert(impute, derivedField) into DerivedFields
+!insert(impute, input) into InputPort
+!insert(impute, output) into OutputPort
+!insert(input, inputdataFieldCont) into DataDictDataField
+!insert(input, inputdataFieldCat) into DataDictDataField
+!insert(impute, field) into ParameterField
+!insert(impute, derivedValue ) into TransfParam
+!insert(impute, numOperation ) into TransfParam

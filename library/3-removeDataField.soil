@@ -1,0 +1,17 @@
+!create removeDataField:Transformation
+!create input:DataDictionary
+!create output:DataDictionary
+!create inputdataFieldCont:Continuous
+!create inputdataFieldCat:Categorical
+!create field:Field
+
+!removeDataField.name:='removeDataField'
+!input.name:='inputDataDictionary'
+!output.name:='outputDataDictionary'
+!inputdataFieldCont.name:='inputDataFieldCont'
+!inputdataFieldCat.name:='inputdataFieldCat'
+!insert(removeDataField, input) into InputPort
+!insert(removeDataField, output) into OutputPort
+!insert(input, inputdataFieldCont) into DataDictDataField
+!insert(input, inputdataFieldCat) into DataDictDataField
+!insert(removeDataField, field) into ParameterField
