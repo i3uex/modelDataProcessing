@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="fran">
+    <Application name="KNIME" version="4.6.3"/>
+  </Header>
+  <DataDictionary numberOfFields="27">
+    <DataField name="ETHNICITY" optype="categorical" dataType="string">
+      <Value value="N"/>
+      <Value value="C"/>
+      <Value value="B"/>
+      <Value value="H"/>
+      <Value value="A"/>
+      <Value value="O"/>
+      <Value value="I"/>
+    </DataField>
+    <DataField name="TERRITORY" optype="categorical" dataType="string">
+      <Value value="N"/>
+      <Value value="8"/>
+      <Value value="5"/>
+      <Value value="2"/>
+      <Value value="7"/>
+      <Value value="4"/>
+      <Value value="000"/>
+      <Value value="6"/>
+      <Value value="A"/>
+      <Value value="1"/>
+      <Value value="3"/>
+    </DataField>
+    <DataField name="ACADEMIC_INTEREST_1" optype="categorical" dataType="string"/>
+    <DataField name="ACADEMIC_INTEREST_2" optype="categorical" dataType="string"/>
+    <DataField name="Enroll" optype="categorical" dataType="string">
+      <Value value="0"/>
+      <Value value="1"/>
+    </DataField>
+    <DataField name="TOTAL_CONTACTS" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="28.0"/>
+    </DataField>
+    <DataField name="SELF_INIT_CNTCTS" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="21.0"/>
+    </DataField>
+    <DataField name="TRAVEL_INIT_CNTCTS" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="5.0"/>
+    </DataField>
+    <DataField name="SOLICITED_CNTCTS" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="9.0"/>
+    </DataField>
+    <DataField name="REFERRAL_CNTCTS" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="5.0"/>
+    </DataField>
+    <DataField name="CAMPUS_VISIT" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="CONTACT_CODE1" optype="categorical" dataType="string"/>
+    <DataField name="IRSCHOOL" optype="categorical" dataType="string"/>
+    <DataField name="satscore" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="440.0" rightMargin="1600.0"/>
+    </DataField>
+    <DataField name="sex" optype="categorical" dataType="string">
+      <Value value="1"/>
+      <Value value="0"/>
+    </DataField>
+    <DataField name="mailq" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="5.0"/>
+    </DataField>
+    <DataField name="telecq" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="4.0"/>
+    </DataField>
+    <DataField name="premiere" optype="categorical" dataType="string">
+      <Value value="0"/>
+      <Value value="1"/>
+    </DataField>
+    <DataField name="interest" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="3.0"/>
+    </DataField>
+    <DataField name="stuemail" optype="categorical" dataType="string">
+      <Value value="0"/>
+      <Value value="1"/>
+    </DataField>
+    <DataField name="init_span" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="-216.0" rightMargin="72.0"/>
+    </DataField>
+    <DataField name="int1rat" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="int2rat" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="hscrat" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="avg_income" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="9783.0" rightMargin="200001.0"/>
+    </DataField>
+    <DataField name="distance" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.7905552999691918" rightMargin="3882.1923787897686"/>
+    </DataField>
+    <DataField name="Instate" optype="categorical" dataType="string">
+      <Value value="N"/>
+      <Value value="Y"/>
+    </DataField>
+  </DataDictionary>
+  <TransformationDictionary/>
+</PMML>

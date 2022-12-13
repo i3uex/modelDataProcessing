@@ -133,6 +133,10 @@ class NumOperation < ImputeType
 		operation:Operation
 end
 
+class Data
+	attributes
+		value:String
+end
 
 aggregation  InputPort between
 	DataProcessingElement [1] role dataProcessingInput
