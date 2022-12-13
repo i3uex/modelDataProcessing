@@ -20,3 +20,15 @@
 !insert(impute, field) into ParameterField
 !insert(impute, derivedValue ) into TransfParam
 !insert(impute, numOperation ) into TransfParam
+
+
+!insert(field, inputdataFieldCont) into FieldDataField
+!create valueField:ValueField
+!insert(inputdataFieldCont, valueField) into InvalidVals
+!create outputDataField:Continuous
+!outputDataField.name:='inputDataFieldCont'
+!insert(output, outputDataField) into DataDictDataField
+!insert(outputDataField, valueField) into MissingVals
+
+
+!numOperation.imputeValue:=ValueImpute::Invalid
