@@ -2,7 +2,10 @@ model DataProcessingPMML
 enum OpType{Ordinal, Categorical, Continuous}
 enum DataType{String, Time, Integer, DateTime, Boolean, Double, Float}
 enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
-enum SpecialType{MissingTo, DefaultValue}
+enum SpecialType{MissingTo, Default}
+enum ValueImpute{Missing, Invalid, Outlier}
+enum DerivedType{MostFrequent, Previous, Next}
+enum Operation{Interpolation, Mean, Median, Closest}
 
 abstract class DataProcessingElement
 	attributes
@@ -14,35 +17,15 @@ abstract class PortType
 	 index:Integer
 end
 
-class DataDictionary < PortType
-	attributes
-	 rows:Integer
-	 name:String
-	operations
-	  getDataField(name : String) : DataField = 
-	  self.dataFields->select(dF|dF.name = name)->asSequence->at(1)
-	  existDataField(name : String) : Boolean =
-	  self.dataFields.name->includes(name)
-	  getDataOfDataFieldName(name: String) : Set(Data) =
-	  self.getDataField(name).data
-end
 
-class DataField
+
+abstract class DataField
    attributes
 	 id:Boolean
 	 target:Boolean
 	 name:String
 	 dataType:DataType
 	 displayName:String
-	 validValues:Integer
-	 invalidValues:Integer
-	 missingValues:Integer
-end
-
-class Data
-	attributes
-		value:String
-		index:Integer
 end
 
 class ValueField
@@ -70,91 +53,6 @@ end
 class Job < DataProcessingElement
 end
 
-abstract class Transformation < DataProcessingElement
-   operations
-	getInputDataDictionary(index: Integer) : DataDictionary = 
-		self.inputPort->select(ip | ip.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
-	getOutputDataDictionary(index: Integer) : DataDictionary = 
-		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
-	getInputDataDictionarys() : Bag(DataDictionary) =
-		self.inputPort->select(ip | ip.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)
-
-	getOutputDataDictionarys() : Bag(DataDictionary) =
-		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)
-	getOutputDataField() : DataField =
-		self.getOutputDataDictionary(1).getDataField(self.field.dataField.name)
-	getPrimitiveParameter(name: String) : Primitive =
-		self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name).oclAsType(Primitive)->asSequence()->at(1)
-	existPrimitiveParameter(name: String) : Boolean =
-	    self.parameter->select(p|p.oclIsTypeOf(Primitive) and p.name = name)->size() >= 1
-	checkOpTypeCategoricalIn() : Boolean =
-		self.field.dataField.oclIsKindOf(Categorical)
-	checkOpTypeCategoricalOut() : Boolean =
-		self.getOutputDataField().oclIsKindOf(Categorical)
-	checkOpTypeOrdinalIn() : Boolean =
-		if self.checkOpTypeCategoricalIn() = true then
-			self.field.dataField.oclAsType(Categorical).ordinal
-		else
-			false
-		endif
-	checkOpTypeOrdinalOut() : Boolean =
-		if self.checkOpTypeCategoricalOut() = true then
-			self.getOutputDataField().oclAsType(Categorical).ordinal
-		else
-			false
-		endif
-	checkOpTypeContinuousIn() : Boolean =
-		self.field.dataField.oclIsKindOf(Continuous)
-	checkOpTypeContinuousOut() : Boolean =
-		self.getOutputDataField().oclIsKindOf(Continuous)
-	checkDataTypeIn(type: DataType) : Boolean =
-		self.field.dataField.dataType = type
-	checkDataTypeOut(type: DataType) : Boolean =
-		self.getOutputDataField().dataType = type
-	existParameterFilterType() : Boolean =
-		self.parameter->select(p | p.oclIsKindOf(FilterType))->size() = 1
-	existParameterMatchingType() : Boolean =
-		self.parameter->select(p | p.oclIsKindOf(MatchingType))->size() >= 1
-	existParameterTypeFieldValue() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(FieldValue))->size() >= 1
-	existParameterTypeRangeInt() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(RangeInt))->size() >= 1
-	existParameterTypeRangeFloat() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(RangeFloat))->size() >= 1
-	existParameterTypeMissingValues() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(MissingValues))->size() = 1
-	existParameterTypeRowNumber() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(RowNumber))->size() = 1
-	existParameterTypeDiscretizeBin() : Boolean =
-		self.parameter->select(p | p.oclIsTypeOf(DiscretizeBin))->size() >= 1
-	checkFieldRangeInt(fieldName:String, include:Boolean, dataDictionary:DataDictionary) : Boolean =
-		if include then
-			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
-				v | v.toInteger() >= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min and 
-				v.toInteger() <= self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
-		else
-			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
-				v | v.toInteger() < self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).min or 
-				v.toInteger() > self.parameter->select(p | p.oclIsTypeOf(RangeInt)).oclAsType(RangeInt)->asSequence()->at(1).max)
-		endif
-	checkFieldRangeFloat(fieldName: String, include:Boolean, dataDictionary:DataDictionary) : Boolean =
-		if include = true then
-			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
-				v | v.toReal() >= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min and 
-				v.toReal() <= self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
-		else
-			dataDictionary.getDataOfDataFieldName(fieldName)->collect(value)->forAll(
-				v | v.toReal() < self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).min or 
-				v.toReal() > self.parameter->select(p | p.oclIsTypeOf(RangeFloat)).oclAsType(RangeFloat)->asSequence()->at(1).max)
-		endif
-	checkFieldMissingValues(fieldName: String, include:Boolean, in_dataDictionary:DataDictionary, out_dataDictionary:DataDictionary) : Boolean =
-		if include = true then
-			in_dataDictionary.getDataField(fieldName).missingValues = out_dataDictionary.rows
-		else
-			in_dataDictionary.getDataField(fieldName).missingValues = 0
-		endif	
-
-end
 
 
 class MapSpecialValues
@@ -179,14 +77,21 @@ abstract class Parameter
   attributes
     name:String
 	required:Boolean
+	dataType:DataType
 end
 
-class Primitive < MatchingType
+class Map < Parameter
+	attributes
+	 inValue:String
+	 outValue:String
+end
+
+class PrimitiveValue < Parameter
   attributes
 	value:String
 end
 
-class MatchingType < Parameter
+class MatchingValue < Parameter
 end
 
 class FilterType < Parameter
@@ -197,10 +102,13 @@ class DiscretizeBin < Parameter
 		binValue:String
 end
 
-class MissingValues < MatchingType
+class MissingValues < MatchingValue
 end
 
-class Range < MatchingType
+class Range < MatchingValue
+	attributes
+	 min:String
+	 max:String
 end
 
 
@@ -210,27 +118,25 @@ end
 class RowNumber < FilterType
 end
 
-
-class RangeInt < Range
+abstract class ImputeType < Parameter
 	attributes
-	 min:Integer
-	 max:Integer
+		imputeValue: ValueImpute
 end
 
-class RangeFloat < Range
+class DerivedValue < ImputeType
 	attributes
-	 min:Real
-	 max:Real
+		value:DerivedType
 end
 
-
-class RowFilter < Transformation
+class NumOperation < ImputeType
+	attributes
+		operation:Operation
 end
 
-class RemoveDataFields < Transformation
-end
-
-class Discretize < Transformation
+class Data
+	attributes
+		value:String
+		index:Integer
 end
 
 aggregation  InputPort between
@@ -246,11 +152,6 @@ end
 aggregation DataDictDataField between
 	DataDictionary [1]
 	DataField [1..*] role dataFields
-end
-
-association DataFieldData between
-	DataField [1]
-	Data [1..*] 
 end
 
 association MappingSpecialValues between
@@ -273,14 +174,14 @@ aggregation TransfParam between
 	Parameter [0..*]
 end 
 
-association FieldValueMatchingType between
+association FieldValueMatchingValue between
 	FieldValue [1] 
-	MatchingType [1..*]
+	MatchingValue [1..*]
 end
 
-association RowNumberMatchingType between
+association RowNumberMatchingValue between
 	RowNumber [1]
-	RangeInt [1]
+	Range [1]
 end
 
 aggregation JobDop between
@@ -295,10 +196,10 @@ end
 
 association FieldDataField between
     Field[1]
-	DataField [1..1]
+	DataField [1..1] role dataField
 end
 
-association DiscretizeinInterval between
+association DiscretizeInterval between
 	DiscretizeBin [1]
 	Interval [1]
 end
@@ -313,7 +214,7 @@ association ValidValues between
 	ValueField [0..*] role validValues
 end
 
-association InvalidValues between
+association InvalidVals between
 	DataField [1] role dataField1
 	ValueField [0..*] role invalidValues
 end
@@ -323,67 +224,176 @@ association MissingVals between
 	ValueField [0..*] role missingValues
 end
 
+association DataOfDataField between
+	DataField [1] role dataField
+	Data  [0..*] role data
+end
+
+
+class DataDictionary < PortType
+	attributes
+	 rows:Integer
+	 name:String
+	operations
+	  getDataField(name : String) : DataField = 
+	  self.dataFields->select(dF|dF.name = name)->asSequence->at(1)
+end
+
+class Transformation < DataProcessingElement
+operations
+	getInputDataDictionary(index: Integer) : DataDictionary = 
+		self.inputPort->select(ip | ip.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
+	getOutputDataDictionary(index: Integer) : DataDictionary = 
+		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
+	getOutputDataField() : DataField =
+		self.getOutputDataDictionary(1).getDataField(self.field.dataField.name)
+	validateImpute(imputeType:ImputeType)
+	begin end
+	pre missing: 
+		if imputeType.imputeValue  = ValueImpute::Missing
+		then
+			self.field.dataField.missingValues->size() >=1
+		else
+			true
+		endif
+	pre invalid:
+		if imputeType.imputeValue  = ValueImpute::Invalid
+		then
+			self.field.dataField.invalidValues->size() >=1
+		else
+			true
+		endif
+	post noMissing:
+		if imputeType.imputeValue  = ValueImpute::Missing
+		then
+			self.getOutputDataField().missingValues->size() = 0
+		else
+			true
+		endif
+	post noInvalid:
+		if imputeType.imputeValue  = ValueImpute::Invalid
+		then
+			self.getOutputDataField().invalidValues->size() = 0
+		else
+			true
+		endif
+	post inv_imputedMissing:
+		if imputeType.imputeValue  = ValueImpute::Missing
+		then
+			let missingVals = self.field.dataField.missingValues.value in 
+			self.field.dataField.data->select(dIn | missingVals->includes(dIn))->forAll(dIn|
+			missingVals->includes(
+				self.getOutputDataField().data->select(dOut | dOut.index = dIn.index)->asSequence()->at(1).value) = false)
+		else 
+			true
+		endif
+	post inv_imputedInvalid:
+		if imputeType.imputeValue  = ValueImpute::Invalid
+		then
+			let invalidVals = self.field.dataField.invalidValues.value in
+			self.field.dataField.data->select(dIn | invalidVals->includes(dIn))->forAll(dIn|
+			invalidVals->includes(
+				self.getOutputDataField().data->select(dOut | dOut.index = dIn.index)->asSequence()->at(1).value) = false)
+		else 
+			true
+		endif
+	validateRowFilter(filterType:FilterType, matchingValue:MatchingValue)
+	begin end	
+	pre values:
+		if filterType.oclIsTypeOf(FieldValue) then
+			if matchingValue.oclIsTypeOf(Range) then
+				self.field.dataField.oclAsType(Continuous).intervals->select(
+				i | i.leftMargin <= matchingValue.oclAsType(Range).min.toReal() or 
+				i.rightMargin >= matchingValue.oclAsType(Range).max.toReal())->size() >= 1
+			else
+				self.field.dataField.missingValues->size() >=1
+			endif
+		else true endif
+	pre rows:
+		if filterType.oclIsTypeOf(RowNumber) then
+		(matchingValue.oclAsType(Range).max.toReal() - matchingValue.oclAsType(Range).min.toReal()) <= self.getInputDataDictionary(1).rows
+		else true endif
+	post noValues:
+		if filterType.oclIsTypeOf(FieldValue) then
+			if matchingValue.oclIsTypeOf(Range) then
+				self.getOutputDataField().oclAsType(Continuous).intervals->select(
+				i | i.leftMargin <= matchingValue.oclAsType(Range).min.toReal() or 
+				i.rightMargin >= matchingValue.oclAsType(Range).max.toReal())->size() = 0
+			else
+				self.field.dataField.missingValues->size() = 0
+			endif
+		else true endif
+	post noRows:
+		if filterType.oclIsTypeOf(RowNumber) then
+		(self.getInputDataDictionary(1).rows - self.getOutputDataDictionary(1).rows) = 
+		(matchingValue.oclAsType(Range).max.toReal() - matchingValue.oclAsType(Range).min.toReal())
+		else true endif
+	validateRemoveDataField()
+	begin end
+	post removed:
+		self.getOutputDataField().oclIsUndefined()
+	validateMapping(maps:Set(Map))
+	begin end
+	pre inValue:
+		maps->forAll(m | self.field.dataField.validValues->select(v | v.value = m.inValue)->size()>=1
+					or self.field.dataField.invalidValues->select(v | v.value = m.inValue)->size()>=1
+					or self.field.dataField.missingValues->select(v | v.value = m.inValue)->size()>=1)
+	post noInValue:
+		maps->forAll(m | self.getOutputDataField().validValues->select(v | v.value = m.inValue)->size()=0
+					and self.getOutputDataField().invalidValues->select(v | v.value = m.inValue)->size()=0
+					and self.getOutputDataField().missingValues->select(v | v.value = m.inValue)->size()=0)
+	post inv_mapValue:
+		maps->forAll(m | self.field.dataField.data->select(dIn | dIn.value = m.inValue)->forAll(
+			dIn | self.getOutputDataField().data->select(
+			dOut|dOut.index = dIn.index)->asSequence()->at(1).value = m.outValue))
+	
+	validateParseInt()
+	begin end
+	post inv_parsed: self.field.dataField.data->forAll(dIn | self.getOutputDataField().data->select(
+		dOut | dOut.index = dIn.index)->asSequence()->at(1).value = dIn.value)
+
+	validateReplaceOutliers(operation:ImputeType, q1:PrimitiveValue, q3:PrimitiveValue, iqr:PrimitiveValue, multiqr:PrimitiveValue)
+	begin end
+	pre outliers:
+		let min = q1.value.toReal()-multiqr.value.toReal()*iqr.value.toReal() in
+		let max = q3.value.toReal()+multiqr.value.toReal()*iqr.value.toReal() in
+		self.field.dataField.oclAsType(Continuous).intervals->select(i | i.leftMargin < min or i.rightMargin > max)->size() >= 1
+	post noOutliers:
+		let min = q1.value.toReal()-multiqr.value.toReal()*iqr.value.toReal() in
+		let max = q3.value.toReal()+multiqr.value.toReal()*iqr.value.toReal() in
+		self.field.dataField.oclAsType(Continuous).intervals->select(i | i.leftMargin < min or i.rightMargin > max)->size() = 0
+	post replacement:
+		let min = q1.value.toReal()-multiqr.value.toReal()*iqr.value.toReal() in
+		let max = q3.value.toReal()+multiqr.value.toReal()*iqr.value.toReal() in
+		self.field.dataField.data->select(dIn | dIn.value.toReal() < min or dIn.value.toReal() > max)->forAll(
+			dIn | self.getOutputDataField().data->select(dOut|dOut.index = dIn.index)->asSequence()->at(1).value.toReal() >= min or 
+			self.getOutputDataField().data->select(dOut|dOut.index = dIn.index)->asSequence()->at(1).value.toReal() <= max)
+	validateDiscretize(bins:Set(DiscretizeBin))
+	begin end
+	pre intervals:
+	let intervals_in = self.field.dataField.oclAsType(Continuous).intervals in
+		bins->forAll(dB | 
+		intervals_in->select(int | int.rightMargin = dB.interval.rightMargin and 
+		int.leftMargin = dB.interval.leftMargin and int.closure = dB.interval.closure)->size()=1)
+	post bins:
+	bins->forAll(dB | self.getOutputDataField().validValues->select(v | v.value = dB.binValue)->size()=1)
+	post size:
+		let intervals_in = self.field.dataField.oclAsType(Continuous).intervals in
+		bins->forAll(dB | 
+		intervals_in->select(int | int.rightMargin = dB.interval.rightMargin and 
+		int.leftMargin = dB.interval.leftMargin and int.closure = dB.interval.closure
+		)->asSequence()->at(1).count = self.getOutputDataField().validValues->select(
+			v | v.value = dB.binValue)->asSequence()->at(1).count)
+	post inv_values:
+		self.field.dataField.data->forAll(
+			dIn | self.getOutputDataField().data->select(dOut|dOut.index = dIn.index)->asSequence()->at(1).value = 
+			bins->select(bin | bin.interval.leftMargin <= dIn.value.toReal() and bin.interval.rightMargin >= dIn.value.toReal()
+			)->asSequence()->at(1).binValue)
+
+end		
+
+
 constraints
 
-context RemoveDataFields
-	inv post_noColumnDset: self.getOutputDataDictionary(1).dataFields->forAll(dF|dF.name<>self.field.dataField.name) and
-	self.getOutputDataDictionary(1).dataFields->size() = self.getInputDataDictionary(1).dataFields->size() - 1
-
-context Discretize
-	inv pre_columnTypeNumerical: self.checkOpTypeContinuousIn()
-	inv pre_wellDefinedIntervals: 
-		let intervals_in = self.field.dataField.oclAsType(Continuous).intervals in
-			if self.existParameterTypeDiscretizeBin() then 		
-				self.parameter->select(p | p.oclIsTypeOf(DiscretizeBin)).oclAsType(DiscretizeBin)->forAll(
-					dB | intervals_in->select(int | int.rightMargin = dB.interval.rightMargin and int.leftMargin = dB.interval.leftMargin and int.closure = dB.interval.closure)->size()=1)
-			else
-				false
-			endif
-	inv post_columnsTypeCategorical: self.checkOpTypeCategoricalOut()
-	inv inv_makeCorrectBin: self.field.dataField.data->forAll
-		(
-			dIn | let binValueOut = self.getOutputDataField().data->select(dOut | dOut.index = dIn.index)->asSequence()->at(1) in 
-				let bin = self.parameter->select(p | p.oclIsTypeOf(DiscretizeBin)).oclAsType(DiscretizeBin)->select(b | b.binValue = binValueOut
-				)->asSequence()->at(1) in
-					if bin.interval.closure = ClosureType::closedClosed then
-						dIn.value.toReal() >= bin.interval.leftMargin and dIn.value.toReal() <= bin.interval.rightMargin
-						else if bin.interval.closure = ClosureType::closedOpen then
-							dIn.value.toReal() >= bin.interval.leftMargin and dIn.value.toReal() < bin.interval.rightMargin
-							else if bin.interval.closure = ClosureType::openClosed then
-								dIn.value.toReal() > bin.interval.leftMargin and dIn.value.toReal() <= bin.interval.rightMargin
-								else if bin.interval.closure = ClosureType::openOpen then
-									dIn.value.toReal() > bin.interval.leftMargin and dIn.value.toReal() < bin.interval.rightMargin
-								else false endif
-							endif
-						endif
-					endif
-		) 
 
 
-
-context RowFilter
-    inv inv_makeCorrectFilter:
-		let colName = 
-		self.field.dataField.name in
-		if (self.existParameterFilterType()) then
-			if (self.existParameterMatchingType()) then
-				if self.getPrimitiveParameter('include').value.toBoolean() = true then
-					if (self.existParameterTypeFieldValue() and self.existParameterTypeRangeFloat()) then
-						self.checkFieldRangeFloat(colName, true, self.getOutputDataDictionary(1))
-					else if (self.existParameterTypeFieldValue() and self.existParameterTypeRangeInt()) then
-						self.checkFieldRangeInt(colName, true, self.getOutputDataDictionary(1))
-
-					else if (self.existParameterTypeFieldValue() and self.existParameterTypeMissingValues()) then
-						self.checkFieldMissingValues(colName, true, self.getInputDataDictionary(1), self.getOutputDataDictionary(1))
-					else false endif endif endif 
-				else if self.getPrimitiveParameter('include').value.toBoolean() = false then
-					if (self.existParameterTypeFieldValue() and self.existParameterTypeRangeFloat()) then
-						self.checkFieldRangeFloat(colName, false, self.getOutputDataDictionary(1))
-					else if (self.existParameterTypeFieldValue() and self.existParameterTypeRangeInt()) then
-						self.checkFieldRangeInt(colName, false, self.getOutputDataDictionary(1))
-					else if (self.existParameterTypeFieldValue() and self.existParameterTypeMissingValues()) then
-						self.checkFieldMissingValues(colName, false, self.getInputDataDictionary(1), self.getOutputDataDictionary(1))
-				else false endif endif endif 
-				else false endif endif
-			else false endif
-		else false endif
