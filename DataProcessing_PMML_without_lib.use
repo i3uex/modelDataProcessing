@@ -136,6 +136,7 @@ end
 class Data
 	attributes
 		value:String
+		index:Integer
 end
 
 aggregation  InputPort between
@@ -223,6 +224,12 @@ association MissingVals between
 	ValueField [0..*] role missingValues
 end
 
+association DataOfDataField between
+	DataField [1] role dataField
+	Data  [0..*] role data
+end
+
+
 class DataDictionary < PortType
 	attributes
 	 rows:Integer
@@ -270,6 +277,26 @@ operations
 		else
 			true
 		endif
+	post inv_imputedMissing:
+		if imputeType.imputeValue  = ValueImpute::Missing
+		then
+			let missingVals = self.field.dataField.missingValues.value in 
+			self.field.dataField.data->select(dIn | missingVals->includes(dIn))->forAll(dIn|
+			missingVals->includes(
+				self.getOutputDataField().data->select(dOut | dOut.index = dIn.index)->asSequence()->at(1).value) = false)
+		else 
+			true
+		endif
+	post inv_imputedInvalid:
+		if imputeType.imputeValue  = ValueImpute::Invalid
+		then
+			let invalidVals = self.field.dataField.invalidValues.value in
+			self.field.dataField.data->select(dIn | invalidVals->includes(dIn))->forAll(dIn|
+			invalidVals->includes(
+				self.getOutputDataField().data->select(dOut | dOut.index = dIn.index)->asSequence()->at(1).value) = false)
+		else 
+			true
+		endif
 	validateRowFilter(filterType:FilterType, matchingValue:MatchingValue)
 	begin end	
 	pre values:
@@ -315,6 +342,15 @@ operations
 		maps->forAll(m | self.getOutputDataField().validValues->select(v | v.value = m.inValue)->size()=0
 					and self.getOutputDataField().invalidValues->select(v | v.value = m.inValue)->size()=0
 					and self.getOutputDataField().missingValues->select(v | v.value = m.inValue)->size()=0)
+	post inv_mapValue:
+		maps->forAll(m | self.field.dataField.data->select(dIn | dIn.value = m.inValue)->forAll(
+			dIn | self.getOutputDataField().data->select(
+			dOut|dOut.index = dIn.index)->asSequence()->at(1).value = m.outValue))
+	
+	validateParseInt()
+	begin end
+	post inv_parsed: self.field.dataField.data->forAll(dIn | self.getOutputDataField().data->select(
+		dOut | dOut.index = dIn.index)->asSequence()->at(1).value = dIn.value)
 
 	validateReplaceOutliers(operation:ImputeType, q1:PrimitiveValue, q3:PrimitiveValue, iqr:PrimitiveValue, multiqr:PrimitiveValue)
 	begin end
@@ -326,6 +362,12 @@ operations
 		let min = q1.value.toReal()-multiqr.value.toReal()*iqr.value.toReal() in
 		let max = q3.value.toReal()+multiqr.value.toReal()*iqr.value.toReal() in
 		self.field.dataField.oclAsType(Continuous).intervals->select(i | i.leftMargin < min or i.rightMargin > max)->size() = 0
+	post replacement:
+		let min = q1.value.toReal()-multiqr.value.toReal()*iqr.value.toReal() in
+		let max = q3.value.toReal()+multiqr.value.toReal()*iqr.value.toReal() in
+		self.field.dataField.data->select(dIn | dIn.value.toReal() < min or dIn.value.toReal() > max)->forAll(
+			dIn | self.getOutputDataField().data->select(dOut|dOut.index = dIn.index)->asSequence()->at(1).value.toReal() >= min or 
+			self.getOutputDataField().data->select(dOut|dOut.index = dIn.index)->asSequence()->at(1).value.toReal() <= max)
 	validateDiscretize(bins:Set(DiscretizeBin))
 	begin end
 	pre intervals:
@@ -342,6 +384,11 @@ operations
 		int.leftMargin = dB.interval.leftMargin and int.closure = dB.interval.closure
 		)->asSequence()->at(1).count = self.getOutputDataField().validValues->select(
 			v | v.value = dB.binValue)->asSequence()->at(1).count)
+	post inv_values:
+		self.field.dataField.data->forAll(
+			dIn | self.getOutputDataField().data->select(dOut|dOut.index = dIn.index)->asSequence()->at(1).value = 
+			bins->select(bin | bin.interval.leftMargin <= dIn.value.toReal() and bin.interval.rightMargin >= dIn.value.toReal()
+			)->asSequence()->at(1).binValue)
 
 end		
 
