@@ -140,9 +140,44 @@ def parse_to_model(path_xml, path_csv, name, target_columns, id_columns,
 
 def main():
     used_ids = []
-    f = parse_to_model('example.pmml', 'example.csv', 'example', [], [], used_ids,
-                       'example.soil')
-    parse_data_to_model(f, 'example.csv', 'sex_0', 'sex', used_ids, 'example.soil')
+    f = parse_to_model(
+        path_xml='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
+                 '/input_datadictionary.pmml',
+        path_csv='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex/input_dataset.csv',
+        name='input',
+        target_columns=[],
+        id_columns=[],
+        used_ids = used_ids,
+        output_path='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex/input_model.soil')
+
+    parse_data_to_model(f,
+                        output_path='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
+                                    '/input_model.soil',
+                        id_dfield='sex_0',
+                        name_dfield='sex',
+                        used_ids = used_ids,
+                        path_csv='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
+                                 '/input_dataset.csv'
+                        )
+    f = parse_to_model(
+        path_xml='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
+                 '/output_datadictionary.pmml',
+        path_csv='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex/output_dataset.csv',
+        name='output',
+        target_columns=[],
+        id_columns=[],
+        used_ids=used_ids,
+        output_path='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex/output_model.soil')
+
+    parse_data_to_model(f,
+                        output_path='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
+                                    '/output_model.soil',
+                        id_dfield='sex_0',
+                        name_dfield='sex',
+                        used_ids=used_ids,
+                        path_csv='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
+                                 '/output_dataset.csv'
+                        )
 
 
 if __name__ == "__main__":

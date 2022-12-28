@@ -1,6 +1,6 @@
 model DataProcessingPMML
 enum OpType{Ordinal, Categorical, Continuous}
-enum DataType{String, Time, Integer, DateTime, Boolean, Double, Float}
+enum DataType{string, time, integer, dateTime, boolean, double, float}
 enum ClosureType{openOpen, openClosed, closedOpen, closedClosed}
 enum SpecialType{MissingTo, Default}
 enum ValueImpute{Missing, Invalid, Outlier}
@@ -281,7 +281,7 @@ operations
 		if imputeType.imputeValue  = ValueImpute::Missing
 		then
 			let missingVals = self.field.dataField.missingValues.value in 
-			self.field.dataField.data->select(dIn | missingVals->includes(dIn))->forAll(dIn|
+			self.field.dataField.data->select(dIn | missingVals->includes(dIn.value))->forAll(dIn|
 			missingVals->includes(
 				self.getOutputDataField().data->select(dOut | dOut.index = dIn.index)->asSequence()->at(1).value) = false)
 		else 
@@ -291,7 +291,7 @@ operations
 		if imputeType.imputeValue  = ValueImpute::Invalid
 		then
 			let invalidVals = self.field.dataField.invalidValues.value in
-			self.field.dataField.data->select(dIn | invalidVals->includes(dIn))->forAll(dIn|
+			self.field.dataField.data->select(dIn | invalidVals->includes(dIn.value))->forAll(dIn|
 			invalidVals->includes(
 				self.getOutputDataField().data->select(dOut | dOut.index = dIn.index)->asSequence()->at(1).value) = false)
 		else 
