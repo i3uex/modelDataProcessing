@@ -1,0 +1,14 @@
+!create mapping:Transformation
+!create field:Field
+!mapping.name:='mapping'
+!insert(mapping, input) into InputPort
+!insert(mapping, output) into OutputPort
+!insert(mapping, field) into ParameterField
+
+!create map:Map
+!insert(mapping, map ) into TransfParam
+!map.inValue:='nan'
+!map.outValue:='Unknown'
+!insert(field, ACADEMIC_INTEREST_2_0) into FieldDataField
+
+!mapping.validateMapping(map)

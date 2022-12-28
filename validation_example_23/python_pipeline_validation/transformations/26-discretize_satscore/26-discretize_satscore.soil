@@ -1,0 +1,54 @@
+!create discretize:Transformation
+!create field:Field
+!discretize.name:='discretize'
+
+!create bin54:DiscretizeBin
+!create interval54Percent:Interval
+!bin54.name:='bin54'
+!bin54.binValue:='54 Percentile and Under'
+!interval54Percent.leftMargin:=440.0
+!interval54Percent.rightMargin:=1040.0
+!interval54Percent.closure:=ClosureType::closedOpen
+!insert(discretize, bin54 ) into TransfParam
+!insert(bin54, interval54Percent) into DiscretizeInterval
+!insert(satscore_0,interval54Percent) into ContinuousInterval
+
+!create bin75:DiscretizeBin
+!create interval75:Interval
+!bin75.name:='bin55Percent'
+!bin75.binValue:='55-75 Percentile'
+!interval75.leftMargin:=1040.0
+!interval75.rightMargin:=1160.0
+!interval75.closure:=ClosureType::closedOpen
+!insert(discretize, bin75) into TransfParam
+!insert(bin75, interval75) into DiscretizeInterval
+!insert(satscore_0,interval75) into ContinuousInterval
+
+!create bin93:DiscretizeBin
+!create interval93:Interval
+!bin93.name:='bin93'
+!bin93.binValue:='76-93 Percentile'
+!interval93.leftMargin:=1160.0
+!interval93.rightMargin:=1340.0
+!interval93.closure:=ClosureType::closedOpen
+!insert(discretize, bin93) into TransfParam
+!insert(bin93, interval93) into DiscretizeInterval
+!insert(satscore_0,interval93) into ContinuousInterval
+
+!create bin94:DiscretizeBin
+!create interval94:Interval
+!bin94.name:='bin94'
+!bin94.binValue:='94+ percentile'
+!interval94.leftMargin:=1340.0
+!interval94.rightMargin:=1600.0
+!interval94.closure:=ClosureType::closedClosed
+!insert(discretize, bin94) into TransfParam
+!insert(bin94, interval94) into DiscretizeInterval
+!insert(satscore_0,interval94) into ContinuousInterval
+
+!insert(discretize, input) into InputPort
+!insert(discretize, output) into OutputPort
+!insert(discretize, field) into ParameterField
+!insert(field, satscore_0) into FieldDataField
+!discretize.validateDiscretize(Set{bin54, bin75, 
+bin93,bin94})

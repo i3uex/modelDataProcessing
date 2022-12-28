@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
-  <Header copyright="fran">
+  <Header copyright="franj">
     <Application name="KNIME" version="4.6.3"/>
   </Header>
   <DataDictionary numberOfFields="27">
@@ -88,7 +88,7 @@
     <DataField name="hscrat" optype="continuous" dataType="double">
       <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
     </DataField>
-    <DataField name="avg_income" optype="continuous" dataType="double">
+    <DataField name="avg_income" optype="continuous" dataType="integer">
       <Interval closure="closedClosed" leftMargin="9783.0" rightMargin="200001.0"/>
     </DataField>
     <DataField name="distance" optype="continuous" dataType="double">

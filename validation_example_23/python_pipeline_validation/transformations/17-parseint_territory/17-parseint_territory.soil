@@ -1,0 +1,12 @@
+!create parseInt:Transformation
+!create field:Field
+
+
+!parseInt.name:='parseInt'
+
+!insert(parseInt, input) into InputPort
+!insert(parseInt, output) into OutputPort
+!insert(parseInt, field) into ParameterField
+!insert(field, TERRITORY_0) into FieldDataField
+
+!parseInt.validateParseInt()

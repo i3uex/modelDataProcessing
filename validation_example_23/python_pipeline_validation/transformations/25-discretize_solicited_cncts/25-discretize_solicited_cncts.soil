@@ -1,0 +1,63 @@
+!create discretize:Transformation
+!create field:Field
+!discretize.name:='discretize'
+
+!create binUnknown:DiscretizeBin
+!create intervalUnknown:Interval
+!binUnknown.name:='binUnknown'
+!binUnknown.binValue:='Unknown'
+!intervalUnknown.leftMargin:=0.0
+!intervalUnknown.rightMargin:=1.0
+!intervalUnknown.closure:=ClosureType::closedOpen
+!insert(discretize, binUnknown ) into TransfParam
+!insert(binUnknown, intervalUnknown) into DiscretizeInterval
+!insert(TERRITORY_0,intervalUnknown) into ContinuousInterval
+
+!create binZone1:DiscretizeBin
+!create intervalZone1:Interval
+!binZone1.name:='binZone1'
+!binZone1.binValue:='Zone 1'
+!intervalZone1.leftMargin:=1.0
+!intervalZone1.rightMargin:=3.0
+!intervalZone1.closure:=ClosureType::closedOpen
+!insert(discretize, binZone1) into TransfParam
+!insert(binZone1, intervalZone1) into DiscretizeInterval
+!insert(TERRITORY_0,intervalZone1) into ContinuousInterval
+
+!create binZone2:DiscretizeBin
+!create intervalZone2:Interval
+!binZone2.name:='binZone2'
+!binZone2.binValue:='Zone 2'
+!intervalZone2.leftMargin:=3.0
+!intervalZone2.rightMargin:=5.0
+!intervalZone2.closure:=ClosureType::closedOpen
+!insert(discretize, binZone2) into TransfParam
+!insert(binZone2, intervalZone2) into DiscretizeInterval
+!insert(TERRITORY_0,intervalZone2) into ContinuousInterval
+
+!create binZone3:DiscretizeBin
+!create intervalZone3:Interval
+!binZone3.name:='binZone3'
+!binZone3.binValue:='Zone 3'
+!intervalZone3.leftMargin:=5.0
+!intervalZone3.rightMargin:=7.0
+!intervalZone3.closure:=ClosureType::closedOpen
+!insert(discretize, binZone3) into TransfParam
+!insert(binZone3, intervalZone3) into DiscretizeInterval
+!insert(TERRITORY_0,intervalZone3) into ContinuousInterval
+
+!create binZone4:DiscretizeBin
+!create intervalZone4:Interval
+!binZone4.name:='binZone4'
+!binZone4.binValue:='Zone 4'
+!intervalZone4.leftMargin:=7.0
+!intervalZone4.rightMargin:=28.0
+!intervalZone4.closure:=ClosureType::closedClosed
+!insert(discretize, binZone4) into TransfParam
+!insert(binZone4, intervalZone4) into DiscretizeInterval
+!insert(TERRITORY_0,intervalZone4) into ContinuousInterval
+
+!insert(discretize, input) into InputPort
+!insert(discretize, output) into OutputPort
+!insert(discretize, field) into ParameterField
+!insert(field, TERRITORY_0) into FieldDataField

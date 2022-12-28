@@ -1,0 +1,14 @@
+!create impute:Transformation
+!create field:Field
+!impute.name:='impute'
+!insert(impute, input) into InputPort
+!insert(impute, output) into OutputPort
+!insert(impute, field) into ParameterField
+
+!create numOperation:NumOperation
+!insert(impute, numOperation ) into TransfParam
+!numOperation.imputeValue:=ValueImpute::Missing
+!numOperation.operation:=Operation::Mean
+!insert(field, distance_0) into FieldDataField
+
+!impute.validateImpute(numOperation)

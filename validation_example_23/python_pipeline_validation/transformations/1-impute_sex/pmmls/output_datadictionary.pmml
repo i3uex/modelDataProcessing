@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
-  <Header copyright="fran">
+  <Header copyright="franj">
     <Application name="KNIME" version="4.6.3"/>
   </Header>
   <DataDictionary numberOfFields="27">

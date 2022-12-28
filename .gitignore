@@ -12,3 +12,7 @@ validation_pipeline/.idea/
 validation_pipeline/parser/pruebas.ipynb
 
 .idea/
+
+parser/parser_pmml.ipynb
+
+*-checkpoint.ipynb

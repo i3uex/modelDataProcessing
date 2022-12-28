@@ -1,0 +1,17 @@
+!create mapping:Transformation
+!create field:Field
+!mapping.name:='mapping'
+!insert(mapping, input) into InputPort
+!insert(mapping, output) into OutputPort
+!insert(mapping, field) into ParameterField
+
+!create map1:Map
+!insert(mapping, map1 ) into TransfParam
+!map1.inValue:='N'
+!map1.outValue:='0'
+!create map2:Map
+!insert(mapping, map2 ) into TransfParam
+!map2.inValue:='A'
+!map2.outValue:='0'
+!insert(field, TERRITORY_0) into FieldDataField
+!mapping.validateMapping(Set{map1,map2})

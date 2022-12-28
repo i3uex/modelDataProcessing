@@ -1,0 +1,28 @@
+!create replaceOutliers:Transformation
+!create field:Field
+
+!create operation:NumOperation
+!create q1:PrimitiveValue
+!create q3:PrimitiveValue
+!create iqr:PrimitiveValue
+!create multIqr:PrimitiveValue
+
+!replaceOutliers.name:='replaceOutliers'
+!operation.operation:=Operation::Closest
+!q1.value:= 0
+!q3.value:= 1
+!iqr.value:= 1
+!multIqr.value:=1.5
+
+!insert(replaceOutliers, input) into InputPort
+!insert(replaceOutliers, output) into OutputPort
+!insert(replaceOutliers, field) into ParameterField
+!insert(field, Instate_0) into FieldDataField
+
+!insert(replaceOutliers, operation) into TransfParam
+!insert(replaceOutliers, q1) into TransfParam
+!insert(replaceOutliers, q3) into TransfParam
+!insert(replaceOutliers, iqr) into TransfParam
+!insert(replaceOutliers, multIqr) into TransfParam
+
+!replaceOutliers.validateReplaceOutliers(operation, q1, q3, iqr, multiqr)
