@@ -16,4 +16,4 @@ validation_pipeline/parser/pruebas.ipynb
 parser/parser_pmml.ipynb
 
 *-checkpoint.ipynb
-*.csv
+*/.csvs
