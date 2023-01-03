@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="franj">
+    <Application name="KNIME" version="4.6.3"/>
+  </Header>
+  <DataDictionary numberOfFields="27">
+    <DataField name="ETHNICITY" optype="categorical" dataType="string">
+      <Value value="C"/>
+      <Value value="N"/>
+      <Value value="B"/>
+      <Value value="H"/>
+      <Value value="A"/>
+      <Value value="O"/>
+      <Value value="I"/>
+    </DataField>
+    <DataField name="TERRITORY" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="8.0"/>
+    </DataField>
+    <DataField name="ACADEMIC_INTEREST_1" optype="categorical" dataType="string"/>
+    <DataField name="ACADEMIC_INTEREST_2" optype="categorical" dataType="string"/>
+    <DataField name="Enroll" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="TOTAL_CONTACTS" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="28.0"/>
+    </DataField>
+    <DataField name="SELF_INIT_CNTCTS" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="21.0"/>
+    </DataField>
+    <DataField name="SOLICITED_CNTCTS" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="9.0"/>
+    </DataField>
+    <DataField name="CAMPUS_VISIT" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="IRSCHOOL" optype="categorical" dataType="string"/>
+    <DataField name="satscore" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="440.0" rightMargin="1600.0"/>
+    </DataField>
+    <DataField name="sex" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="mailq" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="5.0"/>
+    </DataField>
+    <DataField name="premiere" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="init_span" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="3.0" rightMargin="72.0"/>
+    </DataField>
+    <DataField name="int1rat" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="int2rat" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="hscrat" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="avg_income" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="9783.0" rightMargin="99888.25"/>
+    </DataField>
+    <DataField name="distance" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.7905552999691918" rightMargin="633.3624107681271"/>
+    </DataField>
+    <DataField name="Instate" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="TERRITORY_binned" optype="categorical" dataType="string">
+      <Value value="Zone 4"/>
+      <Value value="Zone 2"/>
+      <Value value="Zone 1"/>
+      <Value value="Zone 3"/>
+      <Value value="Unknown"/>
+    </DataField>
+    <DataField name="TOTAL_CONTACTS_binned" optype="categorical" dataType="string">
+      <Value value="Low"/>
+      <Value value="Moderate"/>
+      <Value value="High"/>
+    </DataField>
+    <DataField name="SELF_INIT_CNTCTS_binned" optype="categorical" dataType="string">
+      <Value value="Low"/>
+      <Value value="Moderate"/>
+      <Value value="High"/>
+    </DataField>
+    <DataField name="SOLICITED_CNTCTS_binned" optype="categorical" dataType="string">
+      <Value value="Low"/>
+      <Value value="Moderate"/>
+      <Value value="High"/>
+    </DataField>
+    <DataField name="satscore_binned" optype="categorical" dataType="string">
+      <Value value="55-75 Percentile"/>
+      <Value value="76-93 Percentile"/>
+      <Value value="54 Percentile and Under"/>
+      <Value value="94+ percentile"/>
+    </DataField>
+    <DataField name="avg_income_binned" optype="categorical" dataType="string">
+      <Value value="Moderate"/>
+      <Value value="High"/>
+      <Value value="low"/>
+    </DataField>
+  </DataDictionary>
+  <TransformationDictionary/>
+</PMML>

@@ -1,0 +1,2332 @@
+!create input:DataDictionary
+ !input.rows:=516
+!input.name:='input'
+!create ETHNICITY_0:Categorical
+ !ETHNICITY_0.ordinal:=false
+ !insert(input,ETHNICITY_0) into DataDictDataField
+ !create value_C_0:ValueField
+ !value_C_0.value:= 'C'
+!value_C_0.count:=362
+!insert(ETHNICITY_0,value_C_0) into ValidValues
+ !create value_N_0:ValueField
+ !value_N_0.value:= 'N'
+!value_N_0.count:=50
+!insert(ETHNICITY_0,value_N_0) into ValidValues
+ !create value_B_0:ValueField
+ !value_B_0.value:= 'B'
+!value_B_0.count:=41
+!insert(ETHNICITY_0,value_B_0) into ValidValues
+ !create value_H_0:ValueField
+ !value_H_0.value:= 'H'
+!value_H_0.count:=24
+!insert(ETHNICITY_0,value_H_0) into ValidValues
+ !create value_A_0:ValueField
+ !value_A_0.value:= 'A'
+!value_A_0.count:=21
+!insert(ETHNICITY_0,value_A_0) into ValidValues
+ !create value_O_0:ValueField
+ !value_O_0.value:= 'O'
+!value_O_0.count:=17
+!insert(ETHNICITY_0,value_O_0) into ValidValues
+ !create value_I_0:ValueField
+ !value_I_0.value:= 'I'
+!value_I_0.count:=1
+!insert(ETHNICITY_0,value_I_0) into ValidValues
+ !ETHNICITY_0.target:=false
+ !ETHNICITY_0.id:=false
+ !ETHNICITY_0.dataType:=DataType::string
+!ETHNICITY_0.name:='ETHNICITY'
+!create TERRITORY_0:Continuous
+ !insert(input,TERRITORY_0) into DataDictDataField
+ !create interval_TERRITORY_0:Interval
+!interval_TERRITORY_0.leftMargin:=0.0
+!interval_TERRITORY_0.rightMargin:=8.0
+!interval_TERRITORY_0.closure:=ClosureType::closedClosed
+!interval_TERRITORY_0.count:=516
+!insert(TERRITORY_0,interval_TERRITORY_0) into ContinuousInterval
+ !TERRITORY_0.target:=false
+ !TERRITORY_0.id:=false
+ !TERRITORY_0.dataType:=DataType::integer
+!TERRITORY_0.name:='TERRITORY'
+!create ACADEMIC_INTEREST_1_0:Categorical
+ !ACADEMIC_INTEREST_1_0.ordinal:=false
+ !insert(input,ACADEMIC_INTEREST_1_0) into DataDictDataField
+ !ACADEMIC_INTEREST_1_0.target:=false
+ !ACADEMIC_INTEREST_1_0.id:=false
+ !ACADEMIC_INTEREST_1_0.dataType:=DataType::string
+!ACADEMIC_INTEREST_1_0.name:='ACADEMIC_INTEREST_1'
+!create ACADEMIC_INTEREST_2_0:Categorical
+ !ACADEMIC_INTEREST_2_0.ordinal:=false
+ !insert(input,ACADEMIC_INTEREST_2_0) into DataDictDataField
+ !ACADEMIC_INTEREST_2_0.target:=false
+ !ACADEMIC_INTEREST_2_0.id:=false
+ !ACADEMIC_INTEREST_2_0.dataType:=DataType::string
+!ACADEMIC_INTEREST_2_0.name:='ACADEMIC_INTEREST_2'
+!create Enroll_0:Continuous
+ !insert(input,Enroll_0) into DataDictDataField
+ !create interval_Enroll_0:Interval
+!interval_Enroll_0.leftMargin:=0.0
+!interval_Enroll_0.rightMargin:=1.0
+!interval_Enroll_0.closure:=ClosureType::closedClosed
+!interval_Enroll_0.count:=516
+!insert(Enroll_0,interval_Enroll_0) into ContinuousInterval
+ !Enroll_0.target:=false
+ !Enroll_0.id:=false
+ !Enroll_0.dataType:=DataType::integer
+!Enroll_0.name:='Enroll'
+!create TOTAL_CONTACTS_0:Continuous
+ !insert(input,TOTAL_CONTACTS_0) into DataDictDataField
+ !create interval_TOTAL_CONTACTS_0:Interval
+!interval_TOTAL_CONTACTS_0.leftMargin:=1.0
+!interval_TOTAL_CONTACTS_0.rightMargin:=28.0
+!interval_TOTAL_CONTACTS_0.closure:=ClosureType::closedClosed
+!interval_TOTAL_CONTACTS_0.count:=516
+!insert(TOTAL_CONTACTS_0,interval_TOTAL_CONTACTS_0) into ContinuousInterval
+ !TOTAL_CONTACTS_0.target:=false
+ !TOTAL_CONTACTS_0.id:=false
+ !TOTAL_CONTACTS_0.dataType:=DataType::integer
+!TOTAL_CONTACTS_0.name:='TOTAL_CONTACTS'
+!create SELF_INIT_CNTCTS_0:Continuous
+ !insert(input,SELF_INIT_CNTCTS_0) into DataDictDataField
+ !create interval_SELF_INIT_CNTCTS_0:Interval
+!interval_SELF_INIT_CNTCTS_0.leftMargin:=0.0
+!interval_SELF_INIT_CNTCTS_0.rightMargin:=21.0
+!interval_SELF_INIT_CNTCTS_0.closure:=ClosureType::closedClosed
+!interval_SELF_INIT_CNTCTS_0.count:=516
+!insert(SELF_INIT_CNTCTS_0,interval_SELF_INIT_CNTCTS_0) into ContinuousInterval
+ !SELF_INIT_CNTCTS_0.target:=false
+ !SELF_INIT_CNTCTS_0.id:=false
+ !SELF_INIT_CNTCTS_0.dataType:=DataType::integer
+!SELF_INIT_CNTCTS_0.name:='SELF_INIT_CNTCTS'
+!create SOLICITED_CNTCTS_0:Continuous
+ !insert(input,SOLICITED_CNTCTS_0) into DataDictDataField
+ !create interval_SOLICITED_CNTCTS_0:Interval
+!interval_SOLICITED_CNTCTS_0.leftMargin:=0.0
+!interval_SOLICITED_CNTCTS_0.rightMargin:=9.0
+!interval_SOLICITED_CNTCTS_0.closure:=ClosureType::closedClosed
+!interval_SOLICITED_CNTCTS_0.count:=516
+!insert(SOLICITED_CNTCTS_0,interval_SOLICITED_CNTCTS_0) into ContinuousInterval
+ !SOLICITED_CNTCTS_0.target:=false
+ !SOLICITED_CNTCTS_0.id:=false
+ !SOLICITED_CNTCTS_0.dataType:=DataType::integer
+!SOLICITED_CNTCTS_0.name:='SOLICITED_CNTCTS'
+!create CAMPUS_VISIT_0:Continuous
+ !insert(input,CAMPUS_VISIT_0) into DataDictDataField
+ !create interval_CAMPUS_VISIT_0:Interval
+!interval_CAMPUS_VISIT_0.leftMargin:=0.0
+!interval_CAMPUS_VISIT_0.rightMargin:=1.0
+!interval_CAMPUS_VISIT_0.closure:=ClosureType::closedClosed
+!interval_CAMPUS_VISIT_0.count:=516
+!insert(CAMPUS_VISIT_0,interval_CAMPUS_VISIT_0) into ContinuousInterval
+ !CAMPUS_VISIT_0.target:=false
+ !CAMPUS_VISIT_0.id:=false
+ !CAMPUS_VISIT_0.dataType:=DataType::integer
+!CAMPUS_VISIT_0.name:='CAMPUS_VISIT'
+!create IRSCHOOL_0:Categorical
+ !IRSCHOOL_0.ordinal:=false
+ !insert(input,IRSCHOOL_0) into DataDictDataField
+ !IRSCHOOL_0.target:=false
+ !IRSCHOOL_0.id:=false
+ !IRSCHOOL_0.dataType:=DataType::string
+!IRSCHOOL_0.name:='IRSCHOOL'
+!create satscore_0:Continuous
+ !insert(input,satscore_0) into DataDictDataField
+ !create interval_satscore_0:Interval
+!interval_satscore_0.leftMargin:=440.0
+!interval_satscore_0.rightMargin:=1600.0
+!interval_satscore_0.closure:=ClosureType::closedClosed
+!interval_satscore_0.count:=512
+!insert(satscore_0,interval_satscore_0) into ContinuousInterval
+ !satscore_0.target:=false
+ !satscore_0.id:=false
+ !satscore_0.dataType:=DataType::double
+!satscore_0.name:='satscore'
+!create nan_0:ValueField
+ !nan_0.value:= 'nan'
+!nan_0.count:=4
+!insert(satscore_0,nan_0) into MissingVals
+ !create sex_0:Continuous
+ !insert(input,sex_0) into DataDictDataField
+ !create interval_sex_0:Interval
+!interval_sex_0.leftMargin:=0.0
+!interval_sex_0.rightMargin:=1.0
+!interval_sex_0.closure:=ClosureType::closedClosed
+!interval_sex_0.count:=516
+!insert(sex_0,interval_sex_0) into ContinuousInterval
+ !sex_0.target:=false
+ !sex_0.id:=false
+ !sex_0.dataType:=DataType::double
+!sex_0.name:='sex'
+!create mailq_0:Continuous
+ !insert(input,mailq_0) into DataDictDataField
+ !create interval_mailq_0:Interval
+!interval_mailq_0.leftMargin:=1.0
+!interval_mailq_0.rightMargin:=5.0
+!interval_mailq_0.closure:=ClosureType::closedClosed
+!interval_mailq_0.count:=516
+!insert(mailq_0,interval_mailq_0) into ContinuousInterval
+ !mailq_0.target:=false
+ !mailq_0.id:=false
+ !mailq_0.dataType:=DataType::integer
+!mailq_0.name:='mailq'
+!create premiere_0:Continuous
+ !insert(input,premiere_0) into DataDictDataField
+ !create interval_premiere_0:Interval
+!interval_premiere_0.leftMargin:=0.0
+!interval_premiere_0.rightMargin:=1.0
+!interval_premiere_0.closure:=ClosureType::closedClosed
+!interval_premiere_0.count:=516
+!insert(premiere_0,interval_premiere_0) into ContinuousInterval
+ !premiere_0.target:=false
+ !premiere_0.id:=false
+ !premiere_0.dataType:=DataType::integer
+!premiere_0.name:='premiere'
+!create init_span_0:Continuous
+ !insert(input,init_span_0) into DataDictDataField
+ !create interval_init_span_0:Interval
+!interval_init_span_0.leftMargin:=3.0
+!interval_init_span_0.rightMargin:=72.0
+!interval_init_span_0.closure:=ClosureType::closedClosed
+!interval_init_span_0.count:=516
+!insert(init_span_0,interval_init_span_0) into ContinuousInterval
+ !init_span_0.target:=false
+ !init_span_0.id:=false
+ !init_span_0.dataType:=DataType::integer
+!init_span_0.name:='init_span'
+!create int1rat_0:Continuous
+ !insert(input,int1rat_0) into DataDictDataField
+ !create interval_int1rat_0:Interval
+!interval_int1rat_0.leftMargin:=0.0
+!interval_int1rat_0.rightMargin:=1.0
+!interval_int1rat_0.closure:=ClosureType::closedClosed
+!interval_int1rat_0.count:=516
+!insert(int1rat_0,interval_int1rat_0) into ContinuousInterval
+ !int1rat_0.target:=false
+ !int1rat_0.id:=false
+ !int1rat_0.dataType:=DataType::double
+!int1rat_0.name:='int1rat'
+!create int2rat_0:Continuous
+ !insert(input,int2rat_0) into DataDictDataField
+ !create interval_int2rat_0:Interval
+!interval_int2rat_0.leftMargin:=0.0
+!interval_int2rat_0.rightMargin:=1.0
+!interval_int2rat_0.closure:=ClosureType::closedClosed
+!interval_int2rat_0.count:=516
+!insert(int2rat_0,interval_int2rat_0) into ContinuousInterval
+ !int2rat_0.target:=false
+ !int2rat_0.id:=false
+ !int2rat_0.dataType:=DataType::double
+!int2rat_0.name:='int2rat'
+!create hscrat_0:Continuous
+ !insert(input,hscrat_0) into DataDictDataField
+ !create interval_hscrat_0:Interval
+!interval_hscrat_0.leftMargin:=0.0
+!interval_hscrat_0.rightMargin:=1.0
+!interval_hscrat_0.closure:=ClosureType::closedClosed
+!interval_hscrat_0.count:=516
+!insert(hscrat_0,interval_hscrat_0) into ContinuousInterval
+ !hscrat_0.target:=false
+ !hscrat_0.id:=false
+ !hscrat_0.dataType:=DataType::double
+!hscrat_0.name:='hscrat'
+!create avg_income_0:Continuous
+ !insert(input,avg_income_0) into DataDictDataField
+ !create interval_avg_income_0:Interval
+!interval_avg_income_0.leftMargin:=9783.0
+!interval_avg_income_0.rightMargin:=99888.25
+!interval_avg_income_0.closure:=ClosureType::closedClosed
+!interval_avg_income_0.count:=516
+!insert(avg_income_0,interval_avg_income_0) into ContinuousInterval
+ !avg_income_0.target:=false
+ !avg_income_0.id:=false
+ !avg_income_0.dataType:=DataType::double
+!avg_income_0.name:='avg_income'
+!create distance_0:Continuous
+ !insert(input,distance_0) into DataDictDataField
+ !create interval_distance_0:Interval
+!interval_distance_0.leftMargin:=0.7905552999691918
+!interval_distance_0.rightMargin:=633.3624107681271
+!interval_distance_0.closure:=ClosureType::closedClosed
+!interval_distance_0.count:=516
+!insert(distance_0,interval_distance_0) into ContinuousInterval
+ !distance_0.target:=false
+ !distance_0.id:=false
+ !distance_0.dataType:=DataType::double
+!distance_0.name:='distance'
+!create Instate_0:Continuous
+ !insert(input,Instate_0) into DataDictDataField
+ !create interval_Instate_0:Interval
+!interval_Instate_0.leftMargin:=0.0
+!interval_Instate_0.rightMargin:=1.0
+!interval_Instate_0.closure:=ClosureType::closedClosed
+!interval_Instate_0.count:=516
+!insert(Instate_0,interval_Instate_0) into ContinuousInterval
+ !Instate_0.target:=false
+ !Instate_0.id:=false
+ !Instate_0.dataType:=DataType::integer
+!Instate_0.name:='Instate'
+!create data_0_0:Data
+ !data_0_0.value:='0'
+!data_0_0.index:=0
+!insert(SOLICITED_CNTCTS_0,data_0_0) into DataOfDataField
+ !create data_0_1008:Data
+ !data_0_1008.value:='0'
+!data_0_1008.index:=1
+!insert(SOLICITED_CNTCTS_0,data_0_1008) into DataOfDataField
+ !create data_1_0:Data
+ !data_1_0.value:='1'
+!data_1_0.index:=2
+!insert(SOLICITED_CNTCTS_0,data_1_0) into DataOfDataField
+ !create data_0_579:Data
+ !data_0_579.value:='0'
+!data_0_579.index:=3
+!insert(SOLICITED_CNTCTS_0,data_0_579) into DataOfDataField
+ !create data_0_146:Data
+ !data_0_146.value:='0'
+!data_0_146.index:=4
+!insert(SOLICITED_CNTCTS_0,data_0_146) into DataOfDataField
+ !create data_1_441:Data
+ !data_1_441.value:='1'
+!data_1_441.index:=5
+!insert(SOLICITED_CNTCTS_0,data_1_441) into DataOfDataField
+ !create data_0_92:Data
+ !data_0_92.value:='0'
+!data_0_92.index:=6
+!insert(SOLICITED_CNTCTS_0,data_0_92) into DataOfDataField
+ !create data_0_497:Data
+ !data_0_497.value:='0'
+!data_0_497.index:=7
+!insert(SOLICITED_CNTCTS_0,data_0_497) into DataOfDataField
+ !create data_0_534:Data
+ !data_0_534.value:='0'
+!data_0_534.index:=8
+!insert(SOLICITED_CNTCTS_0,data_0_534) into DataOfDataField
+ !create data_0_1025:Data
+ !data_0_1025.value:='0'
+!data_0_1025.index:=9
+!insert(SOLICITED_CNTCTS_0,data_0_1025) into DataOfDataField
+ !create data_0_1084:Data
+ !data_0_1084.value:='0'
+!data_0_1084.index:=10
+!insert(SOLICITED_CNTCTS_0,data_0_1084) into DataOfDataField
+ !create data_0_343:Data
+ !data_0_343.value:='0'
+!data_0_343.index:=11
+!insert(SOLICITED_CNTCTS_0,data_0_343) into DataOfDataField
+ !create data_0_327:Data
+ !data_0_327.value:='0'
+!data_0_327.index:=12
+!insert(SOLICITED_CNTCTS_0,data_0_327) into DataOfDataField
+ !create data_0_842:Data
+ !data_0_842.value:='0'
+!data_0_842.index:=13
+!insert(SOLICITED_CNTCTS_0,data_0_842) into DataOfDataField
+ !create data_0_1118:Data
+ !data_0_1118.value:='0'
+!data_0_1118.index:=14
+!insert(SOLICITED_CNTCTS_0,data_0_1118) into DataOfDataField
+ !create data_0_661:Data
+ !data_0_661.value:='0'
+!data_0_661.index:=15
+!insert(SOLICITED_CNTCTS_0,data_0_661) into DataOfDataField
+ !create data_0_14:Data
+ !data_0_14.value:='0'
+!data_0_14.index:=16
+!insert(SOLICITED_CNTCTS_0,data_0_14) into DataOfDataField
+ !create data_0_1345:Data
+ !data_0_1345.value:='0'
+!data_0_1345.index:=17
+!insert(SOLICITED_CNTCTS_0,data_0_1345) into DataOfDataField
+ !create data_0_823:Data
+ !data_0_823.value:='0'
+!data_0_823.index:=18
+!insert(SOLICITED_CNTCTS_0,data_0_823) into DataOfDataField
+ !create data_0_814:Data
+ !data_0_814.value:='0'
+!data_0_814.index:=19
+!insert(SOLICITED_CNTCTS_0,data_0_814) into DataOfDataField
+ !create data_0_744:Data
+ !data_0_744.value:='0'
+!data_0_744.index:=20
+!insert(SOLICITED_CNTCTS_0,data_0_744) into DataOfDataField
+ !create data_0_688:Data
+ !data_0_688.value:='0'
+!data_0_688.index:=21
+!insert(SOLICITED_CNTCTS_0,data_0_688) into DataOfDataField
+ !create data_0_183:Data
+ !data_0_183.value:='0'
+!data_0_183.index:=22
+!insert(SOLICITED_CNTCTS_0,data_0_183) into DataOfDataField
+ !create data_1_1392:Data
+ !data_1_1392.value:='1'
+!data_1_1392.index:=23
+!insert(SOLICITED_CNTCTS_0,data_1_1392) into DataOfDataField
+ !create data_0_606:Data
+ !data_0_606.value:='0'
+!data_0_606.index:=24
+!insert(SOLICITED_CNTCTS_0,data_0_606) into DataOfDataField
+ !create data_0_1199:Data
+ !data_0_1199.value:='0'
+!data_0_1199.index:=25
+!insert(SOLICITED_CNTCTS_0,data_0_1199) into DataOfDataField
+ !create data_0_1323:Data
+ !data_0_1323.value:='0'
+!data_0_1323.index:=26
+!insert(SOLICITED_CNTCTS_0,data_0_1323) into DataOfDataField
+ !create data_0_84:Data
+ !data_0_84.value:='0'
+!data_0_84.index:=27
+!insert(SOLICITED_CNTCTS_0,data_0_84) into DataOfDataField
+ !create data_0_643:Data
+ !data_0_643.value:='0'
+!data_0_643.index:=28
+!insert(SOLICITED_CNTCTS_0,data_0_643) into DataOfDataField
+ !create data_0_1330:Data
+ !data_0_1330.value:='0'
+!data_0_1330.index:=29
+!insert(SOLICITED_CNTCTS_0,data_0_1330) into DataOfDataField
+ !create data_1_1504:Data
+ !data_1_1504.value:='1'
+!data_1_1504.index:=30
+!insert(SOLICITED_CNTCTS_0,data_1_1504) into DataOfDataField
+ !create data_0_578:Data
+ !data_0_578.value:='0'
+!data_0_578.index:=31
+!insert(SOLICITED_CNTCTS_0,data_0_578) into DataOfDataField
+ !create data_0_1202:Data
+ !data_0_1202.value:='0'
+!data_0_1202.index:=32
+!insert(SOLICITED_CNTCTS_0,data_0_1202) into DataOfDataField
+ !create data_1_1280:Data
+ !data_1_1280.value:='1'
+!data_1_1280.index:=33
+!insert(SOLICITED_CNTCTS_0,data_1_1280) into DataOfDataField
+ !create data_1_767:Data
+ !data_1_767.value:='1'
+!data_1_767.index:=34
+!insert(SOLICITED_CNTCTS_0,data_1_767) into DataOfDataField
+ !create data_0_773:Data
+ !data_0_773.value:='0'
+!data_0_773.index:=35
+!insert(SOLICITED_CNTCTS_0,data_0_773) into DataOfDataField
+ !create data_0_1145:Data
+ !data_0_1145.value:='0'
+!data_0_1145.index:=36
+!insert(SOLICITED_CNTCTS_0,data_0_1145) into DataOfDataField
+ !create data_1_1542:Data
+ !data_1_1542.value:='1'
+!data_1_1542.index:=37
+!insert(SOLICITED_CNTCTS_0,data_1_1542) into DataOfDataField
+ !create data_0_1087:Data
+ !data_0_1087.value:='0'
+!data_0_1087.index:=38
+!insert(SOLICITED_CNTCTS_0,data_0_1087) into DataOfDataField
+ !create data_0_150:Data
+ !data_0_150.value:='0'
+!data_0_150.index:=39
+!insert(SOLICITED_CNTCTS_0,data_0_150) into DataOfDataField
+ !create data_1_431:Data
+ !data_1_431.value:='1'
+!data_1_431.index:=40
+!insert(SOLICITED_CNTCTS_0,data_1_431) into DataOfDataField
+ !create data_1_1265:Data
+ !data_1_1265.value:='1'
+!data_1_1265.index:=41
+!insert(SOLICITED_CNTCTS_0,data_1_1265) into DataOfDataField
+ !create data_0_66:Data
+ !data_0_66.value:='0'
+!data_0_66.index:=42
+!insert(SOLICITED_CNTCTS_0,data_0_66) into DataOfDataField
+ !create data_1_1428:Data
+ !data_1_1428.value:='1'
+!data_1_1428.index:=43
+!insert(SOLICITED_CNTCTS_0,data_1_1428) into DataOfDataField
+ !create data_1_1444:Data
+ !data_1_1444.value:='1'
+!data_1_1444.index:=44
+!insert(SOLICITED_CNTCTS_0,data_1_1444) into DataOfDataField
+ !create data_0_224:Data
+ !data_0_224.value:='0'
+!data_0_224.index:=45
+!insert(SOLICITED_CNTCTS_0,data_0_224) into DataOfDataField
+ !create data_1_987:Data
+ !data_1_987.value:='1'
+!data_1_987.index:=46
+!insert(SOLICITED_CNTCTS_0,data_1_987) into DataOfDataField
+ !create data_0_768:Data
+ !data_0_768.value:='0'
+!data_0_768.index:=47
+!insert(SOLICITED_CNTCTS_0,data_0_768) into DataOfDataField
+ !create data_3_0:Data
+ !data_3_0.value:='3'
+!data_3_0.index:=48
+!insert(SOLICITED_CNTCTS_0,data_3_0) into DataOfDataField
+ !create data_0_1443:Data
+ !data_0_1443.value:='0'
+!data_0_1443.index:=49
+!insert(SOLICITED_CNTCTS_0,data_0_1443) into DataOfDataField
+ !create data_0_1034:Data
+ !data_0_1034.value:='0'
+!data_0_1034.index:=50
+!insert(SOLICITED_CNTCTS_0,data_0_1034) into DataOfDataField
+ !create data_0_1315:Data
+ !data_0_1315.value:='0'
+!data_0_1315.index:=51
+!insert(SOLICITED_CNTCTS_0,data_0_1315) into DataOfDataField
+ !create data_1_486:Data
+ !data_1_486.value:='1'
+!data_1_486.index:=52
+!insert(SOLICITED_CNTCTS_0,data_1_486) into DataOfDataField
+ !create data_0_234:Data
+ !data_0_234.value:='0'
+!data_0_234.index:=53
+!insert(SOLICITED_CNTCTS_0,data_0_234) into DataOfDataField
+ !create data_0_1366:Data
+ !data_0_1366.value:='0'
+!data_0_1366.index:=54
+!insert(SOLICITED_CNTCTS_0,data_0_1366) into DataOfDataField
+ !create data_0_752:Data
+ !data_0_752.value:='0'
+!data_0_752.index:=55
+!insert(SOLICITED_CNTCTS_0,data_0_752) into DataOfDataField
+ !create data_0_910:Data
+ !data_0_910.value:='0'
+!data_0_910.index:=56
+!insert(SOLICITED_CNTCTS_0,data_0_910) into DataOfDataField
+ !create data_1_1037:Data
+ !data_1_1037.value:='1'
+!data_1_1037.index:=57
+!insert(SOLICITED_CNTCTS_0,data_1_1037) into DataOfDataField
+ !create data_0_729:Data
+ !data_0_729.value:='0'
+!data_0_729.index:=58
+!insert(SOLICITED_CNTCTS_0,data_0_729) into DataOfDataField
+ !create data_0_1389:Data
+ !data_0_1389.value:='0'
+!data_0_1389.index:=59
+!insert(SOLICITED_CNTCTS_0,data_0_1389) into DataOfDataField
+ !create data_0_239:Data
+ !data_0_239.value:='0'
+!data_0_239.index:=60
+!insert(SOLICITED_CNTCTS_0,data_0_239) into DataOfDataField
+ !create data_0_535:Data
+ !data_0_535.value:='0'
+!data_0_535.index:=61
+!insert(SOLICITED_CNTCTS_0,data_0_535) into DataOfDataField
+ !create data_0_308:Data
+ !data_0_308.value:='0'
+!data_0_308.index:=62
+!insert(SOLICITED_CNTCTS_0,data_0_308) into DataOfDataField
+ !create data_1_1245:Data
+ !data_1_1245.value:='1'
+!data_1_1245.index:=63
+!insert(SOLICITED_CNTCTS_0,data_1_1245) into DataOfDataField
+ !create data_1_595:Data
+ !data_1_595.value:='1'
+!data_1_595.index:=64
+!insert(SOLICITED_CNTCTS_0,data_1_595) into DataOfDataField
+ !create data_0_392:Data
+ !data_0_392.value:='0'
+!data_0_392.index:=65
+!insert(SOLICITED_CNTCTS_0,data_0_392) into DataOfDataField
+ !create data_0_1186:Data
+ !data_0_1186.value:='0'
+!data_0_1186.index:=66
+!insert(SOLICITED_CNTCTS_0,data_0_1186) into DataOfDataField
+ !create data_0_22:Data
+ !data_0_22.value:='0'
+!data_0_22.index:=67
+!insert(SOLICITED_CNTCTS_0,data_0_22) into DataOfDataField
+ !create data_0_1380:Data
+ !data_0_1380.value:='0'
+!data_0_1380.index:=68
+!insert(SOLICITED_CNTCTS_0,data_0_1380) into DataOfDataField
+ !create data_1_38:Data
+ !data_1_38.value:='1'
+!data_1_38.index:=69
+!insert(SOLICITED_CNTCTS_0,data_1_38) into DataOfDataField
+ !create data_1_529:Data
+ !data_1_529.value:='1'
+!data_1_529.index:=70
+!insert(SOLICITED_CNTCTS_0,data_1_529) into DataOfDataField
+ !create data_0_256:Data
+ !data_0_256.value:='0'
+!data_0_256.index:=71
+!insert(SOLICITED_CNTCTS_0,data_0_256) into DataOfDataField
+ !create data_0_1320:Data
+ !data_0_1320.value:='0'
+!data_0_1320.index:=72
+!insert(SOLICITED_CNTCTS_0,data_0_1320) into DataOfDataField
+ !create data_1_912:Data
+ !data_1_912.value:='1'
+!data_1_912.index:=73
+!insert(SOLICITED_CNTCTS_0,data_1_912) into DataOfDataField
+ !create data_1_1464:Data
+ !data_1_1464.value:='1'
+!data_1_1464.index:=74
+!insert(SOLICITED_CNTCTS_0,data_1_1464) into DataOfDataField
+ !create data_2_0:Data
+ !data_2_0.value:='2'
+!data_2_0.index:=75
+!insert(SOLICITED_CNTCTS_0,data_2_0) into DataOfDataField
+ !create data_1_551:Data
+ !data_1_551.value:='1'
+!data_1_551.index:=76
+!insert(SOLICITED_CNTCTS_0,data_1_551) into DataOfDataField
+ !create data_0_62:Data
+ !data_0_62.value:='0'
+!data_0_62.index:=77
+!insert(SOLICITED_CNTCTS_0,data_0_62) into DataOfDataField
+ !create data_1_367:Data
+ !data_1_367.value:='1'
+!data_1_367.index:=78
+!insert(SOLICITED_CNTCTS_0,data_1_367) into DataOfDataField
+ !create data_0_591:Data
+ !data_0_591.value:='0'
+!data_0_591.index:=79
+!insert(SOLICITED_CNTCTS_0,data_0_591) into DataOfDataField
+ !create data_0_1155:Data
+ !data_0_1155.value:='0'
+!data_0_1155.index:=80
+!insert(SOLICITED_CNTCTS_0,data_0_1155) into DataOfDataField
+ !create data_0_1316:Data
+ !data_0_1316.value:='0'
+!data_0_1316.index:=81
+!insert(SOLICITED_CNTCTS_0,data_0_1316) into DataOfDataField
+ !create data_0_326:Data
+ !data_0_326.value:='0'
+!data_0_326.index:=82
+!insert(SOLICITED_CNTCTS_0,data_0_326) into DataOfDataField
+ !create data_0_1461:Data
+ !data_0_1461.value:='0'
+!data_0_1461.index:=83
+!insert(SOLICITED_CNTCTS_0,data_0_1461) into DataOfDataField
+ !create data_0_1313:Data
+ !data_0_1313.value:='0'
+!data_0_1313.index:=84
+!insert(SOLICITED_CNTCTS_0,data_0_1313) into DataOfDataField
+ !create data_0_1448:Data
+ !data_0_1448.value:='0'
+!data_0_1448.index:=85
+!insert(SOLICITED_CNTCTS_0,data_0_1448) into DataOfDataField
+ !create data_0_1303:Data
+ !data_0_1303.value:='0'
+!data_0_1303.index:=86
+!insert(SOLICITED_CNTCTS_0,data_0_1303) into DataOfDataField
+ !create data_0_1402:Data
+ !data_0_1402.value:='0'
+!data_0_1402.index:=87
+!insert(SOLICITED_CNTCTS_0,data_0_1402) into DataOfDataField
+ !create data_0_246:Data
+ !data_0_246.value:='0'
+!data_0_246.index:=88
+!insert(SOLICITED_CNTCTS_0,data_0_246) into DataOfDataField
+ !create data_0_1033:Data
+ !data_0_1033.value:='0'
+!data_0_1033.index:=89
+!insert(SOLICITED_CNTCTS_0,data_0_1033) into DataOfDataField
+ !create data_0_1170:Data
+ !data_0_1170.value:='0'
+!data_0_1170.index:=90
+!insert(SOLICITED_CNTCTS_0,data_0_1170) into DataOfDataField
+ !create data_0_48:Data
+ !data_0_48.value:='0'
+!data_0_48.index:=91
+!insert(SOLICITED_CNTCTS_0,data_0_48) into DataOfDataField
+ !create data_0_474:Data
+ !data_0_474.value:='0'
+!data_0_474.index:=92
+!insert(SOLICITED_CNTCTS_0,data_0_474) into DataOfDataField
+ !create data_0_1311:Data
+ !data_0_1311.value:='0'
+!data_0_1311.index:=93
+!insert(SOLICITED_CNTCTS_0,data_0_1311) into DataOfDataField
+ !create data_0_1065:Data
+ !data_0_1065.value:='0'
+!data_0_1065.index:=94
+!insert(SOLICITED_CNTCTS_0,data_0_1065) into DataOfDataField
+ !create data_0_1365:Data
+ !data_0_1365.value:='0'
+!data_0_1365.index:=95
+!insert(SOLICITED_CNTCTS_0,data_0_1365) into DataOfDataField
+ !create data_0_145:Data
+ !data_0_145.value:='0'
+!data_0_145.index:=96
+!insert(SOLICITED_CNTCTS_0,data_0_145) into DataOfDataField
+ !create data_0_260:Data
+ !data_0_260.value:='0'
+!data_0_260.index:=97
+!insert(SOLICITED_CNTCTS_0,data_0_260) into DataOfDataField
+ !create data_1_1013:Data
+ !data_1_1013.value:='1'
+!data_1_1013.index:=98
+!insert(SOLICITED_CNTCTS_0,data_1_1013) into DataOfDataField
+ !create data_0_223:Data
+ !data_0_223.value:='0'
+!data_0_223.index:=99
+!insert(SOLICITED_CNTCTS_0,data_0_223) into DataOfDataField
+ !create data_0_112:Data
+ !data_0_112.value:='0'
+!data_0_112.index:=100
+!insert(SOLICITED_CNTCTS_0,data_0_112) into DataOfDataField
+ !create data_0_786:Data
+ !data_0_786.value:='0'
+!data_0_786.index:=101
+!insert(SOLICITED_CNTCTS_0,data_0_786) into DataOfDataField
+ !create data_0_946:Data
+ !data_0_946.value:='0'
+!data_0_946.index:=102
+!insert(SOLICITED_CNTCTS_0,data_0_946) into DataOfDataField
+ !create data_1_19:Data
+ !data_1_19.value:='1'
+!data_1_19.index:=103
+!insert(SOLICITED_CNTCTS_0,data_1_19) into DataOfDataField
+ !create data_0_275:Data
+ !data_0_275.value:='0'
+!data_0_275.index:=104
+!insert(SOLICITED_CNTCTS_0,data_0_275) into DataOfDataField
+ !create data_0_135:Data
+ !data_0_135.value:='0'
+!data_0_135.index:=105
+!insert(SOLICITED_CNTCTS_0,data_0_135) into DataOfDataField
+ !create data_0_1214:Data
+ !data_0_1214.value:='0'
+!data_0_1214.index:=106
+!insert(SOLICITED_CNTCTS_0,data_0_1214) into DataOfDataField
+ !create data_0_1431:Data
+ !data_0_1431.value:='0'
+!data_0_1431.index:=107
+!insert(SOLICITED_CNTCTS_0,data_0_1431) into DataOfDataField
+ !create data_1_172:Data
+ !data_1_172.value:='1'
+!data_1_172.index:=108
+!insert(SOLICITED_CNTCTS_0,data_1_172) into DataOfDataField
+ !create data_1_955:Data
+ !data_1_955.value:='1'
+!data_1_955.index:=109
+!insert(SOLICITED_CNTCTS_0,data_1_955) into DataOfDataField
+ !create data_1_534:Data
+ !data_1_534.value:='1'
+!data_1_534.index:=110
+!insert(SOLICITED_CNTCTS_0,data_1_534) into DataOfDataField
+ !create data_0_306:Data
+ !data_0_306.value:='0'
+!data_0_306.index:=111
+!insert(SOLICITED_CNTCTS_0,data_0_306) into DataOfDataField
+ !create data_0_519:Data
+ !data_0_519.value:='0'
+!data_0_519.index:=112
+!insert(SOLICITED_CNTCTS_0,data_0_519) into DataOfDataField
+ !create data_1_138:Data
+ !data_1_138.value:='1'
+!data_1_138.index:=113
+!insert(SOLICITED_CNTCTS_0,data_1_138) into DataOfDataField
+ !create data_1_152:Data
+ !data_1_152.value:='1'
+!data_1_152.index:=114
+!insert(SOLICITED_CNTCTS_0,data_1_152) into DataOfDataField
+ !create data_0_600:Data
+ !data_0_600.value:='0'
+!data_0_600.index:=115
+!insert(SOLICITED_CNTCTS_0,data_0_600) into DataOfDataField
+ !create data_1_652:Data
+ !data_1_652.value:='1'
+!data_1_652.index:=116
+!insert(SOLICITED_CNTCTS_0,data_1_652) into DataOfDataField
+ !create data_1_1228:Data
+ !data_1_1228.value:='1'
+!data_1_1228.index:=117
+!insert(SOLICITED_CNTCTS_0,data_1_1228) into DataOfDataField
+ !create data_1_1546:Data
+ !data_1_1546.value:='1'
+!data_1_1546.index:=118
+!insert(SOLICITED_CNTCTS_0,data_1_1546) into DataOfDataField
+ !create data_1_1115:Data
+ !data_1_1115.value:='1'
+!data_1_1115.index:=119
+!insert(SOLICITED_CNTCTS_0,data_1_1115) into DataOfDataField
+ !create data_1_572:Data
+ !data_1_572.value:='1'
+!data_1_572.index:=120
+!insert(SOLICITED_CNTCTS_0,data_1_572) into DataOfDataField
+ !create data_1_1020:Data
+ !data_1_1020.value:='1'
+!data_1_1020.index:=121
+!insert(SOLICITED_CNTCTS_0,data_1_1020) into DataOfDataField
+ !create data_1_512:Data
+ !data_1_512.value:='1'
+!data_1_512.index:=122
+!insert(SOLICITED_CNTCTS_0,data_1_512) into DataOfDataField
+ !create data_1_693:Data
+ !data_1_693.value:='1'
+!data_1_693.index:=123
+!insert(SOLICITED_CNTCTS_0,data_1_693) into DataOfDataField
+ !create data_0_1400:Data
+ !data_0_1400.value:='0'
+!data_0_1400.index:=124
+!insert(SOLICITED_CNTCTS_0,data_0_1400) into DataOfDataField
+ !create data_0_165:Data
+ !data_0_165.value:='0'
+!data_0_165.index:=125
+!insert(SOLICITED_CNTCTS_0,data_0_165) into DataOfDataField
+ !create data_0_409:Data
+ !data_0_409.value:='0'
+!data_0_409.index:=126
+!insert(SOLICITED_CNTCTS_0,data_0_409) into DataOfDataField
+ !create data_0_914:Data
+ !data_0_914.value:='0'
+!data_0_914.index:=127
+!insert(SOLICITED_CNTCTS_0,data_0_914) into DataOfDataField
+ !create data_0_925:Data
+ !data_0_925.value:='0'
+!data_0_925.index:=128
+!insert(SOLICITED_CNTCTS_0,data_0_925) into DataOfDataField
+ !create data_0_1061:Data
+ !data_0_1061.value:='0'
+!data_0_1061.index:=129
+!insert(SOLICITED_CNTCTS_0,data_0_1061) into DataOfDataField
+ !create data_1_1499:Data
+ !data_1_1499.value:='1'
+!data_1_1499.index:=130
+!insert(SOLICITED_CNTCTS_0,data_1_1499) into DataOfDataField
+ !create data_1_829:Data
+ !data_1_829.value:='1'
+!data_1_829.index:=131
+!insert(SOLICITED_CNTCTS_0,data_1_829) into DataOfDataField
+ !create data_1_1330:Data
+ !data_1_1330.value:='1'
+!data_1_1330.index:=132
+!insert(SOLICITED_CNTCTS_0,data_1_1330) into DataOfDataField
+ !create data_0_416:Data
+ !data_0_416.value:='0'
+!data_0_416.index:=133
+!insert(SOLICITED_CNTCTS_0,data_0_416) into DataOfDataField
+ !create data_1_1274:Data
+ !data_1_1274.value:='1'
+!data_1_1274.index:=134
+!insert(SOLICITED_CNTCTS_0,data_1_1274) into DataOfDataField
+ !create data_1_163:Data
+ !data_1_163.value:='1'
+!data_1_163.index:=135
+!insert(SOLICITED_CNTCTS_0,data_1_163) into DataOfDataField
+ !create data_1_103:Data
+ !data_1_103.value:='1'
+!data_1_103.index:=136
+!insert(SOLICITED_CNTCTS_0,data_1_103) into DataOfDataField
+ !create data_0_109:Data
+ !data_0_109.value:='0'
+!data_0_109.index:=137
+!insert(SOLICITED_CNTCTS_0,data_0_109) into DataOfDataField
+ !create data_1_590:Data
+ !data_1_590.value:='1'
+!data_1_590.index:=138
+!insert(SOLICITED_CNTCTS_0,data_1_590) into DataOfDataField
+ !create data_1_537:Data
+ !data_1_537.value:='1'
+!data_1_537.index:=139
+!insert(SOLICITED_CNTCTS_0,data_1_537) into DataOfDataField
+ !create data_0_177:Data
+ !data_0_177.value:='0'
+!data_0_177.index:=140
+!insert(SOLICITED_CNTCTS_0,data_0_177) into DataOfDataField
+ !create data_1_356:Data
+ !data_1_356.value:='1'
+!data_1_356.index:=141
+!insert(SOLICITED_CNTCTS_0,data_1_356) into DataOfDataField
+ !create data_0_153:Data
+ !data_0_153.value:='0'
+!data_0_153.index:=142
+!insert(SOLICITED_CNTCTS_0,data_0_153) into DataOfDataField
+ !create data_1_1059:Data
+ !data_1_1059.value:='1'
+!data_1_1059.index:=143
+!insert(SOLICITED_CNTCTS_0,data_1_1059) into DataOfDataField
+ !create data_1_948:Data
+ !data_1_948.value:='1'
+!data_1_948.index:=144
+!insert(SOLICITED_CNTCTS_0,data_1_948) into DataOfDataField
+ !create data_1_1283:Data
+ !data_1_1283.value:='1'
+!data_1_1283.index:=145
+!insert(SOLICITED_CNTCTS_0,data_1_1283) into DataOfDataField
+ !create data_1_219:Data
+ !data_1_219.value:='1'
+!data_1_219.index:=146
+!insert(SOLICITED_CNTCTS_0,data_1_219) into DataOfDataField
+ !create data_1_1241:Data
+ !data_1_1241.value:='1'
+!data_1_1241.index:=147
+!insert(SOLICITED_CNTCTS_0,data_1_1241) into DataOfDataField
+ !create data_0_1003:Data
+ !data_0_1003.value:='0'
+!data_0_1003.index:=148
+!insert(SOLICITED_CNTCTS_0,data_0_1003) into DataOfDataField
+ !create data_0_973:Data
+ !data_0_973.value:='0'
+!data_0_973.index:=149
+!insert(SOLICITED_CNTCTS_0,data_0_973) into DataOfDataField
+ !create data_1_604:Data
+ !data_1_604.value:='1'
+!data_1_604.index:=150
+!insert(SOLICITED_CNTCTS_0,data_1_604) into DataOfDataField
+ !create data_1_146:Data
+ !data_1_146.value:='1'
+!data_1_146.index:=151
+!insert(SOLICITED_CNTCTS_0,data_1_146) into DataOfDataField
+ !create data_0_725:Data
+ !data_0_725.value:='0'
+!data_0_725.index:=152
+!insert(SOLICITED_CNTCTS_0,data_0_725) into DataOfDataField
+ !create data_1_1527:Data
+ !data_1_1527.value:='1'
+!data_1_1527.index:=153
+!insert(SOLICITED_CNTCTS_0,data_1_1527) into DataOfDataField
+ !create data_1_550:Data
+ !data_1_550.value:='1'
+!data_1_550.index:=154
+!insert(SOLICITED_CNTCTS_0,data_1_550) into DataOfDataField
+ !create data_0_1349:Data
+ !data_0_1349.value:='0'
+!data_0_1349.index:=155
+!insert(SOLICITED_CNTCTS_0,data_0_1349) into DataOfDataField
+ !create data_1_782:Data
+ !data_1_782.value:='1'
+!data_1_782.index:=156
+!insert(SOLICITED_CNTCTS_0,data_1_782) into DataOfDataField
+ !create data_1_1002:Data
+ !data_1_1002.value:='1'
+!data_1_1002.index:=157
+!insert(SOLICITED_CNTCTS_0,data_1_1002) into DataOfDataField
+ !create data_1_644:Data
+ !data_1_644.value:='1'
+!data_1_644.index:=158
+!insert(SOLICITED_CNTCTS_0,data_1_644) into DataOfDataField
+ !create data_1_1513:Data
+ !data_1_1513.value:='1'
+!data_1_1513.index:=159
+!insert(SOLICITED_CNTCTS_0,data_1_1513) into DataOfDataField
+ !create data_0_1434:Data
+ !data_0_1434.value:='0'
+!data_0_1434.index:=160
+!insert(SOLICITED_CNTCTS_0,data_0_1434) into DataOfDataField
+ !create data_1_1158:Data
+ !data_1_1158.value:='1'
+!data_1_1158.index:=161
+!insert(SOLICITED_CNTCTS_0,data_1_1158) into DataOfDataField
+ !create data_1_1028:Data
+ !data_1_1028.value:='1'
+!data_1_1028.index:=162
+!insert(SOLICITED_CNTCTS_0,data_1_1028) into DataOfDataField
+ !create data_1_718:Data
+ !data_1_718.value:='1'
+!data_1_718.index:=163
+!insert(SOLICITED_CNTCTS_0,data_1_718) into DataOfDataField
+ !create data_1_1078:Data
+ !data_1_1078.value:='1'
+!data_1_1078.index:=164
+!insert(SOLICITED_CNTCTS_0,data_1_1078) into DataOfDataField
+ !create data_1_609:Data
+ !data_1_609.value:='1'
+!data_1_609.index:=165
+!insert(SOLICITED_CNTCTS_0,data_1_609) into DataOfDataField
+ !create data_0_1172:Data
+ !data_0_1172.value:='0'
+!data_0_1172.index:=166
+!insert(SOLICITED_CNTCTS_0,data_0_1172) into DataOfDataField
+ !create data_0_1433:Data
+ !data_0_1433.value:='0'
+!data_0_1433.index:=167
+!insert(SOLICITED_CNTCTS_0,data_0_1433) into DataOfDataField
+ !create data_0_1227:Data
+ !data_0_1227.value:='0'
+!data_0_1227.index:=168
+!insert(SOLICITED_CNTCTS_0,data_0_1227) into DataOfDataField
+ !create data_1_1217:Data
+ !data_1_1217.value:='1'
+!data_1_1217.index:=169
+!insert(SOLICITED_CNTCTS_0,data_1_1217) into DataOfDataField
+ !create data_1_8:Data
+ !data_1_8.value:='1'
+!data_1_8.index:=170
+!insert(SOLICITED_CNTCTS_0,data_1_8) into DataOfDataField
+ !create data_1_1229:Data
+ !data_1_1229.value:='1'
+!data_1_1229.index:=171
+!insert(SOLICITED_CNTCTS_0,data_1_1229) into DataOfDataField
+ !create data_1_881:Data
+ !data_1_881.value:='1'
+!data_1_881.index:=172
+!insert(SOLICITED_CNTCTS_0,data_1_881) into DataOfDataField
+ !create data_0_268:Data
+ !data_0_268.value:='0'
+!data_0_268.index:=173
+!insert(SOLICITED_CNTCTS_0,data_0_268) into DataOfDataField
+ !create data_0_408:Data
+ !data_0_408.value:='0'
+!data_0_408.index:=174
+!insert(SOLICITED_CNTCTS_0,data_0_408) into DataOfDataField
+ !create data_1_1234:Data
+ !data_1_1234.value:='1'
+!data_1_1234.index:=175
+!insert(SOLICITED_CNTCTS_0,data_1_1234) into DataOfDataField
+ !create data_1_311:Data
+ !data_1_311.value:='1'
+!data_1_311.index:=176
+!insert(SOLICITED_CNTCTS_0,data_1_311) into DataOfDataField
+ !create data_1_1316:Data
+ !data_1_1316.value:='1'
+!data_1_1316.index:=177
+!insert(SOLICITED_CNTCTS_0,data_1_1316) into DataOfDataField
+ !create data_1_1075:Data
+ !data_1_1075.value:='1'
+!data_1_1075.index:=178
+!insert(SOLICITED_CNTCTS_0,data_1_1075) into DataOfDataField
+ !create data_1_448:Data
+ !data_1_448.value:='1'
+!data_1_448.index:=179
+!insert(SOLICITED_CNTCTS_0,data_1_448) into DataOfDataField
+ !create data_0_1041:Data
+ !data_0_1041.value:='0'
+!data_0_1041.index:=180
+!insert(SOLICITED_CNTCTS_0,data_0_1041) into DataOfDataField
+ !create data_1_627:Data
+ !data_1_627.value:='1'
+!data_1_627.index:=181
+!insert(SOLICITED_CNTCTS_0,data_1_627) into DataOfDataField
+ !create data_1_619:Data
+ !data_1_619.value:='1'
+!data_1_619.index:=182
+!insert(SOLICITED_CNTCTS_0,data_1_619) into DataOfDataField
+ !create data_1_25:Data
+ !data_1_25.value:='1'
+!data_1_25.index:=183
+!insert(SOLICITED_CNTCTS_0,data_1_25) into DataOfDataField
+ !create data_1_328:Data
+ !data_1_328.value:='1'
+!data_1_328.index:=184
+!insert(SOLICITED_CNTCTS_0,data_1_328) into DataOfDataField
+ !create data_0_1404:Data
+ !data_0_1404.value:='0'
+!data_0_1404.index:=185
+!insert(SOLICITED_CNTCTS_0,data_0_1404) into DataOfDataField
+ !create data_1_1079:Data
+ !data_1_1079.value:='1'
+!data_1_1079.index:=186
+!insert(SOLICITED_CNTCTS_0,data_1_1079) into DataOfDataField
+ !create data_1_322:Data
+ !data_1_322.value:='1'
+!data_1_322.index:=187
+!insert(SOLICITED_CNTCTS_0,data_1_322) into DataOfDataField
+ !create data_0_140:Data
+ !data_0_140.value:='0'
+!data_0_140.index:=188
+!insert(SOLICITED_CNTCTS_0,data_0_140) into DataOfDataField
+ !create data_2_162:Data
+ !data_2_162.value:='2'
+!data_2_162.index:=189
+!insert(SOLICITED_CNTCTS_0,data_2_162) into DataOfDataField
+ !create data_1_227:Data
+ !data_1_227.value:='1'
+!data_1_227.index:=190
+!insert(SOLICITED_CNTCTS_0,data_1_227) into DataOfDataField
+ !create data_0_80:Data
+ !data_0_80.value:='0'
+!data_0_80.index:=191
+!insert(SOLICITED_CNTCTS_0,data_0_80) into DataOfDataField
+ !create data_1_602:Data
+ !data_1_602.value:='1'
+!data_1_602.index:=192
+!insert(SOLICITED_CNTCTS_0,data_1_602) into DataOfDataField
+ !create data_1_53:Data
+ !data_1_53.value:='1'
+!data_1_53.index:=193
+!insert(SOLICITED_CNTCTS_0,data_1_53) into DataOfDataField
+ !create data_0_1346:Data
+ !data_0_1346.value:='0'
+!data_0_1346.index:=194
+!insert(SOLICITED_CNTCTS_0,data_0_1346) into DataOfDataField
+ !create data_0_1106:Data
+ !data_0_1106.value:='0'
+!data_0_1106.index:=195
+!insert(SOLICITED_CNTCTS_0,data_0_1106) into DataOfDataField
+ !create data_0_793:Data
+ !data_0_793.value:='0'
+!data_0_793.index:=196
+!insert(SOLICITED_CNTCTS_0,data_0_793) into DataOfDataField
+ !create data_0_851:Data
+ !data_0_851.value:='0'
+!data_0_851.index:=197
+!insert(SOLICITED_CNTCTS_0,data_0_851) into DataOfDataField
+ !create data_1_413:Data
+ !data_1_413.value:='1'
+!data_1_413.index:=198
+!insert(SOLICITED_CNTCTS_0,data_1_413) into DataOfDataField
+ !create data_0_827:Data
+ !data_0_827.value:='0'
+!data_0_827.index:=199
+!insert(SOLICITED_CNTCTS_0,data_0_827) into DataOfDataField
+ !create data_1_928:Data
+ !data_1_928.value:='1'
+!data_1_928.index:=200
+!insert(SOLICITED_CNTCTS_0,data_1_928) into DataOfDataField
+ !create data_0_262:Data
+ !data_0_262.value:='0'
+!data_0_262.index:=201
+!insert(SOLICITED_CNTCTS_0,data_0_262) into DataOfDataField
+ !create data_0_1410:Data
+ !data_0_1410.value:='0'
+!data_0_1410.index:=202
+!insert(SOLICITED_CNTCTS_0,data_0_1410) into DataOfDataField
+ !create data_1_763:Data
+ !data_1_763.value:='1'
+!data_1_763.index:=203
+!insert(SOLICITED_CNTCTS_0,data_1_763) into DataOfDataField
+ !create data_3_816:Data
+ !data_3_816.value:='3'
+!data_3_816.index:=204
+!insert(SOLICITED_CNTCTS_0,data_3_816) into DataOfDataField
+ !create data_0_1385:Data
+ !data_0_1385.value:='0'
+!data_0_1385.index:=205
+!insert(SOLICITED_CNTCTS_0,data_0_1385) into DataOfDataField
+ !create data_1_139:Data
+ !data_1_139.value:='1'
+!data_1_139.index:=206
+!insert(SOLICITED_CNTCTS_0,data_1_139) into DataOfDataField
+ !create data_0_1135:Data
+ !data_0_1135.value:='0'
+!data_0_1135.index:=207
+!insert(SOLICITED_CNTCTS_0,data_0_1135) into DataOfDataField
+ !create data_1_355:Data
+ !data_1_355.value:='1'
+!data_1_355.index:=208
+!insert(SOLICITED_CNTCTS_0,data_1_355) into DataOfDataField
+ !create data_0_291:Data
+ !data_0_291.value:='0'
+!data_0_291.index:=209
+!insert(SOLICITED_CNTCTS_0,data_0_291) into DataOfDataField
+ !create data_0_1198:Data
+ !data_0_1198.value:='0'
+!data_0_1198.index:=210
+!insert(SOLICITED_CNTCTS_0,data_0_1198) into DataOfDataField
+ !create data_0_1416:Data
+ !data_0_1416.value:='0'
+!data_0_1416.index:=211
+!insert(SOLICITED_CNTCTS_0,data_0_1416) into DataOfDataField
+ !create data_3_1375:Data
+ !data_3_1375.value:='3'
+!data_3_1375.index:=212
+!insert(SOLICITED_CNTCTS_0,data_3_1375) into DataOfDataField
+ !create data_1_714:Data
+ !data_1_714.value:='1'
+!data_1_714.index:=213
+!insert(SOLICITED_CNTCTS_0,data_1_714) into DataOfDataField
+ !create data_0_119:Data
+ !data_0_119.value:='0'
+!data_0_119.index:=214
+!insert(SOLICITED_CNTCTS_0,data_0_119) into DataOfDataField
+ !create data_1_85:Data
+ !data_1_85.value:='1'
+!data_1_85.index:=215
+!insert(SOLICITED_CNTCTS_0,data_1_85) into DataOfDataField
+ !create data_0_652:Data
+ !data_0_652.value:='0'
+!data_0_652.index:=216
+!insert(SOLICITED_CNTCTS_0,data_0_652) into DataOfDataField
+ !create data_1_1066:Data
+ !data_1_1066.value:='1'
+!data_1_1066.index:=217
+!insert(SOLICITED_CNTCTS_0,data_1_1066) into DataOfDataField
+ !create data_0_125:Data
+ !data_0_125.value:='0'
+!data_0_125.index:=218
+!insert(SOLICITED_CNTCTS_0,data_0_125) into DataOfDataField
+ !create data_1_260:Data
+ !data_1_260.value:='1'
+!data_1_260.index:=219
+!insert(SOLICITED_CNTCTS_0,data_1_260) into DataOfDataField
+ !create data_0_916:Data
+ !data_0_916.value:='0'
+!data_0_916.index:=220
+!insert(SOLICITED_CNTCTS_0,data_0_916) into DataOfDataField
+ !create data_1_991:Data
+ !data_1_991.value:='1'
+!data_1_991.index:=221
+!insert(SOLICITED_CNTCTS_0,data_1_991) into DataOfDataField
+ !create data_0_436:Data
+ !data_0_436.value:='0'
+!data_0_436.index:=222
+!insert(SOLICITED_CNTCTS_0,data_0_436) into DataOfDataField
+ !create data_1_954:Data
+ !data_1_954.value:='1'
+!data_1_954.index:=223
+!insert(SOLICITED_CNTCTS_0,data_1_954) into DataOfDataField
+ !create data_1_564:Data
+ !data_1_564.value:='1'
+!data_1_564.index:=224
+!insert(SOLICITED_CNTCTS_0,data_1_564) into DataOfDataField
+ !create data_1_1182:Data
+ !data_1_1182.value:='1'
+!data_1_1182.index:=225
+!insert(SOLICITED_CNTCTS_0,data_1_1182) into DataOfDataField
+ !create data_3_189:Data
+ !data_3_189.value:='3'
+!data_3_189.index:=226
+!insert(SOLICITED_CNTCTS_0,data_3_189) into DataOfDataField
+ !create data_0_862:Data
+ !data_0_862.value:='0'
+!data_0_862.index:=227
+!insert(SOLICITED_CNTCTS_0,data_0_862) into DataOfDataField
+ !create data_0_32:Data
+ !data_0_32.value:='0'
+!data_0_32.index:=228
+!insert(SOLICITED_CNTCTS_0,data_0_32) into DataOfDataField
+ !create data_1_490:Data
+ !data_1_490.value:='1'
+!data_1_490.index:=229
+!insert(SOLICITED_CNTCTS_0,data_1_490) into DataOfDataField
+ !create data_0_983:Data
+ !data_0_983.value:='0'
+!data_0_983.index:=230
+!insert(SOLICITED_CNTCTS_0,data_0_983) into DataOfDataField
+ !create data_0_59:Data
+ !data_0_59.value:='0'
+!data_0_59.index:=231
+!insert(SOLICITED_CNTCTS_0,data_0_59) into DataOfDataField
+ !create data_1_1099:Data
+ !data_1_1099.value:='1'
+!data_1_1099.index:=232
+!insert(SOLICITED_CNTCTS_0,data_1_1099) into DataOfDataField
+ !create data_1_185:Data
+ !data_1_185.value:='1'
+!data_1_185.index:=233
+!insert(SOLICITED_CNTCTS_0,data_1_185) into DataOfDataField
+ !create data_1_873:Data
+ !data_1_873.value:='1'
+!data_1_873.index:=234
+!insert(SOLICITED_CNTCTS_0,data_1_873) into DataOfDataField
+ !create data_0_1128:Data
+ !data_0_1128.value:='0'
+!data_0_1128.index:=235
+!insert(SOLICITED_CNTCTS_0,data_0_1128) into DataOfDataField
+ !create data_0_1049:Data
+ !data_0_1049.value:='0'
+!data_0_1049.index:=236
+!insert(SOLICITED_CNTCTS_0,data_0_1049) into DataOfDataField
+ !create data_0_1516:Data
+ !data_0_1516.value:='0'
+!data_0_1516.index:=237
+!insert(SOLICITED_CNTCTS_0,data_0_1516) into DataOfDataField
+ !create data_0_636:Data
+ !data_0_636.value:='0'
+!data_0_636.index:=238
+!insert(SOLICITED_CNTCTS_0,data_0_636) into DataOfDataField
+ !create data_1_811:Data
+ !data_1_811.value:='1'
+!data_1_811.index:=239
+!insert(SOLICITED_CNTCTS_0,data_1_811) into DataOfDataField
+ !create data_0_904:Data
+ !data_0_904.value:='0'
+!data_0_904.index:=240
+!insert(SOLICITED_CNTCTS_0,data_0_904) into DataOfDataField
+ !create data_0_1375:Data
+ !data_0_1375.value:='0'
+!data_0_1375.index:=241
+!insert(SOLICITED_CNTCTS_0,data_0_1375) into DataOfDataField
+ !create data_0_1524:Data
+ !data_0_1524.value:='0'
+!data_0_1524.index:=242
+!insert(SOLICITED_CNTCTS_0,data_0_1524) into DataOfDataField
+ !create data_1_1440:Data
+ !data_1_1440.value:='1'
+!data_1_1440.index:=243
+!insert(SOLICITED_CNTCTS_0,data_1_1440) into DataOfDataField
+ !create data_1_1439:Data
+ !data_1_1439.value:='1'
+!data_1_1439.index:=244
+!insert(SOLICITED_CNTCTS_0,data_1_1439) into DataOfDataField
+ !create data_0_922:Data
+ !data_0_922.value:='0'
+!data_0_922.index:=245
+!insert(SOLICITED_CNTCTS_0,data_0_922) into DataOfDataField
+ !create data_0_1240:Data
+ !data_0_1240.value:='0'
+!data_0_1240.index:=246
+!insert(SOLICITED_CNTCTS_0,data_0_1240) into DataOfDataField
+ !create data_1_156:Data
+ !data_1_156.value:='1'
+!data_1_156.index:=247
+!insert(SOLICITED_CNTCTS_0,data_1_156) into DataOfDataField
+ !create data_1_694:Data
+ !data_1_694.value:='1'
+!data_1_694.index:=248
+!insert(SOLICITED_CNTCTS_0,data_1_694) into DataOfDataField
+ !create data_0_879:Data
+ !data_0_879.value:='0'
+!data_0_879.index:=249
+!insert(SOLICITED_CNTCTS_0,data_0_879) into DataOfDataField
+ !create data_0_406:Data
+ !data_0_406.value:='0'
+!data_0_406.index:=250
+!insert(SOLICITED_CNTCTS_0,data_0_406) into DataOfDataField
+ !create data_1_913:Data
+ !data_1_913.value:='1'
+!data_1_913.index:=251
+!insert(SOLICITED_CNTCTS_0,data_1_913) into DataOfDataField
+ !create data_0_227:Data
+ !data_0_227.value:='0'
+!data_0_227.index:=252
+!insert(SOLICITED_CNTCTS_0,data_0_227) into DataOfDataField
+ !create data_1_179:Data
+ !data_1_179.value:='1'
+!data_1_179.index:=253
+!insert(SOLICITED_CNTCTS_0,data_1_179) into DataOfDataField
+ !create data_1_749:Data
+ !data_1_749.value:='1'
+!data_1_749.index:=254
+!insert(SOLICITED_CNTCTS_0,data_1_749) into DataOfDataField
+ !create data_1_890:Data
+ !data_1_890.value:='1'
+!data_1_890.index:=255
+!insert(SOLICITED_CNTCTS_0,data_1_890) into DataOfDataField
+ !create data_1_1338:Data
+ !data_1_1338.value:='1'
+!data_1_1338.index:=256
+!insert(SOLICITED_CNTCTS_0,data_1_1338) into DataOfDataField
+ !create data_1_263:Data
+ !data_1_263.value:='1'
+!data_1_263.index:=257
+!insert(SOLICITED_CNTCTS_0,data_1_263) into DataOfDataField
+ !create data_1_435:Data
+ !data_1_435.value:='1'
+!data_1_435.index:=258
+!insert(SOLICITED_CNTCTS_0,data_1_435) into DataOfDataField
+ !create data_0_1432:Data
+ !data_0_1432.value:='0'
+!data_0_1432.index:=259
+!insert(SOLICITED_CNTCTS_0,data_0_1432) into DataOfDataField
+ !create data_1_1211:Data
+ !data_1_1211.value:='1'
+!data_1_1211.index:=260
+!insert(SOLICITED_CNTCTS_0,data_1_1211) into DataOfDataField
+ !create data_0_450:Data
+ !data_0_450.value:='0'
+!data_0_450.index:=261
+!insert(SOLICITED_CNTCTS_0,data_0_450) into DataOfDataField
+ !create data_1_1254:Data
+ !data_1_1254.value:='1'
+!data_1_1254.index:=262
+!insert(SOLICITED_CNTCTS_0,data_1_1254) into DataOfDataField
+ !create data_1_88:Data
+ !data_1_88.value:='1'
+!data_1_88.index:=263
+!insert(SOLICITED_CNTCTS_0,data_1_88) into DataOfDataField
+ !create data_1_918:Data
+ !data_1_918.value:='1'
+!data_1_918.index:=264
+!insert(SOLICITED_CNTCTS_0,data_1_918) into DataOfDataField
+ !create data_1_1405:Data
+ !data_1_1405.value:='1'
+!data_1_1405.index:=265
+!insert(SOLICITED_CNTCTS_0,data_1_1405) into DataOfDataField
+ !create data_0_1048:Data
+ !data_0_1048.value:='0'
+!data_0_1048.index:=266
+!insert(SOLICITED_CNTCTS_0,data_0_1048) into DataOfDataField
+ !create data_1_1025:Data
+ !data_1_1025.value:='1'
+!data_1_1025.index:=267
+!insert(SOLICITED_CNTCTS_0,data_1_1025) into DataOfDataField
+ !create data_0_418:Data
+ !data_0_418.value:='0'
+!data_0_418.index:=268
+!insert(SOLICITED_CNTCTS_0,data_0_418) into DataOfDataField
+ !create data_0_243:Data
+ !data_0_243.value:='0'
+!data_0_243.index:=269
+!insert(SOLICITED_CNTCTS_0,data_0_243) into DataOfDataField
+ !create data_1_1162:Data
+ !data_1_1162.value:='1'
+!data_1_1162.index:=270
+!insert(SOLICITED_CNTCTS_0,data_1_1162) into DataOfDataField
+ !create data_0_1304:Data
+ !data_0_1304.value:='0'
+!data_0_1304.index:=271
+!insert(SOLICITED_CNTCTS_0,data_0_1304) into DataOfDataField
+ !create data_0_824:Data
+ !data_0_824.value:='0'
+!data_0_824.index:=272
+!insert(SOLICITED_CNTCTS_0,data_0_824) into DataOfDataField
+ !create data_1_947:Data
+ !data_1_947.value:='1'
+!data_1_947.index:=273
+!insert(SOLICITED_CNTCTS_0,data_1_947) into DataOfDataField
+ !create data_1_787:Data
+ !data_1_787.value:='1'
+!data_1_787.index:=274
+!insert(SOLICITED_CNTCTS_0,data_1_787) into DataOfDataField
+ !create data_0_601:Data
+ !data_0_601.value:='0'
+!data_0_601.index:=275
+!insert(SOLICITED_CNTCTS_0,data_0_601) into DataOfDataField
+ !create data_1_134:Data
+ !data_1_134.value:='1'
+!data_1_134.index:=276
+!insert(SOLICITED_CNTCTS_0,data_1_134) into DataOfDataField
+ !create data_0_1546:Data
+ !data_0_1546.value:='0'
+!data_0_1546.index:=277
+!insert(SOLICITED_CNTCTS_0,data_0_1546) into DataOfDataField
+ !create data_1_1017:Data
+ !data_1_1017.value:='1'
+!data_1_1017.index:=278
+!insert(SOLICITED_CNTCTS_0,data_1_1017) into DataOfDataField
+ !create data_1_776:Data
+ !data_1_776.value:='1'
+!data_1_776.index:=279
+!insert(SOLICITED_CNTCTS_0,data_1_776) into DataOfDataField
+ !create data_1_74:Data
+ !data_1_74.value:='1'
+!data_1_74.index:=280
+!insert(SOLICITED_CNTCTS_0,data_1_74) into DataOfDataField
+ !create data_1_233:Data
+ !data_1_233.value:='1'
+!data_1_233.index:=281
+!insert(SOLICITED_CNTCTS_0,data_1_233) into DataOfDataField
+ !create data_1_1313:Data
+ !data_1_1313.value:='1'
+!data_1_1313.index:=282
+!insert(SOLICITED_CNTCTS_0,data_1_1313) into DataOfDataField
+ !create data_1_492:Data
+ !data_1_492.value:='1'
+!data_1_492.index:=283
+!insert(SOLICITED_CNTCTS_0,data_1_492) into DataOfDataField
+ !create data_0_913:Data
+ !data_0_913.value:='0'
+!data_0_913.index:=284
+!insert(SOLICITED_CNTCTS_0,data_0_913) into DataOfDataField
+ !create data_0_1217:Data
+ !data_0_1217.value:='0'
+!data_0_1217.index:=285
+!insert(SOLICITED_CNTCTS_0,data_0_1217) into DataOfDataField
+ !create data_1_1475:Data
+ !data_1_1475.value:='1'
+!data_1_1475.index:=286
+!insert(SOLICITED_CNTCTS_0,data_1_1475) into DataOfDataField
+ !create data_1_35:Data
+ !data_1_35.value:='1'
+!data_1_35.index:=287
+!insert(SOLICITED_CNTCTS_0,data_1_35) into DataOfDataField
+ !create data_1_94:Data
+ !data_1_94.value:='1'
+!data_1_94.index:=288
+!insert(SOLICITED_CNTCTS_0,data_1_94) into DataOfDataField
+ !create data_0_598:Data
+ !data_0_598.value:='0'
+!data_0_598.index:=289
+!insert(SOLICITED_CNTCTS_0,data_0_598) into DataOfDataField
+ !create data_1_1029:Data
+ !data_1_1029.value:='1'
+!data_1_1029.index:=290
+!insert(SOLICITED_CNTCTS_0,data_1_1029) into DataOfDataField
+ !create data_0_209:Data
+ !data_0_209.value:='0'
+!data_0_209.index:=291
+!insert(SOLICITED_CNTCTS_0,data_0_209) into DataOfDataField
+ !create data_0_1394:Data
+ !data_0_1394.value:='0'
+!data_0_1394.index:=292
+!insert(SOLICITED_CNTCTS_0,data_0_1394) into DataOfDataField
+ !create data_1_973:Data
+ !data_1_973.value:='1'
+!data_1_973.index:=293
+!insert(SOLICITED_CNTCTS_0,data_1_973) into DataOfDataField
+ !create data_0_1473:Data
+ !data_0_1473.value:='0'
+!data_0_1473.index:=294
+!insert(SOLICITED_CNTCTS_0,data_0_1473) into DataOfDataField
+ !create data_0_439:Data
+ !data_0_439.value:='0'
+!data_0_439.index:=295
+!insert(SOLICITED_CNTCTS_0,data_0_439) into DataOfDataField
+ !create data_1_36:Data
+ !data_1_36.value:='1'
+!data_1_36.index:=296
+!insert(SOLICITED_CNTCTS_0,data_1_36) into DataOfDataField
+ !create data_1_886:Data
+ !data_1_886.value:='1'
+!data_1_886.index:=297
+!insert(SOLICITED_CNTCTS_0,data_1_886) into DataOfDataField
+ !create data_0_1185:Data
+ !data_0_1185.value:='0'
+!data_0_1185.index:=298
+!insert(SOLICITED_CNTCTS_0,data_0_1185) into DataOfDataField
+ !create data_1_1361:Data
+ !data_1_1361.value:='1'
+!data_1_1361.index:=299
+!insert(SOLICITED_CNTCTS_0,data_1_1361) into DataOfDataField
+ !create data_2_120:Data
+ !data_2_120.value:='2'
+!data_2_120.index:=300
+!insert(SOLICITED_CNTCTS_0,data_2_120) into DataOfDataField
+ !create data_1_902:Data
+ !data_1_902.value:='1'
+!data_1_902.index:=301
+!insert(SOLICITED_CNTCTS_0,data_1_902) into DataOfDataField
+ !create data_0_41:Data
+ !data_0_41.value:='0'
+!data_0_41.index:=302
+!insert(SOLICITED_CNTCTS_0,data_0_41) into DataOfDataField
+ !create data_0_1447:Data
+ !data_0_1447.value:='0'
+!data_0_1447.index:=303
+!insert(SOLICITED_CNTCTS_0,data_0_1447) into DataOfDataField
+ !create data_1_698:Data
+ !data_1_698.value:='1'
+!data_1_698.index:=304
+!insert(SOLICITED_CNTCTS_0,data_1_698) into DataOfDataField
+ !create data_0_1468:Data
+ !data_0_1468.value:='0'
+!data_0_1468.index:=305
+!insert(SOLICITED_CNTCTS_0,data_0_1468) into DataOfDataField
+ !create data_0_1487:Data
+ !data_0_1487.value:='0'
+!data_0_1487.index:=306
+!insert(SOLICITED_CNTCTS_0,data_0_1487) into DataOfDataField
+ !create data_1_1516:Data
+ !data_1_1516.value:='1'
+!data_1_1516.index:=307
+!insert(SOLICITED_CNTCTS_0,data_1_1516) into DataOfDataField
+ !create data_0_452:Data
+ !data_0_452.value:='0'
+!data_0_452.index:=308
+!insert(SOLICITED_CNTCTS_0,data_0_452) into DataOfDataField
+ !create data_1_331:Data
+ !data_1_331.value:='1'
+!data_1_331.index:=309
+!insert(SOLICITED_CNTCTS_0,data_1_331) into DataOfDataField
+ !create data_0_500:Data
+ !data_0_500.value:='0'
+!data_0_500.index:=310
+!insert(SOLICITED_CNTCTS_0,data_0_500) into DataOfDataField
+ !create data_1_93:Data
+ !data_1_93.value:='1'
+!data_1_93.index:=311
+!insert(SOLICITED_CNTCTS_0,data_1_93) into DataOfDataField
+ !create data_0_1456:Data
+ !data_0_1456.value:='0'
+!data_0_1456.index:=312
+!insert(SOLICITED_CNTCTS_0,data_0_1456) into DataOfDataField
+ !create data_1_363:Data
+ !data_1_363.value:='1'
+!data_1_363.index:=313
+!insert(SOLICITED_CNTCTS_0,data_1_363) into DataOfDataField
+ !create data_0_82:Data
+ !data_0_82.value:='0'
+!data_0_82.index:=314
+!insert(SOLICITED_CNTCTS_0,data_0_82) into DataOfDataField
+ !create data_0_1442:Data
+ !data_0_1442.value:='0'
+!data_0_1442.index:=315
+!insert(SOLICITED_CNTCTS_0,data_0_1442) into DataOfDataField
+ !create data_1_1232:Data
+ !data_1_1232.value:='1'
+!data_1_1232.index:=316
+!insert(SOLICITED_CNTCTS_0,data_1_1232) into DataOfDataField
+ !create data_0_1154:Data
+ !data_0_1154.value:='0'
+!data_0_1154.index:=317
+!insert(SOLICITED_CNTCTS_0,data_0_1154) into DataOfDataField
+ !create data_0_791:Data
+ !data_0_791.value:='0'
+!data_0_791.index:=318
+!insert(SOLICITED_CNTCTS_0,data_0_791) into DataOfDataField
+ !create data_0_122:Data
+ !data_0_122.value:='0'
+!data_0_122.index:=319
+!insert(SOLICITED_CNTCTS_0,data_0_122) into DataOfDataField
+ !create data_0_493:Data
+ !data_0_493.value:='0'
+!data_0_493.index:=320
+!insert(SOLICITED_CNTCTS_0,data_0_493) into DataOfDataField
+ !create data_0_1067:Data
+ !data_0_1067.value:='0'
+!data_0_1067.index:=321
+!insert(SOLICITED_CNTCTS_0,data_0_1067) into DataOfDataField
+ !create data_0_470:Data
+ !data_0_470.value:='0'
+!data_0_470.index:=322
+!insert(SOLICITED_CNTCTS_0,data_0_470) into DataOfDataField
+ !create data_0_1063:Data
+ !data_0_1063.value:='0'
+!data_0_1063.index:=323
+!insert(SOLICITED_CNTCTS_0,data_0_1063) into DataOfDataField
+ !create data_1_795:Data
+ !data_1_795.value:='1'
+!data_1_795.index:=324
+!insert(SOLICITED_CNTCTS_0,data_1_795) into DataOfDataField
+ !create data_0_817:Data
+ !data_0_817.value:='0'
+!data_0_817.index:=325
+!insert(SOLICITED_CNTCTS_0,data_0_817) into DataOfDataField
+ !create data_0_1343:Data
+ !data_0_1343.value:='0'
+!data_0_1343.index:=326
+!insert(SOLICITED_CNTCTS_0,data_0_1343) into DataOfDataField
+ !create data_0_1144:Data
+ !data_0_1144.value:='0'
+!data_0_1144.index:=327
+!insert(SOLICITED_CNTCTS_0,data_0_1144) into DataOfDataField
+ !create data_1_1302:Data
+ !data_1_1302.value:='1'
+!data_1_1302.index:=328
+!insert(SOLICITED_CNTCTS_0,data_1_1302) into DataOfDataField
+ !create data_0_1014:Data
+ !data_0_1014.value:='0'
+!data_0_1014.index:=329
+!insert(SOLICITED_CNTCTS_0,data_0_1014) into DataOfDataField
+ !create data_0_1230:Data
+ !data_0_1230.value:='0'
+!data_0_1230.index:=330
+!insert(SOLICITED_CNTCTS_0,data_0_1230) into DataOfDataField
+ !create data_1_144:Data
+ !data_1_144.value:='1'
+!data_1_144.index:=331
+!insert(SOLICITED_CNTCTS_0,data_1_144) into DataOfDataField
+ !create data_0_1209:Data
+ !data_0_1209.value:='0'
+!data_0_1209.index:=332
+!insert(SOLICITED_CNTCTS_0,data_0_1209) into DataOfDataField
+ !create data_0_1277:Data
+ !data_0_1277.value:='0'
+!data_0_1277.index:=333
+!insert(SOLICITED_CNTCTS_0,data_0_1277) into DataOfDataField
+ !create data_1_743:Data
+ !data_1_743.value:='1'
+!data_1_743.index:=334
+!insert(SOLICITED_CNTCTS_0,data_1_743) into DataOfDataField
+ !create data_0_1275:Data
+ !data_0_1275.value:='0'
+!data_0_1275.index:=335
+!insert(SOLICITED_CNTCTS_0,data_0_1275) into DataOfDataField
+ !create data_0_1283:Data
+ !data_0_1283.value:='0'
+!data_0_1283.index:=336
+!insert(SOLICITED_CNTCTS_0,data_0_1283) into DataOfDataField
+ !create data_1_1252:Data
+ !data_1_1252.value:='1'
+!data_1_1252.index:=337
+!insert(SOLICITED_CNTCTS_0,data_1_1252) into DataOfDataField
+ !create data_1_730:Data
+ !data_1_730.value:='1'
+!data_1_730.index:=338
+!insert(SOLICITED_CNTCTS_0,data_1_730) into DataOfDataField
+ !create data_0_299:Data
+ !data_0_299.value:='0'
+!data_0_299.index:=339
+!insert(SOLICITED_CNTCTS_0,data_0_299) into DataOfDataField
+ !create data_0_695:Data
+ !data_0_695.value:='0'
+!data_0_695.index:=340
+!insert(SOLICITED_CNTCTS_0,data_0_695) into DataOfDataField
+ !create data_3_231:Data
+ !data_3_231.value:='3'
+!data_3_231.index:=341
+!insert(SOLICITED_CNTCTS_0,data_3_231) into DataOfDataField
+ !create data_1_1046:Data
+ !data_1_1046.value:='1'
+!data_1_1046.index:=342
+!insert(SOLICITED_CNTCTS_0,data_1_1046) into DataOfDataField
+ !create data_1_1177:Data
+ !data_1_1177.value:='1'
+!data_1_1177.index:=343
+!insert(SOLICITED_CNTCTS_0,data_1_1177) into DataOfDataField
+ !create data_0_412:Data
+ !data_0_412.value:='0'
+!data_0_412.index:=344
+!insert(SOLICITED_CNTCTS_0,data_0_412) into DataOfDataField
+ !create data_0_489:Data
+ !data_0_489.value:='0'
+!data_0_489.index:=345
+!insert(SOLICITED_CNTCTS_0,data_0_489) into DataOfDataField
+ !create data_1_1367:Data
+ !data_1_1367.value:='1'
+!data_1_1367.index:=346
+!insert(SOLICITED_CNTCTS_0,data_1_1367) into DataOfDataField
+ !create data_0_1280:Data
+ !data_0_1280.value:='0'
+!data_0_1280.index:=347
+!insert(SOLICITED_CNTCTS_0,data_0_1280) into DataOfDataField
+ !create data_1_313:Data
+ !data_1_313.value:='1'
+!data_1_313.index:=348
+!insert(SOLICITED_CNTCTS_0,data_1_313) into DataOfDataField
+ !create data_0_590:Data
+ !data_0_590.value:='0'
+!data_0_590.index:=349
+!insert(SOLICITED_CNTCTS_0,data_0_590) into DataOfDataField
+ !create data_0_575:Data
+ !data_0_575.value:='0'
+!data_0_575.index:=350
+!insert(SOLICITED_CNTCTS_0,data_0_575) into DataOfDataField
+ !create data_0_1133:Data
+ !data_0_1133.value:='0'
+!data_0_1133.index:=351
+!insert(SOLICITED_CNTCTS_0,data_0_1133) into DataOfDataField
+ !create data_0_1270:Data
+ !data_0_1270.value:='0'
+!data_0_1270.index:=352
+!insert(SOLICITED_CNTCTS_0,data_0_1270) into DataOfDataField
+ !create data_0_903:Data
+ !data_0_903.value:='0'
+!data_0_903.index:=353
+!insert(SOLICITED_CNTCTS_0,data_0_903) into DataOfDataField
+ !create data_0_1232:Data
+ !data_0_1232.value:='0'
+!data_0_1232.index:=354
+!insert(SOLICITED_CNTCTS_0,data_0_1232) into DataOfDataField
+ !create data_0_324:Data
+ !data_0_324.value:='0'
+!data_0_324.index:=355
+!insert(SOLICITED_CNTCTS_0,data_0_324) into DataOfDataField
+ !create data_1_1370:Data
+ !data_1_1370.value:='1'
+!data_1_1370.index:=356
+!insert(SOLICITED_CNTCTS_0,data_1_1370) into DataOfDataField
+ !create data_0_774:Data
+ !data_0_774.value:='0'
+!data_0_774.index:=357
+!insert(SOLICITED_CNTCTS_0,data_0_774) into DataOfDataField
+ !create data_2_420:Data
+ !data_2_420.value:='2'
+!data_2_420.index:=358
+!insert(SOLICITED_CNTCTS_0,data_2_420) into DataOfDataField
+ !create data_1_1524:Data
+ !data_1_1524.value:='1'
+!data_1_1524.index:=359
+!insert(SOLICITED_CNTCTS_0,data_1_1524) into DataOfDataField
+ !create data_1_768:Data
+ !data_1_768.value:='1'
+!data_1_768.index:=360
+!insert(SOLICITED_CNTCTS_0,data_1_768) into DataOfDataField
+ !create data_1_1432:Data
+ !data_1_1432.value:='1'
+!data_1_1432.index:=361
+!insert(SOLICITED_CNTCTS_0,data_1_1432) into DataOfDataField
+ !create data_1_1212:Data
+ !data_1_1212.value:='1'
+!data_1_1212.index:=362
+!insert(SOLICITED_CNTCTS_0,data_1_1212) into DataOfDataField
+ !create data_1_791:Data
+ !data_1_791.value:='1'
+!data_1_791.index:=363
+!insert(SOLICITED_CNTCTS_0,data_1_791) into DataOfDataField
+ !create data_2_215:Data
+ !data_2_215.value:='2'
+!data_2_215.index:=364
+!insert(SOLICITED_CNTCTS_0,data_2_215) into DataOfDataField
+ !create data_1_187:Data
+ !data_1_187.value:='1'
+!data_1_187.index:=365
+!insert(SOLICITED_CNTCTS_0,data_1_187) into DataOfDataField
+ !create data_0_342:Data
+ !data_0_342.value:='0'
+!data_0_342.index:=366
+!insert(SOLICITED_CNTCTS_0,data_0_342) into DataOfDataField
+ !create data_1_1112:Data
+ !data_1_1112.value:='1'
+!data_1_1112.index:=367
+!insert(SOLICITED_CNTCTS_0,data_1_1112) into DataOfDataField
+ !create data_1_321:Data
+ !data_1_321.value:='1'
+!data_1_321.index:=368
+!insert(SOLICITED_CNTCTS_0,data_1_321) into DataOfDataField
+ !create data_1_656:Data
+ !data_1_656.value:='1'
+!data_1_656.index:=369
+!insert(SOLICITED_CNTCTS_0,data_1_656) into DataOfDataField
+ !create data_0_152:Data
+ !data_0_152.value:='0'
+!data_0_152.index:=370
+!insert(SOLICITED_CNTCTS_0,data_0_152) into DataOfDataField
+ !create data_0_1191:Data
+ !data_0_1191.value:='0'
+!data_0_1191.index:=371
+!insert(SOLICITED_CNTCTS_0,data_0_1191) into DataOfDataField
+ !create data_0_504:Data
+ !data_0_504.value:='0'
+!data_0_504.index:=372
+!insert(SOLICITED_CNTCTS_0,data_0_504) into DataOfDataField
+ !create data_0_553:Data
+ !data_0_553.value:='0'
+!data_0_553.index:=373
+!insert(SOLICITED_CNTCTS_0,data_0_553) into DataOfDataField
+ !create data_1_882:Data
+ !data_1_882.value:='1'
+!data_1_882.index:=374
+!insert(SOLICITED_CNTCTS_0,data_1_882) into DataOfDataField
+ !create data_1_594:Data
+ !data_1_594.value:='1'
+!data_1_594.index:=375
+!insert(SOLICITED_CNTCTS_0,data_1_594) into DataOfDataField
+ !create data_1_1474:Data
+ !data_1_1474.value:='1'
+!data_1_1474.index:=376
+!insert(SOLICITED_CNTCTS_0,data_1_1474) into DataOfDataField
+ !create data_0_678:Data
+ !data_0_678.value:='0'
+!data_0_678.index:=377
+!insert(SOLICITED_CNTCTS_0,data_0_678) into DataOfDataField
+ !create data_1_315:Data
+ !data_1_315.value:='1'
+!data_1_315.index:=378
+!insert(SOLICITED_CNTCTS_0,data_1_315) into DataOfDataField
+ !create data_1_1443:Data
+ !data_1_1443.value:='1'
+!data_1_1443.index:=379
+!insert(SOLICITED_CNTCTS_0,data_1_1443) into DataOfDataField
+ !create data_1_807:Data
+ !data_1_807.value:='1'
+!data_1_807.index:=380
+!insert(SOLICITED_CNTCTS_0,data_1_807) into DataOfDataField
+ !create data_1_54:Data
+ !data_1_54.value:='1'
+!data_1_54.index:=381
+!insert(SOLICITED_CNTCTS_0,data_1_54) into DataOfDataField
+ !create data_1_904:Data
+ !data_1_904.value:='1'
+!data_1_904.index:=382
+!insert(SOLICITED_CNTCTS_0,data_1_904) into DataOfDataField
+ !create data_0_549:Data
+ !data_0_549.value:='0'
+!data_0_549.index:=383
+!insert(SOLICITED_CNTCTS_0,data_0_549) into DataOfDataField
+ !create data_1_207:Data
+ !data_1_207.value:='1'
+!data_1_207.index:=384
+!insert(SOLICITED_CNTCTS_0,data_1_207) into DataOfDataField
+ !create data_1_879:Data
+ !data_1_879.value:='1'
+!data_1_879.index:=385
+!insert(SOLICITED_CNTCTS_0,data_1_879) into DataOfDataField
+ !create data_1_633:Data
+ !data_1_633.value:='1'
+!data_1_633.index:=386
+!insert(SOLICITED_CNTCTS_0,data_1_633) into DataOfDataField
+ !create data_1_883:Data
+ !data_1_883.value:='1'
+!data_1_883.index:=387
+!insert(SOLICITED_CNTCTS_0,data_1_883) into DataOfDataField
+ !create data_1_267:Data
+ !data_1_267.value:='1'
+!data_1_267.index:=388
+!insert(SOLICITED_CNTCTS_0,data_1_267) into DataOfDataField
+ !create data_1_708:Data
+ !data_1_708.value:='1'
+!data_1_708.index:=389
+!insert(SOLICITED_CNTCTS_0,data_1_708) into DataOfDataField
+ !create data_0_548:Data
+ !data_0_548.value:='0'
+!data_0_548.index:=390
+!insert(SOLICITED_CNTCTS_0,data_0_548) into DataOfDataField
+ !create data_1_922:Data
+ !data_1_922.value:='1'
+!data_1_922.index:=391
+!insert(SOLICITED_CNTCTS_0,data_1_922) into DataOfDataField
+ !create data_0_263:Data
+ !data_0_263.value:='0'
+!data_0_263.index:=392
+!insert(SOLICITED_CNTCTS_0,data_0_263) into DataOfDataField
+ !create data_1_934:Data
+ !data_1_934.value:='1'
+!data_1_934.index:=393
+!insert(SOLICITED_CNTCTS_0,data_1_934) into DataOfDataField
+ !create data_1_306:Data
+ !data_1_306.value:='1'
+!data_1_306.index:=394
+!insert(SOLICITED_CNTCTS_0,data_1_306) into DataOfDataField
+ !create data_0_314:Data
+ !data_0_314.value:='0'
+!data_0_314.index:=395
+!insert(SOLICITED_CNTCTS_0,data_0_314) into DataOfDataField
+ !create data_1_403:Data
+ !data_1_403.value:='1'
+!data_1_403.index:=396
+!insert(SOLICITED_CNTCTS_0,data_1_403) into DataOfDataField
+ !create data_0_1249:Data
+ !data_0_1249.value:='0'
+!data_0_1249.index:=397
+!insert(SOLICITED_CNTCTS_0,data_0_1249) into DataOfDataField
+ !create data_0_509:Data
+ !data_0_509.value:='0'
+!data_0_509.index:=398
+!insert(SOLICITED_CNTCTS_0,data_0_509) into DataOfDataField
+ !create data_0_558:Data
+ !data_0_558.value:='0'
+!data_0_558.index:=399
+!insert(SOLICITED_CNTCTS_0,data_0_558) into DataOfDataField
+ !create data_1_369:Data
+ !data_1_369.value:='1'
+!data_1_369.index:=400
+!insert(SOLICITED_CNTCTS_0,data_1_369) into DataOfDataField
+ !create data_1_702:Data
+ !data_1_702.value:='1'
+!data_1_702.index:=401
+!insert(SOLICITED_CNTCTS_0,data_1_702) into DataOfDataField
+ !create data_1_517:Data
+ !data_1_517.value:='1'
+!data_1_517.index:=402
+!insert(SOLICITED_CNTCTS_0,data_1_517) into DataOfDataField
+ !create data_0_1464:Data
+ !data_0_1464.value:='0'
+!data_0_1464.index:=403
+!insert(SOLICITED_CNTCTS_0,data_0_1464) into DataOfDataField
+ !create data_1_828:Data
+ !data_1_828.value:='1'
+!data_1_828.index:=404
+!insert(SOLICITED_CNTCTS_0,data_1_828) into DataOfDataField
+ !create data_1_592:Data
+ !data_1_592.value:='1'
+!data_1_592.index:=405
+!insert(SOLICITED_CNTCTS_0,data_1_592) into DataOfDataField
+ !create data_0_790:Data
+ !data_0_790.value:='0'
+!data_0_790.index:=406
+!insert(SOLICITED_CNTCTS_0,data_0_790) into DataOfDataField
+ !create data_1_1318:Data
+ !data_1_1318.value:='1'
+!data_1_1318.index:=407
+!insert(SOLICITED_CNTCTS_0,data_1_1318) into DataOfDataField
+ !create data_0_560:Data
+ !data_0_560.value:='0'
+!data_0_560.index:=408
+!insert(SOLICITED_CNTCTS_0,data_0_560) into DataOfDataField
+ !create data_1_1402:Data
+ !data_1_1402.value:='1'
+!data_1_1402.index:=409
+!insert(SOLICITED_CNTCTS_0,data_1_1402) into DataOfDataField
+ !create data_1_1401:Data
+ !data_1_1401.value:='1'
+!data_1_1401.index:=410
+!insert(SOLICITED_CNTCTS_0,data_1_1401) into DataOfDataField
+ !create data_1_231:Data
+ !data_1_231.value:='1'
+!data_1_231.index:=411
+!insert(SOLICITED_CNTCTS_0,data_1_231) into DataOfDataField
+ !create data_0_687:Data
+ !data_0_687.value:='0'
+!data_0_687.index:=412
+!insert(SOLICITED_CNTCTS_0,data_0_687) into DataOfDataField
+ !create data_0_656:Data
+ !data_0_656.value:='0'
+!data_0_656.index:=413
+!insert(SOLICITED_CNTCTS_0,data_0_656) into DataOfDataField
+ !create data_0_1169:Data
+ !data_0_1169.value:='0'
+!data_0_1169.index:=414
+!insert(SOLICITED_CNTCTS_0,data_0_1169) into DataOfDataField
+ !create data_1_1270:Data
+ !data_1_1270.value:='1'
+!data_1_1270.index:=415
+!insert(SOLICITED_CNTCTS_0,data_1_1270) into DataOfDataField
+ !create data_1_1426:Data
+ !data_1_1426.value:='1'
+!data_1_1426.index:=416
+!insert(SOLICITED_CNTCTS_0,data_1_1426) into DataOfDataField
+ !create data_1_44:Data
+ !data_1_44.value:='1'
+!data_1_44.index:=417
+!insert(SOLICITED_CNTCTS_0,data_1_44) into DataOfDataField
+ !create data_1_518:Data
+ !data_1_518.value:='1'
+!data_1_518.index:=418
+!insert(SOLICITED_CNTCTS_0,data_1_518) into DataOfDataField
+ !create data_0_1302:Data
+ !data_0_1302.value:='0'
+!data_0_1302.index:=419
+!insert(SOLICITED_CNTCTS_0,data_0_1302) into DataOfDataField
+ !create data_1_1387:Data
+ !data_1_1387.value:='1'
+!data_1_1387.index:=420
+!insert(SOLICITED_CNTCTS_0,data_1_1387) into DataOfDataField
+ !create data_1_1135:Data
+ !data_1_1135.value:='1'
+!data_1_1135.index:=421
+!insert(SOLICITED_CNTCTS_0,data_1_1135) into DataOfDataField
+ !create data_1_477:Data
+ !data_1_477.value:='1'
+!data_1_477.index:=422
+!insert(SOLICITED_CNTCTS_0,data_1_477) into DataOfDataField
+ !create data_1_729:Data
+ !data_1_729.value:='1'
+!data_1_729.index:=423
+!insert(SOLICITED_CNTCTS_0,data_1_729) into DataOfDataField
+ !create data_0_799:Data
+ !data_0_799.value:='0'
+!data_0_799.index:=424
+!insert(SOLICITED_CNTCTS_0,data_0_799) into DataOfDataField
+ !create data_1_818:Data
+ !data_1_818.value:='1'
+!data_1_818.index:=425
+!insert(SOLICITED_CNTCTS_0,data_1_818) into DataOfDataField
+ !create data_1_803:Data
+ !data_1_803.value:='1'
+!data_1_803.index:=426
+!insert(SOLICITED_CNTCTS_0,data_1_803) into DataOfDataField
+ !create data_1_921:Data
+ !data_1_921.value:='1'
+!data_1_921.index:=427
+!insert(SOLICITED_CNTCTS_0,data_1_921) into DataOfDataField
+ !create data_1_578:Data
+ !data_1_578.value:='1'
+!data_1_578.index:=428
+!insert(SOLICITED_CNTCTS_0,data_1_578) into DataOfDataField
+ !create data_0_53:Data
+ !data_0_53.value:='0'
+!data_0_53.index:=429
+!insert(SOLICITED_CNTCTS_0,data_0_53) into DataOfDataField
+ !create data_0_654:Data
+ !data_0_654.value:='0'
+!data_0_654.index:=430
+!insert(SOLICITED_CNTCTS_0,data_0_654) into DataOfDataField
+ !create data_0_1331:Data
+ !data_0_1331.value:='0'
+!data_0_1331.index:=431
+!insert(SOLICITED_CNTCTS_0,data_0_1331) into DataOfDataField
+ !create data_0_776:Data
+ !data_0_776.value:='0'
+!data_0_776.index:=432
+!insert(SOLICITED_CNTCTS_0,data_0_776) into DataOfDataField
+ !create data_0_1183:Data
+ !data_0_1183.value:='0'
+!data_0_1183.index:=433
+!insert(SOLICITED_CNTCTS_0,data_0_1183) into DataOfDataField
+ !create data_3_805:Data
+ !data_3_805.value:='3'
+!data_3_805.index:=434
+!insert(SOLICITED_CNTCTS_0,data_3_805) into DataOfDataField
+ !create data_1_24:Data
+ !data_1_24.value:='1'
+!data_1_24.index:=435
+!insert(SOLICITED_CNTCTS_0,data_1_24) into DataOfDataField
+ !create data_0_79:Data
+ !data_0_79.value:='0'
+!data_0_79.index:=436
+!insert(SOLICITED_CNTCTS_0,data_0_79) into DataOfDataField
+ !create data_0_1193:Data
+ !data_0_1193.value:='0'
+!data_0_1193.index:=437
+!insert(SOLICITED_CNTCTS_0,data_0_1193) into DataOfDataField
+ !create data_0_1004:Data
+ !data_0_1004.value:='0'
+!data_0_1004.index:=438
+!insert(SOLICITED_CNTCTS_0,data_0_1004) into DataOfDataField
+ !create data_2_1403:Data
+ !data_2_1403.value:='2'
+!data_2_1403.index:=439
+!insert(SOLICITED_CNTCTS_0,data_2_1403) into DataOfDataField
+ !create data_0_1424:Data
+ !data_0_1424.value:='0'
+!data_0_1424.index:=440
+!insert(SOLICITED_CNTCTS_0,data_0_1424) into DataOfDataField
+ !create data_0_1471:Data
+ !data_0_1471.value:='0'
+!data_0_1471.index:=441
+!insert(SOLICITED_CNTCTS_0,data_0_1471) into DataOfDataField
+ !create data_1_326:Data
+ !data_1_326.value:='1'
+!data_1_326.index:=442
+!insert(SOLICITED_CNTCTS_0,data_1_326) into DataOfDataField
+ !create data_0_282:Data
+ !data_0_282.value:='0'
+!data_0_282.index:=443
+!insert(SOLICITED_CNTCTS_0,data_0_282) into DataOfDataField
+ !create data_1_1098:Data
+ !data_1_1098.value:='1'
+!data_1_1098.index:=444
+!insert(SOLICITED_CNTCTS_0,data_1_1098) into DataOfDataField
+ !create data_1_171:Data
+ !data_1_171.value:='1'
+!data_1_171.index:=445
+!insert(SOLICITED_CNTCTS_0,data_1_171) into DataOfDataField
+ !create data_0_118:Data
+ !data_0_118.value:='0'
+!data_0_118.index:=446
+!insert(SOLICITED_CNTCTS_0,data_0_118) into DataOfDataField
+ !create data_0_1369:Data
+ !data_0_1369.value:='0'
+!data_0_1369.index:=447
+!insert(SOLICITED_CNTCTS_0,data_0_1369) into DataOfDataField
+ !create data_0_407:Data
+ !data_0_407.value:='0'
+!data_0_407.index:=448
+!insert(SOLICITED_CNTCTS_0,data_0_407) into DataOfDataField
+ !create data_1_781:Data
+ !data_1_781.value:='1'
+!data_1_781.index:=449
+!insert(SOLICITED_CNTCTS_0,data_1_781) into DataOfDataField
+ !create data_1_867:Data
+ !data_1_867.value:='1'
+!data_1_867.index:=450
+!insert(SOLICITED_CNTCTS_0,data_1_867) into DataOfDataField
+ !create data_1_68:Data
+ !data_1_68.value:='1'
+!data_1_68.index:=451
+!insert(SOLICITED_CNTCTS_0,data_1_68) into DataOfDataField
+ !create data_1_1130:Data
+ !data_1_1130.value:='1'
+!data_1_1130.index:=452
+!insert(SOLICITED_CNTCTS_0,data_1_1130) into DataOfDataField
+ !create data_0_1188:Data
+ !data_0_1188.value:='0'
+!data_0_1188.index:=453
+!insert(SOLICITED_CNTCTS_0,data_0_1188) into DataOfDataField
+ !create data_0_491:Data
+ !data_0_491.value:='0'
+!data_0_491.index:=454
+!insert(SOLICITED_CNTCTS_0,data_0_491) into DataOfDataField
+ !create data_1_1386:Data
+ !data_1_1386.value:='1'
+!data_1_1386.index:=455
+!insert(SOLICITED_CNTCTS_0,data_1_1386) into DataOfDataField
+ !create data_1_177:Data
+ !data_1_177.value:='1'
+!data_1_177.index:=456
+!insert(SOLICITED_CNTCTS_0,data_1_177) into DataOfDataField
+ !create data_1_1093:Data
+ !data_1_1093.value:='1'
+!data_1_1093.index:=457
+!insert(SOLICITED_CNTCTS_0,data_1_1093) into DataOfDataField
+ !create data_2_193:Data
+ !data_2_193.value:='2'
+!data_2_193.index:=458
+!insert(SOLICITED_CNTCTS_0,data_2_193) into DataOfDataField
+ !create data_1_1411:Data
+ !data_1_1411.value:='1'
+!data_1_1411.index:=459
+!insert(SOLICITED_CNTCTS_0,data_1_1411) into DataOfDataField
+ !create data_1_508:Data
+ !data_1_508.value:='1'
+!data_1_508.index:=460
+!insert(SOLICITED_CNTCTS_0,data_1_508) into DataOfDataField
+ !create data_1_681:Data
+ !data_1_681.value:='1'
+!data_1_681.index:=461
+!insert(SOLICITED_CNTCTS_0,data_1_681) into DataOfDataField
+ !create data_0_231:Data
+ !data_0_231.value:='0'
+!data_0_231.index:=462
+!insert(SOLICITED_CNTCTS_0,data_0_231) into DataOfDataField
+ !create data_0_195:Data
+ !data_0_195.value:='0'
+!data_0_195.index:=463
+!insert(SOLICITED_CNTCTS_0,data_0_195) into DataOfDataField
+ !create data_1_1215:Data
+ !data_1_1215.value:='1'
+!data_1_1215.index:=464
+!insert(SOLICITED_CNTCTS_0,data_1_1215) into DataOfDataField
+ !create data_1_165:Data
+ !data_1_165.value:='1'
+!data_1_165.index:=465
+!insert(SOLICITED_CNTCTS_0,data_1_165) into DataOfDataField
+ !create data_0_952:Data
+ !data_0_952.value:='0'
+!data_0_952.index:=466
+!insert(SOLICITED_CNTCTS_0,data_0_952) into DataOfDataField
+ !create data_1_6:Data
+ !data_1_6.value:='1'
+!data_1_6.index:=467
+!insert(SOLICITED_CNTCTS_0,data_1_6) into DataOfDataField
+ !create data_1_635:Data
+ !data_1_635.value:='1'
+!data_1_635.index:=468
+!insert(SOLICITED_CNTCTS_0,data_1_635) into DataOfDataField
+ !create data_0_104:Data
+ !data_0_104.value:='0'
+!data_0_104.index:=469
+!insert(SOLICITED_CNTCTS_0,data_0_104) into DataOfDataField
+ !create data_1_1472:Data
+ !data_1_1472.value:='1'
+!data_1_1472.index:=470
+!insert(SOLICITED_CNTCTS_0,data_1_1472) into DataOfDataField
+ !create data_0_1539:Data
+ !data_0_1539.value:='0'
+!data_0_1539.index:=471
+!insert(SOLICITED_CNTCTS_0,data_0_1539) into DataOfDataField
+ !create data_1_317:Data
+ !data_1_317.value:='1'
+!data_1_317.index:=472
+!insert(SOLICITED_CNTCTS_0,data_1_317) into DataOfDataField
+ !create data_0_1520:Data
+ !data_0_1520.value:='0'
+!data_0_1520.index:=473
+!insert(SOLICITED_CNTCTS_0,data_0_1520) into DataOfDataField
+ !create data_1_23:Data
+ !data_1_23.value:='1'
+!data_1_23.index:=474
+!insert(SOLICITED_CNTCTS_0,data_1_23) into DataOfDataField
+ !create data_0_1142:Data
+ !data_0_1142.value:='0'
+!data_0_1142.index:=475
+!insert(SOLICITED_CNTCTS_0,data_0_1142) into DataOfDataField
+ !create data_1_192:Data
+ !data_1_192.value:='1'
+!data_1_192.index:=476
+!insert(SOLICITED_CNTCTS_0,data_1_192) into DataOfDataField
+ !create data_0_1130:Data
+ !data_0_1130.value:='0'
+!data_0_1130.index:=477
+!insert(SOLICITED_CNTCTS_0,data_0_1130) into DataOfDataField
+ !create data_1_610:Data
+ !data_1_610.value:='1'
+!data_1_610.index:=478
+!insert(SOLICITED_CNTCTS_0,data_1_610) into DataOfDataField
+ !create data_1_741:Data
+ !data_1_741.value:='1'
+!data_1_741.index:=479
+!insert(SOLICITED_CNTCTS_0,data_1_741) into DataOfDataField
+ !create data_1_956:Data
+ !data_1_956.value:='1'
+!data_1_956.index:=480
+!insert(SOLICITED_CNTCTS_0,data_1_956) into DataOfDataField
+ !create data_1_844:Data
+ !data_1_844.value:='1'
+!data_1_844.index:=481
+!insert(SOLICITED_CNTCTS_0,data_1_844) into DataOfDataField
+ !create data_0_1322:Data
+ !data_0_1322.value:='0'
+!data_0_1322.index:=482
+!insert(SOLICITED_CNTCTS_0,data_0_1322) into DataOfDataField
+ !create data_0_785:Data
+ !data_0_785.value:='0'
+!data_0_785.index:=483
+!insert(SOLICITED_CNTCTS_0,data_0_785) into DataOfDataField
+ !create data_0_465:Data
+ !data_0_465.value:='0'
+!data_0_465.index:=484
+!insert(SOLICITED_CNTCTS_0,data_0_465) into DataOfDataField
+ !create data_1_362:Data
+ !data_1_362.value:='1'
+!data_1_362.index:=485
+!insert(SOLICITED_CNTCTS_0,data_1_362) into DataOfDataField
+ !create data_0_1379:Data
+ !data_0_1379.value:='0'
+!data_0_1379.index:=486
+!insert(SOLICITED_CNTCTS_0,data_0_1379) into DataOfDataField
+ !create data_0_1428:Data
+ !data_0_1428.value:='0'
+!data_0_1428.index:=487
+!insert(SOLICITED_CNTCTS_0,data_0_1428) into DataOfDataField
+ !create data_0_1165:Data
+ !data_0_1165.value:='0'
+!data_0_1165.index:=488
+!insert(SOLICITED_CNTCTS_0,data_0_1165) into DataOfDataField
+ !create data_1_71:Data
+ !data_1_71.value:='1'
+!data_1_71.index:=489
+!insert(SOLICITED_CNTCTS_0,data_1_71) into DataOfDataField
+ !create data_1_1048:Data
+ !data_1_1048.value:='1'
+!data_1_1048.index:=490
+!insert(SOLICITED_CNTCTS_0,data_1_1048) into DataOfDataField
+ !create data_1_669:Data
+ !data_1_669.value:='1'
+!data_1_669.index:=491
+!insert(SOLICITED_CNTCTS_0,data_1_669) into DataOfDataField
+ !create data_0_1121:Data
+ !data_0_1121.value:='0'
+!data_0_1121.index:=492
+!insert(SOLICITED_CNTCTS_0,data_0_1121) into DataOfDataField
+ !create data_1_127:Data
+ !data_1_127.value:='1'
+!data_1_127.index:=493
+!insert(SOLICITED_CNTCTS_0,data_1_127) into DataOfDataField
+ !create data_0_58:Data
+ !data_0_58.value:='0'
+!data_0_58.index:=494
+!insert(SOLICITED_CNTCTS_0,data_0_58) into DataOfDataField
+ !create data_0_466:Data
+ !data_0_466.value:='0'
+!data_0_466.index:=495
+!insert(SOLICITED_CNTCTS_0,data_0_466) into DataOfDataField
+ !create data_1_1128:Data
+ !data_1_1128.value:='1'
+!data_1_1128.index:=496
+!insert(SOLICITED_CNTCTS_0,data_1_1128) into DataOfDataField
+ !create data_1_806:Data
+ !data_1_806.value:='1'
+!data_1_806.index:=497
+!insert(SOLICITED_CNTCTS_0,data_1_806) into DataOfDataField
+ !create data_0_662:Data
+ !data_0_662.value:='0'
+!data_0_662.index:=498
+!insert(SOLICITED_CNTCTS_0,data_0_662) into DataOfDataField
+ !create data_0_398:Data
+ !data_0_398.value:='0'
+!data_0_398.index:=499
+!insert(SOLICITED_CNTCTS_0,data_0_398) into DataOfDataField
+ !create data_1_1185:Data
+ !data_1_1185.value:='1'
+!data_1_1185.index:=500
+!insert(SOLICITED_CNTCTS_0,data_1_1185) into DataOfDataField
+ !create data_1_753:Data
+ !data_1_753.value:='1'
+!data_1_753.index:=501
+!insert(SOLICITED_CNTCTS_0,data_1_753) into DataOfDataField
+ !create data_0_968:Data
+ !data_0_968.value:='0'
+!data_0_968.index:=502
+!insert(SOLICITED_CNTCTS_0,data_0_968) into DataOfDataField
+ !create data_1_462:Data
+ !data_1_462.value:='1'
+!data_1_462.index:=503
+!insert(SOLICITED_CNTCTS_0,data_1_462) into DataOfDataField
+ !create data_2_460:Data
+ !data_2_460.value:='2'
+!data_2_460.index:=504
+!insert(SOLICITED_CNTCTS_0,data_2_460) into DataOfDataField
+ !create data_1_1526:Data
+ !data_1_1526.value:='1'
+!data_1_1526.index:=505
+!insert(SOLICITED_CNTCTS_0,data_1_1526) into DataOfDataField
+ !create data_1_1279:Data
+ !data_1_1279.value:='1'
+!data_1_1279.index:=506
+!insert(SOLICITED_CNTCTS_0,data_1_1279) into DataOfDataField
+ !create data_1_285:Data
+ !data_1_285.value:='1'
+!data_1_285.index:=507
+!insert(SOLICITED_CNTCTS_0,data_1_285) into DataOfDataField
+ !create data_1_1353:Data
+ !data_1_1353.value:='1'
+!data_1_1353.index:=508
+!insert(SOLICITED_CNTCTS_0,data_1_1353) into DataOfDataField
+ !create data_0_349:Data
+ !data_0_349.value:='0'
+!data_0_349.index:=509
+!insert(SOLICITED_CNTCTS_0,data_0_349) into DataOfDataField
+ !create data_1_487:Data
+ !data_1_487.value:='1'
+!data_1_487.index:=510
+!insert(SOLICITED_CNTCTS_0,data_1_487) into DataOfDataField
+ !create data_0_403:Data
+ !data_0_403.value:='0'
+!data_0_403.index:=511
+!insert(SOLICITED_CNTCTS_0,data_0_403) into DataOfDataField
+ !create data_1_527:Data
+ !data_1_527.value:='1'
+!data_1_527.index:=512
+!insert(SOLICITED_CNTCTS_0,data_1_527) into DataOfDataField
+ !create data_1_216:Data
+ !data_1_216.value:='1'
+!data_1_216.index:=513
+!insert(SOLICITED_CNTCTS_0,data_1_216) into DataOfDataField
+ !create data_0_889:Data
+ !data_0_889.value:='0'
+!data_0_889.index:=514
+!insert(SOLICITED_CNTCTS_0,data_0_889) into DataOfDataField
+ !create data_1_471:Data
+ !data_1_471.value:='1'
+!data_1_471.index:=515
+!insert(SOLICITED_CNTCTS_0,data_1_471) into DataOfDataField
+ 

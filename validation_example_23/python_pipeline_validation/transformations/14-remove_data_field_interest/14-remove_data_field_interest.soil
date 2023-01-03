@@ -1,9 +1,0 @@
-!create removeDataField:Transformation
-!create field:Field
-
-!removeDataField.name:='removeDataField'
-
-!insert(removeDataField, input) into InputPort
-!insert(removeDataField, output) into OutputPort
-!insert(removeDataField, field) into ParameterField
-!insert(field, interest_0) into FieldDataField

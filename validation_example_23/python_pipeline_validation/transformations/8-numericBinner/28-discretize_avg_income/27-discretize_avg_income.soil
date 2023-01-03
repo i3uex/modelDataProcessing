@@ -1,0 +1,49 @@
+!create discretize:Transformation
+!create field:Field
+!discretize.name:='discretize'
+
+!create binLow:DiscretizeBin
+!create intervalLow:Interval
+!binLow.name:='binLow'
+!binLow.binValue:='low'
+!intervalLow.leftMargin:=9.783
+!intervalLow.rightMargin:=42830.0
+!intervalLow.closure:=ClosureType::closedOpen
+!insert(discretize, binLow) into TransfParam
+!insert(binLow, intervalLow) into DiscretizeInterval
+!insert(avg_income_0,intervalLow) into ContinuousInterval
+
+!create binModerate:DiscretizeBin
+!create intervalModerate:Interval
+!binModerate.name:='binModerate'
+!binModerate.binValue:='Moderate'
+!intervalModerate.leftMargin:=42830.0
+!intervalModerate.rightMargin:=55559.0
+!intervalModerate.closure:=ClosureType::closedOpen
+!insert(discretize, binModerate) into TransfParam
+!insert(binModerate, intervalModerate) into DiscretizeInterval
+!insert(avg_income_0,intervalModerate) into ContinuousInterval
+
+!create binHigh:DiscretizeBin
+!create intervalHigh:Interval
+!binHigh.name:='binHigh'
+!binHigh.binValue:='High'
+!intervalHigh.leftMargin:=55559.0
+!intervalHigh.rightMargin:=99906.25
+!intervalHigh.closure:=ClosureType::closedClosed
+!insert(discretize, binHigh) into TransfParam
+!insert(binHigh, intervalHigh) into DiscretizeInterval
+!insert(avg_income_0,intervalHigh) into ContinuousInterval
+
+!insert(discretize, input) into InputPort
+!insert(discretize, output) into OutputPort
+!insert(discretize, field) into ParameterField
+!insert(field, avg_income_0) into FieldDataField
+
+!create derivedField:DerivedField
+!derivedField.derived_name:='avg_income_binned'
+!derivedField.derived_opType:=OpType::Categorical
+!derivedField.derived_dataType:=DataType::string
+!insert(discretize,derivedField) into DerivedFields
+
+!discretize.validateDiscretize(Set{binLow, binModerate, binHigh})

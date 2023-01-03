@@ -1,0 +1,2449 @@
+!create output:DataDictionary
+ !output.rows:=516
+!output.name:='output'
+!create ETHNICITY_1:Categorical
+ !ETHNICITY_1.ordinal:=false
+ !insert(output,ETHNICITY_1) into DataDictDataField
+ !create value_C_1:ValueField
+ !value_C_1.value:= 'C'
+!value_C_1.count:=362
+!insert(ETHNICITY_1,value_C_1) into ValidValues
+ !create value_N_3:ValueField
+ !value_N_3.value:= 'N'
+!value_N_3.count:=50
+!insert(ETHNICITY_1,value_N_3) into ValidValues
+ !create value_B_1:ValueField
+ !value_B_1.value:= 'B'
+!value_B_1.count:=41
+!insert(ETHNICITY_1,value_B_1) into ValidValues
+ !create value_H_1:ValueField
+ !value_H_1.value:= 'H'
+!value_H_1.count:=24
+!insert(ETHNICITY_1,value_H_1) into ValidValues
+ !create value_A_2:ValueField
+ !value_A_2.value:= 'A'
+!value_A_2.count:=21
+!insert(ETHNICITY_1,value_A_2) into ValidValues
+ !create value_O_1:ValueField
+ !value_O_1.value:= 'O'
+!value_O_1.count:=17
+!insert(ETHNICITY_1,value_O_1) into ValidValues
+ !create value_I_1:ValueField
+ !value_I_1.value:= 'I'
+!value_I_1.count:=1
+!insert(ETHNICITY_1,value_I_1) into ValidValues
+ !ETHNICITY_1.target:=false
+ !ETHNICITY_1.id:=false
+ !ETHNICITY_1.dataType:=DataType::string
+!ETHNICITY_1.name:='ETHNICITY'
+!create TERRITORY_1:Categorical
+ !TERRITORY_1.ordinal:=false
+ !insert(output,TERRITORY_1) into DataDictDataField
+ !create value_N_4:ValueField
+ !value_N_4.value:= 'N'
+!value_N_4.count:=96
+!insert(TERRITORY_1,value_N_4) into ValidValues
+ !create value_8_1:ValueField
+ !value_8_1.value:= '8'
+!value_8_1.count:=69
+!insert(TERRITORY_1,value_8_1) into ValidValues
+ !create value_5_1:ValueField
+ !value_5_1.value:= '5'
+!value_5_1.count:=58
+!insert(TERRITORY_1,value_5_1) into ValidValues
+ !create value_2_1:ValueField
+ !value_2_1.value:= '2'
+!value_2_1.count:=179
+!insert(TERRITORY_1,value_2_1) into ValidValues
+ !create value_7_1:ValueField
+ !value_7_1.value:= '7'
+!value_7_1.count:=114
+!insert(TERRITORY_1,value_7_1) into ValidValues
+ !create value_4_1:ValueField
+ !value_4_1.value:= '4'
+!value_4_1.count:=0
+!insert(TERRITORY_1,value_4_1) into ValidValues
+ !create value_000_1:ValueField
+ !value_000_1.value:= '000'
+!value_000_1.count:=0
+!insert(TERRITORY_1,value_000_1) into ValidValues
+ !create value_6_1:ValueField
+ !value_6_1.value:= '6'
+!value_6_1.count:=0
+!insert(TERRITORY_1,value_6_1) into ValidValues
+ !create value_A_3:ValueField
+ !value_A_3.value:= 'A'
+!value_A_3.count:=0
+!insert(TERRITORY_1,value_A_3) into ValidValues
+ !create value_1_1:ValueField
+ !value_1_1.value:= '1'
+!value_1_1.count:=0
+!insert(TERRITORY_1,value_1_1) into ValidValues
+ !create value_3_1:ValueField
+ !value_3_1.value:= '3'
+!value_3_1.count:=0
+!insert(TERRITORY_1,value_3_1) into ValidValues
+ !TERRITORY_1.target:=false
+ !TERRITORY_1.id:=false
+ !TERRITORY_1.dataType:=DataType::string
+!TERRITORY_1.name:='TERRITORY'
+!create ACADEMIC_INTEREST_1_1:Categorical
+ !ACADEMIC_INTEREST_1_1.ordinal:=false
+ !insert(output,ACADEMIC_INTEREST_1_1) into DataDictDataField
+ !ACADEMIC_INTEREST_1_1.target:=false
+ !ACADEMIC_INTEREST_1_1.id:=false
+ !ACADEMIC_INTEREST_1_1.dataType:=DataType::string
+!ACADEMIC_INTEREST_1_1.name:='ACADEMIC_INTEREST_1'
+!create ACADEMIC_INTEREST_2_1:Categorical
+ !ACADEMIC_INTEREST_2_1.ordinal:=false
+ !insert(output,ACADEMIC_INTEREST_2_1) into DataDictDataField
+ !ACADEMIC_INTEREST_2_1.target:=false
+ !ACADEMIC_INTEREST_2_1.id:=false
+ !ACADEMIC_INTEREST_2_1.dataType:=DataType::string
+!ACADEMIC_INTEREST_2_1.name:='ACADEMIC_INTEREST_2'
+!create Enroll_1:Continuous
+ !insert(output,Enroll_1) into DataDictDataField
+ !create interval_Enroll_1:Interval
+!interval_Enroll_1.leftMargin:=0.0
+!interval_Enroll_1.rightMargin:=1.0
+!interval_Enroll_1.closure:=ClosureType::closedClosed
+!interval_Enroll_1.count:=516
+!insert(Enroll_1,interval_Enroll_1) into ContinuousInterval
+ !Enroll_1.target:=false
+ !Enroll_1.id:=false
+ !Enroll_1.dataType:=DataType::integer
+!Enroll_1.name:='Enroll'
+!create TOTAL_CONTACTS_1:Continuous
+ !insert(output,TOTAL_CONTACTS_1) into DataDictDataField
+ !create interval_TOTAL_CONTACTS_1:Interval
+!interval_TOTAL_CONTACTS_1.leftMargin:=1.0
+!interval_TOTAL_CONTACTS_1.rightMargin:=28.0
+!interval_TOTAL_CONTACTS_1.closure:=ClosureType::closedClosed
+!interval_TOTAL_CONTACTS_1.count:=516
+!insert(TOTAL_CONTACTS_1,interval_TOTAL_CONTACTS_1) into ContinuousInterval
+ !TOTAL_CONTACTS_1.target:=false
+ !TOTAL_CONTACTS_1.id:=false
+ !TOTAL_CONTACTS_1.dataType:=DataType::integer
+!TOTAL_CONTACTS_1.name:='TOTAL_CONTACTS'
+!create SELF_INIT_CNTCTS_1:Continuous
+ !insert(output,SELF_INIT_CNTCTS_1) into DataDictDataField
+ !create interval_SELF_INIT_CNTCTS_1:Interval
+!interval_SELF_INIT_CNTCTS_1.leftMargin:=0.0
+!interval_SELF_INIT_CNTCTS_1.rightMargin:=21.0
+!interval_SELF_INIT_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_SELF_INIT_CNTCTS_1.count:=516
+!insert(SELF_INIT_CNTCTS_1,interval_SELF_INIT_CNTCTS_1) into ContinuousInterval
+ !SELF_INIT_CNTCTS_1.target:=false
+ !SELF_INIT_CNTCTS_1.id:=false
+ !SELF_INIT_CNTCTS_1.dataType:=DataType::integer
+!SELF_INIT_CNTCTS_1.name:='SELF_INIT_CNTCTS'
+!create TRAVEL_INIT_CNTCTS_1:Continuous
+ !insert(output,TRAVEL_INIT_CNTCTS_1) into DataDictDataField
+ !create interval_TRAVEL_INIT_CNTCTS_1:Interval
+!interval_TRAVEL_INIT_CNTCTS_1.leftMargin:=0.0
+!interval_TRAVEL_INIT_CNTCTS_1.rightMargin:=5.0
+!interval_TRAVEL_INIT_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_TRAVEL_INIT_CNTCTS_1.count:=516
+!insert(TRAVEL_INIT_CNTCTS_1,interval_TRAVEL_INIT_CNTCTS_1) into ContinuousInterval
+ !TRAVEL_INIT_CNTCTS_1.target:=false
+ !TRAVEL_INIT_CNTCTS_1.id:=false
+ !TRAVEL_INIT_CNTCTS_1.dataType:=DataType::integer
+!TRAVEL_INIT_CNTCTS_1.name:='TRAVEL_INIT_CNTCTS'
+!create SOLICITED_CNTCTS_1:Continuous
+ !insert(output,SOLICITED_CNTCTS_1) into DataDictDataField
+ !create interval_SOLICITED_CNTCTS_1:Interval
+!interval_SOLICITED_CNTCTS_1.leftMargin:=0.0
+!interval_SOLICITED_CNTCTS_1.rightMargin:=9.0
+!interval_SOLICITED_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_SOLICITED_CNTCTS_1.count:=516
+!insert(SOLICITED_CNTCTS_1,interval_SOLICITED_CNTCTS_1) into ContinuousInterval
+ !SOLICITED_CNTCTS_1.target:=false
+ !SOLICITED_CNTCTS_1.id:=false
+ !SOLICITED_CNTCTS_1.dataType:=DataType::integer
+!SOLICITED_CNTCTS_1.name:='SOLICITED_CNTCTS'
+!create REFERRAL_CNTCTS_1:Continuous
+ !insert(output,REFERRAL_CNTCTS_1) into DataDictDataField
+ !create interval_REFERRAL_CNTCTS_1:Interval
+!interval_REFERRAL_CNTCTS_1.leftMargin:=0.0
+!interval_REFERRAL_CNTCTS_1.rightMargin:=5.0
+!interval_REFERRAL_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_REFERRAL_CNTCTS_1.count:=516
+!insert(REFERRAL_CNTCTS_1,interval_REFERRAL_CNTCTS_1) into ContinuousInterval
+ !REFERRAL_CNTCTS_1.target:=false
+ !REFERRAL_CNTCTS_1.id:=false
+ !REFERRAL_CNTCTS_1.dataType:=DataType::integer
+!REFERRAL_CNTCTS_1.name:='REFERRAL_CNTCTS'
+!create CAMPUS_VISIT_1:Continuous
+ !insert(output,CAMPUS_VISIT_1) into DataDictDataField
+ !create interval_CAMPUS_VISIT_1:Interval
+!interval_CAMPUS_VISIT_1.leftMargin:=0.0
+!interval_CAMPUS_VISIT_1.rightMargin:=1.0
+!interval_CAMPUS_VISIT_1.closure:=ClosureType::closedClosed
+!interval_CAMPUS_VISIT_1.count:=516
+!insert(CAMPUS_VISIT_1,interval_CAMPUS_VISIT_1) into ContinuousInterval
+ !CAMPUS_VISIT_1.target:=false
+ !CAMPUS_VISIT_1.id:=false
+ !CAMPUS_VISIT_1.dataType:=DataType::integer
+!CAMPUS_VISIT_1.name:='CAMPUS_VISIT'
+!create CONTACT_CODE1_1:Categorical
+ !CONTACT_CODE1_1.ordinal:=false
+ !insert(output,CONTACT_CODE1_1) into DataDictDataField
+ !CONTACT_CODE1_1.target:=false
+ !CONTACT_CODE1_1.id:=false
+ !CONTACT_CODE1_1.dataType:=DataType::string
+!CONTACT_CODE1_1.name:='CONTACT_CODE1'
+!create nan_10:ValueField
+ !nan_10.value:= 'nan'
+!nan_10.count:=1
+!insert(CONTACT_CODE1_1,nan_10) into MissingVals
+ !create IRSCHOOL_1:Categorical
+ !IRSCHOOL_1.ordinal:=false
+ !insert(output,IRSCHOOL_1) into DataDictDataField
+ !IRSCHOOL_1.target:=false
+ !IRSCHOOL_1.id:=false
+ !IRSCHOOL_1.dataType:=DataType::string
+!IRSCHOOL_1.name:='IRSCHOOL'
+!create satscore_1:Continuous
+ !insert(output,satscore_1) into DataDictDataField
+ !create interval_satscore_1:Interval
+!interval_satscore_1.leftMargin:=440.0
+!interval_satscore_1.rightMargin:=1600.0
+!interval_satscore_1.closure:=ClosureType::closedClosed
+!interval_satscore_1.count:=512
+!insert(satscore_1,interval_satscore_1) into ContinuousInterval
+ !satscore_1.target:=false
+ !satscore_1.id:=false
+ !satscore_1.dataType:=DataType::double
+!satscore_1.name:='satscore'
+!create nan_11:ValueField
+ !nan_11.value:= 'nan'
+!nan_11.count:=4
+!insert(satscore_1,nan_11) into MissingVals
+ !create sex_1:Continuous
+ !insert(output,sex_1) into DataDictDataField
+ !create interval_sex_1:Interval
+!interval_sex_1.leftMargin:=0.0
+!interval_sex_1.rightMargin:=1.0
+!interval_sex_1.closure:=ClosureType::closedClosed
+!interval_sex_1.count:=516
+!insert(sex_1,interval_sex_1) into ContinuousInterval
+ !sex_1.target:=false
+ !sex_1.id:=false
+ !sex_1.dataType:=DataType::double
+!sex_1.name:='sex'
+!create mailq_1:Continuous
+ !insert(output,mailq_1) into DataDictDataField
+ !create interval_mailq_1:Interval
+!interval_mailq_1.leftMargin:=1.0
+!interval_mailq_1.rightMargin:=5.0
+!interval_mailq_1.closure:=ClosureType::closedClosed
+!interval_mailq_1.count:=516
+!insert(mailq_1,interval_mailq_1) into ContinuousInterval
+ !mailq_1.target:=false
+ !mailq_1.id:=false
+ !mailq_1.dataType:=DataType::integer
+!mailq_1.name:='mailq'
+!create telecq_1:Continuous
+ !insert(output,telecq_1) into DataDictDataField
+ !create interval_telecq_1:Interval
+!interval_telecq_1.leftMargin:=1.0
+!interval_telecq_1.rightMargin:=4.0
+!interval_telecq_1.closure:=ClosureType::closedClosed
+!interval_telecq_1.count:=99
+!insert(telecq_1,interval_telecq_1) into ContinuousInterval
+ !telecq_1.target:=false
+ !telecq_1.id:=false
+ !telecq_1.dataType:=DataType::double
+!telecq_1.name:='telecq'
+!create nan_12:ValueField
+ !nan_12.value:= 'nan'
+!nan_12.count:=417
+!insert(telecq_1,nan_12) into MissingVals
+ !create premiere_1:Continuous
+ !insert(output,premiere_1) into DataDictDataField
+ !create interval_premiere_1:Interval
+!interval_premiere_1.leftMargin:=0.0
+!interval_premiere_1.rightMargin:=1.0
+!interval_premiere_1.closure:=ClosureType::closedClosed
+!interval_premiere_1.count:=516
+!insert(premiere_1,interval_premiere_1) into ContinuousInterval
+ !premiere_1.target:=false
+ !premiere_1.id:=false
+ !premiere_1.dataType:=DataType::integer
+!premiere_1.name:='premiere'
+!create interest_1:Continuous
+ !insert(output,interest_1) into DataDictDataField
+ !create interval_interest_1:Interval
+!interval_interest_1.leftMargin:=0.0
+!interval_interest_1.rightMargin:=3.0
+!interval_interest_1.closure:=ClosureType::closedClosed
+!interval_interest_1.count:=516
+!insert(interest_1,interval_interest_1) into ContinuousInterval
+ !interest_1.target:=false
+ !interest_1.id:=false
+ !interest_1.dataType:=DataType::integer
+!interest_1.name:='interest'
+!create stuemail_1:Continuous
+ !insert(output,stuemail_1) into DataDictDataField
+ !create interval_stuemail_1:Interval
+!interval_stuemail_1.leftMargin:=0.0
+!interval_stuemail_1.rightMargin:=1.0
+!interval_stuemail_1.closure:=ClosureType::closedClosed
+!interval_stuemail_1.count:=516
+!insert(stuemail_1,interval_stuemail_1) into ContinuousInterval
+ !stuemail_1.target:=false
+ !stuemail_1.id:=false
+ !stuemail_1.dataType:=DataType::integer
+!stuemail_1.name:='stuemail'
+!create init_span_1:Continuous
+ !insert(output,init_span_1) into DataDictDataField
+ !create interval_init_span_1:Interval
+!interval_init_span_1.leftMargin:=-216.0
+!interval_init_span_1.rightMargin:=72.0
+!interval_init_span_1.closure:=ClosureType::closedClosed
+!interval_init_span_1.count:=516
+!insert(init_span_1,interval_init_span_1) into ContinuousInterval
+ !init_span_1.target:=false
+ !init_span_1.id:=false
+ !init_span_1.dataType:=DataType::integer
+!init_span_1.name:='init_span'
+!create int1rat_1:Continuous
+ !insert(output,int1rat_1) into DataDictDataField
+ !create interval_int1rat_0:Interval
+!interval_int1rat_0.leftMargin:=0.0
+!interval_int1rat_0.rightMargin:=1.0
+!interval_int1rat_0.closure:=ClosureType::closedClosed
+!interval_int1rat_0.count:=516
+!insert(int1rat_1,interval_int1rat_0) into ContinuousInterval
+ !int1rat_1.target:=false
+ !int1rat_1.id:=false
+ !int1rat_1.dataType:=DataType::double
+!int1rat_1.name:='int1rat'
+!create int2rat_1:Continuous
+ !insert(output,int2rat_1) into DataDictDataField
+ !create interval_int2rat_0:Interval
+!interval_int2rat_0.leftMargin:=0.0
+!interval_int2rat_0.rightMargin:=1.0
+!interval_int2rat_0.closure:=ClosureType::closedClosed
+!interval_int2rat_0.count:=516
+!insert(int2rat_1,interval_int2rat_0) into ContinuousInterval
+ !int2rat_1.target:=false
+ !int2rat_1.id:=false
+ !int2rat_1.dataType:=DataType::double
+!int2rat_1.name:='int2rat'
+!create hscrat_1:Continuous
+ !insert(output,hscrat_1) into DataDictDataField
+ !create interval_hscrat_0:Interval
+!interval_hscrat_0.leftMargin:=0.0
+!interval_hscrat_0.rightMargin:=1.0
+!interval_hscrat_0.closure:=ClosureType::closedClosed
+!interval_hscrat_0.count:=516
+!insert(hscrat_1,interval_hscrat_0) into ContinuousInterval
+ !hscrat_1.target:=false
+ !hscrat_1.id:=false
+ !hscrat_1.dataType:=DataType::double
+!hscrat_1.name:='hscrat'
+!create avg_income_1:Continuous
+ !insert(output,avg_income_1) into DataDictDataField
+ !create interval_avg_income_1:Interval
+!interval_avg_income_1.leftMargin:=9783.0
+!interval_avg_income_1.rightMargin:=200001.0
+!interval_avg_income_1.closure:=ClosureType::closedClosed
+!interval_avg_income_1.count:=516
+!insert(avg_income_1,interval_avg_income_1) into ContinuousInterval
+ !avg_income_1.target:=false
+ !avg_income_1.id:=false
+ !avg_income_1.dataType:=DataType::double
+!avg_income_1.name:='avg_income'
+!create distance_1:Continuous
+ !insert(output,distance_1) into DataDictDataField
+ !create interval_distance_0:Interval
+!interval_distance_0.leftMargin:=0.7905552999691918
+!interval_distance_0.rightMargin:=3882.192378789769
+!interval_distance_0.closure:=ClosureType::closedClosed
+!interval_distance_0.count:=516
+!insert(distance_1,interval_distance_0) into ContinuousInterval
+ !distance_1.target:=false
+ !distance_1.id:=false
+ !distance_1.dataType:=DataType::double
+!distance_1.name:='distance'
+!create Instate_1:Categorical
+ !Instate_1.ordinal:=false
+ !insert(output,Instate_1) into DataDictDataField
+ !create value_N_5:ValueField
+ !value_N_5.value:= 'N'
+!value_N_5.count:=516
+!insert(Instate_1,value_N_5) into ValidValues
+ !create value_Y_1:ValueField
+ !value_Y_1.value:= 'Y'
+!value_Y_1.count:=0
+!insert(Instate_1,value_Y_1) into ValidValues
+ !Instate_1.target:=false
+ !Instate_1.id:=false
+ !Instate_1.dataType:=DataType::string
+!Instate_1.name:='Instate'
+!create data_318_0161398664745_0:Data
+ !data_318_0161398664745_0.value:='318.0161398664745'
+!data_318_0161398664745_0.index:=0
+!insert(distance_1,data_318_0161398664745_0) into DataOfDataField
+ !create data_318_0161398664745_347:Data
+ !data_318_0161398664745_347.value:='318.0161398664745'
+!data_318_0161398664745_347.index:=1
+!insert(distance_1,data_318_0161398664745_347) into DataOfDataField
+ !create data_318_0161398664745_881:Data
+ !data_318_0161398664745_881.value:='318.0161398664745'
+!data_318_0161398664745_881.index:=2
+!insert(distance_1,data_318_0161398664745_881) into DataOfDataField
+ !create data_318_0161398664745_309:Data
+ !data_318_0161398664745_309.value:='318.0161398664745'
+!data_318_0161398664745_309.index:=3
+!insert(distance_1,data_318_0161398664745_309) into DataOfDataField
+ !create data_318_0161398664745_86:Data
+ !data_318_0161398664745_86.value:='318.0161398664745'
+!data_318_0161398664745_86.index:=4
+!insert(distance_1,data_318_0161398664745_86) into DataOfDataField
+ !create data_318_0161398664745_1528:Data
+ !data_318_0161398664745_1528.value:='318.0161398664745'
+!data_318_0161398664745_1528.index:=5
+!insert(distance_1,data_318_0161398664745_1528) into DataOfDataField
+ !create data_318_0161398664745_496:Data
+ !data_318_0161398664745_496.value:='318.0161398664745'
+!data_318_0161398664745_496.index:=6
+!insert(distance_1,data_318_0161398664745_496) into DataOfDataField
+ !create data_318_0161398664745_232:Data
+ !data_318_0161398664745_232.value:='318.0161398664745'
+!data_318_0161398664745_232.index:=7
+!insert(distance_1,data_318_0161398664745_232) into DataOfDataField
+ !create data_318_0161398664745_660:Data
+ !data_318_0161398664745_660.value:='318.0161398664745'
+!data_318_0161398664745_660.index:=8
+!insert(distance_1,data_318_0161398664745_660) into DataOfDataField
+ !create data_318_0161398664745_872:Data
+ !data_318_0161398664745_872.value:='318.0161398664745'
+!data_318_0161398664745_872.index:=9
+!insert(distance_1,data_318_0161398664745_872) into DataOfDataField
+ !create data_318_0161398664745_1425:Data
+ !data_318_0161398664745_1425.value:='318.0161398664745'
+!data_318_0161398664745_1425.index:=10
+!insert(distance_1,data_318_0161398664745_1425) into DataOfDataField
+ !create data_318_0161398664745_1520:Data
+ !data_318_0161398664745_1520.value:='318.0161398664745'
+!data_318_0161398664745_1520.index:=11
+!insert(distance_1,data_318_0161398664745_1520) into DataOfDataField
+ !create data_318_0161398664745_411:Data
+ !data_318_0161398664745_411.value:='318.0161398664745'
+!data_318_0161398664745_411.index:=12
+!insert(distance_1,data_318_0161398664745_411) into DataOfDataField
+ !create data_318_0161398664745_441:Data
+ !data_318_0161398664745_441.value:='318.0161398664745'
+!data_318_0161398664745_441.index:=13
+!insert(distance_1,data_318_0161398664745_441) into DataOfDataField
+ !create data_318_0161398664745_1345:Data
+ !data_318_0161398664745_1345.value:='318.0161398664745'
+!data_318_0161398664745_1345.index:=14
+!insert(distance_1,data_318_0161398664745_1345) into DataOfDataField
+ !create data_318_0161398664745_942:Data
+ !data_318_0161398664745_942.value:='318.0161398664745'
+!data_318_0161398664745_942.index:=15
+!insert(distance_1,data_318_0161398664745_942) into DataOfDataField
+ !create data_318_0161398664745_88:Data
+ !data_318_0161398664745_88.value:='318.0161398664745'
+!data_318_0161398664745_88.index:=16
+!insert(distance_1,data_318_0161398664745_88) into DataOfDataField
+ !create data_318_0161398664745_891:Data
+ !data_318_0161398664745_891.value:='318.0161398664745'
+!data_318_0161398664745_891.index:=17
+!insert(distance_1,data_318_0161398664745_891) into DataOfDataField
+ !create data_318_0161398664745_1535:Data
+ !data_318_0161398664745_1535.value:='318.0161398664745'
+!data_318_0161398664745_1535.index:=18
+!insert(distance_1,data_318_0161398664745_1535) into DataOfDataField
+ !create data_318_0161398664745_933:Data
+ !data_318_0161398664745_933.value:='318.0161398664745'
+!data_318_0161398664745_933.index:=19
+!insert(distance_1,data_318_0161398664745_933) into DataOfDataField
+ !create data_318_0161398664745_1509:Data
+ !data_318_0161398664745_1509.value:='318.0161398664745'
+!data_318_0161398664745_1509.index:=20
+!insert(distance_1,data_318_0161398664745_1509) into DataOfDataField
+ !create data_318_0161398664745_1459:Data
+ !data_318_0161398664745_1459.value:='318.0161398664745'
+!data_318_0161398664745_1459.index:=21
+!insert(distance_1,data_318_0161398664745_1459) into DataOfDataField
+ !create data_318_0161398664745_266:Data
+ !data_318_0161398664745_266.value:='318.0161398664745'
+!data_318_0161398664745_266.index:=22
+!insert(distance_1,data_318_0161398664745_266) into DataOfDataField
+ !create data_318_0161398664745_367:Data
+ !data_318_0161398664745_367.value:='318.0161398664745'
+!data_318_0161398664745_367.index:=23
+!insert(distance_1,data_318_0161398664745_367) into DataOfDataField
+ !create data_318_0161398664745_47:Data
+ !data_318_0161398664745_47.value:='318.0161398664745'
+!data_318_0161398664745_47.index:=24
+!insert(distance_1,data_318_0161398664745_47) into DataOfDataField
+ !create data_318_0161398664745_1152:Data
+ !data_318_0161398664745_1152.value:='318.0161398664745'
+!data_318_0161398664745_1152.index:=25
+!insert(distance_1,data_318_0161398664745_1152) into DataOfDataField
+ !create data_318_0161398664745_1312:Data
+ !data_318_0161398664745_1312.value:='318.0161398664745'
+!data_318_0161398664745_1312.index:=26
+!insert(distance_1,data_318_0161398664745_1312) into DataOfDataField
+ !create data_318_0161398664745_180:Data
+ !data_318_0161398664745_180.value:='318.0161398664745'
+!data_318_0161398664745_180.index:=27
+!insert(distance_1,data_318_0161398664745_180) into DataOfDataField
+ !create data_318_0161398664745_77:Data
+ !data_318_0161398664745_77.value:='318.0161398664745'
+!data_318_0161398664745_77.index:=28
+!insert(distance_1,data_318_0161398664745_77) into DataOfDataField
+ !create data_318_0161398664745_1450:Data
+ !data_318_0161398664745_1450.value:='318.0161398664745'
+!data_318_0161398664745_1450.index:=29
+!insert(distance_1,data_318_0161398664745_1450) into DataOfDataField
+ !create data_318_0161398664745_1364:Data
+ !data_318_0161398664745_1364.value:='318.0161398664745'
+!data_318_0161398664745_1364.index:=30
+!insert(distance_1,data_318_0161398664745_1364) into DataOfDataField
+ !create data_318_0161398664745_519:Data
+ !data_318_0161398664745_519.value:='318.0161398664745'
+!data_318_0161398664745_519.index:=31
+!insert(distance_1,data_318_0161398664745_519) into DataOfDataField
+ !create data_318_0161398664745_994:Data
+ !data_318_0161398664745_994.value:='318.0161398664745'
+!data_318_0161398664745_994.index:=32
+!insert(distance_1,data_318_0161398664745_994) into DataOfDataField
+ !create data_318_0161398664745_564:Data
+ !data_318_0161398664745_564.value:='318.0161398664745'
+!data_318_0161398664745_564.index:=33
+!insert(distance_1,data_318_0161398664745_564) into DataOfDataField
+ !create data_318_0161398664745_1388:Data
+ !data_318_0161398664745_1388.value:='318.0161398664745'
+!data_318_0161398664745_1388.index:=34
+!insert(distance_1,data_318_0161398664745_1388) into DataOfDataField
+ !create data_318_0161398664745_275:Data
+ !data_318_0161398664745_275.value:='318.0161398664745'
+!data_318_0161398664745_275.index:=35
+!insert(distance_1,data_318_0161398664745_275) into DataOfDataField
+ !create data_318_0161398664745_1301:Data
+ !data_318_0161398664745_1301.value:='318.0161398664745'
+!data_318_0161398664745_1301.index:=36
+!insert(distance_1,data_318_0161398664745_1301) into DataOfDataField
+ !create data_318_0161398664745_274:Data
+ !data_318_0161398664745_274.value:='318.0161398664745'
+!data_318_0161398664745_274.index:=37
+!insert(distance_1,data_318_0161398664745_274) into DataOfDataField
+ !create data_318_0161398664745_1125:Data
+ !data_318_0161398664745_1125.value:='318.0161398664745'
+!data_318_0161398664745_1125.index:=38
+!insert(distance_1,data_318_0161398664745_1125) into DataOfDataField
+ !create data_318_0161398664745_221:Data
+ !data_318_0161398664745_221.value:='318.0161398664745'
+!data_318_0161398664745_221.index:=39
+!insert(distance_1,data_318_0161398664745_221) into DataOfDataField
+ !create data_318_0161398664745_66:Data
+ !data_318_0161398664745_66.value:='318.0161398664745'
+!data_318_0161398664745_66.index:=40
+!insert(distance_1,data_318_0161398664745_66) into DataOfDataField
+ !create data_318_0161398664745_1536:Data
+ !data_318_0161398664745_1536.value:='318.0161398664745'
+!data_318_0161398664745_1536.index:=41
+!insert(distance_1,data_318_0161398664745_1536) into DataOfDataField
+ !create data_318_0161398664745_62:Data
+ !data_318_0161398664745_62.value:='318.0161398664745'
+!data_318_0161398664745_62.index:=42
+!insert(distance_1,data_318_0161398664745_62) into DataOfDataField
+ !create data_318_0161398664745_581:Data
+ !data_318_0161398664745_581.value:='318.0161398664745'
+!data_318_0161398664745_581.index:=43
+!insert(distance_1,data_318_0161398664745_581) into DataOfDataField
+ !create data_318_0161398664745_842:Data
+ !data_318_0161398664745_842.value:='318.0161398664745'
+!data_318_0161398664745_842.index:=44
+!insert(distance_1,data_318_0161398664745_842) into DataOfDataField
+ !create data_318_0161398664745_239:Data
+ !data_318_0161398664745_239.value:='318.0161398664745'
+!data_318_0161398664745_239.index:=45
+!insert(distance_1,data_318_0161398664745_239) into DataOfDataField
+ !create data_318_0161398664745_463:Data
+ !data_318_0161398664745_463.value:='318.0161398664745'
+!data_318_0161398664745_463.index:=46
+!insert(distance_1,data_318_0161398664745_463) into DataOfDataField
+ !create data_318_0161398664745_249:Data
+ !data_318_0161398664745_249.value:='318.0161398664745'
+!data_318_0161398664745_249.index:=47
+!insert(distance_1,data_318_0161398664745_249) into DataOfDataField
+ !create data_318_0161398664745_1415:Data
+ !data_318_0161398664745_1415.value:='318.0161398664745'
+!data_318_0161398664745_1415.index:=48
+!insert(distance_1,data_318_0161398664745_1415) into DataOfDataField
+ !create data_318_0161398664745_1165:Data
+ !data_318_0161398664745_1165.value:='318.0161398664745'
+!data_318_0161398664745_1165.index:=49
+!insert(distance_1,data_318_0161398664745_1165) into DataOfDataField
+ !create data_318_0161398664745_318:Data
+ !data_318_0161398664745_318.value:='318.0161398664745'
+!data_318_0161398664745_318.index:=50
+!insert(distance_1,data_318_0161398664745_318) into DataOfDataField
+ !create data_318_0161398664745_623:Data
+ !data_318_0161398664745_623.value:='318.0161398664745'
+!data_318_0161398664745_623.index:=51
+!insert(distance_1,data_318_0161398664745_623) into DataOfDataField
+ !create data_318_0161398664745_586:Data
+ !data_318_0161398664745_586.value:='318.0161398664745'
+!data_318_0161398664745_586.index:=52
+!insert(distance_1,data_318_0161398664745_586) into DataOfDataField
+ !create data_318_0161398664745_1026:Data
+ !data_318_0161398664745_1026.value:='318.0161398664745'
+!data_318_0161398664745_1026.index:=53
+!insert(distance_1,data_318_0161398664745_1026) into DataOfDataField
+ !create data_318_0161398664745_292:Data
+ !data_318_0161398664745_292.value:='318.0161398664745'
+!data_318_0161398664745_292.index:=54
+!insert(distance_1,data_318_0161398664745_292) into DataOfDataField
+ !create data_318_0161398664745_153:Data
+ !data_318_0161398664745_153.value:='318.0161398664745'
+!data_318_0161398664745_153.index:=55
+!insert(distance_1,data_318_0161398664745_153) into DataOfDataField
+ !create data_318_0161398664745_665:Data
+ !data_318_0161398664745_665.value:='318.0161398664745'
+!data_318_0161398664745_665.index:=56
+!insert(distance_1,data_318_0161398664745_665) into DataOfDataField
+ !create data_318_0161398664745_1347:Data
+ !data_318_0161398664745_1347.value:='318.0161398664745'
+!data_318_0161398664745_1347.index:=57
+!insert(distance_1,data_318_0161398664745_1347) into DataOfDataField
+ !create data_318_0161398664745_561:Data
+ !data_318_0161398664745_561.value:='318.0161398664745'
+!data_318_0161398664745_561.index:=58
+!insert(distance_1,data_318_0161398664745_561) into DataOfDataField
+ !create data_318_0161398664745_1427:Data
+ !data_318_0161398664745_1427.value:='318.0161398664745'
+!data_318_0161398664745_1427.index:=59
+!insert(distance_1,data_318_0161398664745_1427) into DataOfDataField
+ !create data_318_0161398664745_1219:Data
+ !data_318_0161398664745_1219.value:='318.0161398664745'
+!data_318_0161398664745_1219.index:=60
+!insert(distance_1,data_318_0161398664745_1219) into DataOfDataField
+ !create data_318_0161398664745_123:Data
+ !data_318_0161398664745_123.value:='318.0161398664745'
+!data_318_0161398664745_123.index:=61
+!insert(distance_1,data_318_0161398664745_123) into DataOfDataField
+ !create data_318_0161398664745_314:Data
+ !data_318_0161398664745_314.value:='318.0161398664745'
+!data_318_0161398664745_314.index:=62
+!insert(distance_1,data_318_0161398664745_314) into DataOfDataField
+ !create data_318_0161398664745_317:Data
+ !data_318_0161398664745_317.value:='318.0161398664745'
+!data_318_0161398664745_317.index:=63
+!insert(distance_1,data_318_0161398664745_317) into DataOfDataField
+ !create data_318_0161398664745_661:Data
+ !data_318_0161398664745_661.value:='318.0161398664745'
+!data_318_0161398664745_661.index:=64
+!insert(distance_1,data_318_0161398664745_661) into DataOfDataField
+ !create data_318_0161398664745_1065:Data
+ !data_318_0161398664745_1065.value:='318.0161398664745'
+!data_318_0161398664745_1065.index:=65
+!insert(distance_1,data_318_0161398664745_1065) into DataOfDataField
+ !create data_318_0161398664745_553:Data
+ !data_318_0161398664745_553.value:='318.0161398664745'
+!data_318_0161398664745_553.index:=66
+!insert(distance_1,data_318_0161398664745_553) into DataOfDataField
+ !create data_318_0161398664745_456:Data
+ !data_318_0161398664745_456.value:='318.0161398664745'
+!data_318_0161398664745_456.index:=67
+!insert(distance_1,data_318_0161398664745_456) into DataOfDataField
+ !create data_318_0161398664745_363:Data
+ !data_318_0161398664745_363.value:='318.0161398664745'
+!data_318_0161398664745_363.index:=68
+!insert(distance_1,data_318_0161398664745_363) into DataOfDataField
+ !create data_318_0161398664745_1247:Data
+ !data_318_0161398664745_1247.value:='318.0161398664745'
+!data_318_0161398664745_1247.index:=69
+!insert(distance_1,data_318_0161398664745_1247) into DataOfDataField
+ !create data_318_0161398664745_887:Data
+ !data_318_0161398664745_887.value:='318.0161398664745'
+!data_318_0161398664745_887.index:=70
+!insert(distance_1,data_318_0161398664745_887) into DataOfDataField
+ !create data_318_0161398664745_783:Data
+ !data_318_0161398664745_783.value:='318.0161398664745'
+!data_318_0161398664745_783.index:=71
+!insert(distance_1,data_318_0161398664745_783) into DataOfDataField
+ !create data_318_0161398664745_194:Data
+ !data_318_0161398664745_194.value:='318.0161398664745'
+!data_318_0161398664745_194.index:=72
+!insert(distance_1,data_318_0161398664745_194) into DataOfDataField
+ !create data_318_0161398664745_430:Data
+ !data_318_0161398664745_430.value:='318.0161398664745'
+!data_318_0161398664745_430.index:=73
+!insert(distance_1,data_318_0161398664745_430) into DataOfDataField
+ !create data_318_0161398664745_824:Data
+ !data_318_0161398664745_824.value:='318.0161398664745'
+!data_318_0161398664745_824.index:=74
+!insert(distance_1,data_318_0161398664745_824) into DataOfDataField
+ !create data_318_0161398664745_575:Data
+ !data_318_0161398664745_575.value:='318.0161398664745'
+!data_318_0161398664745_575.index:=75
+!insert(distance_1,data_318_0161398664745_575) into DataOfDataField
+ !create data_318_0161398664745_472:Data
+ !data_318_0161398664745_472.value:='318.0161398664745'
+!data_318_0161398664745_472.index:=76
+!insert(distance_1,data_318_0161398664745_472) into DataOfDataField
+ !create data_318_0161398664745_705:Data
+ !data_318_0161398664745_705.value:='318.0161398664745'
+!data_318_0161398664745_705.index:=77
+!insert(distance_1,data_318_0161398664745_705) into DataOfDataField
+ !create data_318_0161398664745_1012:Data
+ !data_318_0161398664745_1012.value:='318.0161398664745'
+!data_318_0161398664745_1012.index:=78
+!insert(distance_1,data_318_0161398664745_1012) into DataOfDataField
+ !create data_318_0161398664745_945:Data
+ !data_318_0161398664745_945.value:='318.0161398664745'
+!data_318_0161398664745_945.index:=79
+!insert(distance_1,data_318_0161398664745_945) into DataOfDataField
+ !create data_318_0161398664745_1087:Data
+ !data_318_0161398664745_1087.value:='318.0161398664745'
+!data_318_0161398664745_1087.index:=80
+!insert(distance_1,data_318_0161398664745_1087) into DataOfDataField
+ !create data_318_0161398664745_443:Data
+ !data_318_0161398664745_443.value:='318.0161398664745'
+!data_318_0161398664745_443.index:=81
+!insert(distance_1,data_318_0161398664745_443) into DataOfDataField
+ !create data_318_0161398664745_147:Data
+ !data_318_0161398664745_147.value:='318.0161398664745'
+!data_318_0161398664745_147.index:=82
+!insert(distance_1,data_318_0161398664745_147) into DataOfDataField
+ !create data_318_0161398664745_211:Data
+ !data_318_0161398664745_211.value:='318.0161398664745'
+!data_318_0161398664745_211.index:=83
+!insert(distance_1,data_318_0161398664745_211) into DataOfDataField
+ !create data_318_0161398664745_563:Data
+ !data_318_0161398664745_563.value:='318.0161398664745'
+!data_318_0161398664745_563.index:=84
+!insert(distance_1,data_318_0161398664745_563) into DataOfDataField
+ !create data_318_0161398664745_985:Data
+ !data_318_0161398664745_985.value:='318.0161398664745'
+!data_318_0161398664745_985.index:=85
+!insert(distance_1,data_318_0161398664745_985) into DataOfDataField
+ !create data_318_0161398664745_205:Data
+ !data_318_0161398664745_205.value:='318.0161398664745'
+!data_318_0161398664745_205.index:=86
+!insert(distance_1,data_318_0161398664745_205) into DataOfDataField
+ !create data_318_0161398664745_41:Data
+ !data_318_0161398664745_41.value:='318.0161398664745'
+!data_318_0161398664745_41.index:=87
+!insert(distance_1,data_318_0161398664745_41) into DataOfDataField
+ !create data_318_0161398664745_556:Data
+ !data_318_0161398664745_556.value:='318.0161398664745'
+!data_318_0161398664745_556.index:=88
+!insert(distance_1,data_318_0161398664745_556) into DataOfDataField
+ !create data_318_0161398664745_706:Data
+ !data_318_0161398664745_706.value:='318.0161398664745'
+!data_318_0161398664745_706.index:=89
+!insert(distance_1,data_318_0161398664745_706) into DataOfDataField
+ !create data_318_0161398664745_1298:Data
+ !data_318_0161398664745_1298.value:='318.0161398664745'
+!data_318_0161398664745_1298.index:=90
+!insert(distance_1,data_318_0161398664745_1298) into DataOfDataField
+ !create data_318_0161398664745_287:Data
+ !data_318_0161398664745_287.value:='318.0161398664745'
+!data_318_0161398664745_287.index:=91
+!insert(distance_1,data_318_0161398664745_287) into DataOfDataField
+ !create data_318_0161398664745_830:Data
+ !data_318_0161398664745_830.value:='318.0161398664745'
+!data_318_0161398664745_830.index:=92
+!insert(distance_1,data_318_0161398664745_830) into DataOfDataField
+ !create data_318_0161398664745_226:Data
+ !data_318_0161398664745_226.value:='318.0161398664745'
+!data_318_0161398664745_226.index:=93
+!insert(distance_1,data_318_0161398664745_226) into DataOfDataField
+ !create data_318_0161398664745_1334:Data
+ !data_318_0161398664745_1334.value:='318.0161398664745'
+!data_318_0161398664745_1334.index:=94
+!insert(distance_1,data_318_0161398664745_1334) into DataOfDataField
+ !create data_318_0161398664745_950:Data
+ !data_318_0161398664745_950.value:='318.0161398664745'
+!data_318_0161398664745_950.index:=95
+!insert(distance_1,data_318_0161398664745_950) into DataOfDataField
+ !create data_318_0161398664745_720:Data
+ !data_318_0161398664745_720.value:='318.0161398664745'
+!data_318_0161398664745_720.index:=96
+!insert(distance_1,data_318_0161398664745_720) into DataOfDataField
+ !create data_318_0161398664745_1216:Data
+ !data_318_0161398664745_1216.value:='318.0161398664745'
+!data_318_0161398664745_1216.index:=97
+!insert(distance_1,data_318_0161398664745_1216) into DataOfDataField
+ !create data_318_0161398664745_338:Data
+ !data_318_0161398664745_338.value:='318.0161398664745'
+!data_318_0161398664745_338.index:=98
+!insert(distance_1,data_318_0161398664745_338) into DataOfDataField
+ !create data_318_0161398664745_1462:Data
+ !data_318_0161398664745_1462.value:='318.0161398664745'
+!data_318_0161398664745_1462.index:=99
+!insert(distance_1,data_318_0161398664745_1462) into DataOfDataField
+ !create data_318_0161398664745_189:Data
+ !data_318_0161398664745_189.value:='318.0161398664745'
+!data_318_0161398664745_189.index:=100
+!insert(distance_1,data_318_0161398664745_189) into DataOfDataField
+ !create data_318_0161398664745_73:Data
+ !data_318_0161398664745_73.value:='318.0161398664745'
+!data_318_0161398664745_73.index:=101
+!insert(distance_1,data_318_0161398664745_73) into DataOfDataField
+ !create data_1600_047758375286_210:Data
+ !data_1600_047758375286_210.value:='1600.047758375286'
+!data_1600_047758375286_210.index:=102
+!insert(distance_1,data_1600_047758375286_210) into DataOfDataField
+ !create data_1619_2802603585124_698:Data
+ !data_1619_2802603585124_698.value:='1619.2802603585124'
+!data_1619_2802603585124_698.index:=103
+!insert(distance_1,data_1619_2802603585124_698) into DataOfDataField
+ !create data_1606_4023120951838_938:Data
+ !data_1606_4023120951838_938.value:='1606.4023120951838'
+!data_1606_4023120951838_938.index:=104
+!insert(distance_1,data_1606_4023120951838_938) into DataOfDataField
+ !create data_1622_7830501578685_0:Data
+ !data_1622_7830501578685_0.value:='1622.7830501578685'
+!data_1622_7830501578685_0.index:=105
+!insert(distance_1,data_1622_7830501578685_0) into DataOfDataField
+ !create data_1641_800269419908_0:Data
+ !data_1641_800269419908_0.value:='1641.800269419908'
+!data_1641_800269419908_0.index:=106
+!insert(distance_1,data_1641_800269419908_0) into DataOfDataField
+ !create data_1601_159598264211_0:Data
+ !data_1601_159598264211_0.value:='1601.159598264211'
+!data_1601_159598264211_0.index:=107
+!insert(distance_1,data_1601_159598264211_0) into DataOfDataField
+ !create data_1601_159598264211_212:Data
+ !data_1601_159598264211_212.value:='1601.159598264211'
+!data_1601_159598264211_212.index:=108
+!insert(distance_1,data_1601_159598264211_212) into DataOfDataField
+ !create data_318_0161398664745_1221:Data
+ !data_318_0161398664745_1221.value:='318.0161398664745'
+!data_318_0161398664745_1221.index:=109
+!insert(distance_1,data_318_0161398664745_1221) into DataOfDataField
+ !create data_1597_012796475057_771:Data
+ !data_1597_012796475057_771.value:='1597.012796475057'
+!data_1597_012796475057_771.index:=110
+!insert(distance_1,data_1597_012796475057_771) into DataOfDataField
+ !create data_1599_8612622054602_1040:Data
+ !data_1599_8612622054602_1040.value:='1599.8612622054602'
+!data_1599_8612622054602_1040.index:=111
+!insert(distance_1,data_1599_8612622054602_1040) into DataOfDataField
+ !create data_318_0161398664745_511:Data
+ !data_318_0161398664745_511.value:='318.0161398664745'
+!data_318_0161398664745_511.index:=112
+!insert(distance_1,data_318_0161398664745_511) into DataOfDataField
+ !create data_1639_9547046940768_732:Data
+ !data_1639_9547046940768_732.value:='1639.9547046940768'
+!data_1639_9547046940768_732.index:=113
+!insert(distance_1,data_1639_9547046940768_732) into DataOfDataField
+ !create data_1659_5081937795878_1341:Data
+ !data_1659_5081937795878_1341.value:='1659.5081937795878'
+!data_1659_5081937795878_1341.index:=114
+!insert(distance_1,data_1659_5081937795878_1341) into DataOfDataField
+ !create data_1700_7193882037134_261:Data
+ !data_1700_7193882037134_261.value:='1700.7193882037134'
+!data_1700_7193882037134_261.index:=115
+!insert(distance_1,data_1700_7193882037134_261) into DataOfDataField
+ !create data_1585_8221257681732_152:Data
+ !data_1585_8221257681732_152.value:='1585.8221257681732'
+!data_1585_8221257681732_152.index:=116
+!insert(distance_1,data_1585_8221257681732_152) into DataOfDataField
+ !create data_1571_5322499322915_0:Data
+ !data_1571_5322499322915_0.value:='1571.5322499322915'
+!data_1571_5322499322915_0.index:=117
+!insert(distance_1,data_1571_5322499322915_0) into DataOfDataField
+ !create data_1547_4448776775002_720:Data
+ !data_1547_4448776775002_720.value:='1547.4448776775002'
+!data_1547_4448776775002_720.index:=118
+!insert(distance_1,data_1547_4448776775002_720) into DataOfDataField
+ !create data_1540_5337042743697_0:Data
+ !data_1540_5337042743697_0.value:='1540.5337042743697'
+!data_1540_5337042743697_0.index:=119
+!insert(distance_1,data_1540_5337042743697_0) into DataOfDataField
+ !create data_1544_5010947753003_0:Data
+ !data_1544_5010947753003_0.value:='1544.5010947753003'
+!data_1544_5010947753003_0.index:=120
+!insert(distance_1,data_1544_5010947753003_0) into DataOfDataField
+ !create data_1500_2351376472625_1403:Data
+ !data_1500_2351376472625_1403.value:='1500.2351376472625'
+!data_1500_2351376472625_1403.index:=121
+!insert(distance_1,data_1500_2351376472625_1403) into DataOfDataField
+ !create data_1477_551895210139_1193:Data
+ !data_1477_551895210139_1193.value:='1477.551895210139'
+!data_1477_551895210139_1193.index:=122
+!insert(distance_1,data_1477_551895210139_1193) into DataOfDataField
+ !create data_1439_4395409451188_126:Data
+ !data_1439_4395409451188_126.value:='1439.4395409451188'
+!data_1439_4395409451188_126.index:=123
+!insert(distance_1,data_1439_4395409451188_126) into DataOfDataField
+ !create data_1435_7954934424802_1118:Data
+ !data_1435_7954934424802_1118.value:='1435.7954934424802'
+!data_1435_7954934424802_1118.index:=124
+!insert(distance_1,data_1435_7954934424802_1118) into DataOfDataField
+ !create data_1432_4259790662195_22:Data
+ !data_1432_4259790662195_22.value:='1432.4259790662195'
+!data_1432_4259790662195_22.index:=125
+!insert(distance_1,data_1432_4259790662195_22) into DataOfDataField
+ !create data_1439_3252494119035_97:Data
+ !data_1439_3252494119035_97.value:='1439.3252494119035'
+!data_1439_3252494119035_97.index:=126
+!insert(distance_1,data_1439_3252494119035_97) into DataOfDataField
+ !create data_1409_5519779325014_425:Data
+ !data_1409_5519779325014_425.value:='1409.5519779325014'
+!data_1409_5519779325014_425.index:=127
+!insert(distance_1,data_1409_5519779325014_425) into DataOfDataField
+ !create data_1415_5272212241646_265:Data
+ !data_1415_5272212241646_265.value:='1415.5272212241646'
+!data_1415_5272212241646_265.index:=128
+!insert(distance_1,data_1415_5272212241646_265) into DataOfDataField
+ !create data_1418_7374250375435_0:Data
+ !data_1418_7374250375435_0.value:='1418.7374250375435'
+!data_1418_7374250375435_0.index:=129
+!insert(distance_1,data_1418_7374250375435_0) into DataOfDataField
+ !create data_318_0161398664745_1323:Data
+ !data_318_0161398664745_1323.value:='318.0161398664745'
+!data_318_0161398664745_1323.index:=130
+!insert(distance_1,data_318_0161398664745_1323) into DataOfDataField
+ !create data_1395_0977003170403_912:Data
+ !data_1395_0977003170403_912.value:='1395.0977003170403'
+!data_1395_0977003170403_912.index:=131
+!insert(distance_1,data_1395_0977003170403_912) into DataOfDataField
+ !create data_1362_3336682940746_946:Data
+ !data_1362_3336682940746_946.value:='1362.3336682940746'
+!data_1362_3336682940746_946.index:=132
+!insert(distance_1,data_1362_3336682940746_946) into DataOfDataField
+ !create data_1362_3336682940746_606:Data
+ !data_1362_3336682940746_606.value:='1362.3336682940746'
+!data_1362_3336682940746_606.index:=133
+!insert(distance_1,data_1362_3336682940746_606) into DataOfDataField
+ !create data_1409_198890397514_488:Data
+ !data_1409_198890397514_488.value:='1409.198890397514'
+!data_1409_198890397514_488.index:=134
+!insert(distance_1,data_1409_198890397514_488) into DataOfDataField
+ !create data_1411_2524909520907_1274:Data
+ !data_1411_2524909520907_1274.value:='1411.2524909520907'
+!data_1411_2524909520907_1274.index:=135
+!insert(distance_1,data_1411_2524909520907_1274) into DataOfDataField
+ !create data_1411_2524909520907_1087:Data
+ !data_1411_2524909520907_1087.value:='1411.2524909520907'
+!data_1411_2524909520907_1087.index:=136
+!insert(distance_1,data_1411_2524909520907_1087) into DataOfDataField
+ !create data_1406_2002895975656_646:Data
+ !data_1406_2002895975656_646.value:='1406.2002895975656'
+!data_1406_2002895975656_646.index:=137
+!insert(distance_1,data_1406_2002895975656_646) into DataOfDataField
+ !create data_318_0161398664745_1530:Data
+ !data_318_0161398664745_1530.value:='318.0161398664745'
+!data_318_0161398664745_1530.index:=138
+!insert(distance_1,data_318_0161398664745_1530) into DataOfDataField
+ !create data_1450_35979113369_0:Data
+ !data_1450_35979113369_0.value:='1450.35979113369'
+!data_1450_35979113369_0.index:=139
+!insert(distance_1,data_1450_35979113369_0) into DataOfDataField
+ !create data_1435_6157171509512_1472:Data
+ !data_1435_6157171509512_1472.value:='1435.6157171509512'
+!data_1435_6157171509512_1472.index:=140
+!insert(distance_1,data_1435_6157171509512_1472) into DataOfDataField
+ !create data_1465_9762184583533_173:Data
+ !data_1465_9762184583533_173.value:='1465.9762184583533'
+!data_1465_9762184583533_173.index:=141
+!insert(distance_1,data_1465_9762184583533_173) into DataOfDataField
+ !create data_1470_8813975516034_262:Data
+ !data_1470_8813975516034_262.value:='1470.8813975516034'
+!data_1470_8813975516034_262.index:=142
+!insert(distance_1,data_1470_8813975516034_262) into DataOfDataField
+ !create data_1461_7312201708492_1480:Data
+ !data_1461_7312201708492_1480.value:='1461.7312201708492'
+!data_1461_7312201708492_1480.index:=143
+!insert(distance_1,data_1461_7312201708492_1480) into DataOfDataField
+ !create data_1446_9696119906823_1421:Data
+ !data_1446_9696119906823_1421.value:='1446.9696119906823'
+!data_1446_9696119906823_1421.index:=144
+!insert(distance_1,data_1446_9696119906823_1421) into DataOfDataField
+ !create data_1457_8210524811616_992:Data
+ !data_1457_8210524811616_992.value:='1457.8210524811616'
+!data_1457_8210524811616_992.index:=145
+!insert(distance_1,data_1457_8210524811616_992) into DataOfDataField
+ !create data_1457_20976902006_990:Data
+ !data_1457_20976902006_990.value:='1457.20976902006'
+!data_1457_20976902006_990.index:=146
+!insert(distance_1,data_1457_20976902006_990) into DataOfDataField
+ !create data_1456_3747635293444_422:Data
+ !data_1456_3747635293444_422.value:='1456.3747635293444'
+!data_1456_3747635293444_422.index:=147
+!insert(distance_1,data_1456_3747635293444_422) into DataOfDataField
+ !create data_1480_1313116114368_918:Data
+ !data_1480_1313116114368_918.value:='1480.1313116114368'
+!data_1480_1313116114368_918.index:=148
+!insert(distance_1,data_1480_1313116114368_918) into DataOfDataField
+ !create data_1407_333441674455_128:Data
+ !data_1407_333441674455_128.value:='1407.333441674455'
+!data_1407_333441674455_128.index:=149
+!insert(distance_1,data_1407_333441674455_128) into DataOfDataField
+ !create data_1384_007832922735_0:Data
+ !data_1384_007832922735_0.value:='1384.007832922735'
+!data_1384_007832922735_0.index:=150
+!insert(distance_1,data_1384_007832922735_0) into DataOfDataField
+ !create data_1300_72059934986_0:Data
+ !data_1300_72059934986_0.value:='1300.72059934986'
+!data_1300_72059934986_0.index:=151
+!insert(distance_1,data_1300_72059934986_0) into DataOfDataField
+ !create data_1283_0604935521749_826:Data
+ !data_1283_0604935521749_826.value:='1283.0604935521749'
+!data_1283_0604935521749_826.index:=152
+!insert(distance_1,data_1283_0604935521749_826) into DataOfDataField
+ !create data_1154_751207131066_882:Data
+ !data_1154_751207131066_882.value:='1154.751207131066'
+!data_1154_751207131066_882.index:=153
+!insert(distance_1,data_1154_751207131066_882) into DataOfDataField
+ !create data_1139_8601474420266_2:Data
+ !data_1139_8601474420266_2.value:='1139.8601474420266'
+!data_1139_8601474420266_2.index:=154
+!insert(distance_1,data_1139_8601474420266_2) into DataOfDataField
+ !create data_1163_926543220569_0:Data
+ !data_1163_926543220569_0.value:='1163.926543220569'
+!data_1163_926543220569_0.index:=155
+!insert(distance_1,data_1163_926543220569_0) into DataOfDataField
+ !create data_1304_6134959122924_794:Data
+ !data_1304_6134959122924_794.value:='1304.6134959122924'
+!data_1304_6134959122924_794.index:=156
+!insert(distance_1,data_1304_6134959122924_794) into DataOfDataField
+ !create data_1268_3993641301129_502:Data
+ !data_1268_3993641301129_502.value:='1268.3993641301129'
+!data_1268_3993641301129_502.index:=157
+!insert(distance_1,data_1268_3993641301129_502) into DataOfDataField
+ !create data_1328_3506962427757_1073:Data
+ !data_1328_3506962427757_1073.value:='1328.3506962427757'
+!data_1328_3506962427757_1073.index:=158
+!insert(distance_1,data_1328_3506962427757_1073) into DataOfDataField
+ !create data_1315_5318980448212_861:Data
+ !data_1315_5318980448212_861.value:='1315.5318980448212'
+!data_1315_5318980448212_861.index:=159
+!insert(distance_1,data_1315_5318980448212_861) into DataOfDataField
+ !create data_1382_9354743283232_790:Data
+ !data_1382_9354743283232_790.value:='1382.9354743283232'
+!data_1382_9354743283232_790.index:=160
+!insert(distance_1,data_1382_9354743283232_790) into DataOfDataField
+ !create data_1382_9354743283232_1512:Data
+ !data_1382_9354743283232_1512.value:='1382.9354743283232'
+!data_1382_9354743283232_1512.index:=161
+!insert(distance_1,data_1382_9354743283232_1512) into DataOfDataField
+ !create data_1392_1883482496407_289:Data
+ !data_1392_1883482496407_289.value:='1392.1883482496407'
+!data_1392_1883482496407_289.index:=162
+!insert(distance_1,data_1392_1883482496407_289) into DataOfDataField
+ !create data_1390_8330182360503_517:Data
+ !data_1390_8330182360503_517.value:='1390.8330182360503'
+!data_1390_8330182360503_517.index:=163
+!insert(distance_1,data_1390_8330182360503_517) into DataOfDataField
+ !create data_1377_6062072573538_1095:Data
+ !data_1377_6062072573538_1095.value:='1377.6062072573538'
+!data_1377_6062072573538_1095.index:=164
+!insert(distance_1,data_1377_6062072573538_1095) into DataOfDataField
+ !create data_1346_9584105551785_0:Data
+ !data_1346_9584105551785_0.value:='1346.9584105551785'
+!data_1346_9584105551785_0.index:=165
+!insert(distance_1,data_1346_9584105551785_0) into DataOfDataField
+ !create data_1339_463257995554_960:Data
+ !data_1339_463257995554_960.value:='1339.463257995554'
+!data_1339_463257995554_960.index:=166
+!insert(distance_1,data_1339_463257995554_960) into DataOfDataField
+ !create data_1350_9538293656665_760:Data
+ !data_1350_9538293656665_760.value:='1350.9538293656665'
+!data_1350_9538293656665_760.index:=167
+!insert(distance_1,data_1350_9538293656665_760) into DataOfDataField
+ !create data_1231_595159567883_302:Data
+ !data_1231_595159567883_302.value:='1231.595159567883'
+!data_1231_595159567883_302.index:=168
+!insert(distance_1,data_1231_595159567883_302) into DataOfDataField
+ !create data_1231_595159567883_843:Data
+ !data_1231_595159567883_843.value:='1231.595159567883'
+!data_1231_595159567883_843.index:=169
+!insert(distance_1,data_1231_595159567883_843) into DataOfDataField
+ !create data_318_0161398664745_342:Data
+ !data_318_0161398664745_342.value:='318.0161398664745'
+!data_318_0161398664745_342.index:=170
+!insert(distance_1,data_318_0161398664745_342) into DataOfDataField
+ !create data_1234_117579424635_678:Data
+ !data_1234_117579424635_678.value:='1234.117579424635'
+!data_1234_117579424635_678.index:=171
+!insert(distance_1,data_1234_117579424635_678) into DataOfDataField
+ !create data_1236_9680905182952_1148:Data
+ !data_1236_9680905182952_1148.value:='1236.9680905182952'
+!data_1236_9680905182952_1148.index:=172
+!insert(distance_1,data_1236_9680905182952_1148) into DataOfDataField
+ !create data_1214_7609850824235_447:Data
+ !data_1214_7609850824235_447.value:='1214.7609850824235'
+!data_1214_7609850824235_447.index:=173
+!insert(distance_1,data_1214_7609850824235_447) into DataOfDataField
+ !create data_1257_3760553416423_0:Data
+ !data_1257_3760553416423_0.value:='1257.3760553416423'
+!data_1257_3760553416423_0.index:=174
+!insert(distance_1,data_1257_3760553416423_0) into DataOfDataField
+ !create data_1265_844461353748_0:Data
+ !data_1265_844461353748_0.value:='1265.844461353748'
+!data_1265_844461353748_0.index:=175
+!insert(distance_1,data_1265_844461353748_0) into DataOfDataField
+ !create data_1269_021882810887_940:Data
+ !data_1269_021882810887_940.value:='1269.021882810887'
+!data_1269_021882810887_940.index:=176
+!insert(distance_1,data_1269_021882810887_940) into DataOfDataField
+ !create data_1258_4345434786271_898:Data
+ !data_1258_4345434786271_898.value:='1258.4345434786271'
+!data_1258_4345434786271_898.index:=177
+!insert(distance_1,data_1258_4345434786271_898) into DataOfDataField
+ !create data_1249_515373971112_434:Data
+ !data_1249_515373971112_434.value:='1249.515373971112'
+!data_1249_515373971112_434.index:=178
+!insert(distance_1,data_1249_515373971112_434) into DataOfDataField
+ !create data_1255_867696095404_229:Data
+ !data_1255_867696095404_229.value:='1255.867696095404'
+!data_1255_867696095404_229.index:=179
+!insert(distance_1,data_1255_867696095404_229) into DataOfDataField
+ !create data_1284_656996893562_0:Data
+ !data_1284_656996893562_0.value:='1284.656996893562'
+!data_1284_656996893562_0.index:=180
+!insert(distance_1,data_1284_656996893562_0) into DataOfDataField
+ !create data_318_0161398664745_902:Data
+ !data_318_0161398664745_902.value:='318.0161398664745'
+!data_318_0161398664745_902.index:=181
+!insert(distance_1,data_318_0161398664745_902) into DataOfDataField
+ !create data_1239_707371397198_817:Data
+ !data_1239_707371397198_817.value:='1239.707371397198'
+!data_1239_707371397198_817.index:=182
+!insert(distance_1,data_1239_707371397198_817) into DataOfDataField
+ !create data_1237_2692831972115_1454:Data
+ !data_1237_2692831972115_1454.value:='1237.2692831972115'
+!data_1237_2692831972115_1454.index:=183
+!insert(distance_1,data_1237_2692831972115_1454) into DataOfDataField
+ !create data_1237_2692831972115_1427:Data
+ !data_1237_2692831972115_1427.value:='1237.2692831972115'
+!data_1237_2692831972115_1427.index:=184
+!insert(distance_1,data_1237_2692831972115_1427) into DataOfDataField
+ !create data_318_0161398664745_1070:Data
+ !data_318_0161398664745_1070.value:='318.0161398664745'
+!data_318_0161398664745_1070.index:=185
+!insert(distance_1,data_318_0161398664745_1070) into DataOfDataField
+ !create data_1246_1576311187953_217:Data
+ !data_1246_1576311187953_217.value:='1246.1576311187953'
+!data_1246_1576311187953_217.index:=186
+!insert(distance_1,data_1246_1576311187953_217) into DataOfDataField
+ !create data_318_0161398664745_182:Data
+ !data_318_0161398664745_182.value:='318.0161398664745'
+!data_318_0161398664745_182.index:=187
+!insert(distance_1,data_318_0161398664745_182) into DataOfDataField
+ !create data_1237_0742130062322_448:Data
+ !data_1237_0742130062322_448.value:='1237.0742130062322'
+!data_1237_0742130062322_448.index:=188
+!insert(distance_1,data_1237_0742130062322_448) into DataOfDataField
+ !create data_1238_5967635636928_553:Data
+ !data_1238_5967635636928_553.value:='1238.5967635636928'
+!data_1238_5967635636928_553.index:=189
+!insert(distance_1,data_1238_5967635636928_553) into DataOfDataField
+ !create data_1248_2637921499584_389:Data
+ !data_1248_2637921499584_389.value:='1248.2637921499584'
+!data_1248_2637921499584_389.index:=190
+!insert(distance_1,data_1248_2637921499584_389) into DataOfDataField
+ !create data_1243_144309051021_1251:Data
+ !data_1243_144309051021_1251.value:='1243.144309051021'
+!data_1243_144309051021_1251.index:=191
+!insert(distance_1,data_1243_144309051021_1251) into DataOfDataField
+ !create data_1148_4896397364328_841:Data
+ !data_1148_4896397364328_841.value:='1148.4896397364328'
+!data_1148_4896397364328_841.index:=192
+!insert(distance_1,data_1148_4896397364328_841) into DataOfDataField
+ !create data_1166_3789923190354_727:Data
+ !data_1166_3789923190354_727.value:='1166.3789923190354'
+!data_1166_3789923190354_727.index:=193
+!insert(distance_1,data_1166_3789923190354_727) into DataOfDataField
+ !create data_1263_6682333416693_92:Data
+ !data_1263_6682333416693_92.value:='1263.6682333416693'
+!data_1263_6682333416693_92.index:=194
+!insert(distance_1,data_1263_6682333416693_92) into DataOfDataField
+ !create data_1257_46230728199_346:Data
+ !data_1257_46230728199_346.value:='1257.46230728199'
+!data_1257_46230728199_346.index:=195
+!insert(distance_1,data_1257_46230728199_346) into DataOfDataField
+ !create data_1272_2059080173465_466:Data
+ !data_1272_2059080173465_466.value:='1272.2059080173465'
+!data_1272_2059080173465_466.index:=196
+!insert(distance_1,data_1272_2059080173465_466) into DataOfDataField
+ !create data_1267_571656960918_1122:Data
+ !data_1267_571656960918_1122.value:='1267.571656960918'
+!data_1267_571656960918_1122.index:=197
+!insert(distance_1,data_1267_571656960918_1122) into DataOfDataField
+ !create data_1263_6012991936489_212:Data
+ !data_1263_6012991936489_212.value:='1263.6012991936489'
+!data_1263_6012991936489_212.index:=198
+!insert(distance_1,data_1263_6012991936489_212) into DataOfDataField
+ !create data_1253_185995042315_1:Data
+ !data_1253_185995042315_1.value:='1253.185995042315'
+!data_1253_185995042315_1.index:=199
+!insert(distance_1,data_1253_185995042315_1) into DataOfDataField
+ !create data_1074_5196506939033_1528:Data
+ !data_1074_5196506939033_1528.value:='1074.5196506939033'
+!data_1074_5196506939033_1528.index:=200
+!insert(distance_1,data_1074_5196506939033_1528) into DataOfDataField
+ !create data_1106_197975940859_162:Data
+ !data_1106_197975940859_162.value:='1106.197975940859'
+!data_1106_197975940859_162.index:=201
+!insert(distance_1,data_1106_197975940859_162) into DataOfDataField
+ !create data_1108_0642669764231_1314:Data
+ !data_1108_0642669764231_1314.value:='1108.0642669764231'
+!data_1108_0642669764231_1314.index:=202
+!insert(distance_1,data_1108_0642669764231_1314) into DataOfDataField
+ !create data_1108_0642669764231_1156:Data
+ !data_1108_0642669764231_1156.value:='1108.0642669764231'
+!data_1108_0642669764231_1156.index:=203
+!insert(distance_1,data_1108_0642669764231_1156) into DataOfDataField
+ !create data_1094_6844287615925_611:Data
+ !data_1094_6844287615925_611.value:='1094.6844287615925'
+!data_1094_6844287615925_611.index:=204
+!insert(distance_1,data_1094_6844287615925_611) into DataOfDataField
+ !create data_1038_2856801716216_431:Data
+ !data_1038_2856801716216_431.value:='1038.2856801716216'
+!data_1038_2856801716216_431.index:=205
+!insert(distance_1,data_1038_2856801716216_431) into DataOfDataField
+ !create data_1113_709998605903_586:Data
+ !data_1113_709998605903_586.value:='1113.709998605903'
+!data_1113_709998605903_586.index:=206
+!insert(distance_1,data_1113_709998605903_586) into DataOfDataField
+ !create data_1109_9063177344558_962:Data
+ !data_1109_9063177344558_962.value:='1109.9063177344558'
+!data_1109_9063177344558_962.index:=207
+!insert(distance_1,data_1109_9063177344558_962) into DataOfDataField
+ !create data_985_5868841144892_0:Data
+ !data_985_5868841144892_0.value:='985.5868841144892'
+!data_985_5868841144892_0.index:=208
+!insert(distance_1,data_985_5868841144892_0) into DataOfDataField
+ !create data_1081_1564197838925_0:Data
+ !data_1081_1564197838925_0.value:='1081.1564197838925'
+!data_1081_1564197838925_0.index:=209
+!insert(distance_1,data_1081_1564197838925_0) into DataOfDataField
+ !create data_1142_5595717040294_1467:Data
+ !data_1142_5595717040294_1467.value:='1142.5595717040294'
+!data_1142_5595717040294_1467.index:=210
+!insert(distance_1,data_1142_5595717040294_1467) into DataOfDataField
+ !create data_901_5049987805146_1153:Data
+ !data_901_5049987805146_1153.value:='901.5049987805146'
+!data_901_5049987805146_1153.index:=211
+!insert(distance_1,data_901_5049987805146_1153) into DataOfDataField
+ !create data_924_292369603398_0:Data
+ !data_924_292369603398_0.value:='924.292369603398'
+!data_924_292369603398_0.index:=212
+!insert(distance_1,data_924_292369603398_0) into DataOfDataField
+ !create data_893_6113202077752_841:Data
+ !data_893_6113202077752_841.value:='893.6113202077752'
+!data_893_6113202077752_841.index:=213
+!insert(distance_1,data_893_6113202077752_841) into DataOfDataField
+ !create data_893_6113202077752_1463:Data
+ !data_893_6113202077752_1463.value:='893.6113202077752'
+!data_893_6113202077752_1463.index:=214
+!insert(distance_1,data_893_6113202077752_1463) into DataOfDataField
+ !create data_889_6164323810061_369:Data
+ !data_889_6164323810061_369.value:='889.6164323810061'
+!data_889_6164323810061_369.index:=215
+!insert(distance_1,data_889_6164323810061_369) into DataOfDataField
+ !create data_966_680821570076_0:Data
+ !data_966_680821570076_0.value:='966.680821570076'
+!data_966_680821570076_0.index:=216
+!insert(distance_1,data_966_680821570076_0) into DataOfDataField
+ !create data_951_7197213785632_874:Data
+ !data_951_7197213785632_874.value:='951.7197213785632'
+!data_951_7197213785632_874.index:=217
+!insert(distance_1,data_951_7197213785632_874) into DataOfDataField
+ !create data_933_282854766667_990:Data
+ !data_933_282854766667_990.value:='933.282854766667'
+!data_933_282854766667_990.index:=218
+!insert(distance_1,data_933_282854766667_990) into DataOfDataField
+ !create data_894_9356420706964_1215:Data
+ !data_894_9356420706964_1215.value:='894.9356420706964'
+!data_894_9356420706964_1215.index:=219
+!insert(distance_1,data_894_9356420706964_1215) into DataOfDataField
+ !create data_880_013316440811_1027:Data
+ !data_880_013316440811_1027.value:='880.013316440811'
+!data_880_013316440811_1027.index:=220
+!insert(distance_1,data_880_013316440811_1027) into DataOfDataField
+ !create data_318_0161398664745_1127:Data
+ !data_318_0161398664745_1127.value:='318.0161398664745'
+!data_318_0161398664745_1127.index:=221
+!insert(distance_1,data_318_0161398664745_1127) into DataOfDataField
+ !create data_981_343132718168_0:Data
+ !data_981_343132718168_0.value:='981.343132718168'
+!data_981_343132718168_0.index:=222
+!insert(distance_1,data_981_343132718168_0) into DataOfDataField
+ !create data_977_6224971863656_0:Data
+ !data_977_6224971863656_0.value:='977.6224971863656'
+!data_977_6224971863656_0.index:=223
+!insert(distance_1,data_977_6224971863656_0) into DataOfDataField
+ !create data_777_4548592261626_624:Data
+ !data_777_4548592261626_624.value:='777.4548592261626'
+!data_777_4548592261626_624.index:=224
+!insert(distance_1,data_777_4548592261626_624) into DataOfDataField
+ !create data_771_8035998004361_642:Data
+ !data_771_8035998004361_642.value:='771.8035998004361'
+!data_771_8035998004361_642.index:=225
+!insert(distance_1,data_771_8035998004361_642) into DataOfDataField
+ !create data_781_8801071841082_1249:Data
+ !data_781_8801071841082_1249.value:='781.8801071841082'
+!data_781_8801071841082_1249.index:=226
+!insert(distance_1,data_781_8801071841082_1249) into DataOfDataField
+ !create data_788_2420995992895_70:Data
+ !data_788_2420995992895_70.value:='788.2420995992895'
+!data_788_2420995992895_70.index:=227
+!insert(distance_1,data_788_2420995992895_70) into DataOfDataField
+ !create data_761_9190000225219_329:Data
+ !data_761_9190000225219_329.value:='761.9190000225219'
+!data_761_9190000225219_329.index:=228
+!insert(distance_1,data_761_9190000225219_329) into DataOfDataField
+ !create data_761_9190000225219_579:Data
+ !data_761_9190000225219_579.value:='761.9190000225219'
+!data_761_9190000225219_579.index:=229
+!insert(distance_1,data_761_9190000225219_579) into DataOfDataField
+ !create data_763_3614014589533_242:Data
+ !data_763_3614014589533_242.value:='763.3614014589533'
+!data_763_3614014589533_242.index:=230
+!insert(distance_1,data_763_3614014589533_242) into DataOfDataField
+ !create data_763_3614014589533_33:Data
+ !data_763_3614014589533_33.value:='763.3614014589533'
+!data_763_3614014589533_33.index:=231
+!insert(distance_1,data_763_3614014589533_33) into DataOfDataField
+ !create data_767_6316660334552_899:Data
+ !data_767_6316660334552_899.value:='767.6316660334552'
+!data_767_6316660334552_899.index:=232
+!insert(distance_1,data_767_6316660334552_899) into DataOfDataField
+ !create data_318_0161398664745_1077:Data
+ !data_318_0161398664745_1077.value:='318.0161398664745'
+!data_318_0161398664745_1077.index:=233
+!insert(distance_1,data_318_0161398664745_1077) into DataOfDataField
+ !create data_318_0161398664745_529:Data
+ !data_318_0161398664745_529.value:='318.0161398664745'
+!data_318_0161398664745_529.index:=234
+!insert(distance_1,data_318_0161398664745_529) into DataOfDataField
+ !create data_318_0161398664745_1291:Data
+ !data_318_0161398664745_1291.value:='318.0161398664745'
+!data_318_0161398664745_1291.index:=235
+!insert(distance_1,data_318_0161398664745_1291) into DataOfDataField
+ !create data_781_1399028656405_843:Data
+ !data_781_1399028656405_843.value:='781.1399028656405'
+!data_781_1399028656405_843.index:=236
+!insert(distance_1,data_781_1399028656405_843) into DataOfDataField
+ !create data_763_0859247155427_1186:Data
+ !data_763_0859247155427_1186.value:='763.0859247155427'
+!data_763_0859247155427_1186.index:=237
+!insert(distance_1,data_763_0859247155427_1186) into DataOfDataField
+ !create data_752_8984865299014_1361:Data
+ !data_752_8984865299014_1361.value:='752.8984865299014'
+!data_752_8984865299014_1361.index:=238
+!insert(distance_1,data_752_8984865299014_1361) into DataOfDataField
+ !create data_750_6104507632349_1343:Data
+ !data_750_6104507632349_1343.value:='750.6104507632349'
+!data_750_6104507632349_1343.index:=239
+!insert(distance_1,data_750_6104507632349_1343) into DataOfDataField
+ !create data_318_0161398664745_53:Data
+ !data_318_0161398664745_53.value:='318.0161398664745'
+!data_318_0161398664745_53.index:=240
+!insert(distance_1,data_318_0161398664745_53) into DataOfDataField
+ !create data_768_4787286410178_1299:Data
+ !data_768_4787286410178_1299.value:='768.4787286410178'
+!data_768_4787286410178_1299.index:=241
+!insert(distance_1,data_768_4787286410178_1299) into DataOfDataField
+ !create data_763_606020096027_895:Data
+ !data_763_606020096027_895.value:='763.606020096027'
+!data_763_606020096027_895.index:=242
+!insert(distance_1,data_763_606020096027_895) into DataOfDataField
+ !create data_766_7075741434555_372:Data
+ !data_766_7075741434555_372.value:='766.7075741434555'
+!data_766_7075741434555_372.index:=243
+!insert(distance_1,data_766_7075741434555_372) into DataOfDataField
+ !create data_770_2898718315149_633:Data
+ !data_770_2898718315149_633.value:='770.2898718315149'
+!data_770_2898718315149_633.index:=244
+!insert(distance_1,data_770_2898718315149_633) into DataOfDataField
+ !create data_761_0572295148027_343:Data
+ !data_761_0572295148027_343.value:='761.0572295148027'
+!data_761_0572295148027_343.index:=245
+!insert(distance_1,data_761_0572295148027_343) into DataOfDataField
+ !create data_766_4946980263268_1357:Data
+ !data_766_4946980263268_1357.value:='766.4946980263268'
+!data_766_4946980263268_1357.index:=246
+!insert(distance_1,data_766_4946980263268_1357) into DataOfDataField
+ !create data_770_0439955885381_10:Data
+ !data_770_0439955885381_10.value:='770.0439955885381'
+!data_770_0439955885381_10.index:=247
+!insert(distance_1,data_770_0439955885381_10) into DataOfDataField
+ !create data_318_0161398664745_448:Data
+ !data_318_0161398664745_448.value:='318.0161398664745'
+!data_318_0161398664745_448.index:=248
+!insert(distance_1,data_318_0161398664745_448) into DataOfDataField
+ !create data_896_1506286639972_1242:Data
+ !data_896_1506286639972_1242.value:='896.1506286639972'
+!data_896_1506286639972_1242.index:=249
+!insert(distance_1,data_896_1506286639972_1242) into DataOfDataField
+ !create data_730_3469400657941_135:Data
+ !data_730_3469400657941_135.value:='730.3469400657941'
+!data_730_3469400657941_135.index:=250
+!insert(distance_1,data_730_3469400657941_135) into DataOfDataField
+ !create data_730_3469400657941_880:Data
+ !data_730_3469400657941_880.value:='730.3469400657941'
+!data_730_3469400657941_880.index:=251
+!insert(distance_1,data_730_3469400657941_880) into DataOfDataField
+ !create data_927_489455843911_176:Data
+ !data_927_489455843911_176.value:='927.489455843911'
+!data_927_489455843911_176.index:=252
+!insert(distance_1,data_927_489455843911_176) into DataOfDataField
+ !create data_977_0123792539536_838:Data
+ !data_977_0123792539536_838.value:='977.0123792539536'
+!data_977_0123792539536_838.index:=253
+!insert(distance_1,data_977_0123792539536_838) into DataOfDataField
+ !create data_318_0161398664745_1133:Data
+ !data_318_0161398664745_1133.value:='318.0161398664745'
+!data_318_0161398664745_1133.index:=254
+!insert(distance_1,data_318_0161398664745_1133) into DataOfDataField
+ !create data_925_5881259822082_285:Data
+ !data_925_5881259822082_285.value:='925.5881259822082'
+!data_925_5881259822082_285.index:=255
+!insert(distance_1,data_925_5881259822082_285) into DataOfDataField
+ !create data_938_2076197879328_0:Data
+ !data_938_2076197879328_0.value:='938.2076197879328'
+!data_938_2076197879328_0.index:=256
+!insert(distance_1,data_938_2076197879328_0) into DataOfDataField
+ !create data_934_4404411492968_348:Data
+ !data_934_4404411492968_348.value:='934.4404411492968'
+!data_934_4404411492968_348.index:=257
+!insert(distance_1,data_934_4404411492968_348) into DataOfDataField
+ !create data_934_4404411492968_729:Data
+ !data_934_4404411492968_729.value:='934.4404411492968'
+!data_934_4404411492968_729.index:=258
+!insert(distance_1,data_934_4404411492968_729) into DataOfDataField
+ !create data_937_1810607980458_834:Data
+ !data_937_1810607980458_834.value:='937.1810607980458'
+!data_937_1810607980458_834.index:=259
+!insert(distance_1,data_937_1810607980458_834) into DataOfDataField
+ !create data_778_7571612623009_1120:Data
+ !data_778_7571612623009_1120.value:='778.7571612623009'
+!data_778_7571612623009_1120.index:=260
+!insert(distance_1,data_778_7571612623009_1120) into DataOfDataField
+ !create data_775_1110165503471_1508:Data
+ !data_775_1110165503471_1508.value:='775.1110165503471'
+!data_775_1110165503471_1508.index:=261
+!insert(distance_1,data_775_1110165503471_1508) into DataOfDataField
+ !create data_771_0304491358636_1306:Data
+ !data_771_0304491358636_1306.value:='771.0304491358636'
+!data_771_0304491358636_1306.index:=262
+!insert(distance_1,data_771_0304491358636_1306) into DataOfDataField
+ !create data_658_5316941547003_636:Data
+ !data_658_5316941547003_636.value:='658.5316941547003'
+!data_658_5316941547003_636.index:=263
+!insert(distance_1,data_658_5316941547003_636) into DataOfDataField
+ !create data_658_5316941547003_495:Data
+ !data_658_5316941547003_495.value:='658.5316941547003'
+!data_658_5316941547003_495.index:=264
+!insert(distance_1,data_658_5316941547003_495) into DataOfDataField
+ !create data_318_0161398664745_684:Data
+ !data_318_0161398664745_684.value:='318.0161398664745'
+!data_318_0161398664745_684.index:=265
+!insert(distance_1,data_318_0161398664745_684) into DataOfDataField
+ !create data_625_3055763591058_793:Data
+ !data_625_3055763591058_793.value:='625.3055763591058'
+!data_625_3055763591058_793.index:=266
+!insert(distance_1,data_625_3055763591058_793) into DataOfDataField
+ !create data_646_9669006405827_1199:Data
+ !data_646_9669006405827_1199.value:='646.9669006405827'
+!data_646_9669006405827_1199.index:=267
+!insert(distance_1,data_646_9669006405827_1199) into DataOfDataField
+ !create data_633_9531006335782_451:Data
+ !data_633_9531006335782_451.value:='633.9531006335782'
+!data_633_9531006335782_451.index:=268
+!insert(distance_1,data_633_9531006335782_451) into DataOfDataField
+ !create data_895_955445253339_1439:Data
+ !data_895_955445253339_1439.value:='895.955445253339'
+!data_895_955445253339_1439.index:=269
+!insert(distance_1,data_895_955445253339_1439) into DataOfDataField
+ !create data_894_7516760934556_1281:Data
+ !data_894_7516760934556_1281.value:='894.7516760934556'
+!data_894_7516760934556_1281.index:=270
+!insert(distance_1,data_894_7516760934556_1281) into DataOfDataField
+ !create data_964_3976654894988_0:Data
+ !data_964_3976654894988_0.value:='964.3976654894988'
+!data_964_3976654894988_0.index:=271
+!insert(distance_1,data_964_3976654894988_0) into DataOfDataField
+ !create data_976_9869575435569_25:Data
+ !data_976_9869575435569_25.value:='976.9869575435569'
+!data_976_9869575435569_25.index:=272
+!insert(distance_1,data_976_9869575435569_25) into DataOfDataField
+ !create data_974_3784891590908_0:Data
+ !data_974_3784891590908_0.value:='974.3784891590908'
+!data_974_3784891590908_0.index:=273
+!insert(distance_1,data_974_3784891590908_0) into DataOfDataField
+ !create data_974_223262007867_339:Data
+ !data_974_223262007867_339.value:='974.223262007867'
+!data_974_223262007867_339.index:=274
+!insert(distance_1,data_974_223262007867_339) into DataOfDataField
+ !create data_974_223262007867_1223:Data
+ !data_974_223262007867_1223.value:='974.223262007867'
+!data_974_223262007867_1223.index:=275
+!insert(distance_1,data_974_223262007867_1223) into DataOfDataField
+ !create data_976_9943647968154_524:Data
+ !data_976_9943647968154_524.value:='976.9943647968154'
+!data_976_9943647968154_524.index:=276
+!insert(distance_1,data_976_9943647968154_524) into DataOfDataField
+ !create data_318_0161398664745_1503:Data
+ !data_318_0161398664745_1503.value:='318.0161398664745'
+!data_318_0161398664745_1503.index:=277
+!insert(distance_1,data_318_0161398664745_1503) into DataOfDataField
+ !create data_318_0161398664745_1091:Data
+ !data_318_0161398664745_1091.value:='318.0161398664745'
+!data_318_0161398664745_1091.index:=278
+!insert(distance_1,data_318_0161398664745_1091) into DataOfDataField
+ !create data_318_0161398664745_594:Data
+ !data_318_0161398664745_594.value:='318.0161398664745'
+!data_318_0161398664745_594.index:=279
+!insert(distance_1,data_318_0161398664745_594) into DataOfDataField
+ !create data_968_366219831777_1437:Data
+ !data_968_366219831777_1437.value:='968.366219831777'
+!data_968_366219831777_1437.index:=280
+!insert(distance_1,data_968_366219831777_1437) into DataOfDataField
+ !create data_968_366219831777_259:Data
+ !data_968_366219831777_259.value:='968.366219831777'
+!data_968_366219831777_259.index:=281
+!insert(distance_1,data_968_366219831777_259) into DataOfDataField
+ !create data_975_1569657243728_0:Data
+ !data_975_1569657243728_0.value:='975.1569657243728'
+!data_975_1569657243728_0.index:=282
+!insert(distance_1,data_975_1569657243728_0) into DataOfDataField
+ !create data_974_0206336764_0:Data
+ !data_974_0206336764_0.value:='974.0206336764'
+!data_974_0206336764_0.index:=283
+!insert(distance_1,data_974_0206336764_0) into DataOfDataField
+ !create data_1028_0638910691462_475:Data
+ !data_1028_0638910691462_475.value:='1028.0638910691462'
+!data_1028_0638910691462_475.index:=284
+!insert(distance_1,data_1028_0638910691462_475) into DataOfDataField
+ !create data_1017_0664795446532_0:Data
+ !data_1017_0664795446532_0.value:='1017.0664795446532'
+!data_1017_0664795446532_0.index:=285
+!insert(distance_1,data_1017_0664795446532_0) into DataOfDataField
+ !create data_1051_3513254073157_1273:Data
+ !data_1051_3513254073157_1273.value:='1051.3513254073157'
+!data_1051_3513254073157_1273.index:=286
+!insert(distance_1,data_1051_3513254073157_1273) into DataOfDataField
+ !create data_1101_3940410768323_0:Data
+ !data_1101_3940410768323_0.value:='1101.3940410768323'
+!data_1101_3940410768323_0.index:=287
+!insert(distance_1,data_1101_3940410768323_0) into DataOfDataField
+ !create data_1104_228300067354_152:Data
+ !data_1104_228300067354_152.value:='1104.228300067354'
+!data_1104_228300067354_152.index:=288
+!insert(distance_1,data_1104_228300067354_152) into DataOfDataField
+ !create data_1098_5038176871617_454:Data
+ !data_1098_5038176871617_454.value:='1098.5038176871617'
+!data_1098_5038176871617_454.index:=289
+!insert(distance_1,data_1098_5038176871617_454) into DataOfDataField
+ !create data_1093_7152239662034_1235:Data
+ !data_1093_7152239662034_1235.value:='1093.7152239662034'
+!data_1093_7152239662034_1235.index:=290
+!insert(distance_1,data_1093_7152239662034_1235) into DataOfDataField
+ !create data_1097_4849324512782_94:Data
+ !data_1097_4849324512782_94.value:='1097.4849324512782'
+!data_1097_4849324512782_94.index:=291
+!insert(distance_1,data_1097_4849324512782_94) into DataOfDataField
+ !create data_1097_4849324512782_51:Data
+ !data_1097_4849324512782_51.value:='1097.4849324512782'
+!data_1097_4849324512782_51.index:=292
+!insert(distance_1,data_1097_4849324512782_51) into DataOfDataField
+ !create data_1111_638738895581_0:Data
+ !data_1111_638738895581_0.value:='1111.638738895581'
+!data_1111_638738895581_0.index:=293
+!insert(distance_1,data_1111_638738895581_0) into DataOfDataField
+ !create data_1107_889013324462_1188:Data
+ !data_1107_889013324462_1188.value:='1107.889013324462'
+!data_1107_889013324462_1188.index:=294
+!insert(distance_1,data_1107_889013324462_1188) into DataOfDataField
+ !create data_318_0161398664745_350:Data
+ !data_318_0161398664745_350.value:='318.0161398664745'
+!data_318_0161398664745_350.index:=295
+!insert(distance_1,data_318_0161398664745_350) into DataOfDataField
+ !create data_1108_4604656568356_833:Data
+ !data_1108_4604656568356_833.value:='1108.4604656568356'
+!data_1108_4604656568356_833.index:=296
+!insert(distance_1,data_1108_4604656568356_833) into DataOfDataField
+ !create data_1108_7834231500412_635:Data
+ !data_1108_7834231500412_635.value:='1108.7834231500412'
+!data_1108_7834231500412_635.index:=297
+!insert(distance_1,data_1108_7834231500412_635) into DataOfDataField
+ !create data_1105_5983045939638_683:Data
+ !data_1105_5983045939638_683.value:='1105.5983045939638'
+!data_1105_5983045939638_683.index:=298
+!insert(distance_1,data_1105_5983045939638_683) into DataOfDataField
+ !create data_1103_0960673796517_0:Data
+ !data_1103_0960673796517_0.value:='1103.0960673796517'
+!data_1103_0960673796517_0.index:=299
+!insert(distance_1,data_1103_0960673796517_0) into DataOfDataField
+ !create data_1101_554884548736_16:Data
+ !data_1101_554884548736_16.value:='1101.554884548736'
+!data_1101_554884548736_16.index:=300
+!insert(distance_1,data_1101_554884548736_16) into DataOfDataField
+ !create data_1105_8094891809455_1412:Data
+ !data_1105_8094891809455_1412.value:='1105.8094891809455'
+!data_1105_8094891809455_1412.index:=301
+!insert(distance_1,data_1105_8094891809455_1412) into DataOfDataField
+ !create data_1083_3646164589056_24:Data
+ !data_1083_3646164589056_24.value:='1083.3646164589056'
+!data_1083_3646164589056_24.index:=302
+!insert(distance_1,data_1083_3646164589056_24) into DataOfDataField
+ !create data_1083_3646164589056_1020:Data
+ !data_1083_3646164589056_1020.value:='1083.3646164589056'
+!data_1083_3646164589056_1020.index:=303
+!insert(distance_1,data_1083_3646164589056_1020) into DataOfDataField
+ !create data_1099_8769811260177_1270:Data
+ !data_1099_8769811260177_1270.value:='1099.8769811260177'
+!data_1099_8769811260177_1270.index:=304
+!insert(distance_1,data_1099_8769811260177_1270) into DataOfDataField
+ !create data_1101_896070501081_0:Data
+ !data_1101_896070501081_0.value:='1101.896070501081'
+!data_1101_896070501081_0.index:=305
+!insert(distance_1,data_1101_896070501081_0) into DataOfDataField
+ !create data_1098_6989333989266_32:Data
+ !data_1098_6989333989266_32.value:='1098.6989333989266'
+!data_1098_6989333989266_32.index:=306
+!insert(distance_1,data_1098_6989333989266_32) into DataOfDataField
+ !create data_1084_1718518108537_1142:Data
+ !data_1084_1718518108537_1142.value:='1084.1718518108537'
+!data_1084_1718518108537_1142.index:=307
+!insert(distance_1,data_1084_1718518108537_1142) into DataOfDataField
+ !create data_933_820225480842_0:Data
+ !data_933_820225480842_0.value:='933.820225480842'
+!data_933_820225480842_0.index:=308
+!insert(distance_1,data_933_820225480842_0) into DataOfDataField
+ !create data_918_5710894765804_0:Data
+ !data_918_5710894765804_0.value:='918.5710894765804'
+!data_918_5710894765804_0.index:=309
+!insert(distance_1,data_918_5710894765804_0) into DataOfDataField
+ !create data_939_0346011993114_1135:Data
+ !data_939_0346011993114_1135.value:='939.0346011993114'
+!data_939_0346011993114_1135.index:=310
+!insert(distance_1,data_939_0346011993114_1135) into DataOfDataField
+ !create data_932_4421451512792_417:Data
+ !data_932_4421451512792_417.value:='932.4421451512792'
+!data_932_4421451512792_417.index:=311
+!insert(distance_1,data_932_4421451512792_417) into DataOfDataField
+ !create data_318_0161398664745_1470:Data
+ !data_318_0161398664745_1470.value:='318.0161398664745'
+!data_318_0161398664745_1470.index:=312
+!insert(distance_1,data_318_0161398664745_1470) into DataOfDataField
+ !create data_918_5571988320212_0:Data
+ !data_918_5571988320212_0.value:='918.5571988320212'
+!data_918_5571988320212_0.index:=313
+!insert(distance_1,data_918_5571988320212_0) into DataOfDataField
+ !create data_916_7448235753636_0:Data
+ !data_916_7448235753636_0.value:='916.7448235753636'
+!data_916_7448235753636_0.index:=314
+!insert(distance_1,data_916_7448235753636_0) into DataOfDataField
+ !create data_911_8813969163936_762:Data
+ !data_911_8813969163936_762.value:='911.8813969163936'
+!data_911_8813969163936_762.index:=315
+!insert(distance_1,data_911_8813969163936_762) into DataOfDataField
+ !create data_914_3328597592462_888:Data
+ !data_914_3328597592462_888.value:='914.3328597592462'
+!data_914_3328597592462_888.index:=316
+!insert(distance_1,data_914_3328597592462_888) into DataOfDataField
+ !create data_904_422737527337_220:Data
+ !data_904_422737527337_220.value:='904.422737527337'
+!data_904_422737527337_220.index:=317
+!insert(distance_1,data_904_422737527337_220) into DataOfDataField
+ !create data_904_26849628359_0:Data
+ !data_904_26849628359_0.value:='904.26849628359'
+!data_904_26849628359_0.index:=318
+!insert(distance_1,data_904_26849628359_0) into DataOfDataField
+ !create data_961_739792221424_378:Data
+ !data_961_739792221424_378.value:='961.739792221424'
+!data_961_739792221424_378.index:=319
+!insert(distance_1,data_961_739792221424_378) into DataOfDataField
+ !create data_991_2251106069486_317:Data
+ !data_991_2251106069486_317.value:='991.2251106069486'
+!data_991_2251106069486_317.index:=320
+!insert(distance_1,data_991_2251106069486_317) into DataOfDataField
+ !create data_970_6150866152532_0:Data
+ !data_970_6150866152532_0.value:='970.6150866152532'
+!data_970_6150866152532_0.index:=321
+!insert(distance_1,data_970_6150866152532_0) into DataOfDataField
+ !create data_963_8914599559596_0:Data
+ !data_963_8914599559596_0.value:='963.8914599559596'
+!data_963_8914599559596_0.index:=322
+!insert(distance_1,data_963_8914599559596_0) into DataOfDataField
+ !create data_992_4071258846276_0:Data
+ !data_992_4071258846276_0.value:='992.4071258846276'
+!data_992_4071258846276_0.index:=323
+!insert(distance_1,data_992_4071258846276_0) into DataOfDataField
+ !create data_977_584066761782_0:Data
+ !data_977_584066761782_0.value:='977.584066761782'
+!data_977_584066761782_0.index:=324
+!insert(distance_1,data_977_584066761782_0) into DataOfDataField
+ !create data_973_141758513006_1536:Data
+ !data_973_141758513006_1536.value:='973.141758513006'
+!data_973_141758513006_1536.index:=325
+!insert(distance_1,data_973_141758513006_1536) into DataOfDataField
+ !create data_1021_6503580291744_0:Data
+ !data_1021_6503580291744_0.value:='1021.6503580291744'
+!data_1021_6503580291744_0.index:=326
+!insert(distance_1,data_1021_6503580291744_0) into DataOfDataField
+ !create data_936_0690758777484_0:Data
+ !data_936_0690758777484_0.value:='936.0690758777484'
+!data_936_0690758777484_0.index:=327
+!insert(distance_1,data_936_0690758777484_0) into DataOfDataField
+ !create data_942_4917548884582_795:Data
+ !data_942_4917548884582_795.value:='942.4917548884582'
+!data_942_4917548884582_795.index:=328
+!insert(distance_1,data_942_4917548884582_795) into DataOfDataField
+ !create data_947_2284395058496_0:Data
+ !data_947_2284395058496_0.value:='947.2284395058496'
+!data_947_2284395058496_0.index:=329
+!insert(distance_1,data_947_2284395058496_0) into DataOfDataField
+ !create data_919_65479827951_0:Data
+ !data_919_65479827951_0.value:='919.65479827951'
+!data_919_65479827951_0.index:=330
+!insert(distance_1,data_919_65479827951_0) into DataOfDataField
+ !create data_914_3952629403244_0:Data
+ !data_914_3952629403244_0.value:='914.3952629403244'
+!data_914_3952629403244_0.index:=331
+!insert(distance_1,data_914_3952629403244_0) into DataOfDataField
+ !create data_903_8599032311616_466:Data
+ !data_903_8599032311616_466.value:='903.8599032311616'
+!data_903_8599032311616_466.index:=332
+!insert(distance_1,data_903_8599032311616_466) into DataOfDataField
+ !create data_906_18806958483_0:Data
+ !data_906_18806958483_0.value:='906.18806958483'
+!data_906_18806958483_0.index:=333
+!insert(distance_1,data_906_18806958483_0) into DataOfDataField
+ !create data_979_7775763308592_0:Data
+ !data_979_7775763308592_0.value:='979.7775763308592'
+!data_979_7775763308592_0.index:=334
+!insert(distance_1,data_979_7775763308592_0) into DataOfDataField
+ !create data_978_8417323340548_1120:Data
+ !data_978_8417323340548_1120.value:='978.8417323340548'
+!data_978_8417323340548_1120.index:=335
+!insert(distance_1,data_978_8417323340548_1120) into DataOfDataField
+ !create data_939_2889180908855_0:Data
+ !data_939_2889180908855_0.value:='939.2889180908855'
+!data_939_2889180908855_0.index:=336
+!insert(distance_1,data_939_2889180908855_0) into DataOfDataField
+ !create data_961_4547551214145_1351:Data
+ !data_961_4547551214145_1351.value:='961.4547551214145'
+!data_961_4547551214145_1351.index:=337
+!insert(distance_1,data_961_4547551214145_1351) into DataOfDataField
+ !create data_944_0790459896898_242:Data
+ !data_944_0790459896898_242.value:='944.0790459896898'
+!data_944_0790459896898_242.index:=338
+!insert(distance_1,data_944_0790459896898_242) into DataOfDataField
+ !create data_318_0161398664745_483:Data
+ !data_318_0161398664745_483.value:='318.0161398664745'
+!data_318_0161398664745_483.index:=339
+!insert(distance_1,data_318_0161398664745_483) into DataOfDataField
+ !create data_622_9860538784466_1063:Data
+ !data_622_9860538784466_1063.value:='622.9860538784466'
+!data_622_9860538784466_1063.index:=340
+!insert(distance_1,data_622_9860538784466_1063) into DataOfDataField
+ !create data_627_9312416088133_641:Data
+ !data_627_9312416088133_641.value:='627.9312416088133'
+!data_627_9312416088133_641.index:=341
+!insert(distance_1,data_627_9312416088133_641) into DataOfDataField
+ !create data_627_9312416088133_1044:Data
+ !data_627_9312416088133_1044.value:='627.9312416088133'
+!data_627_9312416088133_1044.index:=342
+!insert(distance_1,data_627_9312416088133_1044) into DataOfDataField
+ !create data_625_4216441666547_62:Data
+ !data_625_4216441666547_62.value:='625.4216441666547'
+!data_625_4216441666547_62.index:=343
+!insert(distance_1,data_625_4216441666547_62) into DataOfDataField
+ !create data_318_0161398664745_1113:Data
+ !data_318_0161398664745_1113.value:='318.0161398664745'
+!data_318_0161398664745_1113.index:=344
+!insert(distance_1,data_318_0161398664745_1113) into DataOfDataField
+ !create data_318_0161398664745_484:Data
+ !data_318_0161398664745_484.value:='318.0161398664745'
+!data_318_0161398664745_484.index:=345
+!insert(distance_1,data_318_0161398664745_484) into DataOfDataField
+ !create data_620_5043978587663_1191:Data
+ !data_620_5043978587663_1191.value:='620.5043978587663'
+!data_620_5043978587663_1191.index:=346
+!insert(distance_1,data_620_5043978587663_1191) into DataOfDataField
+ !create data_612_1711870720686_258:Data
+ !data_612_1711870720686_258.value:='612.1711870720686'
+!data_612_1711870720686_258.index:=347
+!insert(distance_1,data_612_1711870720686_258) into DataOfDataField
+ !create data_657_3493218368471_1273:Data
+ !data_657_3493218368471_1273.value:='657.3493218368471'
+!data_657_3493218368471_1273.index:=348
+!insert(distance_1,data_657_3493218368471_1273) into DataOfDataField
+ !create data_645_5371604881633_1109:Data
+ !data_645_5371604881633_1109.value:='645.5371604881633'
+!data_645_5371604881633_1109.index:=349
+!insert(distance_1,data_645_5371604881633_1109) into DataOfDataField
+ !create data_647_539318156262_580:Data
+ !data_647_539318156262_580.value:='647.539318156262'
+!data_647_539318156262_580.index:=350
+!insert(distance_1,data_647_539318156262_580) into DataOfDataField
+ !create data_647_539318156262_1377:Data
+ !data_647_539318156262_1377.value:='647.539318156262'
+!data_647_539318156262_1377.index:=351
+!insert(distance_1,data_647_539318156262_1377) into DataOfDataField
+ !create data_550_2711081498467_71:Data
+ !data_550_2711081498467_71.value:='550.2711081498467'
+!data_550_2711081498467_71.index:=352
+!insert(distance_1,data_550_2711081498467_71) into DataOfDataField
+ !create data_318_0161398664745_1434:Data
+ !data_318_0161398664745_1434.value:='318.0161398664745'
+!data_318_0161398664745_1434.index:=353
+!insert(distance_1,data_318_0161398664745_1434) into DataOfDataField
+ !create data_545_0970573175131_384:Data
+ !data_545_0970573175131_384.value:='545.0970573175131'
+!data_545_0970573175131_384.index:=354
+!insert(distance_1,data_545_0970573175131_384) into DataOfDataField
+ !create data_535_4010394475031_1085:Data
+ !data_535_4010394475031_1085.value:='535.4010394475031'
+!data_535_4010394475031_1085.index:=355
+!insert(distance_1,data_535_4010394475031_1085) into DataOfDataField
+ !create data_318_0161398664745_1117:Data
+ !data_318_0161398664745_1117.value:='318.0161398664745'
+!data_318_0161398664745_1117.index:=356
+!insert(distance_1,data_318_0161398664745_1117) into DataOfDataField
+ !create data_675_543634742872_919:Data
+ !data_675_543634742872_919.value:='675.543634742872'
+!data_675_543634742872_919.index:=357
+!insert(distance_1,data_675_543634742872_919) into DataOfDataField
+ !create data_669_2542263970064_1076:Data
+ !data_669_2542263970064_1076.value:='669.2542263970064'
+!data_669_2542263970064_1076.index:=358
+!insert(distance_1,data_669_2542263970064_1076) into DataOfDataField
+ !create data_669_2542263970064_1151:Data
+ !data_669_2542263970064_1151.value:='669.2542263970064'
+!data_669_2542263970064_1151.index:=359
+!insert(distance_1,data_669_2542263970064_1151) into DataOfDataField
+ !create data_689_5867740001303_1096:Data
+ !data_689_5867740001303_1096.value:='689.5867740001303'
+!data_689_5867740001303_1096.index:=360
+!insert(distance_1,data_689_5867740001303_1096) into DataOfDataField
+ !create data_693_6803579241308_87:Data
+ !data_693_6803579241308_87.value:='693.6803579241308'
+!data_693_6803579241308_87.index:=361
+!insert(distance_1,data_693_6803579241308_87) into DataOfDataField
+ !create data_693_6803579241308_767:Data
+ !data_693_6803579241308_767.value:='693.6803579241308'
+!data_693_6803579241308_767.index:=362
+!insert(distance_1,data_693_6803579241308_767) into DataOfDataField
+ !create data_693_6803579241308_1061:Data
+ !data_693_6803579241308_1061.value:='693.6803579241308'
+!data_693_6803579241308_1061.index:=363
+!insert(distance_1,data_693_6803579241308_1061) into DataOfDataField
+ !create data_318_0161398664745_1516:Data
+ !data_318_0161398664745_1516.value:='318.0161398664745'
+!data_318_0161398664745_1516.index:=364
+!insert(distance_1,data_318_0161398664745_1516) into DataOfDataField
+ !create data_661_5100802117493_1124:Data
+ !data_661_5100802117493_1124.value:='661.5100802117493'
+!data_661_5100802117493_1124.index:=365
+!insert(distance_1,data_661_5100802117493_1124) into DataOfDataField
+ !create data_687_4829612765942_488:Data
+ !data_687_4829612765942_488.value:='687.4829612765942'
+!data_687_4829612765942_488.index:=366
+!insert(distance_1,data_687_4829612765942_488) into DataOfDataField
+ !create data_691_0827739754055_898:Data
+ !data_691_0827739754055_898.value:='691.0827739754055'
+!data_691_0827739754055_898.index:=367
+!insert(distance_1,data_691_0827739754055_898) into DataOfDataField
+ !create data_661_5047626184781_1380:Data
+ !data_661_5047626184781_1380.value:='661.5047626184781'
+!data_661_5047626184781_1380.index:=368
+!insert(distance_1,data_661_5047626184781_1380) into DataOfDataField
+ !create data_720_6487167862066_975:Data
+ !data_720_6487167862066_975.value:='720.6487167862066'
+!data_720_6487167862066_975.index:=369
+!insert(distance_1,data_720_6487167862066_975) into DataOfDataField
+ !create data_679_3648637331044_35:Data
+ !data_679_3648637331044_35.value:='679.3648637331044'
+!data_679_3648637331044_35.index:=370
+!insert(distance_1,data_679_3648637331044_35) into DataOfDataField
+ !create data_675_0271959042965_378:Data
+ !data_675_0271959042965_378.value:='675.0271959042965'
+!data_675_0271959042965_378.index:=371
+!insert(distance_1,data_675_0271959042965_378) into DataOfDataField
+ !create data_676_4683184292815_664:Data
+ !data_676_4683184292815_664.value:='676.4683184292815'
+!data_676_4683184292815_664.index:=372
+!insert(distance_1,data_676_4683184292815_664) into DataOfDataField
+ !create data_680_9885276172199_767:Data
+ !data_680_9885276172199_767.value:='680.9885276172199'
+!data_680_9885276172199_767.index:=373
+!insert(distance_1,data_680_9885276172199_767) into DataOfDataField
+ !create data_686_4826057412203_814:Data
+ !data_686_4826057412203_814.value:='686.4826057412203'
+!data_686_4826057412203_814.index:=374
+!insert(distance_1,data_686_4826057412203_814) into DataOfDataField
+ !create data_684_9331386041355_1190:Data
+ !data_684_9331386041355_1190.value:='684.9331386041355'
+!data_684_9331386041355_1190.index:=375
+!insert(distance_1,data_684_9331386041355_1190) into DataOfDataField
+ !create data_684_7462048310624_1162:Data
+ !data_684_7462048310624_1162.value:='684.7462048310624'
+!data_684_7462048310624_1162.index:=376
+!insert(distance_1,data_684_7462048310624_1162) into DataOfDataField
+ !create data_669_2640704882939_115:Data
+ !data_669_2640704882939_115.value:='669.2640704882939'
+!data_669_2640704882939_115.index:=377
+!insert(distance_1,data_669_2640704882939_115) into DataOfDataField
+ !create data_669_2640704882939_1073:Data
+ !data_669_2640704882939_1073.value:='669.2640704882939'
+!data_669_2640704882939_1073.index:=378
+!insert(distance_1,data_669_2640704882939_1073) into DataOfDataField
+ !create data_739_0748023413574_1421:Data
+ !data_739_0748023413574_1421.value:='739.0748023413574'
+!data_739_0748023413574_1421.index:=379
+!insert(distance_1,data_739_0748023413574_1421) into DataOfDataField
+ !create data_770_8494928637314_1015:Data
+ !data_770_8494928637314_1015.value:='770.8494928637314'
+!data_770_8494928637314_1015.index:=380
+!insert(distance_1,data_770_8494928637314_1015) into DataOfDataField
+ !create data_926_9844246021936_0:Data
+ !data_926_9844246021936_0.value:='926.9844246021936'
+!data_926_9844246021936_0.index:=381
+!insert(distance_1,data_926_9844246021936_0) into DataOfDataField
+ !create data_318_0161398664745_762:Data
+ !data_318_0161398664745_762.value:='318.0161398664745'
+!data_318_0161398664745_762.index:=382
+!insert(distance_1,data_318_0161398664745_762) into DataOfDataField
+ !create data_920_75323664273_527:Data
+ !data_920_75323664273_527.value:='920.75323664273'
+!data_920_75323664273_527.index:=383
+!insert(distance_1,data_920_75323664273_527) into DataOfDataField
+ !create data_928_6591658618704_1256:Data
+ !data_928_6591658618704_1256.value:='928.6591658618704'
+!data_928_6591658618704_1256.index:=384
+!insert(distance_1,data_928_6591658618704_1256) into DataOfDataField
+ !create data_818_6563018541792_252:Data
+ !data_818_6563018541792_252.value:='818.6563018541792'
+!data_818_6563018541792_252.index:=385
+!insert(distance_1,data_818_6563018541792_252) into DataOfDataField
+ !create data_816_5276726808461_1235:Data
+ !data_816_5276726808461_1235.value:='816.5276726808461'
+!data_816_5276726808461_1235.index:=386
+!insert(distance_1,data_816_5276726808461_1235) into DataOfDataField
+ !create data_886_4591849723645_194:Data
+ !data_886_4591849723645_194.value:='886.4591849723645'
+!data_886_4591849723645_194.index:=387
+!insert(distance_1,data_886_4591849723645_194) into DataOfDataField
+ !create data_550_7166569729968_1038:Data
+ !data_550_7166569729968_1038.value:='550.7166569729968'
+!data_550_7166569729968_1038.index:=388
+!insert(distance_1,data_550_7166569729968_1038) into DataOfDataField
+ !create data_510_8210594943109_1256:Data
+ !data_510_8210594943109_1256.value:='510.8210594943109'
+!data_510_8210594943109_1256.index:=389
+!insert(distance_1,data_510_8210594943109_1256) into DataOfDataField
+ !create data_500_5336128526412_0:Data
+ !data_500_5336128526412_0.value:='500.5336128526412'
+!data_500_5336128526412_0.index:=390
+!insert(distance_1,data_500_5336128526412_0) into DataOfDataField
+ !create data_499_224183065654_1528:Data
+ !data_499_224183065654_1528.value:='499.224183065654'
+!data_499_224183065654_1528.index:=391
+!insert(distance_1,data_499_224183065654_1528) into DataOfDataField
+ !create data_499_224183065654_698:Data
+ !data_499_224183065654_698.value:='499.224183065654'
+!data_499_224183065654_698.index:=392
+!insert(distance_1,data_499_224183065654_698) into DataOfDataField
+ !create data_497_0310566697486_1377:Data
+ !data_497_0310566697486_1377.value:='497.0310566697486'
+!data_497_0310566697486_1377.index:=393
+!insert(distance_1,data_497_0310566697486_1377) into DataOfDataField
+ !create data_485_38161442037546_13:Data
+ !data_485_38161442037546_13.value:='485.38161442037546'
+!data_485_38161442037546_13.index:=394
+!insert(distance_1,data_485_38161442037546_13) into DataOfDataField
+ !create data_478_7630743776161_1330:Data
+ !data_478_7630743776161_1330.value:='478.7630743776161'
+!data_478_7630743776161_1330.index:=395
+!insert(distance_1,data_478_7630743776161_1330) into DataOfDataField
+ !create data_489_6732978182953_144:Data
+ !data_489_6732978182953_144.value:='489.6732978182953'
+!data_489_6732978182953_144.index:=396
+!insert(distance_1,data_489_6732978182953_144) into DataOfDataField
+ !create data_489_6732978182953_148:Data
+ !data_489_6732978182953_148.value:='489.6732978182953'
+!data_489_6732978182953_148.index:=397
+!insert(distance_1,data_489_6732978182953_148) into DataOfDataField
+ !create data_489_4471101944668_0:Data
+ !data_489_4471101944668_0.value:='489.4471101944668'
+!data_489_4471101944668_0.index:=398
+!insert(distance_1,data_489_4471101944668_0) into DataOfDataField
+ !create data_489_4471101944668_143:Data
+ !data_489_4471101944668_143.value:='489.4471101944668'
+!data_489_4471101944668_143.index:=399
+!insert(distance_1,data_489_4471101944668_143) into DataOfDataField
+ !create data_489_4471101944668_194:Data
+ !data_489_4471101944668_194.value:='489.4471101944668'
+!data_489_4471101944668_194.index:=400
+!insert(distance_1,data_489_4471101944668_194) into DataOfDataField
+ !create data_489_4471101944668_1295:Data
+ !data_489_4471101944668_1295.value:='489.4471101944668'
+!data_489_4471101944668_1295.index:=401
+!insert(distance_1,data_489_4471101944668_1295) into DataOfDataField
+ !create data_488_0984204042803_1383:Data
+ !data_488_0984204042803_1383.value:='488.0984204042803'
+!data_488_0984204042803_1383.index:=402
+!insert(distance_1,data_488_0984204042803_1383) into DataOfDataField
+ !create data_491_96367743293047_1007:Data
+ !data_491_96367743293047_1007.value:='491.96367743293047'
+!data_491_96367743293047_1007.index:=403
+!insert(distance_1,data_491_96367743293047_1007) into DataOfDataField
+ !create data_496_0515377396173_1335:Data
+ !data_496_0515377396173_1335.value:='496.0515377396173'
+!data_496_0515377396173_1335.index:=404
+!insert(distance_1,data_496_0515377396173_1335) into DataOfDataField
+ !create data_493_5390206267195_792:Data
+ !data_493_5390206267195_792.value:='493.5390206267195'
+!data_493_5390206267195_792.index:=405
+!insert(distance_1,data_493_5390206267195_792) into DataOfDataField
+ !create data_495_7802077042528_0:Data
+ !data_495_7802077042528_0.value:='495.7802077042528'
+!data_495_7802077042528_0.index:=406
+!insert(distance_1,data_495_7802077042528_0) into DataOfDataField
+ !create data_560_1749725849882_1126:Data
+ !data_560_1749725849882_1126.value:='560.1749725849882'
+!data_560_1749725849882_1126.index:=407
+!insert(distance_1,data_560_1749725849882_1126) into DataOfDataField
+ !create data_560_1749725849882_1057:Data
+ !data_560_1749725849882_1057.value:='560.1749725849882'
+!data_560_1749725849882_1057.index:=408
+!insert(distance_1,data_560_1749725849882_1057) into DataOfDataField
+ !create data_610_607684695333_32:Data
+ !data_610_607684695333_32.value:='610.607684695333'
+!data_610_607684695333_32.index:=409
+!insert(distance_1,data_610_607684695333_32) into DataOfDataField
+ !create data_602_1481020080345_625:Data
+ !data_602_1481020080345_625.value:='602.1481020080345'
+!data_602_1481020080345_625.index:=410
+!insert(distance_1,data_602_1481020080345_625) into DataOfDataField
+ !create data_563_4041231220157_217:Data
+ !data_563_4041231220157_217.value:='563.4041231220157'
+!data_563_4041231220157_217.index:=411
+!insert(distance_1,data_563_4041231220157_217) into DataOfDataField
+ !create data_573_2436913255804_483:Data
+ !data_573_2436913255804_483.value:='573.2436913255804'
+!data_573_2436913255804_483.index:=412
+!insert(distance_1,data_573_2436913255804_483) into DataOfDataField
+ !create data_425_525644663372_1050:Data
+ !data_425_525644663372_1050.value:='425.525644663372'
+!data_425_525644663372_1050.index:=413
+!insert(distance_1,data_425_525644663372_1050) into DataOfDataField
+ !create data_487_3937699004037_0:Data
+ !data_487_3937699004037_0.value:='487.3937699004037'
+!data_487_3937699004037_0.index:=414
+!insert(distance_1,data_487_3937699004037_0) into DataOfDataField
+ !create data_525_4733842204913_758:Data
+ !data_525_4733842204913_758.value:='525.4733842204913'
+!data_525_4733842204913_758.index:=415
+!insert(distance_1,data_525_4733842204913_758) into DataOfDataField
+ !create data_429_2861658486385_659:Data
+ !data_429_2861658486385_659.value:='429.2861658486385'
+!data_429_2861658486385_659.index:=416
+!insert(distance_1,data_429_2861658486385_659) into DataOfDataField
+ !create data_318_0161398664745_760:Data
+ !data_318_0161398664745_760.value:='318.0161398664745'
+!data_318_0161398664745_760.index:=417
+!insert(distance_1,data_318_0161398664745_760) into DataOfDataField
+ !create data_420_4457853327084_634:Data
+ !data_420_4457853327084_634.value:='420.4457853327084'
+!data_420_4457853327084_634.index:=418
+!insert(distance_1,data_420_4457853327084_634) into DataOfDataField
+ !create data_420_4457853327084_598:Data
+ !data_420_4457853327084_598.value:='420.4457853327084'
+!data_420_4457853327084_598.index:=419
+!insert(distance_1,data_420_4457853327084_598) into DataOfDataField
+ !create data_418_9919090902855_0:Data
+ !data_418_9919090902855_0.value:='418.9919090902855'
+!data_418_9919090902855_0.index:=420
+!insert(distance_1,data_418_9919090902855_0) into DataOfDataField
+ !create data_318_0161398664745_1464:Data
+ !data_318_0161398664745_1464.value:='318.0161398664745'
+!data_318_0161398664745_1464.index:=421
+!insert(distance_1,data_318_0161398664745_1464) into DataOfDataField
+ !create data_318_0161398664745_172:Data
+ !data_318_0161398664745_172.value:='318.0161398664745'
+!data_318_0161398664745_172.index:=422
+!insert(distance_1,data_318_0161398664745_172) into DataOfDataField
+ !create data_418_7030046083417_1463:Data
+ !data_418_7030046083417_1463.value:='418.7030046083417'
+!data_418_7030046083417_1463.index:=423
+!insert(distance_1,data_418_7030046083417_1463) into DataOfDataField
+ !create data_418_7030046083417_749:Data
+ !data_418_7030046083417_749.value:='418.7030046083417'
+!data_418_7030046083417_749.index:=424
+!insert(distance_1,data_418_7030046083417_749) into DataOfDataField
+ !create data_418_7030046083417_816:Data
+ !data_418_7030046083417_816.value:='418.7030046083417'
+!data_418_7030046083417_816.index:=425
+!insert(distance_1,data_418_7030046083417_816) into DataOfDataField
+ !create data_318_0161398664745_795:Data
+ !data_318_0161398664745_795.value:='318.0161398664745'
+!data_318_0161398664745_795.index:=426
+!insert(distance_1,data_318_0161398664745_795) into DataOfDataField
+ !create data_499_6990396797162_486:Data
+ !data_499_6990396797162_486.value:='499.6990396797162'
+!data_499_6990396797162_486.index:=427
+!insert(distance_1,data_499_6990396797162_486) into DataOfDataField
+ !create data_462_03189678984575_353:Data
+ !data_462_03189678984575_353.value:='462.03189678984575'
+!data_462_03189678984575_353.index:=428
+!insert(distance_1,data_462_03189678984575_353) into DataOfDataField
+ !create data_437_8072526639152_0:Data
+ !data_437_8072526639152_0.value:='437.8072526639152'
+!data_437_8072526639152_0.index:=429
+!insert(distance_1,data_437_8072526639152_0) into DataOfDataField
+ !create data_318_0161398664745_935:Data
+ !data_318_0161398664745_935.value:='318.0161398664745'
+!data_318_0161398664745_935.index:=430
+!insert(distance_1,data_318_0161398664745_935) into DataOfDataField
+ !create data_452_2093413527136_767:Data
+ !data_452_2093413527136_767.value:='452.2093413527136'
+!data_452_2093413527136_767.index:=431
+!insert(distance_1,data_452_2093413527136_767) into DataOfDataField
+ !create data_487_8536257311271_242:Data
+ !data_487_8536257311271_242.value:='487.8536257311271'
+!data_487_8536257311271_242.index:=432
+!insert(distance_1,data_487_8536257311271_242) into DataOfDataField
+ !create data_486_295656940518_1398:Data
+ !data_486_295656940518_1398.value:='486.295656940518'
+!data_486_295656940518_1398.index:=433
+!insert(distance_1,data_486_295656940518_1398) into DataOfDataField
+ !create data_499_8173756400421_0:Data
+ !data_499_8173756400421_0.value:='499.8173756400421'
+!data_499_8173756400421_0.index:=434
+!insert(distance_1,data_499_8173756400421_0) into DataOfDataField
+ !create data_506_7976183126111_0:Data
+ !data_506_7976183126111_0.value:='506.7976183126111'
+!data_506_7976183126111_0.index:=435
+!insert(distance_1,data_506_7976183126111_0) into DataOfDataField
+ !create data_773_7483737320424_783:Data
+ !data_773_7483737320424_783.value:='773.7483737320424'
+!data_773_7483737320424_783.index:=436
+!insert(distance_1,data_773_7483737320424_783) into DataOfDataField
+ !create data_318_0161398664745_806:Data
+ !data_318_0161398664745_806.value:='318.0161398664745'
+!data_318_0161398664745_806.index:=437
+!insert(distance_1,data_318_0161398664745_806) into DataOfDataField
+ !create data_808_2171477360944_1360:Data
+ !data_808_2171477360944_1360.value:='808.2171477360944'
+!data_808_2171477360944_1360.index:=438
+!insert(distance_1,data_808_2171477360944_1360) into DataOfDataField
+ !create data_318_0161398664745_1162:Data
+ !data_318_0161398664745_1162.value:='318.0161398664745'
+!data_318_0161398664745_1162.index:=439
+!insert(distance_1,data_318_0161398664745_1162) into DataOfDataField
+ !create data_853_1172863299354_876:Data
+ !data_853_1172863299354_876.value:='853.1172863299354'
+!data_853_1172863299354_876.index:=440
+!insert(distance_1,data_853_1172863299354_876) into DataOfDataField
+ !create data_840_9352052230838_577:Data
+ !data_840_9352052230838_577.value:='840.9352052230838'
+!data_840_9352052230838_577.index:=441
+!insert(distance_1,data_840_9352052230838_577) into DataOfDataField
+ !create data_621_9205364028911_1085:Data
+ !data_621_9205364028911_1085.value:='621.9205364028911'
+!data_621_9205364028911_1085.index:=442
+!insert(distance_1,data_621_9205364028911_1085) into DataOfDataField
+ !create data_675_7296207061694_539:Data
+ !data_675_7296207061694_539.value:='675.7296207061694'
+!data_675_7296207061694_539.index:=443
+!insert(distance_1,data_675_7296207061694_539) into DataOfDataField
+ !create data_318_0161398664745_173:Data
+ !data_318_0161398664745_173.value:='318.0161398664745'
+!data_318_0161398664745_173.index:=444
+!insert(distance_1,data_318_0161398664745_173) into DataOfDataField
+ !create data_990_7979129677354_1341:Data
+ !data_990_7979129677354_1341.value:='990.7979129677354'
+!data_990_7979129677354_1341.index:=445
+!insert(distance_1,data_990_7979129677354_1341) into DataOfDataField
+ !create data_985_8411584729332_0:Data
+ !data_985_8411584729332_0.value:='985.8411584729332'
+!data_985_8411584729332_0.index:=446
+!insert(distance_1,data_985_8411584729332_0) into DataOfDataField
+ !create data_1003_3572915219946_1220:Data
+ !data_1003_3572915219946_1220.value:='1003.3572915219946'
+!data_1003_3572915219946_1220.index:=447
+!insert(distance_1,data_1003_3572915219946_1220) into DataOfDataField
+ !create data_993_6211273123766_1414:Data
+ !data_993_6211273123766_1414.value:='993.6211273123766'
+!data_993_6211273123766_1414.index:=448
+!insert(distance_1,data_993_6211273123766_1414) into DataOfDataField
+ !create data_1036_1238950360143_60:Data
+ !data_1036_1238950360143_60.value:='1036.1238950360143'
+!data_1036_1238950360143_60.index:=449
+!insert(distance_1,data_1036_1238950360143_60) into DataOfDataField
+ !create data_1135_522399301174_0:Data
+ !data_1135_522399301174_0.value:='1135.522399301174'
+!data_1135_522399301174_0.index:=450
+!insert(distance_1,data_1135_522399301174_0) into DataOfDataField
+ !create data_318_0161398664745_654:Data
+ !data_318_0161398664745_654.value:='318.0161398664745'
+!data_318_0161398664745_654.index:=451
+!insert(distance_1,data_318_0161398664745_654) into DataOfDataField
+ !create data_1103_1598574543348_1454:Data
+ !data_1103_1598574543348_1454.value:='1103.1598574543348'
+!data_1103_1598574543348_1454.index:=452
+!insert(distance_1,data_1103_1598574543348_1454) into DataOfDataField
+ !create data_1108_6259901069195_1077:Data
+ !data_1108_6259901069195_1077.value:='1108.6259901069195'
+!data_1108_6259901069195_1077.index:=453
+!insert(distance_1,data_1108_6259901069195_1077) into DataOfDataField
+ !create data_318_0161398664745_105:Data
+ !data_318_0161398664745_105.value:='318.0161398664745'
+!data_318_0161398664745_105.index:=454
+!insert(distance_1,data_318_0161398664745_105) into DataOfDataField
+ !create data_1069_117783090222_765:Data
+ !data_1069_117783090222_765.value:='1069.117783090222'
+!data_1069_117783090222_765.index:=455
+!insert(distance_1,data_1069_117783090222_765) into DataOfDataField
+ !create data_901_1902030866844_0:Data
+ !data_901_1902030866844_0.value:='901.1902030866844'
+!data_901_1902030866844_0.index:=456
+!insert(distance_1,data_901_1902030866844_0) into DataOfDataField
+ !create data_897_7449464230173_162:Data
+ !data_897_7449464230173_162.value:='897.7449464230173'
+!data_897_7449464230173_162.index:=457
+!insert(distance_1,data_897_7449464230173_162) into DataOfDataField
+ !create data_318_0161398664745_534:Data
+ !data_318_0161398664745_534.value:='318.0161398664745'
+!data_318_0161398664745_534.index:=458
+!insert(distance_1,data_318_0161398664745_534) into DataOfDataField
+ !create data_906_8065665180512_986:Data
+ !data_906_8065665180512_986.value:='906.8065665180512'
+!data_906_8065665180512_986.index:=459
+!insert(distance_1,data_906_8065665180512_986) into DataOfDataField
+ !create data_929_1960321155198_704:Data
+ !data_929_1960321155198_704.value:='929.1960321155198'
+!data_929_1960321155198_704.index:=460
+!insert(distance_1,data_929_1960321155198_704) into DataOfDataField
+ !create data_969_7090320334172_87:Data
+ !data_969_7090320334172_87.value:='969.7090320334172'
+!data_969_7090320334172_87.index:=461
+!insert(distance_1,data_969_7090320334172_87) into DataOfDataField
+ !create data_973_1630695629416_863:Data
+ !data_973_1630695629416_863.value:='973.1630695629416'
+!data_973_1630695629416_863.index:=462
+!insert(distance_1,data_973_1630695629416_863) into DataOfDataField
+ !create data_854_6370461985713_642:Data
+ !data_854_6370461985713_642.value:='854.6370461985713'
+!data_854_6370461985713_642.index:=463
+!insert(distance_1,data_854_6370461985713_642) into DataOfDataField
+ !create data_854_6370461985713_525:Data
+ !data_854_6370461985713_525.value:='854.6370461985713'
+!data_854_6370461985713_525.index:=464
+!insert(distance_1,data_854_6370461985713_525) into DataOfDataField
+ !create data_845_5296379367988_715:Data
+ !data_845_5296379367988_715.value:='845.5296379367988'
+!data_845_5296379367988_715.index:=465
+!insert(distance_1,data_845_5296379367988_715) into DataOfDataField
+ !create data_842_6978623913154_171:Data
+ !data_842_6978623913154_171.value:='842.6978623913154'
+!data_842_6978623913154_171.index:=466
+!insert(distance_1,data_842_6978623913154_171) into DataOfDataField
+ !create data_855_32689583837_672:Data
+ !data_855_32689583837_672.value:='855.32689583837'
+!data_855_32689583837_672.index:=467
+!insert(distance_1,data_855_32689583837_672) into DataOfDataField
+ !create data_871_2492815314333_250:Data
+ !data_871_2492815314333_250.value:='871.2492815314333'
+!data_871_2492815314333_250.index:=468
+!insert(distance_1,data_871_2492815314333_250) into DataOfDataField
+ !create data_893_8734807069424_1216:Data
+ !data_893_8734807069424_1216.value:='893.8734807069424'
+!data_893_8734807069424_1216.index:=469
+!insert(distance_1,data_893_8734807069424_1216) into DataOfDataField
+ !create data_893_8734807069424_462:Data
+ !data_893_8734807069424_462.value:='893.8734807069424'
+!data_893_8734807069424_462.index:=470
+!insert(distance_1,data_893_8734807069424_462) into DataOfDataField
+ !create data_318_0161398664745_670:Data
+ !data_318_0161398664745_670.value:='318.0161398664745'
+!data_318_0161398664745_670.index:=471
+!insert(distance_1,data_318_0161398664745_670) into DataOfDataField
+ !create data_922_4186000661624_0:Data
+ !data_922_4186000661624_0.value:='922.4186000661624'
+!data_922_4186000661624_0.index:=472
+!insert(distance_1,data_922_4186000661624_0) into DataOfDataField
+ !create data_952_0661234540206_605:Data
+ !data_952_0661234540206_605.value:='952.0661234540206'
+!data_952_0661234540206_605.index:=473
+!insert(distance_1,data_952_0661234540206_605) into DataOfDataField
+ !create data_937_5104817713174_362:Data
+ !data_937_5104817713174_362.value:='937.5104817713174'
+!data_937_5104817713174_362.index:=474
+!insert(distance_1,data_937_5104817713174_362) into DataOfDataField
+ !create data_770_5335907309803_1536:Data
+ !data_770_5335907309803_1536.value:='770.5335907309803'
+!data_770_5335907309803_1536.index:=475
+!insert(distance_1,data_770_5335907309803_1536) into DataOfDataField
+ !create data_831_0864423641883_124:Data
+ !data_831_0864423641883_124.value:='831.0864423641883'
+!data_831_0864423641883_124.index:=476
+!insert(distance_1,data_831_0864423641883_124) into DataOfDataField
+ !create data_715_7141447122647_727:Data
+ !data_715_7141447122647_727.value:='715.7141447122647'
+!data_715_7141447122647_727.index:=477
+!insert(distance_1,data_715_7141447122647_727) into DataOfDataField
+ !create data_843_3500722419476_484:Data
+ !data_843_3500722419476_484.value:='843.3500722419476'
+!data_843_3500722419476_484.index:=478
+!insert(distance_1,data_843_3500722419476_484) into DataOfDataField
+ !create data_857_4889958680074_791:Data
+ !data_857_4889958680074_791.value:='857.4889958680074'
+!data_857_4889958680074_791.index:=479
+!insert(distance_1,data_857_4889958680074_791) into DataOfDataField
+ !create data_1091_2022589258772_343:Data
+ !data_1091_2022589258772_343.value:='1091.2022589258772'
+!data_1091_2022589258772_343.index:=480
+!insert(distance_1,data_1091_2022589258772_343) into DataOfDataField
+ !create data_1061_8510702407657_0:Data
+ !data_1061_8510702407657_0.value:='1061.8510702407657'
+!data_1061_8510702407657_0.index:=481
+!insert(distance_1,data_1061_8510702407657_0) into DataOfDataField
+ !create data_1052_6843763935085_0:Data
+ !data_1052_6843763935085_0.value:='1052.6843763935085'
+!data_1052_6843763935085_0.index:=482
+!insert(distance_1,data_1052_6843763935085_0) into DataOfDataField
+ !create data_318_0161398664745_524:Data
+ !data_318_0161398664745_524.value:='318.0161398664745'
+!data_318_0161398664745_524.index:=483
+!insert(distance_1,data_318_0161398664745_524) into DataOfDataField
+ !create data_1069_9875777712873_53:Data
+ !data_1069_9875777712873_53.value:='1069.9875777712873'
+!data_1069_9875777712873_53.index:=484
+!insert(distance_1,data_1069_9875777712873_53) into DataOfDataField
+ !create data_1068_5671179981862_731:Data
+ !data_1068_5671179981862_731.value:='1068.5671179981862'
+!data_1068_5671179981862_731.index:=485
+!insert(distance_1,data_1068_5671179981862_731) into DataOfDataField
+ !create data_318_0161398664745_444:Data
+ !data_318_0161398664745_444.value:='318.0161398664745'
+!data_318_0161398664745_444.index:=486
+!insert(distance_1,data_318_0161398664745_444) into DataOfDataField
+ !create data_1085_7457884476742_1534:Data
+ !data_1085_7457884476742_1534.value:='1085.7457884476742'
+!data_1085_7457884476742_1534.index:=487
+!insert(distance_1,data_1085_7457884476742_1534) into DataOfDataField
+ !create data_1083_6053552383528_122:Data
+ !data_1083_6053552383528_122.value:='1083.6053552383528'
+!data_1083_6053552383528_122.index:=488
+!insert(distance_1,data_1083_6053552383528_122) into DataOfDataField
+ !create data_1088_2038211241063_0:Data
+ !data_1088_2038211241063_0.value:='1088.2038211241063'
+!data_1088_2038211241063_0.index:=489
+!insert(distance_1,data_1088_2038211241063_0) into DataOfDataField
+ !create data_1076_8887449691067_1376:Data
+ !data_1076_8887449691067_1376.value:='1076.8887449691067'
+!data_1076_8887449691067_1376.index:=490
+!insert(distance_1,data_1076_8887449691067_1376) into DataOfDataField
+ !create data_1115_9357056548074_1078:Data
+ !data_1115_9357056548074_1078.value:='1115.9357056548074'
+!data_1115_9357056548074_1078.index:=491
+!insert(distance_1,data_1115_9357056548074_1078) into DataOfDataField
+ !create data_981_4283477509208_0:Data
+ !data_981_4283477509208_0.value:='981.4283477509208'
+!data_981_4283477509208_0.index:=492
+!insert(distance_1,data_981_4283477509208_0) into DataOfDataField
+ !create data_1026_6257212832036_121:Data
+ !data_1026_6257212832036_121.value:='1026.6257212832036'
+!data_1026_6257212832036_121.index:=493
+!insert(distance_1,data_1026_6257212832036_121) into DataOfDataField
+ !create data_318_0161398664745_320:Data
+ !data_318_0161398664745_320.value:='318.0161398664745'
+!data_318_0161398664745_320.index:=494
+!insert(distance_1,data_318_0161398664745_320) into DataOfDataField
+ !create data_1011_2229335706804_1028:Data
+ !data_1011_2229335706804_1028.value:='1011.2229335706804'
+!data_1011_2229335706804_1028.index:=495
+!insert(distance_1,data_1011_2229335706804_1028) into DataOfDataField
+ !create data_318_0161398664745_779:Data
+ !data_318_0161398664745_779.value:='318.0161398664745'
+!data_318_0161398664745_779.index:=496
+!insert(distance_1,data_318_0161398664745_779) into DataOfDataField
+ !create data_1019_0257634443358_1260:Data
+ !data_1019_0257634443358_1260.value:='1019.0257634443358'
+!data_1019_0257634443358_1260.index:=497
+!insert(distance_1,data_1019_0257634443358_1260) into DataOfDataField
+ !create data_1019_0257634443358_1057:Data
+ !data_1019_0257634443358_1057.value:='1019.0257634443358'
+!data_1019_0257634443358_1057.index:=498
+!insert(distance_1,data_1019_0257634443358_1057) into DataOfDataField
+ !create data_1113_007307516755_1249:Data
+ !data_1113_007307516755_1249.value:='1113.007307516755'
+!data_1113_007307516755_1249.index:=499
+!insert(distance_1,data_1113_007307516755_1249) into DataOfDataField
+ !create data_769_5449569364015_803:Data
+ !data_769_5449569364015_803.value:='769.5449569364015'
+!data_769_5449569364015_803.index:=500
+!insert(distance_1,data_769_5449569364015_803) into DataOfDataField
+ !create data_727_9859145158163_1104:Data
+ !data_727_9859145158163_1104.value:='727.9859145158163'
+!data_727_9859145158163_1104.index:=501
+!insert(distance_1,data_727_9859145158163_1104) into DataOfDataField
+ !create data_682_4705441563998_159:Data
+ !data_682_4705441563998_159.value:='682.4705441563998'
+!data_682_4705441563998_159.index:=502
+!insert(distance_1,data_682_4705441563998_159) into DataOfDataField
+ !create data_819_1610217255322_817:Data
+ !data_819_1610217255322_817.value:='819.1610217255322'
+!data_819_1610217255322_817.index:=503
+!insert(distance_1,data_819_1610217255322_817) into DataOfDataField
+ !create data_683_7256298159368_893:Data
+ !data_683_7256298159368_893.value:='683.7256298159368'
+!data_683_7256298159368_893.index:=504
+!insert(distance_1,data_683_7256298159368_893) into DataOfDataField
+ !create data_795_2002676121698_457:Data
+ !data_795_2002676121698_457.value:='795.2002676121698'
+!data_795_2002676121698_457.index:=505
+!insert(distance_1,data_795_2002676121698_457) into DataOfDataField
+ !create data_761_1090257005982_415:Data
+ !data_761_1090257005982_415.value:='761.1090257005982'
+!data_761_1090257005982_415.index:=506
+!insert(distance_1,data_761_1090257005982_415) into DataOfDataField
+ !create data_792_326871070312_1507:Data
+ !data_792_326871070312_1507.value:='792.326871070312'
+!data_792_326871070312_1507.index:=507
+!insert(distance_1,data_792_326871070312_1507) into DataOfDataField
+ !create data_705_0206317873482_866:Data
+ !data_705_0206317873482_866.value:='705.0206317873482'
+!data_705_0206317873482_866.index:=508
+!insert(distance_1,data_705_0206317873482_866) into DataOfDataField
+ !create data_722_2414653678146_613:Data
+ !data_722_2414653678146_613.value:='722.2414653678146'
+!data_722_2414653678146_613.index:=509
+!insert(distance_1,data_722_2414653678146_613) into DataOfDataField
+ !create data_951_0013509649232_0:Data
+ !data_951_0013509649232_0.value:='951.0013509649232'
+!data_951_0013509649232_0.index:=510
+!insert(distance_1,data_951_0013509649232_0) into DataOfDataField
+ !create data_989_8250189993933_800:Data
+ !data_989_8250189993933_800.value:='989.8250189993933'
+!data_989_8250189993933_800.index:=511
+!insert(distance_1,data_989_8250189993933_800) into DataOfDataField
+ !create data_318_0161398664745_1329:Data
+ !data_318_0161398664745_1329.value:='318.0161398664745'
+!data_318_0161398664745_1329.index:=512
+!insert(distance_1,data_318_0161398664745_1329) into DataOfDataField
+ !create data_952_3209052427744_615:Data
+ !data_952_3209052427744_615.value:='952.3209052427744'
+!data_952_3209052427744_615.index:=513
+!insert(distance_1,data_952_3209052427744_615) into DataOfDataField
+ !create data_907_93442733085_0:Data
+ !data_907_93442733085_0.value:='907.93442733085'
+!data_907_93442733085_0.index:=514
+!insert(distance_1,data_907_93442733085_0) into DataOfDataField
+ !create data_318_0161398664745_884:Data
+ !data_318_0161398664745_884.value:='318.0161398664745'
+!data_318_0161398664745_884.index:=515
+!insert(distance_1,data_318_0161398664745_884) into DataOfDataField
+ 

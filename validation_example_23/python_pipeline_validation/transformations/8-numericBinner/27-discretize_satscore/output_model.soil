@@ -1,0 +1,2474 @@
+!create output:DataDictionary
+ !output.rows:=516
+!output.name:='output'
+!create ETHNICITY_1:Categorical
+ !ETHNICITY_1.ordinal:=false
+ !insert(output,ETHNICITY_1) into DataDictDataField
+ !create value_C_1:ValueField
+ !value_C_1.value:= 'C'
+!value_C_1.count:=362
+!insert(ETHNICITY_1,value_C_1) into ValidValues
+ !create value_N_1:ValueField
+ !value_N_1.value:= 'N'
+!value_N_1.count:=50
+!insert(ETHNICITY_1,value_N_1) into ValidValues
+ !create value_B_1:ValueField
+ !value_B_1.value:= 'B'
+!value_B_1.count:=41
+!insert(ETHNICITY_1,value_B_1) into ValidValues
+ !create value_H_1:ValueField
+ !value_H_1.value:= 'H'
+!value_H_1.count:=24
+!insert(ETHNICITY_1,value_H_1) into ValidValues
+ !create value_A_1:ValueField
+ !value_A_1.value:= 'A'
+!value_A_1.count:=21
+!insert(ETHNICITY_1,value_A_1) into ValidValues
+ !create value_O_1:ValueField
+ !value_O_1.value:= 'O'
+!value_O_1.count:=17
+!insert(ETHNICITY_1,value_O_1) into ValidValues
+ !create value_I_1:ValueField
+ !value_I_1.value:= 'I'
+!value_I_1.count:=1
+!insert(ETHNICITY_1,value_I_1) into ValidValues
+ !ETHNICITY_1.target:=false
+ !ETHNICITY_1.id:=false
+ !ETHNICITY_1.dataType:=DataType::string
+!ETHNICITY_1.name:='ETHNICITY'
+!create TERRITORY_1:Continuous
+ !insert(output,TERRITORY_1) into DataDictDataField
+ !create interval_TERRITORY_1:Interval
+!interval_TERRITORY_1.leftMargin:=0.0
+!interval_TERRITORY_1.rightMargin:=8.0
+!interval_TERRITORY_1.closure:=ClosureType::closedClosed
+!interval_TERRITORY_1.count:=516
+!insert(TERRITORY_1,interval_TERRITORY_1) into ContinuousInterval
+ !TERRITORY_1.target:=false
+ !TERRITORY_1.id:=false
+ !TERRITORY_1.dataType:=DataType::integer
+!TERRITORY_1.name:='TERRITORY'
+!create ACADEMIC_INTEREST_1_1:Categorical
+ !ACADEMIC_INTEREST_1_1.ordinal:=false
+ !insert(output,ACADEMIC_INTEREST_1_1) into DataDictDataField
+ !ACADEMIC_INTEREST_1_1.target:=false
+ !ACADEMIC_INTEREST_1_1.id:=false
+ !ACADEMIC_INTEREST_1_1.dataType:=DataType::string
+!ACADEMIC_INTEREST_1_1.name:='ACADEMIC_INTEREST_1'
+!create ACADEMIC_INTEREST_2_1:Categorical
+ !ACADEMIC_INTEREST_2_1.ordinal:=false
+ !insert(output,ACADEMIC_INTEREST_2_1) into DataDictDataField
+ !ACADEMIC_INTEREST_2_1.target:=false
+ !ACADEMIC_INTEREST_2_1.id:=false
+ !ACADEMIC_INTEREST_2_1.dataType:=DataType::string
+!ACADEMIC_INTEREST_2_1.name:='ACADEMIC_INTEREST_2'
+!create Enroll_1:Continuous
+ !insert(output,Enroll_1) into DataDictDataField
+ !create interval_Enroll_1:Interval
+!interval_Enroll_1.leftMargin:=0.0
+!interval_Enroll_1.rightMargin:=1.0
+!interval_Enroll_1.closure:=ClosureType::closedClosed
+!interval_Enroll_1.count:=516
+!insert(Enroll_1,interval_Enroll_1) into ContinuousInterval
+ !Enroll_1.target:=false
+ !Enroll_1.id:=false
+ !Enroll_1.dataType:=DataType::integer
+!Enroll_1.name:='Enroll'
+!create TOTAL_CONTACTS_1:Continuous
+ !insert(output,TOTAL_CONTACTS_1) into DataDictDataField
+ !create interval_TOTAL_CONTACTS_1:Interval
+!interval_TOTAL_CONTACTS_1.leftMargin:=1.0
+!interval_TOTAL_CONTACTS_1.rightMargin:=28.0
+!interval_TOTAL_CONTACTS_1.closure:=ClosureType::closedClosed
+!interval_TOTAL_CONTACTS_1.count:=516
+!insert(TOTAL_CONTACTS_1,interval_TOTAL_CONTACTS_1) into ContinuousInterval
+ !TOTAL_CONTACTS_1.target:=false
+ !TOTAL_CONTACTS_1.id:=false
+ !TOTAL_CONTACTS_1.dataType:=DataType::integer
+!TOTAL_CONTACTS_1.name:='TOTAL_CONTACTS'
+!create SELF_INIT_CNTCTS_1:Continuous
+ !insert(output,SELF_INIT_CNTCTS_1) into DataDictDataField
+ !create interval_SELF_INIT_CNTCTS_1:Interval
+!interval_SELF_INIT_CNTCTS_1.leftMargin:=0.0
+!interval_SELF_INIT_CNTCTS_1.rightMargin:=21.0
+!interval_SELF_INIT_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_SELF_INIT_CNTCTS_1.count:=516
+!insert(SELF_INIT_CNTCTS_1,interval_SELF_INIT_CNTCTS_1) into ContinuousInterval
+ !SELF_INIT_CNTCTS_1.target:=false
+ !SELF_INIT_CNTCTS_1.id:=false
+ !SELF_INIT_CNTCTS_1.dataType:=DataType::integer
+!SELF_INIT_CNTCTS_1.name:='SELF_INIT_CNTCTS'
+!create SOLICITED_CNTCTS_1:Continuous
+ !insert(output,SOLICITED_CNTCTS_1) into DataDictDataField
+ !create interval_SOLICITED_CNTCTS_1:Interval
+!interval_SOLICITED_CNTCTS_1.leftMargin:=0.0
+!interval_SOLICITED_CNTCTS_1.rightMargin:=9.0
+!interval_SOLICITED_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_SOLICITED_CNTCTS_1.count:=516
+!insert(SOLICITED_CNTCTS_1,interval_SOLICITED_CNTCTS_1) into ContinuousInterval
+ !SOLICITED_CNTCTS_1.target:=false
+ !SOLICITED_CNTCTS_1.id:=false
+ !SOLICITED_CNTCTS_1.dataType:=DataType::integer
+!SOLICITED_CNTCTS_1.name:='SOLICITED_CNTCTS'
+!create CAMPUS_VISIT_1:Continuous
+ !insert(output,CAMPUS_VISIT_1) into DataDictDataField
+ !create interval_CAMPUS_VISIT_1:Interval
+!interval_CAMPUS_VISIT_1.leftMargin:=0.0
+!interval_CAMPUS_VISIT_1.rightMargin:=1.0
+!interval_CAMPUS_VISIT_1.closure:=ClosureType::closedClosed
+!interval_CAMPUS_VISIT_1.count:=516
+!insert(CAMPUS_VISIT_1,interval_CAMPUS_VISIT_1) into ContinuousInterval
+ !CAMPUS_VISIT_1.target:=false
+ !CAMPUS_VISIT_1.id:=false
+ !CAMPUS_VISIT_1.dataType:=DataType::integer
+!CAMPUS_VISIT_1.name:='CAMPUS_VISIT'
+!create IRSCHOOL_1:Categorical
+ !IRSCHOOL_1.ordinal:=false
+ !insert(output,IRSCHOOL_1) into DataDictDataField
+ !IRSCHOOL_1.target:=false
+ !IRSCHOOL_1.id:=false
+ !IRSCHOOL_1.dataType:=DataType::string
+!IRSCHOOL_1.name:='IRSCHOOL'
+!create satscore_1:Continuous
+ !insert(output,satscore_1) into DataDictDataField
+ !create interval_satscore_1:Interval
+!interval_satscore_1.leftMargin:=440.0
+!interval_satscore_1.rightMargin:=1600.0
+!interval_satscore_1.closure:=ClosureType::closedClosed
+!interval_satscore_1.count:=512
+!insert(satscore_1,interval_satscore_1) into ContinuousInterval
+ !satscore_1.target:=false
+ !satscore_1.id:=false
+ !satscore_1.dataType:=DataType::double
+!satscore_1.name:='satscore'
+!create nan_1:ValueField
+ !nan_1.value:= 'nan'
+!nan_1.count:=4
+!insert(satscore_1,nan_1) into MissingVals
+ !create sex_1:Continuous
+ !insert(output,sex_1) into DataDictDataField
+ !create interval_sex_1:Interval
+!interval_sex_1.leftMargin:=0.0
+!interval_sex_1.rightMargin:=1.0
+!interval_sex_1.closure:=ClosureType::closedClosed
+!interval_sex_1.count:=516
+!insert(sex_1,interval_sex_1) into ContinuousInterval
+ !sex_1.target:=false
+ !sex_1.id:=false
+ !sex_1.dataType:=DataType::double
+!sex_1.name:='sex'
+!create mailq_1:Continuous
+ !insert(output,mailq_1) into DataDictDataField
+ !create interval_mailq_1:Interval
+!interval_mailq_1.leftMargin:=1.0
+!interval_mailq_1.rightMargin:=5.0
+!interval_mailq_1.closure:=ClosureType::closedClosed
+!interval_mailq_1.count:=516
+!insert(mailq_1,interval_mailq_1) into ContinuousInterval
+ !mailq_1.target:=false
+ !mailq_1.id:=false
+ !mailq_1.dataType:=DataType::integer
+!mailq_1.name:='mailq'
+!create premiere_1:Continuous
+ !insert(output,premiere_1) into DataDictDataField
+ !create interval_premiere_1:Interval
+!interval_premiere_1.leftMargin:=0.0
+!interval_premiere_1.rightMargin:=1.0
+!interval_premiere_1.closure:=ClosureType::closedClosed
+!interval_premiere_1.count:=516
+!insert(premiere_1,interval_premiere_1) into ContinuousInterval
+ !premiere_1.target:=false
+ !premiere_1.id:=false
+ !premiere_1.dataType:=DataType::integer
+!premiere_1.name:='premiere'
+!create init_span_1:Continuous
+ !insert(output,init_span_1) into DataDictDataField
+ !create interval_init_span_1:Interval
+!interval_init_span_1.leftMargin:=3.0
+!interval_init_span_1.rightMargin:=72.0
+!interval_init_span_1.closure:=ClosureType::closedClosed
+!interval_init_span_1.count:=516
+!insert(init_span_1,interval_init_span_1) into ContinuousInterval
+ !init_span_1.target:=false
+ !init_span_1.id:=false
+ !init_span_1.dataType:=DataType::integer
+!init_span_1.name:='init_span'
+!create int1rat_1:Continuous
+ !insert(output,int1rat_1) into DataDictDataField
+ !create interval_int1rat_1:Interval
+!interval_int1rat_1.leftMargin:=0.0
+!interval_int1rat_1.rightMargin:=1.0
+!interval_int1rat_1.closure:=ClosureType::closedClosed
+!interval_int1rat_1.count:=516
+!insert(int1rat_1,interval_int1rat_1) into ContinuousInterval
+ !int1rat_1.target:=false
+ !int1rat_1.id:=false
+ !int1rat_1.dataType:=DataType::double
+!int1rat_1.name:='int1rat'
+!create int2rat_1:Continuous
+ !insert(output,int2rat_1) into DataDictDataField
+ !create interval_int2rat_1:Interval
+!interval_int2rat_1.leftMargin:=0.0
+!interval_int2rat_1.rightMargin:=1.0
+!interval_int2rat_1.closure:=ClosureType::closedClosed
+!interval_int2rat_1.count:=516
+!insert(int2rat_1,interval_int2rat_1) into ContinuousInterval
+ !int2rat_1.target:=false
+ !int2rat_1.id:=false
+ !int2rat_1.dataType:=DataType::double
+!int2rat_1.name:='int2rat'
+!create hscrat_1:Continuous
+ !insert(output,hscrat_1) into DataDictDataField
+ !create interval_hscrat_1:Interval
+!interval_hscrat_1.leftMargin:=0.0
+!interval_hscrat_1.rightMargin:=1.0
+!interval_hscrat_1.closure:=ClosureType::closedClosed
+!interval_hscrat_1.count:=516
+!insert(hscrat_1,interval_hscrat_1) into ContinuousInterval
+ !hscrat_1.target:=false
+ !hscrat_1.id:=false
+ !hscrat_1.dataType:=DataType::double
+!hscrat_1.name:='hscrat'
+!create avg_income_1:Continuous
+ !insert(output,avg_income_1) into DataDictDataField
+ !create interval_avg_income_1:Interval
+!interval_avg_income_1.leftMargin:=9783.0
+!interval_avg_income_1.rightMargin:=99888.25
+!interval_avg_income_1.closure:=ClosureType::closedClosed
+!interval_avg_income_1.count:=516
+!insert(avg_income_1,interval_avg_income_1) into ContinuousInterval
+ !avg_income_1.target:=false
+ !avg_income_1.id:=false
+ !avg_income_1.dataType:=DataType::double
+!avg_income_1.name:='avg_income'
+!create distance_1:Continuous
+ !insert(output,distance_1) into DataDictDataField
+ !create interval_distance_1:Interval
+!interval_distance_1.leftMargin:=0.7905552999691918
+!interval_distance_1.rightMargin:=633.3624107681271
+!interval_distance_1.closure:=ClosureType::closedClosed
+!interval_distance_1.count:=516
+!insert(distance_1,interval_distance_1) into ContinuousInterval
+ !distance_1.target:=false
+ !distance_1.id:=false
+ !distance_1.dataType:=DataType::double
+!distance_1.name:='distance'
+!create Instate_1:Continuous
+ !insert(output,Instate_1) into DataDictDataField
+ !create interval_Instate_1:Interval
+!interval_Instate_1.leftMargin:=0.0
+!interval_Instate_1.rightMargin:=1.0
+!interval_Instate_1.closure:=ClosureType::closedClosed
+!interval_Instate_1.count:=516
+!insert(Instate_1,interval_Instate_1) into ContinuousInterval
+ !Instate_1.target:=false
+ !Instate_1.id:=false
+ !Instate_1.dataType:=DataType::integer
+!Instate_1.name:='Instate'
+!create TERRITORY_binned_0:Categorical
+ !TERRITORY_binned_0.ordinal:=false
+ !insert(output,TERRITORY_binned_0) into DataDictDataField
+ !create value_Zone 4_0:ValueField
+ !value_Zone 4_0.value:= 'Zone 4'
+!value_Zone 4_0.count:=69
+!insert(TERRITORY_binned_0,value_Zone 4_0) into ValidValues
+ !create value_Zone 2_0:ValueField
+ !value_Zone 2_0.value:= 'Zone 2'
+!value_Zone 2_0.count:=58
+!insert(TERRITORY_binned_0,value_Zone 2_0) into ValidValues
+ !create value_Zone 1_0:ValueField
+ !value_Zone 1_0.value:= 'Zone 1'
+!value_Zone 1_0.count:=179
+!insert(TERRITORY_binned_0,value_Zone 1_0) into ValidValues
+ !create value_Zone 3_0:ValueField
+ !value_Zone 3_0.value:= 'Zone 3'
+!value_Zone 3_0.count:=115
+!insert(TERRITORY_binned_0,value_Zone 3_0) into ValidValues
+ !create value_Unknown_0:ValueField
+ !value_Unknown_0.value:= 'Unknown'
+!value_Unknown_0.count:=0
+!insert(TERRITORY_binned_0,value_Unknown_0) into ValidValues
+ !TERRITORY_binned_0.target:=false
+ !TERRITORY_binned_0.id:=false
+ !TERRITORY_binned_0.dataType:=DataType::string
+!TERRITORY_binned_0.name:='TERRITORY_binned'
+!create nan_2:ValueField
+ !nan_2.value:= 'nan'
+!nan_2.count:=95
+!insert(TERRITORY_binned_0,nan_2) into MissingVals
+ !create TOTAL_CONTACTS_binned_0:Categorical
+ !TOTAL_CONTACTS_binned_0.ordinal:=false
+ !insert(output,TOTAL_CONTACTS_binned_0) into DataDictDataField
+ !create value_Low_0:ValueField
+ !value_Low_0.value:= 'Low'
+!value_Low_0.count:=229
+!insert(TOTAL_CONTACTS_binned_0,value_Low_0) into ValidValues
+ !create value_Moderate_0:ValueField
+ !value_Moderate_0.value:= 'Moderate'
+!value_Moderate_0.count:=188
+!insert(TOTAL_CONTACTS_binned_0,value_Moderate_0) into ValidValues
+ !create value_High_0:ValueField
+ !value_High_0.value:= 'High'
+!value_High_0.count:=99
+!insert(TOTAL_CONTACTS_binned_0,value_High_0) into ValidValues
+ !TOTAL_CONTACTS_binned_0.target:=false
+ !TOTAL_CONTACTS_binned_0.id:=false
+ !TOTAL_CONTACTS_binned_0.dataType:=DataType::string
+!TOTAL_CONTACTS_binned_0.name:='TOTAL_CONTACTS_binned'
+!create SELF_INIT_CNTCTS_binned_0:Categorical
+ !SELF_INIT_CNTCTS_binned_0.ordinal:=false
+ !insert(output,SELF_INIT_CNTCTS_binned_0) into DataDictDataField
+ !create value_Low_1:ValueField
+ !value_Low_1.value:= 'Low'
+!value_Low_1.count:=148
+!insert(SELF_INIT_CNTCTS_binned_0,value_Low_1) into ValidValues
+ !create value_Moderate_1:ValueField
+ !value_Moderate_1.value:= 'Moderate'
+!value_Moderate_1.count:=116
+!insert(SELF_INIT_CNTCTS_binned_0,value_Moderate_1) into ValidValues
+ !create value_High_1:ValueField
+ !value_High_1.value:= 'High'
+!value_High_1.count:=80
+!insert(SELF_INIT_CNTCTS_binned_0,value_High_1) into ValidValues
+ !SELF_INIT_CNTCTS_binned_0.target:=false
+ !SELF_INIT_CNTCTS_binned_0.id:=false
+ !SELF_INIT_CNTCTS_binned_0.dataType:=DataType::string
+!SELF_INIT_CNTCTS_binned_0.name:='SELF_INIT_CNTCTS_binned'
+!create nan_3:ValueField
+ !nan_3.value:= 'nan'
+!nan_3.count:=172
+!insert(SELF_INIT_CNTCTS_binned_0,nan_3) into MissingVals
+ !create SOLICITED_CNTCTS_binned_0:Categorical
+ !SOLICITED_CNTCTS_binned_0.ordinal:=false
+ !insert(output,SOLICITED_CNTCTS_binned_0) into DataDictDataField
+ !create value_Low_2:ValueField
+ !value_Low_2.value:= 'Low'
+!value_Low_2.count:=245
+!insert(SOLICITED_CNTCTS_binned_0,value_Low_2) into ValidValues
+ !create value_Moderate_2:ValueField
+ !value_Moderate_2.value:= 'Moderate'
+!value_Moderate_2.count:=14
+!insert(SOLICITED_CNTCTS_binned_0,value_Moderate_2) into ValidValues
+ !create value_High_2:ValueField
+ !value_High_2.value:= 'High'
+!value_High_2.count:=0
+!insert(SOLICITED_CNTCTS_binned_0,value_High_2) into ValidValues
+ !SOLICITED_CNTCTS_binned_0.target:=false
+ !SOLICITED_CNTCTS_binned_0.id:=false
+ !SOLICITED_CNTCTS_binned_0.dataType:=DataType::string
+!SOLICITED_CNTCTS_binned_0.name:='SOLICITED_CNTCTS_binned'
+!create nan_4:ValueField
+ !nan_4.value:= 'nan'
+!nan_4.count:=257
+!insert(SOLICITED_CNTCTS_binned_0,nan_4) into MissingVals
+ !create satscore_binned_0:Categorical
+ !satscore_binned_0.ordinal:=false
+ !insert(output,satscore_binned_0) into DataDictDataField
+ !create value_55-75 Percentile_0:ValueField
+ !value_55-75 Percentile_0.value:= '55-75 Percentile'
+!value_55-75 Percentile_0.count:=129
+!insert(satscore_binned_0,value_55-75 Percentile_0) into ValidValues
+ !create value_76-93 Percentile_0:ValueField
+ !value_76-93 Percentile_0.value:= '76-93 Percentile'
+!value_76-93 Percentile_0.count:=243
+!insert(satscore_binned_0,value_76-93 Percentile_0) into ValidValues
+ !create value_54 Percentile and Under_0:ValueField
+ !value_54 Percentile and Under_0.value:= '54 Percentile and Under'
+!value_54 Percentile and Under_0.count:=85
+!insert(satscore_binned_0,value_54 Percentile and Under_0) into ValidValues
+ !create value_94+ percentile_0:ValueField
+ !value_94+ percentile_0.value:= '94+ percentile'
+!value_94+ percentile_0.count:=55
+!insert(satscore_binned_0,value_94+ percentile_0) into ValidValues
+ !satscore_binned_0.target:=false
+ !satscore_binned_0.id:=false
+ !satscore_binned_0.dataType:=DataType::string
+!satscore_binned_0.name:='satscore_binned'
+!create nan_5:ValueField
+ !nan_5.value:= 'nan'
+!nan_5.count:=4
+!insert(satscore_binned_0,nan_5) into MissingVals
+ !create avg_income_binned_0:Categorical
+ !avg_income_binned_0.ordinal:=false
+ !insert(output,avg_income_binned_0) into DataDictDataField
+ !create value_Moderate_3:ValueField
+ !value_Moderate_3.value:= 'Moderate'
+!value_Moderate_3.count:=0
+!insert(avg_income_binned_0,value_Moderate_3) into ValidValues
+ !create value_High_3:ValueField
+ !value_High_3.value:= 'High'
+!value_High_3.count:=118
+!insert(avg_income_binned_0,value_High_3) into ValidValues
+ !create value_low_0:ValueField
+ !value_low_0.value:= 'low'
+!value_low_0.count:=137
+!insert(avg_income_binned_0,value_low_0) into ValidValues
+ !avg_income_binned_0.target:=false
+ !avg_income_binned_0.id:=false
+ !avg_income_binned_0.dataType:=DataType::string
+!avg_income_binned_0.name:='avg_income_binned'
+!create data_nan_679:Data
+ !data_nan_679.value:='nan'
+!data_nan_679.index:=0
+!insert(satscore_binned_0,data_nan_679) into DataOfDataField
+ !create data_nan_864:Data
+ !data_nan_864.value:='nan'
+!data_nan_864.index:=1
+!insert(satscore_binned_0,data_nan_864) into DataOfDataField
+ !create data_nan_38:Data
+ !data_nan_38.value:='nan'
+!data_nan_38.index:=2
+!insert(satscore_binned_0,data_nan_38) into DataOfDataField
+ !create data_nan_863:Data
+ !data_nan_863.value:='nan'
+!data_nan_863.index:=3
+!insert(satscore_binned_0,data_nan_863) into DataOfDataField
+ !create data_5575Percentile_0:Data
+ !data_5575Percentile_0.value:='55-75 Percentile'
+!data_5575Percentile_0.index:=4
+!insert(satscore_binned_0,data_5575Percentile_0) into DataOfDataField
+ !create data_5575Percentile_1201:Data
+ !data_5575Percentile_1201.value:='55-75 Percentile'
+!data_5575Percentile_1201.index:=5
+!insert(satscore_binned_0,data_5575Percentile_1201) into DataOfDataField
+ !create data_7693Percentile_0:Data
+ !data_7693Percentile_0.value:='76-93 Percentile'
+!data_7693Percentile_0.index:=6
+!insert(satscore_binned_0,data_7693Percentile_0) into DataOfDataField
+ !create data_7693Percentile_1488:Data
+ !data_7693Percentile_1488.value:='76-93 Percentile'
+!data_7693Percentile_1488.index:=7
+!insert(satscore_binned_0,data_7693Percentile_1488) into DataOfDataField
+ !create data_7693Percentile_1526:Data
+ !data_7693Percentile_1526.value:='76-93 Percentile'
+!data_7693Percentile_1526.index:=8
+!insert(satscore_binned_0,data_7693Percentile_1526) into DataOfDataField
+ !create data_5575Percentile_1223:Data
+ !data_5575Percentile_1223.value:='55-75 Percentile'
+!data_5575Percentile_1223.index:=9
+!insert(satscore_binned_0,data_5575Percentile_1223) into DataOfDataField
+ !create data_5575Percentile_1453:Data
+ !data_5575Percentile_1453.value:='55-75 Percentile'
+!data_5575Percentile_1453.index:=10
+!insert(satscore_binned_0,data_5575Percentile_1453) into DataOfDataField
+ !create data_5575Percentile_897:Data
+ !data_5575Percentile_897.value:='55-75 Percentile'
+!data_5575Percentile_897.index:=11
+!insert(satscore_binned_0,data_5575Percentile_897) into DataOfDataField
+ !create data_54PercentileandUnder_0:Data
+ !data_54PercentileandUnder_0.value:='54 Percentile and Under'
+!data_54PercentileandUnder_0.index:=12
+!insert(satscore_binned_0,data_54PercentileandUnder_0) into DataOfDataField
+ !create data_54PercentileandUnder_1532:Data
+ !data_54PercentileandUnder_1532.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1532.index:=13
+!insert(satscore_binned_0,data_54PercentileandUnder_1532) into DataOfDataField
+ !create data_54PercentileandUnder_620:Data
+ !data_54PercentileandUnder_620.value:='54 Percentile and Under'
+!data_54PercentileandUnder_620.index:=14
+!insert(satscore_binned_0,data_54PercentileandUnder_620) into DataOfDataField
+ !create data_54PercentileandUnder_855:Data
+ !data_54PercentileandUnder_855.value:='54 Percentile and Under'
+!data_54PercentileandUnder_855.index:=15
+!insert(satscore_binned_0,data_54PercentileandUnder_855) into DataOfDataField
+ !create data_54PercentileandUnder_111:Data
+ !data_54PercentileandUnder_111.value:='54 Percentile and Under'
+!data_54PercentileandUnder_111.index:=16
+!insert(satscore_binned_0,data_54PercentileandUnder_111) into DataOfDataField
+ !create data_54PercentileandUnder_1094:Data
+ !data_54PercentileandUnder_1094.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1094.index:=17
+!insert(satscore_binned_0,data_54PercentileandUnder_1094) into DataOfDataField
+ !create data_54PercentileandUnder_1479:Data
+ !data_54PercentileandUnder_1479.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1479.index:=18
+!insert(satscore_binned_0,data_54PercentileandUnder_1479) into DataOfDataField
+ !create data_54PercentileandUnder_1543:Data
+ !data_54PercentileandUnder_1543.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1543.index:=19
+!insert(satscore_binned_0,data_54PercentileandUnder_1543) into DataOfDataField
+ !create data_54PercentileandUnder_224:Data
+ !data_54PercentileandUnder_224.value:='54 Percentile and Under'
+!data_54PercentileandUnder_224.index:=20
+!insert(satscore_binned_0,data_54PercentileandUnder_224) into DataOfDataField
+ !create data_54PercentileandUnder_1040:Data
+ !data_54PercentileandUnder_1040.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1040.index:=21
+!insert(satscore_binned_0,data_54PercentileandUnder_1040) into DataOfDataField
+ !create data_54PercentileandUnder_476:Data
+ !data_54PercentileandUnder_476.value:='54 Percentile and Under'
+!data_54PercentileandUnder_476.index:=22
+!insert(satscore_binned_0,data_54PercentileandUnder_476) into DataOfDataField
+ !create data_54PercentileandUnder_339:Data
+ !data_54PercentileandUnder_339.value:='54 Percentile and Under'
+!data_54PercentileandUnder_339.index:=23
+!insert(satscore_binned_0,data_54PercentileandUnder_339) into DataOfDataField
+ !create data_54PercentileandUnder_1049:Data
+ !data_54PercentileandUnder_1049.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1049.index:=24
+!insert(satscore_binned_0,data_54PercentileandUnder_1049) into DataOfDataField
+ !create data_54PercentileandUnder_295:Data
+ !data_54PercentileandUnder_295.value:='54 Percentile and Under'
+!data_54PercentileandUnder_295.index:=25
+!insert(satscore_binned_0,data_54PercentileandUnder_295) into DataOfDataField
+ !create data_54PercentileandUnder_452:Data
+ !data_54PercentileandUnder_452.value:='54 Percentile and Under'
+!data_54PercentileandUnder_452.index:=26
+!insert(satscore_binned_0,data_54PercentileandUnder_452) into DataOfDataField
+ !create data_54PercentileandUnder_338:Data
+ !data_54PercentileandUnder_338.value:='54 Percentile and Under'
+!data_54PercentileandUnder_338.index:=27
+!insert(satscore_binned_0,data_54PercentileandUnder_338) into DataOfDataField
+ !create data_54PercentileandUnder_215:Data
+ !data_54PercentileandUnder_215.value:='54 Percentile and Under'
+!data_54PercentileandUnder_215.index:=28
+!insert(satscore_binned_0,data_54PercentileandUnder_215) into DataOfDataField
+ !create data_54PercentileandUnder_437:Data
+ !data_54PercentileandUnder_437.value:='54 Percentile and Under'
+!data_54PercentileandUnder_437.index:=29
+!insert(satscore_binned_0,data_54PercentileandUnder_437) into DataOfDataField
+ !create data_54PercentileandUnder_104:Data
+ !data_54PercentileandUnder_104.value:='54 Percentile and Under'
+!data_54PercentileandUnder_104.index:=30
+!insert(satscore_binned_0,data_54PercentileandUnder_104) into DataOfDataField
+ !create data_54PercentileandUnder_401:Data
+ !data_54PercentileandUnder_401.value:='54 Percentile and Under'
+!data_54PercentileandUnder_401.index:=31
+!insert(satscore_binned_0,data_54PercentileandUnder_401) into DataOfDataField
+ !create data_54PercentileandUnder_333:Data
+ !data_54PercentileandUnder_333.value:='54 Percentile and Under'
+!data_54PercentileandUnder_333.index:=32
+!insert(satscore_binned_0,data_54PercentileandUnder_333) into DataOfDataField
+ !create data_5575Percentile_143:Data
+ !data_5575Percentile_143.value:='55-75 Percentile'
+!data_5575Percentile_143.index:=33
+!insert(satscore_binned_0,data_5575Percentile_143) into DataOfDataField
+ !create data_5575Percentile_355:Data
+ !data_5575Percentile_355.value:='55-75 Percentile'
+!data_5575Percentile_355.index:=34
+!insert(satscore_binned_0,data_5575Percentile_355) into DataOfDataField
+ !create data_5575Percentile_1316:Data
+ !data_5575Percentile_1316.value:='55-75 Percentile'
+!data_5575Percentile_1316.index:=35
+!insert(satscore_binned_0,data_5575Percentile_1316) into DataOfDataField
+ !create data_5575Percentile_1491:Data
+ !data_5575Percentile_1491.value:='55-75 Percentile'
+!data_5575Percentile_1491.index:=36
+!insert(satscore_binned_0,data_5575Percentile_1491) into DataOfDataField
+ !create data_5575Percentile_327:Data
+ !data_5575Percentile_327.value:='55-75 Percentile'
+!data_5575Percentile_327.index:=37
+!insert(satscore_binned_0,data_5575Percentile_327) into DataOfDataField
+ !create data_5575Percentile_1281:Data
+ !data_5575Percentile_1281.value:='55-75 Percentile'
+!data_5575Percentile_1281.index:=38
+!insert(satscore_binned_0,data_5575Percentile_1281) into DataOfDataField
+ !create data_5575Percentile_908:Data
+ !data_5575Percentile_908.value:='55-75 Percentile'
+!data_5575Percentile_908.index:=39
+!insert(satscore_binned_0,data_5575Percentile_908) into DataOfDataField
+ !create data_5575Percentile_244:Data
+ !data_5575Percentile_244.value:='55-75 Percentile'
+!data_5575Percentile_244.index:=40
+!insert(satscore_binned_0,data_5575Percentile_244) into DataOfDataField
+ !create data_5575Percentile_471:Data
+ !data_5575Percentile_471.value:='55-75 Percentile'
+!data_5575Percentile_471.index:=41
+!insert(satscore_binned_0,data_5575Percentile_471) into DataOfDataField
+ !create data_5575Percentile_1336:Data
+ !data_5575Percentile_1336.value:='55-75 Percentile'
+!data_5575Percentile_1336.index:=42
+!insert(satscore_binned_0,data_5575Percentile_1336) into DataOfDataField
+ !create data_7693Percentile_631:Data
+ !data_7693Percentile_631.value:='76-93 Percentile'
+!data_7693Percentile_631.index:=43
+!insert(satscore_binned_0,data_7693Percentile_631) into DataOfDataField
+ !create data_7693Percentile_698:Data
+ !data_7693Percentile_698.value:='76-93 Percentile'
+!data_7693Percentile_698.index:=44
+!insert(satscore_binned_0,data_7693Percentile_698) into DataOfDataField
+ !create data_7693Percentile_357:Data
+ !data_7693Percentile_357.value:='76-93 Percentile'
+!data_7693Percentile_357.index:=45
+!insert(satscore_binned_0,data_7693Percentile_357) into DataOfDataField
+ !create data_7693Percentile_1258:Data
+ !data_7693Percentile_1258.value:='76-93 Percentile'
+!data_7693Percentile_1258.index:=46
+!insert(satscore_binned_0,data_7693Percentile_1258) into DataOfDataField
+ !create data_7693Percentile_637:Data
+ !data_7693Percentile_637.value:='76-93 Percentile'
+!data_7693Percentile_637.index:=47
+!insert(satscore_binned_0,data_7693Percentile_637) into DataOfDataField
+ !create data_7693Percentile_912:Data
+ !data_7693Percentile_912.value:='76-93 Percentile'
+!data_7693Percentile_912.index:=48
+!insert(satscore_binned_0,data_7693Percentile_912) into DataOfDataField
+ !create data_7693Percentile_1081:Data
+ !data_7693Percentile_1081.value:='76-93 Percentile'
+!data_7693Percentile_1081.index:=49
+!insert(satscore_binned_0,data_7693Percentile_1081) into DataOfDataField
+ !create data_7693Percentile_1086:Data
+ !data_7693Percentile_1086.value:='76-93 Percentile'
+!data_7693Percentile_1086.index:=50
+!insert(satscore_binned_0,data_7693Percentile_1086) into DataOfDataField
+ !create data_7693Percentile_1471:Data
+ !data_7693Percentile_1471.value:='76-93 Percentile'
+!data_7693Percentile_1471.index:=51
+!insert(satscore_binned_0,data_7693Percentile_1471) into DataOfDataField
+ !create data_7693Percentile_992:Data
+ !data_7693Percentile_992.value:='76-93 Percentile'
+!data_7693Percentile_992.index:=52
+!insert(satscore_binned_0,data_7693Percentile_992) into DataOfDataField
+ !create data_7693Percentile_1228:Data
+ !data_7693Percentile_1228.value:='76-93 Percentile'
+!data_7693Percentile_1228.index:=53
+!insert(satscore_binned_0,data_7693Percentile_1228) into DataOfDataField
+ !create data_7693Percentile_818:Data
+ !data_7693Percentile_818.value:='76-93 Percentile'
+!data_7693Percentile_818.index:=54
+!insert(satscore_binned_0,data_7693Percentile_818) into DataOfDataField
+ !create data_94+percentile_0:Data
+ !data_94+percentile_0.value:='94+ percentile'
+!data_94+percentile_0.index:=55
+!insert(satscore_binned_0,data_94+percentile_0) into DataOfDataField
+ !create data_7693Percentile_289:Data
+ !data_7693Percentile_289.value:='76-93 Percentile'
+!data_7693Percentile_289.index:=56
+!insert(satscore_binned_0,data_7693Percentile_289) into DataOfDataField
+ !create data_7693Percentile_1448:Data
+ !data_7693Percentile_1448.value:='76-93 Percentile'
+!data_7693Percentile_1448.index:=57
+!insert(satscore_binned_0,data_7693Percentile_1448) into DataOfDataField
+ !create data_7693Percentile_875:Data
+ !data_7693Percentile_875.value:='76-93 Percentile'
+!data_7693Percentile_875.index:=58
+!insert(satscore_binned_0,data_7693Percentile_875) into DataOfDataField
+ !create data_7693Percentile_1303:Data
+ !data_7693Percentile_1303.value:='76-93 Percentile'
+!data_7693Percentile_1303.index:=59
+!insert(satscore_binned_0,data_7693Percentile_1303) into DataOfDataField
+ !create data_7693Percentile_1381:Data
+ !data_7693Percentile_1381.value:='76-93 Percentile'
+!data_7693Percentile_1381.index:=60
+!insert(satscore_binned_0,data_7693Percentile_1381) into DataOfDataField
+ !create data_7693Percentile_1104:Data
+ !data_7693Percentile_1104.value:='76-93 Percentile'
+!data_7693Percentile_1104.index:=61
+!insert(satscore_binned_0,data_7693Percentile_1104) into DataOfDataField
+ !create data_7693Percentile_1119:Data
+ !data_7693Percentile_1119.value:='76-93 Percentile'
+!data_7693Percentile_1119.index:=62
+!insert(satscore_binned_0,data_7693Percentile_1119) into DataOfDataField
+ !create data_7693Percentile_1431:Data
+ !data_7693Percentile_1431.value:='76-93 Percentile'
+!data_7693Percentile_1431.index:=63
+!insert(satscore_binned_0,data_7693Percentile_1431) into DataOfDataField
+ !create data_7693Percentile_229:Data
+ !data_7693Percentile_229.value:='76-93 Percentile'
+!data_7693Percentile_229.index:=64
+!insert(satscore_binned_0,data_7693Percentile_229) into DataOfDataField
+ !create data_7693Percentile_803:Data
+ !data_7693Percentile_803.value:='76-93 Percentile'
+!data_7693Percentile_803.index:=65
+!insert(satscore_binned_0,data_7693Percentile_803) into DataOfDataField
+ !create data_7693Percentile_1528:Data
+ !data_7693Percentile_1528.value:='76-93 Percentile'
+!data_7693Percentile_1528.index:=66
+!insert(satscore_binned_0,data_7693Percentile_1528) into DataOfDataField
+ !create data_7693Percentile_804:Data
+ !data_7693Percentile_804.value:='76-93 Percentile'
+!data_7693Percentile_804.index:=67
+!insert(satscore_binned_0,data_7693Percentile_804) into DataOfDataField
+ !create data_5575Percentile_971:Data
+ !data_5575Percentile_971.value:='55-75 Percentile'
+!data_5575Percentile_971.index:=68
+!insert(satscore_binned_0,data_5575Percentile_971) into DataOfDataField
+ !create data_5575Percentile_1108:Data
+ !data_5575Percentile_1108.value:='55-75 Percentile'
+!data_5575Percentile_1108.index:=69
+!insert(satscore_binned_0,data_5575Percentile_1108) into DataOfDataField
+ !create data_54PercentileandUnder_805:Data
+ !data_54PercentileandUnder_805.value:='54 Percentile and Under'
+!data_54PercentileandUnder_805.index:=70
+!insert(satscore_binned_0,data_54PercentileandUnder_805) into DataOfDataField
+ !create data_54PercentileandUnder_803:Data
+ !data_54PercentileandUnder_803.value:='54 Percentile and Under'
+!data_54PercentileandUnder_803.index:=71
+!insert(satscore_binned_0,data_54PercentileandUnder_803) into DataOfDataField
+ !create data_54PercentileandUnder_177:Data
+ !data_54PercentileandUnder_177.value:='54 Percentile and Under'
+!data_54PercentileandUnder_177.index:=72
+!insert(satscore_binned_0,data_54PercentileandUnder_177) into DataOfDataField
+ !create data_54PercentileandUnder_999:Data
+ !data_54PercentileandUnder_999.value:='54 Percentile and Under'
+!data_54PercentileandUnder_999.index:=73
+!insert(satscore_binned_0,data_54PercentileandUnder_999) into DataOfDataField
+ !create data_54PercentileandUnder_1311:Data
+ !data_54PercentileandUnder_1311.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1311.index:=74
+!insert(satscore_binned_0,data_54PercentileandUnder_1311) into DataOfDataField
+ !create data_54PercentileandUnder_1391:Data
+ !data_54PercentileandUnder_1391.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1391.index:=75
+!insert(satscore_binned_0,data_54PercentileandUnder_1391) into DataOfDataField
+ !create data_54PercentileandUnder_301:Data
+ !data_54PercentileandUnder_301.value:='54 Percentile and Under'
+!data_54PercentileandUnder_301.index:=76
+!insert(satscore_binned_0,data_54PercentileandUnder_301) into DataOfDataField
+ !create data_54PercentileandUnder_244:Data
+ !data_54PercentileandUnder_244.value:='54 Percentile and Under'
+!data_54PercentileandUnder_244.index:=77
+!insert(satscore_binned_0,data_54PercentileandUnder_244) into DataOfDataField
+ !create data_54PercentileandUnder_1504:Data
+ !data_54PercentileandUnder_1504.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1504.index:=78
+!insert(satscore_binned_0,data_54PercentileandUnder_1504) into DataOfDataField
+ !create data_54PercentileandUnder_1351:Data
+ !data_54PercentileandUnder_1351.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1351.index:=79
+!insert(satscore_binned_0,data_54PercentileandUnder_1351) into DataOfDataField
+ !create data_54PercentileandUnder_644:Data
+ !data_54PercentileandUnder_644.value:='54 Percentile and Under'
+!data_54PercentileandUnder_644.index:=80
+!insert(satscore_binned_0,data_54PercentileandUnder_644) into DataOfDataField
+ !create data_7693Percentile_1035:Data
+ !data_7693Percentile_1035.value:='76-93 Percentile'
+!data_7693Percentile_1035.index:=81
+!insert(satscore_binned_0,data_7693Percentile_1035) into DataOfDataField
+ !create data_7693Percentile_622:Data
+ !data_7693Percentile_622.value:='76-93 Percentile'
+!data_7693Percentile_622.index:=82
+!insert(satscore_binned_0,data_7693Percentile_622) into DataOfDataField
+ !create data_7693Percentile_713:Data
+ !data_7693Percentile_713.value:='76-93 Percentile'
+!data_7693Percentile_713.index:=83
+!insert(satscore_binned_0,data_7693Percentile_713) into DataOfDataField
+ !create data_94+percentile_1330:Data
+ !data_94+percentile_1330.value:='94+ percentile'
+!data_94+percentile_1330.index:=84
+!insert(satscore_binned_0,data_94+percentile_1330) into DataOfDataField
+ !create data_7693Percentile_425:Data
+ !data_7693Percentile_425.value:='76-93 Percentile'
+!data_7693Percentile_425.index:=85
+!insert(satscore_binned_0,data_7693Percentile_425) into DataOfDataField
+ !create data_54PercentileandUnder_952:Data
+ !data_54PercentileandUnder_952.value:='54 Percentile and Under'
+!data_54PercentileandUnder_952.index:=86
+!insert(satscore_binned_0,data_54PercentileandUnder_952) into DataOfDataField
+ !create data_54PercentileandUnder_616:Data
+ !data_54PercentileandUnder_616.value:='54 Percentile and Under'
+!data_54PercentileandUnder_616.index:=87
+!insert(satscore_binned_0,data_54PercentileandUnder_616) into DataOfDataField
+ !create data_5575Percentile_23:Data
+ !data_5575Percentile_23.value:='55-75 Percentile'
+!data_5575Percentile_23.index:=88
+!insert(satscore_binned_0,data_5575Percentile_23) into DataOfDataField
+ !create data_54PercentileandUnder_1022:Data
+ !data_54PercentileandUnder_1022.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1022.index:=89
+!insert(satscore_binned_0,data_54PercentileandUnder_1022) into DataOfDataField
+ !create data_7693Percentile_1226:Data
+ !data_7693Percentile_1226.value:='76-93 Percentile'
+!data_7693Percentile_1226.index:=90
+!insert(satscore_binned_0,data_7693Percentile_1226) into DataOfDataField
+ !create data_94+percentile_937:Data
+ !data_94+percentile_937.value:='94+ percentile'
+!data_94+percentile_937.index:=91
+!insert(satscore_binned_0,data_94+percentile_937) into DataOfDataField
+ !create data_7693Percentile_891:Data
+ !data_7693Percentile_891.value:='76-93 Percentile'
+!data_7693Percentile_891.index:=92
+!insert(satscore_binned_0,data_7693Percentile_891) into DataOfDataField
+ !create data_7693Percentile_1297:Data
+ !data_7693Percentile_1297.value:='76-93 Percentile'
+!data_7693Percentile_1297.index:=93
+!insert(satscore_binned_0,data_7693Percentile_1297) into DataOfDataField
+ !create data_5575Percentile_1535:Data
+ !data_5575Percentile_1535.value:='55-75 Percentile'
+!data_5575Percentile_1535.index:=94
+!insert(satscore_binned_0,data_5575Percentile_1535) into DataOfDataField
+ !create data_94+percentile_1485:Data
+ !data_94+percentile_1485.value:='94+ percentile'
+!data_94+percentile_1485.index:=95
+!insert(satscore_binned_0,data_94+percentile_1485) into DataOfDataField
+ !create data_5575Percentile_836:Data
+ !data_5575Percentile_836.value:='55-75 Percentile'
+!data_5575Percentile_836.index:=96
+!insert(satscore_binned_0,data_5575Percentile_836) into DataOfDataField
+ !create data_5575Percentile_461:Data
+ !data_5575Percentile_461.value:='55-75 Percentile'
+!data_5575Percentile_461.index:=97
+!insert(satscore_binned_0,data_5575Percentile_461) into DataOfDataField
+ !create data_5575Percentile_12:Data
+ !data_5575Percentile_12.value:='55-75 Percentile'
+!data_5575Percentile_12.index:=98
+!insert(satscore_binned_0,data_5575Percentile_12) into DataOfDataField
+ !create data_5575Percentile_474:Data
+ !data_5575Percentile_474.value:='55-75 Percentile'
+!data_5575Percentile_474.index:=99
+!insert(satscore_binned_0,data_5575Percentile_474) into DataOfDataField
+ !create data_5575Percentile_1264:Data
+ !data_5575Percentile_1264.value:='55-75 Percentile'
+!data_5575Percentile_1264.index:=100
+!insert(satscore_binned_0,data_5575Percentile_1264) into DataOfDataField
+ !create data_5575Percentile_531:Data
+ !data_5575Percentile_531.value:='55-75 Percentile'
+!data_5575Percentile_531.index:=101
+!insert(satscore_binned_0,data_5575Percentile_531) into DataOfDataField
+ !create data_7693Percentile_77:Data
+ !data_7693Percentile_77.value:='76-93 Percentile'
+!data_7693Percentile_77.index:=102
+!insert(satscore_binned_0,data_7693Percentile_77) into DataOfDataField
+ !create data_5575Percentile_1012:Data
+ !data_5575Percentile_1012.value:='55-75 Percentile'
+!data_5575Percentile_1012.index:=103
+!insert(satscore_binned_0,data_5575Percentile_1012) into DataOfDataField
+ !create data_7693Percentile_1032:Data
+ !data_7693Percentile_1032.value:='76-93 Percentile'
+!data_7693Percentile_1032.index:=104
+!insert(satscore_binned_0,data_7693Percentile_1032) into DataOfDataField
+ !create data_5575Percentile_1111:Data
+ !data_5575Percentile_1111.value:='55-75 Percentile'
+!data_5575Percentile_1111.index:=105
+!insert(satscore_binned_0,data_5575Percentile_1111) into DataOfDataField
+ !create data_54PercentileandUnder_836:Data
+ !data_54PercentileandUnder_836.value:='54 Percentile and Under'
+!data_54PercentileandUnder_836.index:=106
+!insert(satscore_binned_0,data_54PercentileandUnder_836) into DataOfDataField
+ !create data_5575Percentile_755:Data
+ !data_5575Percentile_755.value:='55-75 Percentile'
+!data_5575Percentile_755.index:=107
+!insert(satscore_binned_0,data_5575Percentile_755) into DataOfDataField
+ !create data_5575Percentile_1303:Data
+ !data_5575Percentile_1303.value:='55-75 Percentile'
+!data_5575Percentile_1303.index:=108
+!insert(satscore_binned_0,data_5575Percentile_1303) into DataOfDataField
+ !create data_7693Percentile_1486:Data
+ !data_7693Percentile_1486.value:='76-93 Percentile'
+!data_7693Percentile_1486.index:=109
+!insert(satscore_binned_0,data_7693Percentile_1486) into DataOfDataField
+ !create data_7693Percentile_980:Data
+ !data_7693Percentile_980.value:='76-93 Percentile'
+!data_7693Percentile_980.index:=110
+!insert(satscore_binned_0,data_7693Percentile_980) into DataOfDataField
+ !create data_7693Percentile_166:Data
+ !data_7693Percentile_166.value:='76-93 Percentile'
+!data_7693Percentile_166.index:=111
+!insert(satscore_binned_0,data_7693Percentile_166) into DataOfDataField
+ !create data_5575Percentile_1448:Data
+ !data_5575Percentile_1448.value:='55-75 Percentile'
+!data_5575Percentile_1448.index:=112
+!insert(satscore_binned_0,data_5575Percentile_1448) into DataOfDataField
+ !create data_7693Percentile_131:Data
+ !data_7693Percentile_131.value:='76-93 Percentile'
+!data_7693Percentile_131.index:=113
+!insert(satscore_binned_0,data_7693Percentile_131) into DataOfDataField
+ !create data_5575Percentile_561:Data
+ !data_5575Percentile_561.value:='55-75 Percentile'
+!data_5575Percentile_561.index:=114
+!insert(satscore_binned_0,data_5575Percentile_561) into DataOfDataField
+ !create data_7693Percentile_1095:Data
+ !data_7693Percentile_1095.value:='76-93 Percentile'
+!data_7693Percentile_1095.index:=115
+!insert(satscore_binned_0,data_7693Percentile_1095) into DataOfDataField
+ !create data_7693Percentile_468:Data
+ !data_7693Percentile_468.value:='76-93 Percentile'
+!data_7693Percentile_468.index:=116
+!insert(satscore_binned_0,data_7693Percentile_468) into DataOfDataField
+ !create data_7693Percentile_3:Data
+ !data_7693Percentile_3.value:='76-93 Percentile'
+!data_7693Percentile_3.index:=117
+!insert(satscore_binned_0,data_7693Percentile_3) into DataOfDataField
+ !create data_7693Percentile_748:Data
+ !data_7693Percentile_748.value:='76-93 Percentile'
+!data_7693Percentile_748.index:=118
+!insert(satscore_binned_0,data_7693Percentile_748) into DataOfDataField
+ !create data_7693Percentile_222:Data
+ !data_7693Percentile_222.value:='76-93 Percentile'
+!data_7693Percentile_222.index:=119
+!insert(satscore_binned_0,data_7693Percentile_222) into DataOfDataField
+ !create data_94+percentile_1274:Data
+ !data_94+percentile_1274.value:='94+ percentile'
+!data_94+percentile_1274.index:=120
+!insert(satscore_binned_0,data_94+percentile_1274) into DataOfDataField
+ !create data_94+percentile_1547:Data
+ !data_94+percentile_1547.value:='94+ percentile'
+!data_94+percentile_1547.index:=121
+!insert(satscore_binned_0,data_94+percentile_1547) into DataOfDataField
+ !create data_7693Percentile_828:Data
+ !data_7693Percentile_828.value:='76-93 Percentile'
+!data_7693Percentile_828.index:=122
+!insert(satscore_binned_0,data_7693Percentile_828) into DataOfDataField
+ !create data_7693Percentile_1239:Data
+ !data_7693Percentile_1239.value:='76-93 Percentile'
+!data_7693Percentile_1239.index:=123
+!insert(satscore_binned_0,data_7693Percentile_1239) into DataOfDataField
+ !create data_7693Percentile_121:Data
+ !data_7693Percentile_121.value:='76-93 Percentile'
+!data_7693Percentile_121.index:=124
+!insert(satscore_binned_0,data_7693Percentile_121) into DataOfDataField
+ !create data_7693Percentile_705:Data
+ !data_7693Percentile_705.value:='76-93 Percentile'
+!data_7693Percentile_705.index:=125
+!insert(satscore_binned_0,data_7693Percentile_705) into DataOfDataField
+ !create data_7693Percentile_884:Data
+ !data_7693Percentile_884.value:='76-93 Percentile'
+!data_7693Percentile_884.index:=126
+!insert(satscore_binned_0,data_7693Percentile_884) into DataOfDataField
+ !create data_94+percentile_870:Data
+ !data_94+percentile_870.value:='94+ percentile'
+!data_94+percentile_870.index:=127
+!insert(satscore_binned_0,data_94+percentile_870) into DataOfDataField
+ !create data_5575Percentile_1509:Data
+ !data_5575Percentile_1509.value:='55-75 Percentile'
+!data_5575Percentile_1509.index:=128
+!insert(satscore_binned_0,data_5575Percentile_1509) into DataOfDataField
+ !create data_7693Percentile_529:Data
+ !data_7693Percentile_529.value:='76-93 Percentile'
+!data_7693Percentile_529.index:=129
+!insert(satscore_binned_0,data_7693Percentile_529) into DataOfDataField
+ !create data_7693Percentile_1222:Data
+ !data_7693Percentile_1222.value:='76-93 Percentile'
+!data_7693Percentile_1222.index:=130
+!insert(satscore_binned_0,data_7693Percentile_1222) into DataOfDataField
+ !create data_7693Percentile_1230:Data
+ !data_7693Percentile_1230.value:='76-93 Percentile'
+!data_7693Percentile_1230.index:=131
+!insert(satscore_binned_0,data_7693Percentile_1230) into DataOfDataField
+ !create data_7693Percentile_90:Data
+ !data_7693Percentile_90.value:='76-93 Percentile'
+!data_7693Percentile_90.index:=132
+!insert(satscore_binned_0,data_7693Percentile_90) into DataOfDataField
+ !create data_7693Percentile_1359:Data
+ !data_7693Percentile_1359.value:='76-93 Percentile'
+!data_7693Percentile_1359.index:=133
+!insert(satscore_binned_0,data_7693Percentile_1359) into DataOfDataField
+ !create data_7693Percentile_1497:Data
+ !data_7693Percentile_1497.value:='76-93 Percentile'
+!data_7693Percentile_1497.index:=134
+!insert(satscore_binned_0,data_7693Percentile_1497) into DataOfDataField
+ !create data_7693Percentile_677:Data
+ !data_7693Percentile_677.value:='76-93 Percentile'
+!data_7693Percentile_677.index:=135
+!insert(satscore_binned_0,data_7693Percentile_677) into DataOfDataField
+ !create data_7693Percentile_1101:Data
+ !data_7693Percentile_1101.value:='76-93 Percentile'
+!data_7693Percentile_1101.index:=136
+!insert(satscore_binned_0,data_7693Percentile_1101) into DataOfDataField
+ !create data_7693Percentile_240:Data
+ !data_7693Percentile_240.value:='76-93 Percentile'
+!data_7693Percentile_240.index:=137
+!insert(satscore_binned_0,data_7693Percentile_240) into DataOfDataField
+ !create data_7693Percentile_386:Data
+ !data_7693Percentile_386.value:='76-93 Percentile'
+!data_7693Percentile_386.index:=138
+!insert(satscore_binned_0,data_7693Percentile_386) into DataOfDataField
+ !create data_7693Percentile_465:Data
+ !data_7693Percentile_465.value:='76-93 Percentile'
+!data_7693Percentile_465.index:=139
+!insert(satscore_binned_0,data_7693Percentile_465) into DataOfDataField
+ !create data_7693Percentile_1034:Data
+ !data_7693Percentile_1034.value:='76-93 Percentile'
+!data_7693Percentile_1034.index:=140
+!insert(satscore_binned_0,data_7693Percentile_1034) into DataOfDataField
+ !create data_7693Percentile_949:Data
+ !data_7693Percentile_949.value:='76-93 Percentile'
+!data_7693Percentile_949.index:=141
+!insert(satscore_binned_0,data_7693Percentile_949) into DataOfDataField
+ !create data_7693Percentile_871:Data
+ !data_7693Percentile_871.value:='76-93 Percentile'
+!data_7693Percentile_871.index:=142
+!insert(satscore_binned_0,data_7693Percentile_871) into DataOfDataField
+ !create data_5575Percentile_525:Data
+ !data_5575Percentile_525.value:='55-75 Percentile'
+!data_5575Percentile_525.index:=143
+!insert(satscore_binned_0,data_5575Percentile_525) into DataOfDataField
+ !create data_5575Percentile_1460:Data
+ !data_5575Percentile_1460.value:='55-75 Percentile'
+!data_5575Percentile_1460.index:=144
+!insert(satscore_binned_0,data_5575Percentile_1460) into DataOfDataField
+ !create data_5575Percentile_19:Data
+ !data_5575Percentile_19.value:='55-75 Percentile'
+!data_5575Percentile_19.index:=145
+!insert(satscore_binned_0,data_5575Percentile_19) into DataOfDataField
+ !create data_5575Percentile_702:Data
+ !data_5575Percentile_702.value:='55-75 Percentile'
+!data_5575Percentile_702.index:=146
+!insert(satscore_binned_0,data_5575Percentile_702) into DataOfDataField
+ !create data_5575Percentile_155:Data
+ !data_5575Percentile_155.value:='55-75 Percentile'
+!data_5575Percentile_155.index:=147
+!insert(satscore_binned_0,data_5575Percentile_155) into DataOfDataField
+ !create data_5575Percentile_613:Data
+ !data_5575Percentile_613.value:='55-75 Percentile'
+!data_5575Percentile_613.index:=148
+!insert(satscore_binned_0,data_5575Percentile_613) into DataOfDataField
+ !create data_7693Percentile_1225:Data
+ !data_7693Percentile_1225.value:='76-93 Percentile'
+!data_7693Percentile_1225.index:=149
+!insert(satscore_binned_0,data_7693Percentile_1225) into DataOfDataField
+ !create data_7693Percentile_1276:Data
+ !data_7693Percentile_1276.value:='76-93 Percentile'
+!data_7693Percentile_1276.index:=150
+!insert(satscore_binned_0,data_7693Percentile_1276) into DataOfDataField
+ !create data_7693Percentile_8:Data
+ !data_7693Percentile_8.value:='76-93 Percentile'
+!data_7693Percentile_8.index:=151
+!insert(satscore_binned_0,data_7693Percentile_8) into DataOfDataField
+ !create data_5575Percentile_676:Data
+ !data_5575Percentile_676.value:='55-75 Percentile'
+!data_5575Percentile_676.index:=152
+!insert(satscore_binned_0,data_5575Percentile_676) into DataOfDataField
+ !create data_7693Percentile_193:Data
+ !data_7693Percentile_193.value:='76-93 Percentile'
+!data_7693Percentile_193.index:=153
+!insert(satscore_binned_0,data_7693Percentile_193) into DataOfDataField
+ !create data_7693Percentile_18:Data
+ !data_7693Percentile_18.value:='76-93 Percentile'
+!data_7693Percentile_18.index:=154
+!insert(satscore_binned_0,data_7693Percentile_18) into DataOfDataField
+ !create data_7693Percentile_1546:Data
+ !data_7693Percentile_1546.value:='76-93 Percentile'
+!data_7693Percentile_1546.index:=155
+!insert(satscore_binned_0,data_7693Percentile_1546) into DataOfDataField
+ !create data_7693Percentile_1532:Data
+ !data_7693Percentile_1532.value:='76-93 Percentile'
+!data_7693Percentile_1532.index:=156
+!insert(satscore_binned_0,data_7693Percentile_1532) into DataOfDataField
+ !create data_94+percentile_526:Data
+ !data_94+percentile_526.value:='94+ percentile'
+!data_94+percentile_526.index:=157
+!insert(satscore_binned_0,data_94+percentile_526) into DataOfDataField
+ !create data_7693Percentile_430:Data
+ !data_7693Percentile_430.value:='76-93 Percentile'
+!data_7693Percentile_430.index:=158
+!insert(satscore_binned_0,data_7693Percentile_430) into DataOfDataField
+ !create data_5575Percentile_541:Data
+ !data_5575Percentile_541.value:='55-75 Percentile'
+!data_5575Percentile_541.index:=159
+!insert(satscore_binned_0,data_5575Percentile_541) into DataOfDataField
+ !create data_7693Percentile_1005:Data
+ !data_7693Percentile_1005.value:='76-93 Percentile'
+!data_7693Percentile_1005.index:=160
+!insert(satscore_binned_0,data_7693Percentile_1005) into DataOfDataField
+ !create data_7693Percentile_1333:Data
+ !data_7693Percentile_1333.value:='76-93 Percentile'
+!data_7693Percentile_1333.index:=161
+!insert(satscore_binned_0,data_7693Percentile_1333) into DataOfDataField
+ !create data_7693Percentile_1073:Data
+ !data_7693Percentile_1073.value:='76-93 Percentile'
+!data_7693Percentile_1073.index:=162
+!insert(satscore_binned_0,data_7693Percentile_1073) into DataOfDataField
+ !create data_7693Percentile_854:Data
+ !data_7693Percentile_854.value:='76-93 Percentile'
+!data_7693Percentile_854.index:=163
+!insert(satscore_binned_0,data_7693Percentile_854) into DataOfDataField
+ !create data_7693Percentile_130:Data
+ !data_7693Percentile_130.value:='76-93 Percentile'
+!data_7693Percentile_130.index:=164
+!insert(satscore_binned_0,data_7693Percentile_130) into DataOfDataField
+ !create data_7693Percentile_168:Data
+ !data_7693Percentile_168.value:='76-93 Percentile'
+!data_7693Percentile_168.index:=165
+!insert(satscore_binned_0,data_7693Percentile_168) into DataOfDataField
+ !create data_7693Percentile_83:Data
+ !data_7693Percentile_83.value:='76-93 Percentile'
+!data_7693Percentile_83.index:=166
+!insert(satscore_binned_0,data_7693Percentile_83) into DataOfDataField
+ !create data_7693Percentile_1519:Data
+ !data_7693Percentile_1519.value:='76-93 Percentile'
+!data_7693Percentile_1519.index:=167
+!insert(satscore_binned_0,data_7693Percentile_1519) into DataOfDataField
+ !create data_7693Percentile_1063:Data
+ !data_7693Percentile_1063.value:='76-93 Percentile'
+!data_7693Percentile_1063.index:=168
+!insert(satscore_binned_0,data_7693Percentile_1063) into DataOfDataField
+ !create data_7693Percentile_952:Data
+ !data_7693Percentile_952.value:='76-93 Percentile'
+!data_7693Percentile_952.index:=169
+!insert(satscore_binned_0,data_7693Percentile_952) into DataOfDataField
+ !create data_7693Percentile_1257:Data
+ !data_7693Percentile_1257.value:='76-93 Percentile'
+!data_7693Percentile_1257.index:=170
+!insert(satscore_binned_0,data_7693Percentile_1257) into DataOfDataField
+ !create data_7693Percentile_762:Data
+ !data_7693Percentile_762.value:='76-93 Percentile'
+!data_7693Percentile_762.index:=171
+!insert(satscore_binned_0,data_7693Percentile_762) into DataOfDataField
+ !create data_5575Percentile_577:Data
+ !data_5575Percentile_577.value:='55-75 Percentile'
+!data_5575Percentile_577.index:=172
+!insert(satscore_binned_0,data_5575Percentile_577) into DataOfDataField
+ !create data_54PercentileandUnder_749:Data
+ !data_54PercentileandUnder_749.value:='54 Percentile and Under'
+!data_54PercentileandUnder_749.index:=173
+!insert(satscore_binned_0,data_54PercentileandUnder_749) into DataOfDataField
+ !create data_5575Percentile_395:Data
+ !data_5575Percentile_395.value:='55-75 Percentile'
+!data_5575Percentile_395.index:=174
+!insert(satscore_binned_0,data_5575Percentile_395) into DataOfDataField
+ !create data_5575Percentile_1485:Data
+ !data_5575Percentile_1485.value:='55-75 Percentile'
+!data_5575Percentile_1485.index:=175
+!insert(satscore_binned_0,data_5575Percentile_1485) into DataOfDataField
+ !create data_7693Percentile_1393:Data
+ !data_7693Percentile_1393.value:='76-93 Percentile'
+!data_7693Percentile_1393.index:=176
+!insert(satscore_binned_0,data_7693Percentile_1393) into DataOfDataField
+ !create data_7693Percentile_1421:Data
+ !data_7693Percentile_1421.value:='76-93 Percentile'
+!data_7693Percentile_1421.index:=177
+!insert(satscore_binned_0,data_7693Percentile_1421) into DataOfDataField
+ !create data_7693Percentile_630:Data
+ !data_7693Percentile_630.value:='76-93 Percentile'
+!data_7693Percentile_630.index:=178
+!insert(satscore_binned_0,data_7693Percentile_630) into DataOfDataField
+ !create data_7693Percentile_810:Data
+ !data_7693Percentile_810.value:='76-93 Percentile'
+!data_7693Percentile_810.index:=179
+!insert(satscore_binned_0,data_7693Percentile_810) into DataOfDataField
+ !create data_7693Percentile_541:Data
+ !data_7693Percentile_541.value:='76-93 Percentile'
+!data_7693Percentile_541.index:=180
+!insert(satscore_binned_0,data_7693Percentile_541) into DataOfDataField
+ !create data_7693Percentile_1392:Data
+ !data_7693Percentile_1392.value:='76-93 Percentile'
+!data_7693Percentile_1392.index:=181
+!insert(satscore_binned_0,data_7693Percentile_1392) into DataOfDataField
+ !create data_7693Percentile_1164:Data
+ !data_7693Percentile_1164.value:='76-93 Percentile'
+!data_7693Percentile_1164.index:=182
+!insert(satscore_binned_0,data_7693Percentile_1164) into DataOfDataField
+ !create data_7693Percentile_569:Data
+ !data_7693Percentile_569.value:='76-93 Percentile'
+!data_7693Percentile_569.index:=183
+!insert(satscore_binned_0,data_7693Percentile_569) into DataOfDataField
+ !create data_7693Percentile_1351:Data
+ !data_7693Percentile_1351.value:='76-93 Percentile'
+!data_7693Percentile_1351.index:=184
+!insert(satscore_binned_0,data_7693Percentile_1351) into DataOfDataField
+ !create data_94+percentile_196:Data
+ !data_94+percentile_196.value:='94+ percentile'
+!data_94+percentile_196.index:=185
+!insert(satscore_binned_0,data_94+percentile_196) into DataOfDataField
+ !create data_94+percentile_1387:Data
+ !data_94+percentile_1387.value:='94+ percentile'
+!data_94+percentile_1387.index:=186
+!insert(satscore_binned_0,data_94+percentile_1387) into DataOfDataField
+ !create data_94+percentile_120:Data
+ !data_94+percentile_120.value:='94+ percentile'
+!data_94+percentile_120.index:=187
+!insert(satscore_binned_0,data_94+percentile_120) into DataOfDataField
+ !create data_94+percentile_47:Data
+ !data_94+percentile_47.value:='94+ percentile'
+!data_94+percentile_47.index:=188
+!insert(satscore_binned_0,data_94+percentile_47) into DataOfDataField
+ !create data_94+percentile_300:Data
+ !data_94+percentile_300.value:='94+ percentile'
+!data_94+percentile_300.index:=189
+!insert(satscore_binned_0,data_94+percentile_300) into DataOfDataField
+ !create data_94+percentile_1331:Data
+ !data_94+percentile_1331.value:='94+ percentile'
+!data_94+percentile_1331.index:=190
+!insert(satscore_binned_0,data_94+percentile_1331) into DataOfDataField
+ !create data_7693Percentile_1244:Data
+ !data_7693Percentile_1244.value:='76-93 Percentile'
+!data_7693Percentile_1244.index:=191
+!insert(satscore_binned_0,data_7693Percentile_1244) into DataOfDataField
+ !create data_7693Percentile_223:Data
+ !data_7693Percentile_223.value:='76-93 Percentile'
+!data_7693Percentile_223.index:=192
+!insert(satscore_binned_0,data_7693Percentile_223) into DataOfDataField
+ !create data_7693Percentile_1180:Data
+ !data_7693Percentile_1180.value:='76-93 Percentile'
+!data_7693Percentile_1180.index:=193
+!insert(satscore_binned_0,data_7693Percentile_1180) into DataOfDataField
+ !create data_7693Percentile_860:Data
+ !data_7693Percentile_860.value:='76-93 Percentile'
+!data_7693Percentile_860.index:=194
+!insert(satscore_binned_0,data_7693Percentile_860) into DataOfDataField
+ !create data_5575Percentile_1055:Data
+ !data_5575Percentile_1055.value:='55-75 Percentile'
+!data_5575Percentile_1055.index:=195
+!insert(satscore_binned_0,data_5575Percentile_1055) into DataOfDataField
+ !create data_5575Percentile_852:Data
+ !data_5575Percentile_852.value:='55-75 Percentile'
+!data_5575Percentile_852.index:=196
+!insert(satscore_binned_0,data_5575Percentile_852) into DataOfDataField
+ !create data_5575Percentile_1306:Data
+ !data_5575Percentile_1306.value:='55-75 Percentile'
+!data_5575Percentile_1306.index:=197
+!insert(satscore_binned_0,data_5575Percentile_1306) into DataOfDataField
+ !create data_5575Percentile_1149:Data
+ !data_5575Percentile_1149.value:='55-75 Percentile'
+!data_5575Percentile_1149.index:=198
+!insert(satscore_binned_0,data_5575Percentile_1149) into DataOfDataField
+ !create data_5575Percentile_780:Data
+ !data_5575Percentile_780.value:='55-75 Percentile'
+!data_5575Percentile_780.index:=199
+!insert(satscore_binned_0,data_5575Percentile_780) into DataOfDataField
+ !create data_54PercentileandUnder_402:Data
+ !data_54PercentileandUnder_402.value:='54 Percentile and Under'
+!data_54PercentileandUnder_402.index:=200
+!insert(satscore_binned_0,data_54PercentileandUnder_402) into DataOfDataField
+ !create data_54PercentileandUnder_483:Data
+ !data_54PercentileandUnder_483.value:='54 Percentile and Under'
+!data_54PercentileandUnder_483.index:=201
+!insert(satscore_binned_0,data_54PercentileandUnder_483) into DataOfDataField
+ !create data_7693Percentile_412:Data
+ !data_7693Percentile_412.value:='76-93 Percentile'
+!data_7693Percentile_412.index:=202
+!insert(satscore_binned_0,data_7693Percentile_412) into DataOfDataField
+ !create data_7693Percentile_64:Data
+ !data_7693Percentile_64.value:='76-93 Percentile'
+!data_7693Percentile_64.index:=203
+!insert(satscore_binned_0,data_7693Percentile_64) into DataOfDataField
+ !create data_7693Percentile_1334:Data
+ !data_7693Percentile_1334.value:='76-93 Percentile'
+!data_7693Percentile_1334.index:=204
+!insert(satscore_binned_0,data_7693Percentile_1334) into DataOfDataField
+ !create data_5575Percentile_1313:Data
+ !data_5575Percentile_1313.value:='55-75 Percentile'
+!data_5575Percentile_1313.index:=205
+!insert(satscore_binned_0,data_5575Percentile_1313) into DataOfDataField
+ !create data_54PercentileandUnder_1105:Data
+ !data_54PercentileandUnder_1105.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1105.index:=206
+!insert(satscore_binned_0,data_54PercentileandUnder_1105) into DataOfDataField
+ !create data_94+percentile_87:Data
+ !data_94+percentile_87.value:='94+ percentile'
+!data_94+percentile_87.index:=207
+!insert(satscore_binned_0,data_94+percentile_87) into DataOfDataField
+ !create data_94+percentile_693:Data
+ !data_94+percentile_693.value:='94+ percentile'
+!data_94+percentile_693.index:=208
+!insert(satscore_binned_0,data_94+percentile_693) into DataOfDataField
+ !create data_7693Percentile_292:Data
+ !data_7693Percentile_292.value:='76-93 Percentile'
+!data_7693Percentile_292.index:=209
+!insert(satscore_binned_0,data_7693Percentile_292) into DataOfDataField
+ !create data_94+percentile_1216:Data
+ !data_94+percentile_1216.value:='94+ percentile'
+!data_94+percentile_1216.index:=210
+!insert(satscore_binned_0,data_94+percentile_1216) into DataOfDataField
+ !create data_7693Percentile_835:Data
+ !data_7693Percentile_835.value:='76-93 Percentile'
+!data_7693Percentile_835.index:=211
+!insert(satscore_binned_0,data_7693Percentile_835) into DataOfDataField
+ !create data_94+percentile_845:Data
+ !data_94+percentile_845.value:='94+ percentile'
+!data_94+percentile_845.index:=212
+!insert(satscore_binned_0,data_94+percentile_845) into DataOfDataField
+ !create data_94+percentile_494:Data
+ !data_94+percentile_494.value:='94+ percentile'
+!data_94+percentile_494.index:=213
+!insert(satscore_binned_0,data_94+percentile_494) into DataOfDataField
+ !create data_7693Percentile_100:Data
+ !data_7693Percentile_100.value:='76-93 Percentile'
+!data_7693Percentile_100.index:=214
+!insert(satscore_binned_0,data_7693Percentile_100) into DataOfDataField
+ !create data_7693Percentile_76:Data
+ !data_7693Percentile_76.value:='76-93 Percentile'
+!data_7693Percentile_76.index:=215
+!insert(satscore_binned_0,data_7693Percentile_76) into DataOfDataField
+ !create data_7693Percentile_1317:Data
+ !data_7693Percentile_1317.value:='76-93 Percentile'
+!data_7693Percentile_1317.index:=216
+!insert(satscore_binned_0,data_7693Percentile_1317) into DataOfDataField
+ !create data_7693Percentile_1062:Data
+ !data_7693Percentile_1062.value:='76-93 Percentile'
+!data_7693Percentile_1062.index:=217
+!insert(satscore_binned_0,data_7693Percentile_1062) into DataOfDataField
+ !create data_5575Percentile_357:Data
+ !data_5575Percentile_357.value:='55-75 Percentile'
+!data_5575Percentile_357.index:=218
+!insert(satscore_binned_0,data_5575Percentile_357) into DataOfDataField
+ !create data_5575Percentile_1309:Data
+ !data_5575Percentile_1309.value:='55-75 Percentile'
+!data_5575Percentile_1309.index:=219
+!insert(satscore_binned_0,data_5575Percentile_1309) into DataOfDataField
+ !create data_7693Percentile_1378:Data
+ !data_7693Percentile_1378.value:='76-93 Percentile'
+!data_7693Percentile_1378.index:=220
+!insert(satscore_binned_0,data_7693Percentile_1378) into DataOfDataField
+ !create data_7693Percentile_560:Data
+ !data_7693Percentile_560.value:='76-93 Percentile'
+!data_7693Percentile_560.index:=221
+!insert(satscore_binned_0,data_7693Percentile_560) into DataOfDataField
+ !create data_5575Percentile_1296:Data
+ !data_5575Percentile_1296.value:='55-75 Percentile'
+!data_5575Percentile_1296.index:=222
+!insert(satscore_binned_0,data_5575Percentile_1296) into DataOfDataField
+ !create data_5575Percentile_830:Data
+ !data_5575Percentile_830.value:='55-75 Percentile'
+!data_5575Percentile_830.index:=223
+!insert(satscore_binned_0,data_5575Percentile_830) into DataOfDataField
+ !create data_5575Percentile_5:Data
+ !data_5575Percentile_5.value:='55-75 Percentile'
+!data_5575Percentile_5.index:=224
+!insert(satscore_binned_0,data_5575Percentile_5) into DataOfDataField
+ !create data_54PercentileandUnder_89:Data
+ !data_54PercentileandUnder_89.value:='54 Percentile and Under'
+!data_54PercentileandUnder_89.index:=225
+!insert(satscore_binned_0,data_54PercentileandUnder_89) into DataOfDataField
+ !create data_5575Percentile_60:Data
+ !data_5575Percentile_60.value:='55-75 Percentile'
+!data_5575Percentile_60.index:=226
+!insert(satscore_binned_0,data_5575Percentile_60) into DataOfDataField
+ !create data_5575Percentile_865:Data
+ !data_5575Percentile_865.value:='55-75 Percentile'
+!data_5575Percentile_865.index:=227
+!insert(satscore_binned_0,data_5575Percentile_865) into DataOfDataField
+ !create data_5575Percentile_133:Data
+ !data_5575Percentile_133.value:='55-75 Percentile'
+!data_5575Percentile_133.index:=228
+!insert(satscore_binned_0,data_5575Percentile_133) into DataOfDataField
+ !create data_5575Percentile_1359:Data
+ !data_5575Percentile_1359.value:='55-75 Percentile'
+!data_5575Percentile_1359.index:=229
+!insert(satscore_binned_0,data_5575Percentile_1359) into DataOfDataField
+ !create data_5575Percentile_148:Data
+ !data_5575Percentile_148.value:='55-75 Percentile'
+!data_5575Percentile_148.index:=230
+!insert(satscore_binned_0,data_5575Percentile_148) into DataOfDataField
+ !create data_5575Percentile_722:Data
+ !data_5575Percentile_722.value:='55-75 Percentile'
+!data_5575Percentile_722.index:=231
+!insert(satscore_binned_0,data_5575Percentile_722) into DataOfDataField
+ !create data_5575Percentile_862:Data
+ !data_5575Percentile_862.value:='55-75 Percentile'
+!data_5575Percentile_862.index:=232
+!insert(satscore_binned_0,data_5575Percentile_862) into DataOfDataField
+ !create data_5575Percentile_125:Data
+ !data_5575Percentile_125.value:='55-75 Percentile'
+!data_5575Percentile_125.index:=233
+!insert(satscore_binned_0,data_5575Percentile_125) into DataOfDataField
+ !create data_5575Percentile_735:Data
+ !data_5575Percentile_735.value:='55-75 Percentile'
+!data_5575Percentile_735.index:=234
+!insert(satscore_binned_0,data_5575Percentile_735) into DataOfDataField
+ !create data_5575Percentile_1105:Data
+ !data_5575Percentile_1105.value:='55-75 Percentile'
+!data_5575Percentile_1105.index:=235
+!insert(satscore_binned_0,data_5575Percentile_1105) into DataOfDataField
+ !create data_7693Percentile_546:Data
+ !data_7693Percentile_546.value:='76-93 Percentile'
+!data_7693Percentile_546.index:=236
+!insert(satscore_binned_0,data_7693Percentile_546) into DataOfDataField
+ !create data_94+percentile_1035:Data
+ !data_94+percentile_1035.value:='94+ percentile'
+!data_94+percentile_1035.index:=237
+!insert(satscore_binned_0,data_94+percentile_1035) into DataOfDataField
+ !create data_7693Percentile_149:Data
+ !data_7693Percentile_149.value:='76-93 Percentile'
+!data_7693Percentile_149.index:=238
+!insert(satscore_binned_0,data_7693Percentile_149) into DataOfDataField
+ !create data_7693Percentile_1395:Data
+ !data_7693Percentile_1395.value:='76-93 Percentile'
+!data_7693Percentile_1395.index:=239
+!insert(satscore_binned_0,data_7693Percentile_1395) into DataOfDataField
+ !create data_7693Percentile_37:Data
+ !data_7693Percentile_37.value:='76-93 Percentile'
+!data_7693Percentile_37.index:=240
+!insert(satscore_binned_0,data_7693Percentile_37) into DataOfDataField
+ !create data_5575Percentile_1474:Data
+ !data_5575Percentile_1474.value:='55-75 Percentile'
+!data_5575Percentile_1474.index:=241
+!insert(satscore_binned_0,data_5575Percentile_1474) into DataOfDataField
+ !create data_7693Percentile_1036:Data
+ !data_7693Percentile_1036.value:='76-93 Percentile'
+!data_7693Percentile_1036.index:=242
+!insert(satscore_binned_0,data_7693Percentile_1036) into DataOfDataField
+ !create data_7693Percentile_335:Data
+ !data_7693Percentile_335.value:='76-93 Percentile'
+!data_7693Percentile_335.index:=243
+!insert(satscore_binned_0,data_7693Percentile_335) into DataOfDataField
+ !create data_5575Percentile_64:Data
+ !data_5575Percentile_64.value:='55-75 Percentile'
+!data_5575Percentile_64.index:=244
+!insert(satscore_binned_0,data_5575Percentile_64) into DataOfDataField
+ !create data_54PercentileandUnder_718:Data
+ !data_54PercentileandUnder_718.value:='54 Percentile and Under'
+!data_54PercentileandUnder_718.index:=245
+!insert(satscore_binned_0,data_54PercentileandUnder_718) into DataOfDataField
+ !create data_5575Percentile_960:Data
+ !data_5575Percentile_960.value:='55-75 Percentile'
+!data_5575Percentile_960.index:=246
+!insert(satscore_binned_0,data_5575Percentile_960) into DataOfDataField
+ !create data_5575Percentile_1376:Data
+ !data_5575Percentile_1376.value:='55-75 Percentile'
+!data_5575Percentile_1376.index:=247
+!insert(satscore_binned_0,data_5575Percentile_1376) into DataOfDataField
+ !create data_5575Percentile_1366:Data
+ !data_5575Percentile_1366.value:='55-75 Percentile'
+!data_5575Percentile_1366.index:=248
+!insert(satscore_binned_0,data_5575Percentile_1366) into DataOfDataField
+ !create data_7693Percentile_831:Data
+ !data_7693Percentile_831.value:='76-93 Percentile'
+!data_7693Percentile_831.index:=249
+!insert(satscore_binned_0,data_7693Percentile_831) into DataOfDataField
+ !create data_7693Percentile_48:Data
+ !data_7693Percentile_48.value:='76-93 Percentile'
+!data_7693Percentile_48.index:=250
+!insert(satscore_binned_0,data_7693Percentile_48) into DataOfDataField
+ !create data_7693Percentile_1433:Data
+ !data_7693Percentile_1433.value:='76-93 Percentile'
+!data_7693Percentile_1433.index:=251
+!insert(satscore_binned_0,data_7693Percentile_1433) into DataOfDataField
+ !create data_7693Percentile_243:Data
+ !data_7693Percentile_243.value:='76-93 Percentile'
+!data_7693Percentile_243.index:=252
+!insert(satscore_binned_0,data_7693Percentile_243) into DataOfDataField
+ !create data_5575Percentile_556:Data
+ !data_5575Percentile_556.value:='55-75 Percentile'
+!data_5575Percentile_556.index:=253
+!insert(satscore_binned_0,data_5575Percentile_556) into DataOfDataField
+ !create data_5575Percentile_123:Data
+ !data_5575Percentile_123.value:='55-75 Percentile'
+!data_5575Percentile_123.index:=254
+!insert(satscore_binned_0,data_5575Percentile_123) into DataOfDataField
+ !create data_5575Percentile_68:Data
+ !data_5575Percentile_68.value:='55-75 Percentile'
+!data_5575Percentile_68.index:=255
+!insert(satscore_binned_0,data_5575Percentile_68) into DataOfDataField
+ !create data_54PercentileandUnder_23:Data
+ !data_54PercentileandUnder_23.value:='54 Percentile and Under'
+!data_54PercentileandUnder_23.index:=256
+!insert(satscore_binned_0,data_54PercentileandUnder_23) into DataOfDataField
+ !create data_5575Percentile_393:Data
+ !data_5575Percentile_393.value:='55-75 Percentile'
+!data_5575Percentile_393.index:=257
+!insert(satscore_binned_0,data_5575Percentile_393) into DataOfDataField
+ !create data_7693Percentile_1168:Data
+ !data_7693Percentile_1168.value:='76-93 Percentile'
+!data_7693Percentile_1168.index:=258
+!insert(satscore_binned_0,data_7693Percentile_1168) into DataOfDataField
+ !create data_7693Percentile_323:Data
+ !data_7693Percentile_323.value:='76-93 Percentile'
+!data_7693Percentile_323.index:=259
+!insert(satscore_binned_0,data_7693Percentile_323) into DataOfDataField
+ !create data_94+percentile_1213:Data
+ !data_94+percentile_1213.value:='94+ percentile'
+!data_94+percentile_1213.index:=260
+!insert(satscore_binned_0,data_94+percentile_1213) into DataOfDataField
+ !create data_94+percentile_1061:Data
+ !data_94+percentile_1061.value:='94+ percentile'
+!data_94+percentile_1061.index:=261
+!insert(satscore_binned_0,data_94+percentile_1061) into DataOfDataField
+ !create data_94+percentile_541:Data
+ !data_94+percentile_541.value:='94+ percentile'
+!data_94+percentile_541.index:=262
+!insert(satscore_binned_0,data_94+percentile_541) into DataOfDataField
+ !create data_7693Percentile_846:Data
+ !data_7693Percentile_846.value:='76-93 Percentile'
+!data_7693Percentile_846.index:=263
+!insert(satscore_binned_0,data_7693Percentile_846) into DataOfDataField
+ !create data_7693Percentile_770:Data
+ !data_7693Percentile_770.value:='76-93 Percentile'
+!data_7693Percentile_770.index:=264
+!insert(satscore_binned_0,data_7693Percentile_770) into DataOfDataField
+ !create data_7693Percentile_303:Data
+ !data_7693Percentile_303.value:='76-93 Percentile'
+!data_7693Percentile_303.index:=265
+!insert(satscore_binned_0,data_7693Percentile_303) into DataOfDataField
+ !create data_7693Percentile_1332:Data
+ !data_7693Percentile_1332.value:='76-93 Percentile'
+!data_7693Percentile_1332.index:=266
+!insert(satscore_binned_0,data_7693Percentile_1332) into DataOfDataField
+ !create data_7693Percentile_999:Data
+ !data_7693Percentile_999.value:='76-93 Percentile'
+!data_7693Percentile_999.index:=267
+!insert(satscore_binned_0,data_7693Percentile_999) into DataOfDataField
+ !create data_7693Percentile_890:Data
+ !data_7693Percentile_890.value:='76-93 Percentile'
+!data_7693Percentile_890.index:=268
+!insert(satscore_binned_0,data_7693Percentile_890) into DataOfDataField
+ !create data_7693Percentile_1135:Data
+ !data_7693Percentile_1135.value:='76-93 Percentile'
+!data_7693Percentile_1135.index:=269
+!insert(satscore_binned_0,data_7693Percentile_1135) into DataOfDataField
+ !create data_7693Percentile_955:Data
+ !data_7693Percentile_955.value:='76-93 Percentile'
+!data_7693Percentile_955.index:=270
+!insert(satscore_binned_0,data_7693Percentile_955) into DataOfDataField
+ !create data_7693Percentile_50:Data
+ !data_7693Percentile_50.value:='76-93 Percentile'
+!data_7693Percentile_50.index:=271
+!insert(satscore_binned_0,data_7693Percentile_50) into DataOfDataField
+ !create data_5575Percentile_1056:Data
+ !data_5575Percentile_1056.value:='55-75 Percentile'
+!data_5575Percentile_1056.index:=272
+!insert(satscore_binned_0,data_5575Percentile_1056) into DataOfDataField
+ !create data_5575Percentile_1132:Data
+ !data_5575Percentile_1132.value:='55-75 Percentile'
+!data_5575Percentile_1132.index:=273
+!insert(satscore_binned_0,data_5575Percentile_1132) into DataOfDataField
+ !create data_5575Percentile_1019:Data
+ !data_5575Percentile_1019.value:='55-75 Percentile'
+!data_5575Percentile_1019.index:=274
+!insert(satscore_binned_0,data_5575Percentile_1019) into DataOfDataField
+ !create data_7693Percentile_106:Data
+ !data_7693Percentile_106.value:='76-93 Percentile'
+!data_7693Percentile_106.index:=275
+!insert(satscore_binned_0,data_7693Percentile_106) into DataOfDataField
+ !create data_7693Percentile_1143:Data
+ !data_7693Percentile_1143.value:='76-93 Percentile'
+!data_7693Percentile_1143.index:=276
+!insert(satscore_binned_0,data_7693Percentile_1143) into DataOfDataField
+ !create data_7693Percentile_180:Data
+ !data_7693Percentile_180.value:='76-93 Percentile'
+!data_7693Percentile_180.index:=277
+!insert(satscore_binned_0,data_7693Percentile_180) into DataOfDataField
+ !create data_7693Percentile_687:Data
+ !data_7693Percentile_687.value:='76-93 Percentile'
+!data_7693Percentile_687.index:=278
+!insert(satscore_binned_0,data_7693Percentile_687) into DataOfDataField
+ !create data_7693Percentile_384:Data
+ !data_7693Percentile_384.value:='76-93 Percentile'
+!data_7693Percentile_384.index:=279
+!insert(satscore_binned_0,data_7693Percentile_384) into DataOfDataField
+ !create data_7693Percentile_974:Data
+ !data_7693Percentile_974.value:='76-93 Percentile'
+!data_7693Percentile_974.index:=280
+!insert(satscore_binned_0,data_7693Percentile_974) into DataOfDataField
+ !create data_7693Percentile_1484:Data
+ !data_7693Percentile_1484.value:='76-93 Percentile'
+!data_7693Percentile_1484.index:=281
+!insert(satscore_binned_0,data_7693Percentile_1484) into DataOfDataField
+ !create data_7693Percentile_1024:Data
+ !data_7693Percentile_1024.value:='76-93 Percentile'
+!data_7693Percentile_1024.index:=282
+!insert(satscore_binned_0,data_7693Percentile_1024) into DataOfDataField
+ !create data_7693Percentile_1121:Data
+ !data_7693Percentile_1121.value:='76-93 Percentile'
+!data_7693Percentile_1121.index:=283
+!insert(satscore_binned_0,data_7693Percentile_1121) into DataOfDataField
+ !create data_7693Percentile_396:Data
+ !data_7693Percentile_396.value:='76-93 Percentile'
+!data_7693Percentile_396.index:=284
+!insert(satscore_binned_0,data_7693Percentile_396) into DataOfDataField
+ !create data_7693Percentile_1051:Data
+ !data_7693Percentile_1051.value:='76-93 Percentile'
+!data_7693Percentile_1051.index:=285
+!insert(satscore_binned_0,data_7693Percentile_1051) into DataOfDataField
+ !create data_7693Percentile_998:Data
+ !data_7693Percentile_998.value:='76-93 Percentile'
+!data_7693Percentile_998.index:=286
+!insert(satscore_binned_0,data_7693Percentile_998) into DataOfDataField
+ !create data_7693Percentile_809:Data
+ !data_7693Percentile_809.value:='76-93 Percentile'
+!data_7693Percentile_809.index:=287
+!insert(satscore_binned_0,data_7693Percentile_809) into DataOfDataField
+ !create data_7693Percentile_914:Data
+ !data_7693Percentile_914.value:='76-93 Percentile'
+!data_7693Percentile_914.index:=288
+!insert(satscore_binned_0,data_7693Percentile_914) into DataOfDataField
+ !create data_7693Percentile_681:Data
+ !data_7693Percentile_681.value:='76-93 Percentile'
+!data_7693Percentile_681.index:=289
+!insert(satscore_binned_0,data_7693Percentile_681) into DataOfDataField
+ !create data_5575Percentile_1168:Data
+ !data_5575Percentile_1168.value:='55-75 Percentile'
+!data_5575Percentile_1168.index:=290
+!insert(satscore_binned_0,data_5575Percentile_1168) into DataOfDataField
+ !create data_5575Percentile_1009:Data
+ !data_5575Percentile_1009.value:='55-75 Percentile'
+!data_5575Percentile_1009.index:=291
+!insert(satscore_binned_0,data_5575Percentile_1009) into DataOfDataField
+ !create data_5575Percentile_269:Data
+ !data_5575Percentile_269.value:='55-75 Percentile'
+!data_5575Percentile_269.index:=292
+!insert(satscore_binned_0,data_5575Percentile_269) into DataOfDataField
+ !create data_7693Percentile_766:Data
+ !data_7693Percentile_766.value:='76-93 Percentile'
+!data_7693Percentile_766.index:=293
+!insert(satscore_binned_0,data_7693Percentile_766) into DataOfDataField
+ !create data_94+percentile_733:Data
+ !data_94+percentile_733.value:='94+ percentile'
+!data_94+percentile_733.index:=294
+!insert(satscore_binned_0,data_94+percentile_733) into DataOfDataField
+ !create data_5575Percentile_776:Data
+ !data_5575Percentile_776.value:='55-75 Percentile'
+!data_5575Percentile_776.index:=295
+!insert(satscore_binned_0,data_5575Percentile_776) into DataOfDataField
+ !create data_7693Percentile_71:Data
+ !data_7693Percentile_71.value:='76-93 Percentile'
+!data_7693Percentile_71.index:=296
+!insert(satscore_binned_0,data_7693Percentile_71) into DataOfDataField
+ !create data_54PercentileandUnder_785:Data
+ !data_54PercentileandUnder_785.value:='54 Percentile and Under'
+!data_54PercentileandUnder_785.index:=297
+!insert(satscore_binned_0,data_54PercentileandUnder_785) into DataOfDataField
+ !create data_54PercentileandUnder_789:Data
+ !data_54PercentileandUnder_789.value:='54 Percentile and Under'
+!data_54PercentileandUnder_789.index:=298
+!insert(satscore_binned_0,data_54PercentileandUnder_789) into DataOfDataField
+ !create data_54PercentileandUnder_10:Data
+ !data_54PercentileandUnder_10.value:='54 Percentile and Under'
+!data_54PercentileandUnder_10.index:=299
+!insert(satscore_binned_0,data_54PercentileandUnder_10) into DataOfDataField
+ !create data_54PercentileandUnder_345:Data
+ !data_54PercentileandUnder_345.value:='54 Percentile and Under'
+!data_54PercentileandUnder_345.index:=300
+!insert(satscore_binned_0,data_54PercentileandUnder_345) into DataOfDataField
+ !create data_54PercentileandUnder_754:Data
+ !data_54PercentileandUnder_754.value:='54 Percentile and Under'
+!data_54PercentileandUnder_754.index:=301
+!insert(satscore_binned_0,data_54PercentileandUnder_754) into DataOfDataField
+ !create data_5575Percentile_403:Data
+ !data_5575Percentile_403.value:='55-75 Percentile'
+!data_5575Percentile_403.index:=302
+!insert(satscore_binned_0,data_5575Percentile_403) into DataOfDataField
+ !create data_5575Percentile_837:Data
+ !data_5575Percentile_837.value:='55-75 Percentile'
+!data_5575Percentile_837.index:=303
+!insert(satscore_binned_0,data_5575Percentile_837) into DataOfDataField
+ !create data_5575Percentile_1512:Data
+ !data_5575Percentile_1512.value:='55-75 Percentile'
+!data_5575Percentile_1512.index:=304
+!insert(satscore_binned_0,data_5575Percentile_1512) into DataOfDataField
+ !create data_7693Percentile_225:Data
+ !data_7693Percentile_225.value:='76-93 Percentile'
+!data_7693Percentile_225.index:=305
+!insert(satscore_binned_0,data_7693Percentile_225) into DataOfDataField
+ !create data_7693Percentile_1402:Data
+ !data_7693Percentile_1402.value:='76-93 Percentile'
+!data_7693Percentile_1402.index:=306
+!insert(satscore_binned_0,data_7693Percentile_1402) into DataOfDataField
+ !create data_54PercentileandUnder_1355:Data
+ !data_54PercentileandUnder_1355.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1355.index:=307
+!insert(satscore_binned_0,data_54PercentileandUnder_1355) into DataOfDataField
+ !create data_54PercentileandUnder_1187:Data
+ !data_54PercentileandUnder_1187.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1187.index:=308
+!insert(satscore_binned_0,data_54PercentileandUnder_1187) into DataOfDataField
+ !create data_54PercentileandUnder_1177:Data
+ !data_54PercentileandUnder_1177.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1177.index:=309
+!insert(satscore_binned_0,data_54PercentileandUnder_1177) into DataOfDataField
+ !create data_54PercentileandUnder_477:Data
+ !data_54PercentileandUnder_477.value:='54 Percentile and Under'
+!data_54PercentileandUnder_477.index:=310
+!insert(satscore_binned_0,data_54PercentileandUnder_477) into DataOfDataField
+ !create data_54PercentileandUnder_586:Data
+ !data_54PercentileandUnder_586.value:='54 Percentile and Under'
+!data_54PercentileandUnder_586.index:=311
+!insert(satscore_binned_0,data_54PercentileandUnder_586) into DataOfDataField
+ !create data_54PercentileandUnder_161:Data
+ !data_54PercentileandUnder_161.value:='54 Percentile and Under'
+!data_54PercentileandUnder_161.index:=312
+!insert(satscore_binned_0,data_54PercentileandUnder_161) into DataOfDataField
+ !create data_54PercentileandUnder_503:Data
+ !data_54PercentileandUnder_503.value:='54 Percentile and Under'
+!data_54PercentileandUnder_503.index:=313
+!insert(satscore_binned_0,data_54PercentileandUnder_503) into DataOfDataField
+ !create data_54PercentileandUnder_1531:Data
+ !data_54PercentileandUnder_1531.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1531.index:=314
+!insert(satscore_binned_0,data_54PercentileandUnder_1531) into DataOfDataField
+ !create data_54PercentileandUnder_1079:Data
+ !data_54PercentileandUnder_1079.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1079.index:=315
+!insert(satscore_binned_0,data_54PercentileandUnder_1079) into DataOfDataField
+ !create data_54PercentileandUnder_734:Data
+ !data_54PercentileandUnder_734.value:='54 Percentile and Under'
+!data_54PercentileandUnder_734.index:=316
+!insert(satscore_binned_0,data_54PercentileandUnder_734) into DataOfDataField
+ !create data_54PercentileandUnder_770:Data
+ !data_54PercentileandUnder_770.value:='54 Percentile and Under'
+!data_54PercentileandUnder_770.index:=317
+!insert(satscore_binned_0,data_54PercentileandUnder_770) into DataOfDataField
+ !create data_54PercentileandUnder_403:Data
+ !data_54PercentileandUnder_403.value:='54 Percentile and Under'
+!data_54PercentileandUnder_403.index:=318
+!insert(satscore_binned_0,data_54PercentileandUnder_403) into DataOfDataField
+ !create data_54PercentileandUnder_63:Data
+ !data_54PercentileandUnder_63.value:='54 Percentile and Under'
+!data_54PercentileandUnder_63.index:=319
+!insert(satscore_binned_0,data_54PercentileandUnder_63) into DataOfDataField
+ !create data_54PercentileandUnder_1298:Data
+ !data_54PercentileandUnder_1298.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1298.index:=320
+!insert(satscore_binned_0,data_54PercentileandUnder_1298) into DataOfDataField
+ !create data_54PercentileandUnder_648:Data
+ !data_54PercentileandUnder_648.value:='54 Percentile and Under'
+!data_54PercentileandUnder_648.index:=321
+!insert(satscore_binned_0,data_54PercentileandUnder_648) into DataOfDataField
+ !create data_54PercentileandUnder_1371:Data
+ !data_54PercentileandUnder_1371.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1371.index:=322
+!insert(satscore_binned_0,data_54PercentileandUnder_1371) into DataOfDataField
+ !create data_54PercentileandUnder_231:Data
+ !data_54PercentileandUnder_231.value:='54 Percentile and Under'
+!data_54PercentileandUnder_231.index:=323
+!insert(satscore_binned_0,data_54PercentileandUnder_231) into DataOfDataField
+ !create data_54PercentileandUnder_854:Data
+ !data_54PercentileandUnder_854.value:='54 Percentile and Under'
+!data_54PercentileandUnder_854.index:=324
+!insert(satscore_binned_0,data_54PercentileandUnder_854) into DataOfDataField
+ !create data_54PercentileandUnder_194:Data
+ !data_54PercentileandUnder_194.value:='54 Percentile and Under'
+!data_54PercentileandUnder_194.index:=325
+!insert(satscore_binned_0,data_54PercentileandUnder_194) into DataOfDataField
+ !create data_54PercentileandUnder_858:Data
+ !data_54PercentileandUnder_858.value:='54 Percentile and Under'
+!data_54PercentileandUnder_858.index:=326
+!insert(satscore_binned_0,data_54PercentileandUnder_858) into DataOfDataField
+ !create data_54PercentileandUnder_326:Data
+ !data_54PercentileandUnder_326.value:='54 Percentile and Under'
+!data_54PercentileandUnder_326.index:=327
+!insert(satscore_binned_0,data_54PercentileandUnder_326) into DataOfDataField
+ !create data_54PercentileandUnder_1203:Data
+ !data_54PercentileandUnder_1203.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1203.index:=328
+!insert(satscore_binned_0,data_54PercentileandUnder_1203) into DataOfDataField
+ !create data_7693Percentile_1315:Data
+ !data_7693Percentile_1315.value:='76-93 Percentile'
+!data_7693Percentile_1315.index:=329
+!insert(satscore_binned_0,data_7693Percentile_1315) into DataOfDataField
+ !create data_7693Percentile_380:Data
+ !data_7693Percentile_380.value:='76-93 Percentile'
+!data_7693Percentile_380.index:=330
+!insert(satscore_binned_0,data_7693Percentile_380) into DataOfDataField
+ !create data_7693Percentile_375:Data
+ !data_7693Percentile_375.value:='76-93 Percentile'
+!data_7693Percentile_375.index:=331
+!insert(satscore_binned_0,data_7693Percentile_375) into DataOfDataField
+ !create data_7693Percentile_362:Data
+ !data_7693Percentile_362.value:='76-93 Percentile'
+!data_7693Percentile_362.index:=332
+!insert(satscore_binned_0,data_7693Percentile_362) into DataOfDataField
+ !create data_7693Percentile_371:Data
+ !data_7693Percentile_371.value:='76-93 Percentile'
+!data_7693Percentile_371.index:=333
+!insert(satscore_binned_0,data_7693Percentile_371) into DataOfDataField
+ !create data_7693Percentile_459:Data
+ !data_7693Percentile_459.value:='76-93 Percentile'
+!data_7693Percentile_459.index:=334
+!insert(satscore_binned_0,data_7693Percentile_459) into DataOfDataField
+ !create data_7693Percentile_673:Data
+ !data_7693Percentile_673.value:='76-93 Percentile'
+!data_7693Percentile_673.index:=335
+!insert(satscore_binned_0,data_7693Percentile_673) into DataOfDataField
+ !create data_7693Percentile_838:Data
+ !data_7693Percentile_838.value:='76-93 Percentile'
+!data_7693Percentile_838.index:=336
+!insert(satscore_binned_0,data_7693Percentile_838) into DataOfDataField
+ !create data_7693Percentile_353:Data
+ !data_7693Percentile_353.value:='76-93 Percentile'
+!data_7693Percentile_353.index:=337
+!insert(satscore_binned_0,data_7693Percentile_353) into DataOfDataField
+ !create data_7693Percentile_712:Data
+ !data_7693Percentile_712.value:='76-93 Percentile'
+!data_7693Percentile_712.index:=338
+!insert(satscore_binned_0,data_7693Percentile_712) into DataOfDataField
+ !create data_94+percentile_99:Data
+ !data_94+percentile_99.value:='94+ percentile'
+!data_94+percentile_99.index:=339
+!insert(satscore_binned_0,data_94+percentile_99) into DataOfDataField
+ !create data_7693Percentile_1290:Data
+ !data_7693Percentile_1290.value:='76-93 Percentile'
+!data_7693Percentile_1290.index:=340
+!insert(satscore_binned_0,data_7693Percentile_1290) into DataOfDataField
+ !create data_5575Percentile_1321:Data
+ !data_5575Percentile_1321.value:='55-75 Percentile'
+!data_5575Percentile_1321.index:=341
+!insert(satscore_binned_0,data_5575Percentile_1321) into DataOfDataField
+ !create data_5575Percentile_1403:Data
+ !data_5575Percentile_1403.value:='55-75 Percentile'
+!data_5575Percentile_1403.index:=342
+!insert(satscore_binned_0,data_5575Percentile_1403) into DataOfDataField
+ !create data_5575Percentile_77:Data
+ !data_5575Percentile_77.value:='55-75 Percentile'
+!data_5575Percentile_77.index:=343
+!insert(satscore_binned_0,data_5575Percentile_77) into DataOfDataField
+ !create data_5575Percentile_1425:Data
+ !data_5575Percentile_1425.value:='55-75 Percentile'
+!data_5575Percentile_1425.index:=344
+!insert(satscore_binned_0,data_5575Percentile_1425) into DataOfDataField
+ !create data_7693Percentile_1058:Data
+ !data_7693Percentile_1058.value:='76-93 Percentile'
+!data_7693Percentile_1058.index:=345
+!insert(satscore_binned_0,data_7693Percentile_1058) into DataOfDataField
+ !create data_7693Percentile_32:Data
+ !data_7693Percentile_32.value:='76-93 Percentile'
+!data_7693Percentile_32.index:=346
+!insert(satscore_binned_0,data_7693Percentile_32) into DataOfDataField
+ !create data_7693Percentile_171:Data
+ !data_7693Percentile_171.value:='76-93 Percentile'
+!data_7693Percentile_171.index:=347
+!insert(satscore_binned_0,data_7693Percentile_171) into DataOfDataField
+ !create data_7693Percentile_561:Data
+ !data_7693Percentile_561.value:='76-93 Percentile'
+!data_7693Percentile_561.index:=348
+!insert(satscore_binned_0,data_7693Percentile_561) into DataOfDataField
+ !create data_7693Percentile_1014:Data
+ !data_7693Percentile_1014.value:='76-93 Percentile'
+!data_7693Percentile_1014.index:=349
+!insert(satscore_binned_0,data_7693Percentile_1014) into DataOfDataField
+ !create data_7693Percentile_591:Data
+ !data_7693Percentile_591.value:='76-93 Percentile'
+!data_7693Percentile_591.index:=350
+!insert(satscore_binned_0,data_7693Percentile_591) into DataOfDataField
+ !create data_7693Percentile_1003:Data
+ !data_7693Percentile_1003.value:='76-93 Percentile'
+!data_7693Percentile_1003.index:=351
+!insert(satscore_binned_0,data_7693Percentile_1003) into DataOfDataField
+ !create data_5575Percentile_685:Data
+ !data_5575Percentile_685.value:='55-75 Percentile'
+!data_5575Percentile_685.index:=352
+!insert(satscore_binned_0,data_5575Percentile_685) into DataOfDataField
+ !create data_5575Percentile_1344:Data
+ !data_5575Percentile_1344.value:='55-75 Percentile'
+!data_5575Percentile_1344.index:=353
+!insert(satscore_binned_0,data_5575Percentile_1344) into DataOfDataField
+ !create data_7693Percentile_843:Data
+ !data_7693Percentile_843.value:='76-93 Percentile'
+!data_7693Percentile_843.index:=354
+!insert(satscore_binned_0,data_7693Percentile_843) into DataOfDataField
+ !create data_7693Percentile_1347:Data
+ !data_7693Percentile_1347.value:='76-93 Percentile'
+!data_7693Percentile_1347.index:=355
+!insert(satscore_binned_0,data_7693Percentile_1347) into DataOfDataField
+ !create data_7693Percentile_1531:Data
+ !data_7693Percentile_1531.value:='76-93 Percentile'
+!data_7693Percentile_1531.index:=356
+!insert(satscore_binned_0,data_7693Percentile_1531) into DataOfDataField
+ !create data_5575Percentile_256:Data
+ !data_5575Percentile_256.value:='55-75 Percentile'
+!data_5575Percentile_256.index:=357
+!insert(satscore_binned_0,data_5575Percentile_256) into DataOfDataField
+ !create data_7693Percentile_1521:Data
+ !data_7693Percentile_1521.value:='76-93 Percentile'
+!data_7693Percentile_1521.index:=358
+!insert(satscore_binned_0,data_7693Percentile_1521) into DataOfDataField
+ !create data_7693Percentile_1520:Data
+ !data_7693Percentile_1520.value:='76-93 Percentile'
+!data_7693Percentile_1520.index:=359
+!insert(satscore_binned_0,data_7693Percentile_1520) into DataOfDataField
+ !create data_5575Percentile_431:Data
+ !data_5575Percentile_431.value:='55-75 Percentile'
+!data_5575Percentile_431.index:=360
+!insert(satscore_binned_0,data_5575Percentile_431) into DataOfDataField
+ !create data_5575Percentile_874:Data
+ !data_5575Percentile_874.value:='55-75 Percentile'
+!data_5575Percentile_874.index:=361
+!insert(satscore_binned_0,data_5575Percentile_874) into DataOfDataField
+ !create data_5575Percentile_194:Data
+ !data_5575Percentile_194.value:='55-75 Percentile'
+!data_5575Percentile_194.index:=362
+!insert(satscore_binned_0,data_5575Percentile_194) into DataOfDataField
+ !create data_5575Percentile_710:Data
+ !data_5575Percentile_710.value:='55-75 Percentile'
+!data_5575Percentile_710.index:=363
+!insert(satscore_binned_0,data_5575Percentile_710) into DataOfDataField
+ !create data_54PercentileandUnder_1044:Data
+ !data_54PercentileandUnder_1044.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1044.index:=364
+!insert(satscore_binned_0,data_54PercentileandUnder_1044) into DataOfDataField
+ !create data_54PercentileandUnder_1246:Data
+ !data_54PercentileandUnder_1246.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1246.index:=365
+!insert(satscore_binned_0,data_54PercentileandUnder_1246) into DataOfDataField
+ !create data_5575Percentile_1486:Data
+ !data_5575Percentile_1486.value:='55-75 Percentile'
+!data_5575Percentile_1486.index:=366
+!insert(satscore_binned_0,data_5575Percentile_1486) into DataOfDataField
+ !create data_7693Percentile_522:Data
+ !data_7693Percentile_522.value:='76-93 Percentile'
+!data_7693Percentile_522.index:=367
+!insert(satscore_binned_0,data_7693Percentile_522) into DataOfDataField
+ !create data_5575Percentile_1378:Data
+ !data_5575Percentile_1378.value:='55-75 Percentile'
+!data_5575Percentile_1378.index:=368
+!insert(satscore_binned_0,data_5575Percentile_1378) into DataOfDataField
+ !create data_54PercentileandUnder_239:Data
+ !data_54PercentileandUnder_239.value:='54 Percentile and Under'
+!data_54PercentileandUnder_239.index:=369
+!insert(satscore_binned_0,data_54PercentileandUnder_239) into DataOfDataField
+ !create data_54PercentileandUnder_457:Data
+ !data_54PercentileandUnder_457.value:='54 Percentile and Under'
+!data_54PercentileandUnder_457.index:=370
+!insert(satscore_binned_0,data_54PercentileandUnder_457) into DataOfDataField
+ !create data_54PercentileandUnder_389:Data
+ !data_54PercentileandUnder_389.value:='54 Percentile and Under'
+!data_54PercentileandUnder_389.index:=371
+!insert(satscore_binned_0,data_54PercentileandUnder_389) into DataOfDataField
+ !create data_94+percentile_90:Data
+ !data_94+percentile_90.value:='94+ percentile'
+!data_94+percentile_90.index:=372
+!insert(satscore_binned_0,data_94+percentile_90) into DataOfDataField
+ !create data_94+percentile_478:Data
+ !data_94+percentile_478.value:='94+ percentile'
+!data_94+percentile_478.index:=373
+!insert(satscore_binned_0,data_94+percentile_478) into DataOfDataField
+ !create data_7693Percentile_275:Data
+ !data_7693Percentile_275.value:='76-93 Percentile'
+!data_7693Percentile_275.index:=374
+!insert(satscore_binned_0,data_7693Percentile_275) into DataOfDataField
+ !create data_7693Percentile_199:Data
+ !data_7693Percentile_199.value:='76-93 Percentile'
+!data_7693Percentile_199.index:=375
+!insert(satscore_binned_0,data_7693Percentile_199) into DataOfDataField
+ !create data_7693Percentile_2:Data
+ !data_7693Percentile_2.value:='76-93 Percentile'
+!data_7693Percentile_2.index:=376
+!insert(satscore_binned_0,data_7693Percentile_2) into DataOfDataField
+ !create data_7693Percentile_969:Data
+ !data_7693Percentile_969.value:='76-93 Percentile'
+!data_7693Percentile_969.index:=377
+!insert(satscore_binned_0,data_7693Percentile_969) into DataOfDataField
+ !create data_7693Percentile_269:Data
+ !data_7693Percentile_269.value:='76-93 Percentile'
+!data_7693Percentile_269.index:=378
+!insert(satscore_binned_0,data_7693Percentile_269) into DataOfDataField
+ !create data_7693Percentile_722:Data
+ !data_7693Percentile_722.value:='76-93 Percentile'
+!data_7693Percentile_722.index:=379
+!insert(satscore_binned_0,data_7693Percentile_722) into DataOfDataField
+ !create data_7693Percentile_1323:Data
+ !data_7693Percentile_1323.value:='76-93 Percentile'
+!data_7693Percentile_1323.index:=380
+!insert(satscore_binned_0,data_7693Percentile_1323) into DataOfDataField
+ !create data_7693Percentile_343:Data
+ !data_7693Percentile_343.value:='76-93 Percentile'
+!data_7693Percentile_343.index:=381
+!insert(satscore_binned_0,data_7693Percentile_343) into DataOfDataField
+ !create data_7693Percentile_941:Data
+ !data_7693Percentile_941.value:='76-93 Percentile'
+!data_7693Percentile_941.index:=382
+!insert(satscore_binned_0,data_7693Percentile_941) into DataOfDataField
+ !create data_7693Percentile_1515:Data
+ !data_7693Percentile_1515.value:='76-93 Percentile'
+!data_7693Percentile_1515.index:=383
+!insert(satscore_binned_0,data_7693Percentile_1515) into DataOfDataField
+ !create data_7693Percentile_1422:Data
+ !data_7693Percentile_1422.value:='76-93 Percentile'
+!data_7693Percentile_1422.index:=384
+!insert(satscore_binned_0,data_7693Percentile_1422) into DataOfDataField
+ !create data_7693Percentile_1210:Data
+ !data_7693Percentile_1210.value:='76-93 Percentile'
+!data_7693Percentile_1210.index:=385
+!insert(satscore_binned_0,data_7693Percentile_1210) into DataOfDataField
+ !create data_7693Percentile_1293:Data
+ !data_7693Percentile_1293.value:='76-93 Percentile'
+!data_7693Percentile_1293.index:=386
+!insert(satscore_binned_0,data_7693Percentile_1293) into DataOfDataField
+ !create data_7693Percentile_621:Data
+ !data_7693Percentile_621.value:='76-93 Percentile'
+!data_7693Percentile_621.index:=387
+!insert(satscore_binned_0,data_7693Percentile_621) into DataOfDataField
+ !create data_7693Percentile_1539:Data
+ !data_7693Percentile_1539.value:='76-93 Percentile'
+!data_7693Percentile_1539.index:=388
+!insert(satscore_binned_0,data_7693Percentile_1539) into DataOfDataField
+ !create data_7693Percentile_1053:Data
+ !data_7693Percentile_1053.value:='76-93 Percentile'
+!data_7693Percentile_1053.index:=389
+!insert(satscore_binned_0,data_7693Percentile_1053) into DataOfDataField
+ !create data_94+percentile_1053:Data
+ !data_94+percentile_1053.value:='94+ percentile'
+!data_94+percentile_1053.index:=390
+!insert(satscore_binned_0,data_94+percentile_1053) into DataOfDataField
+ !create data_94+percentile_1124:Data
+ !data_94+percentile_1124.value:='94+ percentile'
+!data_94+percentile_1124.index:=391
+!insert(satscore_binned_0,data_94+percentile_1124) into DataOfDataField
+ !create data_7693Percentile_868:Data
+ !data_7693Percentile_868.value:='76-93 Percentile'
+!data_7693Percentile_868.index:=392
+!insert(satscore_binned_0,data_7693Percentile_868) into DataOfDataField
+ !create data_7693Percentile_415:Data
+ !data_7693Percentile_415.value:='76-93 Percentile'
+!data_7693Percentile_415.index:=393
+!insert(satscore_binned_0,data_7693Percentile_415) into DataOfDataField
+ !create data_5575Percentile_1330:Data
+ !data_5575Percentile_1330.value:='55-75 Percentile'
+!data_5575Percentile_1330.index:=394
+!insert(satscore_binned_0,data_5575Percentile_1330) into DataOfDataField
+ !create data_54PercentileandUnder_251:Data
+ !data_54PercentileandUnder_251.value:='54 Percentile and Under'
+!data_54PercentileandUnder_251.index:=395
+!insert(satscore_binned_0,data_54PercentileandUnder_251) into DataOfDataField
+ !create data_54PercentileandUnder_499:Data
+ !data_54PercentileandUnder_499.value:='54 Percentile and Under'
+!data_54PercentileandUnder_499.index:=396
+!insert(satscore_binned_0,data_54PercentileandUnder_499) into DataOfDataField
+ !create data_54PercentileandUnder_154:Data
+ !data_54PercentileandUnder_154.value:='54 Percentile and Under'
+!data_54PercentileandUnder_154.index:=397
+!insert(satscore_binned_0,data_54PercentileandUnder_154) into DataOfDataField
+ !create data_5575Percentile_428:Data
+ !data_5575Percentile_428.value:='55-75 Percentile'
+!data_5575Percentile_428.index:=398
+!insert(satscore_binned_0,data_5575Percentile_428) into DataOfDataField
+ !create data_94+percentile_563:Data
+ !data_94+percentile_563.value:='94+ percentile'
+!data_94+percentile_563.index:=399
+!insert(satscore_binned_0,data_94+percentile_563) into DataOfDataField
+ !create data_94+percentile_388:Data
+ !data_94+percentile_388.value:='94+ percentile'
+!data_94+percentile_388.index:=400
+!insert(satscore_binned_0,data_94+percentile_388) into DataOfDataField
+ !create data_94+percentile_1408:Data
+ !data_94+percentile_1408.value:='94+ percentile'
+!data_94+percentile_1408.index:=401
+!insert(satscore_binned_0,data_94+percentile_1408) into DataOfDataField
+ !create data_94+percentile_1389:Data
+ !data_94+percentile_1389.value:='94+ percentile'
+!data_94+percentile_1389.index:=402
+!insert(satscore_binned_0,data_94+percentile_1389) into DataOfDataField
+ !create data_94+percentile_749:Data
+ !data_94+percentile_749.value:='94+ percentile'
+!data_94+percentile_749.index:=403
+!insert(satscore_binned_0,data_94+percentile_749) into DataOfDataField
+ !create data_94+percentile_650:Data
+ !data_94+percentile_650.value:='94+ percentile'
+!data_94+percentile_650.index:=404
+!insert(satscore_binned_0,data_94+percentile_650) into DataOfDataField
+ !create data_7693Percentile_674:Data
+ !data_7693Percentile_674.value:='76-93 Percentile'
+!data_7693Percentile_674.index:=405
+!insert(satscore_binned_0,data_7693Percentile_674) into DataOfDataField
+ !create data_7693Percentile_611:Data
+ !data_7693Percentile_611.value:='76-93 Percentile'
+!data_7693Percentile_611.index:=406
+!insert(satscore_binned_0,data_7693Percentile_611) into DataOfDataField
+ !create data_7693Percentile_787:Data
+ !data_7693Percentile_787.value:='76-93 Percentile'
+!data_7693Percentile_787.index:=407
+!insert(satscore_binned_0,data_7693Percentile_787) into DataOfDataField
+ !create data_5575Percentile_1402:Data
+ !data_5575Percentile_1402.value:='55-75 Percentile'
+!data_5575Percentile_1402.index:=408
+!insert(satscore_binned_0,data_5575Percentile_1402) into DataOfDataField
+ !create data_5575Percentile_778:Data
+ !data_5575Percentile_778.value:='55-75 Percentile'
+!data_5575Percentile_778.index:=409
+!insert(satscore_binned_0,data_5575Percentile_778) into DataOfDataField
+ !create data_5575Percentile_37:Data
+ !data_5575Percentile_37.value:='55-75 Percentile'
+!data_5575Percentile_37.index:=410
+!insert(satscore_binned_0,data_5575Percentile_37) into DataOfDataField
+ !create data_7693Percentile_350:Data
+ !data_7693Percentile_350.value:='76-93 Percentile'
+!data_7693Percentile_350.index:=411
+!insert(satscore_binned_0,data_7693Percentile_350) into DataOfDataField
+ !create data_7693Percentile_719:Data
+ !data_7693Percentile_719.value:='76-93 Percentile'
+!data_7693Percentile_719.index:=412
+!insert(satscore_binned_0,data_7693Percentile_719) into DataOfDataField
+ !create data_5575Percentile_1193:Data
+ !data_5575Percentile_1193.value:='55-75 Percentile'
+!data_5575Percentile_1193.index:=413
+!insert(satscore_binned_0,data_5575Percentile_1193) into DataOfDataField
+ !create data_5575Percentile_97:Data
+ !data_5575Percentile_97.value:='55-75 Percentile'
+!data_5575Percentile_97.index:=414
+!insert(satscore_binned_0,data_5575Percentile_97) into DataOfDataField
+ !create data_7693Percentile_232:Data
+ !data_7693Percentile_232.value:='76-93 Percentile'
+!data_7693Percentile_232.index:=415
+!insert(satscore_binned_0,data_7693Percentile_232) into DataOfDataField
+ !create data_7693Percentile_608:Data
+ !data_7693Percentile_608.value:='76-93 Percentile'
+!data_7693Percentile_608.index:=416
+!insert(satscore_binned_0,data_7693Percentile_608) into DataOfDataField
+ !create data_7693Percentile_1142:Data
+ !data_7693Percentile_1142.value:='76-93 Percentile'
+!data_7693Percentile_1142.index:=417
+!insert(satscore_binned_0,data_7693Percentile_1142) into DataOfDataField
+ !create data_7693Percentile_282:Data
+ !data_7693Percentile_282.value:='76-93 Percentile'
+!data_7693Percentile_282.index:=418
+!insert(satscore_binned_0,data_7693Percentile_282) into DataOfDataField
+ !create data_94+percentile_682:Data
+ !data_94+percentile_682.value:='94+ percentile'
+!data_94+percentile_682.index:=419
+!insert(satscore_binned_0,data_94+percentile_682) into DataOfDataField
+ !create data_94+percentile_580:Data
+ !data_94+percentile_580.value:='94+ percentile'
+!data_94+percentile_580.index:=420
+!insert(satscore_binned_0,data_94+percentile_580) into DataOfDataField
+ !create data_94+percentile_330:Data
+ !data_94+percentile_330.value:='94+ percentile'
+!data_94+percentile_330.index:=421
+!insert(satscore_binned_0,data_94+percentile_330) into DataOfDataField
+ !create data_7693Percentile_845:Data
+ !data_7693Percentile_845.value:='76-93 Percentile'
+!data_7693Percentile_845.index:=422
+!insert(satscore_binned_0,data_7693Percentile_845) into DataOfDataField
+ !create data_7693Percentile_1:Data
+ !data_7693Percentile_1.value:='76-93 Percentile'
+!data_7693Percentile_1.index:=423
+!insert(satscore_binned_0,data_7693Percentile_1) into DataOfDataField
+ !create data_94+percentile_476:Data
+ !data_94+percentile_476.value:='94+ percentile'
+!data_94+percentile_476.index:=424
+!insert(satscore_binned_0,data_94+percentile_476) into DataOfDataField
+ !create data_7693Percentile_1100:Data
+ !data_7693Percentile_1100.value:='76-93 Percentile'
+!data_7693Percentile_1100.index:=425
+!insert(satscore_binned_0,data_7693Percentile_1100) into DataOfDataField
+ !create data_5575Percentile_1207:Data
+ !data_5575Percentile_1207.value:='55-75 Percentile'
+!data_5575Percentile_1207.index:=426
+!insert(satscore_binned_0,data_5575Percentile_1207) into DataOfDataField
+ !create data_7693Percentile_220:Data
+ !data_7693Percentile_220.value:='76-93 Percentile'
+!data_7693Percentile_220.index:=427
+!insert(satscore_binned_0,data_7693Percentile_220) into DataOfDataField
+ !create data_7693Percentile_1467:Data
+ !data_7693Percentile_1467.value:='76-93 Percentile'
+!data_7693Percentile_1467.index:=428
+!insert(satscore_binned_0,data_7693Percentile_1467) into DataOfDataField
+ !create data_5575Percentile_1541:Data
+ !data_5575Percentile_1541.value:='55-75 Percentile'
+!data_5575Percentile_1541.index:=429
+!insert(satscore_binned_0,data_5575Percentile_1541) into DataOfDataField
+ !create data_7693Percentile_1344:Data
+ !data_7693Percentile_1344.value:='76-93 Percentile'
+!data_7693Percentile_1344.index:=430
+!insert(satscore_binned_0,data_7693Percentile_1344) into DataOfDataField
+ !create data_7693Percentile_204:Data
+ !data_7693Percentile_204.value:='76-93 Percentile'
+!data_7693Percentile_204.index:=431
+!insert(satscore_binned_0,data_7693Percentile_204) into DataOfDataField
+ !create data_7693Percentile_1455:Data
+ !data_7693Percentile_1455.value:='76-93 Percentile'
+!data_7693Percentile_1455.index:=432
+!insert(satscore_binned_0,data_7693Percentile_1455) into DataOfDataField
+ !create data_5575Percentile_1217:Data
+ !data_5575Percentile_1217.value:='55-75 Percentile'
+!data_5575Percentile_1217.index:=433
+!insert(satscore_binned_0,data_5575Percentile_1217) into DataOfDataField
+ !create data_94+percentile_1141:Data
+ !data_94+percentile_1141.value:='94+ percentile'
+!data_94+percentile_1141.index:=434
+!insert(satscore_binned_0,data_94+percentile_1141) into DataOfDataField
+ !create data_54PercentileandUnder_373:Data
+ !data_54PercentileandUnder_373.value:='54 Percentile and Under'
+!data_54PercentileandUnder_373.index:=435
+!insert(satscore_binned_0,data_54PercentileandUnder_373) into DataOfDataField
+ !create data_7693Percentile_628:Data
+ !data_7693Percentile_628.value:='76-93 Percentile'
+!data_7693Percentile_628.index:=436
+!insert(satscore_binned_0,data_7693Percentile_628) into DataOfDataField
+ !create data_7693Percentile_427:Data
+ !data_7693Percentile_427.value:='76-93 Percentile'
+!data_7693Percentile_427.index:=437
+!insert(satscore_binned_0,data_7693Percentile_427) into DataOfDataField
+ !create data_54PercentileandUnder_1091:Data
+ !data_54PercentileandUnder_1091.value:='54 Percentile and Under'
+!data_54PercentileandUnder_1091.index:=438
+!insert(satscore_binned_0,data_54PercentileandUnder_1091) into DataOfDataField
+ !create data_94+percentile_1111:Data
+ !data_94+percentile_1111.value:='94+ percentile'
+!data_94+percentile_1111.index:=439
+!insert(satscore_binned_0,data_94+percentile_1111) into DataOfDataField
+ !create data_94+percentile_49:Data
+ !data_94+percentile_49.value:='94+ percentile'
+!data_94+percentile_49.index:=440
+!insert(satscore_binned_0,data_94+percentile_49) into DataOfDataField
+ !create data_7693Percentile_347:Data
+ !data_7693Percentile_347.value:='76-93 Percentile'
+!data_7693Percentile_347.index:=441
+!insert(satscore_binned_0,data_7693Percentile_347) into DataOfDataField
+ !create data_7693Percentile_1027:Data
+ !data_7693Percentile_1027.value:='76-93 Percentile'
+!data_7693Percentile_1027.index:=442
+!insert(satscore_binned_0,data_7693Percentile_1027) into DataOfDataField
+ !create data_5575Percentile_371:Data
+ !data_5575Percentile_371.value:='55-75 Percentile'
+!data_5575Percentile_371.index:=443
+!insert(satscore_binned_0,data_5575Percentile_371) into DataOfDataField
+ !create data_5575Percentile_987:Data
+ !data_5575Percentile_987.value:='55-75 Percentile'
+!data_5575Percentile_987.index:=444
+!insert(satscore_binned_0,data_5575Percentile_987) into DataOfDataField
+ !create data_5575Percentile_1115:Data
+ !data_5575Percentile_1115.value:='55-75 Percentile'
+!data_5575Percentile_1115.index:=445
+!insert(satscore_binned_0,data_5575Percentile_1115) into DataOfDataField
+ !create data_5575Percentile_1372:Data
+ !data_5575Percentile_1372.value:='55-75 Percentile'
+!data_5575Percentile_1372.index:=446
+!insert(satscore_binned_0,data_5575Percentile_1372) into DataOfDataField
+ !create data_5575Percentile_635:Data
+ !data_5575Percentile_635.value:='55-75 Percentile'
+!data_5575Percentile_635.index:=447
+!insert(satscore_binned_0,data_5575Percentile_635) into DataOfDataField
+ !create data_5575Percentile_429:Data
+ !data_5575Percentile_429.value:='55-75 Percentile'
+!data_5575Percentile_429.index:=448
+!insert(satscore_binned_0,data_5575Percentile_429) into DataOfDataField
+ !create data_5575Percentile_1295:Data
+ !data_5575Percentile_1295.value:='55-75 Percentile'
+!data_5575Percentile_1295.index:=449
+!insert(satscore_binned_0,data_5575Percentile_1295) into DataOfDataField
+ !create data_5575Percentile_102:Data
+ !data_5575Percentile_102.value:='55-75 Percentile'
+!data_5575Percentile_102.index:=450
+!insert(satscore_binned_0,data_5575Percentile_102) into DataOfDataField
+ !create data_5575Percentile_1030:Data
+ !data_5575Percentile_1030.value:='55-75 Percentile'
+!data_5575Percentile_1030.index:=451
+!insert(satscore_binned_0,data_5575Percentile_1030) into DataOfDataField
+ !create data_54PercentileandUnder_440:Data
+ !data_54PercentileandUnder_440.value:='54 Percentile and Under'
+!data_54PercentileandUnder_440.index:=452
+!insert(satscore_binned_0,data_54PercentileandUnder_440) into DataOfDataField
+ !create data_7693Percentile_514:Data
+ !data_7693Percentile_514.value:='76-93 Percentile'
+!data_7693Percentile_514.index:=453
+!insert(satscore_binned_0,data_7693Percentile_514) into DataOfDataField
+ !create data_7693Percentile_600:Data
+ !data_7693Percentile_600.value:='76-93 Percentile'
+!data_7693Percentile_600.index:=454
+!insert(satscore_binned_0,data_7693Percentile_600) into DataOfDataField
+ !create data_7693Percentile_1248:Data
+ !data_7693Percentile_1248.value:='76-93 Percentile'
+!data_7693Percentile_1248.index:=455
+!insert(satscore_binned_0,data_7693Percentile_1248) into DataOfDataField
+ !create data_7693Percentile_972:Data
+ !data_7693Percentile_972.value:='76-93 Percentile'
+!data_7693Percentile_972.index:=456
+!insert(satscore_binned_0,data_7693Percentile_972) into DataOfDataField
+ !create data_7693Percentile_723:Data
+ !data_7693Percentile_723.value:='76-93 Percentile'
+!data_7693Percentile_723.index:=457
+!insert(satscore_binned_0,data_7693Percentile_723) into DataOfDataField
+ !create data_7693Percentile_1217:Data
+ !data_7693Percentile_1217.value:='76-93 Percentile'
+!data_7693Percentile_1217.index:=458
+!insert(satscore_binned_0,data_7693Percentile_1217) into DataOfDataField
+ !create data_7693Percentile_738:Data
+ !data_7693Percentile_738.value:='76-93 Percentile'
+!data_7693Percentile_738.index:=459
+!insert(satscore_binned_0,data_7693Percentile_738) into DataOfDataField
+ !create data_7693Percentile_758:Data
+ !data_7693Percentile_758.value:='76-93 Percentile'
+!data_7693Percentile_758.index:=460
+!insert(satscore_binned_0,data_7693Percentile_758) into DataOfDataField
+ !create data_7693Percentile_993:Data
+ !data_7693Percentile_993.value:='76-93 Percentile'
+!data_7693Percentile_993.index:=461
+!insert(satscore_binned_0,data_7693Percentile_993) into DataOfDataField
+ !create data_7693Percentile_946:Data
+ !data_7693Percentile_946.value:='76-93 Percentile'
+!data_7693Percentile_946.index:=462
+!insert(satscore_binned_0,data_7693Percentile_946) into DataOfDataField
+ !create data_7693Percentile_1503:Data
+ !data_7693Percentile_1503.value:='76-93 Percentile'
+!data_7693Percentile_1503.index:=463
+!insert(satscore_binned_0,data_7693Percentile_1503) into DataOfDataField
+ !create data_7693Percentile_682:Data
+ !data_7693Percentile_682.value:='76-93 Percentile'
+!data_7693Percentile_682.index:=464
+!insert(satscore_binned_0,data_7693Percentile_682) into DataOfDataField
+ !create data_7693Percentile_1031:Data
+ !data_7693Percentile_1031.value:='76-93 Percentile'
+!data_7693Percentile_1031.index:=465
+!insert(satscore_binned_0,data_7693Percentile_1031) into DataOfDataField
+ !create data_7693Percentile_157:Data
+ !data_7693Percentile_157.value:='76-93 Percentile'
+!data_7693Percentile_157.index:=466
+!insert(satscore_binned_0,data_7693Percentile_157) into DataOfDataField
+ !create data_7693Percentile_441:Data
+ !data_7693Percentile_441.value:='76-93 Percentile'
+!data_7693Percentile_441.index:=467
+!insert(satscore_binned_0,data_7693Percentile_441) into DataOfDataField
+ !create data_7693Percentile_754:Data
+ !data_7693Percentile_754.value:='76-93 Percentile'
+!data_7693Percentile_754.index:=468
+!insert(satscore_binned_0,data_7693Percentile_754) into DataOfDataField
+ !create data_5575Percentile_282:Data
+ !data_5575Percentile_282.value:='55-75 Percentile'
+!data_5575Percentile_282.index:=469
+!insert(satscore_binned_0,data_5575Percentile_282) into DataOfDataField
+ !create data_5575Percentile_1166:Data
+ !data_5575Percentile_1166.value:='55-75 Percentile'
+!data_5575Percentile_1166.index:=470
+!insert(satscore_binned_0,data_5575Percentile_1166) into DataOfDataField
+ !create data_54PercentileandUnder_525:Data
+ !data_54PercentileandUnder_525.value:='54 Percentile and Under'
+!data_54PercentileandUnder_525.index:=471
+!insert(satscore_binned_0,data_54PercentileandUnder_525) into DataOfDataField
+ !create data_94+percentile_553:Data
+ !data_94+percentile_553.value:='94+ percentile'
+!data_94+percentile_553.index:=472
+!insert(satscore_binned_0,data_94+percentile_553) into DataOfDataField
+ !create data_94+percentile_216:Data
+ !data_94+percentile_216.value:='94+ percentile'
+!data_94+percentile_216.index:=473
+!insert(satscore_binned_0,data_94+percentile_216) into DataOfDataField
+ !create data_7693Percentile_1200:Data
+ !data_7693Percentile_1200.value:='76-93 Percentile'
+!data_7693Percentile_1200.index:=474
+!insert(satscore_binned_0,data_7693Percentile_1200) into DataOfDataField
+ !create data_5575Percentile_754:Data
+ !data_5575Percentile_754.value:='55-75 Percentile'
+!data_5575Percentile_754.index:=475
+!insert(satscore_binned_0,data_5575Percentile_754) into DataOfDataField
+ !create data_5575Percentile_736:Data
+ !data_5575Percentile_736.value:='55-75 Percentile'
+!data_5575Percentile_736.index:=476
+!insert(satscore_binned_0,data_5575Percentile_736) into DataOfDataField
+ !create data_5575Percentile_1050:Data
+ !data_5575Percentile_1050.value:='55-75 Percentile'
+!data_5575Percentile_1050.index:=477
+!insert(satscore_binned_0,data_5575Percentile_1050) into DataOfDataField
+ !create data_5575Percentile_742:Data
+ !data_5575Percentile_742.value:='55-75 Percentile'
+!data_5575Percentile_742.index:=478
+!insert(satscore_binned_0,data_5575Percentile_742) into DataOfDataField
+ !create data_7693Percentile_1089:Data
+ !data_7693Percentile_1089.value:='76-93 Percentile'
+!data_7693Percentile_1089.index:=479
+!insert(satscore_binned_0,data_7693Percentile_1089) into DataOfDataField
+ !create data_7693Percentile_231:Data
+ !data_7693Percentile_231.value:='76-93 Percentile'
+!data_7693Percentile_231.index:=480
+!insert(satscore_binned_0,data_7693Percentile_231) into DataOfDataField
+ !create data_7693Percentile_863:Data
+ !data_7693Percentile_863.value:='76-93 Percentile'
+!data_7693Percentile_863.index:=481
+!insert(satscore_binned_0,data_7693Percentile_863) into DataOfDataField
+ !create data_54PercentileandUnder_467:Data
+ !data_54PercentileandUnder_467.value:='54 Percentile and Under'
+!data_54PercentileandUnder_467.index:=482
+!insert(satscore_binned_0,data_54PercentileandUnder_467) into DataOfDataField
+ !create data_5575Percentile_25:Data
+ !data_5575Percentile_25.value:='55-75 Percentile'
+!data_5575Percentile_25.index:=483
+!insert(satscore_binned_0,data_5575Percentile_25) into DataOfDataField
+ !create data_5575Percentile_1361:Data
+ !data_5575Percentile_1361.value:='55-75 Percentile'
+!data_5575Percentile_1361.index:=484
+!insert(satscore_binned_0,data_5575Percentile_1361) into DataOfDataField
+ !create data_5575Percentile_311:Data
+ !data_5575Percentile_311.value:='55-75 Percentile'
+!data_5575Percentile_311.index:=485
+!insert(satscore_binned_0,data_5575Percentile_311) into DataOfDataField
+ !create data_54PercentileandUnder_465:Data
+ !data_54PercentileandUnder_465.value:='54 Percentile and Under'
+!data_54PercentileandUnder_465.index:=486
+!insert(satscore_binned_0,data_54PercentileandUnder_465) into DataOfDataField
+ !create data_5575Percentile_589:Data
+ !data_5575Percentile_589.value:='55-75 Percentile'
+!data_5575Percentile_589.index:=487
+!insert(satscore_binned_0,data_5575Percentile_589) into DataOfDataField
+ !create data_5575Percentile_390:Data
+ !data_5575Percentile_390.value:='55-75 Percentile'
+!data_5575Percentile_390.index:=488
+!insert(satscore_binned_0,data_5575Percentile_390) into DataOfDataField
+ !create data_7693Percentile_469:Data
+ !data_7693Percentile_469.value:='76-93 Percentile'
+!data_7693Percentile_469.index:=489
+!insert(satscore_binned_0,data_7693Percentile_469) into DataOfDataField
+ !create data_94+percentile_1346:Data
+ !data_94+percentile_1346.value:='94+ percentile'
+!data_94+percentile_1346.index:=490
+!insert(satscore_binned_0,data_94+percentile_1346) into DataOfDataField
+ !create data_94+percentile_349:Data
+ !data_94+percentile_349.value:='94+ percentile'
+!data_94+percentile_349.index:=491
+!insert(satscore_binned_0,data_94+percentile_349) into DataOfDataField
+ !create data_7693Percentile_965:Data
+ !data_7693Percentile_965.value:='76-93 Percentile'
+!data_7693Percentile_965.index:=492
+!insert(satscore_binned_0,data_7693Percentile_965) into DataOfDataField
+ !create data_7693Percentile_1075:Data
+ !data_7693Percentile_1075.value:='76-93 Percentile'
+!data_7693Percentile_1075.index:=493
+!insert(satscore_binned_0,data_7693Percentile_1075) into DataOfDataField
+ !create data_7693Percentile_524:Data
+ !data_7693Percentile_524.value:='76-93 Percentile'
+!data_7693Percentile_524.index:=494
+!insert(satscore_binned_0,data_7693Percentile_524) into DataOfDataField
+ !create data_54PercentileandUnder_938:Data
+ !data_54PercentileandUnder_938.value:='54 Percentile and Under'
+!data_54PercentileandUnder_938.index:=495
+!insert(satscore_binned_0,data_54PercentileandUnder_938) into DataOfDataField
+ !create data_5575Percentile_78:Data
+ !data_5575Percentile_78.value:='55-75 Percentile'
+!data_5575Percentile_78.index:=496
+!insert(satscore_binned_0,data_5575Percentile_78) into DataOfDataField
+ !create data_7693Percentile_324:Data
+ !data_7693Percentile_324.value:='76-93 Percentile'
+!data_7693Percentile_324.index:=497
+!insert(satscore_binned_0,data_7693Percentile_324) into DataOfDataField
+ !create data_94+percentile_1526:Data
+ !data_94+percentile_1526.value:='94+ percentile'
+!data_94+percentile_1526.index:=498
+!insert(satscore_binned_0,data_94+percentile_1526) into DataOfDataField
+ !create data_94+percentile_284:Data
+ !data_94+percentile_284.value:='94+ percentile'
+!data_94+percentile_284.index:=499
+!insert(satscore_binned_0,data_94+percentile_284) into DataOfDataField
+ !create data_94+percentile_1119:Data
+ !data_94+percentile_1119.value:='94+ percentile'
+!data_94+percentile_1119.index:=500
+!insert(satscore_binned_0,data_94+percentile_1119) into DataOfDataField
+ !create data_94+percentile_296:Data
+ !data_94+percentile_296.value:='94+ percentile'
+!data_94+percentile_296.index:=501
+!insert(satscore_binned_0,data_94+percentile_296) into DataOfDataField
+ !create data_94+percentile_1397:Data
+ !data_94+percentile_1397.value:='94+ percentile'
+!data_94+percentile_1397.index:=502
+!insert(satscore_binned_0,data_94+percentile_1397) into DataOfDataField
+ !create data_7693Percentile_882:Data
+ !data_7693Percentile_882.value:='76-93 Percentile'
+!data_7693Percentile_882.index:=503
+!insert(satscore_binned_0,data_7693Percentile_882) into DataOfDataField
+ !create data_7693Percentile_9:Data
+ !data_7693Percentile_9.value:='76-93 Percentile'
+!data_7693Percentile_9.index:=504
+!insert(satscore_binned_0,data_7693Percentile_9) into DataOfDataField
+ !create data_94+percentile_1333:Data
+ !data_94+percentile_1333.value:='94+ percentile'
+!data_94+percentile_1333.index:=505
+!insert(satscore_binned_0,data_94+percentile_1333) into DataOfDataField
+ !create data_94+percentile_922:Data
+ !data_94+percentile_922.value:='94+ percentile'
+!data_94+percentile_922.index:=506
+!insert(satscore_binned_0,data_94+percentile_922) into DataOfDataField
+ !create data_94+percentile_450:Data
+ !data_94+percentile_450.value:='94+ percentile'
+!data_94+percentile_450.index:=507
+!insert(satscore_binned_0,data_94+percentile_450) into DataOfDataField
+ !create data_94+percentile_744:Data
+ !data_94+percentile_744.value:='94+ percentile'
+!data_94+percentile_744.index:=508
+!insert(satscore_binned_0,data_94+percentile_744) into DataOfDataField
+ !create data_7693Percentile_1132:Data
+ !data_7693Percentile_1132.value:='76-93 Percentile'
+!data_7693Percentile_1132.index:=509
+!insert(satscore_binned_0,data_7693Percentile_1132) into DataOfDataField
+ !create data_7693Percentile_1045:Data
+ !data_7693Percentile_1045.value:='76-93 Percentile'
+!data_7693Percentile_1045.index:=510
+!insert(satscore_binned_0,data_7693Percentile_1045) into DataOfDataField
+ !create data_7693Percentile_181:Data
+ !data_7693Percentile_181.value:='76-93 Percentile'
+!data_7693Percentile_181.index:=511
+!insert(satscore_binned_0,data_7693Percentile_181) into DataOfDataField
+ !create data_7693Percentile_1478:Data
+ !data_7693Percentile_1478.value:='76-93 Percentile'
+!data_7693Percentile_1478.index:=512
+!insert(satscore_binned_0,data_7693Percentile_1478) into DataOfDataField
+ !create data_5575Percentile_488:Data
+ !data_5575Percentile_488.value:='55-75 Percentile'
+!data_5575Percentile_488.index:=513
+!insert(satscore_binned_0,data_5575Percentile_488) into DataOfDataField
+ !create data_5575Percentile_576:Data
+ !data_5575Percentile_576.value:='55-75 Percentile'
+!data_5575Percentile_576.index:=514
+!insert(satscore_binned_0,data_5575Percentile_576) into DataOfDataField
+ !create data_7693Percentile_1040:Data
+ !data_7693Percentile_1040.value:='76-93 Percentile'
+!data_7693Percentile_1040.index:=515
+!insert(satscore_binned_0,data_7693Percentile_1040) into DataOfDataField
+ 

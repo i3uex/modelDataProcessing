@@ -1,0 +1,2449 @@
+!create output:DataDictionary
+ !output.rows:=516
+!output.name:='output'
+!create ETHNICITY_1:Categorical
+ !ETHNICITY_1.ordinal:=false
+ !insert(output,ETHNICITY_1) into DataDictDataField
+ !create value_C_1:ValueField
+ !value_C_1.value:= 'C'
+!value_C_1.count:=362
+!insert(ETHNICITY_1,value_C_1) into ValidValues
+ !create value_N_3:ValueField
+ !value_N_3.value:= 'N'
+!value_N_3.count:=50
+!insert(ETHNICITY_1,value_N_3) into ValidValues
+ !create value_B_1:ValueField
+ !value_B_1.value:= 'B'
+!value_B_1.count:=41
+!insert(ETHNICITY_1,value_B_1) into ValidValues
+ !create value_H_1:ValueField
+ !value_H_1.value:= 'H'
+!value_H_1.count:=24
+!insert(ETHNICITY_1,value_H_1) into ValidValues
+ !create value_A_2:ValueField
+ !value_A_2.value:= 'A'
+!value_A_2.count:=21
+!insert(ETHNICITY_1,value_A_2) into ValidValues
+ !create value_O_1:ValueField
+ !value_O_1.value:= 'O'
+!value_O_1.count:=17
+!insert(ETHNICITY_1,value_O_1) into ValidValues
+ !create value_I_1:ValueField
+ !value_I_1.value:= 'I'
+!value_I_1.count:=1
+!insert(ETHNICITY_1,value_I_1) into ValidValues
+ !ETHNICITY_1.target:=false
+ !ETHNICITY_1.id:=false
+ !ETHNICITY_1.dataType:=DataType::string
+!ETHNICITY_1.name:='ETHNICITY'
+!create TERRITORY_1:Categorical
+ !TERRITORY_1.ordinal:=false
+ !insert(output,TERRITORY_1) into DataDictDataField
+ !create value_N_4:ValueField
+ !value_N_4.value:= 'N'
+!value_N_4.count:=96
+!insert(TERRITORY_1,value_N_4) into ValidValues
+ !create value_8_1:ValueField
+ !value_8_1.value:= '8'
+!value_8_1.count:=69
+!insert(TERRITORY_1,value_8_1) into ValidValues
+ !create value_5_1:ValueField
+ !value_5_1.value:= '5'
+!value_5_1.count:=58
+!insert(TERRITORY_1,value_5_1) into ValidValues
+ !create value_2_1:ValueField
+ !value_2_1.value:= '2'
+!value_2_1.count:=179
+!insert(TERRITORY_1,value_2_1) into ValidValues
+ !create value_7_1:ValueField
+ !value_7_1.value:= '7'
+!value_7_1.count:=114
+!insert(TERRITORY_1,value_7_1) into ValidValues
+ !create value_4_1:ValueField
+ !value_4_1.value:= '4'
+!value_4_1.count:=0
+!insert(TERRITORY_1,value_4_1) into ValidValues
+ !create value_000_1:ValueField
+ !value_000_1.value:= '000'
+!value_000_1.count:=0
+!insert(TERRITORY_1,value_000_1) into ValidValues
+ !create value_6_1:ValueField
+ !value_6_1.value:= '6'
+!value_6_1.count:=0
+!insert(TERRITORY_1,value_6_1) into ValidValues
+ !create value_A_3:ValueField
+ !value_A_3.value:= 'A'
+!value_A_3.count:=0
+!insert(TERRITORY_1,value_A_3) into ValidValues
+ !create value_1_1:ValueField
+ !value_1_1.value:= '1'
+!value_1_1.count:=0
+!insert(TERRITORY_1,value_1_1) into ValidValues
+ !create value_3_1:ValueField
+ !value_3_1.value:= '3'
+!value_3_1.count:=0
+!insert(TERRITORY_1,value_3_1) into ValidValues
+ !TERRITORY_1.target:=false
+ !TERRITORY_1.id:=false
+ !TERRITORY_1.dataType:=DataType::string
+!TERRITORY_1.name:='TERRITORY'
+!create ACADEMIC_INTEREST_1_1:Categorical
+ !ACADEMIC_INTEREST_1_1.ordinal:=false
+ !insert(output,ACADEMIC_INTEREST_1_1) into DataDictDataField
+ !ACADEMIC_INTEREST_1_1.target:=false
+ !ACADEMIC_INTEREST_1_1.id:=false
+ !ACADEMIC_INTEREST_1_1.dataType:=DataType::string
+!ACADEMIC_INTEREST_1_1.name:='ACADEMIC_INTEREST_1'
+!create ACADEMIC_INTEREST_2_1:Categorical
+ !ACADEMIC_INTEREST_2_1.ordinal:=false
+ !insert(output,ACADEMIC_INTEREST_2_1) into DataDictDataField
+ !ACADEMIC_INTEREST_2_1.target:=false
+ !ACADEMIC_INTEREST_2_1.id:=false
+ !ACADEMIC_INTEREST_2_1.dataType:=DataType::string
+!ACADEMIC_INTEREST_2_1.name:='ACADEMIC_INTEREST_2'
+!create Enroll_1:Continuous
+ !insert(output,Enroll_1) into DataDictDataField
+ !create interval_Enroll_1:Interval
+!interval_Enroll_1.leftMargin:=0.0
+!interval_Enroll_1.rightMargin:=1.0
+!interval_Enroll_1.closure:=ClosureType::closedClosed
+!interval_Enroll_1.count:=516
+!insert(Enroll_1,interval_Enroll_1) into ContinuousInterval
+ !Enroll_1.target:=false
+ !Enroll_1.id:=false
+ !Enroll_1.dataType:=DataType::integer
+!Enroll_1.name:='Enroll'
+!create TOTAL_CONTACTS_1:Continuous
+ !insert(output,TOTAL_CONTACTS_1) into DataDictDataField
+ !create interval_TOTAL_CONTACTS_1:Interval
+!interval_TOTAL_CONTACTS_1.leftMargin:=1.0
+!interval_TOTAL_CONTACTS_1.rightMargin:=28.0
+!interval_TOTAL_CONTACTS_1.closure:=ClosureType::closedClosed
+!interval_TOTAL_CONTACTS_1.count:=516
+!insert(TOTAL_CONTACTS_1,interval_TOTAL_CONTACTS_1) into ContinuousInterval
+ !TOTAL_CONTACTS_1.target:=false
+ !TOTAL_CONTACTS_1.id:=false
+ !TOTAL_CONTACTS_1.dataType:=DataType::integer
+!TOTAL_CONTACTS_1.name:='TOTAL_CONTACTS'
+!create SELF_INIT_CNTCTS_1:Continuous
+ !insert(output,SELF_INIT_CNTCTS_1) into DataDictDataField
+ !create interval_SELF_INIT_CNTCTS_1:Interval
+!interval_SELF_INIT_CNTCTS_1.leftMargin:=0.0
+!interval_SELF_INIT_CNTCTS_1.rightMargin:=21.0
+!interval_SELF_INIT_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_SELF_INIT_CNTCTS_1.count:=516
+!insert(SELF_INIT_CNTCTS_1,interval_SELF_INIT_CNTCTS_1) into ContinuousInterval
+ !SELF_INIT_CNTCTS_1.target:=false
+ !SELF_INIT_CNTCTS_1.id:=false
+ !SELF_INIT_CNTCTS_1.dataType:=DataType::integer
+!SELF_INIT_CNTCTS_1.name:='SELF_INIT_CNTCTS'
+!create TRAVEL_INIT_CNTCTS_1:Continuous
+ !insert(output,TRAVEL_INIT_CNTCTS_1) into DataDictDataField
+ !create interval_TRAVEL_INIT_CNTCTS_1:Interval
+!interval_TRAVEL_INIT_CNTCTS_1.leftMargin:=0.0
+!interval_TRAVEL_INIT_CNTCTS_1.rightMargin:=5.0
+!interval_TRAVEL_INIT_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_TRAVEL_INIT_CNTCTS_1.count:=516
+!insert(TRAVEL_INIT_CNTCTS_1,interval_TRAVEL_INIT_CNTCTS_1) into ContinuousInterval
+ !TRAVEL_INIT_CNTCTS_1.target:=false
+ !TRAVEL_INIT_CNTCTS_1.id:=false
+ !TRAVEL_INIT_CNTCTS_1.dataType:=DataType::integer
+!TRAVEL_INIT_CNTCTS_1.name:='TRAVEL_INIT_CNTCTS'
+!create SOLICITED_CNTCTS_1:Continuous
+ !insert(output,SOLICITED_CNTCTS_1) into DataDictDataField
+ !create interval_SOLICITED_CNTCTS_1:Interval
+!interval_SOLICITED_CNTCTS_1.leftMargin:=0.0
+!interval_SOLICITED_CNTCTS_1.rightMargin:=9.0
+!interval_SOLICITED_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_SOLICITED_CNTCTS_1.count:=516
+!insert(SOLICITED_CNTCTS_1,interval_SOLICITED_CNTCTS_1) into ContinuousInterval
+ !SOLICITED_CNTCTS_1.target:=false
+ !SOLICITED_CNTCTS_1.id:=false
+ !SOLICITED_CNTCTS_1.dataType:=DataType::integer
+!SOLICITED_CNTCTS_1.name:='SOLICITED_CNTCTS'
+!create REFERRAL_CNTCTS_1:Continuous
+ !insert(output,REFERRAL_CNTCTS_1) into DataDictDataField
+ !create interval_REFERRAL_CNTCTS_1:Interval
+!interval_REFERRAL_CNTCTS_1.leftMargin:=0.0
+!interval_REFERRAL_CNTCTS_1.rightMargin:=5.0
+!interval_REFERRAL_CNTCTS_1.closure:=ClosureType::closedClosed
+!interval_REFERRAL_CNTCTS_1.count:=516
+!insert(REFERRAL_CNTCTS_1,interval_REFERRAL_CNTCTS_1) into ContinuousInterval
+ !REFERRAL_CNTCTS_1.target:=false
+ !REFERRAL_CNTCTS_1.id:=false
+ !REFERRAL_CNTCTS_1.dataType:=DataType::integer
+!REFERRAL_CNTCTS_1.name:='REFERRAL_CNTCTS'
+!create CAMPUS_VISIT_1:Continuous
+ !insert(output,CAMPUS_VISIT_1) into DataDictDataField
+ !create interval_CAMPUS_VISIT_1:Interval
+!interval_CAMPUS_VISIT_1.leftMargin:=0.0
+!interval_CAMPUS_VISIT_1.rightMargin:=1.0
+!interval_CAMPUS_VISIT_1.closure:=ClosureType::closedClosed
+!interval_CAMPUS_VISIT_1.count:=516
+!insert(CAMPUS_VISIT_1,interval_CAMPUS_VISIT_1) into ContinuousInterval
+ !CAMPUS_VISIT_1.target:=false
+ !CAMPUS_VISIT_1.id:=false
+ !CAMPUS_VISIT_1.dataType:=DataType::integer
+!CAMPUS_VISIT_1.name:='CAMPUS_VISIT'
+!create CONTACT_CODE1_1:Categorical
+ !CONTACT_CODE1_1.ordinal:=false
+ !insert(output,CONTACT_CODE1_1) into DataDictDataField
+ !CONTACT_CODE1_1.target:=false
+ !CONTACT_CODE1_1.id:=false
+ !CONTACT_CODE1_1.dataType:=DataType::string
+!CONTACT_CODE1_1.name:='CONTACT_CODE1'
+!create nan_10:ValueField
+ !nan_10.value:= 'nan'
+!nan_10.count:=1
+!insert(CONTACT_CODE1_1,nan_10) into MissingVals
+ !create IRSCHOOL_1:Categorical
+ !IRSCHOOL_1.ordinal:=false
+ !insert(output,IRSCHOOL_1) into DataDictDataField
+ !IRSCHOOL_1.target:=false
+ !IRSCHOOL_1.id:=false
+ !IRSCHOOL_1.dataType:=DataType::string
+!IRSCHOOL_1.name:='IRSCHOOL'
+!create satscore_1:Continuous
+ !insert(output,satscore_1) into DataDictDataField
+ !create interval_satscore_1:Interval
+!interval_satscore_1.leftMargin:=440.0
+!interval_satscore_1.rightMargin:=1600.0
+!interval_satscore_1.closure:=ClosureType::closedClosed
+!interval_satscore_1.count:=512
+!insert(satscore_1,interval_satscore_1) into ContinuousInterval
+ !satscore_1.target:=false
+ !satscore_1.id:=false
+ !satscore_1.dataType:=DataType::double
+!satscore_1.name:='satscore'
+!create nan_11:ValueField
+ !nan_11.value:= 'nan'
+!nan_11.count:=4
+!insert(satscore_1,nan_11) into MissingVals
+ !create sex_1:Continuous
+ !insert(output,sex_1) into DataDictDataField
+ !create interval_sex_1:Interval
+!interval_sex_1.leftMargin:=0.0
+!interval_sex_1.rightMargin:=1.0
+!interval_sex_1.closure:=ClosureType::closedClosed
+!interval_sex_1.count:=516
+!insert(sex_1,interval_sex_1) into ContinuousInterval
+ !sex_1.target:=false
+ !sex_1.id:=false
+ !sex_1.dataType:=DataType::double
+!sex_1.name:='sex'
+!create mailq_1:Continuous
+ !insert(output,mailq_1) into DataDictDataField
+ !create interval_mailq_1:Interval
+!interval_mailq_1.leftMargin:=1.0
+!interval_mailq_1.rightMargin:=5.0
+!interval_mailq_1.closure:=ClosureType::closedClosed
+!interval_mailq_1.count:=516
+!insert(mailq_1,interval_mailq_1) into ContinuousInterval
+ !mailq_1.target:=false
+ !mailq_1.id:=false
+ !mailq_1.dataType:=DataType::integer
+!mailq_1.name:='mailq'
+!create telecq_1:Continuous
+ !insert(output,telecq_1) into DataDictDataField
+ !create interval_telecq_1:Interval
+!interval_telecq_1.leftMargin:=1.0
+!interval_telecq_1.rightMargin:=4.0
+!interval_telecq_1.closure:=ClosureType::closedClosed
+!interval_telecq_1.count:=99
+!insert(telecq_1,interval_telecq_1) into ContinuousInterval
+ !telecq_1.target:=false
+ !telecq_1.id:=false
+ !telecq_1.dataType:=DataType::double
+!telecq_1.name:='telecq'
+!create nan_12:ValueField
+ !nan_12.value:= 'nan'
+!nan_12.count:=417
+!insert(telecq_1,nan_12) into MissingVals
+ !create premiere_1:Continuous
+ !insert(output,premiere_1) into DataDictDataField
+ !create interval_premiere_1:Interval
+!interval_premiere_1.leftMargin:=0.0
+!interval_premiere_1.rightMargin:=1.0
+!interval_premiere_1.closure:=ClosureType::closedClosed
+!interval_premiere_1.count:=516
+!insert(premiere_1,interval_premiere_1) into ContinuousInterval
+ !premiere_1.target:=false
+ !premiere_1.id:=false
+ !premiere_1.dataType:=DataType::integer
+!premiere_1.name:='premiere'
+!create interest_1:Continuous
+ !insert(output,interest_1) into DataDictDataField
+ !create interval_interest_1:Interval
+!interval_interest_1.leftMargin:=0.0
+!interval_interest_1.rightMargin:=3.0
+!interval_interest_1.closure:=ClosureType::closedClosed
+!interval_interest_1.count:=516
+!insert(interest_1,interval_interest_1) into ContinuousInterval
+ !interest_1.target:=false
+ !interest_1.id:=false
+ !interest_1.dataType:=DataType::integer
+!interest_1.name:='interest'
+!create stuemail_1:Continuous
+ !insert(output,stuemail_1) into DataDictDataField
+ !create interval_stuemail_1:Interval
+!interval_stuemail_1.leftMargin:=0.0
+!interval_stuemail_1.rightMargin:=1.0
+!interval_stuemail_1.closure:=ClosureType::closedClosed
+!interval_stuemail_1.count:=516
+!insert(stuemail_1,interval_stuemail_1) into ContinuousInterval
+ !stuemail_1.target:=false
+ !stuemail_1.id:=false
+ !stuemail_1.dataType:=DataType::integer
+!stuemail_1.name:='stuemail'
+!create init_span_1:Continuous
+ !insert(output,init_span_1) into DataDictDataField
+ !create interval_init_span_1:Interval
+!interval_init_span_1.leftMargin:=-216.0
+!interval_init_span_1.rightMargin:=72.0
+!interval_init_span_1.closure:=ClosureType::closedClosed
+!interval_init_span_1.count:=516
+!insert(init_span_1,interval_init_span_1) into ContinuousInterval
+ !init_span_1.target:=false
+ !init_span_1.id:=false
+ !init_span_1.dataType:=DataType::integer
+!init_span_1.name:='init_span'
+!create int1rat_1:Continuous
+ !insert(output,int1rat_1) into DataDictDataField
+ !create interval_int1rat_0:Interval
+!interval_int1rat_0.leftMargin:=0.0
+!interval_int1rat_0.rightMargin:=1.0
+!interval_int1rat_0.closure:=ClosureType::closedClosed
+!interval_int1rat_0.count:=516
+!insert(int1rat_1,interval_int1rat_0) into ContinuousInterval
+ !int1rat_1.target:=false
+ !int1rat_1.id:=false
+ !int1rat_1.dataType:=DataType::double
+!int1rat_1.name:='int1rat'
+!create int2rat_1:Continuous
+ !insert(output,int2rat_1) into DataDictDataField
+ !create interval_int2rat_0:Interval
+!interval_int2rat_0.leftMargin:=0.0
+!interval_int2rat_0.rightMargin:=1.0
+!interval_int2rat_0.closure:=ClosureType::closedClosed
+!interval_int2rat_0.count:=516
+!insert(int2rat_1,interval_int2rat_0) into ContinuousInterval
+ !int2rat_1.target:=false
+ !int2rat_1.id:=false
+ !int2rat_1.dataType:=DataType::double
+!int2rat_1.name:='int2rat'
+!create hscrat_1:Continuous
+ !insert(output,hscrat_1) into DataDictDataField
+ !create interval_hscrat_0:Interval
+!interval_hscrat_0.leftMargin:=0.0
+!interval_hscrat_0.rightMargin:=1.0
+!interval_hscrat_0.closure:=ClosureType::closedClosed
+!interval_hscrat_0.count:=516
+!insert(hscrat_1,interval_hscrat_0) into ContinuousInterval
+ !hscrat_1.target:=false
+ !hscrat_1.id:=false
+ !hscrat_1.dataType:=DataType::double
+!hscrat_1.name:='hscrat'
+!create avg_income_1:Continuous
+ !insert(output,avg_income_1) into DataDictDataField
+ !create interval_avg_income_1:Interval
+!interval_avg_income_1.leftMargin:=9783.0
+!interval_avg_income_1.rightMargin:=200001.0
+!interval_avg_income_1.closure:=ClosureType::closedClosed
+!interval_avg_income_1.count:=516
+!insert(avg_income_1,interval_avg_income_1) into ContinuousInterval
+ !avg_income_1.target:=false
+ !avg_income_1.id:=false
+ !avg_income_1.dataType:=DataType::double
+!avg_income_1.name:='avg_income'
+!create distance_1:Continuous
+ !insert(output,distance_1) into DataDictDataField
+ !create interval_distance_0:Interval
+!interval_distance_0.leftMargin:=0.7905552999691918
+!interval_distance_0.rightMargin:=3882.192378789769
+!interval_distance_0.closure:=ClosureType::closedClosed
+!interval_distance_0.count:=516
+!insert(distance_1,interval_distance_0) into ContinuousInterval
+ !distance_1.target:=false
+ !distance_1.id:=false
+ !distance_1.dataType:=DataType::double
+!distance_1.name:='distance'
+!create Instate_1:Categorical
+ !Instate_1.ordinal:=false
+ !insert(output,Instate_1) into DataDictDataField
+ !create value_N_5:ValueField
+ !value_N_5.value:= 'N'
+!value_N_5.count:=516
+!insert(Instate_1,value_N_5) into ValidValues
+ !create value_Y_1:ValueField
+ !value_Y_1.value:= 'Y'
+!value_Y_1.count:=0
+!insert(Instate_1,value_Y_1) into ValidValues
+ !Instate_1.target:=false
+ !Instate_1.id:=false
+ !Instate_1.dataType:=DataType::string
+!Instate_1.name:='Instate'
+!create data_53494_74710029566_0:Data
+ !data_53494_74710029566_0.value:='53494.74710029566'
+!data_53494_74710029566_0.index:=0
+!insert(avg_income_1,data_53494_74710029566_0) into DataOfDataField
+ !create data_53494_74710029566_1307:Data
+ !data_53494_74710029566_1307.value:='53494.74710029566'
+!data_53494_74710029566_1307.index:=1
+!insert(avg_income_1,data_53494_74710029566_1307) into DataOfDataField
+ !create data_53494_74710029566_1548:Data
+ !data_53494_74710029566_1548.value:='53494.74710029566'
+!data_53494_74710029566_1548.index:=2
+!insert(avg_income_1,data_53494_74710029566_1548) into DataOfDataField
+ !create data_53494_74710029566_969:Data
+ !data_53494_74710029566_969.value:='53494.74710029566'
+!data_53494_74710029566_969.index:=3
+!insert(avg_income_1,data_53494_74710029566_969) into DataOfDataField
+ !create data_53494_74710029566_1170:Data
+ !data_53494_74710029566_1170.value:='53494.74710029566'
+!data_53494_74710029566_1170.index:=4
+!insert(avg_income_1,data_53494_74710029566_1170) into DataOfDataField
+ !create data_53494_74710029566_937:Data
+ !data_53494_74710029566_937.value:='53494.74710029566'
+!data_53494_74710029566_937.index:=5
+!insert(avg_income_1,data_53494_74710029566_937) into DataOfDataField
+ !create data_53494_74710029566_435:Data
+ !data_53494_74710029566_435.value:='53494.74710029566'
+!data_53494_74710029566_435.index:=6
+!insert(avg_income_1,data_53494_74710029566_435) into DataOfDataField
+ !create data_53494_74710029566_1185:Data
+ !data_53494_74710029566_1185.value:='53494.74710029566'
+!data_53494_74710029566_1185.index:=7
+!insert(avg_income_1,data_53494_74710029566_1185) into DataOfDataField
+ !create data_53494_74710029566_752:Data
+ !data_53494_74710029566_752.value:='53494.74710029566'
+!data_53494_74710029566_752.index:=8
+!insert(avg_income_1,data_53494_74710029566_752) into DataOfDataField
+ !create data_53494_74710029566_688:Data
+ !data_53494_74710029566_688.value:='53494.74710029566'
+!data_53494_74710029566_688.index:=9
+!insert(avg_income_1,data_53494_74710029566_688) into DataOfDataField
+ !create data_53494_74710029566_257:Data
+ !data_53494_74710029566_257.value:='53494.74710029566'
+!data_53494_74710029566_257.index:=10
+!insert(avg_income_1,data_53494_74710029566_257) into DataOfDataField
+ !create data_53494_74710029566_912:Data
+ !data_53494_74710029566_912.value:='53494.74710029566'
+!data_53494_74710029566_912.index:=11
+!insert(avg_income_1,data_53494_74710029566_912) into DataOfDataField
+ !create data_53494_74710029566_1282:Data
+ !data_53494_74710029566_1282.value:='53494.74710029566'
+!data_53494_74710029566_1282.index:=12
+!insert(avg_income_1,data_53494_74710029566_1282) into DataOfDataField
+ !create data_53494_74710029566_223:Data
+ !data_53494_74710029566_223.value:='53494.74710029566'
+!data_53494_74710029566_223.index:=13
+!insert(avg_income_1,data_53494_74710029566_223) into DataOfDataField
+ !create data_53494_74710029566_1376:Data
+ !data_53494_74710029566_1376.value:='53494.74710029566'
+!data_53494_74710029566_1376.index:=14
+!insert(avg_income_1,data_53494_74710029566_1376) into DataOfDataField
+ !create data_53494_74710029566_769:Data
+ !data_53494_74710029566_769.value:='53494.74710029566'
+!data_53494_74710029566_769.index:=15
+!insert(avg_income_1,data_53494_74710029566_769) into DataOfDataField
+ !create data_53494_74710029566_720:Data
+ !data_53494_74710029566_720.value:='53494.74710029566'
+!data_53494_74710029566_720.index:=16
+!insert(avg_income_1,data_53494_74710029566_720) into DataOfDataField
+ !create data_53494_74710029566_421:Data
+ !data_53494_74710029566_421.value:='53494.74710029566'
+!data_53494_74710029566_421.index:=17
+!insert(avg_income_1,data_53494_74710029566_421) into DataOfDataField
+ !create data_53494_74710029566_1449:Data
+ !data_53494_74710029566_1449.value:='53494.74710029566'
+!data_53494_74710029566_1449.index:=18
+!insert(avg_income_1,data_53494_74710029566_1449) into DataOfDataField
+ !create data_53494_74710029566_425:Data
+ !data_53494_74710029566_425.value:='53494.74710029566'
+!data_53494_74710029566_425.index:=19
+!insert(avg_income_1,data_53494_74710029566_425) into DataOfDataField
+ !create data_53494_74710029566_997:Data
+ !data_53494_74710029566_997.value:='53494.74710029566'
+!data_53494_74710029566_997.index:=20
+!insert(avg_income_1,data_53494_74710029566_997) into DataOfDataField
+ !create data_53494_74710029566_1329:Data
+ !data_53494_74710029566_1329.value:='53494.74710029566'
+!data_53494_74710029566_1329.index:=21
+!insert(avg_income_1,data_53494_74710029566_1329) into DataOfDataField
+ !create data_53494_74710029566_400:Data
+ !data_53494_74710029566_400.value:='53494.74710029566'
+!data_53494_74710029566_400.index:=22
+!insert(avg_income_1,data_53494_74710029566_400) into DataOfDataField
+ !create data_53494_74710029566_1499:Data
+ !data_53494_74710029566_1499.value:='53494.74710029566'
+!data_53494_74710029566_1499.index:=23
+!insert(avg_income_1,data_53494_74710029566_1499) into DataOfDataField
+ !create data_53494_74710029566_917:Data
+ !data_53494_74710029566_917.value:='53494.74710029566'
+!data_53494_74710029566_917.index:=24
+!insert(avg_income_1,data_53494_74710029566_917) into DataOfDataField
+ !create data_53494_74710029566_52:Data
+ !data_53494_74710029566_52.value:='53494.74710029566'
+!data_53494_74710029566_52.index:=25
+!insert(avg_income_1,data_53494_74710029566_52) into DataOfDataField
+ !create data_53494_74710029566_928:Data
+ !data_53494_74710029566_928.value:='53494.74710029566'
+!data_53494_74710029566_928.index:=26
+!insert(avg_income_1,data_53494_74710029566_928) into DataOfDataField
+ !create data_53494_74710029566_539:Data
+ !data_53494_74710029566_539.value:='53494.74710029566'
+!data_53494_74710029566_539.index:=27
+!insert(avg_income_1,data_53494_74710029566_539) into DataOfDataField
+ !create data_53494_74710029566_504:Data
+ !data_53494_74710029566_504.value:='53494.74710029566'
+!data_53494_74710029566_504.index:=28
+!insert(avg_income_1,data_53494_74710029566_504) into DataOfDataField
+ !create data_53494_74710029566_888:Data
+ !data_53494_74710029566_888.value:='53494.74710029566'
+!data_53494_74710029566_888.index:=29
+!insert(avg_income_1,data_53494_74710029566_888) into DataOfDataField
+ !create data_53494_74710029566_1121:Data
+ !data_53494_74710029566_1121.value:='53494.74710029566'
+!data_53494_74710029566_1121.index:=30
+!insert(avg_income_1,data_53494_74710029566_1121) into DataOfDataField
+ !create data_53494_74710029566_496:Data
+ !data_53494_74710029566_496.value:='53494.74710029566'
+!data_53494_74710029566_496.index:=31
+!insert(avg_income_1,data_53494_74710029566_496) into DataOfDataField
+ !create data_53494_74710029566_41:Data
+ !data_53494_74710029566_41.value:='53494.74710029566'
+!data_53494_74710029566_41.index:=32
+!insert(avg_income_1,data_53494_74710029566_41) into DataOfDataField
+ !create data_53494_74710029566_605:Data
+ !data_53494_74710029566_605.value:='53494.74710029566'
+!data_53494_74710029566_605.index:=33
+!insert(avg_income_1,data_53494_74710029566_605) into DataOfDataField
+ !create data_53494_74710029566_1456:Data
+ !data_53494_74710029566_1456.value:='53494.74710029566'
+!data_53494_74710029566_1456.index:=34
+!insert(avg_income_1,data_53494_74710029566_1456) into DataOfDataField
+ !create data_53494_74710029566_479:Data
+ !data_53494_74710029566_479.value:='53494.74710029566'
+!data_53494_74710029566_479.index:=35
+!insert(avg_income_1,data_53494_74710029566_479) into DataOfDataField
+ !create data_53494_74710029566_971:Data
+ !data_53494_74710029566_971.value:='53494.74710029566'
+!data_53494_74710029566_971.index:=36
+!insert(avg_income_1,data_53494_74710029566_971) into DataOfDataField
+ !create data_53494_74710029566_750:Data
+ !data_53494_74710029566_750.value:='53494.74710029566'
+!data_53494_74710029566_750.index:=37
+!insert(avg_income_1,data_53494_74710029566_750) into DataOfDataField
+ !create data_53494_74710029566_836:Data
+ !data_53494_74710029566_836.value:='53494.74710029566'
+!data_53494_74710029566_836.index:=38
+!insert(avg_income_1,data_53494_74710029566_836) into DataOfDataField
+ !create data_53494_74710029566_1225:Data
+ !data_53494_74710029566_1225.value:='53494.74710029566'
+!data_53494_74710029566_1225.index:=39
+!insert(avg_income_1,data_53494_74710029566_1225) into DataOfDataField
+ !create data_53494_74710029566_82:Data
+ !data_53494_74710029566_82.value:='53494.74710029566'
+!data_53494_74710029566_82.index:=40
+!insert(avg_income_1,data_53494_74710029566_82) into DataOfDataField
+ !create data_53494_74710029566_737:Data
+ !data_53494_74710029566_737.value:='53494.74710029566'
+!data_53494_74710029566_737.index:=41
+!insert(avg_income_1,data_53494_74710029566_737) into DataOfDataField
+ !create data_53494_74710029566_59:Data
+ !data_53494_74710029566_59.value:='53494.74710029566'
+!data_53494_74710029566_59.index:=42
+!insert(avg_income_1,data_53494_74710029566_59) into DataOfDataField
+ !create data_53494_74710029566_1324:Data
+ !data_53494_74710029566_1324.value:='53494.74710029566'
+!data_53494_74710029566_1324.index:=43
+!insert(avg_income_1,data_53494_74710029566_1324) into DataOfDataField
+ !create data_53494_74710029566_859:Data
+ !data_53494_74710029566_859.value:='53494.74710029566'
+!data_53494_74710029566_859.index:=44
+!insert(avg_income_1,data_53494_74710029566_859) into DataOfDataField
+ !create data_53494_74710029566_1523:Data
+ !data_53494_74710029566_1523.value:='53494.74710029566'
+!data_53494_74710029566_1523.index:=45
+!insert(avg_income_1,data_53494_74710029566_1523) into DataOfDataField
+ !create data_53494_74710029566_514:Data
+ !data_53494_74710029566_514.value:='53494.74710029566'
+!data_53494_74710029566_514.index:=46
+!insert(avg_income_1,data_53494_74710029566_514) into DataOfDataField
+ !create data_53494_74710029566_582:Data
+ !data_53494_74710029566_582.value:='53494.74710029566'
+!data_53494_74710029566_582.index:=47
+!insert(avg_income_1,data_53494_74710029566_582) into DataOfDataField
+ !create data_53494_74710029566_1391:Data
+ !data_53494_74710029566_1391.value:='53494.74710029566'
+!data_53494_74710029566_1391.index:=48
+!insert(avg_income_1,data_53494_74710029566_1391) into DataOfDataField
+ !create data_53494_74710029566_1269:Data
+ !data_53494_74710029566_1269.value:='53494.74710029566'
+!data_53494_74710029566_1269.index:=49
+!insert(avg_income_1,data_53494_74710029566_1269) into DataOfDataField
+ !create data_53494_74710029566_1418:Data
+ !data_53494_74710029566_1418.value:='53494.74710029566'
+!data_53494_74710029566_1418.index:=50
+!insert(avg_income_1,data_53494_74710029566_1418) into DataOfDataField
+ !create data_53494_74710029566_475:Data
+ !data_53494_74710029566_475.value:='53494.74710029566'
+!data_53494_74710029566_475.index:=51
+!insert(avg_income_1,data_53494_74710029566_475) into DataOfDataField
+ !create data_53494_74710029566_610:Data
+ !data_53494_74710029566_610.value:='53494.74710029566'
+!data_53494_74710029566_610.index:=52
+!insert(avg_income_1,data_53494_74710029566_610) into DataOfDataField
+ !create data_53494_74710029566_189:Data
+ !data_53494_74710029566_189.value:='53494.74710029566'
+!data_53494_74710029566_189.index:=53
+!insert(avg_income_1,data_53494_74710029566_189) into DataOfDataField
+ !create data_53494_74710029566_654:Data
+ !data_53494_74710029566_654.value:='53494.74710029566'
+!data_53494_74710029566_654.index:=54
+!insert(avg_income_1,data_53494_74710029566_654) into DataOfDataField
+ !create data_53494_74710029566_1488:Data
+ !data_53494_74710029566_1488.value:='53494.74710029566'
+!data_53494_74710029566_1488.index:=55
+!insert(avg_income_1,data_53494_74710029566_1488) into DataOfDataField
+ !create data_53494_74710029566_710:Data
+ !data_53494_74710029566_710.value:='53494.74710029566'
+!data_53494_74710029566_710.index:=56
+!insert(avg_income_1,data_53494_74710029566_710) into DataOfDataField
+ !create data_53494_74710029566_1524:Data
+ !data_53494_74710029566_1524.value:='53494.74710029566'
+!data_53494_74710029566_1524.index:=57
+!insert(avg_income_1,data_53494_74710029566_1524) into DataOfDataField
+ !create data_53494_74710029566_160:Data
+ !data_53494_74710029566_160.value:='53494.74710029566'
+!data_53494_74710029566_160.index:=58
+!insert(avg_income_1,data_53494_74710029566_160) into DataOfDataField
+ !create data_53494_74710029566_513:Data
+ !data_53494_74710029566_513.value:='53494.74710029566'
+!data_53494_74710029566_513.index:=59
+!insert(avg_income_1,data_53494_74710029566_513) into DataOfDataField
+ !create data_53494_74710029566_231:Data
+ !data_53494_74710029566_231.value:='53494.74710029566'
+!data_53494_74710029566_231.index:=60
+!insert(avg_income_1,data_53494_74710029566_231) into DataOfDataField
+ !create data_53494_74710029566_666:Data
+ !data_53494_74710029566_666.value:='53494.74710029566'
+!data_53494_74710029566_666.index:=61
+!insert(avg_income_1,data_53494_74710029566_666) into DataOfDataField
+ !create data_53494_74710029566_383:Data
+ !data_53494_74710029566_383.value:='53494.74710029566'
+!data_53494_74710029566_383.index:=62
+!insert(avg_income_1,data_53494_74710029566_383) into DataOfDataField
+ !create data_53494_74710029566_773:Data
+ !data_53494_74710029566_773.value:='53494.74710029566'
+!data_53494_74710029566_773.index:=63
+!insert(avg_income_1,data_53494_74710029566_773) into DataOfDataField
+ !create data_53494_74710029566_208:Data
+ !data_53494_74710029566_208.value:='53494.74710029566'
+!data_53494_74710029566_208.index:=64
+!insert(avg_income_1,data_53494_74710029566_208) into DataOfDataField
+ !create data_53494_74710029566_706:Data
+ !data_53494_74710029566_706.value:='53494.74710029566'
+!data_53494_74710029566_706.index:=65
+!insert(avg_income_1,data_53494_74710029566_706) into DataOfDataField
+ !create data_53494_74710029566_319:Data
+ !data_53494_74710029566_319.value:='53494.74710029566'
+!data_53494_74710029566_319.index:=66
+!insert(avg_income_1,data_53494_74710029566_319) into DataOfDataField
+ !create data_53494_74710029566_54:Data
+ !data_53494_74710029566_54.value:='53494.74710029566'
+!data_53494_74710029566_54.index:=67
+!insert(avg_income_1,data_53494_74710029566_54) into DataOfDataField
+ !create data_53494_74710029566_382:Data
+ !data_53494_74710029566_382.value:='53494.74710029566'
+!data_53494_74710029566_382.index:=68
+!insert(avg_income_1,data_53494_74710029566_382) into DataOfDataField
+ !create data_53494_74710029566_920:Data
+ !data_53494_74710029566_920.value:='53494.74710029566'
+!data_53494_74710029566_920.index:=69
+!insert(avg_income_1,data_53494_74710029566_920) into DataOfDataField
+ !create data_53494_74710029566_437:Data
+ !data_53494_74710029566_437.value:='53494.74710029566'
+!data_53494_74710029566_437.index:=70
+!insert(avg_income_1,data_53494_74710029566_437) into DataOfDataField
+ !create data_53494_74710029566_266:Data
+ !data_53494_74710029566_266.value:='53494.74710029566'
+!data_53494_74710029566_266.index:=71
+!insert(avg_income_1,data_53494_74710029566_266) into DataOfDataField
+ !create data_53494_74710029566_925:Data
+ !data_53494_74710029566_925.value:='53494.74710029566'
+!data_53494_74710029566_925.index:=72
+!insert(avg_income_1,data_53494_74710029566_925) into DataOfDataField
+ !create data_53494_74710029566_965:Data
+ !data_53494_74710029566_965.value:='53494.74710029566'
+!data_53494_74710029566_965.index:=73
+!insert(avg_income_1,data_53494_74710029566_965) into DataOfDataField
+ !create data_53494_74710029566_967:Data
+ !data_53494_74710029566_967.value:='53494.74710029566'
+!data_53494_74710029566_967.index:=74
+!insert(avg_income_1,data_53494_74710029566_967) into DataOfDataField
+ !create data_53494_74710029566_1227:Data
+ !data_53494_74710029566_1227.value:='53494.74710029566'
+!data_53494_74710029566_1227.index:=75
+!insert(avg_income_1,data_53494_74710029566_1227) into DataOfDataField
+ !create data_53494_74710029566_1123:Data
+ !data_53494_74710029566_1123.value:='53494.74710029566'
+!data_53494_74710029566_1123.index:=76
+!insert(avg_income_1,data_53494_74710029566_1123) into DataOfDataField
+ !create data_53494_74710029566_445:Data
+ !data_53494_74710029566_445.value:='53494.74710029566'
+!data_53494_74710029566_445.index:=77
+!insert(avg_income_1,data_53494_74710029566_445) into DataOfDataField
+ !create data_53494_74710029566_1178:Data
+ !data_53494_74710029566_1178.value:='53494.74710029566'
+!data_53494_74710029566_1178.index:=78
+!insert(avg_income_1,data_53494_74710029566_1178) into DataOfDataField
+ !create data_53494_74710029566_341:Data
+ !data_53494_74710029566_341.value:='53494.74710029566'
+!data_53494_74710029566_341.index:=79
+!insert(avg_income_1,data_53494_74710029566_341) into DataOfDataField
+ !create data_53494_74710029566_763:Data
+ !data_53494_74710029566_763.value:='53494.74710029566'
+!data_53494_74710029566_763.index:=80
+!insert(avg_income_1,data_53494_74710029566_763) into DataOfDataField
+ !create data_53494_74710029566_624:Data
+ !data_53494_74710029566_624.value:='53494.74710029566'
+!data_53494_74710029566_624.index:=81
+!insert(avg_income_1,data_53494_74710029566_624) into DataOfDataField
+ !create data_53494_74710029566_865:Data
+ !data_53494_74710029566_865.value:='53494.74710029566'
+!data_53494_74710029566_865.index:=82
+!insert(avg_income_1,data_53494_74710029566_865) into DataOfDataField
+ !create data_53494_74710029566_1216:Data
+ !data_53494_74710029566_1216.value:='53494.74710029566'
+!data_53494_74710029566_1216.index:=83
+!insert(avg_income_1,data_53494_74710029566_1216) into DataOfDataField
+ !create data_53494_74710029566_1137:Data
+ !data_53494_74710029566_1137.value:='53494.74710029566'
+!data_53494_74710029566_1137.index:=84
+!insert(avg_income_1,data_53494_74710029566_1137) into DataOfDataField
+ !create data_53494_74710029566_1274:Data
+ !data_53494_74710029566_1274.value:='53494.74710029566'
+!data_53494_74710029566_1274.index:=85
+!insert(avg_income_1,data_53494_74710029566_1274) into DataOfDataField
+ !create data_53494_74710029566_929:Data
+ !data_53494_74710029566_929.value:='53494.74710029566'
+!data_53494_74710029566_929.index:=86
+!insert(avg_income_1,data_53494_74710029566_929) into DataOfDataField
+ !create data_53494_74710029566_1514:Data
+ !data_53494_74710029566_1514.value:='53494.74710029566'
+!data_53494_74710029566_1514.index:=87
+!insert(avg_income_1,data_53494_74710029566_1514) into DataOfDataField
+ !create data_53494_74710029566_187:Data
+ !data_53494_74710029566_187.value:='53494.74710029566'
+!data_53494_74710029566_187.index:=88
+!insert(avg_income_1,data_53494_74710029566_187) into DataOfDataField
+ !create data_53494_74710029566_850:Data
+ !data_53494_74710029566_850.value:='53494.74710029566'
+!data_53494_74710029566_850.index:=89
+!insert(avg_income_1,data_53494_74710029566_850) into DataOfDataField
+ !create data_53494_74710029566_919:Data
+ !data_53494_74710029566_919.value:='53494.74710029566'
+!data_53494_74710029566_919.index:=90
+!insert(avg_income_1,data_53494_74710029566_919) into DataOfDataField
+ !create data_53494_74710029566_1183:Data
+ !data_53494_74710029566_1183.value:='53494.74710029566'
+!data_53494_74710029566_1183.index:=91
+!insert(avg_income_1,data_53494_74710029566_1183) into DataOfDataField
+ !create data_53494_74710029566_1285:Data
+ !data_53494_74710029566_1285.value:='53494.74710029566'
+!data_53494_74710029566_1285.index:=92
+!insert(avg_income_1,data_53494_74710029566_1285) into DataOfDataField
+ !create data_53494_74710029566_577:Data
+ !data_53494_74710029566_577.value:='53494.74710029566'
+!data_53494_74710029566_577.index:=93
+!insert(avg_income_1,data_53494_74710029566_577) into DataOfDataField
+ !create data_53494_74710029566_533:Data
+ !data_53494_74710029566_533.value:='53494.74710029566'
+!data_53494_74710029566_533.index:=94
+!insert(avg_income_1,data_53494_74710029566_533) into DataOfDataField
+ !create data_53494_74710029566_58:Data
+ !data_53494_74710029566_58.value:='53494.74710029566'
+!data_53494_74710029566_58.index:=95
+!insert(avg_income_1,data_53494_74710029566_58) into DataOfDataField
+ !create data_53494_74710029566_1042:Data
+ !data_53494_74710029566_1042.value:='53494.74710029566'
+!data_53494_74710029566_1042.index:=96
+!insert(avg_income_1,data_53494_74710029566_1042) into DataOfDataField
+ !create data_53494_74710029566_1155:Data
+ !data_53494_74710029566_1155.value:='53494.74710029566'
+!data_53494_74710029566_1155.index:=97
+!insert(avg_income_1,data_53494_74710029566_1155) into DataOfDataField
+ !create data_53494_74710029566_1400:Data
+ !data_53494_74710029566_1400.value:='53494.74710029566'
+!data_53494_74710029566_1400.index:=98
+!insert(avg_income_1,data_53494_74710029566_1400) into DataOfDataField
+ !create data_53494_74710029566_245:Data
+ !data_53494_74710029566_245.value:='53494.74710029566'
+!data_53494_74710029566_245.index:=99
+!insert(avg_income_1,data_53494_74710029566_245) into DataOfDataField
+ !create data_53494_74710029566_975:Data
+ !data_53494_74710029566_975.value:='53494.74710029566'
+!data_53494_74710029566_975.index:=100
+!insert(avg_income_1,data_53494_74710029566_975) into DataOfDataField
+ !create data_53494_74710029566_367:Data
+ !data_53494_74710029566_367.value:='53494.74710029566'
+!data_53494_74710029566_367.index:=101
+!insert(avg_income_1,data_53494_74710029566_367) into DataOfDataField
+ !create data_79781_0_897:Data
+ !data_79781_0_897.value:='79781.0'
+!data_79781_0_897.index:=102
+!insert(avg_income_1,data_79781_0_897) into DataOfDataField
+ !create data_129811_0_1149:Data
+ !data_129811_0_1149.value:='129811.0'
+!data_129811_0_1149.index:=103
+!insert(avg_income_1,data_129811_0_1149) into DataOfDataField
+ !create data_71174_0_48:Data
+ !data_71174_0_48.value:='71174.0'
+!data_71174_0_48.index:=104
+!insert(avg_income_1,data_71174_0_48) into DataOfDataField
+ !create data_100358_0_256:Data
+ !data_100358_0_256.value:='100358.0'
+!data_100358_0_256.index:=105
+!insert(avg_income_1,data_100358_0_256) into DataOfDataField
+ !create data_50879_0_79:Data
+ !data_50879_0_79.value:='50879.0'
+!data_50879_0_79.index:=106
+!insert(avg_income_1,data_50879_0_79) into DataOfDataField
+ !create data_52455_0_1476:Data
+ !data_52455_0_1476.value:='52455.0'
+!data_52455_0_1476.index:=107
+!insert(avg_income_1,data_52455_0_1476) into DataOfDataField
+ !create data_52455_0_906:Data
+ !data_52455_0_906.value:='52455.0'
+!data_52455_0_906.index:=108
+!insert(avg_income_1,data_52455_0_906) into DataOfDataField
+ !create data_53494_74710029566_1530:Data
+ !data_53494_74710029566_1530.value:='53494.74710029566'
+!data_53494_74710029566_1530.index:=109
+!insert(avg_income_1,data_53494_74710029566_1530) into DataOfDataField
+ !create data_57615_0_1016:Data
+ !data_57615_0_1016.value:='57615.0'
+!data_57615_0_1016.index:=110
+!insert(avg_income_1,data_57615_0_1016) into DataOfDataField
+ !create data_32323_0_71:Data
+ !data_32323_0_71.value:='32323.0'
+!data_32323_0_71.index:=111
+!insert(avg_income_1,data_32323_0_71) into DataOfDataField
+ !create data_53494_74710029566_758:Data
+ !data_53494_74710029566_758.value:='53494.74710029566'
+!data_53494_74710029566_758.index:=112
+!insert(avg_income_1,data_53494_74710029566_758) into DataOfDataField
+ !create data_42695_0_940:Data
+ !data_42695_0_940.value:='42695.0'
+!data_42695_0_940.index:=113
+!insert(avg_income_1,data_42695_0_940) into DataOfDataField
+ !create data_36318_0_758:Data
+ !data_36318_0_758.value:='36318.0'
+!data_36318_0_758.index:=114
+!insert(avg_income_1,data_36318_0_758) into DataOfDataField
+ !create data_66855_0_377:Data
+ !data_66855_0_377.value:='66855.0'
+!data_66855_0_377.index:=115
+!insert(avg_income_1,data_66855_0_377) into DataOfDataField
+ !create data_33049_0_286:Data
+ !data_33049_0_286.value:='33049.0'
+!data_33049_0_286.index:=116
+!insert(avg_income_1,data_33049_0_286) into DataOfDataField
+ !create data_33507_0_1198:Data
+ !data_33507_0_1198.value:='33507.0'
+!data_33507_0_1198.index:=117
+!insert(avg_income_1,data_33507_0_1198) into DataOfDataField
+ !create data_33611_0_1027:Data
+ !data_33611_0_1027.value:='33611.0'
+!data_33611_0_1027.index:=118
+!insert(avg_income_1,data_33611_0_1027) into DataOfDataField
+ !create data_77991_0_1123:Data
+ !data_77991_0_1123.value:='77991.0'
+!data_77991_0_1123.index:=119
+!insert(avg_income_1,data_77991_0_1123) into DataOfDataField
+ !create data_49414_0_565:Data
+ !data_49414_0_565.value:='49414.0'
+!data_49414_0_565.index:=120
+!insert(avg_income_1,data_49414_0_565) into DataOfDataField
+ !create data_88483_0_693:Data
+ !data_88483_0_693.value:='88483.0'
+!data_88483_0_693.index:=121
+!insert(avg_income_1,data_88483_0_693) into DataOfDataField
+ !create data_52315_0_1045:Data
+ !data_52315_0_1045.value:='52315.0'
+!data_52315_0_1045.index:=122
+!insert(avg_income_1,data_52315_0_1045) into DataOfDataField
+ !create data_53225_0_875:Data
+ !data_53225_0_875.value:='53225.0'
+!data_53225_0_875.index:=123
+!insert(avg_income_1,data_53225_0_875) into DataOfDataField
+ !create data_69115_0_99:Data
+ !data_69115_0_99.value:='69115.0'
+!data_69115_0_99.index:=124
+!insert(avg_income_1,data_69115_0_99) into DataOfDataField
+ !create data_51254_0_477:Data
+ !data_51254_0_477.value:='51254.0'
+!data_51254_0_477.index:=125
+!insert(avg_income_1,data_51254_0_477) into DataOfDataField
+ !create data_60428_0_218:Data
+ !data_60428_0_218.value:='60428.0'
+!data_60428_0_218.index:=126
+!insert(avg_income_1,data_60428_0_218) into DataOfDataField
+ !create data_103326_0_433:Data
+ !data_103326_0_433.value:='103326.0'
+!data_103326_0_433.index:=127
+!insert(avg_income_1,data_103326_0_433) into DataOfDataField
+ !create data_60904_0_747:Data
+ !data_60904_0_747.value:='60904.0'
+!data_60904_0_747.index:=128
+!insert(avg_income_1,data_60904_0_747) into DataOfDataField
+ !create data_127481_0_957:Data
+ !data_127481_0_957.value:='127481.0'
+!data_127481_0_957.index:=129
+!insert(avg_income_1,data_127481_0_957) into DataOfDataField
+ !create data_53494_74710029566_1508:Data
+ !data_53494_74710029566_1508.value:='53494.74710029566'
+!data_53494_74710029566_1508.index:=130
+!insert(avg_income_1,data_53494_74710029566_1508) into DataOfDataField
+ !create data_53494_74710029566_1331:Data
+ !data_53494_74710029566_1331.value:='53494.74710029566'
+!data_53494_74710029566_1331.index:=131
+!insert(avg_income_1,data_53494_74710029566_1331) into DataOfDataField
+ !create data_54987_0_495:Data
+ !data_54987_0_495.value:='54987.0'
+!data_54987_0_495.index:=132
+!insert(avg_income_1,data_54987_0_495) into DataOfDataField
+ !create data_54987_0_1537:Data
+ !data_54987_0_1537.value:='54987.0'
+!data_54987_0_1537.index:=133
+!insert(avg_income_1,data_54987_0_1537) into DataOfDataField
+ !create data_114854_0_1422:Data
+ !data_114854_0_1422.value:='114854.0'
+!data_114854_0_1422.index:=134
+!insert(avg_income_1,data_114854_0_1422) into DataOfDataField
+ !create data_66436_0_499:Data
+ !data_66436_0_499.value:='66436.0'
+!data_66436_0_499.index:=135
+!insert(avg_income_1,data_66436_0_499) into DataOfDataField
+ !create data_66436_0_609:Data
+ !data_66436_0_609.value:='66436.0'
+!data_66436_0_609.index:=136
+!insert(avg_income_1,data_66436_0_609) into DataOfDataField
+ !create data_90977_0_1068:Data
+ !data_90977_0_1068.value:='90977.0'
+!data_90977_0_1068.index:=137
+!insert(avg_income_1,data_90977_0_1068) into DataOfDataField
+ !create data_53494_74710029566_1286:Data
+ !data_53494_74710029566_1286.value:='53494.74710029566'
+!data_53494_74710029566_1286.index:=138
+!insert(avg_income_1,data_53494_74710029566_1286) into DataOfDataField
+ !create data_49733_0_549:Data
+ !data_49733_0_549.value:='49733.0'
+!data_49733_0_549.index:=139
+!insert(avg_income_1,data_49733_0_549) into DataOfDataField
+ !create data_61868_0_654:Data
+ !data_61868_0_654.value:='61868.0'
+!data_61868_0_654.index:=140
+!insert(avg_income_1,data_61868_0_654) into DataOfDataField
+ !create data_83329_0_530:Data
+ !data_83329_0_530.value:='83329.0'
+!data_83329_0_530.index:=141
+!insert(avg_income_1,data_83329_0_530) into DataOfDataField
+ !create data_85990_0_1474:Data
+ !data_85990_0_1474.value:='85990.0'
+!data_85990_0_1474.index:=142
+!insert(avg_income_1,data_85990_0_1474) into DataOfDataField
+ !create data_70888_0_590:Data
+ !data_70888_0_590.value:='70888.0'
+!data_70888_0_590.index:=143
+!insert(avg_income_1,data_70888_0_590) into DataOfDataField
+ !create data_56293_0_50:Data
+ !data_56293_0_50.value:='56293.0'
+!data_56293_0_50.index:=144
+!insert(avg_income_1,data_56293_0_50) into DataOfDataField
+ !create data_50744_0_999:Data
+ !data_50744_0_999.value:='50744.0'
+!data_50744_0_999.index:=145
+!insert(avg_income_1,data_50744_0_999) into DataOfDataField
+ !create data_42414_0_458:Data
+ !data_42414_0_458.value:='42414.0'
+!data_42414_0_458.index:=146
+!insert(avg_income_1,data_42414_0_458) into DataOfDataField
+ !create data_27820_0_161:Data
+ !data_27820_0_161.value:='27820.0'
+!data_27820_0_161.index:=147
+!insert(avg_income_1,data_27820_0_161) into DataOfDataField
+ !create data_70630_0_1099:Data
+ !data_70630_0_1099.value:='70630.0'
+!data_70630_0_1099.index:=148
+!insert(avg_income_1,data_70630_0_1099) into DataOfDataField
+ !create data_35079_0_1297:Data
+ !data_35079_0_1297.value:='35079.0'
+!data_35079_0_1297.index:=149
+!insert(avg_income_1,data_35079_0_1297) into DataOfDataField
+ !create data_51250_0_14:Data
+ !data_51250_0_14.value:='51250.0'
+!data_51250_0_14.index:=150
+!insert(avg_income_1,data_51250_0_14) into DataOfDataField
+ !create data_40836_0_461:Data
+ !data_40836_0_461.value:='40836.0'
+!data_40836_0_461.index:=151
+!insert(avg_income_1,data_40836_0_461) into DataOfDataField
+ !create data_60141_0_800:Data
+ !data_60141_0_800.value:='60141.0'
+!data_60141_0_800.index:=152
+!insert(avg_income_1,data_60141_0_800) into DataOfDataField
+ !create data_60898_0_1423:Data
+ !data_60898_0_1423.value:='60898.0'
+!data_60898_0_1423.index:=153
+!insert(avg_income_1,data_60898_0_1423) into DataOfDataField
+ !create data_50099_0_1145:Data
+ !data_50099_0_1145.value:='50099.0'
+!data_50099_0_1145.index:=154
+!insert(avg_income_1,data_50099_0_1145) into DataOfDataField
+ !create data_39939_0_100:Data
+ !data_39939_0_100.value:='39939.0'
+!data_39939_0_100.index:=155
+!insert(avg_income_1,data_39939_0_100) into DataOfDataField
+ !create data_45816_0_16:Data
+ !data_45816_0_16.value:='45816.0'
+!data_45816_0_16.index:=156
+!insert(avg_income_1,data_45816_0_16) into DataOfDataField
+ !create data_37821_0_1284:Data
+ !data_37821_0_1284.value:='37821.0'
+!data_37821_0_1284.index:=157
+!insert(avg_income_1,data_37821_0_1284) into DataOfDataField
+ !create data_43315_0_1099:Data
+ !data_43315_0_1099.value:='43315.0'
+!data_43315_0_1099.index:=158
+!insert(avg_income_1,data_43315_0_1099) into DataOfDataField
+ !create data_48134_0_329:Data
+ !data_48134_0_329.value:='48134.0'
+!data_48134_0_329.index:=159
+!insert(avg_income_1,data_48134_0_329) into DataOfDataField
+ !create data_55750_0_2:Data
+ !data_55750_0_2.value:='55750.0'
+!data_55750_0_2.index:=160
+!insert(avg_income_1,data_55750_0_2) into DataOfDataField
+ !create data_55750_0_930:Data
+ !data_55750_0_930.value:='55750.0'
+!data_55750_0_930.index:=161
+!insert(avg_income_1,data_55750_0_930) into DataOfDataField
+ !create data_53761_0_632:Data
+ !data_53761_0_632.value:='53761.0'
+!data_53761_0_632.index:=162
+!insert(avg_income_1,data_53761_0_632) into DataOfDataField
+ !create data_48352_0_1016:Data
+ !data_48352_0_1016.value:='48352.0'
+!data_48352_0_1016.index:=163
+!insert(avg_income_1,data_48352_0_1016) into DataOfDataField
+ !create data_51042_0_28:Data
+ !data_51042_0_28.value:='51042.0'
+!data_51042_0_28.index:=164
+!insert(avg_income_1,data_51042_0_28) into DataOfDataField
+ !create data_93308_0_455:Data
+ !data_93308_0_455.value:='93308.0'
+!data_93308_0_455.index:=165
+!insert(avg_income_1,data_93308_0_455) into DataOfDataField
+ !create data_61814_0_437:Data
+ !data_61814_0_437.value:='61814.0'
+!data_61814_0_437.index:=166
+!insert(avg_income_1,data_61814_0_437) into DataOfDataField
+ !create data_67623_0_1478:Data
+ !data_67623_0_1478.value:='67623.0'
+!data_67623_0_1478.index:=167
+!insert(avg_income_1,data_67623_0_1478) into DataOfDataField
+ !create data_117689_0_1419:Data
+ !data_117689_0_1419.value:='117689.0'
+!data_117689_0_1419.index:=168
+!insert(avg_income_1,data_117689_0_1419) into DataOfDataField
+ !create data_117689_0_889:Data
+ !data_117689_0_889.value:='117689.0'
+!data_117689_0_889.index:=169
+!insert(avg_income_1,data_117689_0_889) into DataOfDataField
+ !create data_53494_74710029566_509:Data
+ !data_53494_74710029566_509.value:='53494.74710029566'
+!data_53494_74710029566_509.index:=170
+!insert(avg_income_1,data_53494_74710029566_509) into DataOfDataField
+ !create data_102577_0_594:Data
+ !data_102577_0_594.value:='102577.0'
+!data_102577_0_594.index:=171
+!insert(avg_income_1,data_102577_0_594) into DataOfDataField
+ !create data_79058_0_1076:Data
+ !data_79058_0_1076.value:='79058.0'
+!data_79058_0_1076.index:=172
+!insert(avg_income_1,data_79058_0_1076) into DataOfDataField
+ !create data_60035_0_848:Data
+ !data_60035_0_848.value:='60035.0'
+!data_60035_0_848.index:=173
+!insert(avg_income_1,data_60035_0_848) into DataOfDataField
+ !create data_53494_74710029566_492:Data
+ !data_53494_74710029566_492.value:='53494.74710029566'
+!data_53494_74710029566_492.index:=174
+!insert(avg_income_1,data_53494_74710029566_492) into DataOfDataField
+ !create data_52129_0_227:Data
+ !data_52129_0_227.value:='52129.0'
+!data_52129_0_227.index:=175
+!insert(avg_income_1,data_52129_0_227) into DataOfDataField
+ !create data_72641_0_696:Data
+ !data_72641_0_696.value:='72641.0'
+!data_72641_0_696.index:=176
+!insert(avg_income_1,data_72641_0_696) into DataOfDataField
+ !create data_45883_0_328:Data
+ !data_45883_0_328.value:='45883.0'
+!data_45883_0_328.index:=177
+!insert(avg_income_1,data_45883_0_328) into DataOfDataField
+ !create data_74655_0_609:Data
+ !data_74655_0_609.value:='74655.0'
+!data_74655_0_609.index:=178
+!insert(avg_income_1,data_74655_0_609) into DataOfDataField
+ !create data_44572_0_733:Data
+ !data_44572_0_733.value:='44572.0'
+!data_44572_0_733.index:=179
+!insert(avg_income_1,data_44572_0_733) into DataOfDataField
+ !create data_65311_0_1224:Data
+ !data_65311_0_1224.value:='65311.0'
+!data_65311_0_1224.index:=180
+!insert(avg_income_1,data_65311_0_1224) into DataOfDataField
+ !create data_53494_74710029566_1072:Data
+ !data_53494_74710029566_1072.value:='53494.74710029566'
+!data_53494_74710029566_1072.index:=181
+!insert(avg_income_1,data_53494_74710029566_1072) into DataOfDataField
+ !create data_68870_0_1302:Data
+ !data_68870_0_1302.value:='68870.0'
+!data_68870_0_1302.index:=182
+!insert(avg_income_1,data_68870_0_1302) into DataOfDataField
+ !create data_93857_0_1167:Data
+ !data_93857_0_1167.value:='93857.0'
+!data_93857_0_1167.index:=183
+!insert(avg_income_1,data_93857_0_1167) into DataOfDataField
+ !create data_93857_0_212:Data
+ !data_93857_0_212.value:='93857.0'
+!data_93857_0_212.index:=184
+!insert(avg_income_1,data_93857_0_212) into DataOfDataField
+ !create data_53494_74710029566_697:Data
+ !data_53494_74710029566_697.value:='53494.74710029566'
+!data_53494_74710029566_697.index:=185
+!insert(avg_income_1,data_53494_74710029566_697) into DataOfDataField
+ !create data_125105_0_556:Data
+ !data_125105_0_556.value:='125105.0'
+!data_125105_0_556.index:=186
+!insert(avg_income_1,data_125105_0_556) into DataOfDataField
+ !create data_53494_74710029566_800:Data
+ !data_53494_74710029566_800.value:='53494.74710029566'
+!data_53494_74710029566_800.index:=187
+!insert(avg_income_1,data_53494_74710029566_800) into DataOfDataField
+ !create data_116941_0_899:Data
+ !data_116941_0_899.value:='116941.0'
+!data_116941_0_899.index:=188
+!insert(avg_income_1,data_116941_0_899) into DataOfDataField
+ !create data_90265_0_344:Data
+ !data_90265_0_344.value:='90265.0'
+!data_90265_0_344.index:=189
+!insert(avg_income_1,data_90265_0_344) into DataOfDataField
+ !create data_47928_0_29:Data
+ !data_47928_0_29.value:='47928.0'
+!data_47928_0_29.index:=190
+!insert(avg_income_1,data_47928_0_29) into DataOfDataField
+ !create data_80822_0_920:Data
+ !data_80822_0_920.value:='80822.0'
+!data_80822_0_920.index:=191
+!insert(avg_income_1,data_80822_0_920) into DataOfDataField
+ !create data_34388_0_530:Data
+ !data_34388_0_530.value:='34388.0'
+!data_34388_0_530.index:=192
+!insert(avg_income_1,data_34388_0_530) into DataOfDataField
+ !create data_61116_0_1127:Data
+ !data_61116_0_1127.value:='61116.0'
+!data_61116_0_1127.index:=193
+!insert(avg_income_1,data_61116_0_1127) into DataOfDataField
+ !create data_42196_0_517:Data
+ !data_42196_0_517.value:='42196.0'
+!data_42196_0_517.index:=194
+!insert(avg_income_1,data_42196_0_517) into DataOfDataField
+ !create data_49816_0_205:Data
+ !data_49816_0_205.value:='49816.0'
+!data_49816_0_205.index:=195
+!insert(avg_income_1,data_49816_0_205) into DataOfDataField
+ !create data_45014_0_598:Data
+ !data_45014_0_598.value:='45014.0'
+!data_45014_0_598.index:=196
+!insert(avg_income_1,data_45014_0_598) into DataOfDataField
+ !create data_55124_0_1018:Data
+ !data_55124_0_1018.value:='55124.0'
+!data_55124_0_1018.index:=197
+!insert(avg_income_1,data_55124_0_1018) into DataOfDataField
+ !create data_41298_0_352:Data
+ !data_41298_0_352.value:='41298.0'
+!data_41298_0_352.index:=198
+!insert(avg_income_1,data_41298_0_352) into DataOfDataField
+ !create data_36156_0_888:Data
+ !data_36156_0_888.value:='36156.0'
+!data_36156_0_888.index:=199
+!insert(avg_income_1,data_36156_0_888) into DataOfDataField
+ !create data_42015_0_66:Data
+ !data_42015_0_66.value:='42015.0'
+!data_42015_0_66.index:=200
+!insert(avg_income_1,data_42015_0_66) into DataOfDataField
+ !create data_38504_0_843:Data
+ !data_38504_0_843.value:='38504.0'
+!data_38504_0_843.index:=201
+!insert(avg_income_1,data_38504_0_843) into DataOfDataField
+ !create data_52719_0_345:Data
+ !data_52719_0_345.value:='52719.0'
+!data_52719_0_345.index:=202
+!insert(avg_income_1,data_52719_0_345) into DataOfDataField
+ !create data_52719_0_1285:Data
+ !data_52719_0_1285.value:='52719.0'
+!data_52719_0_1285.index:=203
+!insert(avg_income_1,data_52719_0_1285) into DataOfDataField
+ !create data_27182_0_708:Data
+ !data_27182_0_708.value:='27182.0'
+!data_27182_0_708.index:=204
+!insert(avg_income_1,data_27182_0_708) into DataOfDataField
+ !create data_36208_0_413:Data
+ !data_36208_0_413.value:='36208.0'
+!data_36208_0_413.index:=205
+!insert(avg_income_1,data_36208_0_413) into DataOfDataField
+ !create data_50880_0_1373:Data
+ !data_50880_0_1373.value:='50880.0'
+!data_50880_0_1373.index:=206
+!insert(avg_income_1,data_50880_0_1373) into DataOfDataField
+ !create data_56800_0_132:Data
+ !data_56800_0_132.value:='56800.0'
+!data_56800_0_132.index:=207
+!insert(avg_income_1,data_56800_0_132) into DataOfDataField
+ !create data_76795_0_1457:Data
+ !data_76795_0_1457.value:='76795.0'
+!data_76795_0_1457.index:=208
+!insert(avg_income_1,data_76795_0_1457) into DataOfDataField
+ !create data_29275_0_1106:Data
+ !data_29275_0_1106.value:='29275.0'
+!data_29275_0_1106.index:=209
+!insert(avg_income_1,data_29275_0_1106) into DataOfDataField
+ !create data_59100_0_1229:Data
+ !data_59100_0_1229.value:='59100.0'
+!data_59100_0_1229.index:=210
+!insert(avg_income_1,data_59100_0_1229) into DataOfDataField
+ !create data_41763_0_1473:Data
+ !data_41763_0_1473.value:='41763.0'
+!data_41763_0_1473.index:=211
+!insert(avg_income_1,data_41763_0_1473) into DataOfDataField
+ !create data_32162_0_355:Data
+ !data_32162_0_355.value:='32162.0'
+!data_32162_0_355.index:=212
+!insert(avg_income_1,data_32162_0_355) into DataOfDataField
+ !create data_40880_0_1499:Data
+ !data_40880_0_1499.value:='40880.0'
+!data_40880_0_1499.index:=213
+!insert(avg_income_1,data_40880_0_1499) into DataOfDataField
+ !create data_40880_0_600:Data
+ !data_40880_0_600.value:='40880.0'
+!data_40880_0_600.index:=214
+!insert(avg_income_1,data_40880_0_600) into DataOfDataField
+ !create data_33331_0_680:Data
+ !data_33331_0_680.value:='33331.0'
+!data_33331_0_680.index:=215
+!insert(avg_income_1,data_33331_0_680) into DataOfDataField
+ !create data_27382_0_437:Data
+ !data_27382_0_437.value:='27382.0'
+!data_27382_0_437.index:=216
+!insert(avg_income_1,data_27382_0_437) into DataOfDataField
+ !create data_61580_0_564:Data
+ !data_61580_0_564.value:='61580.0'
+!data_61580_0_564.index:=217
+!insert(avg_income_1,data_61580_0_564) into DataOfDataField
+ !create data_30736_0_35:Data
+ !data_30736_0_35.value:='30736.0'
+!data_30736_0_35.index:=218
+!insert(avg_income_1,data_30736_0_35) into DataOfDataField
+ !create data_46950_0_337:Data
+ !data_46950_0_337.value:='46950.0'
+!data_46950_0_337.index:=219
+!insert(avg_income_1,data_46950_0_337) into DataOfDataField
+ !create data_48769_0_809:Data
+ !data_48769_0_809.value:='48769.0'
+!data_48769_0_809.index:=220
+!insert(avg_income_1,data_48769_0_809) into DataOfDataField
+ !create data_53494_74710029566_1419:Data
+ !data_53494_74710029566_1419.value:='53494.74710029566'
+!data_53494_74710029566_1419.index:=221
+!insert(avg_income_1,data_53494_74710029566_1419) into DataOfDataField
+ !create data_33919_0_158:Data
+ !data_33919_0_158.value:='33919.0'
+!data_33919_0_158.index:=222
+!insert(avg_income_1,data_33919_0_158) into DataOfDataField
+ !create data_53494_74710029566_1390:Data
+ !data_53494_74710029566_1390.value:='53494.74710029566'
+!data_53494_74710029566_1390.index:=223
+!insert(avg_income_1,data_53494_74710029566_1390) into DataOfDataField
+ !create data_98545_0_734:Data
+ !data_98545_0_734.value:='98545.0'
+!data_98545_0_734.index:=224
+!insert(avg_income_1,data_98545_0_734) into DataOfDataField
+ !create data_51738_0_61:Data
+ !data_51738_0_61.value:='51738.0'
+!data_51738_0_61.index:=225
+!insert(avg_income_1,data_51738_0_61) into DataOfDataField
+ !create data_60920_0_1018:Data
+ !data_60920_0_1018.value:='60920.0'
+!data_60920_0_1018.index:=226
+!insert(avg_income_1,data_60920_0_1018) into DataOfDataField
+ !create data_71424_0_635:Data
+ !data_71424_0_635.value:='71424.0'
+!data_71424_0_635.index:=227
+!insert(avg_income_1,data_71424_0_635) into DataOfDataField
+ !create data_78768_0_531:Data
+ !data_78768_0_531.value:='78768.0'
+!data_78768_0_531.index:=228
+!insert(avg_income_1,data_78768_0_531) into DataOfDataField
+ !create data_78768_0_724:Data
+ !data_78768_0_724.value:='78768.0'
+!data_78768_0_724.index:=229
+!insert(avg_income_1,data_78768_0_724) into DataOfDataField
+ !create data_87710_0_1189:Data
+ !data_87710_0_1189.value:='87710.0'
+!data_87710_0_1189.index:=230
+!insert(avg_income_1,data_87710_0_1189) into DataOfDataField
+ !create data_87710_0_1206:Data
+ !data_87710_0_1206.value:='87710.0'
+!data_87710_0_1206.index:=231
+!insert(avg_income_1,data_87710_0_1206) into DataOfDataField
+ !create data_88504_0_460:Data
+ !data_88504_0_460.value:='88504.0'
+!data_88504_0_460.index:=232
+!insert(avg_income_1,data_88504_0_460) into DataOfDataField
+ !create data_53494_74710029566_671:Data
+ !data_53494_74710029566_671.value:='53494.74710029566'
+!data_53494_74710029566_671.index:=233
+!insert(avg_income_1,data_53494_74710029566_671) into DataOfDataField
+ !create data_53494_74710029566_596:Data
+ !data_53494_74710029566_596.value:='53494.74710029566'
+!data_53494_74710029566_596.index:=234
+!insert(avg_income_1,data_53494_74710029566_596) into DataOfDataField
+ !create data_53494_74710029566_1332:Data
+ !data_53494_74710029566_1332.value:='53494.74710029566'
+!data_53494_74710029566_1332.index:=235
+!insert(avg_income_1,data_53494_74710029566_1332) into DataOfDataField
+ !create data_95468_0_329:Data
+ !data_95468_0_329.value:='95468.0'
+!data_95468_0_329.index:=236
+!insert(avg_income_1,data_95468_0_329) into DataOfDataField
+ !create data_50523_0_629:Data
+ !data_50523_0_629.value:='50523.0'
+!data_50523_0_629.index:=237
+!insert(avg_income_1,data_50523_0_629) into DataOfDataField
+ !create data_70741_0_1417:Data
+ !data_70741_0_1417.value:='70741.0'
+!data_70741_0_1417.index:=238
+!insert(avg_income_1,data_70741_0_1417) into DataOfDataField
+ !create data_75860_0_1543:Data
+ !data_75860_0_1543.value:='75860.0'
+!data_75860_0_1543.index:=239
+!insert(avg_income_1,data_75860_0_1543) into DataOfDataField
+ !create data_53494_74710029566_1337:Data
+ !data_53494_74710029566_1337.value:='53494.74710029566'
+!data_53494_74710029566_1337.index:=240
+!insert(avg_income_1,data_53494_74710029566_1337) into DataOfDataField
+ !create data_61017_0_578:Data
+ !data_61017_0_578.value:='61017.0'
+!data_61017_0_578.index:=241
+!insert(avg_income_1,data_61017_0_578) into DataOfDataField
+ !create data_114674_0_1033:Data
+ !data_114674_0_1033.value:='114674.0'
+!data_114674_0_1033.index:=242
+!insert(avg_income_1,data_114674_0_1033) into DataOfDataField
+ !create data_66493_0_104:Data
+ !data_66493_0_104.value:='66493.0'
+!data_66493_0_104.index:=243
+!insert(avg_income_1,data_66493_0_104) into DataOfDataField
+ !create data_82502_0_560:Data
+ !data_82502_0_560.value:='82502.0'
+!data_82502_0_560.index:=244
+!insert(avg_income_1,data_82502_0_560) into DataOfDataField
+ !create data_55556_0_516:Data
+ !data_55556_0_516.value:='55556.0'
+!data_55556_0_516.index:=245
+!insert(avg_income_1,data_55556_0_516) into DataOfDataField
+ !create data_63675_0_1293:Data
+ !data_63675_0_1293.value:='63675.0'
+!data_63675_0_1293.index:=246
+!insert(avg_income_1,data_63675_0_1293) into DataOfDataField
+ !create data_52638_0_1548:Data
+ !data_52638_0_1548.value:='52638.0'
+!data_52638_0_1548.index:=247
+!insert(avg_income_1,data_52638_0_1548) into DataOfDataField
+ !create data_53494_74710029566_732:Data
+ !data_53494_74710029566_732.value:='53494.74710029566'
+!data_53494_74710029566_732.index:=248
+!insert(avg_income_1,data_53494_74710029566_732) into DataOfDataField
+ !create data_38947_0_4:Data
+ !data_38947_0_4.value:='38947.0'
+!data_38947_0_4.index:=249
+!insert(avg_income_1,data_38947_0_4) into DataOfDataField
+ !create data_78435_0_901:Data
+ !data_78435_0_901.value:='78435.0'
+!data_78435_0_901.index:=250
+!insert(avg_income_1,data_78435_0_901) into DataOfDataField
+ !create data_78435_0_379:Data
+ !data_78435_0_379.value:='78435.0'
+!data_78435_0_379.index:=251
+!insert(avg_income_1,data_78435_0_379) into DataOfDataField
+ !create data_55056_0_729:Data
+ !data_55056_0_729.value:='55056.0'
+!data_55056_0_729.index:=252
+!insert(avg_income_1,data_55056_0_729) into DataOfDataField
+ !create data_41183_0_652:Data
+ !data_41183_0_652.value:='41183.0'
+!data_41183_0_652.index:=253
+!insert(avg_income_1,data_41183_0_652) into DataOfDataField
+ !create data_53494_74710029566_1484:Data
+ !data_53494_74710029566_1484.value:='53494.74710029566'
+!data_53494_74710029566_1484.index:=254
+!insert(avg_income_1,data_53494_74710029566_1484) into DataOfDataField
+ !create data_39095_0_839:Data
+ !data_39095_0_839.value:='39095.0'
+!data_39095_0_839.index:=255
+!insert(avg_income_1,data_39095_0_839) into DataOfDataField
+ !create data_43672_0_895:Data
+ !data_43672_0_895.value:='43672.0'
+!data_43672_0_895.index:=256
+!insert(avg_income_1,data_43672_0_895) into DataOfDataField
+ !create data_48452_0_522:Data
+ !data_48452_0_522.value:='48452.0'
+!data_48452_0_522.index:=257
+!insert(avg_income_1,data_48452_0_522) into DataOfDataField
+ !create data_48452_0_1399:Data
+ !data_48452_0_1399.value:='48452.0'
+!data_48452_0_1399.index:=258
+!insert(avg_income_1,data_48452_0_1399) into DataOfDataField
+ !create data_70131_0_1473:Data
+ !data_70131_0_1473.value:='70131.0'
+!data_70131_0_1473.index:=259
+!insert(avg_income_1,data_70131_0_1473) into DataOfDataField
+ !create data_55788_0_445:Data
+ !data_55788_0_445.value:='55788.0'
+!data_55788_0_445.index:=260
+!insert(avg_income_1,data_55788_0_445) into DataOfDataField
+ !create data_53494_74710029566_1265:Data
+ !data_53494_74710029566_1265.value:='53494.74710029566'
+!data_53494_74710029566_1265.index:=261
+!insert(avg_income_1,data_53494_74710029566_1265) into DataOfDataField
+ !create data_38844_0_299:Data
+ !data_38844_0_299.value:='38844.0'
+!data_38844_0_299.index:=262
+!insert(avg_income_1,data_38844_0_299) into DataOfDataField
+ !create data_29237_0_679:Data
+ !data_29237_0_679.value:='29237.0'
+!data_29237_0_679.index:=263
+!insert(avg_income_1,data_29237_0_679) into DataOfDataField
+ !create data_29237_0_1056:Data
+ !data_29237_0_1056.value:='29237.0'
+!data_29237_0_1056.index:=264
+!insert(avg_income_1,data_29237_0_1056) into DataOfDataField
+ !create data_53494_74710029566_1369:Data
+ !data_53494_74710029566_1369.value:='53494.74710029566'
+!data_53494_74710029566_1369.index:=265
+!insert(avg_income_1,data_53494_74710029566_1369) into DataOfDataField
+ !create data_36019_0_950:Data
+ !data_36019_0_950.value:='36019.0'
+!data_36019_0_950.index:=266
+!insert(avg_income_1,data_36019_0_950) into DataOfDataField
+ !create data_53494_74710029566_1500:Data
+ !data_53494_74710029566_1500.value:='53494.74710029566'
+!data_53494_74710029566_1500.index:=267
+!insert(avg_income_1,data_53494_74710029566_1500) into DataOfDataField
+ !create data_39035_0_663:Data
+ !data_39035_0_663.value:='39035.0'
+!data_39035_0_663.index:=268
+!insert(avg_income_1,data_39035_0_663) into DataOfDataField
+ !create data_52169_0_603:Data
+ !data_52169_0_603.value:='52169.0'
+!data_52169_0_603.index:=269
+!insert(avg_income_1,data_52169_0_603) into DataOfDataField
+ !create data_26453_0_929:Data
+ !data_26453_0_929.value:='26453.0'
+!data_26453_0_929.index:=270
+!insert(avg_income_1,data_26453_0_929) into DataOfDataField
+ !create data_39694_0_362:Data
+ !data_39694_0_362.value:='39694.0'
+!data_39694_0_362.index:=271
+!insert(avg_income_1,data_39694_0_362) into DataOfDataField
+ !create data_55645_0_1434:Data
+ !data_55645_0_1434.value:='55645.0'
+!data_55645_0_1434.index:=272
+!insert(avg_income_1,data_55645_0_1434) into DataOfDataField
+ !create data_32826_0_1338:Data
+ !data_32826_0_1338.value:='32826.0'
+!data_32826_0_1338.index:=273
+!insert(avg_income_1,data_32826_0_1338) into DataOfDataField
+ !create data_45795_0_1378:Data
+ !data_45795_0_1378.value:='45795.0'
+!data_45795_0_1378.index:=274
+!insert(avg_income_1,data_45795_0_1378) into DataOfDataField
+ !create data_45795_0_1286:Data
+ !data_45795_0_1286.value:='45795.0'
+!data_45795_0_1286.index:=275
+!insert(avg_income_1,data_45795_0_1286) into DataOfDataField
+ !create data_40199_0_77:Data
+ !data_40199_0_77.value:='40199.0'
+!data_40199_0_77.index:=276
+!insert(avg_income_1,data_40199_0_77) into DataOfDataField
+ !create data_53494_74710029566_674:Data
+ !data_53494_74710029566_674.value:='53494.74710029566'
+!data_53494_74710029566_674.index:=277
+!insert(avg_income_1,data_53494_74710029566_674) into DataOfDataField
+ !create data_53494_74710029566_134:Data
+ !data_53494_74710029566_134.value:='53494.74710029566'
+!data_53494_74710029566_134.index:=278
+!insert(avg_income_1,data_53494_74710029566_134) into DataOfDataField
+ !create data_53494_74710029566_1412:Data
+ !data_53494_74710029566_1412.value:='53494.74710029566'
+!data_53494_74710029566_1412.index:=279
+!insert(avg_income_1,data_53494_74710029566_1412) into DataOfDataField
+ !create data_50389_0_1088:Data
+ !data_50389_0_1088.value:='50389.0'
+!data_50389_0_1088.index:=280
+!insert(avg_income_1,data_50389_0_1088) into DataOfDataField
+ !create data_50389_0_1436:Data
+ !data_50389_0_1436.value:='50389.0'
+!data_50389_0_1436.index:=281
+!insert(avg_income_1,data_50389_0_1436) into DataOfDataField
+ !create data_54676_0_1128:Data
+ !data_54676_0_1128.value:='54676.0'
+!data_54676_0_1128.index:=282
+!insert(avg_income_1,data_54676_0_1128) into DataOfDataField
+ !create data_53494_74710029566_1133:Data
+ !data_53494_74710029566_1133.value:='53494.74710029566'
+!data_53494_74710029566_1133.index:=283
+!insert(avg_income_1,data_53494_74710029566_1133) into DataOfDataField
+ !create data_25261_0_1474:Data
+ !data_25261_0_1474.value:='25261.0'
+!data_25261_0_1474.index:=284
+!insert(avg_income_1,data_25261_0_1474) into DataOfDataField
+ !create data_46276_0_982:Data
+ !data_46276_0_982.value:='46276.0'
+!data_46276_0_982.index:=285
+!insert(avg_income_1,data_46276_0_982) into DataOfDataField
+ !create data_90105_0_1045:Data
+ !data_90105_0_1045.value:='90105.0'
+!data_90105_0_1045.index:=286
+!insert(avg_income_1,data_90105_0_1045) into DataOfDataField
+ !create data_38485_0_83:Data
+ !data_38485_0_83.value:='38485.0'
+!data_38485_0_83.index:=287
+!insert(avg_income_1,data_38485_0_83) into DataOfDataField
+ !create data_37756_0_800:Data
+ !data_37756_0_800.value:='37756.0'
+!data_37756_0_800.index:=288
+!insert(avg_income_1,data_37756_0_800) into DataOfDataField
+ !create data_57355_0_567:Data
+ !data_57355_0_567.value:='57355.0'
+!data_57355_0_567.index:=289
+!insert(avg_income_1,data_57355_0_567) into DataOfDataField
+ !create data_43178_0_406:Data
+ !data_43178_0_406.value:='43178.0'
+!data_43178_0_406.index:=290
+!insert(avg_income_1,data_43178_0_406) into DataOfDataField
+ !create data_39797_0_199:Data
+ !data_39797_0_199.value:='39797.0'
+!data_39797_0_199.index:=291
+!insert(avg_income_1,data_39797_0_199) into DataOfDataField
+ !create data_39797_0_462:Data
+ !data_39797_0_462.value:='39797.0'
+!data_39797_0_462.index:=292
+!insert(avg_income_1,data_39797_0_462) into DataOfDataField
+ !create data_53494_74710029566_90:Data
+ !data_53494_74710029566_90.value:='53494.74710029566'
+!data_53494_74710029566_90.index:=293
+!insert(avg_income_1,data_53494_74710029566_90) into DataOfDataField
+ !create data_44741_0_404:Data
+ !data_44741_0_404.value:='44741.0'
+!data_44741_0_404.index:=294
+!insert(avg_income_1,data_44741_0_404) into DataOfDataField
+ !create data_53494_74710029566_1267:Data
+ !data_53494_74710029566_1267.value:='53494.74710029566'
+!data_53494_74710029566_1267.index:=295
+!insert(avg_income_1,data_53494_74710029566_1267) into DataOfDataField
+ !create data_86823_0_757:Data
+ !data_86823_0_757.value:='86823.0'
+!data_86823_0_757.index:=296
+!insert(avg_income_1,data_86823_0_757) into DataOfDataField
+ !create data_118410_0_1546:Data
+ !data_118410_0_1546.value:='118410.0'
+!data_118410_0_1546.index:=297
+!insert(avg_income_1,data_118410_0_1546) into DataOfDataField
+ !create data_35897_0_1017:Data
+ !data_35897_0_1017.value:='35897.0'
+!data_35897_0_1017.index:=298
+!insert(avg_income_1,data_35897_0_1017) into DataOfDataField
+ !create data_38190_0_569:Data
+ !data_38190_0_569.value:='38190.0'
+!data_38190_0_569.index:=299
+!insert(avg_income_1,data_38190_0_569) into DataOfDataField
+ !create data_35669_0_788:Data
+ !data_35669_0_788.value:='35669.0'
+!data_35669_0_788.index:=300
+!insert(avg_income_1,data_35669_0_788) into DataOfDataField
+ !create data_48994_0_408:Data
+ !data_48994_0_408.value:='48994.0'
+!data_48994_0_408.index:=301
+!insert(avg_income_1,data_48994_0_408) into DataOfDataField
+ !create data_69714_0_1010:Data
+ !data_69714_0_1010.value:='69714.0'
+!data_69714_0_1010.index:=302
+!insert(avg_income_1,data_69714_0_1010) into DataOfDataField
+ !create data_69714_0_725:Data
+ !data_69714_0_725.value:='69714.0'
+!data_69714_0_725.index:=303
+!insert(avg_income_1,data_69714_0_725) into DataOfDataField
+ !create data_56381_0_1136:Data
+ !data_56381_0_1136.value:='56381.0'
+!data_56381_0_1136.index:=304
+!insert(avg_income_1,data_56381_0_1136) into DataOfDataField
+ !create data_35184_0_744:Data
+ !data_35184_0_744.value:='35184.0'
+!data_35184_0_744.index:=305
+!insert(avg_income_1,data_35184_0_744) into DataOfDataField
+ !create data_36335_0_613:Data
+ !data_36335_0_613.value:='36335.0'
+!data_36335_0_613.index:=306
+!insert(avg_income_1,data_36335_0_613) into DataOfDataField
+ !create data_54530_0_1279:Data
+ !data_54530_0_1279.value:='54530.0'
+!data_54530_0_1279.index:=307
+!insert(avg_income_1,data_54530_0_1279) into DataOfDataField
+ !create data_51114_0_1242:Data
+ !data_51114_0_1242.value:='51114.0'
+!data_51114_0_1242.index:=308
+!insert(avg_income_1,data_51114_0_1242) into DataOfDataField
+ !create data_54010_0_329:Data
+ !data_54010_0_329.value:='54010.0'
+!data_54010_0_329.index:=309
+!insert(avg_income_1,data_54010_0_329) into DataOfDataField
+ !create data_39688_0_1105:Data
+ !data_39688_0_1105.value:='39688.0'
+!data_39688_0_1105.index:=310
+!insert(avg_income_1,data_39688_0_1105) into DataOfDataField
+ !create data_43905_0_11:Data
+ !data_43905_0_11.value:='43905.0'
+!data_43905_0_11.index:=311
+!insert(avg_income_1,data_43905_0_11) into DataOfDataField
+ !create data_53494_74710029566_555:Data
+ !data_53494_74710029566_555.value:='53494.74710029566'
+!data_53494_74710029566_555.index:=312
+!insert(avg_income_1,data_53494_74710029566_555) into DataOfDataField
+ !create data_49843_0_1013:Data
+ !data_49843_0_1013.value:='49843.0'
+!data_49843_0_1013.index:=313
+!insert(avg_income_1,data_49843_0_1013) into DataOfDataField
+ !create data_53565_0_783:Data
+ !data_53565_0_783.value:='53565.0'
+!data_53565_0_783.index:=314
+!insert(avg_income_1,data_53565_0_783) into DataOfDataField
+ !create data_38419_0_944:Data
+ !data_38419_0_944.value:='38419.0'
+!data_38419_0_944.index:=315
+!insert(avg_income_1,data_38419_0_944) into DataOfDataField
+ !create data_32741_0_1487:Data
+ !data_32741_0_1487.value:='32741.0'
+!data_32741_0_1487.index:=316
+!insert(avg_income_1,data_32741_0_1487) into DataOfDataField
+ !create data_33825_0_117:Data
+ !data_33825_0_117.value:='33825.0'
+!data_33825_0_117.index:=317
+!insert(avg_income_1,data_33825_0_117) into DataOfDataField
+ !create data_32342_0_856:Data
+ !data_32342_0_856.value:='32342.0'
+!data_32342_0_856.index:=318
+!insert(avg_income_1,data_32342_0_856) into DataOfDataField
+ !create data_29256_0_896:Data
+ !data_29256_0_896.value:='29256.0'
+!data_29256_0_896.index:=319
+!insert(avg_income_1,data_29256_0_896) into DataOfDataField
+ !create data_34138_0_1247:Data
+ !data_34138_0_1247.value:='34138.0'
+!data_34138_0_1247.index:=320
+!insert(avg_income_1,data_34138_0_1247) into DataOfDataField
+ !create data_30833_0_1313:Data
+ !data_30833_0_1313.value:='30833.0'
+!data_30833_0_1313.index:=321
+!insert(avg_income_1,data_30833_0_1313) into DataOfDataField
+ !create data_34293_0_498:Data
+ !data_34293_0_498.value:='34293.0'
+!data_34293_0_498.index:=322
+!insert(avg_income_1,data_34293_0_498) into DataOfDataField
+ !create data_24050_0_278:Data
+ !data_24050_0_278.value:='24050.0'
+!data_24050_0_278.index:=323
+!insert(avg_income_1,data_24050_0_278) into DataOfDataField
+ !create data_33750_0_218:Data
+ !data_33750_0_218.value:='33750.0'
+!data_33750_0_218.index:=324
+!insert(avg_income_1,data_33750_0_218) into DataOfDataField
+ !create data_43964_0_1097:Data
+ !data_43964_0_1097.value:='43964.0'
+!data_43964_0_1097.index:=325
+!insert(avg_income_1,data_43964_0_1097) into DataOfDataField
+ !create data_53494_74710029566_363:Data
+ !data_53494_74710029566_363.value:='53494.74710029566'
+!data_53494_74710029566_363.index:=326
+!insert(avg_income_1,data_53494_74710029566_363) into DataOfDataField
+ !create data_50396_0_1448:Data
+ !data_50396_0_1448.value:='50396.0'
+!data_50396_0_1448.index:=327
+!insert(avg_income_1,data_50396_0_1448) into DataOfDataField
+ !create data_60595_0_807:Data
+ !data_60595_0_807.value:='60595.0'
+!data_60595_0_807.index:=328
+!insert(avg_income_1,data_60595_0_807) into DataOfDataField
+ !create data_39124_0_1233:Data
+ !data_39124_0_1233.value:='39124.0'
+!data_39124_0_1233.index:=329
+!insert(avg_income_1,data_39124_0_1233) into DataOfDataField
+ !create data_43725_0_598:Data
+ !data_43725_0_598.value:='43725.0'
+!data_43725_0_598.index:=330
+!insert(avg_income_1,data_43725_0_598) into DataOfDataField
+ !create data_53494_74710029566_1058:Data
+ !data_53494_74710029566_1058.value:='53494.74710029566'
+!data_53494_74710029566_1058.index:=331
+!insert(avg_income_1,data_53494_74710029566_1058) into DataOfDataField
+ !create data_31877_0_1111:Data
+ !data_31877_0_1111.value:='31877.0'
+!data_31877_0_1111.index:=332
+!insert(avg_income_1,data_31877_0_1111) into DataOfDataField
+ !create data_69268_0_144:Data
+ !data_69268_0_144.value:='69268.0'
+!data_69268_0_144.index:=333
+!insert(avg_income_1,data_69268_0_144) into DataOfDataField
+ !create data_39331_0_1511:Data
+ !data_39331_0_1511.value:='39331.0'
+!data_39331_0_1511.index:=334
+!insert(avg_income_1,data_39331_0_1511) into DataOfDataField
+ !create data_44938_0_656:Data
+ !data_44938_0_656.value:='44938.0'
+!data_44938_0_656.index:=335
+!insert(avg_income_1,data_44938_0_656) into DataOfDataField
+ !create data_33009_0_440:Data
+ !data_33009_0_440.value:='33009.0'
+!data_33009_0_440.index:=336
+!insert(avg_income_1,data_33009_0_440) into DataOfDataField
+ !create data_41592_0_538:Data
+ !data_41592_0_538.value:='41592.0'
+!data_41592_0_538.index:=337
+!insert(avg_income_1,data_41592_0_538) into DataOfDataField
+ !create data_32309_0_253:Data
+ !data_32309_0_253.value:='32309.0'
+!data_32309_0_253.index:=338
+!insert(avg_income_1,data_32309_0_253) into DataOfDataField
+ !create data_53494_74710029566_647:Data
+ !data_53494_74710029566_647.value:='53494.74710029566'
+!data_53494_74710029566_647.index:=339
+!insert(avg_income_1,data_53494_74710029566_647) into DataOfDataField
+ !create data_47883_0_300:Data
+ !data_47883_0_300.value:='47883.0'
+!data_47883_0_300.index:=340
+!insert(avg_income_1,data_47883_0_300) into DataOfDataField
+ !create data_74647_0_697:Data
+ !data_74647_0_697.value:='74647.0'
+!data_74647_0_697.index:=341
+!insert(avg_income_1,data_74647_0_697) into DataOfDataField
+ !create data_74647_0_845:Data
+ !data_74647_0_845.value:='74647.0'
+!data_74647_0_845.index:=342
+!insert(avg_income_1,data_74647_0_845) into DataOfDataField
+ !create data_62987_0_1305:Data
+ !data_62987_0_1305.value:='62987.0'
+!data_62987_0_1305.index:=343
+!insert(avg_income_1,data_62987_0_1305) into DataOfDataField
+ !create data_53494_74710029566_806:Data
+ !data_53494_74710029566_806.value:='53494.74710029566'
+!data_53494_74710029566_806.index:=344
+!insert(avg_income_1,data_53494_74710029566_806) into DataOfDataField
+ !create data_53494_74710029566_1038:Data
+ !data_53494_74710029566_1038.value:='53494.74710029566'
+!data_53494_74710029566_1038.index:=345
+!insert(avg_income_1,data_53494_74710029566_1038) into DataOfDataField
+ !create data_69689_0_1497:Data
+ !data_69689_0_1497.value:='69689.0'
+!data_69689_0_1497.index:=346
+!insert(avg_income_1,data_69689_0_1497) into DataOfDataField
+ !create data_31542_0_1078:Data
+ !data_31542_0_1078.value:='31542.0'
+!data_31542_0_1078.index:=347
+!insert(avg_income_1,data_31542_0_1078) into DataOfDataField
+ !create data_34792_0_870:Data
+ !data_34792_0_870.value:='34792.0'
+!data_34792_0_870.index:=348
+!insert(avg_income_1,data_34792_0_870) into DataOfDataField
+ !create data_43611_0_134:Data
+ !data_43611_0_134.value:='43611.0'
+!data_43611_0_134.index:=349
+!insert(avg_income_1,data_43611_0_134) into DataOfDataField
+ !create data_36015_0_5:Data
+ !data_36015_0_5.value:='36015.0'
+!data_36015_0_5.index:=350
+!insert(avg_income_1,data_36015_0_5) into DataOfDataField
+ !create data_36015_0_549:Data
+ !data_36015_0_549.value:='36015.0'
+!data_36015_0_549.index:=351
+!insert(avg_income_1,data_36015_0_549) into DataOfDataField
+ !create data_33051_0_729:Data
+ !data_33051_0_729.value:='33051.0'
+!data_33051_0_729.index:=352
+!insert(avg_income_1,data_33051_0_729) into DataOfDataField
+ !create data_53494_74710029566_1502:Data
+ !data_53494_74710029566_1502.value:='53494.74710029566'
+!data_53494_74710029566_1502.index:=353
+!insert(avg_income_1,data_53494_74710029566_1502) into DataOfDataField
+ !create data_25851_0_212:Data
+ !data_25851_0_212.value:='25851.0'
+!data_25851_0_212.index:=354
+!insert(avg_income_1,data_25851_0_212) into DataOfDataField
+ !create data_55646_0_473:Data
+ !data_55646_0_473.value:='55646.0'
+!data_55646_0_473.index:=355
+!insert(avg_income_1,data_55646_0_473) into DataOfDataField
+ !create data_53494_74710029566_1381:Data
+ !data_53494_74710029566_1381.value:='53494.74710029566'
+!data_53494_74710029566_1381.index:=356
+!insert(avg_income_1,data_53494_74710029566_1381) into DataOfDataField
+ !create data_94590_0_1540:Data
+ !data_94590_0_1540.value:='94590.0'
+!data_94590_0_1540.index:=357
+!insert(avg_income_1,data_94590_0_1540) into DataOfDataField
+ !create data_86944_0_1410:Data
+ !data_86944_0_1410.value:='86944.0'
+!data_86944_0_1410.index:=358
+!insert(avg_income_1,data_86944_0_1410) into DataOfDataField
+ !create data_86944_0_277:Data
+ !data_86944_0_277.value:='86944.0'
+!data_86944_0_277.index:=359
+!insert(avg_income_1,data_86944_0_277) into DataOfDataField
+ !create data_45848_0_501:Data
+ !data_45848_0_501.value:='45848.0'
+!data_45848_0_501.index:=360
+!insert(avg_income_1,data_45848_0_501) into DataOfDataField
+ !create data_51916_0_928:Data
+ !data_51916_0_928.value:='51916.0'
+!data_51916_0_928.index:=361
+!insert(avg_income_1,data_51916_0_928) into DataOfDataField
+ !create data_51916_0_542:Data
+ !data_51916_0_542.value:='51916.0'
+!data_51916_0_542.index:=362
+!insert(avg_income_1,data_51916_0_542) into DataOfDataField
+ !create data_51916_0_424:Data
+ !data_51916_0_424.value:='51916.0'
+!data_51916_0_424.index:=363
+!insert(avg_income_1,data_51916_0_424) into DataOfDataField
+ !create data_53494_74710029566_146:Data
+ !data_53494_74710029566_146.value:='53494.74710029566'
+!data_53494_74710029566_146.index:=364
+!insert(avg_income_1,data_53494_74710029566_146) into DataOfDataField
+ !create data_53145_0_482:Data
+ !data_53145_0_482.value:='53145.0'
+!data_53145_0_482.index:=365
+!insert(avg_income_1,data_53145_0_482) into DataOfDataField
+ !create data_51337_0_434:Data
+ !data_51337_0_434.value:='51337.0'
+!data_51337_0_434.index:=366
+!insert(avg_income_1,data_51337_0_434) into DataOfDataField
+ !create data_51624_0_1529:Data
+ !data_51624_0_1529.value:='51624.0'
+!data_51624_0_1529.index:=367
+!insert(avg_income_1,data_51624_0_1529) into DataOfDataField
+ !create data_56935_0_1433:Data
+ !data_56935_0_1433.value:='56935.0'
+!data_56935_0_1433.index:=368
+!insert(avg_income_1,data_56935_0_1433) into DataOfDataField
+ !create data_33078_0_1178:Data
+ !data_33078_0_1178.value:='33078.0'
+!data_33078_0_1178.index:=369
+!insert(avg_income_1,data_33078_0_1178) into DataOfDataField
+ !create data_41284_0_1315:Data
+ !data_41284_0_1315.value:='41284.0'
+!data_41284_0_1315.index:=370
+!insert(avg_income_1,data_41284_0_1315) into DataOfDataField
+ !create data_68194_0_867:Data
+ !data_68194_0_867.value:='68194.0'
+!data_68194_0_867.index:=371
+!insert(avg_income_1,data_68194_0_867) into DataOfDataField
+ !create data_33014_0_1103:Data
+ !data_33014_0_1103.value:='33014.0'
+!data_33014_0_1103.index:=372
+!insert(avg_income_1,data_33014_0_1103) into DataOfDataField
+ !create data_37141_0_1246:Data
+ !data_37141_0_1246.value:='37141.0'
+!data_37141_0_1246.index:=373
+!insert(avg_income_1,data_37141_0_1246) into DataOfDataField
+ !create data_43222_0_1427:Data
+ !data_43222_0_1427.value:='43222.0'
+!data_43222_0_1427.index:=374
+!insert(avg_income_1,data_43222_0_1427) into DataOfDataField
+ !create data_36072_0_471:Data
+ !data_36072_0_471.value:='36072.0'
+!data_36072_0_471.index:=375
+!insert(avg_income_1,data_36072_0_471) into DataOfDataField
+ !create data_37340_0_748:Data
+ !data_37340_0_748.value:='37340.0'
+!data_37340_0_748.index:=376
+!insert(avg_income_1,data_37340_0_748) into DataOfDataField
+ !create data_57314_0_1481:Data
+ !data_57314_0_1481.value:='57314.0'
+!data_57314_0_1481.index:=377
+!insert(avg_income_1,data_57314_0_1481) into DataOfDataField
+ !create data_57314_0_1067:Data
+ !data_57314_0_1067.value:='57314.0'
+!data_57314_0_1067.index:=378
+!insert(avg_income_1,data_57314_0_1067) into DataOfDataField
+ !create data_49838_0_1424:Data
+ !data_49838_0_1424.value:='49838.0'
+!data_49838_0_1424.index:=379
+!insert(avg_income_1,data_49838_0_1424) into DataOfDataField
+ !create data_29897_0_1031:Data
+ !data_29897_0_1031.value:='29897.0'
+!data_29897_0_1031.index:=380
+!insert(avg_income_1,data_29897_0_1031) into DataOfDataField
+ !create data_27176_0_737:Data
+ !data_27176_0_737.value:='27176.0'
+!data_27176_0_737.index:=381
+!insert(avg_income_1,data_27176_0_737) into DataOfDataField
+ !create data_53494_74710029566_676:Data
+ !data_53494_74710029566_676.value:='53494.74710029566'
+!data_53494_74710029566_676.index:=382
+!insert(avg_income_1,data_53494_74710029566_676) into DataOfDataField
+ !create data_36157_0_798:Data
+ !data_36157_0_798.value:='36157.0'
+!data_36157_0_798.index:=383
+!insert(avg_income_1,data_36157_0_798) into DataOfDataField
+ !create data_21347_0_961:Data
+ !data_21347_0_961.value:='21347.0'
+!data_21347_0_961.index:=384
+!insert(avg_income_1,data_21347_0_961) into DataOfDataField
+ !create data_34841_0_1356:Data
+ !data_34841_0_1356.value:='34841.0'
+!data_34841_0_1356.index:=385
+!insert(avg_income_1,data_34841_0_1356) into DataOfDataField
+ !create data_45294_0_1253:Data
+ !data_45294_0_1253.value:='45294.0'
+!data_45294_0_1253.index:=386
+!insert(avg_income_1,data_45294_0_1253) into DataOfDataField
+ !create data_29568_0_159:Data
+ !data_29568_0_159.value:='29568.0'
+!data_29568_0_159.index:=387
+!insert(avg_income_1,data_29568_0_159) into DataOfDataField
+ !create data_29536_0_1476:Data
+ !data_29536_0_1476.value:='29536.0'
+!data_29536_0_1476.index:=388
+!insert(avg_income_1,data_29536_0_1476) into DataOfDataField
+ !create data_48196_0_99:Data
+ !data_48196_0_99.value:='48196.0'
+!data_48196_0_99.index:=389
+!insert(avg_income_1,data_48196_0_99) into DataOfDataField
+ !create data_53494_74710029566_24:Data
+ !data_53494_74710029566_24.value:='53494.74710029566'
+!data_53494_74710029566_24.index:=390
+!insert(avg_income_1,data_53494_74710029566_24) into DataOfDataField
+ !create data_79259_0_715:Data
+ !data_79259_0_715.value:='79259.0'
+!data_79259_0_715.index:=391
+!insert(avg_income_1,data_79259_0_715) into DataOfDataField
+ !create data_79259_0_1251:Data
+ !data_79259_0_1251.value:='79259.0'
+!data_79259_0_1251.index:=392
+!insert(avg_income_1,data_79259_0_1251) into DataOfDataField
+ !create data_63973_0_1379:Data
+ !data_63973_0_1379.value:='63973.0'
+!data_63973_0_1379.index:=393
+!insert(avg_income_1,data_63973_0_1379) into DataOfDataField
+ !create data_21712_0_554:Data
+ !data_21712_0_554.value:='21712.0'
+!data_21712_0_554.index:=394
+!insert(avg_income_1,data_21712_0_554) into DataOfDataField
+ !create data_28368_0_876:Data
+ !data_28368_0_876.value:='28368.0'
+!data_28368_0_876.index:=395
+!insert(avg_income_1,data_28368_0_876) into DataOfDataField
+ !create data_38449_0_1540:Data
+ !data_38449_0_1540.value:='38449.0'
+!data_38449_0_1540.index:=396
+!insert(avg_income_1,data_38449_0_1540) into DataOfDataField
+ !create data_38449_0_619:Data
+ !data_38449_0_619.value:='38449.0'
+!data_38449_0_619.index:=397
+!insert(avg_income_1,data_38449_0_619) into DataOfDataField
+ !create data_47676_0_969:Data
+ !data_47676_0_969.value:='47676.0'
+!data_47676_0_969.index:=398
+!insert(avg_income_1,data_47676_0_969) into DataOfDataField
+ !create data_47676_0_302:Data
+ !data_47676_0_302.value:='47676.0'
+!data_47676_0_302.index:=399
+!insert(avg_income_1,data_47676_0_302) into DataOfDataField
+ !create data_47676_0_1066:Data
+ !data_47676_0_1066.value:='47676.0'
+!data_47676_0_1066.index:=400
+!insert(avg_income_1,data_47676_0_1066) into DataOfDataField
+ !create data_47676_0_837:Data
+ !data_47676_0_837.value:='47676.0'
+!data_47676_0_837.index:=401
+!insert(avg_income_1,data_47676_0_837) into DataOfDataField
+ !create data_27343_0_946:Data
+ !data_27343_0_946.value:='27343.0'
+!data_27343_0_946.index:=402
+!insert(avg_income_1,data_27343_0_946) into DataOfDataField
+ !create data_36028_0_1300:Data
+ !data_36028_0_1300.value:='36028.0'
+!data_36028_0_1300.index:=403
+!insert(avg_income_1,data_36028_0_1300) into DataOfDataField
+ !create data_62403_0_1202:Data
+ !data_62403_0_1202.value:='62403.0'
+!data_62403_0_1202.index:=404
+!insert(avg_income_1,data_62403_0_1202) into DataOfDataField
+ !create data_84134_0_878:Data
+ !data_84134_0_878.value:='84134.0'
+!data_84134_0_878.index:=405
+!insert(avg_income_1,data_84134_0_878) into DataOfDataField
+ !create data_116200_0_1181:Data
+ !data_116200_0_1181.value:='116200.0'
+!data_116200_0_1181.index:=406
+!insert(avg_income_1,data_116200_0_1181) into DataOfDataField
+ !create data_26549_0_1507:Data
+ !data_26549_0_1507.value:='26549.0'
+!data_26549_0_1507.index:=407
+!insert(avg_income_1,data_26549_0_1507) into DataOfDataField
+ !create data_26549_0_34:Data
+ !data_26549_0_34.value:='26549.0'
+!data_26549_0_34.index:=408
+!insert(avg_income_1,data_26549_0_34) into DataOfDataField
+ !create data_29277_0_1238:Data
+ !data_29277_0_1238.value:='29277.0'
+!data_29277_0_1238.index:=409
+!insert(avg_income_1,data_29277_0_1238) into DataOfDataField
+ !create data_28750_0_444:Data
+ !data_28750_0_444.value:='28750.0'
+!data_28750_0_444.index:=410
+!insert(avg_income_1,data_28750_0_444) into DataOfDataField
+ !create data_31644_0_1389:Data
+ !data_31644_0_1389.value:='31644.0'
+!data_31644_0_1389.index:=411
+!insert(avg_income_1,data_31644_0_1389) into DataOfDataField
+ !create data_32904_0_1509:Data
+ !data_32904_0_1509.value:='32904.0'
+!data_32904_0_1509.index:=412
+!insert(avg_income_1,data_32904_0_1509) into DataOfDataField
+ !create data_23050_0_283:Data
+ !data_23050_0_283.value:='23050.0'
+!data_23050_0_283.index:=413
+!insert(avg_income_1,data_23050_0_283) into DataOfDataField
+ !create data_27826_0_1535:Data
+ !data_27826_0_1535.value:='27826.0'
+!data_27826_0_1535.index:=414
+!insert(avg_income_1,data_27826_0_1535) into DataOfDataField
+ !create data_38274_0_42:Data
+ !data_38274_0_42.value:='38274.0'
+!data_38274_0_42.index:=415
+!insert(avg_income_1,data_38274_0_42) into DataOfDataField
+ !create data_47853_0_112:Data
+ !data_47853_0_112.value:='47853.0'
+!data_47853_0_112.index:=416
+!insert(avg_income_1,data_47853_0_112) into DataOfDataField
+ !create data_53494_74710029566_45:Data
+ !data_53494_74710029566_45.value:='53494.74710029566'
+!data_53494_74710029566_45.index:=417
+!insert(avg_income_1,data_53494_74710029566_45) into DataOfDataField
+ !create data_73938_0_107:Data
+ !data_73938_0_107.value:='73938.0'
+!data_73938_0_107.index:=418
+!insert(avg_income_1,data_73938_0_107) into DataOfDataField
+ !create data_73938_0_1095:Data
+ !data_73938_0_1095.value:='73938.0'
+!data_73938_0_1095.index:=419
+!insert(avg_income_1,data_73938_0_1095) into DataOfDataField
+ !create data_42886_0_1394:Data
+ !data_42886_0_1394.value:='42886.0'
+!data_42886_0_1394.index:=420
+!insert(avg_income_1,data_42886_0_1394) into DataOfDataField
+ !create data_53494_74710029566_1424:Data
+ !data_53494_74710029566_1424.value:='53494.74710029566'
+!data_53494_74710029566_1424.index:=421
+!insert(avg_income_1,data_53494_74710029566_1424) into DataOfDataField
+ !create data_53494_74710029566_213:Data
+ !data_53494_74710029566_213.value:='53494.74710029566'
+!data_53494_74710029566_213.index:=422
+!insert(avg_income_1,data_53494_74710029566_213) into DataOfDataField
+ !create data_56621_0_1075:Data
+ !data_56621_0_1075.value:='56621.0'
+!data_56621_0_1075.index:=423
+!insert(avg_income_1,data_56621_0_1075) into DataOfDataField
+ !create data_56621_0_786:Data
+ !data_56621_0_786.value:='56621.0'
+!data_56621_0_786.index:=424
+!insert(avg_income_1,data_56621_0_786) into DataOfDataField
+ !create data_56621_0_693:Data
+ !data_56621_0_693.value:='56621.0'
+!data_56621_0_693.index:=425
+!insert(avg_income_1,data_56621_0_693) into DataOfDataField
+ !create data_53494_74710029566_1296:Data
+ !data_53494_74710029566_1296.value:='53494.74710029566'
+!data_53494_74710029566_1296.index:=426
+!insert(avg_income_1,data_53494_74710029566_1296) into DataOfDataField
+ !create data_24556_0_465:Data
+ !data_24556_0_465.value:='24556.0'
+!data_24556_0_465.index:=427
+!insert(avg_income_1,data_24556_0_465) into DataOfDataField
+ !create data_41166_0_1228:Data
+ !data_41166_0_1228.value:='41166.0'
+!data_41166_0_1228.index:=428
+!insert(avg_income_1,data_41166_0_1228) into DataOfDataField
+ !create data_24779_0_1534:Data
+ !data_24779_0_1534.value:='24779.0'
+!data_24779_0_1534.index:=429
+!insert(avg_income_1,data_24779_0_1534) into DataOfDataField
+ !create data_53494_74710029566_202:Data
+ !data_53494_74710029566_202.value:='53494.74710029566'
+!data_53494_74710029566_202.index:=430
+!insert(avg_income_1,data_53494_74710029566_202) into DataOfDataField
+ !create data_28186_0_137:Data
+ !data_28186_0_137.value:='28186.0'
+!data_28186_0_137.index:=431
+!insert(avg_income_1,data_28186_0_137) into DataOfDataField
+ !create data_25305_0_923:Data
+ !data_25305_0_923.value:='25305.0'
+!data_25305_0_923.index:=432
+!insert(avg_income_1,data_25305_0_923) into DataOfDataField
+ !create data_40530_0_537:Data
+ !data_40530_0_537.value:='40530.0'
+!data_40530_0_537.index:=433
+!insert(avg_income_1,data_40530_0_537) into DataOfDataField
+ !create data_26187_0_536:Data
+ !data_26187_0_536.value:='26187.0'
+!data_26187_0_536.index:=434
+!insert(avg_income_1,data_26187_0_536) into DataOfDataField
+ !create data_25183_0_1245:Data
+ !data_25183_0_1245.value:='25183.0'
+!data_25183_0_1245.index:=435
+!insert(avg_income_1,data_25183_0_1245) into DataOfDataField
+ !create data_38584_0_416:Data
+ !data_38584_0_416.value:='38584.0'
+!data_38584_0_416.index:=436
+!insert(avg_income_1,data_38584_0_416) into DataOfDataField
+ !create data_53494_74710029566_846:Data
+ !data_53494_74710029566_846.value:='53494.74710029566'
+!data_53494_74710029566_846.index:=437
+!insert(avg_income_1,data_53494_74710029566_846) into DataOfDataField
+ !create data_52259_0_489:Data
+ !data_52259_0_489.value:='52259.0'
+!data_52259_0_489.index:=438
+!insert(avg_income_1,data_52259_0_489) into DataOfDataField
+ !create data_53494_74710029566_791:Data
+ !data_53494_74710029566_791.value:='53494.74710029566'
+!data_53494_74710029566_791.index:=439
+!insert(avg_income_1,data_53494_74710029566_791) into DataOfDataField
+ !create data_45769_0_618:Data
+ !data_45769_0_618.value:='45769.0'
+!data_45769_0_618.index:=440
+!insert(avg_income_1,data_45769_0_618) into DataOfDataField
+ !create data_40210_0_133:Data
+ !data_40210_0_133.value:='40210.0'
+!data_40210_0_133.index:=441
+!insert(avg_income_1,data_40210_0_133) into DataOfDataField
+ !create data_37708_0_990:Data
+ !data_37708_0_990.value:='37708.0'
+!data_37708_0_990.index:=442
+!insert(avg_income_1,data_37708_0_990) into DataOfDataField
+ !create data_32946_0_978:Data
+ !data_32946_0_978.value:='32946.0'
+!data_32946_0_978.index:=443
+!insert(avg_income_1,data_32946_0_978) into DataOfDataField
+ !create data_53494_74710029566_939:Data
+ !data_53494_74710029566_939.value:='53494.74710029566'
+!data_53494_74710029566_939.index:=444
+!insert(avg_income_1,data_53494_74710029566_939) into DataOfDataField
+ !create data_80540_0_1128:Data
+ !data_80540_0_1128.value:='80540.0'
+!data_80540_0_1128.index:=445
+!insert(avg_income_1,data_80540_0_1128) into DataOfDataField
+ !create data_51599_0_714:Data
+ !data_51599_0_714.value:='51599.0'
+!data_51599_0_714.index:=446
+!insert(avg_income_1,data_51599_0_714) into DataOfDataField
+ !create data_92791_0_878:Data
+ !data_92791_0_878.value:='92791.0'
+!data_92791_0_878.index:=447
+!insert(avg_income_1,data_92791_0_878) into DataOfDataField
+ !create data_59214_0_914:Data
+ !data_59214_0_914.value:='59214.0'
+!data_59214_0_914.index:=448
+!insert(avg_income_1,data_59214_0_914) into DataOfDataField
+ !create data_26514_0_1014:Data
+ !data_26514_0_1014.value:='26514.0'
+!data_26514_0_1014.index:=449
+!insert(avg_income_1,data_26514_0_1014) into DataOfDataField
+ !create data_46857_0_146:Data
+ !data_46857_0_146.value:='46857.0'
+!data_46857_0_146.index:=450
+!insert(avg_income_1,data_46857_0_146) into DataOfDataField
+ !create data_53494_74710029566_1464:Data
+ !data_53494_74710029566_1464.value:='53494.74710029566'
+!data_53494_74710029566_1464.index:=451
+!insert(avg_income_1,data_53494_74710029566_1464) into DataOfDataField
+ !create data_40404_0_800:Data
+ !data_40404_0_800.value:='40404.0'
+!data_40404_0_800.index:=452
+!insert(avg_income_1,data_40404_0_800) into DataOfDataField
+ !create data_97002_0_1451:Data
+ !data_97002_0_1451.value:='97002.0'
+!data_97002_0_1451.index:=453
+!insert(avg_income_1,data_97002_0_1451) into DataOfDataField
+ !create data_53494_74710029566_499:Data
+ !data_53494_74710029566_499.value:='53494.74710029566'
+!data_53494_74710029566_499.index:=454
+!insert(avg_income_1,data_53494_74710029566_499) into DataOfDataField
+ !create data_41311_0_1434:Data
+ !data_41311_0_1434.value:='41311.0'
+!data_41311_0_1434.index:=455
+!insert(avg_income_1,data_41311_0_1434) into DataOfDataField
+ !create data_47679_0_983:Data
+ !data_47679_0_983.value:='47679.0'
+!data_47679_0_983.index:=456
+!insert(avg_income_1,data_47679_0_983) into DataOfDataField
+ !create data_44328_0_869:Data
+ !data_44328_0_869.value:='44328.0'
+!data_44328_0_869.index:=457
+!insert(avg_income_1,data_44328_0_869) into DataOfDataField
+ !create data_53494_74710029566_206:Data
+ !data_53494_74710029566_206.value:='53494.74710029566'
+!data_53494_74710029566_206.index:=458
+!insert(avg_income_1,data_53494_74710029566_206) into DataOfDataField
+ !create data_51644_0_350:Data
+ !data_51644_0_350.value:='51644.0'
+!data_51644_0_350.index:=459
+!insert(avg_income_1,data_51644_0_350) into DataOfDataField
+ !create data_49781_0_1333:Data
+ !data_49781_0_1333.value:='49781.0'
+!data_49781_0_1333.index:=460
+!insert(avg_income_1,data_49781_0_1333) into DataOfDataField
+ !create data_37116_0_389:Data
+ !data_37116_0_389.value:='37116.0'
+!data_37116_0_389.index:=461
+!insert(avg_income_1,data_37116_0_389) into DataOfDataField
+ !create data_48444_0_749:Data
+ !data_48444_0_749.value:='48444.0'
+!data_48444_0_749.index:=462
+!insert(avg_income_1,data_48444_0_749) into DataOfDataField
+ !create data_77730_0_10:Data
+ !data_77730_0_10.value:='77730.0'
+!data_77730_0_10.index:=463
+!insert(avg_income_1,data_77730_0_10) into DataOfDataField
+ !create data_77730_0_1051:Data
+ !data_77730_0_1051.value:='77730.0'
+!data_77730_0_1051.index:=464
+!insert(avg_income_1,data_77730_0_1051) into DataOfDataField
+ !create data_42420_0_152:Data
+ !data_42420_0_152.value:='42420.0'
+!data_42420_0_152.index:=465
+!insert(avg_income_1,data_42420_0_152) into DataOfDataField
+ !create data_37406_0_1517:Data
+ !data_37406_0_1517.value:='37406.0'
+!data_37406_0_1517.index:=466
+!insert(avg_income_1,data_37406_0_1517) into DataOfDataField
+ !create data_50315_0_709:Data
+ !data_50315_0_709.value:='50315.0'
+!data_50315_0_709.index:=467
+!insert(avg_income_1,data_50315_0_709) into DataOfDataField
+ !create data_47116_0_985:Data
+ !data_47116_0_985.value:='47116.0'
+!data_47116_0_985.index:=468
+!insert(avg_income_1,data_47116_0_985) into DataOfDataField
+ !create data_50478_0_899:Data
+ !data_50478_0_899.value:='50478.0'
+!data_50478_0_899.index:=469
+!insert(avg_income_1,data_50478_0_899) into DataOfDataField
+ !create data_50478_0_1157:Data
+ !data_50478_0_1157.value:='50478.0'
+!data_50478_0_1157.index:=470
+!insert(avg_income_1,data_50478_0_1157) into DataOfDataField
+ !create data_53494_74710029566_121:Data
+ !data_53494_74710029566_121.value:='53494.74710029566'
+!data_53494_74710029566_121.index:=471
+!insert(avg_income_1,data_53494_74710029566_121) into DataOfDataField
+ !create data_41006_0_420:Data
+ !data_41006_0_420.value:='41006.0'
+!data_41006_0_420.index:=472
+!insert(avg_income_1,data_41006_0_420) into DataOfDataField
+ !create data_46584_0_96:Data
+ !data_46584_0_96.value:='46584.0'
+!data_46584_0_96.index:=473
+!insert(avg_income_1,data_46584_0_96) into DataOfDataField
+ !create data_112300_0_579:Data
+ !data_112300_0_579.value:='112300.0'
+!data_112300_0_579.index:=474
+!insert(avg_income_1,data_112300_0_579) into DataOfDataField
+ !create data_29330_0_277:Data
+ !data_29330_0_277.value:='29330.0'
+!data_29330_0_277.index:=475
+!insert(avg_income_1,data_29330_0_277) into DataOfDataField
+ !create data_40161_0_1222:Data
+ !data_40161_0_1222.value:='40161.0'
+!data_40161_0_1222.index:=476
+!insert(avg_income_1,data_40161_0_1222) into DataOfDataField
+ !create data_60291_0_299:Data
+ !data_60291_0_299.value:='60291.0'
+!data_60291_0_299.index:=477
+!insert(avg_income_1,data_60291_0_299) into DataOfDataField
+ !create data_45461_0_1346:Data
+ !data_45461_0_1346.value:='45461.0'
+!data_45461_0_1346.index:=478
+!insert(avg_income_1,data_45461_0_1346) into DataOfDataField
+ !create data_38873_0_1354:Data
+ !data_38873_0_1354.value:='38873.0'
+!data_38873_0_1354.index:=479
+!insert(avg_income_1,data_38873_0_1354) into DataOfDataField
+ !create data_38890_0_928:Data
+ !data_38890_0_928.value:='38890.0'
+!data_38890_0_928.index:=480
+!insert(avg_income_1,data_38890_0_928) into DataOfDataField
+ !create data_50135_0_583:Data
+ !data_50135_0_583.value:='50135.0'
+!data_50135_0_583.index:=481
+!insert(avg_income_1,data_50135_0_583) into DataOfDataField
+ !create data_73051_0_1259:Data
+ !data_73051_0_1259.value:='73051.0'
+!data_73051_0_1259.index:=482
+!insert(avg_income_1,data_73051_0_1259) into DataOfDataField
+ !create data_53494_74710029566_693:Data
+ !data_53494_74710029566_693.value:='53494.74710029566'
+!data_53494_74710029566_693.index:=483
+!insert(avg_income_1,data_53494_74710029566_693) into DataOfDataField
+ !create data_67360_0_1031:Data
+ !data_67360_0_1031.value:='67360.0'
+!data_67360_0_1031.index:=484
+!insert(avg_income_1,data_67360_0_1031) into DataOfDataField
+ !create data_71694_0_1113:Data
+ !data_71694_0_1113.value:='71694.0'
+!data_71694_0_1113.index:=485
+!insert(avg_income_1,data_71694_0_1113) into DataOfDataField
+ !create data_53494_74710029566_1184:Data
+ !data_53494_74710029566_1184.value:='53494.74710029566'
+!data_53494_74710029566_1184.index:=486
+!insert(avg_income_1,data_53494_74710029566_1184) into DataOfDataField
+ !create data_42263_0_1275:Data
+ !data_42263_0_1275.value:='42263.0'
+!data_42263_0_1275.index:=487
+!insert(avg_income_1,data_42263_0_1275) into DataOfDataField
+ !create data_105091_0_1028:Data
+ !data_105091_0_1028.value:='105091.0'
+!data_105091_0_1028.index:=488
+!insert(avg_income_1,data_105091_0_1028) into DataOfDataField
+ !create data_64277_0_224:Data
+ !data_64277_0_224.value:='64277.0'
+!data_64277_0_224.index:=489
+!insert(avg_income_1,data_64277_0_224) into DataOfDataField
+ !create data_49432_0_983:Data
+ !data_49432_0_983.value:='49432.0'
+!data_49432_0_983.index:=490
+!insert(avg_income_1,data_49432_0_983) into DataOfDataField
+ !create data_37347_0_926:Data
+ !data_37347_0_926.value:='37347.0'
+!data_37347_0_926.index:=491
+!insert(avg_income_1,data_37347_0_926) into DataOfDataField
+ !create data_41214_0_552:Data
+ !data_41214_0_552.value:='41214.0'
+!data_41214_0_552.index:=492
+!insert(avg_income_1,data_41214_0_552) into DataOfDataField
+ !create data_41924_0_98:Data
+ !data_41924_0_98.value:='41924.0'
+!data_41924_0_98.index:=493
+!insert(avg_income_1,data_41924_0_98) into DataOfDataField
+ !create data_53494_74710029566_1292:Data
+ !data_53494_74710029566_1292.value:='53494.74710029566'
+!data_53494_74710029566_1292.index:=494
+!insert(avg_income_1,data_53494_74710029566_1292) into DataOfDataField
+ !create data_51433_0_1510:Data
+ !data_51433_0_1510.value:='51433.0'
+!data_51433_0_1510.index:=495
+!insert(avg_income_1,data_51433_0_1510) into DataOfDataField
+ !create data_53494_74710029566_426:Data
+ !data_53494_74710029566_426.value:='53494.74710029566'
+!data_53494_74710029566_426.index:=496
+!insert(avg_income_1,data_53494_74710029566_426) into DataOfDataField
+ !create data_52248_0_849:Data
+ !data_52248_0_849.value:='52248.0'
+!data_52248_0_849.index:=497
+!insert(avg_income_1,data_52248_0_849) into DataOfDataField
+ !create data_52248_0_1376:Data
+ !data_52248_0_1376.value:='52248.0'
+!data_52248_0_1376.index:=498
+!insert(avg_income_1,data_52248_0_1376) into DataOfDataField
+ !create data_44677_0_634:Data
+ !data_44677_0_634.value:='44677.0'
+!data_44677_0_634.index:=499
+!insert(avg_income_1,data_44677_0_634) into DataOfDataField
+ !create data_37088_0_1208:Data
+ !data_37088_0_1208.value:='37088.0'
+!data_37088_0_1208.index:=500
+!insert(avg_income_1,data_37088_0_1208) into DataOfDataField
+ !create data_47177_0_447:Data
+ !data_47177_0_447.value:='47177.0'
+!data_47177_0_447.index:=501
+!insert(avg_income_1,data_47177_0_447) into DataOfDataField
+ !create data_31659_0_1531:Data
+ !data_31659_0_1531.value:='31659.0'
+!data_31659_0_1531.index:=502
+!insert(avg_income_1,data_31659_0_1531) into DataOfDataField
+ !create data_36500_0_325:Data
+ !data_36500_0_325.value:='36500.0'
+!data_36500_0_325.index:=503
+!insert(avg_income_1,data_36500_0_325) into DataOfDataField
+ !create data_37851_0_509:Data
+ !data_37851_0_509.value:='37851.0'
+!data_37851_0_509.index:=504
+!insert(avg_income_1,data_37851_0_509) into DataOfDataField
+ !create data_49795_0_137:Data
+ !data_49795_0_137.value:='49795.0'
+!data_49795_0_137.index:=505
+!insert(avg_income_1,data_49795_0_137) into DataOfDataField
+ !create data_40546_0_1027:Data
+ !data_40546_0_1027.value:='40546.0'
+!data_40546_0_1027.index:=506
+!insert(avg_income_1,data_40546_0_1027) into DataOfDataField
+ !create data_47706_0_832:Data
+ !data_47706_0_832.value:='47706.0'
+!data_47706_0_832.index:=507
+!insert(avg_income_1,data_47706_0_832) into DataOfDataField
+ !create data_33936_0_1364:Data
+ !data_33936_0_1364.value:='33936.0'
+!data_33936_0_1364.index:=508
+!insert(avg_income_1,data_33936_0_1364) into DataOfDataField
+ !create data_33451_0_1253:Data
+ !data_33451_0_1253.value:='33451.0'
+!data_33451_0_1253.index:=509
+!insert(avg_income_1,data_33451_0_1253) into DataOfDataField
+ !create data_57986_0_869:Data
+ !data_57986_0_869.value:='57986.0'
+!data_57986_0_869.index:=510
+!insert(avg_income_1,data_57986_0_869) into DataOfDataField
+ !create data_48698_0_869:Data
+ !data_48698_0_869.value:='48698.0'
+!data_48698_0_869.index:=511
+!insert(avg_income_1,data_48698_0_869) into DataOfDataField
+ !create data_53494_74710029566_723:Data
+ !data_53494_74710029566_723.value:='53494.74710029566'
+!data_53494_74710029566_723.index:=512
+!insert(avg_income_1,data_53494_74710029566_723) into DataOfDataField
+ !create data_23523_0_872:Data
+ !data_23523_0_872.value:='23523.0'
+!data_23523_0_872.index:=513
+!insert(avg_income_1,data_23523_0_872) into DataOfDataField
+ !create data_59934_0_1303:Data
+ !data_59934_0_1303.value:='59934.0'
+!data_59934_0_1303.index:=514
+!insert(avg_income_1,data_59934_0_1303) into DataOfDataField
+ !create data_53494_74710029566_332:Data
+ !data_53494_74710029566_332.value:='53494.74710029566'
+!data_53494_74710029566_332.index:=515
+!insert(avg_income_1,data_53494_74710029566_332) into DataOfDataField
+ 

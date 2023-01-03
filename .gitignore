@@ -16,4 +16,8 @@ validation_pipeline/parser/pruebas.ipynb
 parser/parser_pmml.ipynb
 
 *-checkpoint.ipynb
-*/.csvs
+*/input_dataset.csv
+*output_dataset.csv
+*input_dataset.csv
+*input_dataset_no_bugs.csv
+*output_dataset_no_bugs.csv

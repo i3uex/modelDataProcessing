@@ -1,0 +1,2457 @@
+!create input:DataDictionary
+ !input.rows:=516
+!input.name:='input'
+!create ETHNICITY_0:Categorical
+ !ETHNICITY_0.ordinal:=false
+ !insert(input,ETHNICITY_0) into DataDictDataField
+ !create value_N_0:ValueField
+ !value_N_0.value:= 'N'
+!value_N_0.count:=50
+!insert(ETHNICITY_0,value_N_0) into ValidValues
+ !create value_C_0:ValueField
+ !value_C_0.value:= 'C'
+!value_C_0.count:=254
+!insert(ETHNICITY_0,value_C_0) into ValidValues
+ !create value_B_0:ValueField
+ !value_B_0.value:= 'B'
+!value_B_0.count:=41
+!insert(ETHNICITY_0,value_B_0) into ValidValues
+ !create value_H_0:ValueField
+ !value_H_0.value:= 'H'
+!value_H_0.count:=24
+!insert(ETHNICITY_0,value_H_0) into ValidValues
+ !create value_A_0:ValueField
+ !value_A_0.value:= 'A'
+!value_A_0.count:=21
+!insert(ETHNICITY_0,value_A_0) into ValidValues
+ !create value_O_0:ValueField
+ !value_O_0.value:= 'O'
+!value_O_0.count:=17
+!insert(ETHNICITY_0,value_O_0) into ValidValues
+ !create value_I_0:ValueField
+ !value_I_0.value:= 'I'
+!value_I_0.count:=1
+!insert(ETHNICITY_0,value_I_0) into ValidValues
+ !ETHNICITY_0.target:=false
+ !ETHNICITY_0.id:=false
+ !ETHNICITY_0.dataType:=DataType::string
+!ETHNICITY_0.name:='ETHNICITY'
+!create nan_0:ValueField
+ !nan_0.value:= 'nan'
+!nan_0.count:=108
+!insert(ETHNICITY_0,nan_0) into MissingVals
+ !create TERRITORY_0:Categorical
+ !TERRITORY_0.ordinal:=false
+ !insert(input,TERRITORY_0) into DataDictDataField
+ !create value_N_1:ValueField
+ !value_N_1.value:= 'N'
+!value_N_1.count:=96
+!insert(TERRITORY_0,value_N_1) into ValidValues
+ !create value_8_0:ValueField
+ !value_8_0.value:= '8'
+!value_8_0.count:=69
+!insert(TERRITORY_0,value_8_0) into ValidValues
+ !create value_5_0:ValueField
+ !value_5_0.value:= '5'
+!value_5_0.count:=58
+!insert(TERRITORY_0,value_5_0) into ValidValues
+ !create value_2_0:ValueField
+ !value_2_0.value:= '2'
+!value_2_0.count:=179
+!insert(TERRITORY_0,value_2_0) into ValidValues
+ !create value_7_0:ValueField
+ !value_7_0.value:= '7'
+!value_7_0.count:=114
+!insert(TERRITORY_0,value_7_0) into ValidValues
+ !create value_4_0:ValueField
+ !value_4_0.value:= '4'
+!value_4_0.count:=0
+!insert(TERRITORY_0,value_4_0) into ValidValues
+ !create value_000_0:ValueField
+ !value_000_0.value:= '000'
+!value_000_0.count:=0
+!insert(TERRITORY_0,value_000_0) into ValidValues
+ !create value_6_0:ValueField
+ !value_6_0.value:= '6'
+!value_6_0.count:=0
+!insert(TERRITORY_0,value_6_0) into ValidValues
+ !create value_A_1:ValueField
+ !value_A_1.value:= 'A'
+!value_A_1.count:=0
+!insert(TERRITORY_0,value_A_1) into ValidValues
+ !create value_1_0:ValueField
+ !value_1_0.value:= '1'
+!value_1_0.count:=0
+!insert(TERRITORY_0,value_1_0) into ValidValues
+ !create value_3_0:ValueField
+ !value_3_0.value:= '3'
+!value_3_0.count:=0
+!insert(TERRITORY_0,value_3_0) into ValidValues
+ !TERRITORY_0.target:=false
+ !TERRITORY_0.id:=false
+ !TERRITORY_0.dataType:=DataType::string
+!TERRITORY_0.name:='TERRITORY'
+!create ACADEMIC_INTEREST_1_0:Categorical
+ !ACADEMIC_INTEREST_1_0.ordinal:=false
+ !insert(input,ACADEMIC_INTEREST_1_0) into DataDictDataField
+ !ACADEMIC_INTEREST_1_0.target:=false
+ !ACADEMIC_INTEREST_1_0.id:=false
+ !ACADEMIC_INTEREST_1_0.dataType:=DataType::string
+!ACADEMIC_INTEREST_1_0.name:='ACADEMIC_INTEREST_1'
+!create nan_1:ValueField
+ !nan_1.value:= 'nan'
+!nan_1.count:=287
+!insert(ACADEMIC_INTEREST_1_0,nan_1) into MissingVals
+ !create ACADEMIC_INTEREST_2_0:Categorical
+ !ACADEMIC_INTEREST_2_0.ordinal:=false
+ !insert(input,ACADEMIC_INTEREST_2_0) into DataDictDataField
+ !ACADEMIC_INTEREST_2_0.target:=false
+ !ACADEMIC_INTEREST_2_0.id:=false
+ !ACADEMIC_INTEREST_2_0.dataType:=DataType::string
+!ACADEMIC_INTEREST_2_0.name:='ACADEMIC_INTEREST_2'
+!create nan_2:ValueField
+ !nan_2.value:= 'nan'
+!nan_2.count:=378
+!insert(ACADEMIC_INTEREST_2_0,nan_2) into MissingVals
+ !create Enroll_0:Continuous
+ !insert(input,Enroll_0) into DataDictDataField
+ !create interval_Enroll_0:Interval
+!interval_Enroll_0.leftMargin:=0.0
+!interval_Enroll_0.rightMargin:=1.0
+!interval_Enroll_0.closure:=ClosureType::closedClosed
+!interval_Enroll_0.count:=516
+!insert(Enroll_0,interval_Enroll_0) into ContinuousInterval
+ !Enroll_0.target:=false
+ !Enroll_0.id:=false
+ !Enroll_0.dataType:=DataType::integer
+!Enroll_0.name:='Enroll'
+!create TOTAL_CONTACTS_0:Continuous
+ !insert(input,TOTAL_CONTACTS_0) into DataDictDataField
+ !create interval_TOTAL_CONTACTS_0:Interval
+!interval_TOTAL_CONTACTS_0.leftMargin:=1.0
+!interval_TOTAL_CONTACTS_0.rightMargin:=28.0
+!interval_TOTAL_CONTACTS_0.closure:=ClosureType::closedClosed
+!interval_TOTAL_CONTACTS_0.count:=516
+!insert(TOTAL_CONTACTS_0,interval_TOTAL_CONTACTS_0) into ContinuousInterval
+ !TOTAL_CONTACTS_0.target:=false
+ !TOTAL_CONTACTS_0.id:=false
+ !TOTAL_CONTACTS_0.dataType:=DataType::integer
+!TOTAL_CONTACTS_0.name:='TOTAL_CONTACTS'
+!create SELF_INIT_CNTCTS_0:Continuous
+ !insert(input,SELF_INIT_CNTCTS_0) into DataDictDataField
+ !create interval_SELF_INIT_CNTCTS_0:Interval
+!interval_SELF_INIT_CNTCTS_0.leftMargin:=0.0
+!interval_SELF_INIT_CNTCTS_0.rightMargin:=21.0
+!interval_SELF_INIT_CNTCTS_0.closure:=ClosureType::closedClosed
+!interval_SELF_INIT_CNTCTS_0.count:=516
+!insert(SELF_INIT_CNTCTS_0,interval_SELF_INIT_CNTCTS_0) into ContinuousInterval
+ !SELF_INIT_CNTCTS_0.target:=false
+ !SELF_INIT_CNTCTS_0.id:=false
+ !SELF_INIT_CNTCTS_0.dataType:=DataType::integer
+!SELF_INIT_CNTCTS_0.name:='SELF_INIT_CNTCTS'
+!create TRAVEL_INIT_CNTCTS_0:Continuous
+ !insert(input,TRAVEL_INIT_CNTCTS_0) into DataDictDataField
+ !create interval_TRAVEL_INIT_CNTCTS_0:Interval
+!interval_TRAVEL_INIT_CNTCTS_0.leftMargin:=0.0
+!interval_TRAVEL_INIT_CNTCTS_0.rightMargin:=5.0
+!interval_TRAVEL_INIT_CNTCTS_0.closure:=ClosureType::closedClosed
+!interval_TRAVEL_INIT_CNTCTS_0.count:=516
+!insert(TRAVEL_INIT_CNTCTS_0,interval_TRAVEL_INIT_CNTCTS_0) into ContinuousInterval
+ !TRAVEL_INIT_CNTCTS_0.target:=false
+ !TRAVEL_INIT_CNTCTS_0.id:=false
+ !TRAVEL_INIT_CNTCTS_0.dataType:=DataType::integer
+!TRAVEL_INIT_CNTCTS_0.name:='TRAVEL_INIT_CNTCTS'
+!create SOLICITED_CNTCTS_0:Continuous
+ !insert(input,SOLICITED_CNTCTS_0) into DataDictDataField
+ !create interval_SOLICITED_CNTCTS_0:Interval
+!interval_SOLICITED_CNTCTS_0.leftMargin:=0.0
+!interval_SOLICITED_CNTCTS_0.rightMargin:=9.0
+!interval_SOLICITED_CNTCTS_0.closure:=ClosureType::closedClosed
+!interval_SOLICITED_CNTCTS_0.count:=516
+!insert(SOLICITED_CNTCTS_0,interval_SOLICITED_CNTCTS_0) into ContinuousInterval
+ !SOLICITED_CNTCTS_0.target:=false
+ !SOLICITED_CNTCTS_0.id:=false
+ !SOLICITED_CNTCTS_0.dataType:=DataType::integer
+!SOLICITED_CNTCTS_0.name:='SOLICITED_CNTCTS'
+!create REFERRAL_CNTCTS_0:Continuous
+ !insert(input,REFERRAL_CNTCTS_0) into DataDictDataField
+ !create interval_REFERRAL_CNTCTS_0:Interval
+!interval_REFERRAL_CNTCTS_0.leftMargin:=0.0
+!interval_REFERRAL_CNTCTS_0.rightMargin:=5.0
+!interval_REFERRAL_CNTCTS_0.closure:=ClosureType::closedClosed
+!interval_REFERRAL_CNTCTS_0.count:=516
+!insert(REFERRAL_CNTCTS_0,interval_REFERRAL_CNTCTS_0) into ContinuousInterval
+ !REFERRAL_CNTCTS_0.target:=false
+ !REFERRAL_CNTCTS_0.id:=false
+ !REFERRAL_CNTCTS_0.dataType:=DataType::integer
+!REFERRAL_CNTCTS_0.name:='REFERRAL_CNTCTS'
+!create CAMPUS_VISIT_0:Continuous
+ !insert(input,CAMPUS_VISIT_0) into DataDictDataField
+ !create interval_CAMPUS_VISIT_0:Interval
+!interval_CAMPUS_VISIT_0.leftMargin:=0.0
+!interval_CAMPUS_VISIT_0.rightMargin:=1.0
+!interval_CAMPUS_VISIT_0.closure:=ClosureType::closedClosed
+!interval_CAMPUS_VISIT_0.count:=516
+!insert(CAMPUS_VISIT_0,interval_CAMPUS_VISIT_0) into ContinuousInterval
+ !CAMPUS_VISIT_0.target:=false
+ !CAMPUS_VISIT_0.id:=false
+ !CAMPUS_VISIT_0.dataType:=DataType::integer
+!CAMPUS_VISIT_0.name:='CAMPUS_VISIT'
+!create CONTACT_CODE1_0:Categorical
+ !CONTACT_CODE1_0.ordinal:=false
+ !insert(input,CONTACT_CODE1_0) into DataDictDataField
+ !CONTACT_CODE1_0.target:=false
+ !CONTACT_CODE1_0.id:=false
+ !CONTACT_CODE1_0.dataType:=DataType::string
+!CONTACT_CODE1_0.name:='CONTACT_CODE1'
+!create nan_3:ValueField
+ !nan_3.value:= 'nan'
+!nan_3.count:=1
+!insert(CONTACT_CODE1_0,nan_3) into MissingVals
+ !create IRSCHOOL_0:Categorical
+ !IRSCHOOL_0.ordinal:=false
+ !insert(input,IRSCHOOL_0) into DataDictDataField
+ !IRSCHOOL_0.target:=false
+ !IRSCHOOL_0.id:=false
+ !IRSCHOOL_0.dataType:=DataType::string
+!IRSCHOOL_0.name:='IRSCHOOL'
+!create nan_4:ValueField
+ !nan_4.value:= 'nan'
+!nan_4.count:=105
+!insert(IRSCHOOL_0,nan_4) into MissingVals
+ !create satscore_0:Continuous
+ !insert(input,satscore_0) into DataDictDataField
+ !create interval_satscore_0:Interval
+!interval_satscore_0.leftMargin:=440.0
+!interval_satscore_0.rightMargin:=1600.0
+!interval_satscore_0.closure:=ClosureType::closedClosed
+!interval_satscore_0.count:=196
+!insert(satscore_0,interval_satscore_0) into ContinuousInterval
+ !satscore_0.target:=false
+ !satscore_0.id:=false
+ !satscore_0.dataType:=DataType::integer
+!satscore_0.name:='satscore'
+!create nan_5:ValueField
+ !nan_5.value:= 'nan'
+!nan_5.count:=320
+!insert(satscore_0,nan_5) into MissingVals
+ !create sex_0:Continuous
+ !insert(input,sex_0) into DataDictDataField
+ !create interval_sex_0:Interval
+!interval_sex_0.leftMargin:=0.0
+!interval_sex_0.rightMargin:=1.0
+!interval_sex_0.closure:=ClosureType::closedClosed
+!interval_sex_0.count:=489
+!insert(sex_0,interval_sex_0) into ContinuousInterval
+ !sex_0.target:=false
+ !sex_0.id:=false
+ !sex_0.dataType:=DataType::integer
+!sex_0.name:='sex'
+!create nan_6:ValueField
+ !nan_6.value:= 'nan'
+!nan_6.count:=27
+!insert(sex_0,nan_6) into MissingVals
+ !create mailq_0:Continuous
+ !insert(input,mailq_0) into DataDictDataField
+ !create interval_mailq_0:Interval
+!interval_mailq_0.leftMargin:=1.0
+!interval_mailq_0.rightMargin:=5.0
+!interval_mailq_0.closure:=ClosureType::closedClosed
+!interval_mailq_0.count:=516
+!insert(mailq_0,interval_mailq_0) into ContinuousInterval
+ !mailq_0.target:=false
+ !mailq_0.id:=false
+ !mailq_0.dataType:=DataType::integer
+!mailq_0.name:='mailq'
+!create telecq_0:Continuous
+ !insert(input,telecq_0) into DataDictDataField
+ !create interval_telecq_0:Interval
+!interval_telecq_0.leftMargin:=1.0
+!interval_telecq_0.rightMargin:=4.0
+!interval_telecq_0.closure:=ClosureType::closedClosed
+!interval_telecq_0.count:=99
+!insert(telecq_0,interval_telecq_0) into ContinuousInterval
+ !telecq_0.target:=false
+ !telecq_0.id:=false
+ !telecq_0.dataType:=DataType::integer
+!telecq_0.name:='telecq'
+!create nan_7:ValueField
+ !nan_7.value:= 'nan'
+!nan_7.count:=417
+!insert(telecq_0,nan_7) into MissingVals
+ !create premiere_0:Continuous
+ !insert(input,premiere_0) into DataDictDataField
+ !create interval_premiere_0:Interval
+!interval_premiere_0.leftMargin:=0.0
+!interval_premiere_0.rightMargin:=1.0
+!interval_premiere_0.closure:=ClosureType::closedClosed
+!interval_premiere_0.count:=516
+!insert(premiere_0,interval_premiere_0) into ContinuousInterval
+ !premiere_0.target:=false
+ !premiere_0.id:=false
+ !premiere_0.dataType:=DataType::integer
+!premiere_0.name:='premiere'
+!create interest_0:Continuous
+ !insert(input,interest_0) into DataDictDataField
+ !create interval_interest_0:Interval
+!interval_interest_0.leftMargin:=0.0
+!interval_interest_0.rightMargin:=3.0
+!interval_interest_0.closure:=ClosureType::closedClosed
+!interval_interest_0.count:=516
+!insert(interest_0,interval_interest_0) into ContinuousInterval
+ !interest_0.target:=false
+ !interest_0.id:=false
+ !interest_0.dataType:=DataType::integer
+!interest_0.name:='interest'
+!create stuemail_0:Continuous
+ !insert(input,stuemail_0) into DataDictDataField
+ !create interval_stuemail_0:Interval
+!interval_stuemail_0.leftMargin:=0.0
+!interval_stuemail_0.rightMargin:=1.0
+!interval_stuemail_0.closure:=ClosureType::closedClosed
+!interval_stuemail_0.count:=516
+!insert(stuemail_0,interval_stuemail_0) into ContinuousInterval
+ !stuemail_0.target:=false
+ !stuemail_0.id:=false
+ !stuemail_0.dataType:=DataType::integer
+!stuemail_0.name:='stuemail'
+!create init_span_0:Continuous
+ !insert(input,init_span_0) into DataDictDataField
+ !create interval_init_span_0:Interval
+!interval_init_span_0.leftMargin:=-216.0
+!interval_init_span_0.rightMargin:=72.0
+!interval_init_span_0.closure:=ClosureType::closedClosed
+!interval_init_span_0.count:=516
+!insert(init_span_0,interval_init_span_0) into ContinuousInterval
+ !init_span_0.target:=false
+ !init_span_0.id:=false
+ !init_span_0.dataType:=DataType::integer
+!init_span_0.name:='init_span'
+!create int1rat_0:Categorical
+ !int1rat_0.ordinal:=false
+ !insert(input,int1rat_0) into DataDictDataField
+ !int1rat_0.target:=false
+ !int1rat_0.id:=false
+ !int1rat_0.dataType:=DataType::string
+!int1rat_0.name:='int1rat'
+!create int2rat_0:Categorical
+ !int2rat_0.ordinal:=false
+ !insert(input,int2rat_0) into DataDictDataField
+ !int2rat_0.target:=false
+ !int2rat_0.id:=false
+ !int2rat_0.dataType:=DataType::string
+!int2rat_0.name:='int2rat'
+!create hscrat_0:Categorical
+ !hscrat_0.ordinal:=false
+ !insert(input,hscrat_0) into DataDictDataField
+ !hscrat_0.target:=false
+ !hscrat_0.id:=false
+ !hscrat_0.dataType:=DataType::string
+!hscrat_0.name:='hscrat'
+!create avg_income_0:Continuous
+ !insert(input,avg_income_0) into DataDictDataField
+ !create interval_avg_income_0:Interval
+!interval_avg_income_0.leftMargin:=9783.0
+!interval_avg_income_0.rightMargin:=200001.0
+!interval_avg_income_0.closure:=ClosureType::closedClosed
+!interval_avg_income_0.count:=358
+!insert(avg_income_0,interval_avg_income_0) into ContinuousInterval
+ !avg_income_0.target:=false
+ !avg_income_0.id:=false
+ !avg_income_0.dataType:=DataType::integer
+!avg_income_0.name:='avg_income'
+!create nan_8:ValueField
+ !nan_8.value:= 'nan'
+!nan_8.count:=158
+!insert(avg_income_0,nan_8) into MissingVals
+ !create distance_0:Categorical
+ !distance_0.ordinal:=false
+ !insert(input,distance_0) into DataDictDataField
+ !distance_0.target:=false
+ !distance_0.id:=false
+ !distance_0.dataType:=DataType::string
+!distance_0.name:='distance'
+!create nan_9:ValueField
+ !nan_9.value:= 'nan'
+!nan_9.count:=148
+!insert(distance_0,nan_9) into MissingVals
+ !create Instate_0:Categorical
+ !Instate_0.ordinal:=false
+ !insert(input,Instate_0) into DataDictDataField
+ !create value_N_2:ValueField
+ !value_N_2.value:= 'N'
+!value_N_2.count:=516
+!insert(Instate_0,value_N_2) into ValidValues
+ !create value_Y_0:ValueField
+ !value_Y_0.value:= 'Y'
+!value_Y_0.count:=0
+!insert(Instate_0,value_Y_0) into ValidValues
+ !Instate_0.target:=false
+ !Instate_0.id:=false
+ !Instate_0.dataType:=DataType::string
+!Instate_0.name:='Instate'
+!create data_nan_0:Data
+ !data_nan_0.value:='nan'
+!data_nan_0.index:=0
+!insert(ACADEMIC_INTEREST_2_0,data_nan_0) into DataOfDataField
+ !create data_nan_858:Data
+ !data_nan_858.value:='nan'
+!data_nan_858.index:=1
+!insert(ACADEMIC_INTEREST_2_0,data_nan_858) into DataOfDataField
+ !create data_nan_1342:Data
+ !data_nan_1342.value:='nan'
+!data_nan_1342.index:=2
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1342) into DataOfDataField
+ !create data_nan_109:Data
+ !data_nan_109.value:='nan'
+!data_nan_109.index:=3
+!insert(ACADEMIC_INTEREST_2_0,data_nan_109) into DataOfDataField
+ !create data_nan_240:Data
+ !data_nan_240.value:='nan'
+!data_nan_240.index:=4
+!insert(ACADEMIC_INTEREST_2_0,data_nan_240) into DataOfDataField
+ !create data_nan_586:Data
+ !data_nan_586.value:='nan'
+!data_nan_586.index:=5
+!insert(ACADEMIC_INTEREST_2_0,data_nan_586) into DataOfDataField
+ !create data_nan_999:Data
+ !data_nan_999.value:='nan'
+!data_nan_999.index:=6
+!insert(ACADEMIC_INTEREST_2_0,data_nan_999) into DataOfDataField
+ !create data_nan_1019:Data
+ !data_nan_1019.value:='nan'
+!data_nan_1019.index:=7
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1019) into DataOfDataField
+ !create data_nan_943:Data
+ !data_nan_943.value:='nan'
+!data_nan_943.index:=8
+!insert(ACADEMIC_INTEREST_2_0,data_nan_943) into DataOfDataField
+ !create data_nan_1081:Data
+ !data_nan_1081.value:='nan'
+!data_nan_1081.index:=9
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1081) into DataOfDataField
+ !create data_nan_265:Data
+ !data_nan_265.value:='nan'
+!data_nan_265.index:=10
+!insert(ACADEMIC_INTEREST_2_0,data_nan_265) into DataOfDataField
+ !create data_nan_332:Data
+ !data_nan_332.value:='nan'
+!data_nan_332.index:=11
+!insert(ACADEMIC_INTEREST_2_0,data_nan_332) into DataOfDataField
+ !create data_nan_645:Data
+ !data_nan_645.value:='nan'
+!data_nan_645.index:=12
+!insert(ACADEMIC_INTEREST_2_0,data_nan_645) into DataOfDataField
+ !create data_nan_867:Data
+ !data_nan_867.value:='nan'
+!data_nan_867.index:=13
+!insert(ACADEMIC_INTEREST_2_0,data_nan_867) into DataOfDataField
+ !create data_nan_218:Data
+ !data_nan_218.value:='nan'
+!data_nan_218.index:=14
+!insert(ACADEMIC_INTEREST_2_0,data_nan_218) into DataOfDataField
+ !create data_nan_853:Data
+ !data_nan_853.value:='nan'
+!data_nan_853.index:=15
+!insert(ACADEMIC_INTEREST_2_0,data_nan_853) into DataOfDataField
+ !create data_nan_168:Data
+ !data_nan_168.value:='nan'
+!data_nan_168.index:=16
+!insert(ACADEMIC_INTEREST_2_0,data_nan_168) into DataOfDataField
+ !create data_nan_408:Data
+ !data_nan_408.value:='nan'
+!data_nan_408.index:=17
+!insert(ACADEMIC_INTEREST_2_0,data_nan_408) into DataOfDataField
+ !create data_nan_192:Data
+ !data_nan_192.value:='nan'
+!data_nan_192.index:=18
+!insert(ACADEMIC_INTEREST_2_0,data_nan_192) into DataOfDataField
+ !create data_nan_1253:Data
+ !data_nan_1253.value:='nan'
+!data_nan_1253.index:=19
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1253) into DataOfDataField
+ !create data_nan_310:Data
+ !data_nan_310.value:='nan'
+!data_nan_310.index:=20
+!insert(ACADEMIC_INTEREST_2_0,data_nan_310) into DataOfDataField
+ !create data_nan_426:Data
+ !data_nan_426.value:='nan'
+!data_nan_426.index:=21
+!insert(ACADEMIC_INTEREST_2_0,data_nan_426) into DataOfDataField
+ !create data_nan_32:Data
+ !data_nan_32.value:='nan'
+!data_nan_32.index:=22
+!insert(ACADEMIC_INTEREST_2_0,data_nan_32) into DataOfDataField
+ !create data_nan_841:Data
+ !data_nan_841.value:='nan'
+!data_nan_841.index:=23
+!insert(ACADEMIC_INTEREST_2_0,data_nan_841) into DataOfDataField
+ !create data_nan_396:Data
+ !data_nan_396.value:='nan'
+!data_nan_396.index:=24
+!insert(ACADEMIC_INTEREST_2_0,data_nan_396) into DataOfDataField
+ !create data_nan_165:Data
+ !data_nan_165.value:='nan'
+!data_nan_165.index:=25
+!insert(ACADEMIC_INTEREST_2_0,data_nan_165) into DataOfDataField
+ !create data_nan_1098:Data
+ !data_nan_1098.value:='nan'
+!data_nan_1098.index:=26
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1098) into DataOfDataField
+ !create data_nan_755:Data
+ !data_nan_755.value:='nan'
+!data_nan_755.index:=27
+!insert(ACADEMIC_INTEREST_2_0,data_nan_755) into DataOfDataField
+ !create data_nan_1476:Data
+ !data_nan_1476.value:='nan'
+!data_nan_1476.index:=28
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1476) into DataOfDataField
+ !create data_nan_912:Data
+ !data_nan_912.value:='nan'
+!data_nan_912.index:=29
+!insert(ACADEMIC_INTEREST_2_0,data_nan_912) into DataOfDataField
+ !create data_nan_266:Data
+ !data_nan_266.value:='nan'
+!data_nan_266.index:=30
+!insert(ACADEMIC_INTEREST_2_0,data_nan_266) into DataOfDataField
+ !create data_ART_0:Data
+ !data_ART_0.value:='ART'
+!data_ART_0.index:=31
+!insert(ACADEMIC_INTEREST_2_0,data_ART_0) into DataOfDataField
+ !create data_BUS_0:Data
+ !data_BUS_0.value:='BUS'
+!data_BUS_0.index:=32
+!insert(ACADEMIC_INTEREST_2_0,data_BUS_0) into DataOfDataField
+ !create data_CSI_0:Data
+ !data_CSI_0.value:='CSI'
+!data_CSI_0.index:=33
+!insert(ACADEMIC_INTEREST_2_0,data_CSI_0) into DataOfDataField
+ !create data_EGR_0:Data
+ !data_EGR_0.value:='EGR'
+!data_EGR_0.index:=34
+!insert(ACADEMIC_INTEREST_2_0,data_EGR_0) into DataOfDataField
+ !create data_ELC_0:Data
+ !data_ELC_0.value:='ELC'
+!data_ELC_0.index:=35
+!insert(ACADEMIC_INTEREST_2_0,data_ELC_0) into DataOfDataField
+ !create data_ISY_0:Data
+ !data_ISY_0.value:='ISY'
+!data_ISY_0.index:=36
+!insert(ACADEMIC_INTEREST_2_0,data_ISY_0) into DataOfDataField
+ !create data_nan_584:Data
+ !data_nan_584.value:='nan'
+!data_nan_584.index:=37
+!insert(ACADEMIC_INTEREST_2_0,data_nan_584) into DataOfDataField
+ !create data_nan_183:Data
+ !data_nan_183.value:='nan'
+!data_nan_183.index:=38
+!insert(ACADEMIC_INTEREST_2_0,data_nan_183) into DataOfDataField
+ !create data_nan_261:Data
+ !data_nan_261.value:='nan'
+!data_nan_261.index:=39
+!insert(ACADEMIC_INTEREST_2_0,data_nan_261) into DataOfDataField
+ !create data_nan_535:Data
+ !data_nan_535.value:='nan'
+!data_nan_535.index:=40
+!insert(ACADEMIC_INTEREST_2_0,data_nan_535) into DataOfDataField
+ !create data_nan_164:Data
+ !data_nan_164.value:='nan'
+!data_nan_164.index:=41
+!insert(ACADEMIC_INTEREST_2_0,data_nan_164) into DataOfDataField
+ !create data_nan_304:Data
+ !data_nan_304.value:='nan'
+!data_nan_304.index:=42
+!insert(ACADEMIC_INTEREST_2_0,data_nan_304) into DataOfDataField
+ !create data_nan_497:Data
+ !data_nan_497.value:='nan'
+!data_nan_497.index:=43
+!insert(ACADEMIC_INTEREST_2_0,data_nan_497) into DataOfDataField
+ !create data_nan_1226:Data
+ !data_nan_1226.value:='nan'
+!data_nan_1226.index:=44
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1226) into DataOfDataField
+ !create data_nan_1408:Data
+ !data_nan_1408.value:='nan'
+!data_nan_1408.index:=45
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1408) into DataOfDataField
+ !create data_MEC_0:Data
+ !data_MEC_0.value:='MEC'
+!data_MEC_0.index:=46
+!insert(ACADEMIC_INTEREST_2_0,data_MEC_0) into DataOfDataField
+ !create data_nan_271:Data
+ !data_nan_271.value:='nan'
+!data_nan_271.index:=47
+!insert(ACADEMIC_INTEREST_2_0,data_nan_271) into DataOfDataField
+ !create data_nan_205:Data
+ !data_nan_205.value:='nan'
+!data_nan_205.index:=48
+!insert(ACADEMIC_INTEREST_2_0,data_nan_205) into DataOfDataField
+ !create data_nan_1470:Data
+ !data_nan_1470.value:='nan'
+!data_nan_1470.index:=49
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1470) into DataOfDataField
+ !create data_nan_864:Data
+ !data_nan_864.value:='nan'
+!data_nan_864.index:=50
+!insert(ACADEMIC_INTEREST_2_0,data_nan_864) into DataOfDataField
+ !create data_nan_1309:Data
+ !data_nan_1309.value:='nan'
+!data_nan_1309.index:=51
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1309) into DataOfDataField
+ !create data_nan_534:Data
+ !data_nan_534.value:='nan'
+!data_nan_534.index:=52
+!insert(ACADEMIC_INTEREST_2_0,data_nan_534) into DataOfDataField
+ !create data_nan_812:Data
+ !data_nan_812.value:='nan'
+!data_nan_812.index:=53
+!insert(ACADEMIC_INTEREST_2_0,data_nan_812) into DataOfDataField
+ !create data_nan_692:Data
+ !data_nan_692.value:='nan'
+!data_nan_692.index:=54
+!insert(ACADEMIC_INTEREST_2_0,data_nan_692) into DataOfDataField
+ !create data_nan_722:Data
+ !data_nan_722.value:='nan'
+!data_nan_722.index:=55
+!insert(ACADEMIC_INTEREST_2_0,data_nan_722) into DataOfDataField
+ !create data_nan_819:Data
+ !data_nan_819.value:='nan'
+!data_nan_819.index:=56
+!insert(ACADEMIC_INTEREST_2_0,data_nan_819) into DataOfDataField
+ !create data_nan_580:Data
+ !data_nan_580.value:='nan'
+!data_nan_580.index:=57
+!insert(ACADEMIC_INTEREST_2_0,data_nan_580) into DataOfDataField
+ !create data_nan_93:Data
+ !data_nan_93.value:='nan'
+!data_nan_93.index:=58
+!insert(ACADEMIC_INTEREST_2_0,data_nan_93) into DataOfDataField
+ !create data_nan_21:Data
+ !data_nan_21.value:='nan'
+!data_nan_21.index:=59
+!insert(ACADEMIC_INTEREST_2_0,data_nan_21) into DataOfDataField
+ !create data_nan_625:Data
+ !data_nan_625.value:='nan'
+!data_nan_625.index:=60
+!insert(ACADEMIC_INTEREST_2_0,data_nan_625) into DataOfDataField
+ !create data_nan_603:Data
+ !data_nan_603.value:='nan'
+!data_nan_603.index:=61
+!insert(ACADEMIC_INTEREST_2_0,data_nan_603) into DataOfDataField
+ !create data_nan_1508:Data
+ !data_nan_1508.value:='nan'
+!data_nan_1508.index:=62
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1508) into DataOfDataField
+ !create data_BUS_855:Data
+ !data_BUS_855.value:='BUS'
+!data_BUS_855.index:=63
+!insert(ACADEMIC_INTEREST_2_0,data_BUS_855) into DataOfDataField
+ !create data_DENT_0:Data
+ !data_DENT_0.value:='DENT'
+!data_DENT_0.index:=64
+!insert(ACADEMIC_INTEREST_2_0,data_DENT_0) into DataOfDataField
+ !create data_nan_1319:Data
+ !data_nan_1319.value:='nan'
+!data_nan_1319.index:=65
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1319) into DataOfDataField
+ !create data_EGR_1205:Data
+ !data_EGR_1205.value:='EGR'
+!data_EGR_1205.index:=66
+!insert(ACADEMIC_INTEREST_2_0,data_EGR_1205) into DataOfDataField
+ !create data_nan_1439:Data
+ !data_nan_1439.value:='nan'
+!data_nan_1439.index:=67
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1439) into DataOfDataField
+ !create data_nan_1282:Data
+ !data_nan_1282.value:='nan'
+!data_nan_1282.index:=68
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1282) into DataOfDataField
+ !create data_nan_1005:Data
+ !data_nan_1005.value:='nan'
+!data_nan_1005.index:=69
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1005) into DataOfDataField
+ !create data_nan_2:Data
+ !data_nan_2.value:='nan'
+!data_nan_2.index:=70
+!insert(ACADEMIC_INTEREST_2_0,data_nan_2) into DataOfDataField
+ !create data_nan_1425:Data
+ !data_nan_1425.value:='nan'
+!data_nan_1425.index:=71
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1425) into DataOfDataField
+ !create data_THEA_0:Data
+ !data_THEA_0.value:='THEA'
+!data_THEA_0.index:=72
+!insert(ACADEMIC_INTEREST_2_0,data_THEA_0) into DataOfDataField
+ !create data_nan_160:Data
+ !data_nan_160.value:='nan'
+!data_nan_160.index:=73
+!insert(ACADEMIC_INTEREST_2_0,data_nan_160) into DataOfDataField
+ !create data_REL_0:Data
+ !data_REL_0.value:='REL'
+!data_REL_0.index:=74
+!insert(ACADEMIC_INTEREST_2_0,data_REL_0) into DataOfDataField
+ !create data_nan_1174:Data
+ !data_nan_1174.value:='nan'
+!data_nan_1174.index:=75
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1174) into DataOfDataField
+ !create data_nan_108:Data
+ !data_nan_108.value:='nan'
+!data_nan_108.index:=76
+!insert(ACADEMIC_INTEREST_2_0,data_nan_108) into DataOfDataField
+ !create data_nan_1521:Data
+ !data_nan_1521.value:='nan'
+!data_nan_1521.index:=77
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1521) into DataOfDataField
+ !create data_nan_724:Data
+ !data_nan_724.value:='nan'
+!data_nan_724.index:=78
+!insert(ACADEMIC_INTEREST_2_0,data_nan_724) into DataOfDataField
+ !create data_nan_1025:Data
+ !data_nan_1025.value:='nan'
+!data_nan_1025.index:=79
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1025) into DataOfDataField
+ !create data_EDU_0:Data
+ !data_EDU_0.value:='EDU'
+!data_EDU_0.index:=80
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_0) into DataOfDataField
+ !create data_nan_478:Data
+ !data_nan_478.value:='nan'
+!data_nan_478.index:=81
+!insert(ACADEMIC_INTEREST_2_0,data_nan_478) into DataOfDataField
+ !create data_nan_648:Data
+ !data_nan_648.value:='nan'
+!data_nan_648.index:=82
+!insert(ACADEMIC_INTEREST_2_0,data_nan_648) into DataOfDataField
+ !create data_nan_280:Data
+ !data_nan_280.value:='nan'
+!data_nan_280.index:=83
+!insert(ACADEMIC_INTEREST_2_0,data_nan_280) into DataOfDataField
+ !create data_nan_769:Data
+ !data_nan_769.value:='nan'
+!data_nan_769.index:=84
+!insert(ACADEMIC_INTEREST_2_0,data_nan_769) into DataOfDataField
+ !create data_nan_357:Data
+ !data_nan_357.value:='nan'
+!data_nan_357.index:=85
+!insert(ACADEMIC_INTEREST_2_0,data_nan_357) into DataOfDataField
+ !create data_nan_1417:Data
+ !data_nan_1417.value:='nan'
+!data_nan_1417.index:=86
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1417) into DataOfDataField
+ !create data_nan_489:Data
+ !data_nan_489.value:='nan'
+!data_nan_489.index:=87
+!insert(ACADEMIC_INTEREST_2_0,data_nan_489) into DataOfDataField
+ !create data_nan_1114:Data
+ !data_nan_1114.value:='nan'
+!data_nan_1114.index:=88
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1114) into DataOfDataField
+ !create data_nan_1070:Data
+ !data_nan_1070.value:='nan'
+!data_nan_1070.index:=89
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1070) into DataOfDataField
+ !create data_nan_1302:Data
+ !data_nan_1302.value:='nan'
+!data_nan_1302.index:=90
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1302) into DataOfDataField
+ !create data_nan_1073:Data
+ !data_nan_1073.value:='nan'
+!data_nan_1073.index:=91
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1073) into DataOfDataField
+ !create data_nan_3:Data
+ !data_nan_3.value:='nan'
+!data_nan_3.index:=92
+!insert(ACADEMIC_INTEREST_2_0,data_nan_3) into DataOfDataField
+ !create data_nan_872:Data
+ !data_nan_872.value:='nan'
+!data_nan_872.index:=93
+!insert(ACADEMIC_INTEREST_2_0,data_nan_872) into DataOfDataField
+ !create data_nan_307:Data
+ !data_nan_307.value:='nan'
+!data_nan_307.index:=94
+!insert(ACADEMIC_INTEREST_2_0,data_nan_307) into DataOfDataField
+ !create data_nan_1198:Data
+ !data_nan_1198.value:='nan'
+!data_nan_1198.index:=95
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1198) into DataOfDataField
+ !create data_nan_1494:Data
+ !data_nan_1494.value:='nan'
+!data_nan_1494.index:=96
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1494) into DataOfDataField
+ !create data_nan_12:Data
+ !data_nan_12.value:='nan'
+!data_nan_12.index:=97
+!insert(ACADEMIC_INTEREST_2_0,data_nan_12) into DataOfDataField
+ !create data_nan_888:Data
+ !data_nan_888.value:='nan'
+!data_nan_888.index:=98
+!insert(ACADEMIC_INTEREST_2_0,data_nan_888) into DataOfDataField
+ !create data_BUAD_0:Data
+ !data_BUAD_0.value:='BUAD'
+!data_BUAD_0.index:=99
+!insert(ACADEMIC_INTEREST_2_0,data_BUAD_0) into DataOfDataField
+ !create data_nan_1452:Data
+ !data_nan_1452.value:='nan'
+!data_nan_1452.index:=100
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1452) into DataOfDataField
+ !create data_nan_1271:Data
+ !data_nan_1271.value:='nan'
+!data_nan_1271.index:=101
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1271) into DataOfDataField
+ !create data_LAW_0:Data
+ !data_LAW_0.value:='LAW'
+!data_LAW_0.index:=102
+!insert(ACADEMIC_INTEREST_2_0,data_LAW_0) into DataOfDataField
+ !create data_PEDU_0:Data
+ !data_PEDU_0.value:='PEDU'
+!data_PEDU_0.index:=103
+!insert(ACADEMIC_INTEREST_2_0,data_PEDU_0) into DataOfDataField
+ !create data_CHO_0:Data
+ !data_CHO_0.value:='CHO'
+!data_CHO_0.index:=104
+!insert(ACADEMIC_INTEREST_2_0,data_CHO_0) into DataOfDataField
+ !create data_CFS_0:Data
+ !data_CFS_0.value:='CFS'
+!data_CFS_0.index:=105
+!insert(ACADEMIC_INTEREST_2_0,data_CFS_0) into DataOfDataField
+ !create data_nan_1125:Data
+ !data_nan_1125.value:='nan'
+!data_nan_1125.index:=106
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1125) into DataOfDataField
+ !create data_nan_376:Data
+ !data_nan_376.value:='nan'
+!data_nan_376.index:=107
+!insert(ACADEMIC_INTEREST_2_0,data_nan_376) into DataOfDataField
+ !create data_nan_1256:Data
+ !data_nan_1256.value:='nan'
+!data_nan_1256.index:=108
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1256) into DataOfDataField
+ !create data_nan_15:Data
+ !data_nan_15.value:='nan'
+!data_nan_15.index:=109
+!insert(ACADEMIC_INTEREST_2_0,data_nan_15) into DataOfDataField
+ !create data_nan_349:Data
+ !data_nan_349.value:='nan'
+!data_nan_349.index:=110
+!insert(ACADEMIC_INTEREST_2_0,data_nan_349) into DataOfDataField
+ !create data_nan_267:Data
+ !data_nan_267.value:='nan'
+!data_nan_267.index:=111
+!insert(ACADEMIC_INTEREST_2_0,data_nan_267) into DataOfDataField
+ !create data_MED_0:Data
+ !data_MED_0.value:='MED'
+!data_MED_0.index:=112
+!insert(ACADEMIC_INTEREST_2_0,data_MED_0) into DataOfDataField
+ !create data_nan_444:Data
+ !data_nan_444.value:='nan'
+!data_nan_444.index:=113
+!insert(ACADEMIC_INTEREST_2_0,data_nan_444) into DataOfDataField
+ !create data_LAW_790:Data
+ !data_LAW_790.value:='LAW'
+!data_LAW_790.index:=114
+!insert(ACADEMIC_INTEREST_2_0,data_LAW_790) into DataOfDataField
+ !create data_nan_701:Data
+ !data_nan_701.value:='nan'
+!data_nan_701.index:=115
+!insert(ACADEMIC_INTEREST_2_0,data_nan_701) into DataOfDataField
+ !create data_nan_1502:Data
+ !data_nan_1502.value:='nan'
+!data_nan_1502.index:=116
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1502) into DataOfDataField
+ !create data_nan_7:Data
+ !data_nan_7.value:='nan'
+!data_nan_7.index:=117
+!insert(ACADEMIC_INTEREST_2_0,data_nan_7) into DataOfDataField
+ !create data_nan_513:Data
+ !data_nan_513.value:='nan'
+!data_nan_513.index:=118
+!insert(ACADEMIC_INTEREST_2_0,data_nan_513) into DataOfDataField
+ !create data_nan_612:Data
+ !data_nan_612.value:='nan'
+!data_nan_612.index:=119
+!insert(ACADEMIC_INTEREST_2_0,data_nan_612) into DataOfDataField
+ !create data_nan_118:Data
+ !data_nan_118.value:='nan'
+!data_nan_118.index:=120
+!insert(ACADEMIC_INTEREST_2_0,data_nan_118) into DataOfDataField
+ !create data_nan_970:Data
+ !data_nan_970.value:='nan'
+!data_nan_970.index:=121
+!insert(ACADEMIC_INTEREST_2_0,data_nan_970) into DataOfDataField
+ !create data_nan_333:Data
+ !data_nan_333.value:='nan'
+!data_nan_333.index:=122
+!insert(ACADEMIC_INTEREST_2_0,data_nan_333) into DataOfDataField
+ !create data_nan_727:Data
+ !data_nan_727.value:='nan'
+!data_nan_727.index:=123
+!insert(ACADEMIC_INTEREST_2_0,data_nan_727) into DataOfDataField
+ !create data_HIS_0:Data
+ !data_HIS_0.value:='HIS'
+!data_HIS_0.index:=124
+!insert(ACADEMIC_INTEREST_2_0,data_HIS_0) into DataOfDataField
+ !create data_nan_630:Data
+ !data_nan_630.value:='nan'
+!data_nan_630.index:=125
+!insert(ACADEMIC_INTEREST_2_0,data_nan_630) into DataOfDataField
+ !create data_nan_1533:Data
+ !data_nan_1533.value:='nan'
+!data_nan_1533.index:=126
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1533) into DataOfDataField
+ !create data_ACC_0:Data
+ !data_ACC_0.value:='ACC'
+!data_ACC_0.index:=127
+!insert(ACADEMIC_INTEREST_2_0,data_ACC_0) into DataOfDataField
+ !create data_nan_20:Data
+ !data_nan_20.value:='nan'
+!data_nan_20.index:=128
+!insert(ACADEMIC_INTEREST_2_0,data_nan_20) into DataOfDataField
+ !create data_nan_1242:Data
+ !data_nan_1242.value:='nan'
+!data_nan_1242.index:=129
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1242) into DataOfDataField
+ !create data_MTH_0:Data
+ !data_MTH_0.value:='MTH'
+!data_MTH_0.index:=130
+!insert(ACADEMIC_INTEREST_2_0,data_MTH_0) into DataOfDataField
+ !create data_nan_1517:Data
+ !data_nan_1517.value:='nan'
+!data_nan_1517.index:=131
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1517) into DataOfDataField
+ !create data_EDU_805:Data
+ !data_EDU_805.value:='EDU'
+!data_EDU_805.index:=132
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_805) into DataOfDataField
+ !create data_nan_471:Data
+ !data_nan_471.value:='nan'
+!data_nan_471.index:=133
+!insert(ACADEMIC_INTEREST_2_0,data_nan_471) into DataOfDataField
+ !create data_nan_442:Data
+ !data_nan_442.value:='nan'
+!data_nan_442.index:=134
+!insert(ACADEMIC_INTEREST_2_0,data_nan_442) into DataOfDataField
+ !create data_nan_794:Data
+ !data_nan_794.value:='nan'
+!data_nan_794.index:=135
+!insert(ACADEMIC_INTEREST_2_0,data_nan_794) into DataOfDataField
+ !create data_FD_0:Data
+ !data_FD_0.value:='FD'
+!data_FD_0.index:=136
+!insert(ACADEMIC_INTEREST_2_0,data_FD_0) into DataOfDataField
+ !create data_MKT_0:Data
+ !data_MKT_0.value:='MKT'
+!data_MKT_0.index:=137
+!insert(ACADEMIC_INTEREST_2_0,data_MKT_0) into DataOfDataField
+ !create data_nan_245:Data
+ !data_nan_245.value:='nan'
+!data_nan_245.index:=138
+!insert(ACADEMIC_INTEREST_2_0,data_nan_245) into DataOfDataField
+ !create data_nan_1416:Data
+ !data_nan_1416.value:='nan'
+!data_nan_1416.index:=139
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1416) into DataOfDataField
+ !create data_nan_200:Data
+ !data_nan_200.value:='nan'
+!data_nan_200.index:=140
+!insert(ACADEMIC_INTEREST_2_0,data_nan_200) into DataOfDataField
+ !create data_nan_485:Data
+ !data_nan_485.value:='nan'
+!data_nan_485.index:=141
+!insert(ACADEMIC_INTEREST_2_0,data_nan_485) into DataOfDataField
+ !create data_nan_90:Data
+ !data_nan_90.value:='nan'
+!data_nan_90.index:=142
+!insert(ACADEMIC_INTEREST_2_0,data_nan_90) into DataOfDataField
+ !create data_nan_939:Data
+ !data_nan_939.value:='nan'
+!data_nan_939.index:=143
+!insert(ACADEMIC_INTEREST_2_0,data_nan_939) into DataOfDataField
+ !create data_BUS_506:Data
+ !data_BUS_506.value:='BUS'
+!data_BUS_506.index:=144
+!insert(ACADEMIC_INTEREST_2_0,data_BUS_506) into DataOfDataField
+ !create data_nan_1240:Data
+ !data_nan_1240.value:='nan'
+!data_nan_1240.index:=145
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1240) into DataOfDataField
+ !create data_nan_1317:Data
+ !data_nan_1317.value:='nan'
+!data_nan_1317.index:=146
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1317) into DataOfDataField
+ !create data_nan_567:Data
+ !data_nan_567.value:='nan'
+!data_nan_567.index:=147
+!insert(ACADEMIC_INTEREST_2_0,data_nan_567) into DataOfDataField
+ !create data_nan_1419:Data
+ !data_nan_1419.value:='nan'
+!data_nan_1419.index:=148
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1419) into DataOfDataField
+ !create data_nan_236:Data
+ !data_nan_236.value:='nan'
+!data_nan_236.index:=149
+!insert(ACADEMIC_INTEREST_2_0,data_nan_236) into DataOfDataField
+ !create data_nan_1453:Data
+ !data_nan_1453.value:='nan'
+!data_nan_1453.index:=150
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1453) into DataOfDataField
+ !create data_nan_627:Data
+ !data_nan_627.value:='nan'
+!data_nan_627.index:=151
+!insert(ACADEMIC_INTEREST_2_0,data_nan_627) into DataOfDataField
+ !create data_nan_944:Data
+ !data_nan_944.value:='nan'
+!data_nan_944.index:=152
+!insert(ACADEMIC_INTEREST_2_0,data_nan_944) into DataOfDataField
+ !create data_nan_140:Data
+ !data_nan_140.value:='nan'
+!data_nan_140.index:=153
+!insert(ACADEMIC_INTEREST_2_0,data_nan_140) into DataOfDataField
+ !create data_nan_1224:Data
+ !data_nan_1224.value:='nan'
+!data_nan_1224.index:=154
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1224) into DataOfDataField
+ !create data_SPA_0:Data
+ !data_SPA_0.value:='SPA'
+!data_SPA_0.index:=155
+!insert(ACADEMIC_INTEREST_2_0,data_SPA_0) into DataOfDataField
+ !create data_nan_564:Data
+ !data_nan_564.value:='nan'
+!data_nan_564.index:=156
+!insert(ACADEMIC_INTEREST_2_0,data_nan_564) into DataOfDataField
+ !create data_nan_122:Data
+ !data_nan_122.value:='nan'
+!data_nan_122.index:=157
+!insert(ACADEMIC_INTEREST_2_0,data_nan_122) into DataOfDataField
+ !create data_nan_641:Data
+ !data_nan_641.value:='nan'
+!data_nan_641.index:=158
+!insert(ACADEMIC_INTEREST_2_0,data_nan_641) into DataOfDataField
+ !create data_LAW_562:Data
+ !data_LAW_562.value:='LAW'
+!data_LAW_562.index:=159
+!insert(ACADEMIC_INTEREST_2_0,data_LAW_562) into DataOfDataField
+ !create data_nan_1509:Data
+ !data_nan_1509.value:='nan'
+!data_nan_1509.index:=160
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1509) into DataOfDataField
+ !create data_nan_412:Data
+ !data_nan_412.value:='nan'
+!data_nan_412.index:=161
+!insert(ACADEMIC_INTEREST_2_0,data_nan_412) into DataOfDataField
+ !create data_nan_457:Data
+ !data_nan_457.value:='nan'
+!data_nan_457.index:=162
+!insert(ACADEMIC_INTEREST_2_0,data_nan_457) into DataOfDataField
+ !create data_nan_1027:Data
+ !data_nan_1027.value:='nan'
+!data_nan_1027.index:=163
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1027) into DataOfDataField
+ !create data_nan_924:Data
+ !data_nan_924.value:='nan'
+!data_nan_924.index:=164
+!insert(ACADEMIC_INTEREST_2_0,data_nan_924) into DataOfDataField
+ !create data_nan_1087:Data
+ !data_nan_1087.value:='nan'
+!data_nan_1087.index:=165
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1087) into DataOfDataField
+ !create data_nan_593:Data
+ !data_nan_593.value:='nan'
+!data_nan_593.index:=166
+!insert(ACADEMIC_INTEREST_2_0,data_nan_593) into DataOfDataField
+ !create data_MED_28:Data
+ !data_MED_28.value:='MED'
+!data_MED_28.index:=167
+!insert(ACADEMIC_INTEREST_2_0,data_MED_28) into DataOfDataField
+ !create data_EGR_711:Data
+ !data_EGR_711.value:='EGR'
+!data_EGR_711.index:=168
+!insert(ACADEMIC_INTEREST_2_0,data_EGR_711) into DataOfDataField
+ !create data_MUS_0:Data
+ !data_MUS_0.value:='MUS'
+!data_MUS_0.index:=169
+!insert(ACADEMIC_INTEREST_2_0,data_MUS_0) into DataOfDataField
+ !create data_nan_1209:Data
+ !data_nan_1209.value:='nan'
+!data_nan_1209.index:=170
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1209) into DataOfDataField
+ !create data_EGR_394:Data
+ !data_EGR_394.value:='EGR'
+!data_EGR_394.index:=171
+!insert(ACADEMIC_INTEREST_2_0,data_EGR_394) into DataOfDataField
+ !create data_nan_117:Data
+ !data_nan_117.value:='nan'
+!data_nan_117.index:=172
+!insert(ACADEMIC_INTEREST_2_0,data_nan_117) into DataOfDataField
+ !create data_ART_74:Data
+ !data_ART_74.value:='ART'
+!data_ART_74.index:=173
+!insert(ACADEMIC_INTEREST_2_0,data_ART_74) into DataOfDataField
+ !create data_nan_259:Data
+ !data_nan_259.value:='nan'
+!data_nan_259.index:=174
+!insert(ACADEMIC_INTEREST_2_0,data_nan_259) into DataOfDataField
+ !create data_PSY_0:Data
+ !data_PSY_0.value:='PSY'
+!data_PSY_0.index:=175
+!insert(ACADEMIC_INTEREST_2_0,data_PSY_0) into DataOfDataField
+ !create data_EDU_58:Data
+ !data_EDU_58.value:='EDU'
+!data_EDU_58.index:=176
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_58) into DataOfDataField
+ !create data_ELC_283:Data
+ !data_ELC_283.value:='ELC'
+!data_ELC_283.index:=177
+!insert(ACADEMIC_INTEREST_2_0,data_ELC_283) into DataOfDataField
+ !create data_nan_72:Data
+ !data_nan_72.value:='nan'
+!data_nan_72.index:=178
+!insert(ACADEMIC_INTEREST_2_0,data_nan_72) into DataOfDataField
+ !create data_nan_752:Data
+ !data_nan_752.value:='nan'
+!data_nan_752.index:=179
+!insert(ACADEMIC_INTEREST_2_0,data_nan_752) into DataOfDataField
+ !create data_SPA_910:Data
+ !data_SPA_910.value:='SPA'
+!data_SPA_910.index:=180
+!insert(ACADEMIC_INTEREST_2_0,data_SPA_910) into DataOfDataField
+ !create data_nan_549:Data
+ !data_nan_549.value:='nan'
+!data_nan_549.index:=181
+!insert(ACADEMIC_INTEREST_2_0,data_nan_549) into DataOfDataField
+ !create data_nan_110:Data
+ !data_nan_110.value:='nan'
+!data_nan_110.index:=182
+!insert(ACADEMIC_INTEREST_2_0,data_nan_110) into DataOfDataField
+ !create data_nan_1373:Data
+ !data_nan_1373.value:='nan'
+!data_nan_1373.index:=183
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1373) into DataOfDataField
+ !create data_nan_1250:Data
+ !data_nan_1250.value:='nan'
+!data_nan_1250.index:=184
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1250) into DataOfDataField
+ !create data_nan_1313:Data
+ !data_nan_1313.value:='nan'
+!data_nan_1313.index:=185
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1313) into DataOfDataField
+ !create data_nan_1378:Data
+ !data_nan_1378.value:='nan'
+!data_nan_1378.index:=186
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1378) into DataOfDataField
+ !create data_nan_133:Data
+ !data_nan_133.value:='nan'
+!data_nan_133.index:=187
+!insert(ACADEMIC_INTEREST_2_0,data_nan_133) into DataOfDataField
+ !create data_nan_189:Data
+ !data_nan_189.value:='nan'
+!data_nan_189.index:=188
+!insert(ACADEMIC_INTEREST_2_0,data_nan_189) into DataOfDataField
+ !create data_nan_1316:Data
+ !data_nan_1316.value:='nan'
+!data_nan_1316.index:=189
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1316) into DataOfDataField
+ !create data_nan_178:Data
+ !data_nan_178.value:='nan'
+!data_nan_178.index:=190
+!insert(ACADEMIC_INTEREST_2_0,data_nan_178) into DataOfDataField
+ !create data_nan_1383:Data
+ !data_nan_1383.value:='nan'
+!data_nan_1383.index:=191
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1383) into DataOfDataField
+ !create data_nan_1112:Data
+ !data_nan_1112.value:='nan'
+!data_nan_1112.index:=192
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1112) into DataOfDataField
+ !create data_nan_1186:Data
+ !data_nan_1186.value:='nan'
+!data_nan_1186.index:=193
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1186) into DataOfDataField
+ !create data_nan_725:Data
+ !data_nan_725.value:='nan'
+!data_nan_725.index:=194
+!insert(ACADEMIC_INTEREST_2_0,data_nan_725) into DataOfDataField
+ !create data_nan_948:Data
+ !data_nan_948.value:='nan'
+!data_nan_948.index:=195
+!insert(ACADEMIC_INTEREST_2_0,data_nan_948) into DataOfDataField
+ !create data_nan_566:Data
+ !data_nan_566.value:='nan'
+!data_nan_566.index:=196
+!insert(ACADEMIC_INTEREST_2_0,data_nan_566) into DataOfDataField
+ !create data_nan_252:Data
+ !data_nan_252.value:='nan'
+!data_nan_252.index:=197
+!insert(ACADEMIC_INTEREST_2_0,data_nan_252) into DataOfDataField
+ !create data_nan_1108:Data
+ !data_nan_1108.value:='nan'
+!data_nan_1108.index:=198
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1108) into DataOfDataField
+ !create data_nan_816:Data
+ !data_nan_816.value:='nan'
+!data_nan_816.index:=199
+!insert(ACADEMIC_INTEREST_2_0,data_nan_816) into DataOfDataField
+ !create data_nan_785:Data
+ !data_nan_785.value:='nan'
+!data_nan_785.index:=200
+!insert(ACADEMIC_INTEREST_2_0,data_nan_785) into DataOfDataField
+ !create data_nan_1503:Data
+ !data_nan_1503.value:='nan'
+!data_nan_1503.index:=201
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1503) into DataOfDataField
+ !create data_nan_851:Data
+ !data_nan_851.value:='nan'
+!data_nan_851.index:=202
+!insert(ACADEMIC_INTEREST_2_0,data_nan_851) into DataOfDataField
+ !create data_nan_992:Data
+ !data_nan_992.value:='nan'
+!data_nan_992.index:=203
+!insert(ACADEMIC_INTEREST_2_0,data_nan_992) into DataOfDataField
+ !create data_nan_1364:Data
+ !data_nan_1364.value:='nan'
+!data_nan_1364.index:=204
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1364) into DataOfDataField
+ !create data_nan_318:Data
+ !data_nan_318.value:='nan'
+!data_nan_318.index:=205
+!insert(ACADEMIC_INTEREST_2_0,data_nan_318) into DataOfDataField
+ !create data_CREC_0:Data
+ !data_CREC_0.value:='CREC'
+!data_CREC_0.index:=206
+!insert(ACADEMIC_INTEREST_2_0,data_CREC_0) into DataOfDataField
+ !create data_nan_483:Data
+ !data_nan_483.value:='nan'
+!data_nan_483.index:=207
+!insert(ACADEMIC_INTEREST_2_0,data_nan_483) into DataOfDataField
+ !create data_nan_1396:Data
+ !data_nan_1396.value:='nan'
+!data_nan_1396.index:=208
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1396) into DataOfDataField
+ !create data_nan_187:Data
+ !data_nan_187.value:='nan'
+!data_nan_187.index:=209
+!insert(ACADEMIC_INTEREST_2_0,data_nan_187) into DataOfDataField
+ !create data_nan_1273:Data
+ !data_nan_1273.value:='nan'
+!data_nan_1273.index:=210
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1273) into DataOfDataField
+ !create data_nan_152:Data
+ !data_nan_152.value:='nan'
+!data_nan_152.index:=211
+!insert(ACADEMIC_INTEREST_2_0,data_nan_152) into DataOfDataField
+ !create data_nan_227:Data
+ !data_nan_227.value:='nan'
+!data_nan_227.index:=212
+!insert(ACADEMIC_INTEREST_2_0,data_nan_227) into DataOfDataField
+ !create data_nan_985:Data
+ !data_nan_985.value:='nan'
+!data_nan_985.index:=213
+!insert(ACADEMIC_INTEREST_2_0,data_nan_985) into DataOfDataField
+ !create data_nan_325:Data
+ !data_nan_325.value:='nan'
+!data_nan_325.index:=214
+!insert(ACADEMIC_INTEREST_2_0,data_nan_325) into DataOfDataField
+ !create data_nan_1538:Data
+ !data_nan_1538.value:='nan'
+!data_nan_1538.index:=215
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1538) into DataOfDataField
+ !create data_nan_417:Data
+ !data_nan_417.value:='nan'
+!data_nan_417.index:=216
+!insert(ACADEMIC_INTEREST_2_0,data_nan_417) into DataOfDataField
+ !create data_nan_750:Data
+ !data_nan_750.value:='nan'
+!data_nan_750.index:=217
+!insert(ACADEMIC_INTEREST_2_0,data_nan_750) into DataOfDataField
+ !create data_nan_1155:Data
+ !data_nan_1155.value:='nan'
+!data_nan_1155.index:=218
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1155) into DataOfDataField
+ !create data_nan_248:Data
+ !data_nan_248.value:='nan'
+!data_nan_248.index:=219
+!insert(ACADEMIC_INTEREST_2_0,data_nan_248) into DataOfDataField
+ !create data_nan_570:Data
+ !data_nan_570.value:='nan'
+!data_nan_570.index:=220
+!insert(ACADEMIC_INTEREST_2_0,data_nan_570) into DataOfDataField
+ !create data_nan_1446:Data
+ !data_nan_1446.value:='nan'
+!data_nan_1446.index:=221
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1446) into DataOfDataField
+ !create data_nan_298:Data
+ !data_nan_298.value:='nan'
+!data_nan_298.index:=222
+!insert(ACADEMIC_INTEREST_2_0,data_nan_298) into DataOfDataField
+ !create data_CREC_1187:Data
+ !data_CREC_1187.value:='CREC'
+!data_CREC_1187.index:=223
+!insert(ACADEMIC_INTEREST_2_0,data_CREC_1187) into DataOfDataField
+ !create data_nan_1102:Data
+ !data_nan_1102.value:='nan'
+!data_nan_1102.index:=224
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1102) into DataOfDataField
+ !create data_nan_420:Data
+ !data_nan_420.value:='nan'
+!data_nan_420.index:=225
+!insert(ACADEMIC_INTEREST_2_0,data_nan_420) into DataOfDataField
+ !create data_ENT_0:Data
+ !data_ENT_0.value:='ENT'
+!data_ENT_0.index:=226
+!insert(ACADEMIC_INTEREST_2_0,data_ENT_0) into DataOfDataField
+ !create data_ID_0:Data
+ !data_ID_0.value:='ID'
+!data_ID_0.index:=227
+!insert(ACADEMIC_INTEREST_2_0,data_ID_0) into DataOfDataField
+ !create data_MTH_264:Data
+ !data_MTH_264.value:='MTH'
+!data_MTH_264.index:=228
+!insert(ACADEMIC_INTEREST_2_0,data_MTH_264) into DataOfDataField
+ !create data_nan_925:Data
+ !data_nan_925.value:='nan'
+!data_nan_925.index:=229
+!insert(ACADEMIC_INTEREST_2_0,data_nan_925) into DataOfDataField
+ !create data_nan_658:Data
+ !data_nan_658.value:='nan'
+!data_nan_658.index:=230
+!insert(ACADEMIC_INTEREST_2_0,data_nan_658) into DataOfDataField
+ !create data_nan_1132:Data
+ !data_nan_1132.value:='nan'
+!data_nan_1132.index:=231
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1132) into DataOfDataField
+ !create data_nan_1310:Data
+ !data_nan_1310.value:='nan'
+!data_nan_1310.index:=232
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1310) into DataOfDataField
+ !create data_nan_1097:Data
+ !data_nan_1097.value:='nan'
+!data_nan_1097.index:=233
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1097) into DataOfDataField
+ !create data_nan_425:Data
+ !data_nan_425.value:='nan'
+!data_nan_425.index:=234
+!insert(ACADEMIC_INTEREST_2_0,data_nan_425) into DataOfDataField
+ !create data_BUBR_0:Data
+ !data_BUBR_0.value:='BUBR'
+!data_BUBR_0.index:=235
+!insert(ACADEMIC_INTEREST_2_0,data_BUBR_0) into DataOfDataField
+ !create data_nan_1488:Data
+ !data_nan_1488.value:='nan'
+!data_nan_1488.index:=236
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1488) into DataOfDataField
+ !create data_nan_717:Data
+ !data_nan_717.value:='nan'
+!data_nan_717.index:=237
+!insert(ACADEMIC_INTEREST_2_0,data_nan_717) into DataOfDataField
+ !create data_nan_830:Data
+ !data_nan_830.value:='nan'
+!data_nan_830.index:=238
+!insert(ACADEMIC_INTEREST_2_0,data_nan_830) into DataOfDataField
+ !create data_nan_400:Data
+ !data_nan_400.value:='nan'
+!data_nan_400.index:=239
+!insert(ACADEMIC_INTEREST_2_0,data_nan_400) into DataOfDataField
+ !create data_nan_1039:Data
+ !data_nan_1039.value:='nan'
+!data_nan_1039.index:=240
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1039) into DataOfDataField
+ !create data_nan_556:Data
+ !data_nan_556.value:='nan'
+!data_nan_556.index:=241
+!insert(ACADEMIC_INTEREST_2_0,data_nan_556) into DataOfDataField
+ !create data_LAW_140:Data
+ !data_LAW_140.value:='LAW'
+!data_LAW_140.index:=242
+!insert(ACADEMIC_INTEREST_2_0,data_LAW_140) into DataOfDataField
+ !create data_nan_222:Data
+ !data_nan_222.value:='nan'
+!data_nan_222.index:=243
+!insert(ACADEMIC_INTEREST_2_0,data_nan_222) into DataOfDataField
+ !create data_nan_258:Data
+ !data_nan_258.value:='nan'
+!data_nan_258.index:=244
+!insert(ACADEMIC_INTEREST_2_0,data_nan_258) into DataOfDataField
+ !create data_nan_1165:Data
+ !data_nan_1165.value:='nan'
+!data_nan_1165.index:=245
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1165) into DataOfDataField
+ !create data_nan_518:Data
+ !data_nan_518.value:='nan'
+!data_nan_518.index:=246
+!insert(ACADEMIC_INTEREST_2_0,data_nan_518) into DataOfDataField
+ !create data_nan_1388:Data
+ !data_nan_1388.value:='nan'
+!data_nan_1388.index:=247
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1388) into DataOfDataField
+ !create data_nan_691:Data
+ !data_nan_691.value:='nan'
+!data_nan_691.index:=248
+!insert(ACADEMIC_INTEREST_2_0,data_nan_691) into DataOfDataField
+ !create data_nan_1438:Data
+ !data_nan_1438.value:='nan'
+!data_nan_1438.index:=249
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1438) into DataOfDataField
+ !create data_FM_0:Data
+ !data_FM_0.value:='FM'
+!data_FM_0.index:=250
+!insert(ACADEMIC_INTEREST_2_0,data_FM_0) into DataOfDataField
+ !create data_MED_1106:Data
+ !data_MED_1106.value:='MED'
+!data_MED_1106.index:=251
+!insert(ACADEMIC_INTEREST_2_0,data_MED_1106) into DataOfDataField
+ !create data_EDU_134:Data
+ !data_EDU_134.value:='EDU'
+!data_EDU_134.index:=252
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_134) into DataOfDataField
+ !create data_REL_826:Data
+ !data_REL_826.value:='REL'
+!data_REL_826.index:=253
+!insert(ACADEMIC_INTEREST_2_0,data_REL_826) into DataOfDataField
+ !create data_nan_98:Data
+ !data_nan_98.value:='nan'
+!data_nan_98.index:=254
+!insert(ACADEMIC_INTEREST_2_0,data_nan_98) into DataOfDataField
+ !create data_EBIO_0:Data
+ !data_EBIO_0.value:='EBIO'
+!data_EBIO_0.index:=255
+!insert(ACADEMIC_INTEREST_2_0,data_EBIO_0) into DataOfDataField
+ !create data_PSC_0:Data
+ !data_PSC_0.value:='PSC'
+!data_PSC_0.index:=256
+!insert(ACADEMIC_INTEREST_2_0,data_PSC_0) into DataOfDataField
+ !create data_nan_150:Data
+ !data_nan_150.value:='nan'
+!data_nan_150.index:=257
+!insert(ACADEMIC_INTEREST_2_0,data_nan_150) into DataOfDataField
+ !create data_nan_1058:Data
+ !data_nan_1058.value:='nan'
+!data_nan_1058.index:=258
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1058) into DataOfDataField
+ !create data_MED_902:Data
+ !data_MED_902.value:='MED'
+!data_MED_902.index:=259
+!insert(ACADEMIC_INTEREST_2_0,data_MED_902) into DataOfDataField
+ !create data_nan_892:Data
+ !data_nan_892.value:='nan'
+!data_nan_892.index:=260
+!insert(ACADEMIC_INTEREST_2_0,data_nan_892) into DataOfDataField
+ !create data_nan_220:Data
+ !data_nan_220.value:='nan'
+!data_nan_220.index:=261
+!insert(ACADEMIC_INTEREST_2_0,data_nan_220) into DataOfDataField
+ !create data_nan_862:Data
+ !data_nan_862.value:='nan'
+!data_nan_862.index:=262
+!insert(ACADEMIC_INTEREST_2_0,data_nan_862) into DataOfDataField
+ !create data_MED_178:Data
+ !data_MED_178.value:='MED'
+!data_MED_178.index:=263
+!insert(ACADEMIC_INTEREST_2_0,data_MED_178) into DataOfDataField
+ !create data_EDU_1148:Data
+ !data_EDU_1148.value:='EDU'
+!data_EDU_1148.index:=264
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_1148) into DataOfDataField
+ !create data_nan_1490:Data
+ !data_nan_1490.value:='nan'
+!data_nan_1490.index:=265
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1490) into DataOfDataField
+ !create data_MUS_281:Data
+ !data_MUS_281.value:='MUS'
+!data_MUS_281.index:=266
+!insert(ACADEMIC_INTEREST_2_0,data_MUS_281) into DataOfDataField
+ !create data_nan_818:Data
+ !data_nan_818.value:='nan'
+!data_nan_818.index:=267
+!insert(ACADEMIC_INTEREST_2_0,data_nan_818) into DataOfDataField
+ !create data_PSC_774:Data
+ !data_PSC_774.value:='PSC'
+!data_PSC_774.index:=268
+!insert(ACADEMIC_INTEREST_2_0,data_PSC_774) into DataOfDataField
+ !create data_ID_1162:Data
+ !data_ID_1162.value:='ID'
+!data_ID_1162.index:=269
+!insert(ACADEMIC_INTEREST_2_0,data_ID_1162) into DataOfDataField
+ !create data_nan_737:Data
+ !data_nan_737.value:='nan'
+!data_nan_737.index:=270
+!insert(ACADEMIC_INTEREST_2_0,data_nan_737) into DataOfDataField
+ !create data_ENV_0:Data
+ !data_ENV_0.value:='ENV'
+!data_ENV_0.index:=271
+!insert(ACADEMIC_INTEREST_2_0,data_ENV_0) into DataOfDataField
+ !create data_nan_748:Data
+ !data_nan_748.value:='nan'
+!data_nan_748.index:=272
+!insert(ACADEMIC_INTEREST_2_0,data_nan_748) into DataOfDataField
+ !create data_PSC_1032:Data
+ !data_PSC_1032.value:='PSC'
+!data_PSC_1032.index:=273
+!insert(ACADEMIC_INTEREST_2_0,data_PSC_1032) into DataOfDataField
+ !create data_nan_247:Data
+ !data_nan_247.value:='nan'
+!data_nan_247.index:=274
+!insert(ACADEMIC_INTEREST_2_0,data_nan_247) into DataOfDataField
+ !create data_nan_88:Data
+ !data_nan_88.value:='nan'
+!data_nan_88.index:=275
+!insert(ACADEMIC_INTEREST_2_0,data_nan_88) into DataOfDataField
+ !create data_nan_671:Data
+ !data_nan_671.value:='nan'
+!data_nan_671.index:=276
+!insert(ACADEMIC_INTEREST_2_0,data_nan_671) into DataOfDataField
+ !create data_nan_1220:Data
+ !data_nan_1220.value:='nan'
+!data_nan_1220.index:=277
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1220) into DataOfDataField
+ !create data_PPHR_0:Data
+ !data_PPHR_0.value:='PPHR'
+!data_PPHR_0.index:=278
+!insert(ACADEMIC_INTEREST_2_0,data_PPHR_0) into DataOfDataField
+ !create data_nan_114:Data
+ !data_nan_114.value:='nan'
+!data_nan_114.index:=279
+!insert(ACADEMIC_INTEREST_2_0,data_nan_114) into DataOfDataField
+ !create data_NUR_0:Data
+ !data_NUR_0.value:='NUR'
+!data_NUR_0.index:=280
+!insert(ACADEMIC_INTEREST_2_0,data_NUR_0) into DataOfDataField
+ !create data_nan_1076:Data
+ !data_nan_1076.value:='nan'
+!data_nan_1076.index:=281
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1076) into DataOfDataField
+ !create data_SCI_0:Data
+ !data_SCI_0.value:='SCI'
+!data_SCI_0.index:=282
+!insert(ACADEMIC_INTEREST_2_0,data_SCI_0) into DataOfDataField
+ !create data_SCI_257:Data
+ !data_SCI_257.value:='SCI'
+!data_SCI_257.index:=283
+!insert(ACADEMIC_INTEREST_2_0,data_SCI_257) into DataOfDataField
+ !create data_MKT_1215:Data
+ !data_MKT_1215.value:='MKT'
+!data_MKT_1215.index:=284
+!insert(ACADEMIC_INTEREST_2_0,data_MKT_1215) into DataOfDataField
+ !create data_nan_705:Data
+ !data_nan_705.value:='nan'
+!data_nan_705.index:=285
+!insert(ACADEMIC_INTEREST_2_0,data_nan_705) into DataOfDataField
+ !create data_nan_322:Data
+ !data_nan_322.value:='nan'
+!data_nan_322.index:=286
+!insert(ACADEMIC_INTEREST_2_0,data_nan_322) into DataOfDataField
+ !create data_PSC_67:Data
+ !data_PSC_67.value:='PSC'
+!data_PSC_67.index:=287
+!insert(ACADEMIC_INTEREST_2_0,data_PSC_67) into DataOfDataField
+ !create data_CFS_511:Data
+ !data_CFS_511.value:='CFS'
+!data_CFS_511.index:=288
+!insert(ACADEMIC_INTEREST_2_0,data_CFS_511) into DataOfDataField
+ !create data_nan_550:Data
+ !data_nan_550.value:='nan'
+!data_nan_550.index:=289
+!insert(ACADEMIC_INTEREST_2_0,data_nan_550) into DataOfDataField
+ !create data_BUS_283:Data
+ !data_BUS_283.value:='BUS'
+!data_BUS_283.index:=290
+!insert(ACADEMIC_INTEREST_2_0,data_BUS_283) into DataOfDataField
+ !create data_nan_272:Data
+ !data_nan_272.value:='nan'
+!data_nan_272.index:=291
+!insert(ACADEMIC_INTEREST_2_0,data_nan_272) into DataOfDataField
+ !create data_PMED_0:Data
+ !data_PMED_0.value:='PMED'
+!data_PMED_0.index:=292
+!insert(ACADEMIC_INTEREST_2_0,data_PMED_0) into DataOfDataField
+ !create data_nan_1495:Data
+ !data_nan_1495.value:='nan'
+!data_nan_1495.index:=293
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1495) into DataOfDataField
+ !create data_MED_1136:Data
+ !data_MED_1136.value:='MED'
+!data_MED_1136.index:=294
+!insert(ACADEMIC_INTEREST_2_0,data_MED_1136) into DataOfDataField
+ !create data_nan_1126:Data
+ !data_nan_1126.value:='nan'
+!data_nan_1126.index:=295
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1126) into DataOfDataField
+ !create data_nan_761:Data
+ !data_nan_761.value:='nan'
+!data_nan_761.index:=296
+!insert(ACADEMIC_INTEREST_2_0,data_nan_761) into DataOfDataField
+ !create data_nan_302:Data
+ !data_nan_302.value:='nan'
+!data_nan_302.index:=297
+!insert(ACADEMIC_INTEREST_2_0,data_nan_302) into DataOfDataField
+ !create data_EGR_972:Data
+ !data_EGR_972.value:='EGR'
+!data_EGR_972.index:=298
+!insert(ACADEMIC_INTEREST_2_0,data_EGR_972) into DataOfDataField
+ !create data_nan_1146:Data
+ !data_nan_1146.value:='nan'
+!data_nan_1146.index:=299
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1146) into DataOfDataField
+ !create data_nan_885:Data
+ !data_nan_885.value:='nan'
+!data_nan_885.index:=300
+!insert(ACADEMIC_INTEREST_2_0,data_nan_885) into DataOfDataField
+ !create data_nan_1062:Data
+ !data_nan_1062.value:='nan'
+!data_nan_1062.index:=301
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1062) into DataOfDataField
+ !create data_MED_587:Data
+ !data_MED_587.value:='MED'
+!data_MED_587.index:=302
+!insert(ACADEMIC_INTEREST_2_0,data_MED_587) into DataOfDataField
+ !create data_EGR_1418:Data
+ !data_EGR_1418.value:='EGR'
+!data_EGR_1418.index:=303
+!insert(ACADEMIC_INTEREST_2_0,data_EGR_1418) into DataOfDataField
+ !create data_nan_536:Data
+ !data_nan_536.value:='nan'
+!data_nan_536.index:=304
+!insert(ACADEMIC_INTEREST_2_0,data_nan_536) into DataOfDataField
+ !create data_BUBR_901:Data
+ !data_BUBR_901.value:='BUBR'
+!data_BUBR_901.index:=305
+!insert(ACADEMIC_INTEREST_2_0,data_BUBR_901) into DataOfDataField
+ !create data_nan_1078:Data
+ !data_nan_1078.value:='nan'
+!data_nan_1078.index:=306
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1078) into DataOfDataField
+ !create data_MKT_716:Data
+ !data_MKT_716.value:='MKT'
+!data_MKT_716.index:=307
+!insert(ACADEMIC_INTEREST_2_0,data_MKT_716) into DataOfDataField
+ !create data_EGR_26:Data
+ !data_EGR_26.value:='EGR'
+!data_EGR_26.index:=308
+!insert(ACADEMIC_INTEREST_2_0,data_EGR_26) into DataOfDataField
+ !create data_nan_387:Data
+ !data_nan_387.value:='nan'
+!data_nan_387.index:=309
+!insert(ACADEMIC_INTEREST_2_0,data_nan_387) into DataOfDataField
+ !create data_nan_381:Data
+ !data_nan_381.value:='nan'
+!data_nan_381.index:=310
+!insert(ACADEMIC_INTEREST_2_0,data_nan_381) into DataOfDataField
+ !create data_nan_562:Data
+ !data_nan_562.value:='nan'
+!data_nan_562.index:=311
+!insert(ACADEMIC_INTEREST_2_0,data_nan_562) into DataOfDataField
+ !create data_MED_655:Data
+ !data_MED_655.value:='MED'
+!data_MED_655.index:=312
+!insert(ACADEMIC_INTEREST_2_0,data_MED_655) into DataOfDataField
+ !create data_PMED_308:Data
+ !data_PMED_308.value:='PMED'
+!data_PMED_308.index:=313
+!insert(ACADEMIC_INTEREST_2_0,data_PMED_308) into DataOfDataField
+ !create data_LAW_1257:Data
+ !data_LAW_1257.value:='LAW'
+!data_LAW_1257.index:=314
+!insert(ACADEMIC_INTEREST_2_0,data_LAW_1257) into DataOfDataField
+ !create data_nan_1542:Data
+ !data_nan_1542.value:='nan'
+!data_nan_1542.index:=315
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1542) into DataOfDataField
+ !create data_nan_524:Data
+ !data_nan_524.value:='nan'
+!data_nan_524.index:=316
+!insert(ACADEMIC_INTEREST_2_0,data_nan_524) into DataOfDataField
+ !create data_nan_19:Data
+ !data_nan_19.value:='nan'
+!data_nan_19.index:=317
+!insert(ACADEMIC_INTEREST_2_0,data_nan_19) into DataOfDataField
+ !create data_CJ_0:Data
+ !data_CJ_0.value:='CJ'
+!data_CJ_0.index:=318
+!insert(ACADEMIC_INTEREST_2_0,data_CJ_0) into DataOfDataField
+ !create data_nan_1244:Data
+ !data_nan_1244.value:='nan'
+!data_nan_1244.index:=319
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1244) into DataOfDataField
+ !create data_nan_131:Data
+ !data_nan_131.value:='nan'
+!data_nan_131.index:=320
+!insert(ACADEMIC_INTEREST_2_0,data_nan_131) into DataOfDataField
+ !create data_nan_865:Data
+ !data_nan_865.value:='nan'
+!data_nan_865.index:=321
+!insert(ACADEMIC_INTEREST_2_0,data_nan_865) into DataOfDataField
+ !create data_nan_539:Data
+ !data_nan_539.value:='nan'
+!data_nan_539.index:=322
+!insert(ACADEMIC_INTEREST_2_0,data_nan_539) into DataOfDataField
+ !create data_MDAN_0:Data
+ !data_MDAN_0.value:='MDAN'
+!data_MDAN_0.index:=323
+!insert(ACADEMIC_INTEREST_2_0,data_MDAN_0) into DataOfDataField
+ !create data_nan_1405:Data
+ !data_nan_1405.value:='nan'
+!data_nan_1405.index:=324
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1405) into DataOfDataField
+ !create data_MED_1058:Data
+ !data_MED_1058.value:='MED'
+!data_MED_1058.index:=325
+!insert(ACADEMIC_INTEREST_2_0,data_MED_1058) into DataOfDataField
+ !create data_nan_1443:Data
+ !data_nan_1443.value:='nan'
+!data_nan_1443.index:=326
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1443) into DataOfDataField
+ !create data_nan_1089:Data
+ !data_nan_1089.value:='nan'
+!data_nan_1089.index:=327
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1089) into DataOfDataField
+ !create data_LAW_1420:Data
+ !data_LAW_1420.value:='LAW'
+!data_LAW_1420.index:=328
+!insert(ACADEMIC_INTEREST_2_0,data_LAW_1420) into DataOfDataField
+ !create data_nan_1326:Data
+ !data_nan_1326.value:='nan'
+!data_nan_1326.index:=329
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1326) into DataOfDataField
+ !create data_nan_1183:Data
+ !data_nan_1183.value:='nan'
+!data_nan_1183.index:=330
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1183) into DataOfDataField
+ !create data_nan_1170:Data
+ !data_nan_1170.value:='nan'
+!data_nan_1170.index:=331
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1170) into DataOfDataField
+ !create data_BIO_0:Data
+ !data_BIO_0.value:='BIO'
+!data_BIO_0.index:=332
+!insert(ACADEMIC_INTEREST_2_0,data_BIO_0) into DataOfDataField
+ !create data_nan_601:Data
+ !data_nan_601.value:='nan'
+!data_nan_601.index:=333
+!insert(ACADEMIC_INTEREST_2_0,data_nan_601) into DataOfDataField
+ !create data_BUBR_1326:Data
+ !data_BUBR_1326.value:='BUBR'
+!data_BUBR_1326.index:=334
+!insert(ACADEMIC_INTEREST_2_0,data_BUBR_1326) into DataOfDataField
+ !create data_nan_1111:Data
+ !data_nan_1111.value:='nan'
+!data_nan_1111.index:=335
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1111) into DataOfDataField
+ !create data_LAW_787:Data
+ !data_LAW_787.value:='LAW'
+!data_LAW_787.index:=336
+!insert(ACADEMIC_INTEREST_2_0,data_LAW_787) into DataOfDataField
+ !create data_nan_1276:Data
+ !data_nan_1276.value:='nan'
+!data_nan_1276.index:=337
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1276) into DataOfDataField
+ !create data_MED_1110:Data
+ !data_MED_1110.value:='MED'
+!data_MED_1110.index:=338
+!insert(ACADEMIC_INTEREST_2_0,data_MED_1110) into DataOfDataField
+ !create data_nan_1458:Data
+ !data_nan_1458.value:='nan'
+!data_nan_1458.index:=339
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1458) into DataOfDataField
+ !create data_PSC_1110:Data
+ !data_PSC_1110.value:='PSC'
+!data_PSC_1110.index:=340
+!insert(ACADEMIC_INTEREST_2_0,data_PSC_1110) into DataOfDataField
+ !create data_nan_1223:Data
+ !data_nan_1223.value:='nan'
+!data_nan_1223.index:=341
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1223) into DataOfDataField
+ !create data_COM_0:Data
+ !data_COM_0.value:='COM'
+!data_COM_0.index:=342
+!insert(ACADEMIC_INTEREST_2_0,data_COM_0) into DataOfDataField
+ !create data_MTH_852:Data
+ !data_MTH_852.value:='MTH'
+!data_MTH_852.index:=343
+!insert(ACADEMIC_INTEREST_2_0,data_MTH_852) into DataOfDataField
+ !create data_nan_43:Data
+ !data_nan_43.value:='nan'
+!data_nan_43.index:=344
+!insert(ACADEMIC_INTEREST_2_0,data_nan_43) into DataOfDataField
+ !create data_nan_879:Data
+ !data_nan_879.value:='nan'
+!data_nan_879.index:=345
+!insert(ACADEMIC_INTEREST_2_0,data_nan_879) into DataOfDataField
+ !create data_EDU_778:Data
+ !data_EDU_778.value:='EDU'
+!data_EDU_778.index:=346
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_778) into DataOfDataField
+ !create data_nan_715:Data
+ !data_nan_715.value:='nan'
+!data_nan_715.index:=347
+!insert(ACADEMIC_INTEREST_2_0,data_nan_715) into DataOfDataField
+ !create data_nan_831:Data
+ !data_nan_831.value:='nan'
+!data_nan_831.index:=348
+!insert(ACADEMIC_INTEREST_2_0,data_nan_831) into DataOfDataField
+ !create data_nan_1144:Data
+ !data_nan_1144.value:='nan'
+!data_nan_1144.index:=349
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1144) into DataOfDataField
+ !create data_nan_1011:Data
+ !data_nan_1011.value:='nan'
+!data_nan_1011.index:=350
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1011) into DataOfDataField
+ !create data_nan_1214:Data
+ !data_nan_1214.value:='nan'
+!data_nan_1214.index:=351
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1214) into DataOfDataField
+ !create data_PT_0:Data
+ !data_PT_0.value:='PT'
+!data_PT_0.index:=352
+!insert(ACADEMIC_INTEREST_2_0,data_PT_0) into DataOfDataField
+ !create data_nan_1420:Data
+ !data_nan_1420.value:='nan'
+!data_nan_1420.index:=353
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1420) into DataOfDataField
+ !create data_nan_544:Data
+ !data_nan_544.value:='nan'
+!data_nan_544.index:=354
+!insert(ACADEMIC_INTEREST_2_0,data_nan_544) into DataOfDataField
+ !create data_nan_661:Data
+ !data_nan_661.value:='nan'
+!data_nan_661.index:=355
+!insert(ACADEMIC_INTEREST_2_0,data_nan_661) into DataOfDataField
+ !create data_nan_1362:Data
+ !data_nan_1362.value:='nan'
+!data_nan_1362.index:=356
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1362) into DataOfDataField
+ !create data_nan_909:Data
+ !data_nan_909.value:='nan'
+!data_nan_909.index:=357
+!insert(ACADEMIC_INTEREST_2_0,data_nan_909) into DataOfDataField
+ !create data_MUS_673:Data
+ !data_MUS_673.value:='MUS'
+!data_MUS_673.index:=358
+!insert(ACADEMIC_INTEREST_2_0,data_MUS_673) into DataOfDataField
+ !create data_nan_1185:Data
+ !data_nan_1185.value:='nan'
+!data_nan_1185.index:=359
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1185) into DataOfDataField
+ !create data_nan_854:Data
+ !data_nan_854.value:='nan'
+!data_nan_854.index:=360
+!insert(ACADEMIC_INTEREST_2_0,data_nan_854) into DataOfDataField
+ !create data_nan_802:Data
+ !data_nan_802.value:='nan'
+!data_nan_802.index:=361
+!insert(ACADEMIC_INTEREST_2_0,data_nan_802) into DataOfDataField
+ !create data_THEA_704:Data
+ !data_THEA_704.value:='THEA'
+!data_THEA_704.index:=362
+!insert(ACADEMIC_INTEREST_2_0,data_THEA_704) into DataOfDataField
+ !create data_nan_1390:Data
+ !data_nan_1390.value:='nan'
+!data_nan_1390.index:=363
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1390) into DataOfDataField
+ !create data_nan_1291:Data
+ !data_nan_1291.value:='nan'
+!data_nan_1291.index:=364
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1291) into DataOfDataField
+ !create data_CHE_0:Data
+ !data_CHE_0.value:='CHE'
+!data_CHE_0.index:=365
+!insert(ACADEMIC_INTEREST_2_0,data_CHE_0) into DataOfDataField
+ !create data_nan_1143:Data
+ !data_nan_1143.value:='nan'
+!data_nan_1143.index:=366
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1143) into DataOfDataField
+ !create data_nan_1162:Data
+ !data_nan_1162.value:='nan'
+!data_nan_1162.index:=367
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1162) into DataOfDataField
+ !create data_nan_1208:Data
+ !data_nan_1208.value:='nan'
+!data_nan_1208.index:=368
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1208) into DataOfDataField
+ !create data_LAW_1168:Data
+ !data_LAW_1168.value:='LAW'
+!data_LAW_1168.index:=369
+!insert(ACADEMIC_INTEREST_2_0,data_LAW_1168) into DataOfDataField
+ !create data_nan_234:Data
+ !data_nan_234.value:='nan'
+!data_nan_234.index:=370
+!insert(ACADEMIC_INTEREST_2_0,data_nan_234) into DataOfDataField
+ !create data_nan_940:Data
+ !data_nan_940.value:='nan'
+!data_nan_940.index:=371
+!insert(ACADEMIC_INTEREST_2_0,data_nan_940) into DataOfDataField
+ !create data_CFS_1353:Data
+ !data_CFS_1353.value:='CFS'
+!data_CFS_1353.index:=372
+!insert(ACADEMIC_INTEREST_2_0,data_CFS_1353) into DataOfDataField
+ !create data_nan_232:Data
+ !data_nan_232.value:='nan'
+!data_nan_232.index:=373
+!insert(ACADEMIC_INTEREST_2_0,data_nan_232) into DataOfDataField
+ !create data_AVS_0:Data
+ !data_AVS_0.value:='AVS'
+!data_AVS_0.index:=374
+!insert(ACADEMIC_INTEREST_2_0,data_AVS_0) into DataOfDataField
+ !create data_nan_92:Data
+ !data_nan_92.value:='nan'
+!data_nan_92.index:=375
+!insert(ACADEMIC_INTEREST_2_0,data_nan_92) into DataOfDataField
+ !create data_MED_1377:Data
+ !data_MED_1377.value:='MED'
+!data_MED_1377.index:=376
+!insert(ACADEMIC_INTEREST_2_0,data_MED_1377) into DataOfDataField
+ !create data_ECO_0:Data
+ !data_ECO_0.value:='ECO'
+!data_ECO_0.index:=377
+!insert(ACADEMIC_INTEREST_2_0,data_ECO_0) into DataOfDataField
+ !create data_nan_147:Data
+ !data_nan_147.value:='nan'
+!data_nan_147.index:=378
+!insert(ACADEMIC_INTEREST_2_0,data_nan_147) into DataOfDataField
+ !create data_nan_902:Data
+ !data_nan_902.value:='nan'
+!data_nan_902.index:=379
+!insert(ACADEMIC_INTEREST_2_0,data_nan_902) into DataOfDataField
+ !create data_MKT_1539:Data
+ !data_MKT_1539.value:='MKT'
+!data_MKT_1539.index:=380
+!insert(ACADEMIC_INTEREST_2_0,data_MKT_1539) into DataOfDataField
+ !create data_ENG_0:Data
+ !data_ENG_0.value:='ENG'
+!data_ENG_0.index:=381
+!insert(ACADEMIC_INTEREST_2_0,data_ENG_0) into DataOfDataField
+ !create data_nan_863:Data
+ !data_nan_863.value:='nan'
+!data_nan_863.index:=382
+!insert(ACADEMIC_INTEREST_2_0,data_nan_863) into DataOfDataField
+ !create data_PE_0:Data
+ !data_PE_0.value:='PE'
+!data_PE_0.index:=383
+!insert(ACADEMIC_INTEREST_2_0,data_PE_0) into DataOfDataField
+ !create data_nan_772:Data
+ !data_nan_772.value:='nan'
+!data_nan_772.index:=384
+!insert(ACADEMIC_INTEREST_2_0,data_nan_772) into DataOfDataField
+ !create data_MUS_838:Data
+ !data_MUS_838.value:='MUS'
+!data_MUS_838.index:=385
+!insert(ACADEMIC_INTEREST_2_0,data_MUS_838) into DataOfDataField
+ !create data_EDU_224:Data
+ !data_EDU_224.value:='EDU'
+!data_EDU_224.index:=386
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_224) into DataOfDataField
+ !create data_nan_145:Data
+ !data_nan_145.value:='nan'
+!data_nan_145.index:=387
+!insert(ACADEMIC_INTEREST_2_0,data_nan_145) into DataOfDataField
+ !create data_MED_299:Data
+ !data_MED_299.value:='MED'
+!data_MED_299.index:=388
+!insert(ACADEMIC_INTEREST_2_0,data_MED_299) into DataOfDataField
+ !create data_JOU_0:Data
+ !data_JOU_0.value:='JOU'
+!data_JOU_0.index:=389
+!insert(ACADEMIC_INTEREST_2_0,data_JOU_0) into DataOfDataField
+ !create data_nan_423:Data
+ !data_nan_423.value:='nan'
+!data_nan_423.index:=390
+!insert(ACADEMIC_INTEREST_2_0,data_nan_423) into DataOfDataField
+ !create data_nan_981:Data
+ !data_nan_981.value:='nan'
+!data_nan_981.index:=391
+!insert(ACADEMIC_INTEREST_2_0,data_nan_981) into DataOfDataField
+ !create data_PHI_0:Data
+ !data_PHI_0.value:='PHI'
+!data_PHI_0.index:=392
+!insert(ACADEMIC_INTEREST_2_0,data_PHI_0) into DataOfDataField
+ !create data_PSY_1519:Data
+ !data_PSY_1519.value:='PSY'
+!data_PSY_1519.index:=393
+!insert(ACADEMIC_INTEREST_2_0,data_PSY_1519) into DataOfDataField
+ !create data_nan_1323:Data
+ !data_nan_1323.value:='nan'
+!data_nan_1323.index:=394
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1323) into DataOfDataField
+ !create data_nan_466:Data
+ !data_nan_466.value:='nan'
+!data_nan_466.index:=395
+!insert(ACADEMIC_INTEREST_2_0,data_nan_466) into DataOfDataField
+ !create data_nan_797:Data
+ !data_nan_797.value:='nan'
+!data_nan_797.index:=396
+!insert(ACADEMIC_INTEREST_2_0,data_nan_797) into DataOfDataField
+ !create data_nan_662:Data
+ !data_nan_662.value:='nan'
+!data_nan_662.index:=397
+!insert(ACADEMIC_INTEREST_2_0,data_nan_662) into DataOfDataField
+ !create data_nan_209:Data
+ !data_nan_209.value:='nan'
+!data_nan_209.index:=398
+!insert(ACADEMIC_INTEREST_2_0,data_nan_209) into DataOfDataField
+ !create data_PSY_157:Data
+ !data_PSY_157.value:='PSY'
+!data_PSY_157.index:=399
+!insert(ACADEMIC_INTEREST_2_0,data_PSY_157) into DataOfDataField
+ !create data_nan_385:Data
+ !data_nan_385.value:='nan'
+!data_nan_385.index:=400
+!insert(ACADEMIC_INTEREST_2_0,data_nan_385) into DataOfDataField
+ !create data_nan_700:Data
+ !data_nan_700.value:='nan'
+!data_nan_700.index:=401
+!insert(ACADEMIC_INTEREST_2_0,data_nan_700) into DataOfDataField
+ !create data_BUAD_585:Data
+ !data_BUAD_585.value:='BUAD'
+!data_BUAD_585.index:=402
+!insert(ACADEMIC_INTEREST_2_0,data_BUAD_585) into DataOfDataField
+ !create data_BUBR_722:Data
+ !data_BUBR_722.value:='BUBR'
+!data_BUBR_722.index:=403
+!insert(ACADEMIC_INTEREST_2_0,data_BUBR_722) into DataOfDataField
+ !create data_PSC_166:Data
+ !data_PSC_166.value:='PSC'
+!data_PSC_166.index:=404
+!insert(ACADEMIC_INTEREST_2_0,data_PSC_166) into DataOfDataField
+ !create data_REL_895:Data
+ !data_REL_895.value:='REL'
+!data_REL_895.index:=405
+!insert(ACADEMIC_INTEREST_2_0,data_REL_895) into DataOfDataField
+ !create data_nan_1082:Data
+ !data_nan_1082.value:='nan'
+!data_nan_1082.index:=406
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1082) into DataOfDataField
+ !create data_nan_356:Data
+ !data_nan_356.value:='nan'
+!data_nan_356.index:=407
+!insert(ACADEMIC_INTEREST_2_0,data_nan_356) into DataOfDataField
+ !create data_EDU_856:Data
+ !data_EDU_856.value:='EDU'
+!data_EDU_856.index:=408
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_856) into DataOfDataField
+ !create data_nan_1333:Data
+ !data_nan_1333.value:='nan'
+!data_nan_1333.index:=409
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1333) into DataOfDataField
+ !create data_MED_807:Data
+ !data_MED_807.value:='MED'
+!data_MED_807.index:=410
+!insert(ACADEMIC_INTEREST_2_0,data_MED_807) into DataOfDataField
+ !create data_MED_180:Data
+ !data_MED_180.value:='MED'
+!data_MED_180.index:=411
+!insert(ACADEMIC_INTEREST_2_0,data_MED_180) into DataOfDataField
+ !create data_JOU_1421:Data
+ !data_JOU_1421.value:='JOU'
+!data_JOU_1421.index:=412
+!insert(ACADEMIC_INTEREST_2_0,data_JOU_1421) into DataOfDataField
+ !create data_nan_246:Data
+ !data_nan_246.value:='nan'
+!data_nan_246.index:=413
+!insert(ACADEMIC_INTEREST_2_0,data_nan_246) into DataOfDataField
+ !create data_nan_898:Data
+ !data_nan_898.value:='nan'
+!data_nan_898.index:=414
+!insert(ACADEMIC_INTEREST_2_0,data_nan_898) into DataOfDataField
+ !create data_nan_1231:Data
+ !data_nan_1231.value:='nan'
+!data_nan_1231.index:=415
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1231) into DataOfDataField
+ !create data_nan_1118:Data
+ !data_nan_1118.value:='nan'
+!data_nan_1118.index:=416
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1118) into DataOfDataField
+ !create data_nan_1203:Data
+ !data_nan_1203.value:='nan'
+!data_nan_1203.index:=417
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1203) into DataOfDataField
+ !create data_EDU_534:Data
+ !data_EDU_534.value:='EDU'
+!data_EDU_534.index:=418
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_534) into DataOfDataField
+ !create data_nan_1031:Data
+ !data_nan_1031.value:='nan'
+!data_nan_1031.index:=419
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1031) into DataOfDataField
+ !create data_BIO_1348:Data
+ !data_BIO_1348.value:='BIO'
+!data_BIO_1348.index:=420
+!insert(ACADEMIC_INTEREST_2_0,data_BIO_1348) into DataOfDataField
+ !create data_nan_1255:Data
+ !data_nan_1255.value:='nan'
+!data_nan_1255.index:=421
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1255) into DataOfDataField
+ !create data_nan_895:Data
+ !data_nan_895.value:='nan'
+!data_nan_895.index:=422
+!insert(ACADEMIC_INTEREST_2_0,data_nan_895) into DataOfDataField
+ !create data_nan_344:Data
+ !data_nan_344.value:='nan'
+!data_nan_344.index:=423
+!insert(ACADEMIC_INTEREST_2_0,data_nan_344) into DataOfDataField
+ !create data_nan_1431:Data
+ !data_nan_1431.value:='nan'
+!data_nan_1431.index:=424
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1431) into DataOfDataField
+ !create data_PLAW_0:Data
+ !data_PLAW_0.value:='PLAW'
+!data_PLAW_0.index:=425
+!insert(ACADEMIC_INTEREST_2_0,data_PLAW_0) into DataOfDataField
+ !create data_nan_712:Data
+ !data_nan_712.value:='nan'
+!data_nan_712.index:=426
+!insert(ACADEMIC_INTEREST_2_0,data_nan_712) into DataOfDataField
+ !create data_MED_358:Data
+ !data_MED_358.value:='MED'
+!data_MED_358.index:=427
+!insert(ACADEMIC_INTEREST_2_0,data_MED_358) into DataOfDataField
+ !create data_nan_1369:Data
+ !data_nan_1369.value:='nan'
+!data_nan_1369.index:=428
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1369) into DataOfDataField
+ !create data_PMED_662:Data
+ !data_PMED_662.value:='PMED'
+!data_PMED_662.index:=429
+!insert(ACADEMIC_INTEREST_2_0,data_PMED_662) into DataOfDataField
+ !create data_nan_52:Data
+ !data_nan_52.value:='nan'
+!data_nan_52.index:=430
+!insert(ACADEMIC_INTEREST_2_0,data_nan_52) into DataOfDataField
+ !create data_nan_11:Data
+ !data_nan_11.value:='nan'
+!data_nan_11.index:=431
+!insert(ACADEMIC_INTEREST_2_0,data_nan_11) into DataOfDataField
+ !create data_nan_136:Data
+ !data_nan_136.value:='nan'
+!data_nan_136.index:=432
+!insert(ACADEMIC_INTEREST_2_0,data_nan_136) into DataOfDataField
+ !create data_nan_96:Data
+ !data_nan_96.value:='nan'
+!data_nan_96.index:=433
+!insert(ACADEMIC_INTEREST_2_0,data_nan_96) into DataOfDataField
+ !create data_nan_824:Data
+ !data_nan_824.value:='nan'
+!data_nan_824.index:=434
+!insert(ACADEMIC_INTEREST_2_0,data_nan_824) into DataOfDataField
+ !create data_DENT_972:Data
+ !data_DENT_972.value:='DENT'
+!data_DENT_972.index:=435
+!insert(ACADEMIC_INTEREST_2_0,data_DENT_972) into DataOfDataField
+ !create data_nan_699:Data
+ !data_nan_699.value:='nan'
+!data_nan_699.index:=436
+!insert(ACADEMIC_INTEREST_2_0,data_nan_699) into DataOfDataField
+ !create data_nan_993:Data
+ !data_nan_993.value:='nan'
+!data_nan_993.index:=437
+!insert(ACADEMIC_INTEREST_2_0,data_nan_993) into DataOfDataField
+ !create data_nan_362:Data
+ !data_nan_362.value:='nan'
+!data_nan_362.index:=438
+!insert(ACADEMIC_INTEREST_2_0,data_nan_362) into DataOfDataField
+ !create data_nan_216:Data
+ !data_nan_216.value:='nan'
+!data_nan_216.index:=439
+!insert(ACADEMIC_INTEREST_2_0,data_nan_216) into DataOfDataField
+ !create data_EGR_688:Data
+ !data_EGR_688.value:='EGR'
+!data_EGR_688.index:=440
+!insert(ACADEMIC_INTEREST_2_0,data_EGR_688) into DataOfDataField
+ !create data_MUS_781:Data
+ !data_MUS_781.value:='MUS'
+!data_MUS_781.index:=441
+!insert(ACADEMIC_INTEREST_2_0,data_MUS_781) into DataOfDataField
+ !create data_nan_1277:Data
+ !data_nan_1277.value:='nan'
+!data_nan_1277.index:=442
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1277) into DataOfDataField
+ !create data_nan_773:Data
+ !data_nan_773.value:='nan'
+!data_nan_773.index:=443
+!insert(ACADEMIC_INTEREST_2_0,data_nan_773) into DataOfDataField
+ !create data_nan_777:Data
+ !data_nan_777.value:='nan'
+!data_nan_777.index:=444
+!insert(ACADEMIC_INTEREST_2_0,data_nan_777) into DataOfDataField
+ !create data_nan_462:Data
+ !data_nan_462.value:='nan'
+!data_nan_462.index:=445
+!insert(ACADEMIC_INTEREST_2_0,data_nan_462) into DataOfDataField
+ !create data_nan_876:Data
+ !data_nan_876.value:='nan'
+!data_nan_876.index:=446
+!insert(ACADEMIC_INTEREST_2_0,data_nan_876) into DataOfDataField
+ !create data_nan_846:Data
+ !data_nan_846.value:='nan'
+!data_nan_846.index:=447
+!insert(ACADEMIC_INTEREST_2_0,data_nan_846) into DataOfDataField
+ !create data_nan_1030:Data
+ !data_nan_1030.value:='nan'
+!data_nan_1030.index:=448
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1030) into DataOfDataField
+ !create data_JOU_313:Data
+ !data_JOU_313.value:='JOU'
+!data_JOU_313.index:=449
+!insert(ACADEMIC_INTEREST_2_0,data_JOU_313) into DataOfDataField
+ !create data_nan_1374:Data
+ !data_nan_1374.value:='nan'
+!data_nan_1374.index:=450
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1374) into DataOfDataField
+ !create data_nan_334:Data
+ !data_nan_334.value:='nan'
+!data_nan_334.index:=451
+!insert(ACADEMIC_INTEREST_2_0,data_nan_334) into DataOfDataField
+ !create data_nan_1154:Data
+ !data_nan_1154.value:='nan'
+!data_nan_1154.index:=452
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1154) into DataOfDataField
+ !create data_PSY_439:Data
+ !data_PSY_439.value:='PSY'
+!data_PSY_439.index:=453
+!insert(ACADEMIC_INTEREST_2_0,data_PSY_439) into DataOfDataField
+ !create data_nan_130:Data
+ !data_nan_130.value:='nan'
+!data_nan_130.index:=454
+!insert(ACADEMIC_INTEREST_2_0,data_nan_130) into DataOfDataField
+ !create data_nan_1544:Data
+ !data_nan_1544.value:='nan'
+!data_nan_1544.index:=455
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1544) into DataOfDataField
+ !create data_nan_619:Data
+ !data_nan_619.value:='nan'
+!data_nan_619.index:=456
+!insert(ACADEMIC_INTEREST_2_0,data_nan_619) into DataOfDataField
+ !create data_nan_928:Data
+ !data_nan_928.value:='nan'
+!data_nan_928.index:=457
+!insert(ACADEMIC_INTEREST_2_0,data_nan_928) into DataOfDataField
+ !create data_nan_719:Data
+ !data_nan_719.value:='nan'
+!data_nan_719.index:=458
+!insert(ACADEMIC_INTEREST_2_0,data_nan_719) into DataOfDataField
+ !create data_nan_1072:Data
+ !data_nan_1072.value:='nan'
+!data_nan_1072.index:=459
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1072) into DataOfDataField
+ !create data_nan_635:Data
+ !data_nan_635.value:='nan'
+!data_nan_635.index:=460
+!insert(ACADEMIC_INTEREST_2_0,data_nan_635) into DataOfDataField
+ !create data_nan_226:Data
+ !data_nan_226.value:='nan'
+!data_nan_226.index:=461
+!insert(ACADEMIC_INTEREST_2_0,data_nan_226) into DataOfDataField
+ !create data_nan_900:Data
+ !data_nan_900.value:='nan'
+!data_nan_900.index:=462
+!insert(ACADEMIC_INTEREST_2_0,data_nan_900) into DataOfDataField
+ !create data_nan_398:Data
+ !data_nan_398.value:='nan'
+!data_nan_398.index:=463
+!insert(ACADEMIC_INTEREST_2_0,data_nan_398) into DataOfDataField
+ !create data_MSSN_0:Data
+ !data_MSSN_0.value:='MSSN'
+!data_MSSN_0.index:=464
+!insert(ACADEMIC_INTEREST_2_0,data_MSSN_0) into DataOfDataField
+ !create data_nan_138:Data
+ !data_nan_138.value:='nan'
+!data_nan_138.index:=465
+!insert(ACADEMIC_INTEREST_2_0,data_nan_138) into DataOfDataField
+ !create data_BUS_707:Data
+ !data_BUS_707.value:='BUS'
+!data_BUS_707.index:=466
+!insert(ACADEMIC_INTEREST_2_0,data_BUS_707) into DataOfDataField
+ !create data_REL_494:Data
+ !data_REL_494.value:='REL'
+!data_REL_494.index:=467
+!insert(ACADEMIC_INTEREST_2_0,data_REL_494) into DataOfDataField
+ !create data_nan_1318:Data
+ !data_nan_1318.value:='nan'
+!data_nan_1318.index:=468
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1318) into DataOfDataField
+ !create data_nan_499:Data
+ !data_nan_499.value:='nan'
+!data_nan_499.index:=469
+!insert(ACADEMIC_INTEREST_2_0,data_nan_499) into DataOfDataField
+ !create data_CHE_1447:Data
+ !data_CHE_1447.value:='CHE'
+!data_CHE_1447.index:=470
+!insert(ACADEMIC_INTEREST_2_0,data_CHE_1447) into DataOfDataField
+ !create data_nan_95:Data
+ !data_nan_95.value:='nan'
+!data_nan_95.index:=471
+!insert(ACADEMIC_INTEREST_2_0,data_nan_95) into DataOfDataField
+ !create data_nan_787:Data
+ !data_nan_787.value:='nan'
+!data_nan_787.index:=472
+!insert(ACADEMIC_INTEREST_2_0,data_nan_787) into DataOfDataField
+ !create data_nan_1181:Data
+ !data_nan_1181.value:='nan'
+!data_nan_1181.index:=473
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1181) into DataOfDataField
+ !create data_nan_1020:Data
+ !data_nan_1020.value:='nan'
+!data_nan_1020.index:=474
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1020) into DataOfDataField
+ !create data_nan_1110:Data
+ !data_nan_1110.value:='nan'
+!data_nan_1110.index:=475
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1110) into DataOfDataField
+ !create data_SPA_1310:Data
+ !data_SPA_1310.value:='SPA'
+!data_SPA_1310.index:=476
+!insert(ACADEMIC_INTEREST_2_0,data_SPA_1310) into DataOfDataField
+ !create data_nan_170:Data
+ !data_nan_170.value:='nan'
+!data_nan_170.index:=477
+!insert(ACADEMIC_INTEREST_2_0,data_nan_170) into DataOfDataField
+ !create data_BUS_591:Data
+ !data_BUS_591.value:='BUS'
+!data_BUS_591.index:=478
+!insert(ACADEMIC_INTEREST_2_0,data_BUS_591) into DataOfDataField
+ !create data_nan_105:Data
+ !data_nan_105.value:='nan'
+!data_nan_105.index:=479
+!insert(ACADEMIC_INTEREST_2_0,data_nan_105) into DataOfDataField
+ !create data_nan_368:Data
+ !data_nan_368.value:='nan'
+!data_nan_368.index:=480
+!insert(ACADEMIC_INTEREST_2_0,data_nan_368) into DataOfDataField
+ !create data_NUR_1362:Data
+ !data_NUR_1362.value:='NUR'
+!data_NUR_1362.index:=481
+!insert(ACADEMIC_INTEREST_2_0,data_NUR_1362) into DataOfDataField
+ !create data_nan_1368:Data
+ !data_nan_1368.value:='nan'
+!data_nan_1368.index:=482
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1368) into DataOfDataField
+ !create data_nan_953:Data
+ !data_nan_953.value:='nan'
+!data_nan_953.index:=483
+!insert(ACADEMIC_INTEREST_2_0,data_nan_953) into DataOfDataField
+ !create data_nan_1259:Data
+ !data_nan_1259.value:='nan'
+!data_nan_1259.index:=484
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1259) into DataOfDataField
+ !create data_nan_313:Data
+ !data_nan_313.value:='nan'
+!data_nan_313.index:=485
+!insert(ACADEMIC_INTEREST_2_0,data_nan_313) into DataOfDataField
+ !create data_nan_1304:Data
+ !data_nan_1304.value:='nan'
+!data_nan_1304.index:=486
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1304) into DataOfDataField
+ !create data_nan_624:Data
+ !data_nan_624.value:='nan'
+!data_nan_624.index:=487
+!insert(ACADEMIC_INTEREST_2_0,data_nan_624) into DataOfDataField
+ !create data_nan_1441:Data
+ !data_nan_1441.value:='nan'
+!data_nan_1441.index:=488
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1441) into DataOfDataField
+ !create data_nan_297:Data
+ !data_nan_297.value:='nan'
+!data_nan_297.index:=489
+!insert(ACADEMIC_INTEREST_2_0,data_nan_297) into DataOfDataField
+ !create data_nan_465:Data
+ !data_nan_465.value:='nan'
+!data_nan_465.index:=490
+!insert(ACADEMIC_INTEREST_2_0,data_nan_465) into DataOfDataField
+ !create data_nan_881:Data
+ !data_nan_881.value:='nan'
+!data_nan_881.index:=491
+!insert(ACADEMIC_INTEREST_2_0,data_nan_881) into DataOfDataField
+ !create data_nan_1280:Data
+ !data_nan_1280.value:='nan'
+!data_nan_1280.index:=492
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1280) into DataOfDataField
+ !create data_nan_228:Data
+ !data_nan_228.value:='nan'
+!data_nan_228.index:=493
+!insert(ACADEMIC_INTEREST_2_0,data_nan_228) into DataOfDataField
+ !create data_EDU_153:Data
+ !data_EDU_153.value:='EDU'
+!data_EDU_153.index:=494
+!insert(ACADEMIC_INTEREST_2_0,data_EDU_153) into DataOfDataField
+ !create data_nan_640:Data
+ !data_nan_640.value:='nan'
+!data_nan_640.index:=495
+!insert(ACADEMIC_INTEREST_2_0,data_nan_640) into DataOfDataField
+ !create data_nan_1510:Data
+ !data_nan_1510.value:='nan'
+!data_nan_1510.index:=496
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1510) into DataOfDataField
+ !create data_nan_552:Data
+ !data_nan_552.value:='nan'
+!data_nan_552.index:=497
+!insert(ACADEMIC_INTEREST_2_0,data_nan_552) into DataOfDataField
+ !create data_nan_480:Data
+ !data_nan_480.value:='nan'
+!data_nan_480.index:=498
+!insert(ACADEMIC_INTEREST_2_0,data_nan_480) into DataOfDataField
+ !create data_nan_1447:Data
+ !data_nan_1447.value:='nan'
+!data_nan_1447.index:=499
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1447) into DataOfDataField
+ !create data_MKT_1411:Data
+ !data_MKT_1411.value:='MKT'
+!data_MKT_1411.index:=500
+!insert(ACADEMIC_INTEREST_2_0,data_MKT_1411) into DataOfDataField
+ !create data_nan_467:Data
+ !data_nan_467.value:='nan'
+!data_nan_467.index:=501
+!insert(ACADEMIC_INTEREST_2_0,data_nan_467) into DataOfDataField
+ !create data_nan_1212:Data
+ !data_nan_1212.value:='nan'
+!data_nan_1212.index:=502
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1212) into DataOfDataField
+ !create data_nan_1016:Data
+ !data_nan_1016.value:='nan'
+!data_nan_1016.index:=503
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1016) into DataOfDataField
+ !create data_nan_163:Data
+ !data_nan_163.value:='nan'
+!data_nan_163.index:=504
+!insert(ACADEMIC_INTEREST_2_0,data_nan_163) into DataOfDataField
+ !create data_PSY_1022:Data
+ !data_PSY_1022.value:='PSY'
+!data_PSY_1022.index:=505
+!insert(ACADEMIC_INTEREST_2_0,data_PSY_1022) into DataOfDataField
+ !create data_ART_618:Data
+ !data_ART_618.value:='ART'
+!data_ART_618.index:=506
+!insert(ACADEMIC_INTEREST_2_0,data_ART_618) into DataOfDataField
+ !create data_nan_602:Data
+ !data_nan_602.value:='nan'
+!data_nan_602.index:=507
+!insert(ACADEMIC_INTEREST_2_0,data_nan_602) into DataOfDataField
+ !create data_nan_1188:Data
+ !data_nan_1188.value:='nan'
+!data_nan_1188.index:=508
+!insert(ACADEMIC_INTEREST_2_0,data_nan_1188) into DataOfDataField
+ !create data_nan_342:Data
+ !data_nan_342.value:='nan'
+!data_nan_342.index:=509
+!insert(ACADEMIC_INTEREST_2_0,data_nan_342) into DataOfDataField
+ !create data_nan_676:Data
+ !data_nan_676.value:='nan'
+!data_nan_676.index:=510
+!insert(ACADEMIC_INTEREST_2_0,data_nan_676) into DataOfDataField
+ !create data_nan_355:Data
+ !data_nan_355.value:='nan'
+!data_nan_355.index:=511
+!insert(ACADEMIC_INTEREST_2_0,data_nan_355) into DataOfDataField
+ !create data_nan_633:Data
+ !data_nan_633.value:='nan'
+!data_nan_633.index:=512
+!insert(ACADEMIC_INTEREST_2_0,data_nan_633) into DataOfDataField
+ !create data_nan_735:Data
+ !data_nan_735.value:='nan'
+!data_nan_735.index:=513
+!insert(ACADEMIC_INTEREST_2_0,data_nan_735) into DataOfDataField
+ !create data_nan_594:Data
+ !data_nan_594.value:='nan'
+!data_nan_594.index:=514
+!insert(ACADEMIC_INTEREST_2_0,data_nan_594) into DataOfDataField
+ !create data_nan_813:Data
+ !data_nan_813.value:='nan'
+!data_nan_813.index:=515
+!insert(ACADEMIC_INTEREST_2_0,data_nan_813) into DataOfDataField
+ 

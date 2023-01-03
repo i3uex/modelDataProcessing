@@ -1,0 +1,15 @@
+!create rowFilter:Transformation
+!create field:Field
+!rowFilter.name:='rowFilter'
+!insert(rowFilter, input) into InputPort
+!insert(rowFilter, output) into OutputPort
+!insert(rowFilter, field) into ParameterField
+
+!create fieldValue:FieldValue
+!insert(rowFilter, fieldValue ) into TransfParam
+!create range:Range
+!range.min:='-216'
+!range.max:='-1'
+!insert(rowFilter, range) into TransfParam
+!insert(field, init_span_0) into FieldDataField
+!rowFilter.validateRowFilter(fieldValue, range)

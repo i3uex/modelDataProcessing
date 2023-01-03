@@ -1,0 +1,49 @@
+!create discretize:Transformation
+!create field:Field
+!discretize.name:='discretize'
+
+!create binLow:DiscretizeBin
+!create intervalLow:Interval
+!binLow.name:='binLow'
+!binLow.binValue:='Low'
+!intervalLow.leftMargin:=0.0
+!intervalLow.rightMargin:=1.0
+!intervalLow.closure:=ClosureType::closedOpen
+!insert(discretize, binLow) into TransfParam
+!insert(binLow, intervalLow) into DiscretizeInterval
+!insert(TOTAL_CONTACTS_0, intervalLow) into ContinuousInterval
+
+!create binModerate:DiscretizeBin
+!create intervalModerate:Interval
+!binModerate.name:='binModerate'
+!binModerate.binValue:='Moderate'
+!intervalModerate.leftMargin:=1.0
+!intervalModerate.rightMargin:=4.0
+!intervalModerate.closure:=ClosureType::closedOpen
+!insert(discretize, binModerate) into TransfParam
+!insert(binModerate, intervalModerate) into DiscretizeInterval
+!insert(TOTAL_CONTACTS_0, intervalModerate) into ContinuousInterval
+
+!create binHigh:DiscretizeBin
+!create intervalHigh:Interval
+!binHigh.name:='binHigh'
+!binHigh.binValue:='High'
+!intervalHigh.leftMargin:=4.0
+!intervalHigh.rightMargin:=28.0
+!intervalHigh.closure:=ClosureType::closedClosed
+!insert(discretize, binHigh) into TransfParam
+!insert(binHigh, intervalHigh) into DiscretizeInterval
+!insert(TOTAL_CONTACTS_0, intervalHigh) into ContinuousInterval
+
+!insert(discretize, input) into InputPort
+!insert(discretize, output) into OutputPort
+!insert(discretize, field) into ParameterField
+!insert(field, TOTAL_CONTACTS_0) into FieldDataField
+
+!create derivedField:DerivedField
+!derivedField.derived_name:='TOTAL_CONTACTS_binned'
+!derivedField.derived_opType:=OpType::Categorical
+!derivedField.derived_dataType:=DataType::string
+!insert(discretize,derivedField) into DerivedFields
+
+!discretize.validateDiscretize(Set{binLow, binModerate, binHigh})
