@@ -6,21 +6,21 @@ from bs4 import BeautifulSoup
 
 
 def parse_data_to_model(f, path_csv, id_dfield, name_dfield, used_ids,
-                        output_path, sep=','):
+                        output_path, nrows, sep='|'):
     output_path = Path(output_path)
     output_path_parent = output_path.parent
     if not output_path_parent.exists():
         output_path_parent.mkdir(parents=True)
 
-    dataframe = pd.read_csv(path_csv, sep=sep)
+    dataframe = pd.read_csv(path_csv, sep=sep, nrows=nrows)
     j = 0
     for d in dataframe[name_dfield]:
         i = 0
         id_data = 'data_' + str(d) + '_' + str(i)
+        id_data = id_data.replace(" ", "").replace("[", "").replace("]", "").replace("-", "").replace('.', "_").replace(',', "_")
         while id_data in used_ids:
-            i += 1
-            id_data = 'data_' + str(d) + '_' + str(random.randint(0, len(dataframe[name_dfield])))
-            id_data = id_data.replace(" ", "").replace("[", "").replace("]", "").replace("-", "").replace('.', "_")
+            id_data = 'data_' + str(d) + '_' + str(random.randint(0, nrows*3))
+            id_data = id_data.replace(" ", "").replace("[", "").replace("]", "").replace("-", "").replace('.', "_").replace(',', "_")
         used_ids.append(id_data)
         f.write('!create ' + id_data + ':Data\n ')
         f.write('!' + id_data + '.value:=' + "'" + str(d) + "'" + '\n')
@@ -30,7 +30,7 @@ def parse_data_to_model(f, path_csv, id_dfield, name_dfield, used_ids,
 
 
 def parse_to_model(path_xml, path_csv, name, target_columns, id_columns,
-                   used_ids, output_path, sep=','):
+                   used_ids, output_path, nrows, sep='|'):
     output_path = Path(output_path)
     output_path_parent = output_path.parent
     if not output_path_parent.exists():
@@ -38,7 +38,7 @@ def parse_to_model(path_xml, path_csv, name, target_columns, id_columns,
 
     f = open(output_path, 'w')
     f.write('!create ' + name + ':DataDictionary\n ')
-    dataframe = pd.read_csv(path_csv, sep=sep)
+    dataframe = pd.read_csv(path_csv, sep=sep, nrows=nrows)
     f.write('!' + name + '.rows:=' + str(dataframe.shape[0]) + '\n')
     f.write('!' + name + ".name:='" + name + "'" + '\n')
     with open(path_xml, 'r') as f_xml:
@@ -50,10 +50,11 @@ def parse_to_model(path_xml, path_csv, name, target_columns, id_columns,
         name_dfield = dfield.get('name')
         i = 0
         id_dfield = name_dfield + '_' + str(i)
+        id_dfield = id_dfield.replace(" ", "").replace("[", "").replace("]", "").replace("-", "").replace('.', "_").replace(',', "_")
         while id_dfield in used_ids:
             i += 1
             id_dfield = name_dfield + '_' + str(i)
-        id_dfield = id_dfield.replace(" ", "").replace("[", "").replace("]", "").replace("-", "").replace('.', "_")
+            id_dfield = id_dfield.replace(" ", "").replace("[", "").replace("]", "").replace("-", "").replace('.', "_").replace(',', "_")
         used_ids.append(id_dfield)
         if dfield.get('optype') == op_types[1]:
             f.write('!create ' + id_dfield + ':Continuous\n ')
@@ -140,43 +141,54 @@ def parse_to_model(path_xml, path_csv, name, target_columns, id_columns,
 
 def main():
     used_ids = []
+    nrows = 516
     f = parse_to_model(
-        path_xml='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
-                 '/input_datadictionary.pmml',
-        path_csv='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex/input_dataset.csv',
+        path_xml='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner/pmmls/'
+                 'input_datadictionary.pmml',
+        path_csv='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner/csvs'
+                 '/input_dataset.csv',
         name='input',
         target_columns=[],
         id_columns=[],
         used_ids = used_ids,
-        output_path='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex/input_model.soil')
+        output_path='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner/28-discretize_avg_income/'
+                    'input_model.soil',
+        nrows=nrows
+    )
 
     parse_data_to_model(f,
-                        output_path='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
-                                    '/input_model.soil',
-                        id_dfield='sex_0',
-                        name_dfield='sex',
+                        output_path='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner'
+                                    '/28-discretize_avg_income/input_model.soil',
+                        id_dfield='avg_income_0',
+                        name_dfield='avg_income',
                         used_ids = used_ids,
-                        path_csv='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
-                                 '/input_dataset.csv'
+                        path_csv='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner'
+                                 '/csvs/input_dataset.csv ',
+                        nrows=nrows
                         )
     f = parse_to_model(
-        path_xml='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
-                 '/output_datadictionary.pmml',
-        path_csv='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex/output_dataset.csv',
+        path_xml='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner/pmmls/'
+                 'output_datadictionary.pmml',
+        path_csv='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner/csvs'
+                 '/output_dataset.csv',
         name='output',
         target_columns=[],
         id_columns=[],
-        used_ids=used_ids,
-        output_path='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex/output_model.soil')
+        used_ids = used_ids,
+        output_path='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner/28-discretize_avg_income/'
+                    'output_model.soil',
+        nrows=nrows
+    )
 
     parse_data_to_model(f,
-                        output_path='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
-                                    '/output_model.soil',
-                        id_dfield='sex_0',
-                        name_dfield='sex',
-                        used_ids=used_ids,
-                        path_csv='../validation_example_23/python_pipeline_validation/transformations/1-impute_sex'
-                                 '/output_dataset.csv'
+                        output_path='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner'
+                                    '/28-discretize_avg_income/output_model.soil',
+                        id_dfield='avg_income_binned_0',
+                        name_dfield='avg_income_binned',
+                        used_ids = used_ids,
+                        path_csv='../validation_example_23/python_pipeline_validation/transformations/8-numericBinner'
+                                 '/csvs/output_dataset.csv ',
+                        nrows=nrows
                         )
 
 

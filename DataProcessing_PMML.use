@@ -161,7 +161,7 @@ end
 
 association DerivedFields between
 	Transformation [1]
-	DerivedField [0..1]
+	DerivedField [0..1] role derivedField
 end
 
 association ParameterField between
@@ -246,7 +246,11 @@ operations
 	getOutputDataDictionary(index: Integer) : DataDictionary = 
 		self.outputPort->select(op | op.oclIsTypeOf(DataDictionary)).oclAsType(DataDictionary)->asSequence->at(index)
 	getOutputDataField() : DataField =
-		self.getOutputDataDictionary(1).getDataField(self.field.dataField.name)
+		if self.derivedField.oclIsUndefined() then
+			self.getOutputDataDictionary(1).getDataField(self.field.dataField.name)
+		else
+			self.getOutputDataDictionary(1).getDataField(self.derivedField.derived_name)
+		endif
 	validateImpute(imputeType:ImputeType)
 	begin end
 	pre missing: 
@@ -318,7 +322,7 @@ operations
 			if matchingValue.oclIsTypeOf(Range) then
 				self.getOutputDataField().oclAsType(Continuous).intervals->select(
 				i | i.leftMargin <= matchingValue.oclAsType(Range).min.toReal() or 
-				i.rightMargin >= matchingValue.oclAsType(Range).max.toReal())->size() = 0
+				i.leftMargin <= matchingValue.oclAsType(Range).max.toReal())->size() = 0
 			else
 				self.field.dataField.missingValues->size() = 0
 			endif
@@ -361,7 +365,7 @@ operations
 	post noOutliers:
 		let min = q1.value.toReal()-multiqr.value.toReal()*iqr.value.toReal() in
 		let max = q3.value.toReal()+multiqr.value.toReal()*iqr.value.toReal() in
-		self.field.dataField.oclAsType(Continuous).intervals->select(i | i.leftMargin < min or i.rightMargin > max)->size() = 0
+		self.getOutputDataField().oclAsType(Continuous).intervals->select(i | i.leftMargin < min or i.rightMargin > max)->size() = 0
 	post replacement:
 		let min = q1.value.toReal()-multiqr.value.toReal()*iqr.value.toReal() in
 		let max = q3.value.toReal()+multiqr.value.toReal()*iqr.value.toReal() in
