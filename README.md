@@ -9,6 +9,8 @@ This is the repository of paper presented for conference CAISE '23 edition.
 4. **validation_example_23 directory**: In this directory are located the python pipeline described in section 4. that correspond with the replicability of project [Model data set](https://hub.knime.com/-/spaces/-/latest/~SFKjghagXCJNpEN_/), implemented on KNIME.
     1. **python_pipeline**: In this directory are located the replicated pipeline, "Model dataset with metanode.ipynb" correspond with the initial replication of pipeline and "Model dataset with metanode_without_bugs.ipynb" correspond with the replication pipeline after solve the bugs detected with the process of verification.
     2. **python_pipeline_validation**: In this directory are located the .soil files needed for verify each transformation of the pipeline and its corresponding .csv and .pmml files of corresponding input and output datasets of each transformation.
+    
+In order to use this repository correctly, it is necessary to clone it in the "bin" folder of the USE Tool.
 
 ## To verify each transformation you need:
 1. **Execute USE Tool:** Open terminal and execute command: *"./use"*.
@@ -24,3 +26,5 @@ To verify transformation "rowFilter" of pipeline you need:
 3. Through terminal window execute command: *"open ./validation_example_23/python_pipeline_validation/transformations/2-rowFilter/9-row_filter_init_span/input_model.soil"*.
 4. Through terminal window execute command:*"open output_model.soil"* (because the tool save the last directory used).
 5. Through terminal window execute command: *"open 9-row_filter_init_span.soil"*.
+
+Note: In order to validate the conditions defined as invariant, it has been necessary to create a new Class "Data" that allows to validate the data of the Field on which each Transformation is applied, these conditions would ideally be validated through external queries, but in order not to hinder the proposal of the paper, it has been decided to solve for the moment, in this way.
