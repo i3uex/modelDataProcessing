@@ -27,4 +27,4 @@ To verify transformation "rowFilter" of pipeline you need:
 4. Through terminal window execute command:*"open output_model.soil"* (because the tool save the last directory used).
 5. Through terminal window execute command: *"open 9-row_filter_init_span.soil"*.
 
-Note: In order to validate the conditions defined as invariant, it has been necessary to create a new Class "Data" that allows to validate the data of the Field on which each Transformation is applied, these conditions would ideally be validated through external queries, but in order not to hinder the proposal of the paper, it has been decided to solve for the moment, in this way.
+**Note:** In order to validate the conditions defined as invariant, it has been necessary to create a new Class "Data" that allows to validate the data of the Field on which each Transformation is applied, these conditions would ideally be validated through external queries, but in order not to hinder the proposal of the paper, it has been decided to solve for the moment, in this way.
